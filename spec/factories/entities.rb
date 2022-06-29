@@ -4,6 +4,7 @@ FactoryBot.define do
   factory :entity do
     label { Faker::Movies::Lebowski.character }
     description { Faker::Movies::Lebowski.quote }
+    legacy_pk { Faker::Number.unique.within(range: 1..1000) }
 
     # rubocop:disable Layout/LineLength
     factory :person_entity do

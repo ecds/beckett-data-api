@@ -3,6 +3,8 @@
 class Entity < ApplicationRecord
   include Searchable
 
+  before_save :ensure_json
+
   has_many :mentions, dependent: :destroy
   has_many :letters, through: :mentions, source: :letter
 
@@ -34,23 +36,42 @@ class Entity < ApplicationRecord
   }
 
   def all_letters
-    letters + letters_sent_to + letters_sent + letters_sent_from + letters_received
+    letters +
+    letters_sent_to +
+    letters_sent +
+    letters_sent_from +
+    letters_received
+  end
+
+  def public_letters
+    letters._public +
+    letters_sent_to._public +
+    letters_sent._public +
+    letters_sent_from._public +
+    letters_received._public
   end
 
   def public_letters_hash
-    public_letters = letters._public + letters_sent_to._public + letters_sent._public + letters_sent_from._public + letters_received._public
     # public_letters.reject! {|l| l.recipients.count.zero? }
     public_letters.uniq.sort_by(&:date).map {|letter|
       {
         id: letter.id,
         date: letter.date,
-        recipients: letter.recipients.map {|r|
-                      {
-                        id: r.id,
-                        name: r.label
-                      }
-                    }
+        recipients: letter.recipients.map do |recipient|
+          {
+            id: recipient.id,
+            name: recipient.label
+          }
+        end
       }
     }
+  end
+
+  private
+
+  def ensure_json
+    if properties.is_a? String
+      self.properties = JSON.load(properties)
+    end
   end
 end
