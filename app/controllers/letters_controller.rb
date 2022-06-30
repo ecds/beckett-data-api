@@ -1,13 +1,36 @@
 # frozen_string_literal: true
 
 class LettersController < ApplicationController
-  before_action :set_letter, only: %i[show update destroy]
+  before_action :set_letter, only: %i[show]
 
   # GET /letters
   def index
-    @letters = Letter.all
+    facets = {
+      date: {
+        date_histogram: {
+          field: :date,
+          interval: :year
+        }
+      },
+      language: {},
+      repositories: {}
+    }
 
-    render json: @letters
+    where = {}
+
+    query = params[:q] || '*'
+
+    @letters = Letter.search(
+      query,
+      aggs: facets,
+      page: params[:page] || 1,
+      per_page: params[:per_page] || 25,
+      where: where
+    )
+
+    pagination_header(@letters)
+
+    render
   end
 
   # GET /letters/1

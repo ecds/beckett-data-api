@@ -8,12 +8,13 @@ class RepositoryDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
+    label: Field::String,
     letter_repositories: Field::HasMany,
     letters: Field::HasMany,
     id: Field::String,
     public: Field::Boolean,
     created_at: Field::DateTime,
-    updated_at: Field::DateTime,
+    updated_at: Field::DateTime
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -22,15 +23,15 @@ class RepositoryDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
-    letter_repositories
+    label
     letters
-    id
     public
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
+    label
     letter_repositories
     letters
     id
@@ -43,8 +44,7 @@ class RepositoryDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-    letter_repositories
-    letters
+    label
     public
   ].freeze
 
@@ -63,7 +63,7 @@ class RepositoryDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how repositories are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(repository)
-  #   "Repository ##{repository.id}"
-  # end
+  def display_resource(repository)
+    "Repository #{repository.label}"
+  end
 end

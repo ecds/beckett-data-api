@@ -2,6 +2,7 @@
 
 class Entity < ApplicationRecord
   include Searchable
+  serialize :properties, HashWithIndifferentAccess
 
   before_save :ensure_json
 
@@ -67,11 +68,53 @@ class Entity < ApplicationRecord
     }
   end
 
+  # rubocop:disable Metrics/MethodLength, Metrics/CyclomaticComplexity, Metrics/AbcSize, Layout/LineLength
+  def short_display
+    inner_html = case e_type
+                 when 'attendance'
+                   [properties[:eventType], label, properties[:placeDate]].compact.join(', ')
+                 when 'music'
+                   alts = properties[:alternativeTitles].empty? ? nil : "[#{properties[:alternativeTitles].join(', ')}]"
+                   main_label = [properties[:composer], label].compact.join(', ')
+                   alts.nil? ? main_label : "#{main_label} #{alts}"
+                 when 'person'
+                   ["#{label} #{properties[:lifeDates]}", description].compact.join('. ')
+                 when 'place'
+                   [label, description].compact.join(', ')
+                 when 'production'
+                   main_label = properties[:director].nil? ? label : "#{label}, dir. #{properties[:director]}"
+                   [main_label, properties[:theater], properties[:city], properties[:date]].compact.join(', ')
+                 when 'public_event'
+                   properties[:date].nil? ? label : "#{label} (#{properties[:date]})"
+                 when 'publication'
+                   main_label = [properties[:author], label, properties[:translator]].compact.join(', ')
+                   properties[:publication_information].nil? ? main_label : "#{main_label} #{properties[:publication_information]}"
+                 when 'reading'
+                   [properties[:authors].join(', '), label, properties[:publication]].compact.join(', ')
+                 when 'translating'
+                   main_label = [properties[:author], label]
+                   into = properties[:translatedInto].nil? ? nil : "Translated into #{properties[:translatedInto]}"
+                   by = properties[:translator].nil? ? nil : "by #{properties[:translator]}"
+                   extra = [into, by].compact.join(' ')
+                   main_label.push(extra) unless extra.empty?
+                   main_label.compact.join(', ')
+                 when 'work_of_art'
+                   [properties[:artist], label, properties[:description]].compact.join(', ')
+                 when 'writing'
+                   label
+                 else
+                   id
+                 end
+
+    "<span>#{inner_html.strip}.</span>"
+  end
+  # rubocop:enable Metrics/MethodLength, Metrics/CyclomaticComplexity, Metrics/AbcSize, Layout/LineLength
+
   private
 
   def ensure_json
-    if properties.is_a? String
-      self.properties = JSON.load(properties)
-    end
+    return unless properties.is_a? String
+
+    self.properties = JSON.parse(properties).with_indifferent_access.transform_keys {|key| key.camelize(:lower) }
   end
 end

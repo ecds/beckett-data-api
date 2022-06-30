@@ -61,4 +61,74 @@ RSpec.describe Entity, type: :model do
     expect(entity.letters.count).to eq(8)
     expect(entity.public_letters_hash.length).to eq(6)
   end
+
+  context 'when type attendance' do
+    it 'has short display with all properties' do
+      entity = create(:attendance_entity)
+      expect(
+        entity.short_display
+      ).to eq(
+        "<span>#{entity.properties[:eventType]}, #{entity.label}, #{entity.properties[:placeDate]}.</span>"
+      )
+    end
+
+    it 'has short display when missing eventType' do
+      entity = create(:attendance_entity)
+      entity.properties[:eventType] = nil
+      expect(entity.short_display).to eq("<span>#{entity.label}, #{entity.properties[:placeDate]}.</span>")
+    end
+
+    it 'has short display when missing placeDate' do
+      entity = create(:attendance_entity)
+      entity.properties[:placeDate] = nil
+      expect(
+        entity.short_display
+      ).to eq(
+        "<span>#{entity.properties[:eventType]}, #{entity.label}.</span>"
+      )
+    end
+  end
+
+  context 'when type music' do
+    it 'has short display with all properties' do
+      entity = create(:music_entity)
+      entity.properties[:alternativeTitles].push(Faker::Movies::HitchhikersGuideToTheGalaxy.planet)
+      expect(
+        entity.short_display
+      ).to eq(
+        "<span>#{entity.properties[:composer]}, #{entity.label} [#{entity.properties[:alternativeTitles].join(', ')}].</span>"
+      )
+    end
+
+    it 'has short display with no alternativeTitles' do
+      entity = create(:music_entity)
+      entity.properties[:alternativeTitles] = []
+      expect(
+        entity.short_display
+      ).to eq(
+        "<span>#{entity.properties[:composer]}, #{entity.label}.</span>"
+      )
+    end
+
+    it 'has short display with no composer' do
+      entity = create(:music_entity)
+      entity.properties[:composer] = nil
+      expect(
+        entity.short_display
+      ).to eq(
+        "<span>#{entity.label} [#{entity.properties[:alternativeTitles].join(', ')}].</span>"
+      )
+    end
+  end
+
+  context 'when type person' do
+    it 'has short display with all properties' do
+      entity = create(:person_entity)
+      expect(
+        entity.short_display
+      ).to eq(
+        "<span>#{entity.label} #{entity.properties[:lifeDates]}. #{entity.description}.</span>"
+      )
+    end
+  end
 end

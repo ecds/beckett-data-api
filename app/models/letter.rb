@@ -33,4 +33,20 @@ class Letter < ApplicationRecord
       )
       .where('letters.date BETWEEN ? AND ?', DateTime.new(1957), DateTime.new(1965, 12).at_end_of_month)
   }
+
+  def search_data
+    {
+      date: date,
+      recipients: recipients.map(&:label),
+      mentions: entities.map(&:label),
+      origins: origins.map(&:label),
+      destinations: destinations.map(&:label),
+      repositories: repositories.map(&:label),
+      language: language
+    }
+  end
+
+  def should_index?
+    date.between? DateTime.new(1957), DateTime.new(1965, 12).at_end_of_month and repositories.any?(&:public)
+  end
 end

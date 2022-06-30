@@ -6,5 +6,18 @@ FactoryBot.define do
     addressed_to { Faker::Address.full_address }
     addressed_from { Faker::Address.full_address }
     physical_desc { Faker::Lorem.paragraph }
+    physical_detail { Faker::Hipster.word }
+    physical_notes { Faker::Lorem.paragraph }
+    repository_info { Faker::Hipster.word }
+    postcard_image { Faker::Internet.url(path: "/#{Faker::Hipster.word}.jpg") }
+    leaves { Faker::Number.between(from: 1, to: 3) }
+    sides { Faker::Number.between(from: 1, to: 3) }
+    postmark { "#{Faker::Date.between(from: '1950-01-01', to: '1988-12-31')}, #{Faker::Address.city}" }
+    typed { Faker::Boolean.boolean }
+    signed { Faker::Boolean.boolean }
+    verified { Faker::Boolean.boolean }
+    envelope { 'E' }
+    notes { Faker::Lorem.paragraph }
+    content { Faker::Lorem.paragraph(sentence_count: Faker::Number.between(from: 12, to: 15)) }
   end
 end

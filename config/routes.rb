@@ -2,15 +2,15 @@
 
 Rails.application.routes.draw do
   namespace :admin do
-    resources :entities, only: %i(index show new create edit update destroy)
-    resources :letters
+    resources :entities, only: %i[index show new create edit update destroy]
+    resources :letters, only: %i[index show new create edit update destroy]
     resources :letter_destinations
     resources :letter_origins
     resources :letter_recipients
     resources :letter_repositories
     resources :letter_senders
     resources :mentions
-    resources :repositories
+    resources :repositories, only: %i[index show new create edit update destroy]
 
     root to: 'entities#index'
   end

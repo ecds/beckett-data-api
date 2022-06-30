@@ -111,6 +111,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_27_201906) do
 
   create_table "repositories", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.boolean "public", default: false, null: false
+    t.string "label", null: false
+    t.boolean "american", default: false
+    t.string "format"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
