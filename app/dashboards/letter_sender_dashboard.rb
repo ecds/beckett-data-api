@@ -9,10 +9,7 @@ class LetterSenderDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     entity: Field::BelongsTo,
-    letter: Field::BelongsTo,
-    id: Field::Number,
-    created_at: Field::DateTime,
-    updated_at: Field::DateTime,
+    letter: Field::BelongsTo
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -23,8 +20,6 @@ class LetterSenderDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = %i[
     entity
     letter
-    id
-    created_at
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -32,9 +27,6 @@ class LetterSenderDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = %i[
     entity
     letter
-    id
-    created_at
-    updated_at
   ].freeze
 
   # FORM_ATTRIBUTES

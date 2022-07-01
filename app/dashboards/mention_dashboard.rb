@@ -23,8 +23,6 @@ class MentionDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = %i[
     entity
     letter
-    id
-    created_at
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -32,9 +30,6 @@ class MentionDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = %i[
     entity
     letter
-    id
-    created_at
-    updated_at
   ].freeze
 
   # FORM_ATTRIBUTES

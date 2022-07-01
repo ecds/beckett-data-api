@@ -1,7 +1,9 @@
 require "administrate/field/base"
 
 class RichTextField < Administrate::Field::Base
+  include ActionView::Helpers::SanitizeHelper
+
   def to_s
-    data
+    sanitize data
   end
 end

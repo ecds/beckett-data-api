@@ -45,7 +45,7 @@ class LetterDashboard < Administrate::BaseDashboard
     file_folder_id: Field::Number,
     letter_publisher_id: Field::Number,
     created_at: Field::DateTime,
-    updated_at: Field::DateTime,
+    updated_at: Field::DateTime
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -54,10 +54,9 @@ class LetterDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
-    mentions
-    entities
-    letter_destinations
-    destinations
+    id
+    date
+    recipients
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES

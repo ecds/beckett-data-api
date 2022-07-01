@@ -1,6 +1,7 @@
 require "administrate/base_dashboard"
 
 class EntityDashboard < Administrate::BaseDashboard
+  include ActionView::Helpers::SanitizeHelper
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -8,6 +9,9 @@ class EntityDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
+    label: RichTextField,
+    description: RichTextField,
+    properties: Field::JSONB,
     mentions: Field::HasMany,
     letters: Field::HasMany,
     letter_destinations: Field::HasMany,
@@ -20,9 +24,6 @@ class EntityDashboard < Administrate::BaseDashboard
     letters_received: Field::HasMany,
     id: Field::String,
     legacy_pk: Field::Number,
-    label: RichTextField,
-    description: RichTextField,
-    properties: Field::JSONB,
     flagged: Field::Boolean,
     is_public: Field::Boolean,
     e_type: Field::Select.with_options(searchable: false, collection: ->(field) { field.resource.class.send(field.attribute.to_s.pluralize).keys }),
@@ -42,21 +43,17 @@ class EntityDashboard < Administrate::BaseDashboard
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
-    mentions
-    letters
-    letter_destinations
-    letters_sent_to
-    letter_senders
-    letters_sent
-    letter_origins
-    letters_sent_from
-    letter_recipients
-    letters_received
-    id
-    legacy_pk
     label
     description
     properties
+    mentions
+    letters
+    letters_sent_to
+    letters_sent
+    letters_sent_from
+    letters_received
+    id
+    legacy_pk
     flagged
     is_public
     e_type
@@ -90,6 +87,6 @@ class EntityDashboard < Administrate::BaseDashboard
   # across all pages of the admin dashboard.
   #
   def display_resource(entity)
-    "Entity #{entity.legacy_pk}: #{entity.label}"
+    "Entity #{entity.legacy_pk}: #{strip_tags(entity.label)}"
   end
 end
