@@ -12,7 +12,7 @@ class EntitiesController < ApplicationController
 
   # GET /entities/1
   def show
-    render json: @entity
+    render
   end
 
   # POST /entities

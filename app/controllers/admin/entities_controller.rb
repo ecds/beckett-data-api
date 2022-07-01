@@ -3,10 +3,16 @@ module Admin
     # Overwrite any of the RESTful controller actions to implement custom behavior
     # For example, you may want to send an email after a foo is updated.
     #
-    # def update
-    #   super
-    #   send_foo_updated_email(requested_resource)
-    # end
+    def update
+      requested_resource.properties = JSON.parse(params[:entity].delete(:properties)).with_indifferent_access
+      super
+      # send_foo_updated_email(requested_resource)
+    end
+
+    def create
+      params[:entity][:properties] = JSON.parse(params[:entity][:properties]).with_indifferent_access
+      super
+    end
 
     # Override this method to specify custom lookup behavior.
     # This will be used to set the resource for the `show`, `edit`, and `update`
@@ -42,5 +48,11 @@ module Admin
 
     # See https://administrate-prototype.herokuapp.com/customizing_controller_actions
     # for more information
+
+    private
+
+    def entity_params
+      params.require(:entity).permit(:description, :properties)
+    end
   end
 end
