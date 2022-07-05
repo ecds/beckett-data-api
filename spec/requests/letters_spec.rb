@@ -31,6 +31,7 @@ RSpec.describe '/letters', type: :request do
   describe 'GET /index' do
     it 'renders a successful response' do
       create_list(:public_letter, 3)
+      Letter.reindex
       get letters_url, headers: valid_headers, as: :json
       expect(response).to be_successful
     end
@@ -39,6 +40,7 @@ RSpec.describe '/letters', type: :request do
       create_list(:public_letter, 4)
       create_list(:old_letter, 3)
       create_list(:new_letter, 5)
+      Letter.reindex
       get "#{letters_url}.json", headers: valid_headers, as: :json
       expect(Letter._public.count).to eq(4)
       expect(json[:letters].count).to eq(4)
@@ -47,6 +49,7 @@ RSpec.describe '/letters', type: :request do
 
     it 'renders paginated links in json response' do
       create_list(:public_letter, 10)
+      Letter.reindex
       get "#{letters_url}.json?page=2&per_page=2"
       expect(json[:letters].count).to eq(2)
       expect(json[:meta][:links][:next]).to eq("#{letters_url}.json?page=3&per_page=2")
@@ -61,6 +64,7 @@ RSpec.describe '/letters', type: :request do
 
     it 'includes pagination information in the headers' do
       create_list(:public_letter, 20)
+      Letter.reindex
       get "#{letters_url}.json?page=3&per_page=5"
       links = response.headers['Link'].split(',')
       expect(links.count).to eq(5)
@@ -91,6 +95,7 @@ RSpec.describe '/letters', type: :request do
         1,
         recipients: [Entity.find_by(label: 'Dominique Wilkins'), Entity.find_by(label: 'Spud Webb')]
       )
+      Letter.reindex
       get "#{letters_url}.json?q=Dominique, Spud Webb&fields=recipients"
       expect(json[:letters].count).to eq(6)
     end
