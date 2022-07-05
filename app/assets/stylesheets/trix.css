@@ -478,5 +478,9 @@ trix-editor .attachment__metadata .attachment__size {
 }
 
 .trix-button-group--file-tools {
-  display: none
+  display: none !important
+}
+
+#entity_e_type {
+  text-transform: uppercase;
 }

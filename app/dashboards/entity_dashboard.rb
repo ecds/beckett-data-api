@@ -9,7 +9,7 @@ class EntityDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    label: RichTextField,
+    label: RichTextField.with_options(searchable: false),
     description: RichTextField,
     properties: Field::JSONB,
     mentions: Field::HasMany,
@@ -26,7 +26,7 @@ class EntityDashboard < Administrate::BaseDashboard
     legacy_pk: Field::Number,
     flagged: Field::Boolean,
     is_public: Field::Boolean,
-    e_type: Field::Select.with_options(searchable: false, collection: ->(field) { field.resource.class.send(field.attribute.to_s.pluralize).keys }),
+    e_type: Field::Select.with_options(collection: ->(field) { field.resource.class.send(field.attribute.to_s.pluralize).keys }),
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -81,7 +81,9 @@ class EntityDashboard < Administrate::BaseDashboard
   #   COLLECTION_FILTERS = {
   #     open: ->(resources) { resources.where(open: true) }
   #   }.freeze
-  COLLECTION_FILTERS = {}.freeze
+  COLLECTION_FILTERS = {
+    e_type: ->(resources, attr) { resources.where(e_type: attr) }
+  }.freeze
 
   # Overwrite this method to customize how entities are displayed
   # across all pages of the admin dashboard.
