@@ -1,4 +1,6 @@
-require "administrate/base_dashboard"
+# frozen_string_literal: true
+
+require 'administrate/base_dashboard'
 
 class EntityDashboard < Administrate::BaseDashboard
   include ActionView::Helpers::SanitizeHelper
@@ -26,9 +28,11 @@ class EntityDashboard < Administrate::BaseDashboard
     legacy_pk: Field::Number,
     flagged: Field::Boolean,
     is_public: Field::Boolean,
-    e_type: Field::Select.with_options(collection: ->(field) { field.resource.class.send(field.attribute.to_s.pluralize).keys }),
+    e_type: Field::Select.with_options(collection: lambda {|field|
+                                                     field.resource.class.send(field.attribute.to_s.pluralize).keys
+                                                   }),
     created_at: Field::DateTime,
-    updated_at: Field::DateTime,
+    updated_at: Field::DateTime
   }.freeze
 
   # COLLECTION_ATTRIBUTES

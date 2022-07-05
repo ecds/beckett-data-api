@@ -1,4 +1,6 @@
-require "administrate/base_dashboard"
+# frozen_string_literal: true
+
+require 'administrate/base_dashboard'
 
 class LetterDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
@@ -26,7 +28,9 @@ class LetterDashboard < Administrate::BaseDashboard
     date: Field::DateTime,
     addressed_to: Field::String,
     addressed_from: Field::String,
-    language: Field::Select.with_options(searchable: false, collection: ->(field) { field.resource.class.send(field.attribute.to_s.pluralize).keys }),
+    language: Field::Select.with_options(searchable: false, collection: lambda {|field|
+                                                                          field.resource.class.send(field.attribute.to_s.pluralize).keys
+                                                                        }),
     physical_desc: Field::String,
     physical_detail: Field::String,
     physical_notes: Field::Text,

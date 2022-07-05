@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # All Administrate controllers inherit from this
 # `Administrate::ApplicationController`, making it the ideal place to put
 # authentication logic or other before_actions.
@@ -16,7 +18,7 @@ module Admin
     )
 
     def authenticate_admin
-      # TODO Add authentication logic here.
+      # TODO: Add authentication logic here.
       true
     end
 

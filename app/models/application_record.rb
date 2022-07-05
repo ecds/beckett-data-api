@@ -8,5 +8,4 @@ class ApplicationRecord < ActiveRecord::Base
   def url_path
     "/#{self.class.name.downcase}/#{id}"
   end
-
 end
