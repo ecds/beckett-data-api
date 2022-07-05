@@ -19,5 +19,20 @@ FactoryBot.define do
     envelope { 'E' }
     notes { Faker::Lorem.paragraph }
     content { Faker::Lorem.paragraph(sentence_count: Faker::Number.between(from: 12, to: 15)) }
+
+    factory :public_letter do
+      date { Faker::Date.between(from: '1957-01-01', to: '1965-12-31') }
+      repositories { create_list(:repository, 1, public: true) }
+    end
+
+    factory :new_letter do
+      date { Faker::Date.between(from: '1966-01-01', to: '1988-12-31') }
+      repositories { create_list(:repository, 1, public: true) }
+    end
+
+    factory :old_letter do
+      date { Faker::Date.between(from: '1944-01-01', to: '1956-12-31') }
+      repositories { create_list(:repository, 1, public: true) }
+    end
   end
 end

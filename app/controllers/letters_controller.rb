@@ -28,7 +28,7 @@ class LettersController < ApplicationController
       where: where
     )
 
-    pagination_header(@letters)
+    include_pagination(@letters)
 
     render
   end
@@ -36,31 +36,6 @@ class LettersController < ApplicationController
   # GET /letters/1
   def show
     render json: @letter
-  end
-
-  # POST /letters
-  def create
-    @letter = Letter.new(letter_params)
-
-    if @letter.save
-      render json: @letter, status: :created, location: @letter
-    else
-      render json: @letter.errors, status: :unprocessable_entity
-    end
-  end
-
-  # PATCH/PUT /letters/1
-  def update
-    if @letter.update(letter_params)
-      render json: @letter
-    else
-      render json: @letter.errors, status: :unprocessable_entity
-    end
-  end
-
-  # DELETE /letters/1
-  def destroy
-    @letter.destroy
   end
 
   private

@@ -18,27 +18,71 @@ RSpec.describe '/letters', type: :request do
   # This should return the minimal set of attributes required to create a valid
   # Letter. As you add validations to Letter, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) {
-    skip('Add a hash of attributes valid for your model')
-  }
+  let(:valid_attributes) { {} }
 
-  let(:invalid_attributes) {
-    skip('Add a hash of attributes invalid for your model')
-  }
+  let(:invalid_attributes) { {} }
 
   # This should return the minimal set of values that should be in the headers
   # in order to pass any filters (e.g. authentication) defined in
   # LettersController, or in your router and rack
   # middleware. Be sure to keep this updated too.
-  let(:valid_headers) {
-    {}
-  }
+  let(:valid_headers) { {} }
 
   describe 'GET /index' do
     it 'renders a successful response' do
-      Letter.create! valid_attributes
+      create_list(:public_letter, 3)
       get letters_url, headers: valid_headers, as: :json
       expect(response).to be_successful
+    end
+
+    it 'renders only plblically avaliable letters' do
+      create_list(:public_letter, 4)
+      create_list(:old_letter, 3)
+      create_list(:new_letter, 5)
+      Letter.reindex
+      get "#{letters_url}.json", headers: valid_headers, as: :json
+      expect(Letter._public.count).to eq(4)
+      expect(json[:letters].count).to eq(4)
+      expect(Letter.count).to eq(12)
+    end
+
+    it 'renders paginated links in json response' do
+      create_list(:public_letter, 10)
+      Letter.reindex
+      get "#{letters_url}.json?page=2&per_page=2"
+      expect(json[:letters].count).to eq(2)
+      expect(json[:meta][:links][:next]).to eq("#{letters_url}.json?page=3&per_page=2")
+      expect(json[:meta][:links][:last]).to eq("#{letters_url}.json?page=5&per_page=2")
+      expect(json[:meta][:links][:first]).to eq("#{letters_url}.json?page=1&per_page=2")
+      expect(json[:meta][:links][:self]).to eq("#{letters_url}.json?page=2&per_page=2")
+      expect(json[:meta][:page]).to eq(2)
+      expect(json[:meta][:per_page]).to eq(2)
+      expect(json[:meta][:page_count]).to eq(5)
+      expect(json[:meta][:total_count]).to eq(10)
+    end
+
+    it 'includes pagination information in the headers' do
+      create_list(:public_letter, 20)
+      Letter.reindex
+      get "#{letters_url}.json?page=3&per_page=5"
+      links = response.headers['Link'].split(',')
+      expect(links.count).to eq(5)
+      expect(links[0]).to include('self')
+      expect(links[0]).to include('letters.json?page=3&per_page=5')
+
+      expect(links[1]).to include('first')
+      expect(links[1]).to include('letters.json?page=1&per_page=5')
+
+      expect(links[2]).to include('last')
+      expect(links[2]).to include('letters.json?page=4&per_page=5')
+
+      expect(links[3]).to include('next')
+      expect(links[3]).to include('letters.json?page=4&per_page=5')
+
+      expect(links[4]).to include('prev')
+      expect(links[4]).to include('letters.json?page=2&per_page=5')
+
+      expect(response.headers['X-Total-Count']).to eq(20)
     end
   end
 
@@ -56,74 +100,30 @@ RSpec.describe '/letters', type: :request do
         expect {
           post letters_url,
                params: { letter: valid_attributes }, headers: valid_headers, as: :json
-        }.to change(Letter, :count).by(1)
-      end
-
-      it 'renders a JSON response with the new letter' do
-        post letters_url,
-             params: { letter: valid_attributes }, headers: valid_headers, as: :json
-        expect(response).to have_http_status(:created)
-        expect(response.content_type).to match(a_string_including('application/json'))
-      end
-    end
-
-    context 'with invalid parameters' do
-      it 'does not create a new Letter' do
-        expect {
-          post letters_url,
-               params: { letter: invalid_attributes }, as: :json
-        }.not_to change(Letter, :count)
-      end
-
-      it 'renders a JSON response with errors for the new letter' do
-        post letters_url,
-             params: { letter: invalid_attributes }, headers: valid_headers, as: :json
-        expect(response).to have_http_status(:unprocessable_entity)
-        expect(response.content_type).to match(a_string_including('application/json'))
+        }.to change(Letter, :count).by(0)
+        expect(response).to have_http_status(:not_implemented)
       end
     end
   end
 
   describe 'PATCH /update' do
     context 'with valid parameters' do
-      let(:new_attributes) {
-        skip('Add a hash of attributes valid for your model')
-      }
-
       it 'updates the requested letter' do
-        letter = Letter.create! valid_attributes
+        letter = create(:letter)
         patch letter_url(letter),
-              params: { letter: new_attributes }, headers: valid_headers, as: :json
-        letter.reload
-        skip('Add assertions for updated state')
-      end
-
-      it 'renders a JSON response with the letter' do
-        letter = Letter.create! valid_attributes
-        patch letter_url(letter),
-              params: { letter: new_attributes }, headers: valid_headers, as: :json
-        expect(response).to have_http_status(:ok)
-        expect(response.content_type).to match(a_string_including('application/json'))
-      end
-    end
-
-    context 'with invalid parameters' do
-      it 'renders a JSON response with errors for the letter' do
-        letter = Letter.create! valid_attributes
-        patch letter_url(letter),
-              params: { letter: invalid_attributes }, headers: valid_headers, as: :json
-        expect(response).to have_http_status(:unprocessable_entity)
-        expect(response.content_type).to match(a_string_including('application/json'))
+              params: { letter: {} }, headers: valid_headers, as: :json
+        expect(response).to have_http_status(:not_implemented)
       end
     end
   end
 
   describe 'DELETE /destroy' do
     it 'destroys the requested letter' do
-      letter = Letter.create! valid_attributes
+      letter = create(:letter)
       expect {
         delete letter_url(letter), headers: valid_headers, as: :json
-      }.to change(Letter, :count).by(-1)
+      }.to change(Letter, :count).by(0)
+      expect(response).to have_http_status(:not_implemented)
     end
   end
 end

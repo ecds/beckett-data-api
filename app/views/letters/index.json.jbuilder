@@ -10,8 +10,6 @@ json.aggs do
   json.merge! @letters.aggs
 end
 
-if @pagination_links
-  json.meta do
-    json.merge! @pagination_links
-  end
+json.meta do
+  json.merge! @pagination_meta if @pagination_meta
 end
