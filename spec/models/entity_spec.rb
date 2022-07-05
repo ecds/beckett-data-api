@@ -23,7 +23,8 @@ RSpec.describe Entity, type: :model do
       2,
       date: Faker::Date.between(from: '1957-1-1', to: '1965-12-31'),
       repositories: create_list(:repository, 1, public: true),
-      destinations: [entity]
+      destinations: [entity],
+      recipients: create_list(:person_entity, 2)
     )
 
     create_list(
@@ -31,7 +32,8 @@ RSpec.describe Entity, type: :model do
       2,
       date: Faker::Date.between(from: '1957-1-1', to: '1965-12-31'),
       repositories: create_list(:repository, 1, public: true),
-      origins: [entity]
+      origins: [entity],
+      recipients: create_list(:person_entity, 2)
     )
 
     create_list(
@@ -39,7 +41,8 @@ RSpec.describe Entity, type: :model do
       2,
       date: Faker::Date.between(from: '1957-1-1', to: '1965-12-31'),
       repositories: create_list(:repository, 1, public: true),
-      entities: [entity]
+      entities: [entity],
+      recipients: create_list(:person_entity, 2)
     )
 
     create_list(
@@ -55,13 +58,15 @@ RSpec.describe Entity, type: :model do
       3,
       date: Faker::Date.between(from: '1966-1-1', to: '2000-12-31'),
       repositories: create_list(:repository, 1, public: false),
-      destinations: [entity]
+      destinations: [entity],
+      recipients: create_list(:person_entity, 2)
     )
 
     expect(entity.all_letters.count).to be < Letter.count
     expect(entity.all_letters.count).to eq(15)
     expect(entity.letters.count).to eq(8)
     expect(entity.public_letters_hash.length).to eq(6)
+    expect(entity.public_letters_hash[0][:recipients].length).to eq(2)
   end
 
   context 'when properties are added with non-camel keys' do

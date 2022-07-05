@@ -68,6 +68,18 @@ class Entity < ApplicationRecord
     }
   end
 
+  def search_data
+    {
+      label: label,
+      description: description
+    }
+  end
+
+  def should_index?
+    public_letters.present?
+  end
+
+
   # rubocop:disable Metrics/MethodLength, Metrics/CyclomaticComplexity, Metrics/AbcSize, Layout/LineLength
   def short_display
     inner_html = case e_type
