@@ -2,6 +2,9 @@
 
 class LettersController < ApplicationController
   before_action :set_letter, only: %i[show]
+  before_action :set_filters, only: %i[index]
+
+  Letter.reindex if ENV['RAILS_ENV'] == 'test'
 
   # GET /letters
   def index
@@ -16,8 +19,6 @@ class LettersController < ApplicationController
       repositories: {}
     }
 
-    where = {}
-
     query = params[:q] || '*'
 
     @letters = Letter.search(
@@ -25,7 +26,9 @@ class LettersController < ApplicationController
       aggs: facets,
       page: params[:page] || 1,
       per_page: params[:per_page] || 25,
-      where: where
+      where: @where,
+      fields: @fields,
+      operator: 'or'
     )
 
     include_pagination(@letters)
@@ -43,6 +46,23 @@ class LettersController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_letter
     @letter = Letter.find(params[:id])
+  end
+
+  def set_filters
+    @where = {}
+    @fields = []
+
+    params[:fields].split(',').each {|field| @fields.push(field.to_sym) } if params[:fields].present?
+
+    # if params[:recipients].present?
+    #   recipients = params[:recipients].split(',')
+    #   @where[:recipients] = { in: recipients }
+    # end
+
+    # if params[:mentions].present?
+    #   mentions = params[:mentions].split(',')
+    #   @where[:mentions] = { in: mentions }
+    # end
   end
 
   # Only allow a list of trusted parameters through.

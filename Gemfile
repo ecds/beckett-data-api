@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 source 'https://rubygems.org'
-git_source(:github) {|repo| 'https://github.com/#{repo}.git' }
+git_source(:github) {|_repo| "https://github.com/#{repo}.git" }
 
 ruby '3.0.2'
 
@@ -71,3 +71,5 @@ gem 'pundit', '~> 2.2'
 gem 'kaminari', '~> 1.2'
 
 gem 'jbuilder', '~> 2.11'
+
+gem 'rspec_api_documentation', '~> 6.1'

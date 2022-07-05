@@ -183,6 +183,7 @@ GEM
     msgpack (1.5.2)
     multi_json (1.15.0)
     multipart-post (2.2.3)
+    mustache (1.1.1)
     net-imap (0.2.3)
       digest
       net-protocol
@@ -246,6 +247,10 @@ GEM
     reline (0.3.1)
       io-console (~> 0.5)
     rexml (3.2.5)
+    rspec (3.11.0)
+      rspec-core (~> 3.11.0)
+      rspec-expectations (~> 3.11.0)
+      rspec-mocks (~> 3.11.0)
     rspec-core (3.11.0)
       rspec-support (~> 3.11.0)
     rspec-expectations (3.11.0)
@@ -263,6 +268,10 @@ GEM
       rspec-mocks (~> 3.10)
       rspec-support (~> 3.10)
     rspec-support (3.11.0)
+    rspec_api_documentation (6.1.0)
+      activesupport (>= 3.0.0)
+      mustache (~> 1.0, >= 0.99.4)
+      rspec (~> 3.0)
     rubocop (1.31.0)
       parallel (~> 1.10)
       parser (>= 3.1.0.0)
@@ -352,6 +361,7 @@ DEPENDENCIES
   rack-cors
   rails (~> 7.0.2, >= 7.0.2.3)
   rspec-rails
+  rspec_api_documentation (~> 6.1)
   rubocop
   rubocop-rails
   rubocop-rspec

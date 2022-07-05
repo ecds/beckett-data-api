@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'action_view'
+
 class Entity < ApplicationRecord
   include Searchable
   serialize :properties, HashWithIndifferentAccess
@@ -35,6 +37,12 @@ class Entity < ApplicationRecord
     public_event: 10,
     work_of_art: 11
   }
+
+  def clean_label
+    strip_tags label
+  rescue NoMethodError
+    label
+  end
 
   def all_letters
     letters +
@@ -78,7 +86,6 @@ class Entity < ApplicationRecord
   def should_index?
     public_letters.present?
   end
-
 
   # rubocop:disable Metrics/MethodLength, Metrics/CyclomaticComplexity, Metrics/AbcSize, Layout/LineLength
   def short_display

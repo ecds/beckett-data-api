@@ -39,7 +39,6 @@ RSpec.describe '/letters', type: :request do
       create_list(:public_letter, 4)
       create_list(:old_letter, 3)
       create_list(:new_letter, 5)
-      Letter.reindex
       get "#{letters_url}.json", headers: valid_headers, as: :json
       expect(Letter._public.count).to eq(4)
       expect(json[:letters].count).to eq(4)
@@ -48,7 +47,6 @@ RSpec.describe '/letters', type: :request do
 
     it 'renders paginated links in json response' do
       create_list(:public_letter, 10)
-      Letter.reindex
       get "#{letters_url}.json?page=2&per_page=2"
       expect(json[:letters].count).to eq(2)
       expect(json[:meta][:links][:next]).to eq("#{letters_url}.json?page=3&per_page=2")
@@ -63,7 +61,6 @@ RSpec.describe '/letters', type: :request do
 
     it 'includes pagination information in the headers' do
       create_list(:public_letter, 20)
-      Letter.reindex
       get "#{letters_url}.json?page=3&per_page=5"
       links = response.headers['Link'].split(',')
       expect(links.count).to eq(5)
@@ -84,6 +81,19 @@ RSpec.describe '/letters', type: :request do
 
       expect(response.headers['X-Total-Count']).to eq(20)
     end
+
+    it 'renders letters from specific recipients' do
+      create_list(:public_letter, 5)
+      create_list(:public_letter, 2, recipients: create_list(:person_entity, 1, label: 'Dominique Wilkins'))
+      create_list(:public_letter, 3, recipients: create_list(:person_entity, 1, label: 'Spud Webb'))
+      create_list(
+        :public_letter,
+        1,
+        recipients: [Entity.find_by(label: 'Dominique Wilkins'), Entity.find_by(label: 'Spud Webb')]
+      )
+      get "#{letters_url}.json?q=Dominique, Spud Webb&fields=recipients"
+      expect(json[:letters].count).to eq(6)
+    end
   end
 
   describe 'GET /show' do
@@ -100,7 +110,7 @@ RSpec.describe '/letters', type: :request do
         expect {
           post letters_url,
                params: { letter: valid_attributes }, headers: valid_headers, as: :json
-        }.to change(Letter, :count).by(0)
+        }.not_to change(Letter, :count)
         expect(response).to have_http_status(:not_implemented)
       end
     end
@@ -122,7 +132,7 @@ RSpec.describe '/letters', type: :request do
       letter = create(:letter)
       expect {
         delete letter_url(letter), headers: valid_headers, as: :json
-      }.to change(Letter, :count).by(0)
+      }.not_to change(Letter, :count)
       expect(response).to have_http_status(:not_implemented)
     end
   end

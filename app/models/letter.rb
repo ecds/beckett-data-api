@@ -37,10 +37,10 @@ class Letter < ApplicationRecord
   def search_data
     {
       date: date,
-      recipients: recipients.map(&:label),
-      mentions: entities.map(&:label),
-      origins: origins.map(&:label),
-      destinations: destinations.map(&:label),
+      recipients: recipients.map(&:clean_label),
+      mentions: entities.map(&:clean_label),
+      origins: origins.map(&:clean_label),
+      destinations: destinations.map(&:clean_label),
       repositories: repositories.map(&:label),
       language: language
     }
