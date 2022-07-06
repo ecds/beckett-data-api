@@ -162,3 +162,6 @@ RSpec/MultipleExpectations:
 
 RSpec/ExampleLength:
   Enabled: false
+
+Rails/FilePath:
+  Enabled: false

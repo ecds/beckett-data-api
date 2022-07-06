@@ -19,7 +19,9 @@ SimpleCov.start 'rails' do
   add_filter [
     '/app/channels/',
     '/app/mailers/',
-    '/app/jobs/'
+    '/app/jobs/',
+    '/app/dashboards',
+    '/app/controllers/admin'
   ]
 end
 

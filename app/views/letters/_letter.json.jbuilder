@@ -37,7 +37,7 @@
 # }
 
 json.set! 'id', "#{request.protocol}#{request.host}#{letter.url_path}.json"
-json.set! 'language', letter.language
+json.set! 'date', letter.date
 # json.set! '@type', letter.schema_type
 
 # json.recipients do

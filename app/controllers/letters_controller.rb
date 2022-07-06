@@ -4,10 +4,11 @@ class LettersController < ApplicationController
   before_action :set_letter, only: %i[show]
   before_action :set_filters, only: %i[index]
 
-  Letter.reindex if ENV['RAILS_ENV'] == 'test'
 
   # GET /letters
   def index
+    Letter.reindex if ENV['RAILS_ENV'] == 'test'
+
     facets = {
       date: {
         date_histogram: {
@@ -45,14 +46,33 @@ class LettersController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_letter
+    Letter.reindex if ENV['RAILS_ENV'] == 'test'
     @letter = Letter.find(params[:id])
   end
 
   def set_filters
-    @where = {}
+    @where = { _and: [] }
     @fields = []
 
     params[:fields].split(',').each {|field| @fields.push(field.to_sym) } if params[:fields].present?
+
+    if params[:start_date] || params[:end_date]
+      @where[:_and].push(
+        {
+          date: {
+            gte: parse_date(params[:start_date]) || DateTime.new(1957)
+          }
+        }
+      )
+
+      @where[:_and].push(
+        {
+          date: {
+            lte: parse_date(params[:end_date]) || DateTime.new(1965, 12).at_end_of_month
+          }
+        }
+      )
+    end
 
     # if params[:recipients].present?
     #   recipients = params[:recipients].split(',')
@@ -65,8 +85,14 @@ class LettersController < ApplicationController
     # end
   end
 
-  # Only allow a list of trusted parameters through.
-  def letter_params
-    params.fetch(:letter, {})
+  def parse_date(date)
+    return if date.nil?
+
+    Date.parse(date)
   end
+
+  # Only allow a list of trusted parameters through.
+  # def letter_params
+  #   params.fetch(:letter, {})
+  # end
 end

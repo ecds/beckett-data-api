@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class EntitiesController < ApplicationController
-  before_action :set_entity, only: %i[show update destroy]
+  before_action :set_entity, only: %i[show]
 
   # GET /entities
   def index
@@ -15,31 +15,6 @@ class EntitiesController < ApplicationController
     render
   end
 
-  # POST /entities
-  def create
-    @entity = Entity.new(entity_params)
-
-    if @entity.save
-      render json: @entity, status: :created, location: @entity
-    else
-      render json: @entity.errors, status: :unprocessable_entity
-    end
-  end
-
-  # PATCH/PUT /entities/1
-  def update
-    if @entity.update(entity_params)
-      render json: @entity
-    else
-      render json: @entity.errors, status: :unprocessable_entity
-    end
-  end
-
-  # DELETE /entities/1
-  def destroy
-    @entity.destroy
-  end
-
   private
 
   # Use callbacks to share common setup or constraints between actions.
@@ -48,7 +23,7 @@ class EntitiesController < ApplicationController
   end
 
   # Only allow a list of trusted parameters through.
-  def entity_params
-    params.fetch(:entity, {})
-  end
+  # def entity_params
+  #   params.fetch(:entity, {})
+  # end
 end

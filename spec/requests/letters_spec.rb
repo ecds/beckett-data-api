@@ -31,7 +31,6 @@ RSpec.describe '/letters', type: :request do
   describe 'GET /index' do
     it 'renders a successful response' do
       create_list(:public_letter, 3)
-      Letter.reindex
       get letters_url, headers: valid_headers, as: :json
       expect(response).to be_successful
     end
@@ -40,7 +39,6 @@ RSpec.describe '/letters', type: :request do
       create_list(:public_letter, 4)
       create_list(:old_letter, 3)
       create_list(:new_letter, 5)
-      Letter.reindex
       get "#{letters_url}.json", headers: valid_headers, as: :json
       expect(Letter._public.count).to eq(4)
       expect(json[:letters].count).to eq(4)
@@ -49,7 +47,6 @@ RSpec.describe '/letters', type: :request do
 
     it 'renders paginated links in json response' do
       create_list(:public_letter, 10)
-      Letter.reindex
       get "#{letters_url}.json?page=2&per_page=2"
       expect(json[:letters].count).to eq(2)
       expect(json[:meta][:links][:next]).to eq("#{letters_url}.json?page=3&per_page=2")
@@ -64,7 +61,6 @@ RSpec.describe '/letters', type: :request do
 
     it 'includes pagination information in the headers' do
       create_list(:public_letter, 20)
-      Letter.reindex
       get "#{letters_url}.json?page=3&per_page=5"
       links = response.headers['Link'].split(',')
       expect(links.count).to eq(5)
@@ -95,15 +91,52 @@ RSpec.describe '/letters', type: :request do
         1,
         recipients: [Entity.find_by(label: 'Dominique Wilkins'), Entity.find_by(label: 'Spud Webb')]
       )
-      Letter.reindex
       get "#{letters_url}.json?q=Dominique, Spud Webb&fields=recipients"
       expect(json[:letters].count).to eq(6)
+    end
+
+    it 'renders letters to specific destinations' do
+      create_list(:public_letter, 4)
+      create_list(:public_letter, 3, destinations: create_list(:place_entity, 1, label: 'Reynoldstown'))
+      create_list(:public_letter, 4, destinations: create_list(:place_entity, 1, label: 'Grant Park'))
+      create_list(
+        :public_letter,
+        2,
+        destinations: [Entity.find_by(label: 'Reynoldstown'), Entity.find_by(label: 'Grant Park')]
+      )
+      get "#{letters_url}.json?q=Reynoldstwn, Grant&fields=destinations"
+      expect(json[:letters].count).to eq(9)
+    end
+
+    it 'returns letters with start_date param' do
+      create_list(:public_letter, 10)
+      create(:public_letter, date: DateTime.new(1961, 2, 22))
+      get "#{letters_url}?start_date=1960-03-14"
+      expect(json[:letters].map {|letter| Date.parse(letter[:date]) }.min).to be >= DateTime.new(1960, 3, 14)
+      expect(json[:letters].count).to be > 0
+    end
+
+    it 'returns letters with end_date param' do
+      create_list(:public_letter, 10)
+      create(:public_letter, date: DateTime.new(1961, 2, 22))
+      get "#{letters_url}?end_date=1964-03-14"
+      expect(json[:letters].map {|letter| Date.parse(letter[:date]) }.max).to be <= DateTime.new(1964, 3, 14)
+      expect(json[:letters].count).to be > 0
+    end
+
+    it 'returns letters with start_date and end_date params' do
+      create_list(:public_letter, 10)
+      create(:public_letter, date: DateTime.new(1961, 2, 22))
+      get "#{letters_url}?start_date=1957-03-14&end_date=1963-03-14"
+      expect(json[:letters].map {|letter| Date.parse(letter[:date]) }.min).to be >= DateTime.new(1957, 3, 14)
+      expect(json[:letters].map {|letter| Date.parse(letter[:date]) }.max).to be <= DateTime.new(1963, 3, 14)
+      expect(json[:letters].count).to be > 0
     end
   end
 
   describe 'GET /show' do
     it 'renders a successful response' do
-      letter = Letter.create! valid_attributes
+      letter = create(:public_letter)
       get letter_url(letter), as: :json
       expect(response).to be_successful
     end
