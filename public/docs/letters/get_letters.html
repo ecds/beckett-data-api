@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Letters API</title>
+    <meta charset="utf-8">
+    <style>
+      
+body {
+  font-family: Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 18px;
+  color: #404040;
+}
+
+.container {
+  width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  zoom: 1;
+}
+
+pre {
+  background-color: #f5f5f5;
+  display: block;
+  padding: 8.5px;
+  margin: 0 0 18px;
+  line-height: 18px;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+td.required .name:after {
+  float: right;
+  content: "required";
+  font-weight: normal;
+  color: #F08080;
+}
+
+a{
+  color: #0069d6;
+  text-decoration: none;
+  line-height: inherit;
+  font-weight: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  color: #404040;
+}
+
+h1 {
+  margin-bottom: 18px;
+  font-size: 30px;
+  line-height: 36px;
+}
+h2 {
+  font-size: 24px;
+  line-height: 36px;
+}
+h3{
+  font-size: 18px;
+  line-height: 36px;
+}
+h4 {
+  font-size: 16px;
+  line-height: 36px;
+}
+
+table{
+  width: 100%;
+  margin-bottom: 18px;
+  padding: 0;
+  border-collapse: separate;
+  font-size: 13px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  border-spacing: 0;
+  border: 1px solid #ddd;
+}
+
+table th {
+  padding-top: 9px;
+  font-weight: bold;
+  vertical-align: middle;
+  border-bottom: 1px solid #ddd;
+}
+table th+th, table td+td {
+  border-left: 1px solid #ddd;
+}
+table th, table td {
+  padding: 10px 10px 9px;
+  line-height: 18px;
+  text-align: left;
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Letters API</h1>
+
+      <div class="article">
+        <h2>GET /letters</h2>
+        <h3>GET /letters</h3>
+
+          <h3>Parameters</h3>
+          <table class="parameters table table-striped table-bordered table-condensed">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Default</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                    <span class="name">page</span>
+                </td>
+                <td>
+                  <span class="description">Current page of letters</span>
+                </td>
+                <td>
+                  <span class="default">1</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">per_page</span>
+                </td>
+                <td>
+                  <span class="description">Number of letters on a single response.</span>
+                </td>
+                <td>
+                  <span class="default">25</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">q</span>
+                </td>
+                <td>
+                  <span class="description">Text to search.</span>
+                </td>
+                <td>
+                  <span class="default">*</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">fields</span>
+                </td>
+                <td>
+                  <span class="description">List of fields to include be queried.</span>
+                </td>
+                <td>
+                  <span class="default">recipients,mentions,destinations,origins,repositories</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">start_date</span>
+                </td>
+                <td>
+                  <span class="description">Letters dated on or after given date. Must be in YYYY-MM-DD format.</span>
+                </td>
+                <td>
+                  <span class="default">nil</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">end_date</span>
+                </td>
+                <td>
+                  <span class="description">Letters dated on or before given date. Must be in YYYY-MM-DD format.</span>
+                </td>
+                <td>
+                  <span class="default">nil</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Accept: application/json
+Content-Type: application/json
+Host: example.org
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">GET /letters</pre>
+
+
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 0
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Permitted-Cross-Domain-Policies: none
+Referrer-Policy: strict-origin-when-cross-origin
+Link: &lt;http://example.org/letters?page=1&gt;; rel=&#39;self&#39;, &lt;http://example.org/letters?page=2&gt;; rel=&#39;last&#39;, &lt;http://example.org/letters?page=2&gt;; rel=&#39;next&#39;
+X-Total-Count: 50
+Content-Type: application/json; charset=utf-8
+ETag: W/&quot;9bfca70045d816b65a7a824e7b38c16c&quot;
+Cache-Control: max-age=0, private, must-revalidate
+X-Request-Id: 8cbc5eb4-7a14-48e7-820e-238205dd975b
+X-Runtime: 0.903854
+Vary: Origin
+Content-Length: 4390</pre>
+            <h4>Status</h4>
+            <pre class="response status">200 OK</pre>
+              <h4>Body</h4>
+              <pre class="response body">{
+  &quot;letters&quot;: [
+    {
+      &quot;id&quot;: &quot;http://example.org/letter/0385bf9f-d89c-47bc-9109-3e2c403daacf.json&quot;,
+      &quot;date&quot;: &quot;1959-03-21T00:00:00.000-05:00&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/letter/08bd2eeb-40ef-4d60-b038-ab747acba66f.json&quot;,
+      &quot;date&quot;: &quot;1959-04-03T00:00:00.000-05:00&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/letter/0c5583d9-1347-46a1-b01b-cd972bd91f4d.json&quot;,
+      &quot;date&quot;: &quot;1965-05-31T00:00:00.000-04:00&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/letter/0c8c6ba2-a796-4dfd-b497-9dd78f127244.json&quot;,
+      &quot;date&quot;: &quot;1964-11-02T00:00:00.000-05:00&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/letter/15bfbf08-c9cc-4448-85bc-c11530546a42.json&quot;,
+      &quot;date&quot;: &quot;1963-08-27T00:00:00.000-04:00&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/letter/1758ad90-4e6f-4e0c-ae44-45d86da860bf.json&quot;,
+      &quot;date&quot;: &quot;1961-11-03T00:00:00.000-05:00&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/letter/24a7edfe-6d13-4f40-8c16-1de2b546ad62.json&quot;,
+      &quot;date&quot;: &quot;1957-10-22T00:00:00.000-04:00&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/letter/280cd48f-5e83-4e6a-a0a1-a748117e351a.json&quot;,
+      &quot;date&quot;: &quot;1958-11-05T00:00:00.000-05:00&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/letter/33f686c1-d9df-4607-b9a9-745d577efd73.json&quot;,
+      &quot;date&quot;: &quot;1962-10-16T00:00:00.000-04:00&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/letter/3451a278-6764-408d-9aa9-f67ffb00ce7b.json&quot;,
+      &quot;date&quot;: &quot;1957-01-09T00:00:00.000-05:00&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/letter/3b01e616-f2b5-4a78-8a91-d784684cadfc.json&quot;,
+      &quot;date&quot;: &quot;1959-02-25T00:00:00.000-05:00&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/letter/3b12cba6-bf1e-4f58-8d59-7167cab42336.json&quot;,
+      &quot;date&quot;: &quot;1961-03-08T00:00:00.000-05:00&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/letter/3f1c8d2e-477c-4d5a-9c30-d676d1ad2a20.json&quot;,
+      &quot;date&quot;: &quot;1962-04-10T00:00:00.000-05:00&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/letter/492c8cf1-e06b-43c2-8ae6-7bece57fd647.json&quot;,
+      &quot;date&quot;: &quot;1957-03-30T00:00:00.000-05:00&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/letter/4e08c25e-c217-47d4-8d1e-961c70f8ee80.json&quot;,
+      &quot;date&quot;: &quot;1960-03-30T00:00:00.000-05:00&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/letter/4f9a888c-5b0d-4e3e-886a-225e380e91f5.json&quot;,
+      &quot;date&quot;: &quot;1958-08-29T00:00:00.000-04:00&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/letter/502bb41b-0e47-4dd9-b284-417e97f3d121.json&quot;,
+      &quot;date&quot;: &quot;1962-10-25T00:00:00.000-04:00&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/letter/503bf5fb-978d-44c3-a05f-1b49e0b7b52b.json&quot;,
+      &quot;date&quot;: &quot;1961-02-01T00:00:00.000-05:00&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/letter/5210f730-2cf3-426b-b096-b58ccead5aa5.json&quot;,
+      &quot;date&quot;: &quot;1963-01-14T00:00:00.000-05:00&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/letter/6787a536-1be6-4272-b2a6-b55cd84a8215.json&quot;,
+      &quot;date&quot;: &quot;1963-06-29T00:00:00.000-04:00&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/letter/6969cdd2-533c-44ed-9d6b-c909488a4bea.json&quot;,
+      &quot;date&quot;: &quot;1960-01-26T00:00:00.000-05:00&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/letter/6bc321f1-4aa8-4f3f-b55f-b623fa8b4afc.json&quot;,
+      &quot;date&quot;: &quot;1958-09-04T00:00:00.000-04:00&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/letter/6c6bf598-792e-4e1b-85b4-d4cac22fda72.json&quot;,
+      &quot;date&quot;: &quot;1961-04-09T00:00:00.000-05:00&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/letter/6feb9bf8-88d9-4254-9ca6-e53ecf0d8c4b.json&quot;,
+      &quot;date&quot;: &quot;1964-07-15T00:00:00.000-04:00&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/letter/74010222-29ce-4abc-b5ad-f1f6bc4d5786.json&quot;,
+      &quot;date&quot;: &quot;1965-09-17T00:00:00.000-04:00&quot;
+    }
+  ],
+  &quot;aggs&quot;: {
+    &quot;date&quot;: {
+      &quot;meta&quot;: {
+      },
+      &quot;doc_count&quot;: 50,
+      &quot;buckets&quot;: [
+        {
+          &quot;key_as_string&quot;: &quot;1957-01-01T00:00:00.000Z&quot;,
+          &quot;key&quot;: -410227200000,
+          &quot;doc_count&quot;: 7
+        },
+        {
+          &quot;key_as_string&quot;: &quot;1958-01-01T00:00:00.000Z&quot;,
+          &quot;key&quot;: -378691200000,
+          &quot;doc_count&quot;: 4
+        },
+        {
+          &quot;key_as_string&quot;: &quot;1959-01-01T00:00:00.000Z&quot;,
+          &quot;key&quot;: -347155200000,
+          &quot;doc_count&quot;: 8
+        },
+        {
+          &quot;key_as_string&quot;: &quot;1960-01-01T00:00:00.000Z&quot;,
+          &quot;key&quot;: -315619200000,
+          &quot;doc_count&quot;: 4
+        },
+        {
+          &quot;key_as_string&quot;: &quot;1961-01-01T00:00:00.000Z&quot;,
+          &quot;key&quot;: -283996800000,
+          &quot;doc_count&quot;: 9
+        },
+        {
+          &quot;key_as_string&quot;: &quot;1962-01-01T00:00:00.000Z&quot;,
+          &quot;key&quot;: -252460800000,
+          &quot;doc_count&quot;: 5
+        },
+        {
+          &quot;key_as_string&quot;: &quot;1963-01-01T00:00:00.000Z&quot;,
+          &quot;key&quot;: -220924800000,
+          &quot;doc_count&quot;: 3
+        },
+        {
+          &quot;key_as_string&quot;: &quot;1964-01-01T00:00:00.000Z&quot;,
+          &quot;key&quot;: -189388800000,
+          &quot;doc_count&quot;: 4
+        },
+        {
+          &quot;key_as_string&quot;: &quot;1965-01-01T00:00:00.000Z&quot;,
+          &quot;key&quot;: -157766400000,
+          &quot;doc_count&quot;: 6
+        }
+      ]
+    },
+    &quot;repositories&quot;: {
+      &quot;meta&quot;: {
+      },
+      &quot;doc_count&quot;: 50,
+      &quot;doc_count_error_upper_bound&quot;: 0,
+      &quot;sum_other_doc_count&quot;: 0,
+      &quot;buckets&quot;: [
+        {
+          &quot;key&quot;: &quot;Eastern Oregon University&quot;,
+          &quot;doc_count&quot;: 23
+        },
+        {
+          &quot;key&quot;: &quot;Eastern Weissnat College&quot;,
+          &quot;doc_count&quot;: 23
+        },
+        {
+          &quot;key&quot;: &quot;The Turcotte Institute&quot;,
+          &quot;doc_count&quot;: 23
+        },
+        {
+          &quot;key&quot;: &quot;East Utah University&quot;,
+          &quot;doc_count&quot;: 21
+        }
+      ]
+    },
+    &quot;language&quot;: {
+      &quot;meta&quot;: {
+      },
+      &quot;doc_count&quot;: 50,
+      &quot;doc_count_error_upper_bound&quot;: 0,
+      &quot;sum_other_doc_count&quot;: 0,
+      &quot;buckets&quot;: [
+        {
+          &quot;key&quot;: &quot;french&quot;,
+          &quot;doc_count&quot;: 24
+        },
+        {
+          &quot;key&quot;: &quot;english&quot;,
+          &quot;doc_count&quot;: 16
+        },
+        {
+          &quot;key&quot;: &quot;german&quot;,
+          &quot;doc_count&quot;: 10
+        }
+      ]
+    }
+  },
+  &quot;meta&quot;: {
+    &quot;page&quot;: 1,
+    &quot;per_page&quot;: 25,
+    &quot;page_count&quot;: 2,
+    &quot;total_count&quot;: 50,
+    &quot;links&quot;: {
+      &quot;self&quot;: &quot;http://example.org/letters?page=1&quot;,
+      &quot;last&quot;: &quot;http://example.org/letters?page=2&quot;,
+      &quot;next&quot;: &quot;http://example.org/letters?page=2&quot;
+    }
+  }
+}</pre>
+      </div>
+    </div>
+  </body>
+</html>

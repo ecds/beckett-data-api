@@ -1,8 +1,8 @@
 # Letters API
 
-## Deleting a letter not implemented
+## PUT /letters/:id
 
-### DELETE /letters/:id
+### PUT /letters/:id
 ### Request
 
 #### Headers
@@ -15,7 +15,7 @@ Cookie: </pre>
 
 #### Route
 
-<pre>DELETE /letters/8e464f56-80cc-4ddf-badf-b75ebe9564f4</pre>
+<pre>PUT /letters/15b97b5d-2ca7-49b6-bbd9-b484bb4c72ad</pre>
 
 ### Response
 
@@ -29,8 +29,8 @@ X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json
 Cache-Control: no-cache
-X-Request-Id: 7b2d5a69-2d9c-4d95-8614-7134f6d0b4c9
-X-Runtime: 0.002870
+X-Request-Id: e3bab55a-0f20-425e-825a-70a2ae131ce2
+X-Runtime: 0.002919
 Vary: Origin
 Content-Length: 0</pre>
 

@@ -109,8 +109,8 @@ table th, table td {
       <h1>Letters API</h1>
 
       <div class="article">
-        <h2>Updating a letter not implemented</h2>
-        <h3>PUT /letters/:id</h3>
+        <h2>GET /letters/:id</h2>
+        <h3>GET /letters/:id</h3>
 
 
 
@@ -124,7 +124,7 @@ Host: example.org
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">PUT /letters/79e2905e-da90-4c69-8db3-534fe04c67d4</pre>
+          <pre class="request route highlight">GET /letters/5112bf35-d5f8-4641-979a-fd9d5e11083c</pre>
 
 
 
@@ -137,14 +137,44 @@ X-Content-Type-Options: nosniff
 X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
-Content-Type: application/json
-Cache-Control: no-cache
-X-Request-Id: 146015cf-98ec-412c-b7f0-3a354146b704
-X-Runtime: 0.002446
+Content-Type: application/json; charset=utf-8
+ETag: W/&quot;725332fcd310655413d0e740a9ea9fe2&quot;
+Cache-Control: max-age=0, private, must-revalidate
+X-Request-Id: 2216f07e-c883-4154-8673-8864295dbb14
+X-Runtime: 0.472843
 Vary: Origin
-Content-Length: 0</pre>
+Content-Length: 1149</pre>
             <h4>Status</h4>
-            <pre class="response status">501 Not Implemented</pre>
+            <pre class="response status">200 OK</pre>
+              <h4>Body</h4>
+              <pre class="response body">{
+  &quot;id&quot;: &quot;5112bf35-d5f8-4641-979a-fd9d5e11083c&quot;,
+  &quot;legacy_pk&quot;: null,
+  &quot;code&quot;: null,
+  &quot;date&quot;: &quot;1959-01-28T00:00:00.000-05:00&quot;,
+  &quot;addressed_to&quot;: &quot;53717 Shani Plains, Kizzieborough, RI 85731-8261&quot;,
+  &quot;addressed_from&quot;: &quot;Apt. 158 8365 Hintz Drives, Port Gennashire, AR 40042-8826&quot;,
+  &quot;language&quot;: &quot;german&quot;,
+  &quot;physical_desc&quot;: &quot;Et explicabo aut. Qui ab in. Consequatur qui molestiae.&quot;,
+  &quot;physical_detail&quot;: &quot;offal&quot;,
+  &quot;physical_notes&quot;: &quot;Eaque aut sint. Corrupti tenetur quasi. Fugiat alias vel.&quot;,
+  &quot;repository_info&quot;: &quot;XOXO&quot;,
+  &quot;postcard_image&quot;: &quot;http://schulist.info/meditation.jpg&quot;,
+  &quot;leaves&quot;: 3,
+  &quot;sides&quot;: 2,
+  &quot;postmark&quot;: &quot;1965-04-14, Lake Sidbury&quot;,
+  &quot;typed&quot;: true,
+  &quot;signed&quot;: true,
+  &quot;verified&quot;: false,
+  &quot;envelope&quot;: &quot;E&quot;,
+  &quot;notes&quot;: &quot;Mollitia voluptatem placeat. Ipsum dignissimos iure. Et consequatur eaque.&quot;,
+  &quot;content&quot;: &quot;Aut unde odio. Eos et dolorem. Odit rerum qui. Repellat autem sint. Eaque rem aut. Aspernatur earum at. Dolorem pariatur beatae. Saepe dolor deleniti. Beatae omnis ex. Eaque fuga minima. Aliquam vero porro. Ex sint quod. Enim natus sunt.&quot;,
+  &quot;letter_owner_id&quot;: null,
+  &quot;file_folder_id&quot;: null,
+  &quot;letter_publisher_id&quot;: null,
+  &quot;created_at&quot;: &quot;2022-07-06T09:56:15.264-04:00&quot;,
+  &quot;updated_at&quot;: &quot;2022-07-06T09:56:15.264-04:00&quot;
+}</pre>
       </div>
     </div>
   </body>

@@ -1,6 +1,6 @@
 # Letters API
 
-## Creating a letter not implemented
+## POST /letters
 
 ### POST /letters
 ### Request
@@ -29,8 +29,8 @@ X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json
 Cache-Control: no-cache
-X-Request-Id: 8d97ce8f-2a25-4296-937e-78a8b8cfdaf6
-X-Runtime: 0.002947
+X-Request-Id: 8d619023-a833-43a0-8d38-bb7d9d4d5914
+X-Runtime: 0.003067
 Vary: Origin
 Content-Length: 0</pre>
 
