@@ -17,9 +17,13 @@ resource 'Letters' do
     parameter :page, 'Current page of letters', { type: 'String', default: '1' }
     parameter :per_page, 'Number of letters on a single response.', { default: '25' }
     parameter :q, 'Text to search.', { default: '*' }
-    parameter :fields, 'List of fields to include be queried.', { default: 'recipients,mentions,destinations,origins,repositories' }
+    parameter :fields, 'Comma seperated list of fields to be queried.', { default: 'recipients,mentions,destinations,origins,repositories' }
     parameter :start_date, 'Letters dated on or after given date. Must be in YYYY-MM-DD format.', { default: 'nil' }
     parameter :end_date, 'Letters dated on or before given date. Must be in YYYY-MM-DD format.', { default: 'nil' }
+    parameter :recipients, 'Comma seperated list of recipient labels', { default: 'nil' }
+    parameter :destinations, 'Comma seperated list of destination labels', { default: 'nil' }
+    parameter :origins, 'Comma seperated list of origin labels', { default: 'nil' }
+    parameter :repositories, 'Comma seperated list of repository labels', { default: 'nil' }
 
     # let(:per_page) { 25 }
     # let(:page) { 1 }

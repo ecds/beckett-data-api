@@ -15,7 +15,7 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /letters/5112bf35-d5f8-4641-979a-fd9d5e11083c</pre>
+<pre>GET /letters/6fd96553-08d5-41be-9f90-1d731f813802</pre>
 
 ### Response
 
@@ -28,12 +28,12 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;725332fcd310655413d0e740a9ea9fe2&quot;
+ETag: W/&quot;423e05f4d122d43385b0dfdd07388785&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 2216f07e-c883-4154-8673-8864295dbb14
-X-Runtime: 0.472843
+X-Request-Id: ef366899-1f18-4235-9857-65ba5c4fc966
+X-Runtime: 0.474211
 Vary: Origin
-Content-Length: 1149</pre>
+Content-Length: 1160</pre>
 
 #### Status
 
@@ -42,30 +42,30 @@ Content-Length: 1149</pre>
 #### Body
 
 <pre>{
-  "id": "5112bf35-d5f8-4641-979a-fd9d5e11083c",
+  "id": "6fd96553-08d5-41be-9f90-1d731f813802",
   "legacy_pk": null,
   "code": null,
-  "date": "1959-01-28T00:00:00.000-05:00",
-  "addressed_to": "53717 Shani Plains, Kizzieborough, RI 85731-8261",
-  "addressed_from": "Apt. 158 8365 Hintz Drives, Port Gennashire, AR 40042-8826",
+  "date": "1963-09-05T00:00:00.000-04:00",
+  "addressed_to": "62528 Cronin Overpass, Wilkinsontown, HI 03281",
+  "addressed_from": "Apt. 655 518 Wynona Vista, North Lonfurt, TN 28489-1496",
   "language": "german",
-  "physical_desc": "Et explicabo aut. Qui ab in. Consequatur qui molestiae.",
-  "physical_detail": "offal",
-  "physical_notes": "Eaque aut sint. Corrupti tenetur quasi. Fugiat alias vel.",
-  "repository_info": "XOXO",
-  "postcard_image": "http://schulist.info/meditation.jpg",
-  "leaves": 3,
+  "physical_desc": "Aperiam qui quas. Maiores enim nostrum. Voluptatem ullam enim.",
+  "physical_detail": "chartreuse",
+  "physical_notes": "Quidem excepturi mollitia. Officiis natus ea. Et et magnam.",
+  "repository_info": "twee",
+  "postcard_image": "http://smith.net/offal.jpg",
+  "leaves": 1,
   "sides": 2,
-  "postmark": "1965-04-14, Lake Sidbury",
+  "postmark": "1963-12-21, Beckerfort",
   "typed": true,
   "signed": true,
-  "verified": false,
+  "verified": true,
   "envelope": "E",
-  "notes": "Mollitia voluptatem placeat. Ipsum dignissimos iure. Et consequatur eaque.",
-  "content": "Aut unde odio. Eos et dolorem. Odit rerum qui. Repellat autem sint. Eaque rem aut. Aspernatur earum at. Dolorem pariatur beatae. Saepe dolor deleniti. Beatae omnis ex. Eaque fuga minima. Aliquam vero porro. Ex sint quod. Enim natus sunt.",
+  "notes": "Occaecati dolorum laudantium. Atque voluptatem deserunt. Tempora voluptatem et.",
+  "content": "Animi autem ipsa. Saepe eum sint. Tempora at ut. Libero dicta a. Dignissimos cum molestias. Rerum voluptatem earum. Maiores nemo eligendi. Facilis aliquam dolorem. Iste omnis occaecati. Perspiciatis est similique. Rerum quasi ut. Eius ipsam quia.",
   "letter_owner_id": null,
   "file_folder_id": null,
   "letter_publisher_id": null,
-  "created_at": "2022-07-06T09:56:15.264-04:00",
-  "updated_at": "2022-07-06T09:56:15.264-04:00"
+  "created_at": "2022-07-06T10:48:02.449-04:00",
+  "updated_at": "2022-07-06T10:48:02.449-04:00"
 }</pre>
