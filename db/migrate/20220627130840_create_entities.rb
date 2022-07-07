@@ -7,7 +7,7 @@ class CreateEntities < ActiveRecord::Migration[7.0]
       t.jsonb :properties
       t.boolean :flagged, default: true, null: false
       t.boolean :is_public, default: false, null: false
-      t.integer :e_type, default: 0, null: false
+      t.integer :e_type, default: 3, null: false
 
       t.timestamps
     end
