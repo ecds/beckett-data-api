@@ -6,6 +6,6 @@ class ApplicationRecord < ActiveRecord::Base
   class_attribute :url
 
   def url_path
-    "/#{self.class.name.downcase}/#{id}"
+    "/#{self.class.name.pluralize.downcase}/#{id}"
   end
 end

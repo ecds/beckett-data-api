@@ -24,18 +24,18 @@ class Entity < ApplicationRecord
   has_many :letters_received, through: :letter_recipients, source: :letter
 
   enum e_type: {
-    person: 0,
-    organization: 1,
-    place: 2,
-    production: 3,
-    writing: 4,
-    translating: 5,
-    reading: 6,
-    attendance: 7,
-    music: 8,
-    publication: 9,
-    public_event: 10,
-    work_of_art: 11
+    attendance: 0,
+    music: 1,
+    organization: 2,
+    person: 3,
+    place: 4,
+    production: 5,
+    public_event: 6,
+    publication: 7,
+    reading: 8,
+    translating: 9,
+    work_of_art: 10,
+    writing: 11
   }
 
   def clean_label
@@ -91,15 +91,15 @@ class Entity < ApplicationRecord
   def short_display
     inner_html = case e_type
                  when 'attendance'
-                   [properties[:eventType], label, properties[:placeDate]].compact.join(', ')
+                   [properties[:event_type], label, properties[:place_date]].compact.join(', ')
                  when 'music'
-                   alts = properties[:alternateSpellings].empty? ? nil : "[#{properties[:alternateSpellings].join(', ')}]"
+                   alts = properties[:alternate_spellings].empty? ? nil : "[#{properties[:alternate_spellings].join(', ')}]"
                    main_label = [properties[:composer], label].compact.join(', ')
                    alts.nil? ? main_label : "#{main_label} #{alts}"
                  when 'organization'
-                   properties[:alternateSpellings].empty? ? label : "#{label}, #{properties[:alternateSpellings].join(', ')}"
+                   properties[:alternate_spellings].empty? ? label : "#{label}, #{properties[:alternate_spellings].join(', ')}"
                  when 'person'
-                   ["#{label} #{properties[:lifeDates]}".strip, description].compact.join('. ')
+                   ["#{label} #{properties[:life_dates]}".strip, description].compact.join('. ')
                  when 'place', 'writing'
                    label
                  when 'production'
@@ -109,13 +109,13 @@ class Entity < ApplicationRecord
                    properties[:date].nil? ? label : "#{label} (#{properties[:date]})"
                  when 'publication'
                    main_label = [properties[:author], label, properties[:translator]].compact.join(', ')
-                   properties[:publicationInformation].nil? ? main_label : "#{main_label} #{properties[:publicationInformation]}"
+                   properties[:publication_information].nil? ? main_label : "#{main_label} #{properties[:publication_information]}"
                  when 'reading'
                    main_label = properties[:authors].empty? ? label : "#{properties[:authors].join(', ')}, #{label}"
                    [main_label, properties[:publication]].compact.join(', ')
                  when 'translating'
                    main_label = [properties[:author], label]
-                   into = properties[:translatedInto].nil? ? nil : "Translated into #{properties[:translatedInto]}"
+                   into = properties[:translated_into].nil? ? nil : "Translated into #{properties[:translated_into]}"
                    by = properties[:translator].nil? ? nil : "by #{properties[:translator]}"
                    extra = [into, by].compact.join(' ')
                    main_label.push(extra) unless extra.empty?
@@ -131,39 +131,39 @@ class Entity < ApplicationRecord
   def default_properties
     props = {
       attendance: {
-        alternateSpellings: [],
-        attendedWith: [],
+        alternate_spellings: [],
+        attended_with: [],
         director: nil,
-        eventType: nil,
+        event_type: nil,
         performedBy: [],
-        placeDate: nil
+        place_date: nil
       },
       music: {
-        alternateSpellings: [],
+        alternate_spellings: [],
         composer: nil,
         links: [],
         notes: nil,
-        performedBy: []
+        performed_by: []
       },
       organization: {
-        alternateSpellings: [],
+        alternate_spellings: [],
         profile: nil
       },
       person: {
-        alternateSpellings: [],
-        findingAids: [],
-        firstName: nil,
-        lastName: nil,
-        lifeDates: nil,
+        alternate_spellings: [],
+        finding_aids: [],
+        first_name: nil,
+        last_name: nil,
+        life_dates: nil,
         links: [],
         profile: nil
       },
       place: {
-        alternateSpellings: [],
+        alternate_spellings: [],
         links: []
       },
       production: {
-        alternateSpellings: [],
+        alternate_spellings: [],
         cast: [],
         city: nil,
         date: nil,
@@ -174,7 +174,7 @@ class Entity < ApplicationRecord
         proposal: nil,
         response: nil,
         reason: nil,
-        stagingBeckett: nil,
+        staging_beckett: nil,
         theater: nil
       },
       public_event: {
@@ -183,35 +183,35 @@ class Entity < ApplicationRecord
       publication: {
         author: nil,
         notes: nil,
-        publicationInformation: nil,
+        publication_information: nil,
         translator: nil
       },
       reading: {
         authors: [],
         comment: nil,
         publication: nil,
-        publicationFormat: nil
+        publication_format: nil
       },
       translating: {
         author: nil,
         comments: nil,
-        translatedInto: nil,
-        translatedTitle: nil,
+        translated_into: nil,
+        translated_title: nil,
         translator: nil
       },
       work_of_art: {
-        alternateSpellings: [],
+        alternate_spellings: [],
         artist: nil,
-        artistAlternateSpellings: [],
+        artist_alternate_spellings: [],
         notes: nil,
-        ownerLocationAccessionNumberCurrent: nil,
-        ownerLocationAccessionNumberContemporaneous: nil
+        owner_location_accession_number_current: nil,
+        owner_location_accession_number_contemporaneous: nil
       },
       writing: {
         date: nil,
         notes: nil,
         porposal: nil,
-        beckettDigitalManuscriptProject: nil
+        beckett_digital_manuscript_project: nil
       }
     }
 
@@ -223,7 +223,7 @@ class Entity < ApplicationRecord
 
   def format_properties
     self.properties = JSON.parse(properties).with_indifferent_access if properties.is_a? String
-    properties.transform_keys! {|key| key.underscore.camelize(:lower) }
+    properties.transform_keys! {|key| key.underscore.downcase }
     properties.each_key {|key| properties.delete(key.to_sym) unless default_properties.include?(key.to_sym) }
     self.properties = ActiveSupport::HashWithIndifferentAccess.new(default_properties.merge(properties))
     self.description = properties.delete(:description) if properties[:description].present?
