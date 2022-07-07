@@ -40,29 +40,30 @@ json.set! 'id', "#{request.protocol}#{request.host}#{letter.url_path}.json"
 json.set! 'date', letter.date
 # json.set! '@type', letter.schema_type
 
-# json.recipients do
-#   letter.personal_recipients.each do |personal|
-#     json.child! do
-#       json.partial! 'personals/personal', personal: personal, request: request
-#     end
-#   end
-#   letter.coporate_recipients.each do |coporate|
-#     json.child! do
-#       json.partial! 'coporates/coporate', coporate: coporate, request: request
-#     end
-#   end
-# end
+json.recipients do
+  letter.recipients.each do |recipient|
+    json.child! do
+      json.partial! 'entities/entity', entity: recipient, request: request
+    end
+  end
+end
 
-# json.mentions do
-#   Mention.types.each do |type|
-#     type_plural = type.to_s.pluralize
+json.destinations do
+  letter.destinations.each do |destination|
+    json.child! do
+      json.partial! 'entities/entity', entity: destination, request: request
+    end
+  end
+end
 
-#     next if letter.public_send(type_plural).empty?
+json.mentions do
+  Entity.e_types.each_key do |type|
+    next if letter.mentions.public_send(type).empty?
 
-#     letter.public_send(type_plural).each do |mention|
-#       json.child! do
-#         json.partial! "#{type_plural}/#{type}", "#{type}": mention, request: request
-#       end
-#     end
-#   end
-# end
+    json.set! type.pluralize do
+      json.array!(letter.mentions.public_send(type)) do |mention|
+        json.partial! 'entities/entity', entity: mention.entity, request: request
+      end
+    end
+  end
+end
