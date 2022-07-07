@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Letters API</title>
+    <meta charset="utf-8">
+    <style>
+      
+body {
+  font-family: Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 18px;
+  color: #404040;
+}
+
+.container {
+  width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  zoom: 1;
+}
+
+pre {
+  background-color: #f5f5f5;
+  display: block;
+  padding: 8.5px;
+  margin: 0 0 18px;
+  line-height: 18px;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+td.required .name:after {
+  float: right;
+  content: "required";
+  font-weight: normal;
+  color: #F08080;
+}
+
+a{
+  color: #0069d6;
+  text-decoration: none;
+  line-height: inherit;
+  font-weight: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  color: #404040;
+}
+
+h1 {
+  margin-bottom: 18px;
+  font-size: 30px;
+  line-height: 36px;
+}
+h2 {
+  font-size: 24px;
+  line-height: 36px;
+}
+h3{
+  font-size: 18px;
+  line-height: 36px;
+}
+h4 {
+  font-size: 16px;
+  line-height: 36px;
+}
+
+table{
+  width: 100%;
+  margin-bottom: 18px;
+  padding: 0;
+  border-collapse: separate;
+  font-size: 13px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  border-spacing: 0;
+  border: 1px solid #ddd;
+}
+
+table th {
+  padding-top: 9px;
+  font-weight: bold;
+  vertical-align: middle;
+  border-bottom: 1px solid #ddd;
+}
+table th+th, table td+td {
+  border-left: 1px solid #ddd;
+}
+table th, table td {
+  padding: 10px 10px 9px;
+  line-height: 18px;
+  text-align: left;
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Letters API</h1>
+
+      <div class="article">
+        <h2>Name search</h2>
+        <h3>GET /letters</h3>
+
+          <h3>Parameters</h3>
+          <table class="parameters table table-striped table-bordered table-condensed">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Default</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                    <span class="name">page</span>
+                </td>
+                <td>
+                  <span class="description">Current page of letters</span>
+                </td>
+                <td>
+                  <span class="default">1</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">per_page</span>
+                </td>
+                <td>
+                  <span class="description">Number of letters on a single response.</span>
+                </td>
+                <td>
+                  <span class="default">25</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">q</span>
+                </td>
+                <td>
+                  <span class="description">Text to search.</span>
+                </td>
+                <td>
+                  <span class="default">*</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">fields</span>
+                </td>
+                <td>
+                  <span class="description">Comma seperated list of fields to be queried.</span>
+                </td>
+                <td>
+                  <span class="default">recipients,mentions,destinations,origins,repositories</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">start_date</span>
+                </td>
+                <td>
+                  <span class="description">Letters dated on or after given date. Must be in YYYY-MM-DD format.</span>
+                </td>
+                <td>
+                  <span class="default">nil</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">end_date</span>
+                </td>
+                <td>
+                  <span class="description">Letters dated on or before given date. Must be in YYYY-MM-DD format.</span>
+                </td>
+                <td>
+                  <span class="default">nil</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">recipients</span>
+                </td>
+                <td>
+                  <span class="description">Comma seperated list of recipient labels</span>
+                </td>
+                <td>
+                  <span class="default">nil</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">destinations</span>
+                </td>
+                <td>
+                  <span class="description">Comma seperated list of destination labels</span>
+                </td>
+                <td>
+                  <span class="default">nil</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">origins</span>
+                </td>
+                <td>
+                  <span class="description">Comma seperated list of origin labels</span>
+                </td>
+                <td>
+                  <span class="default">nil</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">senders</span>
+                </td>
+                <td>
+                  <span class="description">Comma seperated list of sender labels</span>
+                </td>
+                <td>
+                  <span class="default">nil</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">repositories</span>
+                </td>
+                <td>
+                  <span class="description">Comma seperated list of repository labels</span>
+                </td>
+                <td>
+                  <span class="default">nil</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">languages</span>
+                </td>
+                <td>
+                  <span class="description">Comma seperated list of languages. Options are English, French, German, or Italian</span>
+                </td>
+                <td>
+                  <span class="default">nil</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Accept: application/json
+Content-Type: application/json
+Host: example.org
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">GET /letters?recipients=Bunny+Lebowski%2CJesus+Quintana</pre>
+
+            <h4>Query Parameters</h4>
+            <pre class="request query_parameters highlight">recipients: Bunny Lebowski,Jesus Quintana</pre>
+
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 0
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Permitted-Cross-Domain-Policies: none
+Referrer-Policy: strict-origin-when-cross-origin
+Link: &lt;http://example.org/letters?page=1&amp;recipients=Bunny+Lebowski%2CJesus+Quintana&gt;; rel=&#39;self&#39;
+X-Total-Count: 10
+Content-Type: application/json; charset=utf-8
+ETag: W/&quot;2e2f5bc7abd1c95a8737a7bef76658cc&quot;
+Cache-Control: max-age=0, private, must-revalidate
+X-Request-Id: 11dca63c-8578-4902-aae6-0aef3ac98f04
+X-Runtime: 7.517202
+Vary: Origin
+Content-Length: 23806</pre>
+            <h4>Status</h4>
+            <pre class="response status">200 OK</pre>
+              <h4>Body</h4>
+              <pre class="response body">{
+  &quot;letters&quot;: [
+    {
+      &quot;id&quot;: &quot;http://example.org/letters/cc2d6b21-feec-452c-aecf-40ed94d2612a.json&quot;,
+      &quot;date&quot;: &quot;1958-03-03T00:00:00.000-05:00&quot;,
+      &quot;recipients&quot;: [
+        {
+          &quot;id&quot;: &quot;http://example.org/entities/6d947834-312f-46f0-b823-abe8ffa715a0.json&quot;,
+          &quot;type&quot;: &quot;person&quot;,
+          &quot;label&quot;: &quot;Jesus Quintana&quot;,
+          &quot;description&quot;: &quot;&lt;span&gt;Jesus Quintana (1903-1991). Offal pug kale chips cray fingerstache paleo art party waistcoat irony.&lt;/span&gt;&quot;
+        }
+      ],
+      &quot;destinations&quot;: [
+        {
+          &quot;id&quot;: &quot;http://example.org/entities/86f9947e-54e5-49d6-8fa3-d52f8bc4e5ae.json&quot;,
+          &quot;type&quot;: &quot;place&quot;,
+          &quot;label&quot;: &quot;Bistro Illegal&quot;,
+          &quot;description&quot;: &quot;&lt;span&gt;Bistro Illegal.&lt;/span&gt;&quot;
+        }
+      ],
+      &quot;mentions&quot;: {
+        &quot;attendances&quot;: [
+          {
+            &quot;id&quot;: &quot;http://example.org/entities/5cdd7300-b873-4fa4-806c-61b16fc59fbd.json&quot;,
+            &quot;type&quot;: &quot;attendance&quot;,
+            &quot;label&quot;: &quot;Donny&quot;,
+            &quot;description&quot;: &quot;&lt;span&gt;Donny.&lt;/span&gt;&quot;
+          }
+        ],
+        &quot;productions&quot;: [
+          {
+            &quot;id&quot;: &quot;http://example.org/entities/018c8569-449b-496e-bc65-1a8ff90ce8ff.json&quot;,
+            &quot;type&quot;: &quot;production&quot;,
+            &quot;label&quot;: &quot;Donny&quot;,
+            &quot;description&quot;: &quot;&lt;span&gt;Donny.&lt;/span&gt;&quot;
+          },
+          {
+            &quot;id&quot;: &quot;http://example.org/entities/44927575-9425-487b-b3ff-8c509c9d7afa.json&quot;,
+            &quot;type&quot;: &quot;production&quot;,
+            &quot;label&quot;: &quot;Walter Sobchak&quot;,
+            &quot;description&quot;: &quot;&lt;span&gt;Walter Sobchak.&lt;/span&gt;&quot;
+          },
+          {
+            &quot;id&quot;: &quot;http://example.org/entities/e8729f41-074c-4f89-a981-a1f09526b3fc.json&quot;,
+            &quot;type&quot;: &quot;production&quot;,
+            &quot;label&quot;: &quot;Brandt&quot;,
+            &quot;description&quot;: &quot;&lt;span&gt;Brandt.&lt;/span&gt;&quot;
+          }
+        ],
+        &quot;public_events&quot;: [
+          {
+            &quot;id&quot;: &quot;http://example.org/entities/df2d11fe-ceaf-4191-92f3-fdd0381dddd5.json&quot;,
+            &quot;type&quot;: &quot;public_event&quot;,
+            &quot;label&quot;: &quot;Maude Lebowski&quot;,
+            &quot;description&quot;: &quot;&lt;span&gt;Maude Lebowski.&lt;/span&gt;&quot;
+          }
+        ],
+        &quot;publications&quot;: [
+          {
+            &quot;id&quot;: &quot;http://example.org/entities/f7e1ac9c-b8c7-4f70-b0e0-6bd34c8de3f3.json&quot;,
+            &quot;type&quot;: &quot;publication&quot;,
+            &quot;label&quot;: &quot;Bunny Lebowski&quot;,
+            &quot;description&quot;: &quot;&lt;span&gt;Bunny Lebowski.&lt;/span&gt;&quot;
+          }
+        ],
+        &quot;translatings&quot;: [
+          {
+            &quot;id&quot;: &quot;http://example.org/entities/3e69b836-6e1b-4bd5-8faf-f5158f310567.json&quot;,
+            &quot;type&quot;: &quot;translating&quot;,
+            &quot;label&quot;: &quot;Walter Sobchak&quot;,
+            &quot;description&quot;: &quot;&lt;span&gt;Walter Sobchak.&lt;/span&gt;&quot;
+          },
+          {
+            &quot;id&quot;: &quot;http://example.org/entities/919cdf0a-cbfb-4764-9f99-fc744727795a.json&quot;,
+            &quot;type&quot;: &quot;translating&quot;,
+            &quot;label&quot;: &quot;Maude Lebowski&quot;,
+            &quot;description&quot;: &quot;&lt;span&gt;Maude Lebowski.&lt;/span&gt;&quot;
+          }
+        ],
+        &quot;writings&quot;: [
+          {
+            &quot;id&quot;: &quot;http://example.org/entities/eebe153e-7f96-402d-b46e-eebbf2dac11b.json&quot;,
+            &quot;type&quot;: &quot;writing&quot;,
+            &quot;label&quot;: &quot;Jesus Quintana&quot;,
+            &quot;description&quot;: &quot;&lt;span&gt;Jesus Quintana.&lt;/span&gt;&quot;
+          }
+        ]
+      }
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/letters/654caf4d-348f-4545-8d12-4e59194f0206.json&quot;,
+      &quot;date&quot;: &quot;1958-03-22T00:00:00.000-05:00&quot;,
+      &quot;recipients&quot;: [
+        {
+          &quot;id&quot;: &quot;http://example.org/entities/29ac4631-d831-4bff-b3c1-c160358cc59f.json&quot;,
+          &quot;type&quot;: &quot;person&quot;,
+          &quot;label&quot;: &quot;Bunny Lebowski&quot;,
+          &quot;description&quot;: &quot;&lt;span&gt;Bunny Lebowski (1924-1990). Blue bottle kickstarter fingerstache beard celiac poutine dreamcatcher.&lt;/span&gt;&quot;
+        }
+      ],
+      &quot;destinations&quot;: [
+        {
+          &quot;id&quot;: &quot;http://example.org/entities/3514bc61-92ea-4a30-affe-b99a691540b5.json&quot;,
+          &quot;type&quot;: &quot;place&quot;,
+          &quot;label&quot;: &quot;Fenchurch Street railway station&quot;,
+          &quot;description&quot;: &quot;&lt;span&gt;Fenchurch Street railway station.&lt;/span&gt;&quot;
+        }
+      ],
+      &quot;mentions&quot;: {
+        &quot;attendances&quot;: [
+          {
+            &quot;id&quot;: &quot;http://example.org/entities/3a4ce5c8-3fa5-4fc5-b916-0bf4173ee9c9.json&quot;,
+            &quot;type&quot;: &quot;attendance&quot;,
+            &quot;label&quot;: &quot;Walter Sobchak&quot;,
+            &quot;description&quot;: &quot;&lt;span&gt;Walter Sobchak.&lt;/span&gt;&quot;
+          },
+          {
+            &quot;id&quot;: &quot;http://example.org/entities/dde08945-3c4d-4835-88c1-d2a2a6e5bf99.json&quot;,
+            &quot;type&quot;: &quot;attendance&quot;,
+            &quot;label&quot;: &quot;Brandt&quot;,
+            &quot;description&quot;: &quot;&lt;span&gt;Brandt.&lt;/span&gt;&quot;
+          }
+        ],
+        &quot;musics&quot;: [
+          {
+            &quot;id&quot;: &quot;http://example.org/entities/5933b13d-8eb1-49b6-b6d2-29f6bd95e1b0.json&quot;,
+            &quot;type&quot;: &quot;music&quot;,
+            &quot;label&quot;: &quot;The Big Lebowski&quot;,
+            &quot;description&quot;: &quot;&lt;span&gt;The Big Lebowski.&lt;/span&gt;&quot;
+          }
+        ],
+        &quot;productions&quot;: [
+          {
+            &quot;id&quot;: &quot;http://example.org/entities/c83eb597-efa9-452f-8f6b-0d4a4e2f9a79.json&quot;,
+            &quot;type&quot;: &quot;production&quot;,
+            &quot;label&quot;: &quot;Jesus Quintana&quot;,
+            &quot;description&quot;: &quot;&lt;span&gt;Jesus Quintana.&lt;/span&gt;&quot;
+          },
+          {
+            &quot;id&quot;: &quot;http://example.org/entities/c81e6917-71c4-4d51-a180-9ebadaf2040a.json&quot;,
+            &quot;type&quot;: &quot;production&quot;,
+            &quot;label&quot;: &quot;The Big Lebowski&quot;,
+            &quot;description&quot;: &quot;&lt;span&gt;The Big Lebowski.&lt;/span&gt;&quot;
+          }
+        ],
+        &quot;public_events&quot;: [
+          {
+            &quot;id&quot;: &quot;http://example.org/entities/3932bf91-a9ea-46c4-baeb-391edb1e641b.json&quot;,
+            &quot;type&quot;: &quot;public_event&quot;,
+            &quot;label&quot;: &quot;The Big Lebowski&quot;,
+            &quot;description&quot;: &quot;&lt;span&gt;The Big Lebowski.&lt;/span&gt;&quot;
+          }
+        ],
+        &quot;publications&quot;: [
+          {
+            &quot;id&quot;: &quot;http://example.org/entities/133dde27-ef34-491d-9afa-ffd75a6185ac.json&quot;,
+            &quot;type&quot;: &quot;publication&quot;,
+            &quot;label&quot;: &quot;The Big Lebowski&quot;,
+            &quot;description&quot;: &quot;&lt;span&gt;The Big Lebowski.&lt;/span&gt;&quot;
+          }
+        ],
+        &quot;translatings&quot;: [
+          {
+            &quot;id&quot;: &quot;http://example.org/entities/34b86f51-233b-4a68-8dad-bb3b9b719992.json&quot;,
+            &quot;type&quot;: &quot;translating&quot;,
+            &quot;label&quot;: &quot;The Dude&quot;,
+            &quot;description&quot;: &quot;&lt;span&gt;The Dude.&lt;/span&gt;&quot;
+          }
+        ],
+        &quot;work_of_arts&quot;: [
+          {
+            &quot;id&quot;: &quot;http://example.org/entities/6706870d-5185-4e90-b20c-925c3a5d88cc.json&quot;,
+            &quot;type&quot;: &quot;work_of_art&quot;,
+            &quot;label&quot;: &quot;Karl Hungus&quot;,
+            &quot;description&quot;: &quot;&lt;span&gt;Karl Hungus, Plaid yuccie muggle magic direct trade.&lt;/span&gt;&quot;
+          }
+        ]
+      }
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/letters/24f5baef-3891-4c06-ba15-e62f1fbd7455.json&quot;,
+      &quot;date&quot;: &quot;1959-02-12T00:00:00.000-05:00&quot;,
+      &quot;recipients&quot;: [
+        {
+          &quot;id&quot;: &quot;http://example.org/entities/7f98de56-34dd-4e1e-895c-a783ab40938e.json&quot;,
+          &quot;type&quot;: &quot;person&quot;,
+          &quot;label&quot;: &quot;Jesus Quintana&quot;,
+          &quot;description&quot;: &quot;&lt;span&gt;Jesus Quintana (1904-1994). Pop-up thundercats dreamcatcher wayfarers tacos messenger bag.&lt;/span&gt;&quot;
+        }
+      ],
+      &quot;destinations&quot;: [
+        {
+          &quot;id&quot;: &quot;http://example.org/entities/3b65908d-59c4-4c74-8e65-6c8c68434287.json&quot;,
+          &quot;type&quot;: &quot;place&quot;,
+          &quot;label&quot;: &quot;The Big Bang Burger Bar&quot;,
+          &quot;description&quot;: &quot;&lt;span&gt;The Big Bang Burger Bar.&lt;/span&gt;&quot;
+        }
+      ],
+      &quot;mentions&quot;: {
+        &quot;musics&quot;: [
+          {
+            &quot;id&quot;: &quot;http://example.org/entities/be1e72b8-7092-487e-bcb3-4ca4c5e24c68.json&quot;,
+            &quot;type&quot;: &quot;music&quot;,
+            &quot;label&quot;: &quot;Karl Hungus&quot;,
+            &quot;description&quot;: &quot;&lt;span&gt;Karl Hungus.&lt;/span&gt;&quot;
+          }
+        ],
+        &quot;people&quot;: [
+          {
+            &quot;id&quot;: &quot;http://example.org/entities/edea8f41-864f-4579-a165-8013be094f0d.json&quot;,
+            &quot;type&quot;: &quot;person&quot;,
+            &quot;label&quot;: &quot;Walter Sobchak&quot;,
+            &quot;description&quot;: &quot;&lt;span&gt;Walter Sobchak. Five dollar toast pug whatever wayfarers sartorial keffiyeh locavore brooklyn.&lt;/span&gt;&quot;
+          },
+          {
+            &quot;id&quot;: &quot;http://example.org/entities/87252227-cbd4-4513-bb53-73899ff1c9dd.json&quot;,
+            &quot;type&quot;: &quot;person&quot;,
+            &quot;label&quot;: &quot;Karl Hungus&quot;,
+            &quot;description&quot;: &quot;&lt;span&gt;Karl Hungus. Kitsch phlogiston tacos vegan blog brunch.&lt;/span&gt;&quot;
+          }
+        ],
+        &quot;places&quot;: [
+          {
+            &quot;id&quot;: &quot;http://example.org/entities/c6fa4ffd-4263-42a0-8de6-cd1f6b07b54e.json&quot;,
+            &quot;type&quot;: &quot;place&quot;,
+            &quot;label&quot;: &quot;Bunny Lebowski&quot;,
+            &quot;description&quot;: &quot;&lt;span&gt;Bunny Lebowski.&lt;/span&gt;&quot;
+          }
+        ],
+        &quot;readings&quot;: [
+          {
+            &quot;id&quot;: &quot;http://example.org/entities/bcd2392f-6f78-46e7-934f-e842eba36602.json&quot;,
+            &quot;type&quot;: &quot;reading&quot;,
+            &quot;label&quot;: &quot;Maude Lebowski&quot;,
+            &quot;description&quot;: &quot;&lt;span&gt;Maude Lebowski.&lt;/span&gt;&quot;
+          }
+        ]
+      }
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/letters/fc715160-f456-44d0-b5e9-1262cd72abc1.json&quot;,
+      &quot;date&quot;: &quot;1959-04-08T00:00:00.000-05:00&quot;,
+      &quot;recipients&quot;: [
+        {
+          &quot;id&quot;: &quot;http://example.org/entities/6369a996-b776-49e0-ace5-7d6487b483ab.json&quot;,
+          &quot;type&quot;: &quot;person&quot;,
+          &quot;label&quot;: &quot;Jesus Quintana&quot;,
+          &quot;description&quot;: &quot;&lt;span&gt;Jesus Quintana (1912-1974). Skateboard keytar hoodie pork belly umami kombucha crucifix forage hashtag.&lt;/span&gt;&quot;
+        }
+      ],
+      &quot;destinations&quot;: [
+        {
+          &quot;id&quot;: &quot;http://example.org/entities/440e9449-1a90-4956-bfe1-03c1a0d699e9.json&quot;,
+          &quot;type&quot;: &quot;place&quot;,
+          &quot;label&quot;: &quot;Space&quot;,
+          &quot;description&quot;: &quot;&lt;span&gt;Space.&lt;/span&gt;&quot;
+        }
+      ],
+      &quot;mentions&quot;: {
+        &quot;attendances&quot;: [
+          {
+            &quot;id&quot;: &quot;http://example.org/entities/c7dfab22-3bf7-4e04-9c1e-69b778f1d679.json&quot;,
+            &quot;type&quot;: &quot;attendance&quot;,
+            &quot;label&quot;: &quot;The Big Lebowski&quot;,
+            &quot;description&quot;: &quot;&lt;span&gt;The Big Lebowski.&lt;/span&gt;&quot;
+          },
+          {
+            &quot;id&quot;: &quot;http://example.org/entities/776f8cfb-b2c3-4a6d-9e76-ee5900faa081.json&quot;,
+            &quot;type&quot;: &quot;attendance&quot;,
+            &quot;label&quot;: &quot;Jesus Quintana&quot;,
+            &quot;description&quot;: &quot;&lt;span&gt;Jesus Quintana.&lt;/span&gt;&quot;
+          }
+        ],
+        &quot;musics&quot;: [
+          {
+            &quot;id&quot;: &quot;http://example.org/entities/30cf3a0e-506e-42e9-beb4-d672eea43c11.json&quot;,
+            &quot;type&quot;: &quot;music&quot;,
+            &quot;label&quot;: &quot;Bunny Lebowski&quot;,
+            &quot;description&quot;: &quot;&lt;span&gt;Bunny Lebowski.&lt;/span&gt;&quot;
+          }
+        ],
+        &quot;people&quot;: [
+          {
+            &quot;id&quot;: &quot;http://example.org/entities/0449d2a9-2f64-4036-9829-d697d931f342.json&quot;,
+            &quot;type&quot;: &quot;person&quot;,
+            &quot;label&quot;: &quot;Donny&quot;,
+            &quot;description&quot;: &quot;&lt;span&gt;Donny. You probably haven&#39;t heard of them skateboard schlitz jean shorts cray loko banh mi +1.&lt;/span&gt;&quot;
+          }
+        ],
+        &quot;places&quot;: [
+          {
+            &quot;id&quot;: &quot;http://example.org/entities/4f9470b6-9808-4ddb-9a56-7b48f507c678.json&quot;,
+            &quot;type&quot;: &quot;place&quot;,
+            &quot;label&quot;: &quot;Donny&quot;,
+            &quot;description&quot;: &quot;&lt;span&gt;Donny.&lt;/span&gt;&quot;
+          }
+        ],
+        &quot;publications&quot;: [
+          {
+            &quot;id&quot;: &quot;http://example.org/entities/b5555c0d-7cfe-4fb9-85ca-0ca2a4c289fc.json&quot;,
+            &quot;type&quot;: &quot;publication&quot;,
+            &quot;label&quot;: &quot;The Big Lebowski&quot;,
+            &quot;description&quot;: &quot;&lt;span&gt;The Big Lebowski.&lt;/span&gt;&quot;
+          }
+        ],
+        &quot;writings&quot;: [
+          {
+            &quot;id&quot;: &quot;http://example.org/entities/1178b4fe-afa7-4ce5-a7ee-28d88838f4dc.json&quot;,
+            &quot;type&quot;: &quot;writing&quot;,
+            &quot;label&quot;: &quot;Bunny Lebowski&quot;,
+            &quot;description&quot;: &quot;&lt;span&gt;Bunny Lebowski.&lt;/span&gt;&quot;
+          }
+        ]
+      }
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/letters/1b3223a3-d7d4-4cff-ac48-c2c54bc65350.json&quot;,
+      &quot;date&quot;: &quot;1960-10-03T00:00:00.000-04:00&quot;,
+      &quot;recipients&quot;: [
+        {
+          &quot;id&quot;: &quot;http://example.org/entities/b24a9c07-6b18-4786-9b3c-74112404d065.json&quot;,
+          &quot;type&quot;: &quot;person&quot;,
+          &quot;label&quot;: &quot;Bunny Lebowski&quot;,
+          &quot;description&quot;: &quot;&lt;span&gt;Bunny Lebowski (1913-1998). Master next level bushwick yuccie street skateboard knausgaard aesthetic ugh.&lt;/span&gt;&quot;
+        }
+      ],
+      &quot;destinations&quot;: [
+        {
+          &quot;id&quot;: &quot;http://example.org/entities/48aa4eaa-bda3-4727-ac30-ad85a426f2f6.json&quot;,
+          &quot;type&quot;: &quot;place&quot;,
+          &quot;label&quot;: &quot;Cathedral of Chalesm&quot;,
+          &quot;description&quot;: &quot;&lt;span&gt;Cathedral of Chalesm.&lt;/span&gt;&quot;
+        }
+      ],
+      &quot;mentions&quot;: {
+        &quot;people&quot;: [
+          {
+            &quot;id&quot;: &quot;http://example.org/entities/afd4d775-b664-40b1-b5e1-f5994b9c0014.json&quot;,
+            &quot;type&quot;: &quot;person&quot;,
+            &quot;label&quot;: &quot;Bunny Lebowski&quot;,
+            &quot;description&quot;: &quot;&lt;span&gt;Bunny Lebowski. Selfies loko muggle magic hoodie pop-up freegan.&lt;/span&gt;&quot;
+          }
+        ],
+        &quot;productions&quot;: [
+          {
+            &quot;id&quot;: &quot;http://example.org/entities/eda59797-d9d4-47aa-a095-425f94e80d53.json&quot;,
+            &quot;type&quot;: &quot;production&quot;,
+            &quot;label&quot;: &quot;Donny&quot;,
+            &quot;description&quot;: &quot;&lt;span&gt;Donny.&lt;/span&gt;&quot;
+          }
+        ],
+        &quot;publications&quot;: [
+          {
+            &quot;id&quot;: &quot;http://example.org/entities/bee49558-7f65-4f27-b994-54038578259f.json&quot;,
+            &quot;type&quot;: &quot;publication&quot;,
+            &quot;label&quot;: &quot;Donny&quot;,
+            &quot;description&quot;: &quot;&lt;span&gt;Donny.&lt;/span&gt;&quot;
+          },
+          {
+            &quot;id&quot;: &quot;http://example.org/entities/bafbede6-12d3-47f6-8a61-ced2773574b9.json&quot;,
+            &quot;type&quot;: &quot;publication&quot;,
+            &quot;label&quot;: &quot;Brandt&quot;,
+            &quot;description&quot;: &quot;&lt;span&gt;Brandt.&lt;/span&gt;&quot;
+          }
+        ],
+        &quot;readings&quot;: [
+          {
+            &quot;id&quot;: &quot;http://example.org/entities/3d44eaa5-489c-49cf-b83b-4dc7ab9ceca8.json&quot;,
+            &quot;type&quot;: &quot;reading&quot;,
+            &quot;label&quot;: &quot;Maude Lebowski&quot;,
+            &quot;description&quot;: &quot;&lt;span&gt;Maude Lebowski.&lt;/span&gt;&quot;
+          }
+        ],
+        &quot;translatings&quot;: [
+          {
+            &quot;id&quot;: &quot;http://example.org/entities/a57ece8f-2596-4aed-bdb8-778a9c41da29.json&quot;,
+            &quot;type&quot;: &quot;translating&quot;,
+            &quot;label&quot;: &quot;Jackie Treehorn&quot;,
+            &quot;description&quot;: &quot;&lt;span&gt;Jackie Treehorn.&lt;/span&gt;&quot;
+          },
+          {
+            &quot;id&quot;: &quot;http://example.org/entities/a9fae077-1caf-4ad7-bd43-106bcab1206a.json&quot;,
+            &quot;type&quot;: &quot;translating&quot;,
+            &quot;label&quot;: &quot;Brandt&quot;,
+            &quot;description&quot;: &quot;&lt;span&gt;Brandt.&lt;/span&gt;&quot;
+          }
+        ],
+        &quot;work_of_arts&quot;: [
+          {
+            &quot;id&quot;: &quot;http://example.org/entities/9db24ae3-0e89-474e-bc45-dbf9e0240d88.json&quot;,
+            &quot;type&quot;: &quot;work_of_art&quot;,
+            &quot;label&quot;: &quot;Maude Lebowski&quot;,
+            &quot;description&quot;: &quot;&lt;span&gt;Maude Lebowski, Put a bird on it knausgaard lo-fi squid.&lt;/span&gt;&quot;
+          }
+        ],
+        &quot;writings&quot;: [
+          {
+            &quot;id&quot;: &quot;http://example.org/entities/e4ac1287-6c49-405d-bddf-e266b7dce1b4.json&quot;,
+            &quot;type&quot;: &quot;writing&quot;,
+            &quot;label&quot;: &quot;Brandt&quot;,
+            &quot;description&quot;: &quot;&lt;span&gt;Brandt.&lt;/span&gt;&quot;
+          },
+          {
+            &quot;id&quot;: &quot;http://example.org/entities/eebc32c0-6e4e-4d93-92cf-1309b4dcbf5e.json&quot;,
+            &quot;type&quot;: &quot;writing&quot;,
+            &quot;label&quot;: &quot;Walter Sobchak&quot;,
+            &quot;description&quot;: &quot;&lt;span&gt;Walter Sobchak.&lt;/span&gt;&quot;
+          }
+        ]
+      }
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/letters/3c2a32e3-8133-458d-b89e-1601dfda52f6.json&quot;,
+      &quot;date&quot;: &quot;1961-06-18T00:00:00.000-04:00&quot;,
+      &quot;recipients&quot;: [
+        {
+          &quot;id&quot;: &quot;http://example.org/entities/77ef3a6b-aa48-4184-b519-dd1355a610a1.json&quot;,
+          &quot;type&quot;: &quot;person&quot;,
+          &quot;label&quot;: &quot;Jesus Quintana&quot;,
+          &quot;description&quot;: &quot;&lt;span&gt;Jesus Quintana (1925-1974). Flannel roof pabst twee echo post-ironic meditation.&lt;/span&gt;&quot;
+        }
+      ],
+      &quot;destinations&quot;: [
+        {
+          &quot;id&quot;: &quot;http://example.org/entities/9871e245-99c2-4e75-be0a-45df29dc21ba.json&quot;,
+          &quot;type&quot;: &quot;place&quot;,
+          &quot;label&quot;: &quot;Islington&quot;,
+          &quot;description&quot;: &quot;&lt;span&gt;Islington.&lt;/span&gt;&quot;
+        }
+      ],
+      &quot;mentions&quot;: {
+        &quot;attendances&quot;: [
+          {
+            &quot;id&quot;: &quot;http://example.org/entities/3b820472-3c31-4514-acb1-d747bde0f6e9.json&quot;,
+            &quot;type&quot;: &quot;attendance&quot;,
+            &quot;label&quot;: &quot;Donny&quot;,
+            &quot;description&quot;: &quot;&lt;span&gt;Donny.&lt;/span&gt;&quot;
+          }
+        ],
+        &quot;people&quot;: [
+          {
+            &quot;id&quot;: &quot;http://example.org/entities/50bf7687-fe2f-4d9e-ba15-43d08c1bed83.json&quot;,
+            &quot;type&quot;: &quot;person&quot;,
+            &quot;label&quot;: &quot;Bunny Lebowski&quot;,
+            &quot;description&quot;: &quot;&lt;span&gt;Bunny Lebowski. Drinking next level biodiesel cray wayfarers waistcoat.&lt;/span&gt;&quot;
+          }
+        ],
+        &quot;places&quot;: [
+          {
+            &quot;id&quot;: &quot;http://example.org/entities/71de4526-8470-45f8-b321-e4fb43dcd047.json&quot;,
+            &quot;type&quot;: &quot;place&quot;,
+            &quot;label&quot;: &quot;The Dude&quot;,
+            &quot;description&quot;: &quot;&lt;span&gt;The Dude.&lt;/span&gt;&quot;
+          }
+        ],
+        &quot;productions&quot;: [
+          {
+            &quot;id&quot;: &quot;http://example.org/entities/fbc890a5-0705-4e2b-8ce5-4d0da3c59545.json&quot;,
+            &quot;type&quot;: &quot;production&quot;,
+            &quot;label&quot;: &quot;Brandt&quot;,
+            &quot;description&quot;: &quot;&lt;span&gt;Brandt.&lt;/span&gt;&quot;
+          }
+        ],
+        &quot;translatings&quot;: [
+          {
+            &quot;id&quot;: &quot;http://example.org/entities/236cfb35-ddff-46e1-a395-3bd9fbc08061.json&quot;,
+            &quot;type&quot;: &quot;translating&quot;,
+            &quot;label&quot;: &quot;Jesus Quintana&quot;,
+            &quot;description&quot;: &quot;&lt;span&gt;Jesus Quintana.&lt;/span&gt;&quot;
+          },
+          {
+            &quot;id&quot;: &quot;http://example.org/entities/c36fd4b9-9cda-4768-88ea-301cdabfc359.json&quot;,
+            &quot;type&quot;: &quot;translating&quot;,
+            &quot;label&quot;: &quot;Jesus Quintana&quot;,
+            &quot;description&quot;: &quot;&lt;span&gt;Jesus Quintana.&lt;/span&gt;&quot;
+          }
+        ]
+      }
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/letters/a728e8f7-33c0-4365-8a33-137b03f8020c.json&quot;,
+      &quot;date&quot;: &quot;1962-02-10T00:00:00.000-05:00&quot;,
+      &quot;recipients&quot;: [
+        {
+          &quot;id&quot;: &quot;http://example.org/entities/a19e890b-8083-40ff-992b-0901cf42e9cc.json&quot;,
+          &quot;type&quot;: &quot;person&quot;,
+          &quot;label&quot;: &quot;Bunny Lebowski&quot;,
+          &quot;description&quot;: &quot;&lt;span&gt;Bunny Lebowski (1907-1981). Single-origin coffee messenger bag pinterest meditation yr umami pbr&amp;b.&lt;/span&gt;&quot;
+        }
+      ],
+      &quot;destinations&quot;: [
+        {
+          &quot;id&quot;: &quot;http://example.org/entities/d05d01b6-0bc9-4b46-acf3-51efbb047440.json&quot;,
+          &quot;type&quot;: &quot;place&quot;,
+          &quot;label&quot;: &quot;29 Arlington Avenue&quot;,
+          &quot;description&quot;: &quot;&lt;span&gt;29 Arlington Avenue.&lt;/span&gt;&quot;
+        }
+      ],
+      &quot;mentions&quot;: {
+        &quot;musics&quot;: [
+          {
+            &quot;id&quot;: &quot;http://example.org/entities/a894ff20-69eb-4bd9-8abb-cddcb6f2e5fb.json&quot;,
+            &quot;type&quot;: &quot;music&quot;,
+            &quot;label&quot;: &quot;The Big Lebowski&quot;,
+            &quot;description&quot;: &quot;&lt;span&gt;The Big Lebowski.&lt;/span&gt;&quot;
+          }
+        ],
+        &quot;organizations&quot;: [
+          {
+            &quot;id&quot;: &quot;http://example.org/entities/79109e76-e1a4-4d5c-a541-dec6ca98a294.json&quot;,
+            &quot;type&quot;: &quot;organization&quot;,
+            &quot;label&quot;: &quot;Maude Lebowski&quot;,
+            &quot;description&quot;: &quot;&lt;span&gt;Maude Lebowski.&lt;/span&gt;&quot;
+          },
+          {
+            &quot;id&quot;: &quot;http://example.org/entities/6b65ec38-a333-4874-9368-21b7e00da1e3.json&quot;,
+            &quot;type&quot;: &quot;organization&quot;,
+            &quot;label&quot;: &quot;Jesus Quintana&quot;,
+            &quot;description&quot;: &quot;&lt;span&gt;Jesus Quintana.&lt;/span&gt;&quot;
+          }
+        ],
+        &quot;people&quot;: [
+          {
+            &quot;id&quot;: &quot;http://example.org/entities/4e0bfd47-7e2b-48cb-b22a-e081f9f9a8fe.json&quot;,
+            &quot;type&quot;: &quot;person&quot;,
+            &quot;label&quot;: &quot;Bunny Lebowski&quot;,
+            &quot;description&quot;: &quot;&lt;span&gt;Bunny Lebowski. Poutine brooklyn selvage wes anderson blog ugh retro.&lt;/span&gt;&quot;
+          }
+        ],
+        &quot;publications&quot;: [
+          {
+            &quot;id&quot;: &quot;http://example.org/entities/85d734b7-e8d3-408a-9957-f6f1db068ebc.json&quot;,
+            &quot;type&quot;: &quot;publication&quot;,
+            &quot;label&quot;: &quot;Jesus Quintana&quot;,
+            &quot;description&quot;: &quot;&lt;span&gt;Jesus Quintana.&lt;/span&gt;&quot;
+          }
+        ],
+        &quot;readings&quot;: [
+          {
+            &quot;id&quot;: &quot;http://example.org/entities/c27571b5-b91d-469a-aca1-ea9450bec494.json&quot;,
+            &quot;type&quot;: &quot;reading&quot;,
+            &quot;label&quot;: &quot;The Dude&quot;,
+            &quot;description&quot;: &quot;&lt;span&gt;The Dude.&lt;/span&gt;&quot;
+          }
+        ],
+        &quot;translatings&quot;: [
+          {
+            &quot;id&quot;: &quot;http://example.org/entities/a02a2171-25c4-4ed7-8a63-b64c48d85181.json&quot;,
+            &quot;type&quot;: &quot;translating&quot;,
+            &quot;label&quot;: &quot;Jackie Treehorn&quot;,
+            &quot;description&quot;: &quot;&lt;span&gt;Jackie Treehorn.&lt;/span&gt;&quot;
+          }
+        ],
+        &quot;work_of_arts&quot;: [
+          {
+            &quot;id&quot;: &quot;http://example.org/entities/6f357ffa-c043-4c29-9995-db247a265155.json&quot;,
+            &quot;type&quot;: &quot;work_of_art&quot;,
+            &quot;label&quot;: &quot;Donny&quot;,
+            &quot;description&quot;: &quot;&lt;span&gt;Donny, Vinyl venmo post-ironic asymmetrical.&lt;/span&gt;&quot;
+          },
+          {
+            &quot;id&quot;: &quot;http://example.org/entities/60edb3aa-179a-4bd2-a04f-41141f595369.json&quot;,
+            &quot;type&quot;: &quot;work_of_art&quot;,
+            &quot;label&quot;: &quot;Bunny Lebowski&quot;,
+            &quot;description&quot;: &quot;&lt;span&gt;Bunny Lebowski, Pug chambray austin williamsburg ugh tousled.&lt;/span&gt;&quot;
+          },
+          {
+            &quot;id&quot;: &quot;http://example.org/entities/8e8988d9-d240-469a-bae9-586c7e01fccc.json&quot;,
+            &quot;type&quot;: &quot;work_of_art&quot;,
+            &quot;label&quot;: &quot;Brandt&quot;,
+            &quot;description&quot;: &quot;&lt;span&gt;Brandt, Health tilde iphone disrupt chillwave taxidermy.&lt;/span&gt;&quot;
+          }
+        ],
+        &quot;writings&quot;: [
+          {
+            &quot;id&quot;: &quot;http://example.org/entities/76bacb03-46eb-41e3-921a-537962f88190.json&quot;,
+            &quot;type&quot;: &quot;writing&quot;,
+            &quot;label&quot;: &quot;Donny&quot;,
+            &quot;description&quot;: &quot;&lt;span&gt;Donny.&lt;/span&gt;&quot;
+          }
+        ]
+      }
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/letters/4b672c36-78f8-448d-9623-8d055d81086b.json&quot;,
+      &quot;date&quot;: &quot;1962-08-12T00:00:00.000-04:00&quot;,
+      &quot;recipients&quot;: [
+        {
+          &quot;id&quot;: &quot;http://example.org/entities/dc653d0a-fe38-44ce-b5d8-8f12d279b50e.json&quot;,
+          &quot;type&quot;: &quot;person&quot;,
+          &quot;label&quot;: &quot;Bunny Lebowski&quot;,
+          &quot;description&quot;: &quot;&lt;span&gt;Bunny Lebowski (1928-1984). Kitsch fashion axe polaroid stumptown hashtag tofu cray hammock etsy.&lt;/span&gt;&quot;
+        }
+      ],
+      &quot;destinations&quot;: [
+        {
+          &quot;id&quot;: &quot;http://example.org/entities/9ec212ff-c250-4585-b5f7-17615577a8a1.json&quot;,
+          &quot;type&quot;: &quot;place&quot;,
+          &quot;label&quot;: &quot;Guildford&quot;,
+          &quot;description&quot;: &quot;&lt;span&gt;Guildford.&lt;/span&gt;&quot;
+        }
+      ],
+      &quot;mentions&quot;: {
+        &quot;attendances&quot;: [
+          {
+            &quot;id&quot;: &quot;http://example.org/entities/4cf6296b-b653-4c12-a67a-9e61a0a33cbe.json&quot;,
+            &quot;type&quot;: &quot;attendance&quot;,
+            &quot;label&quot;: &quot;Karl Hungus&quot;,
+            &quot;description&quot;: &quot;&lt;span&gt;Karl Hungus.&lt;/span&gt;&quot;
+          }
+        ],
+        &quot;public_events&quot;: [
+          {
+            &quot;id&quot;: &quot;http://example.org/entities/2c551ae1-af34-4990-b306-7bb3f607fe24.json&quot;,
+            &quot;type&quot;: &quot;public_event&quot;,
+            &quot;label&quot;: &quot;Karl Hungus&quot;,
+            &quot;description&quot;: &quot;&lt;span&gt;Karl Hungus.&lt;/span&gt;&quot;
+          }
+        ],
+        &quot;publications&quot;: [
+          {
+            &quot;id&quot;: &quot;http://example.org/entities/d8994bff-2cd3-4e53-b3f1-95e2b95ad52f.json&quot;,
+            &quot;type&quot;: &quot;publication&quot;,
+            &quot;label&quot;: &quot;Jackie Treehorn&quot;,
+            &quot;description&quot;: &quot;&lt;span&gt;Jackie Treehorn.&lt;/span&gt;&quot;
+          }
+        ],
+        &quot;readings&quot;: [
+          {
+            &quot;id&quot;: &quot;http://example.org/entities/69e7b6b9-741c-4eb7-b473-db3f2bab1a09.json&quot;,
+            &quot;type&quot;: &quot;reading&quot;,
+            &quot;label&quot;: &quot;Walter Sobchak&quot;,
+            &quot;description&quot;: &quot;&lt;span&gt;Walter Sobchak.&lt;/span&gt;&quot;
+          }
+        ],
+        &quot;writings&quot;: [
+          {
+            &quot;id&quot;: &quot;http://example.org/entities/6a99f831-96b4-49cb-a6bd-5d2aba42d49e.json&quot;,
+            &quot;type&quot;: &quot;writing&quot;,
+            &quot;label&quot;: &quot;Bunny Lebowski&quot;,
+            &quot;description&quot;: &quot;&lt;span&gt;Bunny Lebowski.&lt;/span&gt;&quot;
+          }
+        ]
+      }
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/letters/a24cbdc1-876b-455b-85ef-e8d50d252208.json&quot;,
+      &quot;date&quot;: &quot;1963-10-23T00:00:00.000-04:00&quot;,
+      &quot;recipients&quot;: [
+        {
+          &quot;id&quot;: &quot;http://example.org/entities/0aece1fe-1490-4390-a8ba-36fe699cce00.json&quot;,
+          &quot;type&quot;: &quot;person&quot;,
+          &quot;label&quot;: &quot;Jesus Quintana&quot;,
+          &quot;description&quot;: &quot;&lt;span&gt;Jesus Quintana (1918-1971). Tousled plaid poutine everyday tilde locavore.&lt;/span&gt;&quot;
+        }
+      ],
+      &quot;destinations&quot;: [
+        {
+          &quot;id&quot;: &quot;http://example.org/entities/3714470d-5a8f-4a33-ac72-f4b83350969d.json&quot;,
+          &quot;type&quot;: &quot;place&quot;,
+          &quot;label&quot;: &quot;Highgate Cemetery&quot;,
+          &quot;description&quot;: &quot;&lt;span&gt;Highgate Cemetery.&lt;/span&gt;&quot;
+        }
+      ],
+      &quot;mentions&quot;: {
+        &quot;places&quot;: [
+          {
+            &quot;id&quot;: &quot;http://example.org/entities/4db309b7-27bd-4021-bda6-920b8b1a5b58.json&quot;,
+            &quot;type&quot;: &quot;place&quot;,
+            &quot;label&quot;: &quot;Donny&quot;,
+            &quot;description&quot;: &quot;&lt;span&gt;Donny.&lt;/span&gt;&quot;
+          },
+          {
+            &quot;id&quot;: &quot;http://example.org/entities/557c3b1a-92aa-4c0f-9fdc-59e25bab5264.json&quot;,
+            &quot;type&quot;: &quot;place&quot;,
+            &quot;label&quot;: &quot;Walter Sobchak&quot;,
+            &quot;description&quot;: &quot;&lt;span&gt;Walter Sobchak.&lt;/span&gt;&quot;
+          },
+          {
+            &quot;id&quot;: &quot;http://example.org/entities/3271820c-6799-4685-aafa-0a219ecc4b3d.json&quot;,
+            &quot;type&quot;: &quot;place&quot;,
+            &quot;label&quot;: &quot;Bunny Lebowski&quot;,
+            &quot;description&quot;: &quot;&lt;span&gt;Bunny Lebowski.&lt;/span&gt;&quot;
+          }
+        ],
+        &quot;productions&quot;: [
+          {
+            &quot;id&quot;: &quot;http://example.org/entities/bb84e8ea-2921-4b76-a169-09cbf6dc7b13.json&quot;,
+            &quot;type&quot;: &quot;production&quot;,
+            &quot;label&quot;: &quot;The Dude&quot;,
+            &quot;description&quot;: &quot;&lt;span&gt;The Dude.&lt;/span&gt;&quot;
+          },
+          {
+            &quot;id&quot;: &quot;http://example.org/entities/b3b12215-a329-423e-8408-2ca0ddda13c8.json&quot;,
+            &quot;type&quot;: &quot;production&quot;,
+            &quot;label&quot;: &quot;Karl Hungus&quot;,
+            &quot;description&quot;: &quot;&lt;span&gt;Karl Hungus.&lt;/span&gt;&quot;
+          }
+        ],
+        &quot;public_events&quot;: [
+          {
+            &quot;id&quot;: &quot;http://example.org/entities/0bcccea9-b2c8-4a75-b36c-a3924e4d44d9.json&quot;,
+            &quot;type&quot;: &quot;public_event&quot;,
+            &quot;label&quot;: &quot;Karl Hungus&quot;,
+            &quot;description&quot;: &quot;&lt;span&gt;Karl Hungus.&lt;/span&gt;&quot;
+          }
+        ],
+        &quot;publications&quot;: [
+          {
+            &quot;id&quot;: &quot;http://example.org/entities/b1caef55-b3bc-4283-b277-2afbf9c4d585.json&quot;,
+            &quot;type&quot;: &quot;publication&quot;,
+            &quot;label&quot;: &quot;Donny&quot;,
+            &quot;description&quot;: &quot;&lt;span&gt;Donny.&lt;/span&gt;&quot;
+          },
+          {
+            &quot;id&quot;: &quot;http://example.org/entities/388b626b-0284-448d-90f5-5e88e77e7498.json&quot;,
+            &quot;type&quot;: &quot;publication&quot;,
+            &quot;label&quot;: &quot;The Dude&quot;,
+            &quot;description&quot;: &quot;&lt;span&gt;The Dude.&lt;/span&gt;&quot;
+          }
+        ],
+        &quot;writings&quot;: [
+          {
+            &quot;id&quot;: &quot;http://example.org/entities/a99601a2-5635-4f9f-8ac8-33bc88ba47b1.json&quot;,
+            &quot;type&quot;: &quot;writing&quot;,
+            &quot;label&quot;: &quot;Jesus Quintana&quot;,
+            &quot;description&quot;: &quot;&lt;span&gt;Jesus Quintana.&lt;/span&gt;&quot;
+          },
+          {
+            &quot;id&quot;: &quot;http://example.org/entities/cb61794d-3e12-42bc-85e5-edec2eb2d89d.json&quot;,
+            &quot;type&quot;: &quot;writing&quot;,
+            &quot;label&quot;: &quot;Maude Lebowski&quot;,
+            &quot;description&quot;: &quot;&lt;span&gt;Maude Lebowski.&lt;/span&gt;&quot;
+          }
+        ]
+      }
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/letters/4ca726ff-03bf-416a-837e-7a72b60cf030.json&quot;,
+      &quot;date&quot;: &quot;1964-04-23T00:00:00.000-05:00&quot;,
+      &quot;recipients&quot;: [
+        {
+          &quot;id&quot;: &quot;http://example.org/entities/a40cea7f-7096-4bc8-b793-8b5dda2a88a0.json&quot;,
+          &quot;type&quot;: &quot;person&quot;,
+          &quot;label&quot;: &quot;Bunny Lebowski&quot;,
+          &quot;description&quot;: &quot;&lt;span&gt;Bunny Lebowski (1910-1972). Loko jean shorts godard microdosing locavore diy vinyl polaroid.&lt;/span&gt;&quot;
+        }
+      ],
+      &quot;destinations&quot;: [
+        {
+          &quot;id&quot;: &quot;http://example.org/entities/9ca5df90-ba0b-4c38-b1f4-1a933a4791a0.json&quot;,
+          &quot;type&quot;: &quot;place&quot;,
+          &quot;label&quot;: &quot;Frogstar World B&quot;,
+          &quot;description&quot;: &quot;&lt;span&gt;Frogstar World B.&lt;/span&gt;&quot;
+        }
+      ],
+      &quot;mentions&quot;: {
+        &quot;attendances&quot;: [
+          {
+            &quot;id&quot;: &quot;http://example.org/entities/639a7266-8893-487a-a71c-083547bae888.json&quot;,
+            &quot;type&quot;: &quot;attendance&quot;,
+            &quot;label&quot;: &quot;Bunny Lebowski&quot;,
+            &quot;description&quot;: &quot;&lt;span&gt;Bunny Lebowski.&lt;/span&gt;&quot;
+          },
+          {
+            &quot;id&quot;: &quot;http://example.org/entities/4a82480a-c878-4f82-981f-12a41f31e12a.json&quot;,
+            &quot;type&quot;: &quot;attendance&quot;,
+            &quot;label&quot;: &quot;Maude Lebowski&quot;,
+            &quot;description&quot;: &quot;&lt;span&gt;Maude Lebowski.&lt;/span&gt;&quot;
+          }
+        ],
+        &quot;musics&quot;: [
+          {
+            &quot;id&quot;: &quot;http://example.org/entities/0e0ba346-0d7d-4c7b-95ed-fac391beba8e.json&quot;,
+            &quot;type&quot;: &quot;music&quot;,
+            &quot;label&quot;: &quot;The Big Lebowski&quot;,
+            &quot;description&quot;: &quot;&lt;span&gt;The Big Lebowski.&lt;/span&gt;&quot;
+          }
+        ],
+        &quot;organizations&quot;: [
+          {
+            &quot;id&quot;: &quot;http://example.org/entities/b7572df6-61df-4526-a7d2-18ed4432413d.json&quot;,
+            &quot;type&quot;: &quot;organization&quot;,
+            &quot;label&quot;: &quot;The Dude&quot;,
+            &quot;description&quot;: &quot;&lt;span&gt;The Dude.&lt;/span&gt;&quot;
+          }
+        ],
+        &quot;places&quot;: [
+          {
+            &quot;id&quot;: &quot;http://example.org/entities/da179f8f-d804-4adf-a46d-4d4d1b651535.json&quot;,
+            &quot;type&quot;: &quot;place&quot;,
+            &quot;label&quot;: &quot;Donny&quot;,
+            &quot;description&quot;: &quot;&lt;span&gt;Donny.&lt;/span&gt;&quot;
+          }
+        ],
+        &quot;public_events&quot;: [
+          {
+            &quot;id&quot;: &quot;http://example.org/entities/115a0bc8-65c7-4926-88b5-d12123a04cbc.json&quot;,
+            &quot;type&quot;: &quot;public_event&quot;,
+            &quot;label&quot;: &quot;Brandt&quot;,
+            &quot;description&quot;: &quot;&lt;span&gt;Brandt.&lt;/span&gt;&quot;
+          }
+        ],
+        &quot;readings&quot;: [
+          {
+            &quot;id&quot;: &quot;http://example.org/entities/14db7fe0-5ab6-4315-9eb3-df35937b8054.json&quot;,
+            &quot;type&quot;: &quot;reading&quot;,
+            &quot;label&quot;: &quot;The Dude&quot;,
+            &quot;description&quot;: &quot;&lt;span&gt;The Dude.&lt;/span&gt;&quot;
+          },
+          {
+            &quot;id&quot;: &quot;http://example.org/entities/cffd477d-862c-4032-8f7f-77e7b4f57921.json&quot;,
+            &quot;type&quot;: &quot;reading&quot;,
+            &quot;label&quot;: &quot;Jackie Treehorn&quot;,
+            &quot;description&quot;: &quot;&lt;span&gt;Jackie Treehorn.&lt;/span&gt;&quot;
+          }
+        ],
+        &quot;translatings&quot;: [
+          {
+            &quot;id&quot;: &quot;http://example.org/entities/1d9e978c-8059-453c-9561-c191dc200cd1.json&quot;,
+            &quot;type&quot;: &quot;translating&quot;,
+            &quot;label&quot;: &quot;Donny&quot;,
+            &quot;description&quot;: &quot;&lt;span&gt;Donny.&lt;/span&gt;&quot;
+          }
+        ],
+        &quot;writings&quot;: [
+          {
+            &quot;id&quot;: &quot;http://example.org/entities/41dd3ea8-8dab-4734-843f-327bba6e498d.json&quot;,
+            &quot;type&quot;: &quot;writing&quot;,
+            &quot;label&quot;: &quot;Brandt&quot;,
+            &quot;description&quot;: &quot;&lt;span&gt;Brandt.&lt;/span&gt;&quot;
+          }
+        ]
+      }
+    }
+  ],
+  &quot;aggs&quot;: {
+    &quot;date&quot;: {
+      &quot;meta&quot;: {
+      },
+      &quot;doc_count&quot;: 10,
+      &quot;buckets&quot;: [
+        {
+          &quot;key_as_string&quot;: &quot;1958-01-01T00:00:00.000Z&quot;,
+          &quot;key&quot;: -378691200000,
+          &quot;doc_count&quot;: 2
+        },
+        {
+          &quot;key_as_string&quot;: &quot;1959-01-01T00:00:00.000Z&quot;,
+          &quot;key&quot;: -347155200000,
+          &quot;doc_count&quot;: 2
+        },
+        {
+          &quot;key_as_string&quot;: &quot;1960-01-01T00:00:00.000Z&quot;,
+          &quot;key&quot;: -315619200000,
+          &quot;doc_count&quot;: 1
+        },
+        {
+          &quot;key_as_string&quot;: &quot;1961-01-01T00:00:00.000Z&quot;,
+          &quot;key&quot;: -283996800000,
+          &quot;doc_count&quot;: 1
+        },
+        {
+          &quot;key_as_string&quot;: &quot;1962-01-01T00:00:00.000Z&quot;,
+          &quot;key&quot;: -252460800000,
+          &quot;doc_count&quot;: 2
+        },
+        {
+          &quot;key_as_string&quot;: &quot;1963-01-01T00:00:00.000Z&quot;,
+          &quot;key&quot;: -220924800000,
+          &quot;doc_count&quot;: 1
+        },
+        {
+          &quot;key_as_string&quot;: &quot;1964-01-01T00:00:00.000Z&quot;,
+          &quot;key&quot;: -189388800000,
+          &quot;doc_count&quot;: 1
+        }
+      ]
+    },
+    &quot;repositories&quot;: {
+      &quot;meta&quot;: {
+      },
+      &quot;doc_count&quot;: 10,
+      &quot;doc_count_error_upper_bound&quot;: 0,
+      &quot;sum_other_doc_count&quot;: 0,
+      &quot;buckets&quot;: [
+        {
+          &quot;key&quot;: &quot;Collins Institute&quot;,
+          &quot;doc_count&quot;: 8
+        },
+        {
+          &quot;key&quot;: &quot;Northern Arkansas Academy&quot;,
+          &quot;doc_count&quot;: 7
+        },
+        {
+          &quot;key&quot;: &quot;Medhurst University&quot;,
+          &quot;doc_count&quot;: 4
+        }
+      ]
+    },
+    &quot;language&quot;: {
+      &quot;meta&quot;: {
+      },
+      &quot;doc_count&quot;: 10,
+      &quot;doc_count_error_upper_bound&quot;: 0,
+      &quot;sum_other_doc_count&quot;: 0,
+      &quot;buckets&quot;: [
+        {
+          &quot;key&quot;: &quot;english&quot;,
+          &quot;doc_count&quot;: 5
+        },
+        {
+          &quot;key&quot;: &quot;italian&quot;,
+          &quot;doc_count&quot;: 4
+        },
+        {
+          &quot;key&quot;: &quot;german&quot;,
+          &quot;doc_count&quot;: 1
+        }
+      ]
+    }
+  },
+  &quot;meta&quot;: {
+    &quot;page&quot;: 1,
+    &quot;per_page&quot;: 25,
+    &quot;page_count&quot;: 1,
+    &quot;total_count&quot;: 10,
+    &quot;links&quot;: {
+      &quot;self&quot;: &quot;http://example.org/letters?page=1&amp;recipients=Bunny+Lebowski%2CJesus+Quintana&quot;
+    }
+  }
+}</pre>
+      </div>
+    </div>
+  </body>
+</html>
