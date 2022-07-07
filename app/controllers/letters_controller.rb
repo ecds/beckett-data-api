@@ -4,7 +4,6 @@ class LettersController < ApplicationController
   before_action :set_letter, only: %i[show]
   before_action :set_filters, only: %i[index]
 
-
   # GET /letters
   def index
     Letter.reindex if ENV['RAILS_ENV'] == 'test'
@@ -29,7 +28,8 @@ class LettersController < ApplicationController
       per_page: params[:per_page] || 25,
       where: @where,
       fields: @fields,
-      operator: 'or'
+      operator: 'or',
+      order: { date: :asc }
     )
 
     include_pagination(@letters)
@@ -52,27 +52,44 @@ class LettersController < ApplicationController
 
   def set_filters
     @where = { _and: [] }
-    @fields = []
 
-    params[:fields].split(',').each {|field| @fields.push(field.to_sym) } if params[:fields].present?
+    @fields = if params[:fields].present?
+                params[:fields].split(',').map(&:strip).map(&:to_sym)
+              else
+                %i[recipients destinations origins mentions repositories]
+              end
 
-    if params[:start_date] || params[:end_date]
+    if params[:start_date]
       @where[:_and].push(
         {
           date: {
-            gte: parse_date(params[:start_date]) || DateTime.new(1957)
-          }
-        }
-      )
-
-      @where[:_and].push(
-        {
-          date: {
-            lte: parse_date(params[:end_date]) || DateTime.new(1965, 12).at_end_of_month
+            gte: Date.parse(params[:start_date])
           }
         }
       )
     end
+
+    if params[:end_date]
+      @where[:_and].push(
+        {
+          date: {
+            lte: Date.parse(params[:end_date])
+          }
+        }
+      )
+    end
+
+    @where[:recipients] = { in: params[:recipients].split(',').map(&:strip) } if params[:recipients].present?
+
+    @where[:destinations] = { in: params[:destinations].split(',').map(&:strip) } if params[:destinations].present?
+
+    @where[:origins] = { in: params[:origins].split(',').map(&:strip) } if params[:origins].present?
+
+    @where[:senders] = { in: params[:senders].split(',').map(&:strip) } if params[:senders].present?
+
+    @where[:repositories] = { in: params[:repositories].split(',').map(&:strip) } if params[:repositories].present?
+
+    @where[:language] = { in: params[:languages].downcase.split(',').map(&:strip) } if params[:languages].present?
 
     # if params[:recipients].present?
     #   recipients = params[:recipients].split(',')

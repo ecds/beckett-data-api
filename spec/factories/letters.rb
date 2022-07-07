@@ -18,8 +18,15 @@ FactoryBot.define do
     verified { Faker::Boolean.boolean }
     envelope { 'E' }
     notes { Faker::Lorem.paragraph }
-    content { Faker::Lorem.paragraph(sentence_count: Faker::Number.between(from: 12, to: 15)) }
-    language { %w[english french german].sample }
+    content { Faker::Lorem.paragraph(sentence_count: Faker::Number.within(range: 12..15)) }
+    language { %w[english french german italian].sample }
+    recipients { create_list(:person_entity, 1) }
+    destinations { create_list(:place_entity, 1) }
+    origins { create_list(:place_entity, 1) }
+    entities { create_list(:entity, Faker::Number.within(range: 4..11)) }
+    letter_file { create(:letter_file) }
+    letter_owner { create(:letter_owner) }
+    letter_publisher { create(:letter_publisher) }
 
     factory :public_letter do
       date { Faker::Date.between(from: '1957-01-01', to: '1965-12-31') }

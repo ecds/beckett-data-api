@@ -22,7 +22,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_27_201906) do
     t.jsonb "properties"
     t.boolean "flagged", default: true, null: false
     t.boolean "is_public", default: false, null: false
-    t.integer "e_type", default: 0, null: false
+    t.integer "e_type", default: 3, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -36,6 +36,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_27_201906) do
     t.index ["letter_id"], name: "index_letter_destinations_on_letter_id"
   end
 
+  create_table "letter_files", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "label"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "letter_origins", force: :cascade do |t|
     t.uuid "entity_id"
     t.uuid "letter_id"
@@ -43,6 +49,18 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_27_201906) do
     t.datetime "updated_at", null: false
     t.index ["entity_id"], name: "index_letter_origins_on_entity_id"
     t.index ["letter_id"], name: "index_letter_origins_on_letter_id"
+  end
+
+  create_table "letter_owners", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "label"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "letter_publishers", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "label"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "letter_recipients", force: :cascade do |t|
@@ -87,17 +105,21 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_27_201906) do
     t.integer "leaves"
     t.integer "sides"
     t.string "postmark"
+    t.string "volume_pages"
     t.boolean "typed", default: true, null: false
     t.boolean "signed", default: false, null: false
     t.boolean "verified", default: false, null: false
     t.string "envelope"
     t.text "notes"
     t.text "content"
+    t.uuid "letter_file_id"
+    t.uuid "letter_publisher_id"
     t.uuid "letter_owner_id"
-    t.bigint "file_folder_id"
-    t.bigint "letter_publisher_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["letter_file_id"], name: "index_letters_on_letter_file_id"
+    t.index ["letter_owner_id"], name: "index_letters_on_letter_owner_id"
+    t.index ["letter_publisher_id"], name: "index_letters_on_letter_publisher_id"
   end
 
   create_table "mentions", force: :cascade do |t|

@@ -12,7 +12,7 @@ resource 'Letters' do
   # As a second parameter we pass request description.
   # REST APIs requests may have the same paths, but differ by HTTP method,
   # we extract a path to a parent block, so descendant blocks can describe each method
-  route '/letters', 'Letters Collection' do
+  route '/letters{page,per_page}', 'Letters Collection' do
     # List of optional parameters with description for request
     parameter :page, 'Current page of letters', { type: 'String', default: '1' }
     parameter :per_page, 'Number of letters on a single response.', { default: '25' }
@@ -23,27 +23,84 @@ resource 'Letters' do
     parameter :recipients, 'Comma seperated list of recipient labels', { default: 'nil' }
     parameter :destinations, 'Comma seperated list of destination labels', { default: 'nil' }
     parameter :origins, 'Comma seperated list of origin labels', { default: 'nil' }
+    parameter :senders, 'Comma seperated list of sender labels', { default: 'nil' }
     parameter :repositories, 'Comma seperated list of repository labels', { default: 'nil' }
+    parameter :languages, 'Comma seperated list of languages. Options are English, French, German, or Italian', { default: 'nil' }
 
-    # let(:per_page) { 25 }
-    # let(:page) { 1 }
-    # let(:q) { '*' }
-    # let(:fields) { 'recipients, mentions' }
-    # Testing GET /letters request.
-    get 'Returns all letters' do
-      # Creation of some test data.
-      let!(:repositories) { create_list(:repository, 4, public: true) }
-      let!(:public_letters) { create_list(:public_letter_existing_repos, 50) }
+    before {
+      create_list(:repository, 4, public: true)
+      create_list(:public_letter_existing_repos, 50)
+    }
 
-      # This block plays role of ‘it’ block from RSpec - the test scenario starts here,
-      # example_request makes request defined by ancestor blocks (GET /letters) implicitly,
-      # so we don’t have to call do_request method
-      example_request 'GET /letters' do
-        expect(
-          JSON.parse(response_body)['letters'].count
-        ).to eq(
-          25
-        )
+    get 'All letters' do
+      example_request 'All Letters' do
+        expect(status).to eq(200)
+      end
+    end
+
+    get 'letters query' do
+      let(:q) { LetterRecipient.all.sample.entity.label.split[-1].downcase }
+      example_request 'Keyword search' do
+        expect(status).to eq(200)
+      end
+    end
+
+    get 'letters by recipients' do
+      let(:recipients) { [LetterRecipient.first.entity.label, LetterRecipient.last.entity.label].join(',') }
+      example_request 'Name search' do
+        expect(status).to eq(200)
+      end
+    end
+
+    get 'letters by repository' do
+      let(:repositories) { Repository.all.sample.label }
+      example_request 'Repository search' do
+        expect(status).to eq(200)
+      end
+    end
+
+    get 'letters from start date' do
+      let(:dates) { Letter.all.map(&:date) }
+      let(:start_date) { dates[dates.count / 3].strftime('%Y-%m-%d') }
+      example_request 'Date filter - start_date' do
+        expect(status).to eq(200)
+      end
+    end
+
+    get 'letters before end date' do
+      let(:dates) { Letter.all.map(&:date) }
+      let(:end_date) { dates[(dates.count / 2) + 3].strftime('%Y-%m-%d') }
+      example_request 'Date filter - end_date' do
+        expect(status).to eq(200)
+      end
+    end
+
+    get 'letters betwen start and end dates' do
+      let(:dates) { Letter.all.map(&:date) }
+      let(:start_date) { dates[dates.count / 3].strftime('%Y-%m-%d') }
+      let(:end_date) { dates[(dates.count / 2) + 3].strftime('%Y-%m-%d') }
+      example_request 'Date filter start_date and end_date' do
+        expect(status).to eq(200)
+      end
+    end
+
+    # get 'letters by volume' do
+    #   example_request 'Volume facet' do
+    #     expect(status).to eq(200)
+    #   end
+    # end
+
+    get 'letters by language' do
+      let(:languages) { 'German, italian' }
+      example_request 'Language facet' do
+        expect(status).to eq(200)
+      end
+    end
+
+    get 'Paginated letters' do
+      let(:page) { 2 }
+      let(:per_page) { 10 }
+      example_request 'Paginated Letters' do
         expect(status).to eq(200)
       end
     end
@@ -62,41 +119,28 @@ resource 'Letters' do
     post 'Add a letter' do
       let(:request) { { letter: {} } }
 
-      context 'with an invalid brand' do
-        example 'POST /letters' do
-          do_request(request)
-          expect(status).to eq(501)
-        end
+      example 'POST /letters' do
+        do_request(request)
+        expect(status).to eq(501)
       end
     end
   end
 
   # Requests on a single letter.
   route '/letters/:id', 'Single Letter' do
-    # Options :type and :example are self-explanatory.
-    # parameter :id, 'Letter id', required: true, type: 'string', :example => '1'
-
     put 'Update a specific letter' do
       let(:id) { create(:letter).id }
 
-      # Here again, we calling request in an implicit manner.
-      # The :id parameter is fetched from the let statement.
       example_request 'PUT /letters/:id' do
         expect(status).to eq(501)
-        # expect(response_body).to eq('')
-        # expect(Letter.any?).to eq false
       end
     end
 
     delete 'Deletes a specific letter' do
       let(:id) { create(:letter).id }
 
-      # Here again, we calling request in an implicit manner.
-      # The :id parameter is fetched from the let statement.
       example_request 'DELETE /letters/:id' do
         expect(status).to eq(501)
-        # expect(response_body).to eq('')
-        # expect(Letter.any?).to eq false
       end
     end
   end

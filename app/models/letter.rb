@@ -21,6 +21,10 @@ class Letter < ApplicationRecord
   has_many :letter_repositories, dependent: :destroy
   has_many :repositories, -> { distinct }, through: :letter_repositories
 
+  belongs_to :letter_file, optional: true
+  belongs_to :letter_owner, optional: true
+  belongs_to :letter_publisher, optional: true
+
   enum :language, { english: 0, french: 1, german: 2, italian: 3 }
 
   scope :_public, lambda {
@@ -48,5 +52,20 @@ class Letter < ApplicationRecord
 
   def should_index?
     date.between? DateTime.new(1957), DateTime.new(1965, 12).at_end_of_month and repositories.any?(&:public)
+  end
+
+  def volume
+    case date
+    when DateTime.new(1929)..DateTime.new(1940, 12).at_end_of_month
+      '1929-1940'
+    when DateTime.new(1941)..DateTime.new(1956, 12).at_end_of_month
+      '1941-1956'
+    when DateTime.new(1957)..DateTime.new(1965, 12).at_end_of_month
+      '1957-1965'
+    when DateTime.new(1966)..DateTime.new(1989, 12).at_end_of_month
+      '1966-1989'
+    else
+      'unknown'
+    end
   end
 end
