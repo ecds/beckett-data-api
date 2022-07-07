@@ -6,10 +6,11 @@ FactoryBot.define do
   factory :entity do
     label { Faker::Movies::Lebowski.character }
     description { Faker::Hipster.sentence }
-    legacy_pk { Faker::Number.unique.within(range: 1..1000) }
+    legacy_pk { Faker::Number.unique.within(range: 1..100_000) }
+    e_type { Faker::Number.within(range: 0..11) }
 
     factory :attendance_entity do
-      e_type { 7 }
+      e_type { 0 }
       properties {
         ActiveSupport::HashWithIndifferentAccess.new(
           {
@@ -27,7 +28,7 @@ FactoryBot.define do
     end
 
     factory :music_entity do
-      e_type { 8 }
+      e_type { 1 }
       label { Faker::Music::Prince.song }
       properties {
         ActiveSupport::HashWithIndifferentAccess.new(
@@ -44,7 +45,7 @@ FactoryBot.define do
     end
 
     factory :organization_entity do
-      e_type { 1 }
+      e_type { 2 }
       label { Faker::Movies::HitchhikersGuideToTheGalaxy.planet }
       properties {
         ActiveSupport::HashWithIndifferentAccess.new(
@@ -57,7 +58,7 @@ FactoryBot.define do
     end
 
     factory :person_entity do
-      e_type { 0 }
+      e_type { 3 }
       properties {
         ActiveSupport::HashWithIndifferentAccess.new(
           {
@@ -95,7 +96,7 @@ FactoryBot.define do
     end
 
     factory :place_entity do
-      e_type { 2 }
+      e_type { 4 }
       label { Faker::Movies::HitchhikersGuideToTheGalaxy.location }
       properties {
         ActiveSupport::HashWithIndifferentAccess.new(
@@ -108,7 +109,7 @@ FactoryBot.define do
     end
 
     factory :production_entity do
-      e_type { 3 }
+      e_type { 5 }
       label { Faker::Movie.title }
       properties {
         ActiveSupport::HashWithIndifferentAccess.new(
@@ -131,7 +132,7 @@ FactoryBot.define do
     end
 
     factory :public_event_entity do
-      e_type { 10 }
+      e_type { 6 }
       label { Faker::Space.nasa_space_craft }
       properties {
         ActiveSupport::HashWithIndifferentAccess.new(
@@ -143,7 +144,7 @@ FactoryBot.define do
     end
 
     factory :publication_entity do
-      e_type { 9 }
+      e_type { 7 }
       properties {
         ActiveSupport::HashWithIndifferentAccess.new(
           {
@@ -157,7 +158,7 @@ FactoryBot.define do
     end
 
     factory :reading_entity do
-      e_type { 6 }
+      e_type { 8 }
       label { Faker::Book.title }
       properties {
         ActiveSupport::HashWithIndifferentAccess.new(
@@ -172,7 +173,7 @@ FactoryBot.define do
     end
 
     factory :translating_entity do
-      e_type { 5 }
+      e_type { 9 }
       label { Faker::Book.title }
       properties {
         ActiveSupport::HashWithIndifferentAccess.new(
@@ -188,7 +189,7 @@ FactoryBot.define do
     end
 
     factory :work_of_art_entity do
-      e_type { 11 }
+      e_type { 10 }
       label { Faker::Music::Prince.song }
       properties {
         ActiveSupport::HashWithIndifferentAccess.new(
@@ -205,7 +206,7 @@ FactoryBot.define do
     end
 
     factory :writing_entity do
-      e_type { 4 }
+      e_type { 11 }
       label { Faker::Book.title }
       properties {
         ActiveSupport::HashWithIndifferentAccess.new(

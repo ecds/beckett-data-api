@@ -70,44 +70,44 @@ RSpec.describe Entity, type: :model do
   end
 
   context 'when properties are added with non-camel keys' do
-    it 'camealizes key when dashes are present' do
+    it 'underscores key when dashes are present' do
       entity = create(:person_entity)
-      entity.properties['alternate-spellings'] = entity.properties.delete(:alternateSpellings)
+      entity.properties['alternate-spellings'] = entity.properties.delete(:alternate_spellings)
       expect(entity.properties).to have_key('alternate-spellings')
-      expect(entity.properties).not_to have_key(:alternateSpellings)
+      expect(entity.properties).not_to have_key(:alternate_spellings)
       entity.save
       expect(entity.properties).not_to have_key('alternate-spellings')
-      expect(entity.properties).to have_key(:alternateSpellings)
+      expect(entity.properties).to have_key(:alternate_spellings)
     end
 
-    it 'camealizes key when underscores are present' do
+    it 'underscores key when camelcase are present' do
       entity = create(:person_entity)
-      entity.properties['alternate_spellings'] = entity.properties.delete(:alternateSpellings)
-      expect(entity.properties).to have_key('alternate_spellings')
-      expect(entity.properties).not_to have_key(:alternateSpellings)
+      entity.properties['alternateSpellings'] = entity.properties.delete(:alternate_spellings)
+      expect(entity.properties).to have_key('alternateSpellings')
+      expect(entity.properties).not_to have_key(:alternate_spellings)
       entity.save
-      expect(entity.properties).not_to have_key('alternate_spellings')
-      expect(entity.properties).to have_key(:alternateSpellings)
+      expect(entity.properties).not_to have_key('alternateSpellings')
+      expect(entity.properties).to have_key(:alternate_spellings)
     end
 
-    it 'camealizes key whit first character lower' do
+    it 'underscores key whit first character lower' do
       entity = create(:person_entity)
-      entity.properties['Alternate-Spellings'] = entity.properties.delete(:alternateSpellings)
+      entity.properties['Alternate-Spellings'] = entity.properties.delete(:alternate_spellings)
       expect(entity.properties).to have_key('Alternate-Spellings')
-      expect(entity.properties).not_to have_key(:alternateSpellings)
+      expect(entity.properties).not_to have_key(:alternate_spellings)
       entity.save
       expect(entity.properties).not_to have_key('Alternate-Spellings')
-      expect(entity.properties).to have_key(:alternateSpellings)
+      expect(entity.properties).to have_key(:alternate_spellings)
     end
   end
 
   context 'when extra properties are added' do
     it 'removes extra properties' do
       entity = create(:place_entity)
-      entity.properties[:bestLebowskiCharacter] = Faker::Movies::Lebowski.character
-      expect(entity.properties).to have_key(:bestLebowskiCharacter)
+      entity.properties[:best_lebowski_character] = Faker::Movies::Lebowski.character
+      expect(entity.properties).to have_key(:best_lebowski_character)
       entity.save
-      expect(entity.properties).not_to have_key(:bestLebowskiCharacter)
+      expect(entity.properties).not_to have_key(:best_lebowski_character)
     end
   end
 
@@ -118,23 +118,23 @@ RSpec.describe Entity, type: :model do
       expect(
         entity.short_display
       ).to eq(
-        "<span>#{entity.properties[:eventType]}, #{entity.label}, #{entity.properties[:placeDate]}.</span>"
+        "<span>#{entity.properties[:event_type]}, #{entity.label}, #{entity.properties[:place_date]}.</span>"
       )
     end
 
-    it 'has short display when missing eventType' do
+    it 'has short display when missing event_type' do
       entity = create(:attendance_entity)
-      entity.properties[:eventType] = nil
-      expect(entity.short_display).to eq("<span>#{entity.label}, #{entity.properties[:placeDate]}.</span>")
+      entity.properties[:event_type] = nil
+      expect(entity.short_display).to eq("<span>#{entity.label}, #{entity.properties[:place_date]}.</span>")
     end
 
-    it 'has short display when missing placeDate' do
+    it 'has short display when missing place_date' do
       entity = create(:attendance_entity)
-      entity.properties[:placeDate] = nil
+      entity.properties[:place_date] = nil
       expect(
         entity.short_display
       ).to eq(
-        "<span>#{entity.properties[:eventType]}, #{entity.label}.</span>"
+        "<span>#{entity.properties[:event_type]}, #{entity.label}.</span>"
       )
     end
   end
@@ -142,17 +142,17 @@ RSpec.describe Entity, type: :model do
   context 'when type music' do
     it 'has short display with all properties' do
       entity = create(:music_entity)
-      entity.properties[:alternateSpellings].push(Faker::Movies::HitchhikersGuideToTheGalaxy.planet)
+      entity.properties[:alternate_spellings].push(Faker::Movies::HitchhikersGuideToTheGalaxy.planet)
       expect(
         entity.short_display
       ).to eq(
-        "<span>#{entity.properties[:composer]}, #{entity.label} [#{entity.properties[:alternateSpellings].join(', ')}].</span>"
+        "<span>#{entity.properties[:composer]}, #{entity.label} [#{entity.properties[:alternate_spellings].join(', ')}].</span>"
       )
     end
 
-    it 'has short display with no alternateSpellings' do
+    it 'has short display with no alternate_spellings' do
       entity = create(:music_entity)
-      entity.properties[:alternateSpellings] = []
+      entity.properties[:alternate_spellings] = []
       expect(
         entity.short_display
       ).to eq(
@@ -166,7 +166,7 @@ RSpec.describe Entity, type: :model do
       expect(
         entity.short_display
       ).to eq(
-        "<span>#{entity.label} [#{entity.properties[:alternateSpellings].join(', ')}].</span>"
+        "<span>#{entity.label} [#{entity.properties[:alternate_spellings].join(', ')}].</span>"
       )
     end
   end
@@ -177,23 +177,23 @@ RSpec.describe Entity, type: :model do
       expect(
         entity.short_display
       ).to eq(
-        "<span>#{entity.label}, #{entity.properties[:alternateSpellings].join(', ')}.</span>"
+        "<span>#{entity.label}, #{entity.properties[:alternate_spellings].join(', ')}.</span>"
       )
     end
 
     it 'has short display with multiple alternate spelling' do
       entity = create(:organization_entity)
-      entity.properties[:alternateSpellings].push(Faker::Movies::HitchhikersGuideToTheGalaxy.character)
+      entity.properties[:alternate_spellings].push(Faker::Movies::HitchhikersGuideToTheGalaxy.character)
       expect(
         entity.short_display
       ).to eq(
-        "<span>#{entity.label}, #{entity.properties[:alternateSpellings].join(', ')}.</span>"
+        "<span>#{entity.label}, #{entity.properties[:alternate_spellings].join(', ')}.</span>"
       )
     end
 
     it 'has short display with label only' do
       entity = create(:organization_entity)
-      entity.properties[:alternateSpellings] = []
+      entity.properties[:alternate_spellings] = []
       expect(
         entity.short_display
       ).to eq(
@@ -208,14 +208,14 @@ RSpec.describe Entity, type: :model do
       expect(
         entity.short_display
       ).to eq(
-        "<span>#{entity.label} #{entity.properties[:lifeDates]}. #{entity.description}</span>"
+        "<span>#{entity.label} #{entity.properties[:life_dates]}. #{entity.description}</span>"
       )
       expect(entity.short_display).not_to end_with('..')
     end
 
-    it 'has short display with no lifeDates' do
+    it 'has short display with no life_dates' do
       entity = create(:person_entity)
-      entity.properties[:lifeDates] = nil
+      entity.properties[:life_dates] = nil
       expect(
         entity.short_display
       ).to eq(
@@ -224,9 +224,9 @@ RSpec.describe Entity, type: :model do
       expect(entity.short_display).not_to end_with('..')
     end
 
-    it 'has short display with no lifeDates and no description' do
+    it 'has short display with no life_dates and no description' do
       entity = create(:person_entity)
-      entity.properties[:lifeDates] = nil
+      entity.properties[:life_dates] = nil
       entity.description = nil
       expect(
         entity.short_display
@@ -242,7 +242,7 @@ RSpec.describe Entity, type: :model do
       expect(
         entity.short_display
       ).to eq(
-        "<span>#{entity.label} #{entity.properties[:lifeDates]}.</span>"
+        "<span>#{entity.label} #{entity.properties[:life_dates]}.</span>"
       )
       expect(entity.short_display).not_to end_with('..')
     end
@@ -307,7 +307,7 @@ RSpec.describe Entity, type: :model do
       expect(
         entity.short_display
       ).to eq(
-        "<span>#{entity.properties[:author]}, #{entity.label}, #{entity.properties[:translator]} #{entity.properties[:publicationInformation]}</span>"
+        "<span>#{entity.properties[:author]}, #{entity.label}, #{entity.properties[:translator]} #{entity.properties[:publication_information]}</span>"
       )
     end
 
@@ -317,14 +317,14 @@ RSpec.describe Entity, type: :model do
       expect(
         entity.short_display
       ).to eq(
-        "<span>#{entity.properties[:author]}, #{entity.label} #{entity.properties[:publicationInformation]}</span>"
+        "<span>#{entity.properties[:author]}, #{entity.label} #{entity.properties[:publication_information]}</span>"
       )
     end
 
     it 'has short display with only label' do
       entity = create(:publication_entity)
       entity.properties[:author] = nil
-      entity.properties[:publicationInformation] = nil
+      entity.properties[:publication_information] = nil
       entity.properties[:translator] = nil
       expect(
         entity.short_display
@@ -372,7 +372,7 @@ RSpec.describe Entity, type: :model do
       expect(
         entity.short_display
       ).to eq(
-        "<span>#{entity.properties[:author]}, #{entity.label}, Translated into #{entity.properties[:translatedInto]} by #{entity.properties[:translator]}.</span>"
+        "<span>#{entity.properties[:author]}, #{entity.label}, Translated into #{entity.properties[:translated_into]} by #{entity.properties[:translator]}.</span>"
       )
     end
 
@@ -382,7 +382,7 @@ RSpec.describe Entity, type: :model do
       expect(
         entity.short_display
       ).to eq(
-        "<span>#{entity.properties[:author]}, #{entity.label}, Translated into #{entity.properties[:translatedInto]}.</span>"
+        "<span>#{entity.properties[:author]}, #{entity.label}, Translated into #{entity.properties[:translated_into]}.</span>"
       )
     end
 
@@ -390,7 +390,7 @@ RSpec.describe Entity, type: :model do
       entity = create(:translating_entity)
       entity.properties[:translator] = nil
       entity.properties[:author] = nil
-      entity.properties[:translatedInto] = nil
+      entity.properties[:translated_into] = nil
       expect(
         entity.short_display
       ).to eq(
