@@ -2,26 +2,61 @@
 
 # rubocop:disable Layout/LineLength
 
+names = [
+  Faker::Movies::Lebowski.character,
+  Faker::Movies::HitchhikersGuideToTheGalaxy.character,
+  Faker::TvShows::AquaTeenHungerForce.character,
+  Faker::TvShows::RickAndMorty.character,
+  Faker::TvShows::Simpsons.character,
+  Faker::Games::SuperMario.character,
+  Faker::Movies::PrincessBride.character,
+  Faker::Movies::StarWars.character,
+  Faker::TvShows::BojackHorseman.character,
+  Faker::TvShows::VentureBros.character,
+  Faker::TvShows::StarTrek.character,
+  Faker::TvShows::SouthPark.character
+]
+
 FactoryBot.define do
   factory :entity do
-    label { Faker::Movies::Lebowski.character }
+    label { names.sample }
     description { Faker::Hipster.sentence }
     legacy_pk { Faker::Number.unique.within(range: 1..100_000) }
-    e_type { Faker::Number.within(range: 0..11) }
+    e_type { Entity.e_types.keys.sample }
+
+    trait :public do
+      letters { [create(:public_letter)] }
+    end
+
+    after :create do |entity|
+      entity.update(label: "<i>#{entity.label}</i>") if Faker::Boolean.boolean
+
+      parts = entity.description.split
+
+      if Faker::Boolean.boolean && parts.count > 4
+        parts[1] = "<i>#{parts[1]}"
+        parts[-2] = "#{parts[-2]}</i>"
+
+        entity.update(
+          description: parts.join(' ')
+        )
+      end
+    end
 
     factory :attendance_entity do
       e_type { 0 }
       properties {
         ActiveSupport::HashWithIndifferentAccess.new(
           {
-            alternateSpellings: [Faker::Movies::HitchhikersGuideToTheGalaxy.planet],
-            attendsWith: [
-              create(:person_entity).label
+            alternate_spellings: [Faker::TvShows::RuPaul.queen],
+            attended_with: [
+              Faker::Movies::Lebowski.character,
+              Faker::Movies::HitchhikersGuideToTheGalaxy.character
             ],
             director: Faker::Movies::HitchhikersGuideToTheGalaxy.character,
-            eventType: Faker::Hipster.word,
-            performedBy: [Faker::Movies::HitchhikersGuideToTheGalaxy.character],
-            placeDate: "#{Faker::Address.city}, #{Faker::Date.between(from: 100.years.ago, to: 50.years.ago).strftime('%d %B %Y')}"
+            event_type: Faker::Hipster.word,
+            performed_by: [Faker::Movies::HitchhikersGuideToTheGalaxy.character],
+            place_date: "#{Faker::Address.city}, #{Faker::Date.between(from: 100.years.ago, to: 50.years.ago).strftime('%d %B %Y')}"
           }
         )
       }
@@ -33,11 +68,11 @@ FactoryBot.define do
       properties {
         ActiveSupport::HashWithIndifferentAccess.new(
           {
-            alternateSpellings: [Faker::Movies::HitchhikersGuideToTheGalaxy.specie],
+            alternate_spellings: [Faker::TvShows::RuPaul.queen],
             composer: Faker::Movies::HitchhikersGuideToTheGalaxy.character,
             notes: Faker::Music::Prince.lyric,
             perfrormedBy: [
-              create(:person_entity, label: Faker::Music::Prince.band).label
+              Faker::Movies::Lebowski.character
             ]
           }
         )
@@ -50,7 +85,7 @@ FactoryBot.define do
       properties {
         ActiveSupport::HashWithIndifferentAccess.new(
           {
-            alternateSpellings: [Faker::Movies::HitchhikersGuideToTheGalaxy.character],
+            alternate_spellings: [Faker::TvShows::RuPaul.queen],
             profile: Faker::Movies::Lebowski.quote
           }
         )
@@ -62,7 +97,7 @@ FactoryBot.define do
       properties {
         ActiveSupport::HashWithIndifferentAccess.new(
           {
-            alternateSpellings: [Faker::Movies::Lebowski.character],
+            alternate_spellings: [Faker::TvShows::RuPaul.queen],
             firstName: Faker::Name.first_name,
             lastName: Faker::Name.last_name,
             lifeDates: "(#{Faker::Date.between(from: '1900-1-1', to: '1930-1-1').year}-#{Faker::Date.between(from: '1970-1-1', to: '1999-1-1').year})",
@@ -101,7 +136,7 @@ FactoryBot.define do
       properties {
         ActiveSupport::HashWithIndifferentAccess.new(
           {
-            alternateSpellings: [],
+            alternate_spellings: [Faker::TvShows::RuPaul.queen],
             links: [Faker::Internet.url]
           }
         )
@@ -114,17 +149,17 @@ FactoryBot.define do
       properties {
         ActiveSupport::HashWithIndifferentAccess.new(
           {
-            alternateSpellings: [],
+            alternate_spellings: [Faker::TvShows::RuPaul.queen],
             cast: [Faker::Movies::HitchhikersGuideToTheGalaxy.character, Faker::Movies::Lebowski.character],
-            city: create(:place_entity).label,
+            city: Faker::Address.city,
             date: Faker::Date.between(from: 100.years.ago, to: 50.years.ago),
-            director: create(:person_entity).label,
+            director: Faker::Movies::Lebowski.character,
             links: [Faker::Internet.url],
             notes: Faker::Hipster.sentence,
-            personnel: [Faker::Internet.url],
+            personnel: [Faker::Movies::HitchhikersGuideToTheGalaxy.character],
             proposal: Faker::Movies::HitchhikersGuideToTheGalaxy.marvin_quote,
             response: Faker::Movies::Lebowski.quote,
-            stagingBeckett: Faker::Internet.url,
+            staging_beckett: Faker::Internet.url,
             theater: Faker::Movies::HitchhikersGuideToTheGalaxy.starship
           }
         )
@@ -148,10 +183,10 @@ FactoryBot.define do
       properties {
         ActiveSupport::HashWithIndifferentAccess.new(
           {
-            author: create(:person_entity).label,
+            author: Faker::Movies::Lebowski.character,
             notes: Faker::Movies::HitchhikersGuideToTheGalaxy.marvin_quote,
-            publicationInformation: Faker::Hipster.sentence,
-            translator: create(:person_entity).label
+            publication_information: Faker::Hipster.sentence,
+            translator: Faker::Movies::HitchhikersGuideToTheGalaxy.character
           }
         )
       }
@@ -194,12 +229,12 @@ FactoryBot.define do
       properties {
         ActiveSupport::HashWithIndifferentAccess.new(
           {
-            alternateSpellings: [Faker::Movies::HitchhikersGuideToTheGalaxy.planet],
-            artist: create(:person_entity).label,
-            artistAlternateSpellings: [Faker::Movies::Lebowski.character],
+            alternate_spellings: [Faker::TvShows::RuPaul.queen],
+            artist: Faker::Movies::HitchhikersGuideToTheGalaxy.character,
+            artist_alternate_spellings: [Faker::TvShows::RuPaul.queen],
             notes: Faker::Movies::HitchhikersGuideToTheGalaxy.marvin_quote,
-            ownerLocationAccessionNumberCurrent: Faker::Number.unique.within(range: 1..1000),
-            ownerLocationAccessionNumberContemporaneous: Faker::Number.unique.within(range: 1..1000)
+            owner_location_accession_number_current: rand(1..1000),
+            owner_location_accession_number_contemporaneous: rand(1..1000)
           }
         )
       }

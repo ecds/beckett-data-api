@@ -3,6 +3,11 @@
 class ApplicationController < ActionController::API
   class_attribute :pagination_links, default: {}
 
+  # GET /:id
+  def show
+    render
+  end
+
   # POST /
   def create
     head :not_implemented

@@ -3,7 +3,9 @@
 require 'action_view'
 
 class Entity < ApplicationRecord
+  include ActionView::Helpers::SanitizeHelper
   include Searchable
+
   serialize :properties, HashWithIndifferentAccess
 
   before_save :format_properties
@@ -44,6 +46,12 @@ class Entity < ApplicationRecord
     label
   end
 
+  def clean_description
+    strip_tags description
+  rescue NoMethodError
+    description
+  end
+
   def all_letters
     letters +
     letters_sent_to +
@@ -79,7 +87,13 @@ class Entity < ApplicationRecord
   def search_data
     {
       label: label,
-      description: description
+      clean_label: clean_label,
+      description: description,
+      clean_description: clean_description,
+      e_type: e_type,
+      id_path: url_path,
+      short_display: short_display,
+      properties: properties
     }
   end
 
@@ -135,7 +149,7 @@ class Entity < ApplicationRecord
         attended_with: [],
         director: nil,
         event_type: nil,
-        performedBy: [],
+        performed_by: [],
         place_date: nil
       },
       music: {

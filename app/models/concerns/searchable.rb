@@ -6,6 +6,6 @@ module Searchable
 
   included do
     # after_save :reindex_class
-    searchkick callbacks: :async
+    searchkick callbacks: :async, word_start: [:label], suggest: [:label]
   end
 end
