@@ -38,6 +38,10 @@ class Letter < ApplicationRecord
       .where('letters.date BETWEEN ? AND ?', DateTime.new(1957), DateTime.new(1965, 12).at_end_of_month)
   }
 
+  def label
+    "#{date.strftime('%d %B %Y')} - #{recipients.map(&:label).join(', ')}"
+  end
+
   def search_data
     {
       date: date,
