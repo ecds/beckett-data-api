@@ -4,6 +4,8 @@ class Mention < ApplicationRecord
   belongs_to :entity
   belongs_to :letter
 
+  acts_as_taggable_on :tags
+
   Entity.e_types.each_key do |type|
     scope type.to_sym, lambda {
       joins(:entity)
