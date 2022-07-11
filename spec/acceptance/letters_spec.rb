@@ -16,45 +16,55 @@ resource 'Letters' do
     # List of optional parameters with description for request
     parameter :page, 'Current page of letters', { type: 'String', default: '1' }
     parameter :per_page, 'Number of letters on a single response.', { default: '25' }
-    parameter :q, 'Text to search.', { default: '*' }
-    parameter :fields, 'Comma seperated list of fields to be queried.', { default: 'recipients,mentions,destinations,origins,repositories' }
-    parameter :start_date, 'Letters dated on or after given date. Must be in YYYY-MM-DD format.', { default: 'nil' }
-    parameter :end_date, 'Letters dated on or before given date. Must be in YYYY-MM-DD format.', { default: 'nil' }
-    parameter :recipients, 'Comma seperated list of recipient labels', { default: 'nil' }
-    parameter :destinations, 'Comma seperated list of destination labels', { default: 'nil' }
-    parameter :origins, 'Comma seperated list of origin labels', { default: 'nil' }
-    parameter :senders, 'Comma seperated list of sender labels', { default: 'nil' }
-    parameter :repositories, 'Comma seperated list of repository labels', { default: 'nil' }
-    parameter :languages, 'Comma seperated list of languages. Options are English, French, German, or Italian', { default: 'nil' }
+    parameter :search, 'Text to search.', { default: '*' }
+    parameter :fields,
+              'Comma seperated list of fields to be queried.',
+              { default: 'recipients, mentions, destinations, origins, repositories' }
+    parameter :start_date, 'Letters dated on or after given date. Must be in YYYY-MM-DD format.', { default: 'null' }
+    parameter :end_date, 'Letters dated on or before given date. Must be in YYYY-MM-DD format.', { default: 'null' }
+    parameter :recipients, 'Comma seperated list of recipient labels', { default: 'null' }
+    parameter :destinations, 'Comma seperated list of destination labels', { default: 'null' }
+    parameter :origins, 'Comma seperated list of origin labels', { default: 'null' }
+    parameter :senders, 'Comma seperated list of sender labels', { default: 'null' }
+    parameter :repositories, 'Comma seperated list of repository labels', { default: 'null' }
+    parameter :languages,
+              'Comma seperated list of languages. Options are English, French, German, or Italian',
+              { default: 'null' }
 
     before {
       create_list(:repository, 4, public: true)
-      create_list(:public_letter_existing_repos, 50)
+      create_list(:public_letter_existing_repos, 30)
+      Letter._public.order(:date).limit(25).sample(6).each do |letter|
+        letter.mentions.shuffle[0..(letter.mentions.count / 3)].each do |mention|
+          mention.tag_list.add Faker::Movies::HitchhikersGuideToTheGalaxy.planet
+          mention.save
+        end
+      end
     }
 
     get 'All letters' do
-      example_request 'All Letters' do
+      example_request 'GET /letters - All' do
         expect(status).to eq(200)
       end
     end
 
     get 'letters query' do
-      let(:q) { LetterRecipient.all.sample.entity.label.split[-1].downcase }
-      example_request 'Keyword search' do
+      let(:search) { LetterRecipient.all.sample.entity.label.split[-1].downcase }
+      example_request 'GET /letters?search=:search_terms - Keyword search' do
         expect(status).to eq(200)
       end
     end
 
     get 'letters by recipients' do
       let(:recipients) { [LetterRecipient.first.entity.label, LetterRecipient.last.entity.label].join(',') }
-      example_request 'Name search' do
+      example_request 'GET /letters?recipients=:recipient_labels - Recipients search' do
         expect(status).to eq(200)
       end
     end
 
     get 'letters by repository' do
       let(:repositories) { Repository.all.sample.label }
-      example_request 'Repository search' do
+      example_request 'GET /letters?repositories=:repository_labels - Repository Search' do
         expect(status).to eq(200)
       end
     end
@@ -62,7 +72,7 @@ resource 'Letters' do
     get 'letters from start date' do
       let(:dates) { Letter.all.map(&:date) }
       let(:start_date) { dates[dates.count / 3].strftime('%Y-%m-%d') }
-      example_request 'Date filter - start_date' do
+      example_request 'GET /letters?start_date=:YYYY-MM-DD - On or After Date' do
         expect(status).to eq(200)
       end
     end
@@ -70,7 +80,7 @@ resource 'Letters' do
     get 'letters before end date' do
       let(:dates) { Letter.all.map(&:date) }
       let(:end_date) { dates[(dates.count / 2) + 3].strftime('%Y-%m-%d') }
-      example_request 'Date filter - end_date' do
+      example_request 'GET /letters?end_date=:YYYY-MM-DD - On or Before Date' do
         expect(status).to eq(200)
       end
     end
@@ -79,7 +89,7 @@ resource 'Letters' do
       let(:dates) { Letter.all.map(&:date) }
       let(:start_date) { dates[dates.count / 3].strftime('%Y-%m-%d') }
       let(:end_date) { dates[(dates.count / 2) + 3].strftime('%Y-%m-%d') }
-      example_request 'Date filter start_date and end_date' do
+      example_request 'GET /letters?start_date=:YYYY-MM-DD&end_date=:YYYY-MM-DD - On or Between Dates' do
         expect(status).to eq(200)
       end
     end
@@ -92,7 +102,7 @@ resource 'Letters' do
 
     get 'letters by language' do
       let(:languages) { 'German, italian' }
-      example_request 'Language facet' do
+      example_request 'GET /letters?languages=:list_of_languages' do
         expect(status).to eq(200)
       end
     end
@@ -100,7 +110,7 @@ resource 'Letters' do
     get 'Paginated letters' do
       let(:page) { 2 }
       let(:per_page) { 10 }
-      example_request 'Paginated Letters' do
+      example_request 'GET /letters?per_page=:results_per_page&page=:offset - Paginated results' do
         expect(status).to eq(200)
       end
     end

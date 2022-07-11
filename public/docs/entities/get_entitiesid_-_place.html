@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Letters API</title>
+    <title>Entities API</title>
     <meta charset="utf-8">
     <style>
       
@@ -106,11 +106,13 @@ table th, table td {
   </head>
   <body>
     <div class="container">
-      <h1>Letters API</h1>
+      <h1>Entities API</h1>
+
+        <p class="explanation"></p>
 
       <div class="article">
-        <h2>DELETE /letters/:id</h2>
-        <h3>DELETE /letters/:id</h3>
+        <h2>GET /entities/:id - Place</h2>
+        <h3>GET /entities/:id</h3>
 
 
 
@@ -124,7 +126,7 @@ Host: example.org
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">DELETE /letters/4e3d3e8a-d33a-41dc-ab50-540c6068d21c</pre>
+          <pre class="request route highlight">GET /entities/34beecf0-1470-4ad2-b59c-aa311aae7bfc</pre>
 
 
 
@@ -137,14 +139,27 @@ X-Content-Type-Options: nosniff
 X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
-Content-Type: application/json
-Cache-Control: no-cache
-X-Request-Id: 1ab740be-9fd8-4cc6-a348-7ca9bb65c64a
-X-Runtime: 0.398092
+Content-Type: application/json; charset=utf-8
+ETag: W/&quot;d0006281f37c53a57eb920b8137f5857&quot;
+Cache-Control: max-age=0, private, must-revalidate
+X-Request-Id: 7d313543-73c7-44ac-ad9f-dee856fa5073
+X-Runtime: 0.924134
 Vary: Origin
-Content-Length: 0</pre>
+Content-Length: 218</pre>
             <h4>Status</h4>
-            <pre class="response status">501 Not Implemented</pre>
+            <pre class="response status">200 OK</pre>
+              <h4>Body</h4>
+              <pre class="response body">{
+  &quot;type&quot;: &quot;place&quot;,
+  &quot;label&quot;: &quot;France&quot;,
+  &quot;description&quot;: &quot;Fingerstache mumblecore literally banjo tilde trust fund photo booth umami wes anderson.&quot;,
+  &quot;alternate_spellings&quot;: [
+    &quot;Pandora Boxx&quot;
+  ],
+  &quot;links&quot;: [
+    &quot;http://ernser.biz/tamra_lang&quot;
+  ]
+}</pre>
       </div>
     </div>
   </body>

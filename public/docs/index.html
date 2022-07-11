@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>API Documentation</title>
+  <title>Beckett Data API Documentation</title>
   <meta charset="utf-8">
   <style>
     
@@ -106,38 +106,112 @@ table th, table td {
 </head>
 <body>
 <div class="container">
-  <h1>API Documentation</h1>
+  <h1>Beckett Data API Documentation</h1>
   
+  <div class="article">
+    <h2>Entities</h2>
+
+      <p class="explanation"></p>
+
+    <ul>
+      <li>
+        <a href="/docs/entities/get_entities_-_all.html">GET /entities - All</a>
+      </li>
+      <li>
+        <a href="/docs/entities/get_entitiestype=entity_type_-_by_type.html">GET /entities?type=:entity_type - By Type</a>
+      </li>
+      <li>
+        <a href="/docs/entities/get_entitiessearch=search_terms_-_keyword_search.html">GET /entities?search=:search_terms - Keyword Search</a>
+      </li>
+      <li>
+        <a href="/docs/entities/get_entitiessearch=label&amp;fields=label&amp;type=person_-_person_by_label.html">GET /entities?search=:label&amp;fields=label&amp;type=person - Person by Label</a>
+      </li>
+      <li>
+        <a href="/docs/entities/get_entitesper_page=results_per_page&amp;page=offset_-_paginated_results.html">GET /entites?per_page=:results_per_page&amp;page=:offset - Paginated results</a>
+      </li>
+      <li>
+        <a href="/docs/entities/get_entitiesid.html">GET /entities/:id</a>
+      </li>
+      <li>
+        <a href="/docs/entities/get_entitiesid_-_attendance.html">GET /entities/:id - Attendance</a>
+      </li>
+      <li>
+        <a href="/docs/entities/get_entitiesid_-_music.html">GET /entities/:id - Music</a>
+      </li>
+      <li>
+        <a href="/docs/entities/get_entitiesid_-_organization.html">GET /entities/:id - Organization</a>
+      </li>
+      <li>
+        <a href="/docs/entities/get_entitiesid_-_person.html">GET /entities/:id - Person</a>
+      </li>
+      <li>
+        <a href="/docs/entities/get_entitiesid_-_place.html">GET /entities/:id - Place</a>
+      </li>
+      <li>
+        <a href="/docs/entities/get_entitiesid_-_production.html">GET /entities/:id - Production</a>
+      </li>
+      <li>
+        <a href="/docs/entities/get_entitiesid_-_public_event.html">GET /entities/:id - Public Event</a>
+      </li>
+      <li>
+        <a href="/docs/entities/get_entitiesid_-_publication.html">GET /entities/:id - Publication</a>
+      </li>
+      <li>
+        <a href="/docs/entities/get_entitiesid_-_reading.html">GET /entities/:id - Reading</a>
+      </li>
+      <li>
+        <a href="/docs/entities/get_entitiesid_-_translating.html">GET /entities/:id - Translating</a>
+      </li>
+      <li>
+        <a href="/docs/entities/get_entitiesid_-_work_of_art.html">GET /entities/:id - Work Of Art</a>
+      </li>
+      <li>
+        <a href="/docs/entities/get_entitiesid_-_writing.html">GET /entities/:id - Writing</a>
+      </li>
+      <li>
+        <a href="/docs/entities/get_entitiesautocompletesearch=fragment.html">GET /entities/autocomplete?search=:fragment</a>
+      </li>
+      <li>
+        <a href="/docs/entities/post_entities.html">POST /entities</a>
+      </li>
+      <li>
+        <a href="/docs/entities/put_entitiesid.html">PUT /entities/:id</a>
+      </li>
+      <li>
+        <a href="/docs/entities/delete_entitiesid.html">DELETE /entities/:id</a>
+      </li>
+    </ul>
+  </div>
   <div class="article">
     <h2>Letters</h2>
 
     <ul>
       <li>
-        <a href="/docs/letters/all_letters.html">All Letters</a>
+        <a href="/docs/letters/get_letters_-_all.html">GET /letters - All</a>
       </li>
       <li>
-        <a href="/docs/letters/keyword_search.html">Keyword search</a>
+        <a href="/docs/letters/get_letterssearch=search_terms_-_keyword_search.html">GET /letters?search=:search_terms - Keyword search</a>
       </li>
       <li>
-        <a href="/docs/letters/name_search.html">Name search</a>
+        <a href="/docs/letters/get_lettersrecipients=recipient_labels_-_recipients_search.html">GET /letters?recipients=:recipient_labels - Recipients search</a>
       </li>
       <li>
-        <a href="/docs/letters/repository_search.html">Repository search</a>
+        <a href="/docs/letters/get_lettersrepositories=repository_labels_-_repository_search.html">GET /letters?repositories=:repository_labels - Repository Search</a>
       </li>
       <li>
-        <a href="/docs/letters/date_filter_-_start_date.html">Date filter - start_date</a>
+        <a href="/docs/letters/get_lettersstart_date=yyyy-mm-dd_-_on_or_after_date.html">GET /letters?start_date=:YYYY-MM-DD - On or After Date</a>
       </li>
       <li>
-        <a href="/docs/letters/date_filter_-_end_date.html">Date filter - end_date</a>
+        <a href="/docs/letters/get_lettersend_date=yyyy-mm-dd_-_on_or_before_date.html">GET /letters?end_date=:YYYY-MM-DD - On or Before Date</a>
       </li>
       <li>
-        <a href="/docs/letters/date_filter_start_date_and_end_date.html">Date filter start_date and end_date</a>
+        <a href="/docs/letters/get_lettersstart_date=yyyy-mm-dd&amp;end_date=yyyy-mm-dd_-_on_or_between_dates.html">GET /letters?start_date=:YYYY-MM-DD&amp;end_date=:YYYY-MM-DD - On or Between Dates</a>
       </li>
       <li>
-        <a href="/docs/letters/language_facet.html">Language facet</a>
+        <a href="/docs/letters/get_letterslanguages=list_of_languages.html">GET /letters?languages=:list_of_languages</a>
       </li>
       <li>
-        <a href="/docs/letters/paginated_letters.html">Paginated Letters</a>
+        <a href="/docs/letters/get_lettersper_page=results_per_page&amp;page=offset_-_paginated_results.html">GET /letters?per_page=:results_per_page&amp;page=:offset - Paginated results</a>
       </li>
       <li>
         <a href="/docs/letters/get_lettersid.html">GET /letters/:id</a>

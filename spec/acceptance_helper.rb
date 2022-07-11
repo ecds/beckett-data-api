@@ -8,4 +8,5 @@ RspecApiDocumentation.configure do |config|
   config.template_path = Rails.root.join('templates', 'rspec_api_documentation')
   config.keep_source_order = true
   config.docs_dir = Rails.root.join('public', 'docs')
+  config.api_name = 'Beckett Data API Documentation'
 end

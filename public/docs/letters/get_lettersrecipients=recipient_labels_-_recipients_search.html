@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Letters API</title>
+    <meta charset="utf-8">
+    <style>
+      
+body {
+  font-family: Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 18px;
+  color: #404040;
+}
+
+.container {
+  width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  zoom: 1;
+}
+
+pre {
+  background-color: #f5f5f5;
+  display: block;
+  padding: 8.5px;
+  margin: 0 0 18px;
+  line-height: 18px;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+td.required .name:after {
+  float: right;
+  content: "required";
+  font-weight: normal;
+  color: #F08080;
+}
+
+a{
+  color: #0069d6;
+  text-decoration: none;
+  line-height: inherit;
+  font-weight: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  color: #404040;
+}
+
+h1 {
+  margin-bottom: 18px;
+  font-size: 30px;
+  line-height: 36px;
+}
+h2 {
+  font-size: 24px;
+  line-height: 36px;
+}
+h3{
+  font-size: 18px;
+  line-height: 36px;
+}
+h4 {
+  font-size: 16px;
+  line-height: 36px;
+}
+
+table{
+  width: 100%;
+  margin-bottom: 18px;
+  padding: 0;
+  border-collapse: separate;
+  font-size: 13px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  border-spacing: 0;
+  border: 1px solid #ddd;
+}
+
+table th {
+  padding-top: 9px;
+  font-weight: bold;
+  vertical-align: middle;
+  border-bottom: 1px solid #ddd;
+}
+table th+th, table td+td {
+  border-left: 1px solid #ddd;
+}
+table th, table td {
+  padding: 10px 10px 9px;
+  line-height: 18px;
+  text-align: left;
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Letters API</h1>
+
+      <div class="article">
+        <h2>GET /letters?recipients=:recipient_labels - Recipients search</h2>
+        <h3>GET /letters</h3>
+
+          <h3>Parameters</h3>
+          <table class="parameters table table-striped table-bordered table-condensed">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Default</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                    <span class="name">page</span>
+                </td>
+                <td>
+                  <span class="description">Current page of letters</span>
+                </td>
+                <td>
+                  <span class="default">1</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">per_page</span>
+                </td>
+                <td>
+                  <span class="description">Number of letters on a single response.</span>
+                </td>
+                <td>
+                  <span class="default">25</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">search</span>
+                </td>
+                <td>
+                  <span class="description">Text to search.</span>
+                </td>
+                <td>
+                  <span class="default">*</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">fields</span>
+                </td>
+                <td>
+                  <span class="description">Comma seperated list of fields to be queried.</span>
+                </td>
+                <td>
+                  <span class="default">recipients, mentions, destinations, origins, repositories</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">start_date</span>
+                </td>
+                <td>
+                  <span class="description">Letters dated on or after given date. Must be in YYYY-MM-DD format.</span>
+                </td>
+                <td>
+                  <span class="default">null</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">end_date</span>
+                </td>
+                <td>
+                  <span class="description">Letters dated on or before given date. Must be in YYYY-MM-DD format.</span>
+                </td>
+                <td>
+                  <span class="default">null</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">recipients</span>
+                </td>
+                <td>
+                  <span class="description">Comma seperated list of recipient labels</span>
+                </td>
+                <td>
+                  <span class="default">null</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">destinations</span>
+                </td>
+                <td>
+                  <span class="description">Comma seperated list of destination labels</span>
+                </td>
+                <td>
+                  <span class="default">null</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">origins</span>
+                </td>
+                <td>
+                  <span class="description">Comma seperated list of origin labels</span>
+                </td>
+                <td>
+                  <span class="default">null</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">senders</span>
+                </td>
+                <td>
+                  <span class="description">Comma seperated list of sender labels</span>
+                </td>
+                <td>
+                  <span class="default">null</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">repositories</span>
+                </td>
+                <td>
+                  <span class="description">Comma seperated list of repository labels</span>
+                </td>
+                <td>
+                  <span class="default">null</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">languages</span>
+                </td>
+                <td>
+                  <span class="description">Comma seperated list of languages. Options are English, French, German, or Italian</span>
+                </td>
+                <td>
+                  <span class="default">null</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Accept: application/json
+Content-Type: application/json
+Host: example.org
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">GET /letters?recipients=%3Ci%3EHomer+Simpson%3C%2Fi%3E%2CMiracle+Max</pre>
+
+            <h4>Query Parameters</h4>
+            <pre class="request query_parameters highlight">recipients: &lt;i&gt;Homer Simpson&lt;/i&gt;,Miracle Max</pre>
+
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 0
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Permitted-Cross-Domain-Policies: none
+Referrer-Policy: strict-origin-when-cross-origin
+Link: &lt;http://example.org/letters?page=1&amp;recipients=%3Ci%3EHomer+Simpson%3C%2Fi%3E%2CMiracle+Max&gt;; rel=&#39;self&#39;
+X-Total-Count: 3
+Content-Type: application/json; charset=utf-8
+ETag: W/&quot;16fe873c91c8b381ac42996f0bf4c101&quot;
+Cache-Control: max-age=0, private, must-revalidate
+X-Request-Id: 8bcaaa8e-024b-4f4b-8b5c-20a27a30bcf4
+X-Runtime: 2.210774
+Vary: Origin
+Content-Length: 7149</pre>
+            <h4>Status</h4>
+            <pre class="response status">200 OK</pre>
+              <h4>Body</h4>
+              <pre class="response body">{
+  &quot;letters&quot;: [
+    {
+      &quot;id&quot;: &quot;http://example.org/letters/e0a7f70d-3861-4956-8269-a2b307c6a7ae&quot;,
+      &quot;date&quot;: &quot;1958-11-04T00:00:00.000-05:00&quot;,
+      &quot;label&quot;: &quot;04 November 1958 - Miracle Max&quot;,
+      &quot;recipients&quot;: [
+        &quot;Miracle Max&quot;
+      ],
+      &quot;destinations&quot;: [
+        &quot;&lt;i&gt;The Big Bang Burger Bar&lt;/i&gt;&quot;
+      ],
+      &quot;origins&quot;: null,
+      &quot;mentions&quot;: {
+        &quot;attendances&quot;: [
+          {
+            &quot;type&quot;: &quot;attendance&quot;,
+            &quot;id&quot;: &quot;http://example.org/entities/6006fceb-b6ce-4e69-8834-4b9c23737b1f&quot;,
+            &quot;display&quot;: &quot;&lt;span&gt;lo-fi, The Thing, New Jayna, 29 October 1928.&lt;/span&gt;&quot;
+          },
+          {
+            &quot;type&quot;: &quot;attendance&quot;,
+            &quot;id&quot;: &quot;http://example.org/entities/9cd6534b-8831-4091-adc2-2eda47c39ad5&quot;,
+            &quot;display&quot;: &quot;&lt;span&gt;PBR&amp;B, &lt;i&gt;Eternal Sunshine of the Spotless Mind&lt;/i&gt;, South Vanstad, 12 October 1924.&lt;/span&gt;&quot;
+          },
+          {
+            &quot;type&quot;: &quot;attendance&quot;,
+            &quot;id&quot;: &quot;http://example.org/entities/b97179f2-a99f-4f9a-bfeb-93ca705207a9&quot;,
+            &quot;display&quot;: &quot;&lt;span&gt;distillery, &lt;i&gt;Alien&lt;/i&gt;, Port Cordell, 13 April 1972.&lt;/span&gt;&quot;
+          }
+        ],
+        &quot;places&quot;: [
+          {
+            &quot;type&quot;: &quot;place&quot;,
+            &quot;id&quot;: &quot;http://example.org/entities/32a05bbc-79c1-4133-9ebd-db3d02bde69d&quot;,
+            &quot;display&quot;: &quot;&lt;span&gt;Belgium.&lt;/span&gt;&quot;
+          }
+        ],
+        &quot;publications&quot;: [
+          {
+            &quot;type&quot;: &quot;publication&quot;,
+            &quot;id&quot;: &quot;http://example.org/entities/520be7aa-c651-4931-b6dd-848e1431a9ea&quot;,
+            &quot;display&quot;: &quot;&lt;span&gt;The Big Lebowski, Ned Gerblansky, The Allitnils Authentic chartreuse slow-carb umami gluten-free listicle celiac kogi.&lt;/span&gt;&quot;
+          },
+          {
+            &quot;type&quot;: &quot;publication&quot;,
+            &quot;id&quot;: &quot;http://example.org/entities/90076906-5333-42b3-ba2f-a35591dfb9c5&quot;,
+            &quot;display&quot;: &quot;&lt;span&gt;Bunny Lebowski, Ned Gerblansky, Hotblack Desiato Muggle magic fixie etsy pitchfork.&lt;/span&gt;&quot;
+          }
+        ],
+        &quot;readings&quot;: [
+          {
+            &quot;type&quot;: &quot;reading&quot;,
+            &quot;id&quot;: &quot;http://example.org/entities/42da571b-2e63-497b-af8e-e845cc96506b&quot;,
+            &quot;display&quot;: &quot;&lt;span&gt;Erinn Rempel Sr., Mr Standfast, Manchester University Press.&lt;/span&gt;&quot;
+          },
+          {
+            &quot;type&quot;: &quot;reading&quot;,
+            &quot;id&quot;: &quot;http://example.org/entities/a72035c4-96ff-4d60-9322-f92ad3db67a5&quot;,
+            &quot;display&quot;: &quot;&lt;span&gt;Sunday Dietrich, &lt;i&gt;The Curious Incident of the Dog in the Night-Time&lt;/i&gt;, ECW Press.&lt;/span&gt;&quot;
+          },
+          {
+            &quot;type&quot;: &quot;reading&quot;,
+            &quot;id&quot;: &quot;http://example.org/entities/c00d4872-ba68-4ebe-a074-5023b3e4e4d2&quot;,
+            &quot;display&quot;: &quot;&lt;span&gt;Marybeth Adams II, &lt;i&gt;Françoise Sagan&lt;/i&gt;, University of Nebraska Press.&lt;/span&gt;&quot;
+          }
+        ]
+      }
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/letters/415fc619-4137-44f2-97e8-609f524eb7da&quot;,
+      &quot;date&quot;: &quot;1964-02-12T00:00:00.000-05:00&quot;,
+      &quot;label&quot;: &quot;12 February 1964 - &lt;i&gt;Miracle Max&lt;/i&gt;&quot;,
+      &quot;recipients&quot;: [
+        &quot;Miracle Max&quot;
+      ],
+      &quot;destinations&quot;: [
+        &quot;&lt;i&gt;Islington&lt;/i&gt;&quot;
+      ],
+      &quot;origins&quot;: null,
+      &quot;mentions&quot;: {
+        &quot;attendances&quot;: [
+          {
+            &quot;type&quot;: &quot;attendance&quot;,
+            &quot;id&quot;: &quot;http://example.org/entities/f7d6710f-ade8-41a0-ac54-d42dce8cd114&quot;,
+            &quot;display&quot;: &quot;&lt;span&gt;+1, V for Vendetta, Conradton, 28 July 1954.&lt;/span&gt;&quot;
+          }
+        ],
+        &quot;music&quot;: [
+          {
+            &quot;type&quot;: &quot;music&quot;,
+            &quot;id&quot;: &quot;http://example.org/entities/42ec3cf7-5dc0-4894-92c4-3343aa02adbf&quot;,
+            &quot;display&quot;: &quot;&lt;span&gt;Prostetnic Vogon Kwaltz, &lt;i&gt;Thieves In The Temple&lt;/i&gt; [Kim Chi].&lt;/span&gt;&quot;
+          }
+        ],
+        &quot;readings&quot;: [
+          {
+            &quot;type&quot;: &quot;reading&quot;,
+            &quot;id&quot;: &quot;http://example.org/entities/d6ca47e0-47a5-47a4-922f-15281bdd670c&quot;,
+            &quot;display&quot;: &quot;&lt;span&gt;Elissa Trantow VM, The Heart Is a Lonely Hunter, Nauka.&lt;/span&gt;&quot;
+          }
+        ],
+        &quot;writings&quot;: [
+          {
+            &quot;type&quot;: &quot;writing&quot;,
+            &quot;id&quot;: &quot;http://example.org/entities/4bd5782a-6efc-4095-abb0-415de1f07895&quot;,
+            &quot;display&quot;: &quot;&lt;span&gt;The Heart Is a Lonely Hunter.&lt;/span&gt;&quot;
+          },
+          {
+            &quot;type&quot;: &quot;writing&quot;,
+            &quot;id&quot;: &quot;http://example.org/entities/ab27befb-d66c-4582-8b53-923e53dc66fc&quot;,
+            &quot;display&quot;: &quot;&lt;span&gt;&lt;i&gt;The Other Side of Silence&lt;/i&gt;.&lt;/span&gt;&quot;
+          },
+          {
+            &quot;type&quot;: &quot;writing&quot;,
+            &quot;id&quot;: &quot;http://example.org/entities/bdd73df6-3ba0-4915-a497-bb66b05c24e2&quot;,
+            &quot;display&quot;: &quot;&lt;span&gt;Precious Bane.&lt;/span&gt;&quot;
+          }
+        ]
+      }
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/letters/367c660e-c7fe-4ad4-9afe-5e503cc2b667&quot;,
+      &quot;date&quot;: &quot;1965-01-27T00:00:00.000-05:00&quot;,
+      &quot;label&quot;: &quot;27 January 1965 - &lt;i&gt;Miracle Max&lt;/i&gt;&quot;,
+      &quot;recipients&quot;: [
+        &quot;Miracle Max&quot;
+      ],
+      &quot;destinations&quot;: [
+        &quot;&lt;i&gt;London&lt;/i&gt;&quot;
+      ],
+      &quot;origins&quot;: null,
+      &quot;mentions&quot;: {
+        &quot;organizations&quot;: [
+          {
+            &quot;type&quot;: &quot;organization&quot;,
+            &quot;id&quot;: &quot;http://example.org/entities/48ab3574-a1d1-4b9e-a206-90fe9a542000&quot;,
+            &quot;display&quot;: &quot;&lt;span&gt;Allosimanius Syneca, Yara Sofia.&lt;/span&gt;&quot;
+          },
+          {
+            &quot;type&quot;: &quot;organization&quot;,
+            &quot;id&quot;: &quot;http://example.org/entities/7108b671-adfd-4ef5-a4f7-b92c81626143&quot;,
+            &quot;display&quot;: &quot;&lt;span&gt;Kakrafoon Kappa, Milk.&lt;/span&gt;&quot;
+          }
+        ],
+        &quot;public_events&quot;: [
+          {
+            &quot;type&quot;: &quot;public_event&quot;,
+            &quot;id&quot;: &quot;http://example.org/entities/2051b4f5-8a33-469f-8440-b8ba68aa8967&quot;,
+            &quot;display&quot;: &quot;&lt;span&gt;Gemini (1958-07-17).&lt;/span&gt;&quot;
+          },
+          {
+            &quot;type&quot;: &quot;public_event&quot;,
+            &quot;id&quot;: &quot;http://example.org/entities/da2c2b6e-8d01-451f-97ce-9117325ee542&quot;,
+            &quot;display&quot;: &quot;&lt;span&gt;Apollo (1942-02-08).&lt;/span&gt;&quot;
+          }
+        ],
+        &quot;publications&quot;: [
+          {
+            &quot;type&quot;: &quot;publication&quot;,
+            &quot;id&quot;: &quot;http://example.org/entities/1fddb687-6de7-48ba-b4f5-cd08690a8463&quot;,
+            &quot;display&quot;: &quot;&lt;span&gt;The Dude, Ned Gerblansky, Rob McKenna Small batch umami shoreditch craft beer single-origin coffee leggings tumblr cornhole.&lt;/span&gt;&quot;
+          }
+        ],
+        &quot;work_of_arts&quot;: [
+          {
+            &quot;type&quot;: &quot;work_of_art&quot;,
+            &quot;id&quot;: &quot;http://example.org/entities/8db8692d-5522-49e6-8d81-3a57a1405ea3&quot;,
+            &quot;display&quot;: &quot;&lt;span&gt;Humma Kavula, Thieves In The Temple, Letterpress &lt;i&gt;meggings thundercats etsy irony pop-up drinking taxidermy blue&lt;/i&gt; bottle.&lt;/span&gt;&quot;
+          },
+          {
+            &quot;type&quot;: &quot;work_of_art&quot;,
+            &quot;id&quot;: &quot;http://example.org/entities/b010ea63-3f3f-49c6-b4ca-061e2734e94d&quot;,
+            &quot;display&quot;: &quot;&lt;span&gt;Reg Nullify, &lt;i&gt;17 Days&lt;/i&gt;, Iphone drinking pabst brunch letterpress narwhal kinfolk fashion axe.&lt;/span&gt;&quot;
+          },
+          {
+            &quot;type&quot;: &quot;work_of_art&quot;,
+            &quot;id&quot;: &quot;http://example.org/entities/cece86c2-2155-4d8c-a7fb-5a07e488f02f&quot;,
+            &quot;display&quot;: &quot;&lt;span&gt;Oolon Colluphid, When You Were Mine, Ethical chillwave cornhole viral venmo phlogiston wolf.&lt;/span&gt;&quot;
+          }
+        ]
+      }
+    }
+  ],
+  &quot;aggs&quot;: {
+    &quot;date&quot;: {
+      &quot;meta&quot;: {
+      },
+      &quot;doc_count&quot;: 3,
+      &quot;buckets&quot;: [
+        {
+          &quot;key_as_string&quot;: &quot;1958-01-01T00:00:00.000Z&quot;,
+          &quot;key&quot;: -378691200000,
+          &quot;doc_count&quot;: 1
+        },
+        {
+          &quot;key_as_string&quot;: &quot;1959-01-01T00:00:00.000Z&quot;,
+          &quot;key&quot;: -347155200000,
+          &quot;doc_count&quot;: 0
+        },
+        {
+          &quot;key_as_string&quot;: &quot;1960-01-01T00:00:00.000Z&quot;,
+          &quot;key&quot;: -315619200000,
+          &quot;doc_count&quot;: 0
+        },
+        {
+          &quot;key_as_string&quot;: &quot;1961-01-01T00:00:00.000Z&quot;,
+          &quot;key&quot;: -283996800000,
+          &quot;doc_count&quot;: 0
+        },
+        {
+          &quot;key_as_string&quot;: &quot;1962-01-01T00:00:00.000Z&quot;,
+          &quot;key&quot;: -252460800000,
+          &quot;doc_count&quot;: 0
+        },
+        {
+          &quot;key_as_string&quot;: &quot;1963-01-01T00:00:00.000Z&quot;,
+          &quot;key&quot;: -220924800000,
+          &quot;doc_count&quot;: 0
+        },
+        {
+          &quot;key_as_string&quot;: &quot;1964-01-01T00:00:00.000Z&quot;,
+          &quot;key&quot;: -189388800000,
+          &quot;doc_count&quot;: 1
+        },
+        {
+          &quot;key_as_string&quot;: &quot;1965-01-01T00:00:00.000Z&quot;,
+          &quot;key&quot;: -157766400000,
+          &quot;doc_count&quot;: 1
+        }
+      ]
+    },
+    &quot;repositories&quot;: {
+      &quot;meta&quot;: {
+      },
+      &quot;doc_count&quot;: 3,
+      &quot;doc_count_error_upper_bound&quot;: 0,
+      &quot;sum_other_doc_count&quot;: 0,
+      &quot;buckets&quot;: [
+        {
+          &quot;key&quot;: &quot;Leffler University&quot;,
+          &quot;doc_count&quot;: 2
+        },
+        {
+          &quot;key&quot;: &quot;East Leannon&quot;,
+          &quot;doc_count&quot;: 1
+        },
+        {
+          &quot;key&quot;: &quot;North Emard Academy&quot;,
+          &quot;doc_count&quot;: 1
+        },
+        {
+          &quot;key&quot;: &quot;The Heathcote Institute&quot;,
+          &quot;doc_count&quot;: 1
+        }
+      ]
+    },
+    &quot;language&quot;: {
+      &quot;meta&quot;: {
+      },
+      &quot;doc_count&quot;: 3,
+      &quot;doc_count_error_upper_bound&quot;: 0,
+      &quot;sum_other_doc_count&quot;: 0,
+      &quot;buckets&quot;: [
+        {
+          &quot;key&quot;: &quot;english&quot;,
+          &quot;doc_count&quot;: 1
+        },
+        {
+          &quot;key&quot;: &quot;french&quot;,
+          &quot;doc_count&quot;: 1
+        },
+        {
+          &quot;key&quot;: &quot;italian&quot;,
+          &quot;doc_count&quot;: 1
+        }
+      ]
+    }
+  },
+  &quot;meta&quot;: {
+    &quot;page&quot;: 1,
+    &quot;per_page&quot;: 25,
+    &quot;page_count&quot;: 1,
+    &quot;total_count&quot;: 3,
+    &quot;links&quot;: {
+      &quot;self&quot;: &quot;http://example.org/letters?page=1&amp;recipients=%3Ci%3EHomer+Simpson%3C%2Fi%3E%2CMiracle+Max&quot;
+    }
+  }
+}</pre>
+      </div>
+    </div>
+  </body>
+</html>

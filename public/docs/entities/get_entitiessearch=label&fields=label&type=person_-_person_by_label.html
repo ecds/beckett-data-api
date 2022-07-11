@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Entities API</title>
+    <meta charset="utf-8">
+    <style>
+      
+body {
+  font-family: Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 18px;
+  color: #404040;
+}
+
+.container {
+  width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  zoom: 1;
+}
+
+pre {
+  background-color: #f5f5f5;
+  display: block;
+  padding: 8.5px;
+  margin: 0 0 18px;
+  line-height: 18px;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+td.required .name:after {
+  float: right;
+  content: "required";
+  font-weight: normal;
+  color: #F08080;
+}
+
+a{
+  color: #0069d6;
+  text-decoration: none;
+  line-height: inherit;
+  font-weight: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  color: #404040;
+}
+
+h1 {
+  margin-bottom: 18px;
+  font-size: 30px;
+  line-height: 36px;
+}
+h2 {
+  font-size: 24px;
+  line-height: 36px;
+}
+h3{
+  font-size: 18px;
+  line-height: 36px;
+}
+h4 {
+  font-size: 16px;
+  line-height: 36px;
+}
+
+table{
+  width: 100%;
+  margin-bottom: 18px;
+  padding: 0;
+  border-collapse: separate;
+  font-size: 13px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  border-spacing: 0;
+  border: 1px solid #ddd;
+}
+
+table th {
+  padding-top: 9px;
+  font-weight: bold;
+  vertical-align: middle;
+  border-bottom: 1px solid #ddd;
+}
+table th+th, table td+td {
+  border-left: 1px solid #ddd;
+}
+table th, table td {
+  padding: 10px 10px 9px;
+  line-height: 18px;
+  text-align: left;
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Entities API</h1>
+
+        <p class="explanation"></p>
+
+      <div class="article">
+        <h2>GET /entities?search=:label&amp;fields=label&amp;type=person - Person by Label</h2>
+        <h3>GET /entities</h3>
+
+          <h3>Parameters</h3>
+          <table class="parameters table table-striped table-bordered table-condensed">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Default</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                    <span class="name">page</span>
+                </td>
+                <td>
+                  <span class="description">Current page of entities</span>
+                </td>
+                <td>
+                  <span class="default">1</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">per_page</span>
+                </td>
+                <td>
+                  <span class="description">Number of entities on a single response.</span>
+                </td>
+                <td>
+                  <span class="default">25</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">search</span>
+                </td>
+                <td>
+                  <span class="description">Text to search.</span>
+                </td>
+                <td>
+                  <span class="default">*</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">type</span>
+                </td>
+                <td>
+                  <span class="description">Limit responses by single type. Options are attendance, music, organization, person, place, production, public_event, publication, reading, translating, work_of_art, writing.</span>
+                </td>
+                <td>
+                  <span class="default">null</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">label</span>
+                </td>
+                <td>
+                  <span class="description">Clean label (no HTML) of entity</span>
+                </td>
+                <td>
+                  <span class="default">null</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Accept: application/json
+Content-Type: application/json
+Host: example.org
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">GET /entities?search=Data&amp;type=person</pre>
+
+            <h4>Query Parameters</h4>
+            <pre class="request query_parameters highlight">search: Data
+type: person</pre>
+
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 0
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Permitted-Cross-Domain-Policies: none
+Referrer-Policy: strict-origin-when-cross-origin
+Link: &lt;http://example.org/entities?page=1&amp;search=Data&amp;type=person&gt;; rel=&#39;self&#39;
+X-Total-Count: 6
+Content-Type: application/json; charset=utf-8
+ETag: W/&quot;c3df97857d10aac904f53a8cb5b7f88c&quot;
+Cache-Control: max-age=0, private, must-revalidate
+X-Request-Id: 304c0b30-596f-4506-a594-1f6418725653
+X-Runtime: 10.526929
+Vary: Origin
+Content-Length: 4866</pre>
+            <h4>Status</h4>
+            <pre class="response status">200 OK</pre>
+              <h4>Body</h4>
+              <pre class="response body">{
+  &quot;entities&quot;: [
+    {
+      &quot;id&quot;: &quot;/entities/3c99c3ae-d8ce-4a35-91dc-938556024345&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;Data&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;person&quot;,
+      &quot;short_display&quot;: &quot;&lt;span&gt;&lt;i&gt;Data&lt;/i&gt; (1923-1983). Irony &lt;i&gt;gentrify cronut try-hard disrupt park&lt;/i&gt; knausgaard.&lt;/span&gt;&quot;,
+      &quot;description&quot;: &quot;Irony &lt;i&gt;gentrify cronut try-hard disrupt park&lt;/i&gt; knausgaard.&quot;,
+      &quot;clean_label&quot;: &quot;Data&quot;,
+      &quot;clean_description&quot;: &quot;Irony gentrify cronut try-hard disrupt park knausgaard.&quot;,
+      &quot;alternate_spellings&quot;: [
+        &quot;Dida Ritz&quot;
+      ],
+      &quot;finding_aids&quot;: [
+        &quot;http://braun.io/dusty_williamson&quot;
+      ],
+      &quot;first_name&quot;: &quot;Huey&quot;,
+      &quot;last_name&quot;: &quot;McClure&quot;,
+      &quot;life_dates&quot;: &quot;(1923-1983)&quot;,
+      &quot;links&quot;: [
+        &quot;http://wyman.com/fe&quot;
+      ],
+      &quot;profile&quot;: &quot;You know, Dude, I myself dabbled in pacifism once. Not in &#39;Nam of course.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;/entities/540a32f7-3230-4eb3-a7ab-ea3453aca203&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;Data&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;person&quot;,
+      &quot;short_display&quot;: &quot;&lt;span&gt;&lt;i&gt;Data&lt;/i&gt; (1906-1971). Occupy &lt;i&gt;viral health cleanse park photo&lt;/i&gt; booth.&lt;/span&gt;&quot;,
+      &quot;description&quot;: &quot;Occupy &lt;i&gt;viral health cleanse park photo&lt;/i&gt; booth.&quot;,
+      &quot;clean_label&quot;: &quot;Data&quot;,
+      &quot;clean_description&quot;: &quot;Occupy viral health cleanse park photo booth.&quot;,
+      &quot;alternate_spellings&quot;: [
+        &quot;Ginger Minj&quot;
+      ],
+      &quot;finding_aids&quot;: [
+        &quot;http://okeefe-stamm.biz/mel&quot;
+      ],
+      &quot;first_name&quot;: &quot;Linwood&quot;,
+      &quot;last_name&quot;: &quot;Farrell&quot;,
+      &quot;life_dates&quot;: &quot;(1906-1971)&quot;,
+      &quot;links&quot;: [
+        &quot;http://ortiz.name/eugenio.rice&quot;
+      ],
+      &quot;profile&quot;: &quot;Mind if I do a J?&quot;
+    },
+    {
+      &quot;id&quot;: &quot;/entities/5deaf864-806f-487e-95c0-04e6ff2a1605&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;Data&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;person&quot;,
+      &quot;short_display&quot;: &quot;&lt;span&gt;&lt;i&gt;Data&lt;/i&gt; (1919-1990). Raw &lt;i&gt;denim bitters tattooed stumptown gluten-free art party&lt;/i&gt; yuccie.&lt;/span&gt;&quot;,
+      &quot;description&quot;: &quot;Raw &lt;i&gt;denim bitters tattooed stumptown gluten-free art party&lt;/i&gt; yuccie.&quot;,
+      &quot;clean_label&quot;: &quot;Data&quot;,
+      &quot;clean_description&quot;: &quot;Raw denim bitters tattooed stumptown gluten-free art party yuccie.&quot;,
+      &quot;alternate_spellings&quot;: [
+        &quot;Derrick Barry&quot;
+      ],
+      &quot;finding_aids&quot;: [
+        &quot;http://champlin-lubowitz.net/enid.heathcote&quot;
+      ],
+      &quot;first_name&quot;: &quot;Garth&quot;,
+      &quot;last_name&quot;: &quot;D&#39;Amore&quot;,
+      &quot;life_dates&quot;: &quot;(1919-1990)&quot;,
+      &quot;links&quot;: [
+        &quot;http://hansen.co/juan&quot;
+      ],
+      &quot;profile&quot;: &quot;This aggression will not stand, man.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;/entities/6da23017-e1ac-4202-b55d-ed7635ebab40&quot;,
+      &quot;label&quot;: &quot;Data&quot;,
+      &quot;type&quot;: &quot;person&quot;,
+      &quot;short_display&quot;: &quot;&lt;span&gt;Data (1907-1992). Schlitz &lt;i&gt;flexitarian ennui cray&lt;/i&gt; heirloom.&lt;/span&gt;&quot;,
+      &quot;description&quot;: &quot;Schlitz &lt;i&gt;flexitarian ennui cray&lt;/i&gt; heirloom.&quot;,
+      &quot;clean_label&quot;: &quot;Data&quot;,
+      &quot;clean_description&quot;: &quot;Schlitz flexitarian ennui cray heirloom.&quot;,
+      &quot;alternate_spellings&quot;: [
+        &quot;Tyra Sanchez&quot;
+      ],
+      &quot;finding_aids&quot;: [
+        &quot;http://douglas-jerde.co/herschel_jaskolski&quot;
+      ],
+      &quot;first_name&quot;: &quot;Giovanni&quot;,
+      &quot;last_name&quot;: &quot;Cummings&quot;,
+      &quot;life_dates&quot;: &quot;(1907-1992)&quot;,
+      &quot;links&quot;: [
+        &quot;http://paucek.biz/jerrold_becker&quot;
+      ],
+      &quot;profile&quot;: &quot;So then you have no frame of reference here Donny. You&#39;re like a child who wanders into the middle of a movie.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;/entities/ae5e36d5-8a6f-47d4-91c3-33e0d85c0fb4&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;Data&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;person&quot;,
+      &quot;short_display&quot;: &quot;&lt;span&gt;&lt;i&gt;Data&lt;/i&gt; (1912-1991). Letterpress &lt;i&gt;goth pour-over tattooed humblebrag&lt;/i&gt; quinoa.&lt;/span&gt;&quot;,
+      &quot;description&quot;: &quot;Letterpress &lt;i&gt;goth pour-over tattooed humblebrag&lt;/i&gt; quinoa.&quot;,
+      &quot;clean_label&quot;: &quot;Data&quot;,
+      &quot;clean_description&quot;: &quot;Letterpress goth pour-over tattooed humblebrag quinoa.&quot;,
+      &quot;alternate_spellings&quot;: [
+        &quot;Milk&quot;
+      ],
+      &quot;finding_aids&quot;: [
+        &quot;http://brown.com/jan&quot;
+      ],
+      &quot;first_name&quot;: &quot;Leanna&quot;,
+      &quot;last_name&quot;: &quot;Cummerata&quot;,
+      &quot;life_dates&quot;: &quot;(1912-1991)&quot;,
+      &quot;links&quot;: [
+        &quot;http://stamm.com/kelsey&quot;
+      ],
+      &quot;profile&quot;: &quot;Yeah, well, that&#39;s just, like, your opinion, man.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;/entities/df3e3609-025d-47a5-bdfd-542f0d72efa0&quot;,
+      &quot;label&quot;: &quot;Data&quot;,
+      &quot;type&quot;: &quot;person&quot;,
+      &quot;short_display&quot;: &quot;&lt;span&gt;Data (1905-1983). Vhs &lt;i&gt;chartreuse tattooed sriracha food truck viral single-origin coffee&lt;/i&gt; iphone.&lt;/span&gt;&quot;,
+      &quot;description&quot;: &quot;Vhs &lt;i&gt;chartreuse tattooed sriracha food truck viral single-origin coffee&lt;/i&gt; iphone.&quot;,
+      &quot;clean_label&quot;: &quot;Data&quot;,
+      &quot;clean_description&quot;: &quot;Vhs chartreuse tattooed sriracha food truck viral single-origin coffee iphone.&quot;,
+      &quot;alternate_spellings&quot;: [
+        &quot;Valentina&quot;
+      ],
+      &quot;finding_aids&quot;: [
+        &quot;http://mante.org/chauncey&quot;
+      ],
+      &quot;first_name&quot;: &quot;Kasey&quot;,
+      &quot;last_name&quot;: &quot;Trantow&quot;,
+      &quot;life_dates&quot;: &quot;(1905-1983)&quot;,
+      &quot;links&quot;: [
+        &quot;http://hills.com/dave&quot;
+      ],
+      &quot;profile&quot;: &quot;I&#39;m the dude, so that&#39;s what you call me. That or, uh His Dudeness, or uh Duder, or El Duderino, if you&#39;re not into the whole brevity thing.&quot;
+    }
+  ],
+  &quot;aggs&quot;: {
+    &quot;e_type&quot;: {
+      &quot;doc_count_error_upper_bound&quot;: 0,
+      &quot;sum_other_doc_count&quot;: 0,
+      &quot;buckets&quot;: [
+        {
+          &quot;key&quot;: &quot;person&quot;,
+          &quot;doc_count&quot;: 6
+        },
+        {
+          &quot;key&quot;: &quot;publication&quot;,
+          &quot;doc_count&quot;: 3
+        }
+      ]
+    }
+  },
+  &quot;meta&quot;: {
+    &quot;page&quot;: 1,
+    &quot;per_page&quot;: 25,
+    &quot;page_count&quot;: 1,
+    &quot;total_count&quot;: 6,
+    &quot;links&quot;: {
+      &quot;self&quot;: &quot;http://example.org/entities?page=1&amp;search=Data&amp;type=person&quot;
+    }
+  }
+}</pre>
+      </div>
+    </div>
+  </body>
+</html>

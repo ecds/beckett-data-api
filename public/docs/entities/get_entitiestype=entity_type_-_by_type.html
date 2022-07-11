@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Entities API</title>
+    <meta charset="utf-8">
+    <style>
+      
+body {
+  font-family: Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 18px;
+  color: #404040;
+}
+
+.container {
+  width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  zoom: 1;
+}
+
+pre {
+  background-color: #f5f5f5;
+  display: block;
+  padding: 8.5px;
+  margin: 0 0 18px;
+  line-height: 18px;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+td.required .name:after {
+  float: right;
+  content: "required";
+  font-weight: normal;
+  color: #F08080;
+}
+
+a{
+  color: #0069d6;
+  text-decoration: none;
+  line-height: inherit;
+  font-weight: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  color: #404040;
+}
+
+h1 {
+  margin-bottom: 18px;
+  font-size: 30px;
+  line-height: 36px;
+}
+h2 {
+  font-size: 24px;
+  line-height: 36px;
+}
+h3{
+  font-size: 18px;
+  line-height: 36px;
+}
+h4 {
+  font-size: 16px;
+  line-height: 36px;
+}
+
+table{
+  width: 100%;
+  margin-bottom: 18px;
+  padding: 0;
+  border-collapse: separate;
+  font-size: 13px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  border-spacing: 0;
+  border: 1px solid #ddd;
+}
+
+table th {
+  padding-top: 9px;
+  font-weight: bold;
+  vertical-align: middle;
+  border-bottom: 1px solid #ddd;
+}
+table th+th, table td+td {
+  border-left: 1px solid #ddd;
+}
+table th, table td {
+  padding: 10px 10px 9px;
+  line-height: 18px;
+  text-align: left;
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Entities API</h1>
+
+        <p class="explanation"></p>
+
+      <div class="article">
+        <h2>GET /entities?type=:entity_type - By Type</h2>
+        <h3>GET /entities</h3>
+          <p class="explanation">
+            Returns a paginated list of entities by type. Valid types are attendance, music, organization, person, place, production, public_event, publication, reading, translating, work_of_art, and writing.
+          </p>
+
+          <h3>Parameters</h3>
+          <table class="parameters table table-striped table-bordered table-condensed">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Default</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                    <span class="name">page</span>
+                </td>
+                <td>
+                  <span class="description">Current page of entities</span>
+                </td>
+                <td>
+                  <span class="default">1</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">per_page</span>
+                </td>
+                <td>
+                  <span class="description">Number of entities on a single response.</span>
+                </td>
+                <td>
+                  <span class="default">25</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">search</span>
+                </td>
+                <td>
+                  <span class="description">Text to search.</span>
+                </td>
+                <td>
+                  <span class="default">*</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">type</span>
+                </td>
+                <td>
+                  <span class="description">Limit responses by single type. Options are attendance, music, organization, person, place, production, public_event, publication, reading, translating, work_of_art, writing.</span>
+                </td>
+                <td>
+                  <span class="default">null</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">label</span>
+                </td>
+                <td>
+                  <span class="description">Clean label (no HTML) of entity</span>
+                </td>
+                <td>
+                  <span class="default">null</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Accept: application/json
+Content-Type: application/json
+Host: example.org
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">GET /entities?type=place</pre>
+
+            <h4>Query Parameters</h4>
+            <pre class="request query_parameters highlight">type: place</pre>
+
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 0
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Permitted-Cross-Domain-Policies: none
+Referrer-Policy: strict-origin-when-cross-origin
+Link: &lt;http://example.org/entities?page=1&amp;type=place&gt;; rel=&#39;self&#39;, &lt;http://example.org/entities?page=6&amp;type=place&gt;; rel=&#39;last&#39;, &lt;http://example.org/entities?page=2&amp;type=place&gt;; rel=&#39;next&#39;
+X-Total-Count: 136
+Content-Type: application/json; charset=utf-8
+ETag: W/&quot;bf6577e04ac162c9fd82e01ac5b7b5d0&quot;
+Cache-Control: max-age=0, private, must-revalidate
+X-Request-Id: d1e95d5e-eea8-4b46-b012-383e4b431234
+X-Runtime: 11.245054
+Vary: Origin
+Content-Length: 13007</pre>
+            <h4>Status</h4>
+            <pre class="response status">200 OK</pre>
+              <h4>Body</h4>
+              <pre class="response body">{
+  &quot;entities&quot;: [
+    {
+      &quot;id&quot;: &quot;/entities/001ce2cd-746e-4e79-8c21-20cde4db5ff5&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;29 Arlington Avenue&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;place&quot;,
+      &quot;short_display&quot;: &quot;&lt;span&gt;&lt;i&gt;29 Arlington Avenue&lt;/i&gt;.&lt;/span&gt;&quot;,
+      &quot;description&quot;: &quot;Letterpress &lt;i&gt;umami retro meditation stumptown&lt;/i&gt; celiac.&quot;,
+      &quot;clean_label&quot;: &quot;29 Arlington Avenue&quot;,
+      &quot;clean_description&quot;: &quot;Letterpress umami retro meditation stumptown celiac.&quot;,
+      &quot;alternate_spellings&quot;: [
+        &quot;Monet X Change&quot;
+      ],
+      &quot;links&quot;: [
+        &quot;http://mcglynn.io/tristan_hermann&quot;
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;/entities/0250e60d-00d2-44e5-8b4b-ac859a7c8716&quot;,
+      &quot;label&quot;: &quot;Stavromula Beta&quot;,
+      &quot;type&quot;: &quot;place&quot;,
+      &quot;short_display&quot;: &quot;&lt;span&gt;Stavromula Beta.&lt;/span&gt;&quot;,
+      &quot;description&quot;: &quot;Actually &lt;i&gt;diy biodiesel cronut try-hard master green juice yr&lt;/i&gt; heirloom.&quot;,
+      &quot;clean_label&quot;: &quot;Stavromula Beta&quot;,
+      &quot;clean_description&quot;: &quot;Actually diy biodiesel cronut try-hard master green juice yr heirloom.&quot;,
+      &quot;alternate_spellings&quot;: [
+        &quot;Peppermint&quot;
+      ],
+      &quot;links&quot;: [
+        &quot;http://stokes-langworth.name/stepanie&quot;
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;/entities/03bf5f69-d8ae-42ad-a808-25704f6dd097&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;Barnard&#39;s Star&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;place&quot;,
+      &quot;short_display&quot;: &quot;&lt;span&gt;&lt;i&gt;Barnard&#39;s Star&lt;/i&gt;.&lt;/span&gt;&quot;,
+      &quot;description&quot;: &quot;Meditation &lt;i&gt;portland mumblecore migas bicycle&lt;/i&gt; rights.&quot;,
+      &quot;clean_label&quot;: &quot;Barnard&#39;s Star&quot;,
+      &quot;clean_description&quot;: &quot;Meditation portland mumblecore migas bicycle rights.&quot;,
+      &quot;alternate_spellings&quot;: [
+        &quot;Ginger Minj&quot;
+      ],
+      &quot;links&quot;: [
+        &quot;http://wunsch.io/jeff&quot;
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;/entities/04d9c057-cac7-4a90-8669-5604fc79cd2d&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;The Big Bang Burger Bar&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;place&quot;,
+      &quot;short_display&quot;: &quot;&lt;span&gt;&lt;i&gt;The Big Bang Burger Bar&lt;/i&gt;.&lt;/span&gt;&quot;,
+      &quot;description&quot;: &quot;Blue &lt;i&gt;bottle pitchfork jean shorts loko wes&lt;/i&gt; anderson.&quot;,
+      &quot;clean_label&quot;: &quot;The Big Bang Burger Bar&quot;,
+      &quot;clean_description&quot;: &quot;Blue bottle pitchfork jean shorts loko wes anderson.&quot;,
+      &quot;alternate_spellings&quot;: [
+        &quot;Shea Coulee&quot;
+      ],
+      &quot;links&quot;: [
+        &quot;http://funk.net/robin&quot;
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;/entities/07a4379e-4abf-4a39-a07a-db4ac7d59809&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;Kakrafoon Kappa&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;place&quot;,
+      &quot;short_display&quot;: &quot;&lt;span&gt;&lt;i&gt;Kakrafoon Kappa&lt;/i&gt;.&lt;/span&gt;&quot;,
+      &quot;description&quot;: &quot;Pug everyday vice actually next level stumptown hashtag yuccie vegan.&quot;,
+      &quot;clean_label&quot;: &quot;Kakrafoon Kappa&quot;,
+      &quot;clean_description&quot;: &quot;Pug everyday vice actually next level stumptown hashtag yuccie vegan.&quot;,
+      &quot;alternate_spellings&quot;: [
+        &quot;Shea Coulee&quot;
+      ],
+      &quot;links&quot;: [
+        &quot;http://cummings-cormier.org/marcos_harber&quot;
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;/entities/084be334-a9bf-45a7-88eb-c2b9a57f38ce&quot;,
+      &quot;label&quot;: &quot;Milliways&quot;,
+      &quot;type&quot;: &quot;place&quot;,
+      &quot;short_display&quot;: &quot;&lt;span&gt;Milliways.&lt;/span&gt;&quot;,
+      &quot;description&quot;: &quot;Meh &lt;i&gt;flexitarian selfies disrupt williamsburg mixtape biodiesel deep&lt;/i&gt; v.&quot;,
+      &quot;clean_label&quot;: &quot;Milliways&quot;,
+      &quot;clean_description&quot;: &quot;Meh flexitarian selfies disrupt williamsburg mixtape biodiesel deep v.&quot;,
+      &quot;alternate_spellings&quot;: [
+        &quot;Raja&quot;
+      ],
+      &quot;links&quot;: [
+        &quot;http://kulas.co/fred_shields&quot;
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;/entities/0c06a1ce-45f7-402b-98b8-962bcad2e08d&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;Café Lou&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;place&quot;,
+      &quot;short_display&quot;: &quot;&lt;span&gt;&lt;i&gt;Café Lou&lt;/i&gt;.&lt;/span&gt;&quot;,
+      &quot;description&quot;: &quot;Street waistcoat offal kale chips readymade you probably haven&#39;t heard of them.&quot;,
+      &quot;clean_label&quot;: &quot;Café Lou&quot;,
+      &quot;clean_description&quot;: &quot;Street waistcoat offal kale chips readymade you probably haven&#39;t heard of them.&quot;,
+      &quot;alternate_spellings&quot;: [
+        &quot;Tatianna&quot;
+      ],
+      &quot;links&quot;: [
+        &quot;http://powlowski-bins.co/lanelle.witting&quot;
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;/entities/0d3fbdc3-f80a-4f27-93bb-8676cb4c7724&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;Frogstar World B&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;place&quot;,
+      &quot;short_display&quot;: &quot;&lt;span&gt;&lt;i&gt;Frogstar World B&lt;/i&gt;.&lt;/span&gt;&quot;,
+      &quot;description&quot;: &quot;Irony vegan cliche green juice 8-bit mustache +1.&quot;,
+      &quot;clean_label&quot;: &quot;Frogstar World B&quot;,
+      &quot;clean_description&quot;: &quot;Irony vegan cliche green juice 8-bit mustache +1.&quot;,
+      &quot;alternate_spellings&quot;: [
+        &quot;Brook Lynn Hytes&quot;
+      ],
+      &quot;links&quot;: [
+        &quot;http://bayer.org/kayce_stoltenberg&quot;
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;/entities/0f053dc6-e991-49c3-8c11-4dbfdbe2e5e5&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;The Domain of The King&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;place&quot;,
+      &quot;short_display&quot;: &quot;&lt;span&gt;&lt;i&gt;The Domain of The King&lt;/i&gt;.&lt;/span&gt;&quot;,
+      &quot;description&quot;: &quot;Master &lt;i&gt;ennui flexitarian pickled pug lumbersexual tote bag&lt;/i&gt; thundercats.&quot;,
+      &quot;clean_label&quot;: &quot;The Domain of The King&quot;,
+      &quot;clean_description&quot;: &quot;Master ennui flexitarian pickled pug lumbersexual tote bag thundercats.&quot;,
+      &quot;alternate_spellings&quot;: [
+        &quot;Aquaria&quot;
+      ],
+      &quot;links&quot;: [
+        &quot;http://stracke-oberbrunner.org/phylicia.kertzmann&quot;
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;/entities/157bd3fb-694d-4756-b0fa-49db3134dbb1&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;France&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;place&quot;,
+      &quot;short_display&quot;: &quot;&lt;span&gt;&lt;i&gt;France&lt;/i&gt;.&lt;/span&gt;&quot;,
+      &quot;description&quot;: &quot;Fingerstache &lt;i&gt;microdosing wayfarers small batch deep v sustainable cardigan slow-carb&lt;/i&gt; mlkshk.&quot;,
+      &quot;clean_label&quot;: &quot;France&quot;,
+      &quot;clean_description&quot;: &quot;Fingerstache microdosing wayfarers small batch deep v sustainable cardigan slow-carb mlkshk.&quot;,
+      &quot;alternate_spellings&quot;: [
+        &quot;Eureka&quot;
+      ],
+      &quot;links&quot;: [
+        &quot;http://schmeler.io/coy&quot;
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;/entities/178315fd-25f3-47bc-9021-e6373dfca5a1&quot;,
+      &quot;label&quot;: &quot;Total Perspective Vortex&quot;,
+      &quot;type&quot;: &quot;place&quot;,
+      &quot;short_display&quot;: &quot;&lt;span&gt;Total Perspective Vortex.&lt;/span&gt;&quot;,
+      &quot;description&quot;: &quot;Waistcoat hella single-origin coffee locavore chicharrones.&quot;,
+      &quot;clean_label&quot;: &quot;Total Perspective Vortex&quot;,
+      &quot;clean_description&quot;: &quot;Waistcoat hella single-origin coffee locavore chicharrones.&quot;,
+      &quot;alternate_spellings&quot;: [
+        &quot;Sasha Velour&quot;
+      ],
+      &quot;links&quot;: [
+        &quot;http://kiehn.io/leida.effertz&quot;
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;/entities/1884db41-2a85-49ca-8497-f8daccaf5ae1&quot;,
+      &quot;label&quot;: &quot;Pleiades system&quot;,
+      &quot;type&quot;: &quot;place&quot;,
+      &quot;short_display&quot;: &quot;&lt;span&gt;Pleiades system.&lt;/span&gt;&quot;,
+      &quot;description&quot;: &quot;Thundercats &lt;i&gt;3 wolf moon fanny pack chartreuse five dollar&lt;/i&gt; toast.&quot;,
+      &quot;clean_label&quot;: &quot;Pleiades system&quot;,
+      &quot;clean_description&quot;: &quot;Thundercats 3 wolf moon fanny pack chartreuse five dollar toast.&quot;,
+      &quot;alternate_spellings&quot;: [
+        &quot;Sharon Needles&quot;
+      ],
+      &quot;links&quot;: [
+        &quot;http://leannon-kertzmann.com/darren_grant&quot;
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;/entities/19c22a8a-ccd8-442b-89c2-8f3344c9b5c8&quot;,
+      &quot;label&quot;: &quot;Horsehead Nebula&quot;,
+      &quot;type&quot;: &quot;place&quot;,
+      &quot;short_display&quot;: &quot;&lt;span&gt;Horsehead Nebula.&lt;/span&gt;&quot;,
+      &quot;description&quot;: &quot;Hashtag sriracha tumblr ennui letterpress retro five dollar toast cleanse viral.&quot;,
+      &quot;clean_label&quot;: &quot;Horsehead Nebula&quot;,
+      &quot;clean_description&quot;: &quot;Hashtag sriracha tumblr ennui letterpress retro five dollar toast cleanse viral.&quot;,
+      &quot;alternate_spellings&quot;: [
+        &quot;Pearl&quot;
+      ],
+      &quot;links&quot;: [
+        &quot;http://macejkovic-jones.co/harris&quot;
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;/entities/1b771820-18aa-40d8-9db7-31e78b9c87ef&quot;,
+      &quot;label&quot;: &quot;Zarss&quot;,
+      &quot;type&quot;: &quot;place&quot;,
+      &quot;short_display&quot;: &quot;&lt;span&gt;Zarss.&lt;/span&gt;&quot;,
+      &quot;description&quot;: &quot;Thundercats vhs banjo forage 3 wolf moon.&quot;,
+      &quot;clean_label&quot;: &quot;Zarss&quot;,
+      &quot;clean_description&quot;: &quot;Thundercats vhs banjo forage 3 wolf moon.&quot;,
+      &quot;alternate_spellings&quot;: [
+        &quot;Acid Betty&quot;
+      ],
+      &quot;links&quot;: [
+        &quot;http://dickens.name/gwendolyn.johnson&quot;
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;/entities/24c07691-5762-4fda-8c5e-5d940af77279&quot;,
+      &quot;label&quot;: &quot;North West Ripple&quot;,
+      &quot;type&quot;: &quot;place&quot;,
+      &quot;short_display&quot;: &quot;&lt;span&gt;North West Ripple.&lt;/span&gt;&quot;,
+      &quot;description&quot;: &quot;Tattooed try-hard cardigan quinoa squid forage vegan.&quot;,
+      &quot;clean_label&quot;: &quot;North West Ripple&quot;,
+      &quot;clean_description&quot;: &quot;Tattooed try-hard cardigan quinoa squid forage vegan.&quot;,
+      &quot;alternate_spellings&quot;: [
+        &quot;Kim Chi&quot;
+      ],
+      &quot;links&quot;: [
+        &quot;http://hackett-jakubowski.info/dwayne&quot;
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;/entities/27e0dd63-39b7-411f-a701-e131899263ed&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;Han Dold City&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;place&quot;,
+      &quot;short_display&quot;: &quot;&lt;span&gt;&lt;i&gt;Han Dold City&lt;/i&gt;.&lt;/span&gt;&quot;,
+      &quot;description&quot;: &quot;Pbr&amp;b kinfolk marfa church-key meh.&quot;,
+      &quot;clean_label&quot;: &quot;Han Dold City&quot;,
+      &quot;clean_description&quot;: &quot;Pbr&amp;amp;b kinfolk marfa church-key meh.&quot;,
+      &quot;alternate_spellings&quot;: [
+        &quot;Tatianna&quot;
+      ],
+      &quot;links&quot;: [
+        &quot;http://muller.info/pearl.littel&quot;
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;/entities/2805aed1-02dc-45c7-b79c-946f31c22407&quot;,
+      &quot;label&quot;: &quot;Highgate Cemetery&quot;,
+      &quot;type&quot;: &quot;place&quot;,
+      &quot;short_display&quot;: &quot;&lt;span&gt;Highgate Cemetery.&lt;/span&gt;&quot;,
+      &quot;description&quot;: &quot;Chicharrones &lt;i&gt;direct trade skateboard cliche disrupt microdosing&lt;/i&gt; neutra.&quot;,
+      &quot;clean_label&quot;: &quot;Highgate Cemetery&quot;,
+      &quot;clean_description&quot;: &quot;Chicharrones direct trade skateboard cliche disrupt microdosing neutra.&quot;,
+      &quot;alternate_spellings&quot;: [
+        &quot;Miss Fame&quot;
+      ],
+      &quot;links&quot;: [
+        &quot;http://hand.name/jefferson.osinski&quot;
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;/entities/2bab8cf5-1156-4cb5-94a8-45bf232362e5&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;Rupert&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;place&quot;,
+      &quot;short_display&quot;: &quot;&lt;span&gt;&lt;i&gt;Rupert&lt;/i&gt;.&lt;/span&gt;&quot;,
+      &quot;description&quot;: &quot;Mixtape &lt;i&gt;migas phlogiston seitan forage yuccie etsy church-key&lt;/i&gt; meggings.&quot;,
+      &quot;clean_label&quot;: &quot;Rupert&quot;,
+      &quot;clean_description&quot;: &quot;Mixtape migas phlogiston seitan forage yuccie etsy church-key meggings.&quot;,
+      &quot;alternate_spellings&quot;: [
+        &quot;Joslyn Fox&quot;
+      ],
+      &quot;links&quot;: [
+        &quot;http://steuber.org/gerald.hane&quot;
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;/entities/2bb2723d-d65b-48e5-b5d0-566c69002c93&quot;,
+      &quot;label&quot;: &quot;London&quot;,
+      &quot;type&quot;: &quot;place&quot;,
+      &quot;short_display&quot;: &quot;&lt;span&gt;London.&lt;/span&gt;&quot;,
+      &quot;description&quot;: &quot;Meh poutine gluten-free neutra viral banjo letterpress tacos five dollar toast.&quot;,
+      &quot;clean_label&quot;: &quot;London&quot;,
+      &quot;clean_description&quot;: &quot;Meh poutine gluten-free neutra viral banjo letterpress tacos five dollar toast.&quot;,
+      &quot;alternate_spellings&quot;: [
+        &quot;Nina Bonina Brown&quot;
+      ],
+      &quot;links&quot;: [
+        &quot;http://toy-leffler.info/michel&quot;
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;/entities/2bc4bfab-6324-4799-bc15-76efec81b0ac&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;Madagascar&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;place&quot;,
+      &quot;short_display&quot;: &quot;&lt;span&gt;&lt;i&gt;Madagascar&lt;/i&gt;.&lt;/span&gt;&quot;,
+      &quot;description&quot;: &quot;Polaroid pitchfork poutine pour-over umami raw denim seitan kombucha whatever.&quot;,
+      &quot;clean_label&quot;: &quot;Madagascar&quot;,
+      &quot;clean_description&quot;: &quot;Polaroid pitchfork poutine pour-over umami raw denim seitan kombucha whatever.&quot;,
+      &quot;alternate_spellings&quot;: [
+        &quot;Robbie Turner&quot;
+      ],
+      &quot;links&quot;: [
+        &quot;http://dare.org/norman.lockman&quot;
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;/entities/2d4098af-ce15-40ea-bda6-f060d924fe49&quot;,
+      &quot;label&quot;: &quot;Ibiza&quot;,
+      &quot;type&quot;: &quot;place&quot;,
+      &quot;short_display&quot;: &quot;&lt;span&gt;Ibiza.&lt;/span&gt;&quot;,
+      &quot;description&quot;: &quot;Beard &lt;i&gt;five dollar toast tousled skateboard vinegar crucifix trust&lt;/i&gt; fund.&quot;,
+      &quot;clean_label&quot;: &quot;Ibiza&quot;,
+      &quot;clean_description&quot;: &quot;Beard five dollar toast tousled skateboard vinegar crucifix trust fund.&quot;,
+      &quot;alternate_spellings&quot;: [
+        &quot;Detox&quot;
+      ],
+      &quot;links&quot;: [
+        &quot;http://lynch.co/truman.hyatt&quot;
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;/entities/2de0baa0-f133-4532-9787-40423705596b&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;Western Spiral Arm&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;place&quot;,
+      &quot;short_display&quot;: &quot;&lt;span&gt;&lt;i&gt;Western Spiral Arm&lt;/i&gt;.&lt;/span&gt;&quot;,
+      &quot;description&quot;: &quot;Roof &lt;i&gt;scenester microdosing cray&lt;/i&gt; hammock.&quot;,
+      &quot;clean_label&quot;: &quot;Western Spiral Arm&quot;,
+      &quot;clean_description&quot;: &quot;Roof scenester microdosing cray hammock.&quot;,
+      &quot;alternate_spellings&quot;: [
+        &quot;Monique Heart&quot;
+      ],
+      &quot;links&quot;: [
+        &quot;http://okeefe.name/hannah&quot;
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;/entities/3416570c-5455-45fd-a1cc-677b7d919590&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;Stavromula Beta&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;place&quot;,
+      &quot;short_display&quot;: &quot;&lt;span&gt;&lt;i&gt;Stavromula Beta&lt;/i&gt;.&lt;/span&gt;&quot;,
+      &quot;description&quot;: &quot;Cleanse semiotics tattooed chambray.&quot;,
+      &quot;clean_label&quot;: &quot;Stavromula Beta&quot;,
+      &quot;clean_description&quot;: &quot;Cleanse semiotics tattooed chambray.&quot;,
+      &quot;alternate_spellings&quot;: [
+        &quot;Kennedy Davenport&quot;
+      ],
+      &quot;links&quot;: [
+        &quot;http://oconner-sawayn.biz/annabell&quot;
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;/entities/34a0e8a9-f5d3-4a49-96b8-2f3562c47263&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;Seventh Galaxy of Light and Ingenuity&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;place&quot;,
+      &quot;short_display&quot;: &quot;&lt;span&gt;&lt;i&gt;Seventh Galaxy of Light and Ingenuity&lt;/i&gt;.&lt;/span&gt;&quot;,
+      &quot;description&quot;: &quot;Selfies sriracha pour-over irony migas helvetica wayfarers.&quot;,
+      &quot;clean_label&quot;: &quot;Seventh Galaxy of Light and Ingenuity&quot;,
+      &quot;clean_description&quot;: &quot;Selfies sriracha pour-over irony migas helvetica wayfarers.&quot;,
+      &quot;alternate_spellings&quot;: [
+        &quot;Dida Ritz&quot;
+      ],
+      &quot;links&quot;: [
+        &quot;http://wiegand-gerhold.co/demarcus&quot;
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;/entities/366bfbe7-6cd0-4a6c-ac9a-caad24a72779&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;North West Ripple&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;place&quot;,
+      &quot;short_display&quot;: &quot;&lt;span&gt;&lt;i&gt;North West Ripple&lt;/i&gt;.&lt;/span&gt;&quot;,
+      &quot;description&quot;: &quot;Tumblr vinegar before they sold out biodiesel crucifix.&quot;,
+      &quot;clean_label&quot;: &quot;North West Ripple&quot;,
+      &quot;clean_description&quot;: &quot;Tumblr vinegar before they sold out biodiesel crucifix.&quot;,
+      &quot;alternate_spellings&quot;: [
+        &quot;Brook Lynn Hytes&quot;
+      ],
+      &quot;links&quot;: [
+        &quot;http://lemke-senger.com/korey_sanford&quot;
+      ]
+    }
+  ],
+  &quot;aggs&quot;: {
+    &quot;e_type&quot;: {
+      &quot;doc_count_error_upper_bound&quot;: 0,
+      &quot;sum_other_doc_count&quot;: 0,
+      &quot;buckets&quot;: [
+        {
+          &quot;key&quot;: &quot;place&quot;,
+          &quot;doc_count&quot;: 136
+        },
+        {
+          &quot;key&quot;: &quot;person&quot;,
+          &quot;doc_count&quot;: 78
+        },
+        {
+          &quot;key&quot;: &quot;writing&quot;,
+          &quot;doc_count&quot;: 47
+        },
+        {
+          &quot;key&quot;: &quot;attendance&quot;,
+          &quot;doc_count&quot;: 42
+        },
+        {
+          &quot;key&quot;: &quot;music&quot;,
+          &quot;doc_count&quot;: 42
+        },
+        {
+          &quot;key&quot;: &quot;publication&quot;,
+          &quot;doc_count&quot;: 37
+        },
+        {
+          &quot;key&quot;: &quot;work_of_art&quot;,
+          &quot;doc_count&quot;: 37
+        },
+        {
+          &quot;key&quot;: &quot;reading&quot;,
+          &quot;doc_count&quot;: 34
+        },
+        {
+          &quot;key&quot;: &quot;public_event&quot;,
+          &quot;doc_count&quot;: 33
+        },
+        {
+          &quot;key&quot;: &quot;translating&quot;,
+          &quot;doc_count&quot;: 31
+        },
+        {
+          &quot;key&quot;: &quot;organization&quot;,
+          &quot;doc_count&quot;: 30
+        },
+        {
+          &quot;key&quot;: &quot;production&quot;,
+          &quot;doc_count&quot;: 30
+        }
+      ]
+    }
+  },
+  &quot;meta&quot;: {
+    &quot;page&quot;: 1,
+    &quot;per_page&quot;: 25,
+    &quot;page_count&quot;: 6,
+    &quot;total_count&quot;: 136,
+    &quot;links&quot;: {
+      &quot;self&quot;: &quot;http://example.org/entities?page=1&amp;type=place&quot;,
+      &quot;last&quot;: &quot;http://example.org/entities?page=6&amp;type=place&quot;,
+      &quot;next&quot;: &quot;http://example.org/entities?page=2&amp;type=place&quot;
+    }
+  }
+}</pre>
+      </div>
+    </div>
+  </body>
+</html>

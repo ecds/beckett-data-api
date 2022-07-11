@@ -1,8 +1,10 @@
-# Letters API
+# Entities API
 
-## PUT /letters/:id
 
-### PUT /letters/:id
+
+## PUT /entities/:id
+
+### PUT /entities/:id
 ### Request
 
 #### Headers
@@ -15,7 +17,7 @@ Cookie: </pre>
 
 #### Route
 
-<pre>PUT /letters/91fd2a22-e78a-4b33-b5bb-cc0640da9777</pre>
+<pre>PUT /entities/f6637c32-d6c3-445a-9465-3e1a31cde8b1</pre>
 
 ### Response
 
@@ -29,8 +31,8 @@ X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json
 Cache-Control: no-cache
-X-Request-Id: 2f3c5fde-0545-4f22-9ee2-6da1163ef8f3
-X-Runtime: 0.369722
+X-Request-Id: 33c061b9-5c98-419a-8047-3102888ecee9
+X-Runtime: 0.386087
 Vary: Origin
 Content-Length: 0</pre>
 

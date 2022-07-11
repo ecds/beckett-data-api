@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Letters API</title>
+    <title>Entities API</title>
     <meta charset="utf-8">
     <style>
       
@@ -106,11 +106,13 @@ table th, table td {
   </head>
   <body>
     <div class="container">
-      <h1>Letters API</h1>
+      <h1>Entities API</h1>
+
+        <p class="explanation"></p>
 
       <div class="article">
-        <h2>DELETE /letters/:id</h2>
-        <h3>DELETE /letters/:id</h3>
+        <h2>GET /entities/:id - Work Of Art</h2>
+        <h3>GET /entities/:id</h3>
 
 
 
@@ -124,7 +126,7 @@ Host: example.org
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">DELETE /letters/4e3d3e8a-d33a-41dc-ab50-540c6068d21c</pre>
+          <pre class="request route highlight">GET /entities/8a9c0216-05d9-4876-bc94-ea09189db428</pre>
 
 
 
@@ -137,14 +139,31 @@ X-Content-Type-Options: nosniff
 X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
-Content-Type: application/json
-Cache-Control: no-cache
-X-Request-Id: 1ab740be-9fd8-4cc6-a348-7ca9bb65c64a
-X-Runtime: 0.398092
+Content-Type: application/json; charset=utf-8
+ETag: W/&quot;b61e763456309f1acee0bf6333975d20&quot;
+Cache-Control: max-age=0, private, must-revalidate
+X-Request-Id: 9938133c-cba0-4c61-8a69-cf4e92c7a76b
+X-Runtime: 1.004261
 Vary: Origin
-Content-Length: 0</pre>
+Content-Length: 443</pre>
             <h4>Status</h4>
-            <pre class="response status">501 Not Implemented</pre>
+            <pre class="response status">200 OK</pre>
+              <h4>Body</h4>
+              <pre class="response body">{
+  &quot;type&quot;: &quot;work_of_art&quot;,
+  &quot;label&quot;: &quot;&lt;i&gt;Partyman&lt;/i&gt;&quot;,
+  &quot;description&quot;: &quot;Tofu &lt;i&gt;blue bottle before they sold out chartreuse cray&lt;/i&gt; franzen.&quot;,
+  &quot;alternate_spellings&quot;: [
+    &quot;Morgan McMichaels&quot;
+  ],
+  &quot;artist&quot;: &quot;Eccentrica Gallumbits&quot;,
+  &quot;artist_alternate_spellings&quot;: [
+    &quot;Ra&#39;jah O&#39;Hara&quot;
+  ],
+  &quot;notes&quot;: &quot;Life? Don&#39;t talk to me about life.&quot;,
+  &quot;owner_location_accession_number_current&quot;: 744,
+  &quot;owner_location_accession_number_contemporaneous&quot;: 602
+}</pre>
       </div>
     </div>
   </body>

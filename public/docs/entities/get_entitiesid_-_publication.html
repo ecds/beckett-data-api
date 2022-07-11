@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Letters API</title>
+    <title>Entities API</title>
     <meta charset="utf-8">
     <style>
       
@@ -106,11 +106,13 @@ table th, table td {
   </head>
   <body>
     <div class="container">
-      <h1>Letters API</h1>
+      <h1>Entities API</h1>
+
+        <p class="explanation"></p>
 
       <div class="article">
-        <h2>DELETE /letters/:id</h2>
-        <h3>DELETE /letters/:id</h3>
+        <h2>GET /entities/:id - Publication</h2>
+        <h3>GET /entities/:id</h3>
 
 
 
@@ -124,7 +126,7 @@ Host: example.org
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">DELETE /letters/4e3d3e8a-d33a-41dc-ab50-540c6068d21c</pre>
+          <pre class="request route highlight">GET /entities/020ab169-e315-428f-a77d-44860a16ae87</pre>
 
 
 
@@ -137,14 +139,25 @@ X-Content-Type-Options: nosniff
 X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
-Content-Type: application/json
-Cache-Control: no-cache
-X-Request-Id: 1ab740be-9fd8-4cc6-a348-7ca9bb65c64a
-X-Runtime: 0.398092
+Content-Type: application/json; charset=utf-8
+ETag: W/&quot;7839676fbfb7743664825aa44fa203fe&quot;
+Cache-Control: max-age=0, private, must-revalidate
+X-Request-Id: 2f3efbdd-a7f0-4e49-b68b-67033c3b1bb0
+X-Runtime: 0.921873
 Vary: Origin
-Content-Length: 0</pre>
+Content-Length: 373</pre>
             <h4>Status</h4>
-            <pre class="response status">501 Not Implemented</pre>
+            <pre class="response status">200 OK</pre>
+              <h4>Body</h4>
+              <pre class="response body">{
+  &quot;type&quot;: &quot;publication&quot;,
+  &quot;label&quot;: &quot;Butterscotch Horseman&quot;,
+  &quot;description&quot;: &quot;Next level tumblr shabby chic kickstarter.&quot;,
+  &quot;author&quot;: &quot;Maude Lebowski&quot;,
+  &quot;notes&quot;: &quot;Pardon me for breathing, which I never do anyway so I don&#39;t know why I bother to say it, Oh God, I&#39;m so depressed.&quot;,
+  &quot;publication_information&quot;: &quot;Direct trade actually bicycle rights chicharrones.&quot;,
+  &quot;translator&quot;: &quot;Emily Saunders&quot;
+}</pre>
       </div>
     </div>
   </body>

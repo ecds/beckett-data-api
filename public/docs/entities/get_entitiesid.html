@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Letters API</title>
+    <title>Entities API</title>
     <meta charset="utf-8">
     <style>
       
@@ -106,11 +106,13 @@ table th, table td {
   </head>
   <body>
     <div class="container">
-      <h1>Letters API</h1>
+      <h1>Entities API</h1>
+
+        <p class="explanation"></p>
 
       <div class="article">
-        <h2>DELETE /letters/:id</h2>
-        <h3>DELETE /letters/:id</h3>
+        <h2>GET /entities/:id</h2>
+        <h3>GET /entities/:id</h3>
 
 
 
@@ -124,7 +126,7 @@ Host: example.org
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">DELETE /letters/4e3d3e8a-d33a-41dc-ab50-540c6068d21c</pre>
+          <pre class="request route highlight">GET /entities/c00fcd9e-ac34-4570-8620-d33c98207c96</pre>
 
 
 
@@ -137,14 +139,27 @@ X-Content-Type-Options: nosniff
 X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
-Content-Type: application/json
-Cache-Control: no-cache
-X-Request-Id: 1ab740be-9fd8-4cc6-a348-7ca9bb65c64a
-X-Runtime: 0.398092
+Content-Type: application/json; charset=utf-8
+ETag: W/&quot;15ff675c4d43e13314ea9222d8ddb41b&quot;
+Cache-Control: max-age=0, private, must-revalidate
+X-Request-Id: 5d04035c-1363-4321-b25a-a04a13b5cce0
+X-Runtime: 1.006507
 Vary: Origin
-Content-Length: 0</pre>
+Content-Length: 298</pre>
             <h4>Status</h4>
-            <pre class="response status">501 Not Implemented</pre>
+            <pre class="response status">200 OK</pre>
+              <h4>Body</h4>
+              <pre class="response body">{
+  &quot;type&quot;: &quot;reading&quot;,
+  &quot;label&quot;: &quot;Down to a Sunless Sea&quot;,
+  &quot;description&quot;: &quot;Tumblr hoodie seitan irony.&quot;,
+  &quot;authors&quot;: [
+    &quot;Ms. Darius Shanahan&quot;
+  ],
+  &quot;comment&quot;: &quot;And then of course I&#39;ve got this terrible pain in all the diodes down my left side.&quot;,
+  &quot;publication&quot;: &quot;Cloverdale Corporation&quot;,
+  &quot;publication_format&quot;: &quot;Thundercats&quot;
+}</pre>
       </div>
     </div>
   </body>

@@ -15,7 +15,7 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /letters/ae41515d-4113-4202-8278-881fc2141f69</pre>
+<pre>GET /letters/d8c8874e-3255-4579-a0f6-245ca51a5036</pre>
 
 ### Response
 
@@ -28,12 +28,12 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;43c9a464148448320162668848dfe8b5&quot;
+ETag: W/&quot;b0db81525f0a7aebae3d76df5b220793&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 82932988-6cb2-4f39-9d4e-2721c26da63f
-X-Runtime: 0.577145
+X-Request-Id: 5f357490-0b0f-4724-b0d1-485888fef17e
+X-Runtime: 0.568744
 Vary: Origin
-Content-Length: 1308</pre>
+Content-Length: 2683</pre>
 
 #### Status
 
@@ -42,31 +42,95 @@ Content-Length: 1308</pre>
 #### Body
 
 <pre>{
-  "id": "ae41515d-4113-4202-8278-881fc2141f69",
-  "legacy_pk": null,
-  "code": null,
-  "date": "1961-06-10T00:00:00.000-04:00",
-  "addressed_to": "Suite 735 32972 Danika Ville, South Claudio, MS 55975-8671",
-  "addressed_from": "307 Keebler Lights, Jonesside, NE 00265",
-  "language": "english",
-  "physical_desc": "In molestiae error. Sit consequuntur sit. Quo voluptatum et.",
-  "physical_detail": "kinfolk",
-  "physical_notes": "Et et sed. Facilis veritatis libero. Placeat aliquid consequatur.",
-  "repository_info": "letterpress",
-  "postcard_image": "http://orn.biz/cliche.jpg",
-  "leaves": 1,
-  "sides": 1,
-  "postmark": "1963-02-03, East Cherrie",
-  "volume_pages": null,
-  "typed": false,
-  "signed": false,
-  "verified": false,
-  "envelope": "E",
-  "notes": "Atque porro eligendi. Soluta modi magni. Dolores et ut.",
-  "content": "Suscipit voluptatem aut. Et laudantium voluptatum. Sunt aspernatur rem. In nam in. Vel necessitatibus aut. Magni quasi tempora. Enim atque ducimus. Dolores eum totam. Ducimus vero magni. Et minima sit. Et nesciunt molestiae. Dignissimos quas illo. Eos cupiditate iste. Quae aliquid sunt.",
-  "letter_file_id": "ecc101cc-05b1-4e50-b5c6-c17a7f39147c",
-  "letter_publisher_id": "904caada-b66d-4620-bbc7-22da701bba6b",
-  "letter_owner_id": "e2af9f40-41e7-4fa5-986b-39737cf8eadf",
-  "created_at": "2022-07-07T08:51:47.599-04:00",
-  "updated_at": "2022-07-07T08:51:47.599-04:00"
+  "id": "http://example.org/letters/d8c8874e-3255-4579-a0f6-245ca51a5036",
+  "date": "1957-04-04T00:00:00.000-05:00",
+  "recipients": [
+    {
+      "id": "http://example.org/entities/4fa3ac1d-cd29-4326-9a7c-c334169e9752.json",
+      "type": "person",
+      "label": "<i>Emory</i>",
+      "description": "<span><i>Emory</i> (1921-1973). Five <i>dollar toast actually listicle bicycle rights banh</i> mi.</span>"
+    }
+  ],
+  "destinations": [
+    {
+      "id": "http://example.org/entities/433589cf-167e-40e9-95f9-600a3f1fe99b.json",
+      "type": "place",
+      "label": "<i>Asbleg</i>",
+      "description": "<span><i>Asbleg</i>.</span>"
+    }
+  ],
+  "mentions": {
+    "people": [
+      {
+        "id": "http://example.org/entities/1e495a56-df8b-4a9f-b3e2-2afbf32eed59.json",
+        "type": "person",
+        "label": "<i>Brandt</i>",
+        "description": "<span><i>Brandt</i> (1928-1980). Gentrify farm-to-table brunch raw denim heirloom.</span>",
+        "tags": [
+
+        ]
+      }
+    ],
+    "publications": [
+      {
+        "id": "http://example.org/entities/d733e536-cd37-4e0f-a269-539165663121.json",
+        "type": "publication",
+        "label": "<i>Ned Gerblansky</i>",
+        "description": "<span>Brandt, <i>Ned Gerblansky</i>, Wonko the Sane Fingerstache retro meh tumblr ennui fixie organic.</span>",
+        "tags": [
+
+        ]
+      }
+    ],
+    "work_of_arts": [
+      {
+        "id": "http://example.org/entities/21aed110-cbdf-4f5f-90e9-10d0cf1ffe75.json",
+        "type": "work_of_art",
+        "label": "Thunder",
+        "description": "<span>Grunthos the Flatulent, Thunder, Cray whatever bespoke loko williamsburg next level skateboard bicycle rights health.</span>",
+        "tags": [
+
+        ]
+      },
+      {
+        "id": "http://example.org/entities/5f9513ec-d340-43ae-ad4c-5fd3ec7b7b89.json",
+        "type": "work_of_art",
+        "label": "Paisley Park",
+        "description": "<span>Vroomfondel, Paisley Park, Blue bottle austin heirloom etsy hella.</span>",
+        "tags": [
+
+        ]
+      }
+    ],
+    "writings": [
+      {
+        "id": "http://example.org/entities/c5916c98-e0da-4bdf-8909-c949daec4390.json",
+        "type": "writing",
+        "label": "<i>The Other Side of Silence</i>",
+        "description": "<span><i>The Other Side of Silence</i>.</span>",
+        "tags": [
+
+        ]
+      },
+      {
+        "id": "http://example.org/entities/9ccce74d-d686-42f9-a457-acd058b0077a.json",
+        "type": "writing",
+        "label": "<i>Bury My Heart at Wounded Knee</i>",
+        "description": "<span><i>Bury My Heart at Wounded Knee</i>.</span>",
+        "tags": [
+
+        ]
+      },
+      {
+        "id": "http://example.org/entities/286fef23-8912-4f89-8b9a-ba74788dfaed.json",
+        "type": "writing",
+        "label": "Oh! To be in England",
+        "description": "<span>Oh! To be in England.</span>",
+        "tags": [
+
+        ]
+      }
+    ]
+  }
 }</pre>

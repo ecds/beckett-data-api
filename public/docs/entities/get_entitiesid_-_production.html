@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Letters API</title>
+    <title>Entities API</title>
     <meta charset="utf-8">
     <style>
       
@@ -106,11 +106,13 @@ table th, table td {
   </head>
   <body>
     <div class="container">
-      <h1>Letters API</h1>
+      <h1>Entities API</h1>
+
+        <p class="explanation"></p>
 
       <div class="article">
-        <h2>DELETE /letters/:id</h2>
-        <h3>DELETE /letters/:id</h3>
+        <h2>GET /entities/:id - Production</h2>
+        <h3>GET /entities/:id</h3>
 
 
 
@@ -124,7 +126,7 @@ Host: example.org
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">DELETE /letters/4e3d3e8a-d33a-41dc-ab50-540c6068d21c</pre>
+          <pre class="request route highlight">GET /entities/7b3237c6-4827-4a78-8113-48e7dd82d68c</pre>
 
 
 
@@ -137,14 +139,43 @@ X-Content-Type-Options: nosniff
 X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
-Content-Type: application/json
-Cache-Control: no-cache
-X-Request-Id: 1ab740be-9fd8-4cc6-a348-7ca9bb65c64a
-X-Runtime: 0.398092
+Content-Type: application/json; charset=utf-8
+ETag: W/&quot;1326214fb5b7e8321672e2594e0155ce&quot;
+Cache-Control: max-age=0, private, must-revalidate
+X-Request-Id: 9655bba7-41f5-49b3-8e29-022bbb473a29
+X-Runtime: 0.987094
 Vary: Origin
-Content-Length: 0</pre>
+Content-Length: 714</pre>
             <h4>Status</h4>
-            <pre class="response status">501 Not Implemented</pre>
+            <pre class="response status">200 OK</pre>
+              <h4>Body</h4>
+              <pre class="response body">{
+  &quot;type&quot;: &quot;production&quot;,
+  &quot;label&quot;: &quot;Terminator 2: Judgment Day&quot;,
+  &quot;description&quot;: &quot;Offal fingerstache normcore sartorial ethical carry stumptown deep v.&quot;,
+  &quot;alternate_spellings&quot;: [
+    &quot;Mercedes Iman Diamond&quot;
+  ],
+  &quot;cast&quot;: [
+    &quot;Pizpot Gargravarr&quot;,
+    &quot;Bunny Lebowski&quot;
+  ],
+  &quot;city&quot;: &quot;Dennisberg&quot;,
+  &quot;date&quot;: &quot;1963-07-05&quot;,
+  &quot;director&quot;: &quot;The Big Lebowski&quot;,
+  &quot;links&quot;: [
+    &quot;http://parisian.co/madeleine_schimmel&quot;
+  ],
+  &quot;notes&quot;: &quot;Etsy kitsch vinegar organic flexitarian goth.&quot;,
+  &quot;personnel&quot;: [
+    &quot;Charles Darwin&quot;
+  ],
+  &quot;proposal&quot;: &quot;I wish you&#39;d just tell me rather trying to engage my enthusiasm, because I haven&#39;t got one.&quot;,
+  &quot;response&quot;: &quot;Hell, I can get you a toe by 3 o&#39;clock this afternoon...with nail polish.&quot;,
+  &quot;reason&quot;: null,
+  &quot;staging_beckett&quot;: &quot;http://nitzsche.io/ginette&quot;,
+  &quot;theater&quot;: &quot;RW6&quot;
+}</pre>
       </div>
     </div>
   </body>
