@@ -2,6 +2,50 @@
 
 require 'acceptance_helper'
 
+entity_properties = {
+  alternate_spellings: '',
+  artist: '',
+  artist_alternate_spellings:'',
+  attended_with: '',
+  author: '',
+  authors: '',
+  beckett_digital_manuscript_project: '',
+  cast: '',
+  city: '',
+  comment: '',
+  comments: '',
+  composer: '',
+  date: '',
+  director: '',
+  event_type: '',
+  finding_aids: '',
+  first_name: '',
+  last_name: '',
+  life_dates: '',
+  links: '',
+  notes: '',
+  owner_location_accession_number_contemporaneous: '',
+  owner_location_accession_number_current: '',
+  performed_by: '',
+  personnel: '',
+  place_date: '',
+  porposal: '',
+  profile: '',
+  proposal: '',
+  publication: '',
+  publication_format: '',
+  publication_information: '',
+  reason: '',
+  response: '',
+  staging_beckett: '',
+  theater: '',
+  translated_into: '',
+  translated_title: '',
+  translator: ''
+}
+
+formatted_properties = %i[label description formatting short_display profile]
+
 # Documentation refers to the Entity model
 resource 'Entities' do
   header 'Accept', 'application/json'
@@ -13,7 +57,7 @@ resource 'Entities' do
     parameter :per_page, 'Number of entities on a single response.', { default: '25' }
     parameter :search, 'Text to search.', { default: '*' }
     parameter :type,
-              "Limit responses by single type. Options are #{Entity.e_types.keys.join(', ')}.",
+              "Limit responses by single type. Options are #{Entity.e_types.keys.to_sentence}.",
               { default: 'null' }
     parameter :label, 'Clean label (no HTML) of entity', { default: 'null' }
 
@@ -65,6 +109,12 @@ resource 'Entities' do
   end
 
   route '/entities/:id', 'Single Entity' do
+    before {
+      Entity.e_types.each_key do |type|
+        create("#{type}_entity".to_sym)
+      end
+    }
+
     get 'Specific entity' do
       let(:id) { create("#{Entity.e_types.keys.sample}_entity".to_sym, :public).id }
       example_request 'GET /entities/:id' do
@@ -75,26 +125,29 @@ resource 'Entities' do
     Entity.e_types.each_key do |type|
       get "#{type} Entity" do
         let(:id) { create("#{type}_entity".to_sym, :public).id }
+
+        response_field :label, '', { default: 'HTML String', not_null: true }
+        response_field :clean_label, '', { default: 'String', not_null: true }
+        response_field :description, '', { default: 'HTML String', not_null: true }
+        response_field :clean_description, '', { default: 'String', not_null: true }
+        response_field :short_display, '', { default: 'HTML String', not_null: true }
+        # response_field :clean_description, 'Same as description with HTML removed.'
+
+        Entity.new(e_type: type).default_properties.each do |key, value|
+          default = if value.is_a?(Array)
+                      'Array'
+                    elsif formatted_properties.include?(key)
+                      'HTML String'
+                    else
+                      'String'
+                    end
+
+          response_field key.to_sym, '', { scope: :entity, default: default, not_null: !value.nil? }
+        end
+
         example_request "GET /entities/:id - #{type.titleize}" do
           expect(status).to eq(200)
         end
-      end
-    end
-  end
-
-  route '/entities/autocomplete', 'GET /entities/autocomplete' do
-    parameter :search, 'Text to search.', { default: '*' }
-    parameter :type,
-              "Limit responses by single type. Options are #{Entity.e_types.keys.join(', ')}.",
-              { default: 'null' }
-
-    before { create_list(:person_entity, 50, :public) }
-
-    get 'GET /entities/autocomplete' do
-      let(:search) { Entity.all.sample.clean_label[0..1].downcase }
-
-      example_request 'GET /entities/autocomplete?search=:fragment' do
-        expect(status).to eq(200)
       end
     end
   end
@@ -125,6 +178,25 @@ resource 'Entities' do
 
       example_request 'DELETE /entities/:id' do
         expect(status).to eq(501)
+      end
+    end
+  end
+
+  route '/entities/autocomplete', 'GET /entities/autocomplete' do
+    parameter :search, 'Text to search.', { default: '*' }
+    parameter :type,
+              "Limit responses by single type. Options are #{Entity.e_types.keys.join(', ')}.",
+              { default: 'null' }
+
+    before { create_list(:person_entity, 50, :public) }
+
+    get 'GET /entities/autocomplete' do
+      let(:search) { Entity.all.sample.clean_label[0..1].downcase }
+
+      example_request 'GET /entities/autocomplete?search=:fragment' do
+        explanation 'Returns a list of no more than ten entity lables that start with the search parameter.
+                    a type parameter can also be passed to limit the results by types. Results might include HTML.'
+        expect(status).to eq(200)
       end
     end
   end

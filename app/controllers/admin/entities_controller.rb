@@ -2,6 +2,29 @@
 
 module Admin
   class EntitiesController < Admin::ApplicationController
+
+    # def scoped_resource
+    #   Entity.person
+    # end
+
+    # def index
+    #   scoped_resource = Entity.music
+    #   super
+    #   # authorize_resource(resource_class)
+    #   # search_term = params[:search].to_s.strip
+    #   # # resources = filter_resources(Entity.person, search_term: search_term)
+    #   # resources = apply_collection_includes(Entity.person)
+    #   # resources = order.apply(resources)
+    #   # resources = resources.page(params[:_page]).per(records_per_page)
+    #   # page = Administrate::Page::Collection.new(dashboard, order: order)
+
+    #   # render locals: {
+    #   #   resources: resources,
+    #   #   search_term: search_term,
+    #   #   page: page,
+    #   #   show_search_bar: show_search_bar?,
+    #   # }
+    # end
     # Overwrite any of the RESTful controller actions to implement custom behavior
     # For example, you may want to send an email after a foo is updated.
     #

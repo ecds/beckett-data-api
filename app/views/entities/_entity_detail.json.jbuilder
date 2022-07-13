@@ -14,7 +14,9 @@
 
 json.set! 'type', entity.e_type
 json.set! 'label', entity.label
+json.set! 'clean_label', entity.clean_label
 json.set! 'description', entity.description
+json.set! 'clean_description', entity.clean_description
 entity.properties.each_key do |key|
   json.set! key, entity.properties[key]
 end

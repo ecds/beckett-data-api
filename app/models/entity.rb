@@ -9,6 +9,8 @@ class Entity < ApplicationRecord
   serialize :properties, HashWithIndifferentAccess
 
   before_save :format_properties
+  before_save :person_label
+  before_save :remove_div
 
   has_many :mentions, dependent: :destroy
   has_many :letters, through: :mentions, source: :letter
@@ -103,6 +105,7 @@ class Entity < ApplicationRecord
 
   # rubocop:disable Metrics/MethodLength, Metrics/CyclomaticComplexity, Metrics/AbcSize, Layout/LineLength
   def short_display
+    properties[:description] = "#{properties[:description]}." if properties[:description]&.last&.match(/^[0-9A-Za-z]+$/)
     inner_html = case e_type
                  when 'attendance'
                    [properties[:event_type], label, properties[:place_date]].compact.join(', ')
@@ -160,10 +163,12 @@ class Entity < ApplicationRecord
         performed_by: []
       },
       organization: {
+        alternate_names: [],
         alternate_spellings: [],
         profile: nil
       },
       person: {
+        alternate_names: [],
         alternate_spellings: [],
         finding_aids: [],
         first_name: nil,
@@ -241,5 +246,16 @@ class Entity < ApplicationRecord
     properties.each_key {|key| properties.delete(key.to_sym) unless default_properties.include?(key.to_sym) }
     self.properties = ActiveSupport::HashWithIndifferentAccess.new(default_properties.merge(properties))
     self.description = properties.delete(:description) if properties[:description].present?
+  end
+
+  def person_label
+    return unless person?
+
+    self.label = "#{properties[:last_name]}, #{properties[:first_name]}"
+    properties[:life_dates] = properties[:life_dates].gsub(/[()]/, '')
+  end
+
+  def remove_div
+
   end
 end

@@ -2,24 +2,9 @@
 
 # rubocop:disable Layout/LineLength
 
-names = [
-  Faker::Movies::Lebowski.character,
-  Faker::Movies::HitchhikersGuideToTheGalaxy.character,
-  Faker::TvShows::AquaTeenHungerForce.character,
-  Faker::TvShows::RickAndMorty.character,
-  Faker::TvShows::Simpsons.character,
-  Faker::Games::SuperMario.character,
-  Faker::Movies::PrincessBride.character,
-  Faker::Movies::StarWars.character,
-  Faker::TvShows::BojackHorseman.character,
-  Faker::TvShows::VentureBros.character,
-  Faker::TvShows::StarTrek.character,
-  Faker::TvShows::SouthPark.character
-]
-
 FactoryBot.define do
   factory :entity do
-    label { names.sample }
+    label { Faker::Movies::HitchhikersGuideToTheGalaxy.character }
     description { Faker::Hipster.sentence }
     legacy_pk { Faker::Number.unique.within(range: 1..100_000) }
     e_type { Entity.e_types.keys.sample }
@@ -45,6 +30,7 @@ FactoryBot.define do
 
     factory :attendance_entity do
       e_type { 0 }
+      label { Faker::Movie.title }
       properties {
         ActiveSupport::HashWithIndifferentAccess.new(
           {
@@ -86,7 +72,7 @@ FactoryBot.define do
         ActiveSupport::HashWithIndifferentAccess.new(
           {
             alternate_spellings: [Faker::TvShows::RuPaul.queen],
-            profile: Faker::Movies::Lebowski.quote
+            profile: Faker::Movies::HitchhikersGuideToTheGalaxy.quote
           }
         )
       }
@@ -98,29 +84,29 @@ FactoryBot.define do
         ActiveSupport::HashWithIndifferentAccess.new(
           {
             alternate_spellings: [Faker::TvShows::RuPaul.queen],
-            firstName: Faker::Name.first_name,
-            lastName: Faker::Name.last_name,
-            lifeDates: "(#{Faker::Date.between(from: '1900-1-1', to: '1930-1-1').year}-#{Faker::Date.between(from: '1970-1-1', to: '1999-1-1').year})",
-            description: Faker::Movies::Lebowski.quote,
+            first_name: Faker::Name.first_name,
+            last_name: Faker::Name.last_name,
+            life_dates: "(#{Faker::Date.between(from: '1900-1-1', to: '1930-1-1').year}-#{Faker::Date.between(from: '1970-1-1', to: '1999-1-1').year})",
+            description: Faker::Movies::HitchhikersGuideToTheGalaxy.marvin_quote,
             links: [
               Faker::Internet.url
             ],
-            profile: Faker::Movies::Lebowski.quote,
-            findingAids: [
+            profile: Faker::Movies::HitchhikersGuideToTheGalaxy.quote,
+            finding_aids: [
               Faker::Internet.url
             ],
             media: {
               images: [
                 {
                   link: Faker::Internet.url,
-                  caption: Faker::Movies::Lebowski.quote,
+                  caption: Faker::Movies::HitchhikersGuideToTheGalaxy.quote,
                   attribution: Faker::Movies::Lebowski.character
                 }
               ],
               videos: [
                 {
                   link: Faker::Internet.url,
-                  caption: Faker::Movies::Lebowski.quote,
+                  caption: Faker::Movies::HitchhikersGuideToTheGalaxy.quote,
                   attribution: Faker::Movies::Lebowski.character
                 }
               ]
@@ -158,7 +144,7 @@ FactoryBot.define do
             notes: Faker::Hipster.sentence,
             personnel: [Faker::Movies::HitchhikersGuideToTheGalaxy.character],
             proposal: Faker::Movies::HitchhikersGuideToTheGalaxy.marvin_quote,
-            response: Faker::Movies::Lebowski.quote,
+            response: Faker::Movies::HitchhikersGuideToTheGalaxy.quote,
             staging_beckett: Faker::Internet.url,
             theater: Faker::Movies::HitchhikersGuideToTheGalaxy.starship
           }
@@ -180,6 +166,7 @@ FactoryBot.define do
 
     factory :publication_entity do
       e_type { 7 }
+      label { Faker::Book.publisher }
       properties {
         ActiveSupport::HashWithIndifferentAccess.new(
           {

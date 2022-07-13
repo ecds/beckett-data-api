@@ -7,7 +7,7 @@ class EntitiesController < ApplicationController
 
   # GET /entities
   def index
-    query = params[:q] || '*'
+    query = params[:search] || '*'
 
     results = Entity.search(
       query,
@@ -17,7 +17,9 @@ class EntitiesController < ApplicationController
       fields: @fields,
       operator: 'or',
       load: false,
-      where: @where
+      where: @where,
+      misspellings: { below: 5 },
+      match: :word_start
     )
 
     @aggs = results.aggs
@@ -29,23 +31,25 @@ class EntitiesController < ApplicationController
     render
   end
 
-  # GET /entities/autocomplete?q=*
+  # GET /entities/autocomplete?search=*
   def autocomplete
+    query = strip_tags params[:searcn]
     render json: Entity.search(
-      params[:q],
+      query,
       fields: [:clean_label],
       match: :word_start,
       limit: 10,
       load: false,
       misspellings: { below: 5 },
       where: @where
-    ).map(&:label)
+    ).map(&:label).uniq
   end
 
   private
 
   def reindex
     Entity.reindex if ENV['RAILS_ENV'] == 'test'
+  rescue Searchkick::Error
   end
 
   def set_entity
@@ -53,21 +57,27 @@ class EntitiesController < ApplicationController
   end
 
   def set_filters
-    @where = params[:type].present? ? { e_type: params[:type] } : {}
+    @where = {}
+
+    @where[:e_type] = params[:type] if params[:type].present?
 
     @where[:clean_label] = params[:label] if params[:label].present?
 
+    # rubocop:disable Layout/LineLength
     @fields = if params[:fields].present?
+                params[:fields].sub! 'label', 'clean_label^10' unless params[:fields].include? 'clean_label'
+                params[:fields].sub! 'description', 'clean_description^5' unless params[:fields].include? 'clean_description'
                 params[:fields].split(',').map(&:strip).map(&:to_sym)
               else
                 ['clean_label^10', 'clean_description^5', :properties]
               end
+    # rubocop:enable Layout/LineLength
   end
 
   def entities_from_results(results)
     results.map do |entity|
       {
-        id: entity.id_path,
+        id: "#{request.protocol}#{request.host_with_port}#{entity.id_path}",
         label: entity.label,
         type: entity.e_type,
         short_display: entity.short_display,
