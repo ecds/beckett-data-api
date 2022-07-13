@@ -115,6 +115,173 @@ table th, table td {
         <h3>GET /entities/:id</h3>
 
 
+          <h3>Response Fields</h3>
+          <table class="response-fields table table-striped table-bordered table-condensed">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Default</th>
+                <th>Description</th>
+                <th>Not Null</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                    <span class="name">label</span>
+                </td>
+                <td>
+                  <span class="description">HTML String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">true</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">clean_label</span>
+                </td>
+                <td>
+                  <span class="description">String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">true</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">description</span>
+                </td>
+                <td>
+                  <span class="description">HTML String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">true</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">clean_description</span>
+                </td>
+                <td>
+                  <span class="description">String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">true</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">short_display</span>
+                </td>
+                <td>
+                  <span class="description">HTML String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">true</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">entity[alternate_spellings]</span>
+                </td>
+                <td>
+                  <span class="description">Array</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">true</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">entity[attended_with]</span>
+                </td>
+                <td>
+                  <span class="description">Array</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">true</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">entity[director]</span>
+                </td>
+                <td>
+                  <span class="description">String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">false</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">entity[event_type]</span>
+                </td>
+                <td>
+                  <span class="description">String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">false</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">entity[performed_by]</span>
+                </td>
+                <td>
+                  <span class="description">Array</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">true</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">entity[place_date]</span>
+                </td>
+                <td>
+                  <span class="description">String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">false</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
 
           <h3>Request</h3>
 
@@ -126,7 +293,7 @@ Host: example.org
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET /entities/ff7c0cd2-a9c0-4323-acd1-263398e60dee</pre>
+          <pre class="request route highlight">GET /entities/33550ba2-23f6-4dd7-a803-d1fca1af8cff</pre>
 
 
 
@@ -140,32 +307,34 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;4c4f0bba0214da714ae65d5819397981&quot;
+ETag: W/&quot;766bd315c356282b7550b9463ac65021&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 6dca7eab-d1f6-4f5a-b5e3-855f314a5067
-X-Runtime: 0.966539
+X-Request-Id: c2a9b370-885c-488f-b59f-c2a9453f9886
+X-Runtime: 1.412760
 Vary: Origin
-Content-Length: 315</pre>
+Content-Length: 467</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
   &quot;type&quot;: &quot;attendance&quot;,
-  &quot;label&quot;: &quot;Fight Club&quot;,
-  &quot;description&quot;: &quot;Actually chartreuse viral truffaut.&quot;,
+  &quot;label&quot;: &quot;12 Years a Slave&quot;,
+  &quot;clean_label&quot;: &quot;12 Years a Slave&quot;,
+  &quot;description&quot;: &quot;Paleo keytar kale chips meh 90&#39;s five dollar toast typewriter pour-over.&quot;,
+  &quot;clean_description&quot;: &quot;Paleo keytar kale chips meh 90&#39;s five dollar toast typewriter pour-over.&quot;,
   &quot;alternate_spellings&quot;: [
-    &quot;Detox&quot;
+    &quot;Yvie Oddly&quot;
   ],
   &quot;attended_with&quot;: [
     &quot;Maude Lebowski&quot;,
-    &quot;Tricia McMillan&quot;
+    &quot;Dan Streetmentioner&quot;
   ],
-  &quot;director&quot;: &quot;Random Dent&quot;,
-  &quot;event_type&quot;: &quot;pabst&quot;,
+  &quot;director&quot;: &quot;Trillian&quot;,
+  &quot;event_type&quot;: &quot;kogi&quot;,
   &quot;performed_by&quot;: [
-    &quot;Paula Nancy Millstone Jennings&quot;
+    &quot;Prak&quot;
   ],
-  &quot;place_date&quot;: &quot;Leoburgh, 10 August 1926&quot;
+  &quot;place_date&quot;: &quot;Port Charlott, 26 May 1923&quot;
 }</pre>
       </div>
     </div>

@@ -115,6 +115,159 @@ table th, table td {
         <h3>GET /entities/:id</h3>
 
 
+          <h3>Response Fields</h3>
+          <table class="response-fields table table-striped table-bordered table-condensed">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Default</th>
+                <th>Description</th>
+                <th>Not Null</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                    <span class="name">label</span>
+                </td>
+                <td>
+                  <span class="description">HTML String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">true</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">clean_label</span>
+                </td>
+                <td>
+                  <span class="description">String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">true</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">description</span>
+                </td>
+                <td>
+                  <span class="description">HTML String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">true</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">clean_description</span>
+                </td>
+                <td>
+                  <span class="description">String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">true</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">short_display</span>
+                </td>
+                <td>
+                  <span class="description">HTML String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">true</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">entity[alternate_spellings]</span>
+                </td>
+                <td>
+                  <span class="description">Array</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">true</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">entity[composer]</span>
+                </td>
+                <td>
+                  <span class="description">String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">false</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">entity[links]</span>
+                </td>
+                <td>
+                  <span class="description">Array</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">true</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">entity[notes]</span>
+                </td>
+                <td>
+                  <span class="description">String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">false</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">entity[performed_by]</span>
+                </td>
+                <td>
+                  <span class="description">Array</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">true</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
 
           <h3>Request</h3>
 
@@ -126,7 +279,7 @@ Host: example.org
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET /entities/3c5796d0-9e47-42f2-bed6-05b886ac8ad2</pre>
+          <pre class="request route highlight">GET /entities/37adf507-4baf-460a-bfbd-512f5b28c90d</pre>
 
 
 
@@ -140,27 +293,29 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;4c1034fa046ebb8556a58b039f943a50&quot;
+ETag: W/&quot;86060adf3db2ac0880ba2c9a0f996e53&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 318733d4-7019-4aaf-8f6f-8e88315e881f
-X-Runtime: 1.004902
+X-Request-Id: 97381204-3f82-4bb0-8156-8a6e281b5b3d
+X-Runtime: 1.079341
 Vary: Origin
-Content-Length: 369</pre>
+Content-Length: 343</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
   &quot;type&quot;: &quot;music&quot;,
-  &quot;label&quot;: &quot;&lt;i&gt;It&#39;s Gonna Be A Beautiful Night&lt;/i&gt;&quot;,
-  &quot;description&quot;: &quot;Gluten-free &lt;i&gt;food truck hoodie flexitarian ethical kickstarter&lt;/i&gt; seitan.&quot;,
+  &quot;label&quot;: &quot;&lt;i&gt;Sexy MF&lt;/i&gt;&quot;,
+  &quot;clean_label&quot;: &quot;Sexy MF&quot;,
+  &quot;description&quot;: &quot;Next level beard drinking leggings.&quot;,
+  &quot;clean_description&quot;: &quot;Next level beard drinking leggings.&quot;,
   &quot;alternate_spellings&quot;: [
-    &quot;Tyra Sanchez&quot;
+    &quot;Ivy Winters&quot;
   ],
-  &quot;composer&quot;: &quot;Paula Nancy Millstone Jennings&quot;,
+  &quot;composer&quot;: &quot;Reg Nullify&quot;,
   &quot;links&quot;: [
 
   ],
-  &quot;notes&quot;: &quot;Why settle for a star when you can have the sun?&quot;,
+  &quot;notes&quot;: &quot;Until the end of time, I&#39;ll be there for you.&quot;,
   &quot;performed_by&quot;: [
 
   ]

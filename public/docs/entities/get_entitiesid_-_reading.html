@@ -115,6 +115,145 @@ table th, table td {
         <h3>GET /entities/:id</h3>
 
 
+          <h3>Response Fields</h3>
+          <table class="response-fields table table-striped table-bordered table-condensed">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Default</th>
+                <th>Description</th>
+                <th>Not Null</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                    <span class="name">label</span>
+                </td>
+                <td>
+                  <span class="description">HTML String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">true</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">clean_label</span>
+                </td>
+                <td>
+                  <span class="description">String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">true</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">description</span>
+                </td>
+                <td>
+                  <span class="description">HTML String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">true</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">clean_description</span>
+                </td>
+                <td>
+                  <span class="description">String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">true</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">short_display</span>
+                </td>
+                <td>
+                  <span class="description">HTML String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">true</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">entity[authors]</span>
+                </td>
+                <td>
+                  <span class="description">Array</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">true</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">entity[comment]</span>
+                </td>
+                <td>
+                  <span class="description">String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">false</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">entity[publication]</span>
+                </td>
+                <td>
+                  <span class="description">String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">false</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">entity[publication_format]</span>
+                </td>
+                <td>
+                  <span class="description">String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">false</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
 
           <h3>Request</h3>
 
@@ -126,7 +265,7 @@ Host: example.org
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET /entities/0613bd20-0531-4e27-9bdf-9f02c5814cc6</pre>
+          <pre class="request route highlight">GET /entities/55460f56-b2dc-4f1f-9711-9d83f9fc29ee</pre>
 
 
 
@@ -140,25 +279,27 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;27217af457205285b91cb74ce0ae895b&quot;
+ETag: W/&quot;c71bafa49474b462d752d657e764374e&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: dfb029e1-8945-48fc-8408-0e4b6d40e2fc
-X-Runtime: 1.019083
+X-Request-Id: 60a8bde5-3469-47c3-ba23-d9073f8fde9d
+X-Runtime: 1.232794
 Vary: Origin
-Content-Length: 324</pre>
+Content-Length: 382</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
   &quot;type&quot;: &quot;reading&quot;,
-  &quot;label&quot;: &quot;&lt;i&gt;Shall not Perish&lt;/i&gt;&quot;,
-  &quot;description&quot;: &quot;Polaroid bespoke ugh vice.&quot;,
+  &quot;label&quot;: &quot;East of Eden&quot;,
+  &quot;clean_label&quot;: &quot;East of Eden&quot;,
+  &quot;description&quot;: &quot;Pop-up &lt;i&gt;asymmetrical green juice fashion&lt;/i&gt; axe.&quot;,
+  &quot;clean_description&quot;: &quot;Pop-up asymmetrical green juice fashion axe.&quot;,
   &quot;authors&quot;: [
-    &quot;Gustavo Bartoletti&quot;
+    &quot;Curtis Pacocha&quot;
   ],
-  &quot;comment&quot;: &quot;There&#39;s only one life-form as intelligent as me within thirty parsecs of here and that&#39;s me.&quot;,
-  &quot;publication&quot;: &quot;Charles Scribner&#39;s Sons&quot;,
-  &quot;publication_format&quot;: &quot;hashtag&quot;
+  &quot;comment&quot;: &quot;I think you ought to know I&#39;m feeling very depressed.&quot;,
+  &quot;publication&quot;: &quot;Marshall Cavendish&quot;,
+  &quot;publication_format&quot;: &quot;VHS&quot;
 }</pre>
       </div>
     </div>

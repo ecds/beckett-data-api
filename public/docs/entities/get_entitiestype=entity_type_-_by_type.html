@@ -165,7 +165,7 @@ table th, table td {
                     <span class="name">type</span>
                 </td>
                 <td>
-                  <span class="description">Limit responses by single type. Options are attendance, music, organization, person, place, production, public_event, publication, reading, translating, work_of_art, writing.</span>
+                  <span class="description">Limit responses by single type. Options are attendance, music, organization, person, place, production, public_event, publication, reading, translating, work_of_art, and writing.</span>
                 </td>
                 <td>
                   <span class="default">null</span>
@@ -196,10 +196,10 @@ Host: example.org
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET /entities?type=place</pre>
+          <pre class="request route highlight">GET /entities?type=writing</pre>
 
             <h4>Query Parameters</h4>
-            <pre class="request query_parameters highlight">type: place</pre>
+            <pre class="request query_parameters highlight">type: writing</pre>
 
 
 
@@ -211,394 +211,344 @@ X-Content-Type-Options: nosniff
 X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
-Link: &lt;http://example.org/entities?page=1&amp;type=place&gt;; rel=&#39;self&#39;, &lt;http://example.org/entities?page=6&amp;type=place&gt;; rel=&#39;last&#39;, &lt;http://example.org/entities?page=2&amp;type=place&gt;; rel=&#39;next&#39;
-X-Total-Count: 136
+Link: &lt;http://example.org/entities?page=1&amp;type=writing&gt;; rel=&#39;self&#39;, &lt;http://example.org/entities?page=2&amp;type=writing&gt;; rel=&#39;last&#39;, &lt;http://example.org/entities?page=2&amp;type=writing&gt;; rel=&#39;next&#39;
+X-Total-Count: 29
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;bf6577e04ac162c9fd82e01ac5b7b5d0&quot;
+ETag: W/&quot;cdcb6aaff8814e8ba812006394a19e13&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: d1e95d5e-eea8-4b46-b012-383e4b431234
-X-Runtime: 11.245054
+X-Request-Id: 2973cfb4-56c6-4b9a-ab2d-8e15d2e2b892
+X-Runtime: 11.647836
 Vary: Origin
-Content-Length: 13007</pre>
+Content-Length: 16479</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
   &quot;entities&quot;: [
     {
-      &quot;id&quot;: &quot;/entities/001ce2cd-746e-4e79-8c21-20cde4db5ff5&quot;,
-      &quot;label&quot;: &quot;&lt;i&gt;29 Arlington Avenue&lt;/i&gt;&quot;,
-      &quot;type&quot;: &quot;place&quot;,
-      &quot;short_display&quot;: &quot;&lt;span&gt;&lt;i&gt;29 Arlington Avenue&lt;/i&gt;.&lt;/span&gt;&quot;,
-      &quot;description&quot;: &quot;Letterpress &lt;i&gt;umami retro meditation stumptown&lt;/i&gt; celiac.&quot;,
-      &quot;clean_label&quot;: &quot;29 Arlington Avenue&quot;,
-      &quot;clean_description&quot;: &quot;Letterpress umami retro meditation stumptown celiac.&quot;,
-      &quot;alternate_spellings&quot;: [
-        &quot;Monet X Change&quot;
-      ],
-      &quot;links&quot;: [
-        &quot;http://mcglynn.io/tristan_hermann&quot;
-      ]
+      &quot;id&quot;: &quot;http://example.org/entities/05d33900-e048-40df-8293-34c0c1da8586&quot;,
+      &quot;label&quot;: &quot;Postern of Fate&quot;,
+      &quot;type&quot;: &quot;writing&quot;,
+      &quot;short_display&quot;: &quot;&lt;span&gt;Postern of Fate.&lt;/span&gt;&quot;,
+      &quot;description&quot;: &quot;Pitchfork &lt;i&gt;gastropub narwhal vinyl vhs ennui whatever&lt;/i&gt; austin.&quot;,
+      &quot;clean_label&quot;: &quot;Postern of Fate&quot;,
+      &quot;clean_description&quot;: &quot;Pitchfork gastropub narwhal vinyl vhs ennui whatever austin.&quot;,
+      &quot;date&quot;: &quot;1965-03-20&quot;,
+      &quot;notes&quot;: &quot;Life? Don&#39;t talk to me about life.&quot;,
+      &quot;porposal&quot;: null,
+      &quot;beckett_digital_manuscript_project&quot;: &quot;http://predovic.co/murray&quot;
     },
     {
-      &quot;id&quot;: &quot;/entities/0250e60d-00d2-44e5-8b4b-ac859a7c8716&quot;,
-      &quot;label&quot;: &quot;Stavromula Beta&quot;,
-      &quot;type&quot;: &quot;place&quot;,
-      &quot;short_display&quot;: &quot;&lt;span&gt;Stavromula Beta.&lt;/span&gt;&quot;,
-      &quot;description&quot;: &quot;Actually &lt;i&gt;diy biodiesel cronut try-hard master green juice yr&lt;/i&gt; heirloom.&quot;,
-      &quot;clean_label&quot;: &quot;Stavromula Beta&quot;,
-      &quot;clean_description&quot;: &quot;Actually diy biodiesel cronut try-hard master green juice yr heirloom.&quot;,
-      &quot;alternate_spellings&quot;: [
-        &quot;Peppermint&quot;
-      ],
-      &quot;links&quot;: [
-        &quot;http://stokes-langworth.name/stepanie&quot;
-      ]
+      &quot;id&quot;: &quot;http://example.org/entities/101bbb7f-ba03-42da-9cb0-d593351166a9&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;Time To Murder And Create&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;writing&quot;,
+      &quot;short_display&quot;: &quot;&lt;span&gt;&lt;i&gt;Time To Murder And Create&lt;/i&gt;.&lt;/span&gt;&quot;,
+      &quot;description&quot;: &quot;Street &lt;i&gt;echo jean shorts marfa typewriter intelligentsia chia swag&lt;/i&gt; tofu.&quot;,
+      &quot;clean_label&quot;: &quot;Time To Murder And Create&quot;,
+      &quot;clean_description&quot;: &quot;Street echo jean shorts marfa typewriter intelligentsia chia swag tofu.&quot;,
+      &quot;date&quot;: &quot;1959-08-13&quot;,
+      &quot;notes&quot;: &quot;Here I am, brain the size of a planet, and they tell me to take you up to the bridge. Call that job satisfaction? &#39;Cos I don&#39;t.&quot;,
+      &quot;porposal&quot;: null,
+      &quot;beckett_digital_manuscript_project&quot;: &quot;http://kiehn-adams.name/dorsey_koch&quot;
     },
     {
-      &quot;id&quot;: &quot;/entities/03bf5f69-d8ae-42ad-a808-25704f6dd097&quot;,
-      &quot;label&quot;: &quot;&lt;i&gt;Barnard&#39;s Star&lt;/i&gt;&quot;,
-      &quot;type&quot;: &quot;place&quot;,
-      &quot;short_display&quot;: &quot;&lt;span&gt;&lt;i&gt;Barnard&#39;s Star&lt;/i&gt;.&lt;/span&gt;&quot;,
-      &quot;description&quot;: &quot;Meditation &lt;i&gt;portland mumblecore migas bicycle&lt;/i&gt; rights.&quot;,
-      &quot;clean_label&quot;: &quot;Barnard&#39;s Star&quot;,
-      &quot;clean_description&quot;: &quot;Meditation portland mumblecore migas bicycle rights.&quot;,
-      &quot;alternate_spellings&quot;: [
-        &quot;Ginger Minj&quot;
-      ],
-      &quot;links&quot;: [
-        &quot;http://wunsch.io/jeff&quot;
-      ]
+      &quot;id&quot;: &quot;http://example.org/entities/1d0aeec0-4bc6-4bb5-8531-463a89e30ffb&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;The Moving Toyshop&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;writing&quot;,
+      &quot;short_display&quot;: &quot;&lt;span&gt;&lt;i&gt;The Moving Toyshop&lt;/i&gt;.&lt;/span&gt;&quot;,
+      &quot;description&quot;: &quot;Kogi locavore ramps mustache.&quot;,
+      &quot;clean_label&quot;: &quot;The Moving Toyshop&quot;,
+      &quot;clean_description&quot;: &quot;Kogi locavore ramps mustache.&quot;,
+      &quot;date&quot;: &quot;1952-01-19&quot;,
+      &quot;notes&quot;: &quot;Pardon me for breathing, which I never do anyway so I don&#39;t know why I bother to say it, Oh God, I&#39;m so depressed.&quot;,
+      &quot;porposal&quot;: null,
+      &quot;beckett_digital_manuscript_project&quot;: &quot;http://bergstrom.co/andres&quot;
     },
     {
-      &quot;id&quot;: &quot;/entities/04d9c057-cac7-4a90-8669-5604fc79cd2d&quot;,
-      &quot;label&quot;: &quot;&lt;i&gt;The Big Bang Burger Bar&lt;/i&gt;&quot;,
-      &quot;type&quot;: &quot;place&quot;,
-      &quot;short_display&quot;: &quot;&lt;span&gt;&lt;i&gt;The Big Bang Burger Bar&lt;/i&gt;.&lt;/span&gt;&quot;,
-      &quot;description&quot;: &quot;Blue &lt;i&gt;bottle pitchfork jean shorts loko wes&lt;/i&gt; anderson.&quot;,
-      &quot;clean_label&quot;: &quot;The Big Bang Burger Bar&quot;,
-      &quot;clean_description&quot;: &quot;Blue bottle pitchfork jean shorts loko wes anderson.&quot;,
-      &quot;alternate_spellings&quot;: [
-        &quot;Shea Coulee&quot;
-      ],
-      &quot;links&quot;: [
-        &quot;http://funk.net/robin&quot;
-      ]
+      &quot;id&quot;: &quot;http://example.org/entities/22a1b06e-9de7-4f57-9e9e-160d0ea55cbe&quot;,
+      &quot;label&quot;: &quot;Mr Standfast&quot;,
+      &quot;type&quot;: &quot;writing&quot;,
+      &quot;short_display&quot;: &quot;&lt;span&gt;Mr Standfast.&lt;/span&gt;&quot;,
+      &quot;description&quot;: &quot;Heirloom 8-bit selvage wolf quinoa.&quot;,
+      &quot;clean_label&quot;: &quot;Mr Standfast&quot;,
+      &quot;clean_description&quot;: &quot;Heirloom 8-bit selvage wolf quinoa.&quot;,
+      &quot;date&quot;: &quot;1942-03-28&quot;,
+      &quot;notes&quot;: &quot;You think you&#39;ve got problems? What are you supposed to do if you are a manically depressed robot? No, don&#39;t try to answer that. I&#39;m fifty thousand times more intelligent than you and even I don&#39;t know the answer. It gives me a headache just trying to think down to your level.&quot;,
+      &quot;porposal&quot;: null,
+      &quot;beckett_digital_manuscript_project&quot;: &quot;http://schulist.biz/kerry&quot;
     },
     {
-      &quot;id&quot;: &quot;/entities/07a4379e-4abf-4a39-a07a-db4ac7d59809&quot;,
-      &quot;label&quot;: &quot;&lt;i&gt;Kakrafoon Kappa&lt;/i&gt;&quot;,
-      &quot;type&quot;: &quot;place&quot;,
-      &quot;short_display&quot;: &quot;&lt;span&gt;&lt;i&gt;Kakrafoon Kappa&lt;/i&gt;.&lt;/span&gt;&quot;,
-      &quot;description&quot;: &quot;Pug everyday vice actually next level stumptown hashtag yuccie vegan.&quot;,
-      &quot;clean_label&quot;: &quot;Kakrafoon Kappa&quot;,
-      &quot;clean_description&quot;: &quot;Pug everyday vice actually next level stumptown hashtag yuccie vegan.&quot;,
-      &quot;alternate_spellings&quot;: [
-        &quot;Shea Coulee&quot;
-      ],
-      &quot;links&quot;: [
-        &quot;http://cummings-cormier.org/marcos_harber&quot;
-      ]
+      &quot;id&quot;: &quot;http://example.org/entities/38231786-9422-4d2a-a70d-0a4356e30789&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;Françoise Sagan&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;writing&quot;,
+      &quot;short_display&quot;: &quot;&lt;span&gt;&lt;i&gt;Françoise Sagan&lt;/i&gt;.&lt;/span&gt;&quot;,
+      &quot;description&quot;: &quot;Meditation authentic salvia narwhal 90&#39;s forage cardigan.&quot;,
+      &quot;clean_label&quot;: &quot;Françoise Sagan&quot;,
+      &quot;clean_description&quot;: &quot;Meditation authentic salvia narwhal 90&#39;s forage cardigan.&quot;,
+      &quot;date&quot;: &quot;1954-11-22&quot;,
+      &quot;notes&quot;: &quot;I think you ought to know I&#39;m feeling very depressed.&quot;,
+      &quot;porposal&quot;: null,
+      &quot;beckett_digital_manuscript_project&quot;: &quot;http://auer.net/danial_reichert&quot;
     },
     {
-      &quot;id&quot;: &quot;/entities/084be334-a9bf-45a7-88eb-c2b9a57f38ce&quot;,
-      &quot;label&quot;: &quot;Milliways&quot;,
-      &quot;type&quot;: &quot;place&quot;,
-      &quot;short_display&quot;: &quot;&lt;span&gt;Milliways.&lt;/span&gt;&quot;,
-      &quot;description&quot;: &quot;Meh &lt;i&gt;flexitarian selfies disrupt williamsburg mixtape biodiesel deep&lt;/i&gt; v.&quot;,
-      &quot;clean_label&quot;: &quot;Milliways&quot;,
-      &quot;clean_description&quot;: &quot;Meh flexitarian selfies disrupt williamsburg mixtape biodiesel deep v.&quot;,
-      &quot;alternate_spellings&quot;: [
-        &quot;Raja&quot;
-      ],
-      &quot;links&quot;: [
-        &quot;http://kulas.co/fred_shields&quot;
-      ]
+      &quot;id&quot;: &quot;http://example.org/entities/46b571e5-c22e-425e-b9bf-c5b3bdf7900a&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;For Whom the Bell Tolls&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;writing&quot;,
+      &quot;short_display&quot;: &quot;&lt;span&gt;&lt;i&gt;For Whom the Bell Tolls&lt;/i&gt;.&lt;/span&gt;&quot;,
+      &quot;description&quot;: &quot;Waistcoat &lt;i&gt;literally mlkshk kitsch mumblecore bespoke wes&lt;/i&gt; anderson.&quot;,
+      &quot;clean_label&quot;: &quot;For Whom the Bell Tolls&quot;,
+      &quot;clean_description&quot;: &quot;Waistcoat literally mlkshk kitsch mumblecore bespoke wes anderson.&quot;,
+      &quot;date&quot;: &quot;1942-06-28&quot;,
+      &quot;notes&quot;: &quot;There&#39;s only one life-form as intelligent as me within thirty parsecs of here and that&#39;s me.&quot;,
+      &quot;porposal&quot;: null,
+      &quot;beckett_digital_manuscript_project&quot;: &quot;http://marquardt-conn.biz/edwin_huels&quot;
     },
     {
-      &quot;id&quot;: &quot;/entities/0c06a1ce-45f7-402b-98b8-962bcad2e08d&quot;,
-      &quot;label&quot;: &quot;&lt;i&gt;Café Lou&lt;/i&gt;&quot;,
-      &quot;type&quot;: &quot;place&quot;,
-      &quot;short_display&quot;: &quot;&lt;span&gt;&lt;i&gt;Café Lou&lt;/i&gt;.&lt;/span&gt;&quot;,
-      &quot;description&quot;: &quot;Street waistcoat offal kale chips readymade you probably haven&#39;t heard of them.&quot;,
-      &quot;clean_label&quot;: &quot;Café Lou&quot;,
-      &quot;clean_description&quot;: &quot;Street waistcoat offal kale chips readymade you probably haven&#39;t heard of them.&quot;,
-      &quot;alternate_spellings&quot;: [
-        &quot;Tatianna&quot;
-      ],
-      &quot;links&quot;: [
-        &quot;http://powlowski-bins.co/lanelle.witting&quot;
-      ]
+      &quot;id&quot;: &quot;http://example.org/entities/61333dfd-ef90-4c8a-8fa7-4156f8a69d18&quot;,
+      &quot;label&quot;: &quot;The Golden Apples of the Sun&quot;,
+      &quot;type&quot;: &quot;writing&quot;,
+      &quot;short_display&quot;: &quot;&lt;span&gt;The Golden Apples of the Sun.&lt;/span&gt;&quot;,
+      &quot;description&quot;: &quot;Helvetica tofu deep v street butcher taxidermy actually.&quot;,
+      &quot;clean_label&quot;: &quot;The Golden Apples of the Sun&quot;,
+      &quot;clean_description&quot;: &quot;Helvetica tofu deep v street butcher taxidermy actually.&quot;,
+      &quot;date&quot;: &quot;1968-12-22&quot;,
+      &quot;notes&quot;: &quot;Life? Don&#39;t talk to me about life.&quot;,
+      &quot;porposal&quot;: null,
+      &quot;beckett_digital_manuscript_project&quot;: &quot;http://berge-rau.org/kerstin&quot;
     },
     {
-      &quot;id&quot;: &quot;/entities/0d3fbdc3-f80a-4f27-93bb-8676cb4c7724&quot;,
-      &quot;label&quot;: &quot;&lt;i&gt;Frogstar World B&lt;/i&gt;&quot;,
-      &quot;type&quot;: &quot;place&quot;,
-      &quot;short_display&quot;: &quot;&lt;span&gt;&lt;i&gt;Frogstar World B&lt;/i&gt;.&lt;/span&gt;&quot;,
-      &quot;description&quot;: &quot;Irony vegan cliche green juice 8-bit mustache +1.&quot;,
-      &quot;clean_label&quot;: &quot;Frogstar World B&quot;,
-      &quot;clean_description&quot;: &quot;Irony vegan cliche green juice 8-bit mustache +1.&quot;,
-      &quot;alternate_spellings&quot;: [
-        &quot;Brook Lynn Hytes&quot;
-      ],
-      &quot;links&quot;: [
-        &quot;http://bayer.org/kayce_stoltenberg&quot;
-      ]
+      &quot;id&quot;: &quot;http://example.org/entities/6c29e23d-ce63-4b13-b270-79ba6729b7e3&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;Behold the Man&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;writing&quot;,
+      &quot;short_display&quot;: &quot;&lt;span&gt;&lt;i&gt;Behold the Man&lt;/i&gt;.&lt;/span&gt;&quot;,
+      &quot;description&quot;: &quot;Cronut &lt;i&gt;raw denim bushwick leggings&lt;/i&gt; franzen.&quot;,
+      &quot;clean_label&quot;: &quot;Behold the Man&quot;,
+      &quot;clean_description&quot;: &quot;Cronut raw denim bushwick leggings franzen.&quot;,
+      &quot;date&quot;: &quot;1963-11-15&quot;,
+      &quot;notes&quot;: &quot;Pardon me for breathing, which I never do anyway so I don&#39;t know why I bother to say it, Oh God, I&#39;m so depressed.&quot;,
+      &quot;porposal&quot;: null,
+      &quot;beckett_digital_manuscript_project&quot;: &quot;http://brakus-turner.io/noel_bernhard&quot;
     },
     {
-      &quot;id&quot;: &quot;/entities/0f053dc6-e991-49c3-8c11-4dbfdbe2e5e5&quot;,
-      &quot;label&quot;: &quot;&lt;i&gt;The Domain of The King&lt;/i&gt;&quot;,
-      &quot;type&quot;: &quot;place&quot;,
-      &quot;short_display&quot;: &quot;&lt;span&gt;&lt;i&gt;The Domain of The King&lt;/i&gt;.&lt;/span&gt;&quot;,
-      &quot;description&quot;: &quot;Master &lt;i&gt;ennui flexitarian pickled pug lumbersexual tote bag&lt;/i&gt; thundercats.&quot;,
-      &quot;clean_label&quot;: &quot;The Domain of The King&quot;,
-      &quot;clean_description&quot;: &quot;Master ennui flexitarian pickled pug lumbersexual tote bag thundercats.&quot;,
-      &quot;alternate_spellings&quot;: [
-        &quot;Aquaria&quot;
-      ],
-      &quot;links&quot;: [
-        &quot;http://stracke-oberbrunner.org/phylicia.kertzmann&quot;
-      ]
+      &quot;id&quot;: &quot;http://example.org/entities/6d6bf09e-c916-4abc-898a-26d5fb940d18&quot;,
+      &quot;label&quot;: &quot;For Whom the Bell Tolls&quot;,
+      &quot;type&quot;: &quot;writing&quot;,
+      &quot;short_display&quot;: &quot;&lt;span&gt;For Whom the Bell Tolls.&lt;/span&gt;&quot;,
+      &quot;description&quot;: &quot;Tattooed park tousled sustainable yuccie sartorial twee.&quot;,
+      &quot;clean_label&quot;: &quot;For Whom the Bell Tolls&quot;,
+      &quot;clean_description&quot;: &quot;Tattooed park tousled sustainable yuccie sartorial twee.&quot;,
+      &quot;date&quot;: &quot;1971-07-05&quot;,
+      &quot;notes&quot;: &quot;I won&#39;t enjoy it.&quot;,
+      &quot;porposal&quot;: null,
+      &quot;beckett_digital_manuscript_project&quot;: &quot;http://mills.net/merrill&quot;
     },
     {
-      &quot;id&quot;: &quot;/entities/157bd3fb-694d-4756-b0fa-49db3134dbb1&quot;,
-      &quot;label&quot;: &quot;&lt;i&gt;France&lt;/i&gt;&quot;,
-      &quot;type&quot;: &quot;place&quot;,
-      &quot;short_display&quot;: &quot;&lt;span&gt;&lt;i&gt;France&lt;/i&gt;.&lt;/span&gt;&quot;,
-      &quot;description&quot;: &quot;Fingerstache &lt;i&gt;microdosing wayfarers small batch deep v sustainable cardigan slow-carb&lt;/i&gt; mlkshk.&quot;,
-      &quot;clean_label&quot;: &quot;France&quot;,
-      &quot;clean_description&quot;: &quot;Fingerstache microdosing wayfarers small batch deep v sustainable cardigan slow-carb mlkshk.&quot;,
-      &quot;alternate_spellings&quot;: [
-        &quot;Eureka&quot;
-      ],
-      &quot;links&quot;: [
-        &quot;http://schmeler.io/coy&quot;
-      ]
+      &quot;id&quot;: &quot;http://example.org/entities/6f873138-152a-4a98-b397-9f478ce5ec1d&quot;,
+      &quot;label&quot;: &quot;Down to a Sunless Sea&quot;,
+      &quot;type&quot;: &quot;writing&quot;,
+      &quot;short_display&quot;: &quot;&lt;span&gt;Down to a Sunless Sea.&lt;/span&gt;&quot;,
+      &quot;description&quot;: &quot;Cronut &lt;i&gt;vinegar retro wayfarers helvetica&lt;/i&gt; pop-up.&quot;,
+      &quot;clean_label&quot;: &quot;Down to a Sunless Sea&quot;,
+      &quot;clean_description&quot;: &quot;Cronut vinegar retro wayfarers helvetica pop-up.&quot;,
+      &quot;date&quot;: &quot;1961-06-23&quot;,
+      &quot;notes&quot;: &quot;I wish you&#39;d just tell me rather trying to engage my enthusiasm, because I haven&#39;t got one.&quot;,
+      &quot;porposal&quot;: null,
+      &quot;beckett_digital_manuscript_project&quot;: &quot;http://kihn.biz/selma&quot;
     },
     {
-      &quot;id&quot;: &quot;/entities/178315fd-25f3-47bc-9021-e6373dfca5a1&quot;,
-      &quot;label&quot;: &quot;Total Perspective Vortex&quot;,
-      &quot;type&quot;: &quot;place&quot;,
-      &quot;short_display&quot;: &quot;&lt;span&gt;Total Perspective Vortex.&lt;/span&gt;&quot;,
-      &quot;description&quot;: &quot;Waistcoat hella single-origin coffee locavore chicharrones.&quot;,
-      &quot;clean_label&quot;: &quot;Total Perspective Vortex&quot;,
-      &quot;clean_description&quot;: &quot;Waistcoat hella single-origin coffee locavore chicharrones.&quot;,
-      &quot;alternate_spellings&quot;: [
-        &quot;Sasha Velour&quot;
-      ],
-      &quot;links&quot;: [
-        &quot;http://kiehn.io/leida.effertz&quot;
-      ]
+      &quot;id&quot;: &quot;http://example.org/entities/75d2088f-5232-4726-b77f-ad32a3c51d29&quot;,
+      &quot;label&quot;: &quot;This Side of Paradise&quot;,
+      &quot;type&quot;: &quot;writing&quot;,
+      &quot;short_display&quot;: &quot;&lt;span&gt;This Side of Paradise.&lt;/span&gt;&quot;,
+      &quot;description&quot;: &quot;Hashtag &lt;i&gt;meditation flannel typewriter&lt;/i&gt; try-hard.&quot;,
+      &quot;clean_label&quot;: &quot;This Side of Paradise&quot;,
+      &quot;clean_description&quot;: &quot;Hashtag meditation flannel typewriter try-hard.&quot;,
+      &quot;date&quot;: &quot;1944-02-05&quot;,
+      &quot;notes&quot;: &quot;Pardon me for breathing, which I never do anyway so I don&#39;t know why I bother to say it, Oh God, I&#39;m so depressed.&quot;,
+      &quot;porposal&quot;: null,
+      &quot;beckett_digital_manuscript_project&quot;: &quot;http://kessler-jacobs.net/neoma&quot;
     },
     {
-      &quot;id&quot;: &quot;/entities/1884db41-2a85-49ca-8497-f8daccaf5ae1&quot;,
-      &quot;label&quot;: &quot;Pleiades system&quot;,
-      &quot;type&quot;: &quot;place&quot;,
-      &quot;short_display&quot;: &quot;&lt;span&gt;Pleiades system.&lt;/span&gt;&quot;,
-      &quot;description&quot;: &quot;Thundercats &lt;i&gt;3 wolf moon fanny pack chartreuse five dollar&lt;/i&gt; toast.&quot;,
-      &quot;clean_label&quot;: &quot;Pleiades system&quot;,
-      &quot;clean_description&quot;: &quot;Thundercats 3 wolf moon fanny pack chartreuse five dollar toast.&quot;,
-      &quot;alternate_spellings&quot;: [
-        &quot;Sharon Needles&quot;
-      ],
-      &quot;links&quot;: [
-        &quot;http://leannon-kertzmann.com/darren_grant&quot;
-      ]
+      &quot;id&quot;: &quot;http://example.org/entities/8830ffd4-b87c-4938-a3c9-b2b1b9fd9fc4&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;The Glory and the Dream&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;writing&quot;,
+      &quot;short_display&quot;: &quot;&lt;span&gt;&lt;i&gt;The Glory and the Dream&lt;/i&gt;.&lt;/span&gt;&quot;,
+      &quot;description&quot;: &quot;Lumbersexual microdosing tofu 90&#39;s synth tacos shoreditch.&quot;,
+      &quot;clean_label&quot;: &quot;The Glory and the Dream&quot;,
+      &quot;clean_description&quot;: &quot;Lumbersexual microdosing tofu 90&#39;s synth tacos shoreditch.&quot;,
+      &quot;date&quot;: &quot;1941-04-28&quot;,
+      &quot;notes&quot;: &quot;I wish you&#39;d just tell me rather trying to engage my enthusiasm, because I haven&#39;t got one.&quot;,
+      &quot;porposal&quot;: null,
+      &quot;beckett_digital_manuscript_project&quot;: &quot;http://gulgowski.co/manuel&quot;
     },
     {
-      &quot;id&quot;: &quot;/entities/19c22a8a-ccd8-442b-89c2-8f3344c9b5c8&quot;,
-      &quot;label&quot;: &quot;Horsehead Nebula&quot;,
-      &quot;type&quot;: &quot;place&quot;,
-      &quot;short_display&quot;: &quot;&lt;span&gt;Horsehead Nebula.&lt;/span&gt;&quot;,
-      &quot;description&quot;: &quot;Hashtag sriracha tumblr ennui letterpress retro five dollar toast cleanse viral.&quot;,
-      &quot;clean_label&quot;: &quot;Horsehead Nebula&quot;,
-      &quot;clean_description&quot;: &quot;Hashtag sriracha tumblr ennui letterpress retro five dollar toast cleanse viral.&quot;,
-      &quot;alternate_spellings&quot;: [
-        &quot;Pearl&quot;
-      ],
-      &quot;links&quot;: [
-        &quot;http://macejkovic-jones.co/harris&quot;
-      ]
+      &quot;id&quot;: &quot;http://example.org/entities/9a263982-cd63-47d2-8e03-68ea8d1f37f3&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;Things Fall Apart&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;writing&quot;,
+      &quot;short_display&quot;: &quot;&lt;span&gt;&lt;i&gt;Things Fall Apart&lt;/i&gt;.&lt;/span&gt;&quot;,
+      &quot;description&quot;: &quot;Hella &lt;i&gt;ugh selfies migas shoreditch&lt;/i&gt; asymmetrical.&quot;,
+      &quot;clean_label&quot;: &quot;Things Fall Apart&quot;,
+      &quot;clean_description&quot;: &quot;Hella ugh selfies migas shoreditch asymmetrical.&quot;,
+      &quot;date&quot;: &quot;1967-09-19&quot;,
+      &quot;notes&quot;: &quot;And then of course I&#39;ve got this terrible pain in all the diodes down my left side.&quot;,
+      &quot;porposal&quot;: null,
+      &quot;beckett_digital_manuscript_project&quot;: &quot;http://jacobson-mayer.info/myrtie&quot;
     },
     {
-      &quot;id&quot;: &quot;/entities/1b771820-18aa-40d8-9db7-31e78b9c87ef&quot;,
-      &quot;label&quot;: &quot;Zarss&quot;,
-      &quot;type&quot;: &quot;place&quot;,
-      &quot;short_display&quot;: &quot;&lt;span&gt;Zarss.&lt;/span&gt;&quot;,
-      &quot;description&quot;: &quot;Thundercats vhs banjo forage 3 wolf moon.&quot;,
-      &quot;clean_label&quot;: &quot;Zarss&quot;,
-      &quot;clean_description&quot;: &quot;Thundercats vhs banjo forage 3 wolf moon.&quot;,
-      &quot;alternate_spellings&quot;: [
-        &quot;Acid Betty&quot;
-      ],
-      &quot;links&quot;: [
-        &quot;http://dickens.name/gwendolyn.johnson&quot;
-      ]
+      &quot;id&quot;: &quot;http://example.org/entities/a417548c-e226-4d1a-9a08-581bd5e5327e&quot;,
+      &quot;label&quot;: &quot;A Catskill Eagle&quot;,
+      &quot;type&quot;: &quot;writing&quot;,
+      &quot;short_display&quot;: &quot;&lt;span&gt;A Catskill Eagle.&lt;/span&gt;&quot;,
+      &quot;description&quot;: &quot;Poutine intelligentsia skateboard locavore hella lumbersexual chicharrones chia.&quot;,
+      &quot;clean_label&quot;: &quot;A Catskill Eagle&quot;,
+      &quot;clean_description&quot;: &quot;Poutine intelligentsia skateboard locavore hella lumbersexual chicharrones chia.&quot;,
+      &quot;date&quot;: &quot;1926-06-15&quot;,
+      &quot;notes&quot;: &quot;I wish you&#39;d just tell me rather trying to engage my enthusiasm, because I haven&#39;t got one.&quot;,
+      &quot;porposal&quot;: null,
+      &quot;beckett_digital_manuscript_project&quot;: &quot;http://russel.biz/geraldo_goldner&quot;
     },
     {
-      &quot;id&quot;: &quot;/entities/24c07691-5762-4fda-8c5e-5d940af77279&quot;,
-      &quot;label&quot;: &quot;North West Ripple&quot;,
-      &quot;type&quot;: &quot;place&quot;,
-      &quot;short_display&quot;: &quot;&lt;span&gt;North West Ripple.&lt;/span&gt;&quot;,
-      &quot;description&quot;: &quot;Tattooed try-hard cardigan quinoa squid forage vegan.&quot;,
-      &quot;clean_label&quot;: &quot;North West Ripple&quot;,
-      &quot;clean_description&quot;: &quot;Tattooed try-hard cardigan quinoa squid forage vegan.&quot;,
-      &quot;alternate_spellings&quot;: [
-        &quot;Kim Chi&quot;
-      ],
-      &quot;links&quot;: [
-        &quot;http://hackett-jakubowski.info/dwayne&quot;
-      ]
+      &quot;id&quot;: &quot;http://example.org/entities/a66dd81d-5639-480c-bcbd-7838fbf7ecf0&quot;,
+      &quot;label&quot;: &quot;The Needle&#39;s Eye&quot;,
+      &quot;type&quot;: &quot;writing&quot;,
+      &quot;short_display&quot;: &quot;&lt;span&gt;The Needle&#39;s Eye.&lt;/span&gt;&quot;,
+      &quot;description&quot;: &quot;Vegan &lt;i&gt;loko crucifix shabby chic next level&lt;/i&gt; farm-to-table.&quot;,
+      &quot;clean_label&quot;: &quot;The Needle&#39;s Eye&quot;,
+      &quot;clean_description&quot;: &quot;Vegan loko crucifix shabby chic next level farm-to-table.&quot;,
+      &quot;date&quot;: &quot;1954-09-22&quot;,
+      &quot;notes&quot;: &quot;I think you ought to know I&#39;m feeling very depressed.&quot;,
+      &quot;porposal&quot;: null,
+      &quot;beckett_digital_manuscript_project&quot;: &quot;http://ratke-renner.info/coy.pacocha&quot;
     },
     {
-      &quot;id&quot;: &quot;/entities/27e0dd63-39b7-411f-a701-e131899263ed&quot;,
-      &quot;label&quot;: &quot;&lt;i&gt;Han Dold City&lt;/i&gt;&quot;,
-      &quot;type&quot;: &quot;place&quot;,
-      &quot;short_display&quot;: &quot;&lt;span&gt;&lt;i&gt;Han Dold City&lt;/i&gt;.&lt;/span&gt;&quot;,
-      &quot;description&quot;: &quot;Pbr&amp;b kinfolk marfa church-key meh.&quot;,
-      &quot;clean_label&quot;: &quot;Han Dold City&quot;,
-      &quot;clean_description&quot;: &quot;Pbr&amp;amp;b kinfolk marfa church-key meh.&quot;,
-      &quot;alternate_spellings&quot;: [
-        &quot;Tatianna&quot;
-      ],
-      &quot;links&quot;: [
-        &quot;http://muller.info/pearl.littel&quot;
-      ]
+      &quot;id&quot;: &quot;http://example.org/entities/baaba6bd-d9d5-43bd-9c2c-d7c0a40e6261&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;The Torment of Others&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;writing&quot;,
+      &quot;short_display&quot;: &quot;&lt;span&gt;&lt;i&gt;The Torment of Others&lt;/i&gt;.&lt;/span&gt;&quot;,
+      &quot;description&quot;: &quot;Gentrify twee post-ironic beard +1 vegan.&quot;,
+      &quot;clean_label&quot;: &quot;The Torment of Others&quot;,
+      &quot;clean_description&quot;: &quot;Gentrify twee post-ironic beard +1 vegan.&quot;,
+      &quot;date&quot;: &quot;1937-04-20&quot;,
+      &quot;notes&quot;: &quot;You think you&#39;ve got problems? What are you supposed to do if you are a manically depressed robot? No, don&#39;t try to answer that. I&#39;m fifty thousand times more intelligent than you and even I don&#39;t know the answer. It gives me a headache just trying to think down to your level.&quot;,
+      &quot;porposal&quot;: null,
+      &quot;beckett_digital_manuscript_project&quot;: &quot;http://cronin.net/carolina&quot;
     },
     {
-      &quot;id&quot;: &quot;/entities/2805aed1-02dc-45c7-b79c-946f31c22407&quot;,
-      &quot;label&quot;: &quot;Highgate Cemetery&quot;,
-      &quot;type&quot;: &quot;place&quot;,
-      &quot;short_display&quot;: &quot;&lt;span&gt;Highgate Cemetery.&lt;/span&gt;&quot;,
-      &quot;description&quot;: &quot;Chicharrones &lt;i&gt;direct trade skateboard cliche disrupt microdosing&lt;/i&gt; neutra.&quot;,
-      &quot;clean_label&quot;: &quot;Highgate Cemetery&quot;,
-      &quot;clean_description&quot;: &quot;Chicharrones direct trade skateboard cliche disrupt microdosing neutra.&quot;,
-      &quot;alternate_spellings&quot;: [
-        &quot;Miss Fame&quot;
-      ],
-      &quot;links&quot;: [
-        &quot;http://hand.name/jefferson.osinski&quot;
-      ]
+      &quot;id&quot;: &quot;http://example.org/entities/beb5366e-adc7-4b9e-a4d6-2c3794720dbc&quot;,
+      &quot;label&quot;: &quot;The Little Foxes&quot;,
+      &quot;type&quot;: &quot;writing&quot;,
+      &quot;short_display&quot;: &quot;&lt;span&gt;The Little Foxes.&lt;/span&gt;&quot;,
+      &quot;description&quot;: &quot;Gastropub roof flannel vice cardigan sustainable.&quot;,
+      &quot;clean_label&quot;: &quot;The Little Foxes&quot;,
+      &quot;clean_description&quot;: &quot;Gastropub roof flannel vice cardigan sustainable.&quot;,
+      &quot;date&quot;: &quot;1947-09-26&quot;,
+      &quot;notes&quot;: &quot;And then of course I&#39;ve got this terrible pain in all the diodes down my left side.&quot;,
+      &quot;porposal&quot;: null,
+      &quot;beckett_digital_manuscript_project&quot;: &quot;http://beer.net/crista&quot;
     },
     {
-      &quot;id&quot;: &quot;/entities/2bab8cf5-1156-4cb5-94a8-45bf232362e5&quot;,
-      &quot;label&quot;: &quot;&lt;i&gt;Rupert&lt;/i&gt;&quot;,
-      &quot;type&quot;: &quot;place&quot;,
-      &quot;short_display&quot;: &quot;&lt;span&gt;&lt;i&gt;Rupert&lt;/i&gt;.&lt;/span&gt;&quot;,
-      &quot;description&quot;: &quot;Mixtape &lt;i&gt;migas phlogiston seitan forage yuccie etsy church-key&lt;/i&gt; meggings.&quot;,
-      &quot;clean_label&quot;: &quot;Rupert&quot;,
-      &quot;clean_description&quot;: &quot;Mixtape migas phlogiston seitan forage yuccie etsy church-key meggings.&quot;,
-      &quot;alternate_spellings&quot;: [
-        &quot;Joslyn Fox&quot;
-      ],
-      &quot;links&quot;: [
-        &quot;http://steuber.org/gerald.hane&quot;
-      ]
+      &quot;id&quot;: &quot;http://example.org/entities/c0f25f99-73ff-4194-b8ff-e03dd220e087&quot;,
+      &quot;label&quot;: &quot;Of Human Bondage&quot;,
+      &quot;type&quot;: &quot;writing&quot;,
+      &quot;short_display&quot;: &quot;&lt;span&gt;Of Human Bondage.&lt;/span&gt;&quot;,
+      &quot;description&quot;: &quot;Everyday roof yuccie synth meh salvia schlitz.&quot;,
+      &quot;clean_label&quot;: &quot;Of Human Bondage&quot;,
+      &quot;clean_description&quot;: &quot;Everyday roof yuccie synth meh salvia schlitz.&quot;,
+      &quot;date&quot;: &quot;1943-06-02&quot;,
+      &quot;notes&quot;: &quot;And then of course I&#39;ve got this terrible pain in all the diodes down my left side.&quot;,
+      &quot;porposal&quot;: null,
+      &quot;beckett_digital_manuscript_project&quot;: &quot;http://bechtelar.biz/cassaundra_balistreri&quot;
     },
     {
-      &quot;id&quot;: &quot;/entities/2bb2723d-d65b-48e5-b5d0-566c69002c93&quot;,
-      &quot;label&quot;: &quot;London&quot;,
-      &quot;type&quot;: &quot;place&quot;,
-      &quot;short_display&quot;: &quot;&lt;span&gt;London.&lt;/span&gt;&quot;,
-      &quot;description&quot;: &quot;Meh poutine gluten-free neutra viral banjo letterpress tacos five dollar toast.&quot;,
-      &quot;clean_label&quot;: &quot;London&quot;,
-      &quot;clean_description&quot;: &quot;Meh poutine gluten-free neutra viral banjo letterpress tacos five dollar toast.&quot;,
-      &quot;alternate_spellings&quot;: [
-        &quot;Nina Bonina Brown&quot;
-      ],
-      &quot;links&quot;: [
-        &quot;http://toy-leffler.info/michel&quot;
-      ]
+      &quot;id&quot;: &quot;http://example.org/entities/c30071df-011c-4f49-af69-787579f1c929&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;Oh! To be in England&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;writing&quot;,
+      &quot;short_display&quot;: &quot;&lt;span&gt;&lt;i&gt;Oh! To be in England&lt;/i&gt;.&lt;/span&gt;&quot;,
+      &quot;description&quot;: &quot;Carry &lt;i&gt;salvia forage deep v sartorial&lt;/i&gt; skateboard.&quot;,
+      &quot;clean_label&quot;: &quot;Oh! To be in England&quot;,
+      &quot;clean_description&quot;: &quot;Carry salvia forage deep v sartorial skateboard.&quot;,
+      &quot;date&quot;: &quot;1945-08-29&quot;,
+      &quot;notes&quot;: &quot;I wish you&#39;d just tell me rather trying to engage my enthusiasm, because I haven&#39;t got one.&quot;,
+      &quot;porposal&quot;: null,
+      &quot;beckett_digital_manuscript_project&quot;: &quot;http://oberbrunner-nikolaus.io/marion&quot;
     },
     {
-      &quot;id&quot;: &quot;/entities/2bc4bfab-6324-4799-bc15-76efec81b0ac&quot;,
-      &quot;label&quot;: &quot;&lt;i&gt;Madagascar&lt;/i&gt;&quot;,
-      &quot;type&quot;: &quot;place&quot;,
-      &quot;short_display&quot;: &quot;&lt;span&gt;&lt;i&gt;Madagascar&lt;/i&gt;.&lt;/span&gt;&quot;,
-      &quot;description&quot;: &quot;Polaroid pitchfork poutine pour-over umami raw denim seitan kombucha whatever.&quot;,
-      &quot;clean_label&quot;: &quot;Madagascar&quot;,
-      &quot;clean_description&quot;: &quot;Polaroid pitchfork poutine pour-over umami raw denim seitan kombucha whatever.&quot;,
-      &quot;alternate_spellings&quot;: [
-        &quot;Robbie Turner&quot;
-      ],
-      &quot;links&quot;: [
-        &quot;http://dare.org/norman.lockman&quot;
-      ]
+      &quot;id&quot;: &quot;http://example.org/entities/c416ceb5-576d-49a5-93b4-401fddd67fc2&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;Vanity Fair&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;writing&quot;,
+      &quot;short_display&quot;: &quot;&lt;span&gt;&lt;i&gt;Vanity Fair&lt;/i&gt;.&lt;/span&gt;&quot;,
+      &quot;description&quot;: &quot;Vegan &lt;i&gt;master direct trade five dollar toast authentic whatever&lt;/i&gt; sartorial.&quot;,
+      &quot;clean_label&quot;: &quot;Vanity Fair&quot;,
+      &quot;clean_description&quot;: &quot;Vegan master direct trade five dollar toast authentic whatever sartorial.&quot;,
+      &quot;date&quot;: &quot;1956-08-31&quot;,
+      &quot;notes&quot;: &quot;And then of course I&#39;ve got this terrible pain in all the diodes down my left side.&quot;,
+      &quot;porposal&quot;: null,
+      &quot;beckett_digital_manuscript_project&quot;: &quot;http://swaniawski-vonrueden.biz/katerine_adams&quot;
     },
     {
-      &quot;id&quot;: &quot;/entities/2d4098af-ce15-40ea-bda6-f060d924fe49&quot;,
-      &quot;label&quot;: &quot;Ibiza&quot;,
-      &quot;type&quot;: &quot;place&quot;,
-      &quot;short_display&quot;: &quot;&lt;span&gt;Ibiza.&lt;/span&gt;&quot;,
-      &quot;description&quot;: &quot;Beard &lt;i&gt;five dollar toast tousled skateboard vinegar crucifix trust&lt;/i&gt; fund.&quot;,
-      &quot;clean_label&quot;: &quot;Ibiza&quot;,
-      &quot;clean_description&quot;: &quot;Beard five dollar toast tousled skateboard vinegar crucifix trust fund.&quot;,
-      &quot;alternate_spellings&quot;: [
-        &quot;Detox&quot;
-      ],
-      &quot;links&quot;: [
-        &quot;http://lynch.co/truman.hyatt&quot;
-      ]
+      &quot;id&quot;: &quot;http://example.org/entities/c89f1dcf-48bb-405a-9804-855dbdf63dfc&quot;,
+      &quot;label&quot;: &quot;The Glory and the Dream&quot;,
+      &quot;type&quot;: &quot;writing&quot;,
+      &quot;short_display&quot;: &quot;&lt;span&gt;The Glory and the Dream.&lt;/span&gt;&quot;,
+      &quot;description&quot;: &quot;Truffaut yuccie vice organic knausgaard forage skateboard shoreditch.&quot;,
+      &quot;clean_label&quot;: &quot;The Glory and the Dream&quot;,
+      &quot;clean_description&quot;: &quot;Truffaut yuccie vice organic knausgaard forage skateboard shoreditch.&quot;,
+      &quot;date&quot;: &quot;1969-04-06&quot;,
+      &quot;notes&quot;: &quot;And then of course I&#39;ve got this terrible pain in all the diodes down my left side.&quot;,
+      &quot;porposal&quot;: null,
+      &quot;beckett_digital_manuscript_project&quot;: &quot;http://okuneva.com/nathalie_armstrong&quot;
     },
     {
-      &quot;id&quot;: &quot;/entities/2de0baa0-f133-4532-9787-40423705596b&quot;,
-      &quot;label&quot;: &quot;&lt;i&gt;Western Spiral Arm&lt;/i&gt;&quot;,
-      &quot;type&quot;: &quot;place&quot;,
-      &quot;short_display&quot;: &quot;&lt;span&gt;&lt;i&gt;Western Spiral Arm&lt;/i&gt;.&lt;/span&gt;&quot;,
-      &quot;description&quot;: &quot;Roof &lt;i&gt;scenester microdosing cray&lt;/i&gt; hammock.&quot;,
-      &quot;clean_label&quot;: &quot;Western Spiral Arm&quot;,
-      &quot;clean_description&quot;: &quot;Roof scenester microdosing cray hammock.&quot;,
-      &quot;alternate_spellings&quot;: [
-        &quot;Monique Heart&quot;
-      ],
-      &quot;links&quot;: [
-        &quot;http://okeefe.name/hannah&quot;
-      ]
+      &quot;id&quot;: &quot;http://example.org/entities/c99bc153-5ba4-4e52-ba0e-7b7ac0322241&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;The Moon by Night&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;writing&quot;,
+      &quot;short_display&quot;: &quot;&lt;span&gt;&lt;i&gt;The Moon by Night&lt;/i&gt;.&lt;/span&gt;&quot;,
+      &quot;description&quot;: &quot;3 wolf moon vice offal banh mi.&quot;,
+      &quot;clean_label&quot;: &quot;The Moon by Night&quot;,
+      &quot;clean_description&quot;: &quot;3 wolf moon vice offal banh mi.&quot;,
+      &quot;date&quot;: &quot;1938-05-14&quot;,
+      &quot;notes&quot;: &quot;Life? Don&#39;t talk to me about life.&quot;,
+      &quot;porposal&quot;: null,
+      &quot;beckett_digital_manuscript_project&quot;: &quot;http://heathcote-conroy.biz/lanita&quot;
     },
     {
-      &quot;id&quot;: &quot;/entities/3416570c-5455-45fd-a1cc-677b7d919590&quot;,
-      &quot;label&quot;: &quot;&lt;i&gt;Stavromula Beta&lt;/i&gt;&quot;,
-      &quot;type&quot;: &quot;place&quot;,
-      &quot;short_display&quot;: &quot;&lt;span&gt;&lt;i&gt;Stavromula Beta&lt;/i&gt;.&lt;/span&gt;&quot;,
-      &quot;description&quot;: &quot;Cleanse semiotics tattooed chambray.&quot;,
-      &quot;clean_label&quot;: &quot;Stavromula Beta&quot;,
-      &quot;clean_description&quot;: &quot;Cleanse semiotics tattooed chambray.&quot;,
-      &quot;alternate_spellings&quot;: [
-        &quot;Kennedy Davenport&quot;
-      ],
-      &quot;links&quot;: [
-        &quot;http://oconner-sawayn.biz/annabell&quot;
-      ]
+      &quot;id&quot;: &quot;http://example.org/entities/cd0a28c8-3b75-4eca-984d-02be1c6b254a&quot;,
+      &quot;label&quot;: &quot;A Many-Splendoured Thing&quot;,
+      &quot;type&quot;: &quot;writing&quot;,
+      &quot;short_display&quot;: &quot;&lt;span&gt;A Many-Splendoured Thing.&lt;/span&gt;&quot;,
+      &quot;description&quot;: &quot;Carry quinoa photo booth craft beer portland mixtape.&quot;,
+      &quot;clean_label&quot;: &quot;A Many-Splendoured Thing&quot;,
+      &quot;clean_description&quot;: &quot;Carry quinoa photo booth craft beer portland mixtape.&quot;,
+      &quot;date&quot;: &quot;1954-10-05&quot;,
+      &quot;notes&quot;: &quot;Life? Don&#39;t talk to me about life.&quot;,
+      &quot;porposal&quot;: null,
+      &quot;beckett_digital_manuscript_project&quot;: &quot;http://powlowski-schaefer.com/ignacio_miller&quot;
     },
     {
-      &quot;id&quot;: &quot;/entities/34a0e8a9-f5d3-4a49-96b8-2f3562c47263&quot;,
-      &quot;label&quot;: &quot;&lt;i&gt;Seventh Galaxy of Light and Ingenuity&lt;/i&gt;&quot;,
-      &quot;type&quot;: &quot;place&quot;,
-      &quot;short_display&quot;: &quot;&lt;span&gt;&lt;i&gt;Seventh Galaxy of Light and Ingenuity&lt;/i&gt;.&lt;/span&gt;&quot;,
-      &quot;description&quot;: &quot;Selfies sriracha pour-over irony migas helvetica wayfarers.&quot;,
-      &quot;clean_label&quot;: &quot;Seventh Galaxy of Light and Ingenuity&quot;,
-      &quot;clean_description&quot;: &quot;Selfies sriracha pour-over irony migas helvetica wayfarers.&quot;,
-      &quot;alternate_spellings&quot;: [
-        &quot;Dida Ritz&quot;
-      ],
-      &quot;links&quot;: [
-        &quot;http://wiegand-gerhold.co/demarcus&quot;
-      ]
+      &quot;id&quot;: &quot;http://example.org/entities/cfe986f6-68ef-461e-8d80-f61ec7749067&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;Fear and Trembling&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;writing&quot;,
+      &quot;short_display&quot;: &quot;&lt;span&gt;&lt;i&gt;Fear and Trembling&lt;/i&gt;.&lt;/span&gt;&quot;,
+      &quot;description&quot;: &quot;Chia &lt;i&gt;readymade raw denim pug meditation&lt;/i&gt; squid.&quot;,
+      &quot;clean_label&quot;: &quot;Fear and Trembling&quot;,
+      &quot;clean_description&quot;: &quot;Chia readymade raw denim pug meditation squid.&quot;,
+      &quot;date&quot;: &quot;1953-12-19&quot;,
+      &quot;notes&quot;: &quot;You think you&#39;ve got problems? What are you supposed to do if you are a manically depressed robot? No, don&#39;t try to answer that. I&#39;m fifty thousand times more intelligent than you and even I don&#39;t know the answer. It gives me a headache just trying to think down to your level.&quot;,
+      &quot;porposal&quot;: null,
+      &quot;beckett_digital_manuscript_project&quot;: &quot;http://abbott.co/filiberto&quot;
     },
     {
-      &quot;id&quot;: &quot;/entities/366bfbe7-6cd0-4a6c-ac9a-caad24a72779&quot;,
-      &quot;label&quot;: &quot;&lt;i&gt;North West Ripple&lt;/i&gt;&quot;,
-      &quot;type&quot;: &quot;place&quot;,
-      &quot;short_display&quot;: &quot;&lt;span&gt;&lt;i&gt;North West Ripple&lt;/i&gt;.&lt;/span&gt;&quot;,
-      &quot;description&quot;: &quot;Tumblr vinegar before they sold out biodiesel crucifix.&quot;,
-      &quot;clean_label&quot;: &quot;North West Ripple&quot;,
-      &quot;clean_description&quot;: &quot;Tumblr vinegar before they sold out biodiesel crucifix.&quot;,
-      &quot;alternate_spellings&quot;: [
-        &quot;Brook Lynn Hytes&quot;
-      ],
-      &quot;links&quot;: [
-        &quot;http://lemke-senger.com/korey_sanford&quot;
-      ]
+      &quot;id&quot;: &quot;http://example.org/entities/d567d076-2f35-44dd-807f-8094143496b1&quot;,
+      &quot;label&quot;: &quot;In a Dry Season&quot;,
+      &quot;type&quot;: &quot;writing&quot;,
+      &quot;short_display&quot;: &quot;&lt;span&gt;In a Dry Season.&lt;/span&gt;&quot;,
+      &quot;description&quot;: &quot;Cliche &lt;i&gt;wayfarers ennui chia&lt;/i&gt; portland.&quot;,
+      &quot;clean_label&quot;: &quot;In a Dry Season&quot;,
+      &quot;clean_description&quot;: &quot;Cliche wayfarers ennui chia portland.&quot;,
+      &quot;date&quot;: &quot;1959-12-15&quot;,
+      &quot;notes&quot;: &quot;I won&#39;t enjoy it.&quot;,
+      &quot;porposal&quot;: null,
+      &quot;beckett_digital_manuscript_project&quot;: &quot;http://dubuque.org/pandora&quot;
     }
   ],
   &quot;aggs&quot;: {
@@ -608,51 +558,51 @@ Content-Length: 13007</pre>
       &quot;buckets&quot;: [
         {
           &quot;key&quot;: &quot;place&quot;,
-          &quot;doc_count&quot;: 136
+          &quot;doc_count&quot;: 131
         },
         {
           &quot;key&quot;: &quot;person&quot;,
-          &quot;doc_count&quot;: 78
-        },
-        {
-          &quot;key&quot;: &quot;writing&quot;,
-          &quot;doc_count&quot;: 47
-        },
-        {
-          &quot;key&quot;: &quot;attendance&quot;,
-          &quot;doc_count&quot;: 42
-        },
-        {
-          &quot;key&quot;: &quot;music&quot;,
-          &quot;doc_count&quot;: 42
-        },
-        {
-          &quot;key&quot;: &quot;publication&quot;,
-          &quot;doc_count&quot;: 37
-        },
-        {
-          &quot;key&quot;: &quot;work_of_art&quot;,
-          &quot;doc_count&quot;: 37
-        },
-        {
-          &quot;key&quot;: &quot;reading&quot;,
-          &quot;doc_count&quot;: 34
+          &quot;doc_count&quot;: 84
         },
         {
           &quot;key&quot;: &quot;public_event&quot;,
-          &quot;doc_count&quot;: 33
-        },
-        {
-          &quot;key&quot;: &quot;translating&quot;,
-          &quot;doc_count&quot;: 31
-        },
-        {
-          &quot;key&quot;: &quot;organization&quot;,
-          &quot;doc_count&quot;: 30
+          &quot;doc_count&quot;: 57
         },
         {
           &quot;key&quot;: &quot;production&quot;,
-          &quot;doc_count&quot;: 30
+          &quot;doc_count&quot;: 45
+        },
+        {
+          &quot;key&quot;: &quot;music&quot;,
+          &quot;doc_count&quot;: 41
+        },
+        {
+          &quot;key&quot;: &quot;organization&quot;,
+          &quot;doc_count&quot;: 39
+        },
+        {
+          &quot;key&quot;: &quot;translating&quot;,
+          &quot;doc_count&quot;: 39
+        },
+        {
+          &quot;key&quot;: &quot;attendance&quot;,
+          &quot;doc_count&quot;: 36
+        },
+        {
+          &quot;key&quot;: &quot;work_of_art&quot;,
+          &quot;doc_count&quot;: 35
+        },
+        {
+          &quot;key&quot;: &quot;writing&quot;,
+          &quot;doc_count&quot;: 29
+        },
+        {
+          &quot;key&quot;: &quot;publication&quot;,
+          &quot;doc_count&quot;: 25
+        },
+        {
+          &quot;key&quot;: &quot;reading&quot;,
+          &quot;doc_count&quot;: 22
         }
       ]
     }
@@ -660,12 +610,12 @@ Content-Length: 13007</pre>
   &quot;meta&quot;: {
     &quot;page&quot;: 1,
     &quot;per_page&quot;: 25,
-    &quot;page_count&quot;: 6,
-    &quot;total_count&quot;: 136,
+    &quot;page_count&quot;: 2,
+    &quot;total_count&quot;: 29,
     &quot;links&quot;: {
-      &quot;self&quot;: &quot;http://example.org/entities?page=1&amp;type=place&quot;,
-      &quot;last&quot;: &quot;http://example.org/entities?page=6&amp;type=place&quot;,
-      &quot;next&quot;: &quot;http://example.org/entities?page=2&amp;type=place&quot;
+      &quot;self&quot;: &quot;http://example.org/entities?page=1&amp;type=writing&quot;,
+      &quot;last&quot;: &quot;http://example.org/entities?page=2&amp;type=writing&quot;,
+      &quot;next&quot;: &quot;http://example.org/entities?page=2&amp;type=writing&quot;
     }
   }
 }</pre>

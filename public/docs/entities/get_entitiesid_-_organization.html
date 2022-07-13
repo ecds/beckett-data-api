@@ -115,6 +115,117 @@ table th, table td {
         <h3>GET /entities/:id</h3>
 
 
+          <h3>Response Fields</h3>
+          <table class="response-fields table table-striped table-bordered table-condensed">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Default</th>
+                <th>Description</th>
+                <th>Not Null</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                    <span class="name">label</span>
+                </td>
+                <td>
+                  <span class="description">HTML String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">true</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">clean_label</span>
+                </td>
+                <td>
+                  <span class="description">String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">true</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">description</span>
+                </td>
+                <td>
+                  <span class="description">HTML String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">true</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">clean_description</span>
+                </td>
+                <td>
+                  <span class="description">String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">true</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">short_display</span>
+                </td>
+                <td>
+                  <span class="description">HTML String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">true</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">entity[alternate_spellings]</span>
+                </td>
+                <td>
+                  <span class="description">Array</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">true</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">entity[profile]</span>
+                </td>
+                <td>
+                  <span class="description">HTML String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">false</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
 
           <h3>Request</h3>
 
@@ -126,7 +237,7 @@ Host: example.org
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET /entities/a3737064-29f2-48fc-aab0-ab1bd8a3f151</pre>
+          <pre class="request route highlight">GET /entities/61e0902d-01dd-4142-a0cc-145e87c0bee7</pre>
 
 
 
@@ -140,23 +251,25 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;94f72e479a93c726787129e2fda9cb62&quot;
+ETag: W/&quot;2d75adac97f97e9d2233fc0ed201c696&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: f78841ee-076b-4d53-bb51-88479bfd8abb
-X-Runtime: 0.972116
+X-Request-Id: 14dac23f-8f9e-42b9-967f-da8db6dc3675
+X-Runtime: 1.186051
 Vary: Origin
-Content-Length: 213</pre>
+Content-Length: 365</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
   &quot;type&quot;: &quot;organization&quot;,
-  &quot;label&quot;: &quot;Eroticon VI&quot;,
-  &quot;description&quot;: &quot;Fingerstache banjo direct trade hoodie heirloom paleo.&quot;,
+  &quot;label&quot;: &quot;&lt;i&gt;Happi-Werld III&lt;/i&gt;&quot;,
+  &quot;clean_label&quot;: &quot;Happi-Werld III&quot;,
+  &quot;description&quot;: &quot;Ennui &lt;i&gt;seitan green juice&lt;/i&gt; readymade.&quot;,
+  &quot;clean_description&quot;: &quot;Ennui seitan green juice readymade.&quot;,
   &quot;alternate_spellings&quot;: [
-    &quot;Darienne Lake&quot;
+    &quot;Tatianna&quot;
   ],
-  &quot;profile&quot;: &quot;Mr. Treehorn treats objects like women, man.&quot;
+  &quot;profile&quot;: &quot;Three thousand years of beautiful tradition, from Moses to Sandy Koufax.&quot;
 }</pre>
       </div>
     </div>

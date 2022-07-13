@@ -115,6 +115,173 @@ table th, table td {
         <h3>GET /entities/:id</h3>
 
 
+          <h3>Response Fields</h3>
+          <table class="response-fields table table-striped table-bordered table-condensed">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Default</th>
+                <th>Description</th>
+                <th>Not Null</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                    <span class="name">label</span>
+                </td>
+                <td>
+                  <span class="description">HTML String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">true</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">clean_label</span>
+                </td>
+                <td>
+                  <span class="description">String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">true</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">description</span>
+                </td>
+                <td>
+                  <span class="description">HTML String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">true</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">clean_description</span>
+                </td>
+                <td>
+                  <span class="description">String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">true</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">short_display</span>
+                </td>
+                <td>
+                  <span class="description">HTML String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">true</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">entity[alternate_spellings]</span>
+                </td>
+                <td>
+                  <span class="description">Array</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">true</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">entity[artist]</span>
+                </td>
+                <td>
+                  <span class="description">String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">false</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">entity[artist_alternate_spellings]</span>
+                </td>
+                <td>
+                  <span class="description">Array</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">true</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">entity[notes]</span>
+                </td>
+                <td>
+                  <span class="description">String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">false</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">entity[owner_location_accession_number_current]</span>
+                </td>
+                <td>
+                  <span class="description">String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">false</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">entity[owner_location_accession_number_contemporaneous]</span>
+                </td>
+                <td>
+                  <span class="description">String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">false</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
 
           <h3>Request</h3>
 
@@ -126,7 +293,7 @@ Host: example.org
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET /entities/8a9c0216-05d9-4876-bc94-ea09189db428</pre>
+          <pre class="request route highlight">GET /entities/2ebb5fb3-083a-4c8e-9edf-6fd080d70520</pre>
 
 
 
@@ -140,29 +307,31 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;b61e763456309f1acee0bf6333975d20&quot;
+ETag: W/&quot;f778946810e576905607dfa3b1919b2d&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 9938133c-cba0-4c61-8a69-cf4e92c7a76b
-X-Runtime: 1.004261
+X-Request-Id: e908e6c0-ac84-4f69-97be-4a15d51567bc
+X-Runtime: 1.233438
 Vary: Origin
-Content-Length: 443</pre>
+Content-Length: 524</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
   &quot;type&quot;: &quot;work_of_art&quot;,
-  &quot;label&quot;: &quot;&lt;i&gt;Partyman&lt;/i&gt;&quot;,
-  &quot;description&quot;: &quot;Tofu &lt;i&gt;blue bottle before they sold out chartreuse cray&lt;/i&gt; franzen.&quot;,
+  &quot;label&quot;: &quot;Uptown&quot;,
+  &quot;clean_label&quot;: &quot;Uptown&quot;,
+  &quot;description&quot;: &quot;Pork belly humblebrag actually schlitz.&quot;,
+  &quot;clean_description&quot;: &quot;Pork belly humblebrag actually schlitz.&quot;,
   &quot;alternate_spellings&quot;: [
-    &quot;Morgan McMichaels&quot;
+    &quot;Stacy Layne Matthews&quot;
   ],
-  &quot;artist&quot;: &quot;Eccentrica Gallumbits&quot;,
+  &quot;artist&quot;: &quot;Barry Manilow&quot;,
   &quot;artist_alternate_spellings&quot;: [
-    &quot;Ra&#39;jah O&#39;Hara&quot;
+    &quot;Ariel Versace&quot;
   ],
-  &quot;notes&quot;: &quot;Life? Don&#39;t talk to me about life.&quot;,
-  &quot;owner_location_accession_number_current&quot;: 744,
-  &quot;owner_location_accession_number_contemporaneous&quot;: 602
+  &quot;notes&quot;: &quot;Pardon me for breathing, which I never do anyway so I don&#39;t know why I bother to say it, Oh God, I&#39;m so depressed.&quot;,
+  &quot;owner_location_accession_number_current&quot;: 859,
+  &quot;owner_location_accession_number_contemporaneous&quot;: 818
 }</pre>
       </div>
     </div>

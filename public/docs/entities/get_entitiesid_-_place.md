@@ -5,6 +5,19 @@
 ## GET /entities/:id - Place
 
 ### GET /entities/:id
+
+### Response Fields
+
+| Name | Default | Description | Not Null |
+|------|---------|-------------|----------|
+| label | HTML String |  | true |
+| clean_label | String |  | true |
+| description | HTML String |  | true |
+| clean_description | String |  | true |
+| short_display | HTML String |  | true |
+| alternate_spellings | Array |  | true |
+| links | Array |  | true |
+
 ### Request
 
 #### Headers
@@ -17,7 +30,7 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /entities/34beecf0-1470-4ad2-b59c-aa311aae7bfc</pre>
+<pre>GET /entities/951fa656-9b19-4b1b-9320-3b23d8cc4f7a</pre>
 
 ### Response
 
@@ -30,12 +43,12 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;d0006281f37c53a57eb920b8137f5857&quot;
+ETag: W/&quot;d1bcdd9a1c7cc72b11eabba19a4a0060&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 7d313543-73c7-44ac-ad9f-dee856fa5073
-X-Runtime: 0.924134
+X-Request-Id: dd5deae3-a7ec-4601-8abc-5d2d6a885f73
+X-Runtime: 1.370353
 Vary: Origin
-Content-Length: 218</pre>
+Content-Length: 321</pre>
 
 #### Status
 
@@ -45,12 +58,14 @@ Content-Length: 218</pre>
 
 <pre>{
   "type": "place",
-  "label": "France",
-  "description": "Fingerstache mumblecore literally banjo tilde trust fund photo booth umami wes anderson.",
+  "label": "The Domain of The King",
+  "clean_label": "The Domain of The King",
+  "description": "Vinyl gentrify green juice lumbersexual vice heirloom.",
+  "clean_description": "Vinyl gentrify green juice lumbersexual vice heirloom.",
   "alternate_spellings": [
-    "Pandora Boxx"
+    "Kameron Michaels"
   ],
   "links": [
-    "http://ernser.biz/tamra_lang"
+    "http://gusikowski.net/syreeta"
   ]
 }</pre>

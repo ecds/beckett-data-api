@@ -17,7 +17,7 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /entities/c00fcd9e-ac34-4570-8620-d33c98207c96</pre>
+<pre>GET /entities/32f031f4-1ed5-4273-93f3-869a7bea0cde</pre>
 
 ### Response
 
@@ -30,12 +30,12 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;15ff675c4d43e13314ea9222d8ddb41b&quot;
+ETag: W/&quot;832eef866475dacffffd6eff21e42929&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 5d04035c-1363-4321-b25a-a04a13b5cce0
-X-Runtime: 1.006507
+X-Request-Id: 5c95e2d2-98ff-4e46-bd6f-abc7c721d51b
+X-Runtime: 1.116702
 Vary: Origin
-Content-Length: 298</pre>
+Content-Length: 596</pre>
 
 #### Status
 
@@ -44,13 +44,13 @@ Content-Length: 298</pre>
 #### Body
 
 <pre>{
-  "type": "reading",
-  "label": "Down to a Sunless Sea",
-  "description": "Tumblr hoodie seitan irony.",
-  "authors": [
-    "Ms. Darius Shanahan"
-  ],
-  "comment": "And then of course I've got this terrible pain in all the diodes down my left side.",
-  "publication": "Cloverdale Corporation",
-  "publication_format": "Thundercats"
+  "type": "writing",
+  "label": "This Side of Paradise",
+  "clean_label": "This Side of Paradise",
+  "description": "Locavore ugh tilde quinoa loko brooklyn.",
+  "clean_description": "Locavore ugh tilde quinoa loko brooklyn.",
+  "date": "1949-04-29",
+  "notes": "You think you've got problems? What are you supposed to do if you are a manically depressed robot? No, don't try to answer that. I'm fifty thousand times more intelligent than you and even I don't know the answer. It gives me a headache just trying to think down to your level.",
+  "porposal": null,
+  "beckett_digital_manuscript_project": "http://mcclure.io/alyssa"
 }</pre>

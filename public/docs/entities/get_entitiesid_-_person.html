@@ -115,6 +115,187 @@ table th, table td {
         <h3>GET /entities/:id</h3>
 
 
+          <h3>Response Fields</h3>
+          <table class="response-fields table table-striped table-bordered table-condensed">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Default</th>
+                <th>Description</th>
+                <th>Not Null</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                    <span class="name">label</span>
+                </td>
+                <td>
+                  <span class="description">HTML String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">true</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">clean_label</span>
+                </td>
+                <td>
+                  <span class="description">String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">true</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">description</span>
+                </td>
+                <td>
+                  <span class="description">HTML String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">true</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">clean_description</span>
+                </td>
+                <td>
+                  <span class="description">String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">true</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">short_display</span>
+                </td>
+                <td>
+                  <span class="description">HTML String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">true</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">entity[alternate_spellings]</span>
+                </td>
+                <td>
+                  <span class="description">Array</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">true</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">entity[finding_aids]</span>
+                </td>
+                <td>
+                  <span class="description">Array</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">true</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">entity[first_name]</span>
+                </td>
+                <td>
+                  <span class="description">String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">false</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">entity[last_name]</span>
+                </td>
+                <td>
+                  <span class="description">String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">false</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">entity[life_dates]</span>
+                </td>
+                <td>
+                  <span class="description">String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">false</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">entity[links]</span>
+                </td>
+                <td>
+                  <span class="description">Array</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">true</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">entity[profile]</span>
+                </td>
+                <td>
+                  <span class="description">HTML String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">false</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
 
           <h3>Request</h3>
 
@@ -126,7 +307,7 @@ Host: example.org
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET /entities/6398b133-cbcf-4e76-9a44-6a4fc7ba10fc</pre>
+          <pre class="request route highlight">GET /entities/49c3aa6c-de67-4c6a-8d1b-661f3d3fcc4d</pre>
 
 
 
@@ -140,32 +321,34 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;fc00e839368d282b76547e4a20a41193&quot;
+ETag: W/&quot;fd707fccb56ba97ecc0ce1f4bdc8ec4b&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 1f8fb9e2-77e2-496c-a3ce-11814bb37eae
-X-Runtime: 0.930158
+X-Request-Id: 6a371f9d-3bf5-438b-ad78-154305bd54e7
+X-Runtime: 1.261688
 Vary: Origin
-Content-Length: 492</pre>
+Content-Length: 473</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
   &quot;type&quot;: &quot;person&quot;,
-  &quot;label&quot;: &quot;Ned Gerblansky&quot;,
-  &quot;description&quot;: &quot;Dreamcatcher &lt;i&gt;williamsburg tilde gastropub cleanse&lt;/i&gt; viral.&quot;,
+  &quot;label&quot;: &quot;Bunny Lebowski&quot;,
+  &quot;clean_label&quot;: &quot;Bunny Lebowski&quot;,
+  &quot;description&quot;: &quot;Leggings &lt;i&gt;knausgaard pbr&amp;b xoxo&lt;/i&gt; seitan.&quot;,
+  &quot;clean_description&quot;: &quot;Leggings knausgaard pbr&amp;amp;b xoxo seitan.&quot;,
   &quot;alternate_spellings&quot;: [
-    &quot;Shangela Wadley&quot;
+    &quot;Cynthia Lee Fontaine&quot;
   ],
   &quot;finding_aids&quot;: [
-    &quot;http://crona-mccullough.name/jesica&quot;
+    &quot;http://bins.net/jules&quot;
   ],
-  &quot;first_name&quot;: &quot;Lang&quot;,
-  &quot;last_name&quot;: &quot;Hahn&quot;,
-  &quot;life_dates&quot;: &quot;(1918-1989)&quot;,
+  &quot;first_name&quot;: &quot;Lovetta&quot;,
+  &quot;last_name&quot;: &quot;Braun&quot;,
+  &quot;life_dates&quot;: &quot;(1918-1977)&quot;,
   &quot;links&quot;: [
-    &quot;http://brown.io/alyce&quot;
+    &quot;http://bashirian.net/stephany&quot;
   ],
-  &quot;profile&quot;: &quot;I&#39;m the dude, so that&#39;s what you call me. That or, uh His Dudeness, or uh Duder, or El Duderino, if you&#39;re not into the whole brevity thing.&quot;
+  &quot;profile&quot;: &quot;Obviously, you&#39;re not a golfer&quot;
 }</pre>
       </div>
     </div>

@@ -13,7 +13,7 @@
 | page | Current page of entities | false | 1
 | per_page | Number of entities on a single response. | false | 25
 | search | Text to search. | false | *
-| type | Limit responses by single type. Options are attendance, music, organization, person, place, production, public_event, publication, reading, translating, work_of_art, writing. | false | null
+| type | Limit responses by single type. Options are attendance, music, organization, person, place, production, public_event, publication, reading, translating, work_of_art, and writing. | false | null
 | label | Clean label (no HTML) of entity | false | null
 
 ### Request
@@ -45,15 +45,15 @@ X-Content-Type-Options: nosniff
 X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
-Link: &lt;http://example.org/entities?page=2&amp;per_page=5&gt;; rel=&#39;self&#39;, &lt;http://example.org/entities?page=1&amp;per_page=5&gt;; rel=&#39;first&#39;, &lt;http://example.org/entities?page=114&amp;per_page=5&gt;; rel=&#39;last&#39;, &lt;http://example.org/entities?page=3&amp;per_page=5&gt;; rel=&#39;next&#39;, &lt;http://example.org/entities?page=1&amp;per_page=5&gt;; rel=&#39;prev&#39;
-X-Total-Count: 567
+Link: &lt;http://example.org/entities?page=2&amp;per_page=5&gt;; rel=&#39;self&#39;, &lt;http://example.org/entities?page=1&amp;per_page=5&gt;; rel=&#39;first&#39;, &lt;http://example.org/entities?page=113&amp;per_page=5&gt;; rel=&#39;last&#39;, &lt;http://example.org/entities?page=3&amp;per_page=5&gt;; rel=&#39;next&#39;, &lt;http://example.org/entities?page=1&amp;per_page=5&gt;; rel=&#39;prev&#39;
+X-Total-Count: 562
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;8057c1678492136f15c981e2ff6d9703&quot;
+ETag: W/&quot;69c3ea1bb6595ed2547302f1a0175ada&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 10eddad8-eacf-4ec3-b10b-6d892ae5edc1
-X-Runtime: 10.604844
+X-Request-Id: 87d7684a-4da8-4cc5-9cde-7157b5f988e3
+X-Runtime: 13.806146
 Vary: Origin
-Content-Length: 3524</pre>
+Content-Length: 3758</pre>
 
 #### Status
 
@@ -64,72 +64,71 @@ Content-Length: 3524</pre>
 <pre>{
   "entities": [
     {
-      "id": "/entities/00f6e85f-7555-4ede-a88b-e95b24eaa09f",
-      "label": "<i>The Grapes of Wrath</i>",
-      "type": "writing",
-      "short_display": "<span><i>The Grapes of Wrath</i>.</span>",
-      "description": "Forage <i>twee tousled iphone viral lomo</i> brooklyn.",
-      "clean_label": "The Grapes of Wrath",
-      "clean_description": "Forage twee tousled iphone viral lomo brooklyn.",
-      "date": "1970-04-15",
-      "notes": "I think you ought to know I'm feeling very depressed.",
-      "porposal": null,
-      "beckett_digital_manuscript_project": "http://lockman-osinski.net/fred.beer"
-    },
-    {
-      "id": "/entities/01394a8f-d892-4998-b1f1-788764100763",
-      "label": "Space",
-      "type": "place",
-      "short_display": "<span>Space.</span>",
-      "description": "Health <i>farm-to-table mlkshk before they sold out post-ironic</i> typewriter.",
-      "clean_label": "Space",
-      "clean_description": "Health farm-to-table mlkshk before they sold out post-ironic typewriter.",
+      "id": "http://example.org/entities/022ec1e1-91ae-470f-a90f-6118b9891ae7",
+      "label": "<i>Allosimanius Syneca</i>",
+      "type": "organization",
+      "short_display": "<span><i>Allosimanius Syneca</i>, Vanessa Vanjie Mateo.</span>",
+      "description": "Biodiesel echo gluten-free kogi tofu knausgaard.",
+      "clean_label": "Allosimanius Syneca",
+      "clean_description": "Biodiesel echo gluten-free kogi tofu knausgaard.",
       "alternate_spellings": [
-        "Yvie Oddly"
+        "Vanessa Vanjie Mateo"
       ],
-      "links": [
-        "http://kutch.biz/judson.kirlin"
-      ]
+      "profile": "I don't roll on Shabbos!"
     },
     {
-      "id": "/entities/017e2e37-60f5-4a0b-952e-8d8e21b73e65",
-      "label": "The Moon by Night",
-      "type": "reading",
-      "short_display": "<span>Sherril Gulgowski DDS, The Moon by Night, Nauka.</span>",
-      "description": "Pbr&b <i>gastropub direct trade tofu irony blue bottle semiotics</i> drinking.",
-      "clean_label": "The Moon by Night",
-      "clean_description": "Pbr&amp;b gastropub direct trade tofu irony blue bottle semiotics drinking.",
-      "authors": [
-        "Sherril Gulgowski DDS"
-      ],
-      "comment": "Life? Don't talk to me about life.",
-      "publication": "Nauka",
-      "publication_format": "schlitz"
-    },
-    {
-      "id": "/entities/018e00e4-97a5-481b-9799-d3870f4d0f35",
-      "label": "Frogstar system",
-      "type": "place",
-      "short_display": "<span>Frogstar system.</span>",
-      "description": "Bushwick <i>stumptown before they sold out seitan dreamcatcher master cardigan put a bird on it</i> chartreuse.",
-      "clean_label": "Frogstar system",
-      "clean_description": "Bushwick stumptown before they sold out seitan dreamcatcher master cardigan put a bird on it chartreuse.",
-      "alternate_spellings": [
-        "Asia O'Hara"
-      ],
-      "links": [
-        "http://hettinger-raynor.io/marina.casper"
-      ]
-    },
-    {
-      "id": "/entities/025eb502-8b3e-4ab0-98f3-fac8ab36c59a",
-      "label": "<i>Apollo</i>",
+      "id": "http://example.org/entities/028910e1-057f-4301-884e-451700d8f306",
+      "label": "Discovery",
       "type": "public_event",
-      "short_display": "<span><i>Apollo</i> (1965-07-08).</span>",
-      "description": "Mustache occupy mlkshk austin chartreuse pour-over.",
-      "clean_label": "Apollo",
-      "clean_description": "Mustache occupy mlkshk austin chartreuse pour-over.",
-      "date": "1965-07-08"
+      "short_display": "<span>Discovery (1938-09-19).</span>",
+      "description": "Hammock lumbersexual meditation offal asymmetrical austin vinyl farm-to-table pork belly.",
+      "clean_label": "Discovery",
+      "clean_description": "Hammock lumbersexual meditation offal asymmetrical austin vinyl farm-to-table pork belly.",
+      "date": "1938-09-19"
+    },
+    {
+      "id": "http://example.org/entities/02e470db-ef63-4d1e-afca-0ab90ef4ed69",
+      "label": "The Domain of The King",
+      "type": "place",
+      "short_display": "<span>The Domain of The King.</span>",
+      "description": "Poutine yolo salvia yuccie neutra.",
+      "clean_label": "The Domain of The King",
+      "clean_description": "Poutine yolo salvia yuccie neutra.",
+      "alternate_spellings": [
+        "Jiggly Caliente"
+      ],
+      "links": [
+        "http://kuvalis-macejkovic.co/frederic.fritsch"
+      ]
+    },
+    {
+      "id": "http://example.org/entities/0395cdf2-7cde-4d20-87c4-e871a73c8b4d",
+      "label": "Mercury",
+      "type": "public_event",
+      "short_display": "<span>Mercury (1940-07-27).</span>",
+      "description": "Kitsch <i>put a bird on it actually jean</i> shorts.",
+      "clean_label": "Mercury",
+      "clean_description": "Kitsch put a bird on it actually jean shorts.",
+      "date": "1940-07-27"
+    },
+    {
+      "id": "http://example.org/entities/03ae6778-d805-4b75-bdb4-5a5ee8c142a2",
+      "label": "<i>The Most Beautiful Girl In The World</i>",
+      "type": "work_of_art",
+      "short_display": "<span>Vroomfondel, <i>The Most Beautiful Girl In The World</i>, Bicycle <i>rights gastropub health slow-carb fashion axe franzen raw denim</i> tattooed.</span>",
+      "description": "Bicycle <i>rights gastropub health slow-carb fashion axe franzen raw denim</i> tattooed.",
+      "clean_label": "The Most Beautiful Girl In The World",
+      "clean_description": "Bicycle rights gastropub health slow-carb fashion axe franzen raw denim tattooed.",
+      "alternate_spellings": [
+        "Jiggly Caliente"
+      ],
+      "artist": "Vroomfondel",
+      "artist_alternate_spellings": [
+        "Alyssa Edwards"
+      ],
+      "notes": "Here I am, brain the size of a planet, and they tell me to take you up to the bridge. Call that job satisfaction? 'Cos I don't.",
+      "owner_location_accession_number_current": 222,
+      "owner_location_accession_number_contemporaneous": 980
     }
   ],
   "aggs": {
@@ -139,51 +138,51 @@ Content-Length: 3524</pre>
       "buckets": [
         {
           "key": "place",
-          "doc_count": 132
+          "doc_count": 126
         },
         {
           "key": "person",
-          "doc_count": 94
+          "doc_count": 92
+        },
+        {
+          "key": "organization",
+          "doc_count": 50
+        },
+        {
+          "key": "writing",
+          "doc_count": 41
         },
         {
           "key": "reading",
-          "doc_count": 43
-        },
-        {
-          "key": "public_event",
           "doc_count": 40
         },
         {
-          "key": "production",
-          "doc_count": 39
-        },
-        {
-          "key": "attendance",
-          "doc_count": 37
-        },
-        {
           "key": "music",
-          "doc_count": 37
-        },
-        {
-          "key": "publication",
-          "doc_count": 36
+          "doc_count": 39
         },
         {
           "key": "work_of_art",
           "doc_count": 36
         },
         {
-          "key": "writing",
+          "key": "attendance",
           "doc_count": 30
         },
         {
-          "key": "organization",
-          "doc_count": 26
+          "key": "production",
+          "doc_count": 29
+        },
+        {
+          "key": "public_event",
+          "doc_count": 28
         },
         {
           "key": "translating",
-          "doc_count": 17
+          "doc_count": 26
+        },
+        {
+          "key": "publication",
+          "doc_count": 25
         }
       ]
     }
@@ -191,12 +190,12 @@ Content-Length: 3524</pre>
   "meta": {
     "page": 2,
     "per_page": 5,
-    "page_count": 114,
-    "total_count": 567,
+    "page_count": 113,
+    "total_count": 562,
     "links": {
       "self": "http://example.org/entities?page=2&per_page=5",
       "first": "http://example.org/entities?page=1&per_page=5",
-      "last": "http://example.org/entities?page=114&per_page=5",
+      "last": "http://example.org/entities?page=113&per_page=5",
       "next": "http://example.org/entities?page=3&per_page=5",
       "prev": "http://example.org/entities?page=1&per_page=5"
     }

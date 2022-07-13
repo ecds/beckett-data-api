@@ -26,10 +26,10 @@
 
 ### Response Fields
 
-| Name | Description | Scope |
-|------|-------------|-------|
+| Name | Default | Description | Not Null |
+|------|---------|-------------|----------|
 {{# response_fields }}
-| {{ name }} | {{ description }} | {{ scope }} |
+| {{ name }} | {{ default }} | {{ description }} | {{ not_null }} |
 {{/ response_fields }}
 
 {{/ has_response_fields? }}

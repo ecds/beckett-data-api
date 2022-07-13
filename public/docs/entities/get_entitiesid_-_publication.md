@@ -5,6 +5,21 @@
 ## GET /entities/:id - Publication
 
 ### GET /entities/:id
+
+### Response Fields
+
+| Name | Default | Description | Not Null |
+|------|---------|-------------|----------|
+| label | HTML String |  | true |
+| clean_label | String |  | true |
+| description | HTML String |  | true |
+| clean_description | String |  | true |
+| short_display | HTML String |  | true |
+| author | String |  | false |
+| notes | String |  | false |
+| publication_information | String |  | false |
+| translator | String |  | false |
+
 ### Request
 
 #### Headers
@@ -17,7 +32,7 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /entities/020ab169-e315-428f-a77d-44860a16ae87</pre>
+<pre>GET /entities/e20e2e0f-905c-478e-9059-83c9ca0c1eea</pre>
 
 ### Response
 
@@ -30,12 +45,12 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;7839676fbfb7743664825aa44fa203fe&quot;
+ETag: W/&quot;baf379006ffd1ae896ed7ee09a92c3e4&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 2f3efbdd-a7f0-4e49-b68b-67033c3b1bb0
-X-Runtime: 0.921873
+X-Request-Id: 538f104c-56ba-4484-bef4-8f33a8481edd
+X-Runtime: 1.285482
 Vary: Origin
-Content-Length: 373</pre>
+Content-Length: 419</pre>
 
 #### Status
 
@@ -45,10 +60,12 @@ Content-Length: 373</pre>
 
 <pre>{
   "type": "publication",
-  "label": "Butterscotch Horseman",
-  "description": "Next level tumblr shabby chic kickstarter.",
-  "author": "Maude Lebowski",
-  "notes": "Pardon me for breathing, which I never do anyway so I don't know why I bother to say it, Oh God, I'm so depressed.",
-  "publication_information": "Direct trade actually bicycle rights chicharrones.",
-  "translator": "Emily Saunders"
+  "label": "Oglethorpe",
+  "clean_label": "Oglethorpe",
+  "description": "Scenester umami five dollar toast gluten-free distillery.",
+  "clean_description": "Scenester umami five dollar toast gluten-free distillery.",
+  "author": "Jackie Treehorn",
+  "notes": "I won't enjoy it.",
+  "publication_information": "Direct trade selvage tacos skateboard hashtag health williamsburg small batch.",
+  "translator": "Lunkwill and Fook"
 }</pre>

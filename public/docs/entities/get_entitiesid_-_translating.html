@@ -115,6 +115,159 @@ table th, table td {
         <h3>GET /entities/:id</h3>
 
 
+          <h3>Response Fields</h3>
+          <table class="response-fields table table-striped table-bordered table-condensed">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Default</th>
+                <th>Description</th>
+                <th>Not Null</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                    <span class="name">label</span>
+                </td>
+                <td>
+                  <span class="description">HTML String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">true</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">clean_label</span>
+                </td>
+                <td>
+                  <span class="description">String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">true</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">description</span>
+                </td>
+                <td>
+                  <span class="description">HTML String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">true</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">clean_description</span>
+                </td>
+                <td>
+                  <span class="description">String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">true</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">short_display</span>
+                </td>
+                <td>
+                  <span class="description">HTML String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">true</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">entity[author]</span>
+                </td>
+                <td>
+                  <span class="description">String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">false</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">entity[comments]</span>
+                </td>
+                <td>
+                  <span class="description">String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">false</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">entity[translated_into]</span>
+                </td>
+                <td>
+                  <span class="description">String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">false</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">entity[translated_title]</span>
+                </td>
+                <td>
+                  <span class="description">String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">false</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">entity[translator]</span>
+                </td>
+                <td>
+                  <span class="description">String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">false</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
 
           <h3>Request</h3>
 
@@ -126,7 +279,7 @@ Host: example.org
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET /entities/a5eda0f3-adc1-4520-8fe2-466a96562a3d</pre>
+          <pre class="request route highlight">GET /entities/99b816ef-6d1b-4c40-93f4-0dd7f3f0d5cf</pre>
 
 
 
@@ -140,24 +293,26 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;4c9615b935b215194f0ccbdba01394e3&quot;
+ETag: W/&quot;22fd010e5388290f746c45f310d4669a&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 171c86bd-4cd2-4abf-8917-4fbad162c9a8
-X-Runtime: 0.962334
+X-Request-Id: dce2e7f5-fc84-4852-9371-3cdd69781177
+X-Runtime: 1.254147
 Vary: Origin
-Content-Length: 400</pre>
+Content-Length: 472</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
   &quot;type&quot;: &quot;translating&quot;,
-  &quot;label&quot;: &quot;When the Green Woods Laugh&quot;,
-  &quot;description&quot;: &quot;Flexitarian knausgaard occupy lumbersexual street celiac.&quot;,
-  &quot;author&quot;: &quot;Hotblack Desiato&quot;,
-  &quot;comments&quot;: &quot;Pardon me for breathing, which I never do anyway so I don&#39;t know why I bother to say it, Oh God, I&#39;m so depressed.&quot;,
-  &quot;translated_into&quot;: &quot;Arkintoofle Minor&quot;,
-  &quot;translated_title&quot;: &quot;Vogon Constructor Fleet&quot;,
-  &quot;translator&quot;: &quot;Humma Kavula&quot;
+  &quot;label&quot;: &quot;The Heart Is Deceitful Above All Things&quot;,
+  &quot;clean_label&quot;: &quot;The Heart Is Deceitful Above All Things&quot;,
+  &quot;description&quot;: &quot;Forage &lt;i&gt;fingerstache lo-fi direct trade ramps&lt;/i&gt; irony.&quot;,
+  &quot;clean_description&quot;: &quot;Forage fingerstache lo-fi direct trade ramps irony.&quot;,
+  &quot;author&quot;: &quot;Gag Halfrunt&quot;,
+  &quot;comments&quot;: &quot;I think you ought to know I&#39;m feeling very depressed.&quot;,
+  &quot;translated_into&quot;: &quot;Frogstar World A&quot;,
+  &quot;translated_title&quot;: &quot;RW6&quot;,
+  &quot;translator&quot;: &quot;Roosta&quot;
 }</pre>
       </div>
     </div>

@@ -115,6 +115,145 @@ table th, table td {
         <h3>GET /entities/:id</h3>
 
 
+          <h3>Response Fields</h3>
+          <table class="response-fields table table-striped table-bordered table-condensed">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Default</th>
+                <th>Description</th>
+                <th>Not Null</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                    <span class="name">label</span>
+                </td>
+                <td>
+                  <span class="description">HTML String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">true</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">clean_label</span>
+                </td>
+                <td>
+                  <span class="description">String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">true</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">description</span>
+                </td>
+                <td>
+                  <span class="description">HTML String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">true</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">clean_description</span>
+                </td>
+                <td>
+                  <span class="description">String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">true</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">short_display</span>
+                </td>
+                <td>
+                  <span class="description">HTML String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">true</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">entity[author]</span>
+                </td>
+                <td>
+                  <span class="description">String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">false</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">entity[notes]</span>
+                </td>
+                <td>
+                  <span class="description">String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">false</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">entity[publication_information]</span>
+                </td>
+                <td>
+                  <span class="description">String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">false</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">entity[translator]</span>
+                </td>
+                <td>
+                  <span class="description">String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">false</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
 
           <h3>Request</h3>
 
@@ -126,7 +265,7 @@ Host: example.org
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET /entities/020ab169-e315-428f-a77d-44860a16ae87</pre>
+          <pre class="request route highlight">GET /entities/e20e2e0f-905c-478e-9059-83c9ca0c1eea</pre>
 
 
 
@@ -140,23 +279,25 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;7839676fbfb7743664825aa44fa203fe&quot;
+ETag: W/&quot;baf379006ffd1ae896ed7ee09a92c3e4&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 2f3efbdd-a7f0-4e49-b68b-67033c3b1bb0
-X-Runtime: 0.921873
+X-Request-Id: 538f104c-56ba-4484-bef4-8f33a8481edd
+X-Runtime: 1.285482
 Vary: Origin
-Content-Length: 373</pre>
+Content-Length: 419</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
   &quot;type&quot;: &quot;publication&quot;,
-  &quot;label&quot;: &quot;Butterscotch Horseman&quot;,
-  &quot;description&quot;: &quot;Next level tumblr shabby chic kickstarter.&quot;,
-  &quot;author&quot;: &quot;Maude Lebowski&quot;,
-  &quot;notes&quot;: &quot;Pardon me for breathing, which I never do anyway so I don&#39;t know why I bother to say it, Oh God, I&#39;m so depressed.&quot;,
-  &quot;publication_information&quot;: &quot;Direct trade actually bicycle rights chicharrones.&quot;,
-  &quot;translator&quot;: &quot;Emily Saunders&quot;
+  &quot;label&quot;: &quot;Oglethorpe&quot;,
+  &quot;clean_label&quot;: &quot;Oglethorpe&quot;,
+  &quot;description&quot;: &quot;Scenester umami five dollar toast gluten-free distillery.&quot;,
+  &quot;clean_description&quot;: &quot;Scenester umami five dollar toast gluten-free distillery.&quot;,
+  &quot;author&quot;: &quot;Jackie Treehorn&quot;,
+  &quot;notes&quot;: &quot;I won&#39;t enjoy it.&quot;,
+  &quot;publication_information&quot;: &quot;Direct trade selvage tacos skateboard hashtag health williamsburg small batch.&quot;,
+  &quot;translator&quot;: &quot;Lunkwill and Fook&quot;
 }</pre>
       </div>
     </div>

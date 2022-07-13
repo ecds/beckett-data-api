@@ -63,7 +63,9 @@
             <thead>
               <tr>
                 <th>Name</th>
+                <th>Default</th>
                 <th>Description</th>
+                <th>Not Null</th>
               </tr>
             </thead>
             <tbody>
@@ -78,7 +80,13 @@
                   {{/ scope }}
                 </td>
                 <td>
+                  <span class="description">{{ default }}</span>
+                </td>
+                <td>
                   <span class="description">{{ description }}</span>
+                </td>
+                <td>
+                  <span class="description">{{ not_null }}</span>
                 </td>
               </tr>
               {{/ response_fields }}

@@ -113,6 +113,10 @@ table th, table td {
       <div class="article">
         <h2>GET /entities/autocomplete?search=:fragment</h2>
         <h3>GET /entities/autocomplete</h3>
+          <p class="explanation">
+            Returns a list of no more than ten entity lables that start with the search parameter.
+                    a type parameter can also be passed to limit the results by types. Results might include HTML.
+          </p>
 
           <h3>Parameters</h3>
           <table class="parameters table table-striped table-bordered table-condensed">
@@ -160,10 +164,10 @@ Host: example.org
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET /entities/autocomplete?search=di</pre>
+          <pre class="request route highlight">GET /entities/autocomplete?search=of</pre>
 
             <h4>Query Parameters</h4>
-            <pre class="request query_parameters highlight">search: di</pre>
+            <pre class="request query_parameters highlight">search: of</pre>
 
 
 
@@ -176,20 +180,17 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;0da93731045701eace2281e664d5f69b&quot;
+ETag: W/&quot;4f53cda18c2baa0c0354bb5f9a3ecbe5&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 5067bdd4-c88a-4fcc-9668-53002d0030b3
-X-Runtime: 11.867266
+X-Request-Id: e1f0106a-c08a-41dd-8255-2cea6af641cd
+X-Runtime: 12.701475
 Vary: Origin
-Content-Length: 106</pre>
+Content-Length: 2</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">[
-  &quot;&lt;i&gt;Discovery&lt;/i&gt;&quot;,
-  &quot;Discovery&quot;,
-  &quot;I Would Die 4 U&quot;,
-  &quot;After Many a Summer Dies the Swan&quot;
+
 ]</pre>
       </div>
     </div>

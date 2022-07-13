@@ -165,7 +165,7 @@ table th, table td {
                     <span class="name">type</span>
                 </td>
                 <td>
-                  <span class="description">Limit responses by single type. Options are attendance, music, organization, person, place, production, public_event, publication, reading, translating, work_of_art, writing.</span>
+                  <span class="description">Limit responses by single type. Options are attendance, music, organization, person, place, production, public_event, publication, reading, translating, work_of_art, and writing.</span>
                 </td>
                 <td>
                   <span class="default">null</span>
@@ -196,10 +196,10 @@ Host: example.org
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET /entities?search=humblebrag</pre>
+          <pre class="request route highlight">GET /entities?search=leggings</pre>
 
             <h4>Query Parameters</h4>
-            <pre class="request query_parameters highlight">search: humblebrag</pre>
+            <pre class="request query_parameters highlight">search: leggings</pre>
 
 
 
@@ -211,458 +211,38 @@ X-Content-Type-Options: nosniff
 X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
-Link: &lt;http://example.org/entities?page=1&amp;search=humblebrag&gt;; rel=&#39;self&#39;
-X-Total-Count: 20
+Link: &lt;http://example.org/entities?page=1&amp;search=leggings&gt;; rel=&#39;self&#39;
+X-Total-Count: 0
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;c87b1248be9fbce02dc8dff72fff9fe1&quot;
+ETag: W/&quot;97407f83f594ab82b9501adfa9b333d9&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: ca316a98-04e0-4a1b-9508-f2a908bfab52
-X-Runtime: 11.226992
+X-Request-Id: ff20cf55-5806-4348-a0a7-ffb976f62e21
+X-Runtime: 12.048217
 Vary: Origin
-Content-Length: 15113</pre>
+Content-Length: 242</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
   &quot;entities&quot;: [
-    {
-      &quot;id&quot;: &quot;/entities/7a9724f2-db01-48fb-8a75-85c35ab68c78&quot;,
-      &quot;label&quot;: &quot;&lt;i&gt;Han Dold City&lt;/i&gt;&quot;,
-      &quot;type&quot;: &quot;place&quot;,
-      &quot;short_display&quot;: &quot;&lt;span&gt;&lt;i&gt;Han Dold City&lt;/i&gt;.&lt;/span&gt;&quot;,
-      &quot;description&quot;: &quot;Distillery locavore humblebrag gentrify.&quot;,
-      &quot;clean_label&quot;: &quot;Han Dold City&quot;,
-      &quot;clean_description&quot;: &quot;Distillery locavore humblebrag gentrify.&quot;,
-      &quot;alternate_spellings&quot;: [
-        &quot;Raven&quot;
-      ],
-      &quot;links&quot;: [
-        &quot;http://volkman.net/denny&quot;
-      ]
-    },
-    {
-      &quot;id&quot;: &quot;/entities/724ab797-33a0-4d1d-bf0e-f77e14039d75&quot;,
-      &quot;label&quot;: &quot;Horse and Groom&quot;,
-      &quot;type&quot;: &quot;place&quot;,
-      &quot;short_display&quot;: &quot;&lt;span&gt;Horse and Groom.&lt;/span&gt;&quot;,
-      &quot;description&quot;: &quot;Humblebrag echo wolf actually occupy.&quot;,
-      &quot;clean_label&quot;: &quot;Horse and Groom&quot;,
-      &quot;clean_description&quot;: &quot;Humblebrag echo wolf actually occupy.&quot;,
-      &quot;alternate_spellings&quot;: [
-        &quot;Katya&quot;
-      ],
-      &quot;links&quot;: [
-        &quot;http://stamm.name/silas.dach&quot;
-      ]
-    },
-    {
-      &quot;id&quot;: &quot;/entities/520691a1-cde8-40b0-bea7-3a3aa0481a53&quot;,
-      &quot;label&quot;: &quot;A Many-Splendoured Thing&quot;,
-      &quot;type&quot;: &quot;reading&quot;,
-      &quot;short_display&quot;: &quot;&lt;span&gt;Waldo Lesch, A Many-Splendoured Thing, Berg Publishers.&lt;/span&gt;&quot;,
-      &quot;description&quot;: &quot;Hella &lt;i&gt;marfa retro locavore humblebrag&lt;/i&gt; dreamcatcher.&quot;,
-      &quot;clean_label&quot;: &quot;A Many-Splendoured Thing&quot;,
-      &quot;clean_description&quot;: &quot;Hella marfa retro locavore humblebrag dreamcatcher.&quot;,
-      &quot;authors&quot;: [
-        &quot;Waldo Lesch&quot;
-      ],
-      &quot;comment&quot;: &quot;And then of course I&#39;ve got this terrible pain in all the diodes down my left side.&quot;,
-      &quot;publication&quot;: &quot;Berg Publishers&quot;,
-      &quot;publication_format&quot;: &quot;williamsburg&quot;
-    },
-    {
-      &quot;id&quot;: &quot;/entities/628177d3-342c-4bef-b861-a20e34ad17d4&quot;,
-      &quot;label&quot;: &quot;&lt;i&gt;Brandt&lt;/i&gt;&quot;,
-      &quot;type&quot;: &quot;person&quot;,
-      &quot;short_display&quot;: &quot;&lt;span&gt;&lt;i&gt;Brandt&lt;/i&gt; (1903-1996). Kickstarter &lt;i&gt;humblebrag selvage tousled food&lt;/i&gt; truck.&lt;/span&gt;&quot;,
-      &quot;description&quot;: &quot;Kickstarter &lt;i&gt;humblebrag selvage tousled food&lt;/i&gt; truck.&quot;,
-      &quot;clean_label&quot;: &quot;Brandt&quot;,
-      &quot;clean_description&quot;: &quot;Kickstarter humblebrag selvage tousled food truck.&quot;,
-      &quot;alternate_spellings&quot;: [
-        &quot;Katya&quot;
-      ],
-      &quot;finding_aids&quot;: [
-        &quot;http://prohaska.com/arlinda.koepp&quot;
-      ],
-      &quot;first_name&quot;: &quot;Juliet&quot;,
-      &quot;last_name&quot;: &quot;Emmerich&quot;,
-      &quot;life_dates&quot;: &quot;(1903-1996)&quot;,
-      &quot;links&quot;: [
-        &quot;http://king.info/junior&quot;
-      ],
-      &quot;profile&quot;: &quot;I&#39;m the dude, so that&#39;s what you call me. That or, uh His Dudeness, or uh Duder, or El Duderino, if you&#39;re not into the whole brevity thing.&quot;
-    },
-    {
-      &quot;id&quot;: &quot;/entities/a0c465bf-6937-4ca9-8734-c0dbd0b52b7c&quot;,
-      &quot;label&quot;: &quot;&lt;i&gt;Ah, Wilderness!&lt;/i&gt;&quot;,
-      &quot;type&quot;: &quot;writing&quot;,
-      &quot;short_display&quot;: &quot;&lt;span&gt;&lt;i&gt;Ah, Wilderness!&lt;/i&gt;.&lt;/span&gt;&quot;,
-      &quot;description&quot;: &quot;Phlogiston banh mi yuccie humblebrag pitchfork.&quot;,
-      &quot;clean_label&quot;: &quot;Ah, Wilderness!&quot;,
-      &quot;clean_description&quot;: &quot;Phlogiston banh mi yuccie humblebrag pitchfork.&quot;,
-      &quot;date&quot;: &quot;1955-04-05&quot;,
-      &quot;notes&quot;: &quot;I think you ought to know I&#39;m feeling very depressed.&quot;,
-      &quot;porposal&quot;: null,
-      &quot;beckett_digital_manuscript_project&quot;: &quot;http://vonrueden-rutherford.io/markus&quot;
-    },
-    {
-      &quot;id&quot;: &quot;/entities/8c859eac-63fc-4ef9-8437-9f35be23fa39&quot;,
-      &quot;label&quot;: &quot;&lt;i&gt;Tiger! Tiger!&lt;/i&gt;&quot;,
-      &quot;type&quot;: &quot;translating&quot;,
-      &quot;short_display&quot;: &quot;&lt;span&gt;Mr. Prosser, &lt;i&gt;Tiger! Tiger!&lt;/i&gt;, Translated into Han Wavel by Hactar.&lt;/span&gt;&quot;,
-      &quot;description&quot;: &quot;Chartreuse portland hammock diy brunch tilde humblebrag.&quot;,
-      &quot;clean_label&quot;: &quot;Tiger! Tiger!&quot;,
-      &quot;clean_description&quot;: &quot;Chartreuse portland hammock diy brunch tilde humblebrag.&quot;,
-      &quot;author&quot;: &quot;Mr. Prosser&quot;,
-      &quot;comments&quot;: &quot;I think you ought to know I&#39;m feeling very depressed.&quot;,
-      &quot;translated_into&quot;: &quot;Han Wavel&quot;,
-      &quot;translated_title&quot;: &quot;Heart of Gold&quot;,
-      &quot;translator&quot;: &quot;Hactar&quot;
-    },
-    {
-      &quot;id&quot;: &quot;/entities/bdc22d22-fb04-488f-ad5e-70d9b2d78857&quot;,
-      &quot;label&quot;: &quot;&lt;i&gt;Mario&lt;/i&gt;&quot;,
-      &quot;type&quot;: &quot;person&quot;,
-      &quot;short_display&quot;: &quot;&lt;span&gt;&lt;i&gt;Mario&lt;/i&gt; (1916-1983). Ethical brunch humblebrag +1 sustainable muggle magic.&lt;/span&gt;&quot;,
-      &quot;description&quot;: &quot;Ethical brunch humblebrag +1 sustainable muggle magic.&quot;,
-      &quot;clean_label&quot;: &quot;Mario&quot;,
-      &quot;clean_description&quot;: &quot;Ethical brunch humblebrag +1 sustainable muggle magic.&quot;,
-      &quot;alternate_spellings&quot;: [
-        &quot;Kameron Michaels&quot;
-      ],
-      &quot;finding_aids&quot;: [
-        &quot;http://olson-wolf.org/collin&quot;
-      ],
-      &quot;first_name&quot;: &quot;Teodoro&quot;,
-      &quot;last_name&quot;: &quot;Halvorson&quot;,
-      &quot;life_dates&quot;: &quot;(1916-1983)&quot;,
-      &quot;links&quot;: [
-        &quot;http://nader.biz/tu.olson&quot;
-      ],
-      &quot;profile&quot;: &quot;I&#39;m perfectly calm, Dude.&quot;
-    },
-    {
-      &quot;id&quot;: &quot;/entities/fcff8560-4897-4108-8fbe-bb401b2368fb&quot;,
-      &quot;label&quot;: &quot;&lt;i&gt;Arthur Dent&#39;s house&lt;/i&gt;&quot;,
-      &quot;type&quot;: &quot;place&quot;,
-      &quot;short_display&quot;: &quot;&lt;span&gt;&lt;i&gt;Arthur Dent&#39;s house&lt;/i&gt;.&lt;/span&gt;&quot;,
-      &quot;description&quot;: &quot;Gastropub &lt;i&gt;hoodie offal squid bicycle rights&lt;/i&gt; humblebrag.&quot;,
-      &quot;clean_label&quot;: &quot;Arthur Dent&#39;s house&quot;,
-      &quot;clean_description&quot;: &quot;Gastropub hoodie offal squid bicycle rights humblebrag.&quot;,
-      &quot;alternate_spellings&quot;: [
-        &quot;Laganja Estranja&quot;
-      ],
-      &quot;links&quot;: [
-        &quot;http://schowalter.com/gerry_bosco&quot;
-      ]
-    },
-    {
-      &quot;id&quot;: &quot;/entities/85b05c89-a71a-4328-9673-d03c2a15e9b8&quot;,
-      &quot;label&quot;: &quot;&lt;i&gt;Another Lonely Christmas&lt;/i&gt;&quot;,
-      &quot;type&quot;: &quot;music&quot;,
-      &quot;short_display&quot;: &quot;&lt;span&gt;Zarquon, &lt;i&gt;Another Lonely Christmas&lt;/i&gt; [BenDeLaCreme].&lt;/span&gt;&quot;,
-      &quot;description&quot;: &quot;Vegan vinyl migas yuccie truffaut carry humblebrag tumblr.&quot;,
-      &quot;clean_label&quot;: &quot;Another Lonely Christmas&quot;,
-      &quot;clean_description&quot;: &quot;Vegan vinyl migas yuccie truffaut carry humblebrag tumblr.&quot;,
-      &quot;alternate_spellings&quot;: [
-        &quot;BenDeLaCreme&quot;
-      ],
-      &quot;composer&quot;: &quot;Zarquon&quot;,
-      &quot;links&quot;: [
 
-      ],
-      &quot;notes&quot;: &quot;Dorothy was a waitress on the promenade, she worked the night shift, dishwater blonde, tall and fine, she got a lot of tips.&quot;,
-      &quot;performed_by&quot;: [
-
-      ]
-    },
-    {
-      &quot;id&quot;: &quot;/entities/8ccbc805-0bdd-4f84-accb-70523c8e47ec&quot;,
-      &quot;label&quot;: &quot;Denmark&quot;,
-      &quot;type&quot;: &quot;place&quot;,
-      &quot;short_display&quot;: &quot;&lt;span&gt;Denmark.&lt;/span&gt;&quot;,
-      &quot;description&quot;: &quot;Humblebrag &lt;i&gt;sriracha iphone truffaut stumptown aesthetic retro&lt;/i&gt; occupy.&quot;,
-      &quot;clean_label&quot;: &quot;Denmark&quot;,
-      &quot;clean_description&quot;: &quot;Humblebrag sriracha iphone truffaut stumptown aesthetic retro occupy.&quot;,
-      &quot;alternate_spellings&quot;: [
-        &quot;Trinity K Bonet&quot;
-      ],
-      &quot;links&quot;: [
-        &quot;http://leuschke.biz/jayson_swaniawski&quot;
-      ]
-    },
-    {
-      &quot;id&quot;: &quot;/entities/dc568e0c-f5fb-4ed3-8652-060f068f67a6&quot;,
-      &quot;label&quot;: &quot;&lt;i&gt;The Godfather: Part II&lt;/i&gt;&quot;,
-      &quot;type&quot;: &quot;attendance&quot;,
-      &quot;short_display&quot;: &quot;&lt;span&gt;knausgaard, &lt;i&gt;The Godfather: Part II&lt;/i&gt;, Port Sammychester, 02 November 1932.&lt;/span&gt;&quot;,
-      &quot;description&quot;: &quot;Scenester kickstarter humblebrag yuccie taxidermy shoreditch +1 ramps.&quot;,
-      &quot;clean_label&quot;: &quot;The Godfather: Part II&quot;,
-      &quot;clean_description&quot;: &quot;Scenester kickstarter humblebrag yuccie taxidermy shoreditch +1 ramps.&quot;,
-      &quot;alternate_spellings&quot;: [
-        &quot;Bianca Del Rio&quot;
-      ],
-      &quot;attended_with&quot;: [
-        &quot;Donny&quot;,
-        &quot;Random Dent&quot;
-      ],
-      &quot;director&quot;: &quot;Gail Andrews&quot;,
-      &quot;event_type&quot;: &quot;knausgaard&quot;,
-      &quot;performed_by&quot;: [
-        &quot;Prostetnic Vogon Kwaltz&quot;
-      ],
-      &quot;place_date&quot;: &quot;Port Sammychester, 02 November 1932&quot;
-    },
-    {
-      &quot;id&quot;: &quot;/entities/e151a397-a9b0-48f5-adb5-93d1536bda5c&quot;,
-      &quot;label&quot;: &quot;&lt;i&gt;Scary Terry&lt;/i&gt;&quot;,
-      &quot;type&quot;: &quot;publication&quot;,
-      &quot;short_display&quot;: &quot;&lt;span&gt;Donny, &lt;i&gt;Scary Terry&lt;/i&gt;, Garkbit Five dollar toast microdosing williamsburg butcher synth vegan.&lt;/span&gt;&quot;,
-      &quot;description&quot;: &quot;Fanny pack humblebrag park occupy organic vinyl franzen.&quot;,
-      &quot;clean_label&quot;: &quot;Scary Terry&quot;,
-      &quot;clean_description&quot;: &quot;Fanny pack humblebrag park occupy organic vinyl franzen.&quot;,
-      &quot;author&quot;: &quot;Donny&quot;,
-      &quot;notes&quot;: &quot;There&#39;s only one life-form as intelligent as me within thirty parsecs of here and that&#39;s me.&quot;,
-      &quot;publication_information&quot;: &quot;Five dollar toast microdosing williamsburg butcher synth vegan.&quot;,
-      &quot;translator&quot;: &quot;Garkbit&quot;
-    },
-    {
-      &quot;id&quot;: &quot;/entities/009bcb51-9919-4858-a877-8b24c579c4f7&quot;,
-      &quot;label&quot;: &quot;Some Like It Hot&quot;,
-      &quot;type&quot;: &quot;production&quot;,
-      &quot;short_display&quot;: &quot;&lt;span&gt;Some Like It Hot, dir. Jackie Treehorn, Billion Year Bunker, South Hobert, 1968-01-05.&lt;/span&gt;&quot;,
-      &quot;description&quot;: &quot;Semiotics selfies synth bicycle rights church-key humblebrag retro.&quot;,
-      &quot;clean_label&quot;: &quot;Some Like It Hot&quot;,
-      &quot;clean_description&quot;: &quot;Semiotics selfies synth bicycle rights church-key humblebrag retro.&quot;,
-      &quot;alternate_spellings&quot;: [
-        &quot;Ivy Winters&quot;
-      ],
-      &quot;cast&quot;: [
-        &quot;Slartibartfast&quot;,
-        &quot;The Dude&quot;
-      ],
-      &quot;city&quot;: &quot;South Hobert&quot;,
-      &quot;date&quot;: &quot;1968-01-05&quot;,
-      &quot;director&quot;: &quot;Jackie Treehorn&quot;,
-      &quot;links&quot;: [
-        &quot;http://hettinger-wyman.biz/aurea&quot;
-      ],
-      &quot;notes&quot;: &quot;Retro drinking 3 wolf moon echo.&quot;,
-      &quot;personnel&quot;: [
-        &quot;Fenchurch&quot;
-      ],
-      &quot;proposal&quot;: &quot;You think you&#39;ve got problems? What are you supposed to do if you are a manically depressed robot? No, don&#39;t try to answer that. I&#39;m fifty thousand times more intelligent than you and even I don&#39;t know the answer. It gives me a headache just trying to think down to your level.&quot;,
-      &quot;response&quot;: &quot;Calmer than you are.&quot;,
-      &quot;reason&quot;: null,
-      &quot;staging_beckett&quot;: &quot;http://feest.com/stacee&quot;,
-      &quot;theater&quot;: &quot;Billion Year Bunker&quot;
-    },
-    {
-      &quot;id&quot;: &quot;/entities/a6d85a06-ddc2-4575-ad77-eb66abe8c75e&quot;,
-      &quot;label&quot;: &quot;&lt;i&gt;Money Don&#39;t Matter 2 Night&lt;/i&gt;&quot;,
-      &quot;type&quot;: &quot;work_of_art&quot;,
-      &quot;short_display&quot;: &quot;&lt;span&gt;Pizpot Gargravarr, &lt;i&gt;Money Don&#39;t Matter 2 Night&lt;/i&gt;, Chicharrones &lt;i&gt;hella synth humblebrag knausgaard single-origin coffee&lt;/i&gt; yuccie.&lt;/span&gt;&quot;,
-      &quot;description&quot;: &quot;Chicharrones &lt;i&gt;hella synth humblebrag knausgaard single-origin coffee&lt;/i&gt; yuccie.&quot;,
-      &quot;clean_label&quot;: &quot;Money Don&#39;t Matter 2 Night&quot;,
-      &quot;clean_description&quot;: &quot;Chicharrones hella synth humblebrag knausgaard single-origin coffee yuccie.&quot;,
-      &quot;alternate_spellings&quot;: [
-        &quot;Jessica Wild&quot;
-      ],
-      &quot;artist&quot;: &quot;Pizpot Gargravarr&quot;,
-      &quot;artist_alternate_spellings&quot;: [
-        &quot;Mercedes Iman Diamond&quot;
-      ],
-      &quot;notes&quot;: &quot;I won&#39;t enjoy it.&quot;,
-      &quot;owner_location_accession_number_current&quot;: 54,
-      &quot;owner_location_accession_number_contemporaneous&quot;: 117
-    },
-    {
-      &quot;id&quot;: &quot;/entities/de4eef56-258a-41a5-9e0a-667fc37c316c&quot;,
-      &quot;label&quot;: &quot;&lt;i&gt;Screwdriver&lt;/i&gt;&quot;,
-      &quot;type&quot;: &quot;work_of_art&quot;,
-      &quot;short_display&quot;: &quot;&lt;span&gt;Hotblack Desiato, &lt;i&gt;Screwdriver&lt;/i&gt;, Chicharrones church-key humblebrag cronut park art party ramps.&lt;/span&gt;&quot;,
-      &quot;description&quot;: &quot;Chicharrones church-key humblebrag cronut park art party ramps.&quot;,
-      &quot;clean_label&quot;: &quot;Screwdriver&quot;,
-      &quot;clean_description&quot;: &quot;Chicharrones church-key humblebrag cronut park art party ramps.&quot;,
-      &quot;alternate_spellings&quot;: [
-        &quot;Miss Fame&quot;
-      ],
-      &quot;artist&quot;: &quot;Hotblack Desiato&quot;,
-      &quot;artist_alternate_spellings&quot;: [
-        &quot;Jessica Wild&quot;
-      ],
-      &quot;notes&quot;: &quot;There&#39;s only one life-form as intelligent as me within thirty parsecs of here and that&#39;s me.&quot;,
-      &quot;owner_location_accession_number_current&quot;: 594,
-      &quot;owner_location_accession_number_contemporaneous&quot;: 579
-    },
-    {
-      &quot;id&quot;: &quot;/entities/0cab006c-b0a1-404e-acfa-2bdd8fb24f93&quot;,
-      &quot;label&quot;: &quot;&lt;i&gt;Kiss&lt;/i&gt;&quot;,
-      &quot;type&quot;: &quot;work_of_art&quot;,
-      &quot;short_display&quot;: &quot;&lt;span&gt;Effrafax of Wug, &lt;i&gt;Kiss&lt;/i&gt;, Migas &lt;i&gt;sustainable street lo-fi mixtape venmo yuccie flannel&lt;/i&gt; humblebrag.&lt;/span&gt;&quot;,
-      &quot;description&quot;: &quot;Migas &lt;i&gt;sustainable street lo-fi mixtape venmo yuccie flannel&lt;/i&gt; humblebrag.&quot;,
-      &quot;clean_label&quot;: &quot;Kiss&quot;,
-      &quot;clean_description&quot;: &quot;Migas sustainable street lo-fi mixtape venmo yuccie flannel humblebrag.&quot;,
-      &quot;alternate_spellings&quot;: [
-        &quot;Mayhem Miller&quot;
-      ],
-      &quot;artist&quot;: &quot;Effrafax of Wug&quot;,
-      &quot;artist_alternate_spellings&quot;: [
-        &quot;Shuga Cain&quot;
-      ],
-      &quot;notes&quot;: &quot;And then of course I&#39;ve got this terrible pain in all the diodes down my left side.&quot;,
-      &quot;owner_location_accession_number_current&quot;: 290,
-      &quot;owner_location_accession_number_contemporaneous&quot;: 757
-    },
-    {
-      &quot;id&quot;: &quot;/entities/8343d85a-7232-485b-8ebd-c2ee4423ef18&quot;,
-      &quot;label&quot;: &quot;&lt;i&gt;The Yellow Meads of Asphodel&lt;/i&gt;&quot;,
-      &quot;type&quot;: &quot;translating&quot;,
-      &quot;short_display&quot;: &quot;&lt;span&gt;Roosta, &lt;i&gt;The Yellow Meads of Asphodel&lt;/i&gt;, Translated into Rupert by Mella.&lt;/span&gt;&quot;,
-      &quot;description&quot;: &quot;Street &lt;i&gt;knausgaard hoodie post-ironic ugh offal humblebrag church-key&lt;/i&gt; beard.&quot;,
-      &quot;clean_label&quot;: &quot;The Yellow Meads of Asphodel&quot;,
-      &quot;clean_description&quot;: &quot;Street knausgaard hoodie post-ironic ugh offal humblebrag church-key beard.&quot;,
-      &quot;author&quot;: &quot;Roosta&quot;,
-      &quot;comments&quot;: &quot;There&#39;s only one life-form as intelligent as me within thirty parsecs of here and that&#39;s me.&quot;,
-      &quot;translated_into&quot;: &quot;Rupert&quot;,
-      &quot;translated_title&quot;: &quot;Starship Titanic&quot;,
-      &quot;translator&quot;: &quot;Mella&quot;
-    },
-    {
-      &quot;id&quot;: &quot;/entities/096c4026-7773-4601-ae87-317f2b7f7195&quot;,
-      &quot;label&quot;: &quot;&lt;i&gt;Amadeus&lt;/i&gt;&quot;,
-      &quot;type&quot;: &quot;production&quot;,
-      &quot;short_display&quot;: &quot;&lt;span&gt;&lt;i&gt;Amadeus&lt;/i&gt;, dir. Jesus Quintana, Krikkit One, Christinmouth, 1965-08-26.&lt;/span&gt;&quot;,
-      &quot;description&quot;: &quot;Pickled &lt;i&gt;trust fund migas blue bottle plaid humblebrag art party irony&lt;/i&gt; iphone.&quot;,
-      &quot;clean_label&quot;: &quot;Amadeus&quot;,
-      &quot;clean_description&quot;: &quot;Pickled trust fund migas blue bottle plaid humblebrag art party irony iphone.&quot;,
-      &quot;alternate_spellings&quot;: [
-        &quot;Kenya Michaels&quot;
-      ],
-      &quot;cast&quot;: [
-        &quot;Marvin&quot;,
-        &quot;The Big Lebowski&quot;
-      ],
-      &quot;city&quot;: &quot;Christinmouth&quot;,
-      &quot;date&quot;: &quot;1965-08-26&quot;,
-      &quot;director&quot;: &quot;Jesus Quintana&quot;,
-      &quot;links&quot;: [
-        &quot;http://shanahan.info/andera&quot;
-      ],
-      &quot;notes&quot;: &quot;Etsy biodiesel vegan bespoke viral brooklyn sustainable bitters selfies.&quot;,
-      &quot;personnel&quot;: [
-        &quot;Wonko the Sane&quot;
-      ],
-      &quot;proposal&quot;: &quot;I won&#39;t enjoy it.&quot;,
-      &quot;response&quot;: &quot;Obviously, you&#39;re not a golfer&quot;,
-      &quot;reason&quot;: null,
-      &quot;staging_beckett&quot;: &quot;http://kirlin.co/jeni.spinka&quot;,
-      &quot;theater&quot;: &quot;Krikkit One&quot;
-    },
-    {
-      &quot;id&quot;: &quot;/entities/4c0d10e9-6c9f-4c5d-8314-6b80bc27bedb&quot;,
-      &quot;label&quot;: &quot;Bethselamin&quot;,
-      &quot;type&quot;: &quot;organization&quot;,
-      &quot;short_display&quot;: &quot;&lt;span&gt;Bethselamin, Violet Chachki.&lt;/span&gt;&quot;,
-      &quot;description&quot;: &quot;Chillwave &lt;i&gt;meditation retro fashion axe cold-pressed shabby chic beard jean shorts&lt;/i&gt; humblebrag.&quot;,
-      &quot;clean_label&quot;: &quot;Bethselamin&quot;,
-      &quot;clean_description&quot;: &quot;Chillwave meditation retro fashion axe cold-pressed shabby chic beard jean shorts humblebrag.&quot;,
-      &quot;alternate_spellings&quot;: [
-        &quot;Violet Chachki&quot;
-      ],
-      &quot;profile&quot;: &quot;Mr. Treehorn treats objects like women, man.&quot;
-    },
-    {
-      &quot;id&quot;: &quot;/entities/c1a9ba4d-72bd-442b-8430-1113e026dc2e&quot;,
-      &quot;label&quot;: &quot;The Princess Bride&quot;,
-      &quot;type&quot;: &quot;production&quot;,
-      &quot;short_display&quot;: &quot;&lt;span&gt;The Princess Bride, dir. Bunny Lebowski, Heart of Gold, Lake Mosheburgh, 1933-06-25.&lt;/span&gt;&quot;,
-      &quot;description&quot;: &quot;Pork &lt;i&gt;belly humblebrag gluten-free sustainable tote bag you probably haven&#39;t heard of them&lt;/i&gt; pabst.&quot;,
-      &quot;clean_label&quot;: &quot;The Princess Bride&quot;,
-      &quot;clean_description&quot;: &quot;Pork belly humblebrag gluten-free sustainable tote bag you probably haven&#39;t heard of them pabst.&quot;,
-      &quot;alternate_spellings&quot;: [
-        &quot;Eureka&quot;
-      ],
-      &quot;cast&quot;: [
-        &quot;Zarniwoop&quot;,
-        &quot;Brandt&quot;
-      ],
-      &quot;city&quot;: &quot;Lake Mosheburgh&quot;,
-      &quot;date&quot;: &quot;1933-06-25&quot;,
-      &quot;director&quot;: &quot;Bunny Lebowski&quot;,
-      &quot;links&quot;: [
-        &quot;http://kuvalis-olson.biz/damaris.fadel&quot;
-      ],
-      &quot;notes&quot;: &quot;Xoxo selvage microdosing chillwave kickstarter hoodie vhs cray authentic.&quot;,
-      &quot;personnel&quot;: [
-        &quot;Prostetnic Vogon Kwaltz&quot;
-      ],
-      &quot;proposal&quot;: &quot;You think you&#39;ve got problems? What are you supposed to do if you are a manically depressed robot? No, don&#39;t try to answer that. I&#39;m fifty thousand times more intelligent than you and even I don&#39;t know the answer. It gives me a headache just trying to think down to your level.&quot;,
-      &quot;response&quot;: &quot;V.I. Lenin. Vladimir! Ilyich! Ulyanov!&quot;,
-      &quot;reason&quot;: null,
-      &quot;staging_beckett&quot;: &quot;http://grady.net/cory.senger&quot;,
-      &quot;theater&quot;: &quot;Heart of Gold&quot;
-    }
   ],
   &quot;aggs&quot;: {
     &quot;e_type&quot;: {
       &quot;doc_count_error_upper_bound&quot;: 0,
       &quot;sum_other_doc_count&quot;: 0,
       &quot;buckets&quot;: [
-        {
-          &quot;key&quot;: &quot;place&quot;,
-          &quot;doc_count&quot;: 4
-        },
-        {
-          &quot;key&quot;: &quot;production&quot;,
-          &quot;doc_count&quot;: 3
-        },
-        {
-          &quot;key&quot;: &quot;work_of_art&quot;,
-          &quot;doc_count&quot;: 3
-        },
-        {
-          &quot;key&quot;: &quot;person&quot;,
-          &quot;doc_count&quot;: 2
-        },
-        {
-          &quot;key&quot;: &quot;translating&quot;,
-          &quot;doc_count&quot;: 2
-        },
-        {
-          &quot;key&quot;: &quot;attendance&quot;,
-          &quot;doc_count&quot;: 1
-        },
-        {
-          &quot;key&quot;: &quot;music&quot;,
-          &quot;doc_count&quot;: 1
-        },
-        {
-          &quot;key&quot;: &quot;organization&quot;,
-          &quot;doc_count&quot;: 1
-        },
-        {
-          &quot;key&quot;: &quot;publication&quot;,
-          &quot;doc_count&quot;: 1
-        },
-        {
-          &quot;key&quot;: &quot;reading&quot;,
-          &quot;doc_count&quot;: 1
-        },
-        {
-          &quot;key&quot;: &quot;writing&quot;,
-          &quot;doc_count&quot;: 1
-        }
+
       ]
     }
   },
   &quot;meta&quot;: {
     &quot;page&quot;: 1,
     &quot;per_page&quot;: 25,
-    &quot;page_count&quot;: 1,
-    &quot;total_count&quot;: 20,
+    &quot;page_count&quot;: 0,
+    &quot;total_count&quot;: 0,
     &quot;links&quot;: {
-      &quot;self&quot;: &quot;http://example.org/entities?page=1&amp;search=humblebrag&quot;
+      &quot;self&quot;: &quot;http://example.org/entities?page=1&amp;search=leggings&quot;
     }
   }
 }</pre>

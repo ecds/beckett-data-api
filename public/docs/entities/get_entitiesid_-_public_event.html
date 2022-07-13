@@ -115,6 +115,103 @@ table th, table td {
         <h3>GET /entities/:id</h3>
 
 
+          <h3>Response Fields</h3>
+          <table class="response-fields table table-striped table-bordered table-condensed">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Default</th>
+                <th>Description</th>
+                <th>Not Null</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                    <span class="name">label</span>
+                </td>
+                <td>
+                  <span class="description">HTML String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">true</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">clean_label</span>
+                </td>
+                <td>
+                  <span class="description">String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">true</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">description</span>
+                </td>
+                <td>
+                  <span class="description">HTML String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">true</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">clean_description</span>
+                </td>
+                <td>
+                  <span class="description">String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">true</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">short_display</span>
+                </td>
+                <td>
+                  <span class="description">HTML String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">true</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">entity[date]</span>
+                </td>
+                <td>
+                  <span class="description">String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">false</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
 
           <h3>Request</h3>
 
@@ -126,7 +223,7 @@ Host: example.org
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET /entities/0668c195-74ae-4413-baba-16bc09d9c1f6</pre>
+          <pre class="request route highlight">GET /entities/e7570ac5-76e5-48cc-bd32-5163fa32e7cb</pre>
 
 
 
@@ -140,20 +237,22 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;912dec4878b99a4d5faba37562e83331&quot;
+ETag: W/&quot;e84318b05b7d29af4e7ec6b57181a21a&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 66502cd7-0b4e-41cd-ae0b-7abd3ae31b46
-X-Runtime: 1.087178
+X-Request-Id: 16444013-cd56-4520-8c20-bd75362eedb4
+X-Runtime: 1.369708
 Vary: Origin
-Content-Length: 153</pre>
+Content-Length: 357</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
   &quot;type&quot;: &quot;public_event&quot;,
-  &quot;label&quot;: &quot;&lt;i&gt;Apollo&lt;/i&gt;&quot;,
-  &quot;description&quot;: &quot;Kombucha helvetica waistcoat fanny pack keffiyeh.&quot;,
-  &quot;date&quot;: &quot;1933-01-08&quot;
+  &quot;label&quot;: &quot;&lt;i&gt;Atlantis&lt;/i&gt;&quot;,
+  &quot;clean_label&quot;: &quot;Atlantis&quot;,
+  &quot;description&quot;: &quot;Distillery &lt;i&gt;bushwick small batch vhs wayfarers put a bird on it actually yolo fanny&lt;/i&gt; pack.&quot;,
+  &quot;clean_description&quot;: &quot;Distillery bushwick small batch vhs wayfarers put a bird on it actually yolo fanny pack.&quot;,
+  &quot;date&quot;: &quot;1968-10-12&quot;
 }</pre>
       </div>
     </div>

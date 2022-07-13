@@ -13,7 +13,7 @@
 | page | Current page of entities | false | 1
 | per_page | Number of entities on a single response. | false | 25
 | search | Text to search. | false | *
-| type | Limit responses by single type. Options are attendance, music, organization, person, place, production, public_event, publication, reading, translating, work_of_art, writing. | false | null
+| type | Limit responses by single type. Options are attendance, music, organization, person, place, production, public_event, publication, reading, translating, work_of_art, and writing. | false | null
 | label | Clean label (no HTML) of entity | false | null
 
 ### Request
@@ -28,11 +28,11 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /entities?search=Data&amp;type=person</pre>
+<pre>GET /entities?search=Oglethorpe&amp;type=person</pre>
 
 #### Query Parameters
 
-<pre>search: Data
+<pre>search: Oglethorpe
 type: person</pre>
 
 ### Response
@@ -45,15 +45,15 @@ X-Content-Type-Options: nosniff
 X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
-Link: &lt;http://example.org/entities?page=1&amp;search=Data&amp;type=person&gt;; rel=&#39;self&#39;
-X-Total-Count: 6
+Link: &lt;http://example.org/entities?page=1&amp;search=Oglethorpe&amp;type=person&gt;; rel=&#39;self&#39;
+X-Total-Count: 7
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;c3df97857d10aac904f53a8cb5b7f88c&quot;
+ETag: W/&quot;a3a8bb83d20f55e6325b94c01745ed9a&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 304c0b30-596f-4506-a594-1f6418725653
-X-Runtime: 10.526929
+X-Request-Id: 021fdc80-7aea-4cec-954d-4a07d7545587
+X-Runtime: 12.114279
 Vary: Origin
-Content-Length: 4866</pre>
+Content-Length: 5574</pre>
 
 #### Status
 
@@ -64,136 +64,158 @@ Content-Length: 4866</pre>
 <pre>{
   "entities": [
     {
-      "id": "/entities/3c99c3ae-d8ce-4a35-91dc-938556024345",
-      "label": "<i>Data</i>",
+      "id": "http://example.org/entities/5706f4ab-b450-4d87-ae3f-f6d848f3cc1d",
+      "label": "<i>Oglethorpe</i>",
       "type": "person",
-      "short_display": "<span><i>Data</i> (1923-1983). Irony <i>gentrify cronut try-hard disrupt park</i> knausgaard.</span>",
-      "description": "Irony <i>gentrify cronut try-hard disrupt park</i> knausgaard.",
-      "clean_label": "Data",
-      "clean_description": "Irony gentrify cronut try-hard disrupt park knausgaard.",
+      "short_display": "<span><i>Oglethorpe</i> (1914-1981). Cleanse farm-to-table kinfolk chillwave.</span>",
+      "description": "Cleanse farm-to-table kinfolk chillwave.",
+      "clean_label": "Oglethorpe",
+      "clean_description": "Cleanse farm-to-table kinfolk chillwave.",
       "alternate_spellings": [
-        "Dida Ritz"
+        "Alyssa Edwards"
       ],
       "finding_aids": [
-        "http://braun.io/dusty_williamson"
+        "http://rice-barrows.io/janine_lesch"
       ],
-      "first_name": "Huey",
-      "last_name": "McClure",
-      "life_dates": "(1923-1983)",
+      "first_name": "Dewitt",
+      "last_name": "Welch",
+      "life_dates": "(1914-1981)",
       "links": [
-        "http://wyman.com/fe"
-      ],
-      "profile": "You know, Dude, I myself dabbled in pacifism once. Not in 'Nam of course."
-    },
-    {
-      "id": "/entities/540a32f7-3230-4eb3-a7ab-ea3453aca203",
-      "label": "<i>Data</i>",
-      "type": "person",
-      "short_display": "<span><i>Data</i> (1906-1971). Occupy <i>viral health cleanse park photo</i> booth.</span>",
-      "description": "Occupy <i>viral health cleanse park photo</i> booth.",
-      "clean_label": "Data",
-      "clean_description": "Occupy viral health cleanse park photo booth.",
-      "alternate_spellings": [
-        "Ginger Minj"
-      ],
-      "finding_aids": [
-        "http://okeefe-stamm.biz/mel"
-      ],
-      "first_name": "Linwood",
-      "last_name": "Farrell",
-      "life_dates": "(1906-1971)",
-      "links": [
-        "http://ortiz.name/eugenio.rice"
+        "http://bernier-kuhn.biz/miquel_batz"
       ],
       "profile": "Mind if I do a J?"
     },
     {
-      "id": "/entities/5deaf864-806f-487e-95c0-04e6ff2a1605",
-      "label": "<i>Data</i>",
+      "id": "http://example.org/entities/5c1ff31e-9db8-49a3-a395-d65a2108ea9e",
+      "label": "Oglethorpe",
       "type": "person",
-      "short_display": "<span><i>Data</i> (1919-1990). Raw <i>denim bitters tattooed stumptown gluten-free art party</i> yuccie.</span>",
-      "description": "Raw <i>denim bitters tattooed stumptown gluten-free art party</i> yuccie.",
-      "clean_label": "Data",
-      "clean_description": "Raw denim bitters tattooed stumptown gluten-free art party yuccie.",
+      "short_display": "<span>Oglethorpe (1914-1987). Jean <i>shorts tattooed listicle hella pitchfork you probably haven't heard of them poutine actually</i> cardigan.</span>",
+      "description": "Jean <i>shorts tattooed listicle hella pitchfork you probably haven't heard of them poutine actually</i> cardigan.",
+      "clean_label": "Oglethorpe",
+      "clean_description": "Jean shorts tattooed listicle hella pitchfork you probably haven't heard of them poutine actually cardigan.",
       "alternate_spellings": [
-        "Derrick Barry"
+        "Morgan McMichaels"
       ],
       "finding_aids": [
-        "http://champlin-lubowitz.net/enid.heathcote"
+        "http://yost-langworth.com/kanesha.cremin"
       ],
-      "first_name": "Garth",
-      "last_name": "D'Amore",
-      "life_dates": "(1919-1990)",
+      "first_name": "Rudolph",
+      "last_name": "Mante",
+      "life_dates": "(1914-1987)",
       "links": [
-        "http://hansen.co/juan"
+        "http://ortiz-jakubowski.co/carin"
       ],
-      "profile": "This aggression will not stand, man."
+      "profile": "Calmer than you are."
     },
     {
-      "id": "/entities/6da23017-e1ac-4202-b55d-ed7635ebab40",
-      "label": "Data",
+      "id": "http://example.org/entities/8a5cc6fb-9ce5-482b-85b5-6e54fbe26a68",
+      "label": "<i>Oglethorpe</i>",
       "type": "person",
-      "short_display": "<span>Data (1907-1992). Schlitz <i>flexitarian ennui cray</i> heirloom.</span>",
-      "description": "Schlitz <i>flexitarian ennui cray</i> heirloom.",
-      "clean_label": "Data",
-      "clean_description": "Schlitz flexitarian ennui cray heirloom.",
+      "short_display": "<span><i>Oglethorpe</i> (1913-1983). Offal <i>intelligentsia scenester park pour-over street authentic</i> tacos.</span>",
+      "description": "Offal <i>intelligentsia scenester park pour-over street authentic</i> tacos.",
+      "clean_label": "Oglethorpe",
+      "clean_description": "Offal intelligentsia scenester park pour-over street authentic tacos.",
       "alternate_spellings": [
-        "Tyra Sanchez"
+        "Jiggly Caliente"
       ],
       "finding_aids": [
-        "http://douglas-jerde.co/herschel_jaskolski"
+        "http://bartell-hudson.net/ozzie.kirlin"
       ],
-      "first_name": "Giovanni",
-      "last_name": "Cummings",
-      "life_dates": "(1907-1992)",
+      "first_name": "Edward",
+      "last_name": "Becker",
+      "life_dates": "(1913-1983)",
       "links": [
-        "http://paucek.biz/jerrold_becker"
+        "http://halvorson.name/deon"
       ],
-      "profile": "So then you have no frame of reference here Donny. You're like a child who wanders into the middle of a movie."
+      "profile": "I'm perfectly calm, Dude."
     },
     {
-      "id": "/entities/ae5e36d5-8a6f-47d4-91c3-33e0d85c0fb4",
-      "label": "<i>Data</i>",
+      "id": "http://example.org/entities/a1248f4d-90aa-418b-b5e6-08dea4025589",
+      "label": "Oglethorpe",
       "type": "person",
-      "short_display": "<span><i>Data</i> (1912-1991). Letterpress <i>goth pour-over tattooed humblebrag</i> quinoa.</span>",
-      "description": "Letterpress <i>goth pour-over tattooed humblebrag</i> quinoa.",
-      "clean_label": "Data",
-      "clean_description": "Letterpress goth pour-over tattooed humblebrag quinoa.",
+      "short_display": "<span>Oglethorpe (1912-1975). Celiac portland cronut 90's trust fund.</span>",
+      "description": "Celiac portland cronut 90's trust fund.",
+      "clean_label": "Oglethorpe",
+      "clean_description": "Celiac portland cronut 90's trust fund.",
       "alternate_spellings": [
-        "Milk"
+        "Shuga Cain"
       ],
       "finding_aids": [
-        "http://brown.com/jan"
+        "http://lehner-huels.name/malika"
       ],
-      "first_name": "Leanna",
-      "last_name": "Cummerata",
-      "life_dates": "(1912-1991)",
+      "first_name": "Elton",
+      "last_name": "Pacocha",
+      "life_dates": "(1912-1975)",
       "links": [
-        "http://stamm.com/kelsey"
+        "http://ortiz-fisher.biz/titus_lynch"
       ],
-      "profile": "Yeah, well, that's just, like, your opinion, man."
+      "profile": "Careful man, there's a beverage here!"
     },
     {
-      "id": "/entities/df3e3609-025d-47a5-bdfd-542f0d72efa0",
-      "label": "Data",
+      "id": "http://example.org/entities/a6a14efd-e270-425f-8018-bcfed40b1230",
+      "label": "<i>Oglethorpe</i>",
       "type": "person",
-      "short_display": "<span>Data (1905-1983). Vhs <i>chartreuse tattooed sriracha food truck viral single-origin coffee</i> iphone.</span>",
-      "description": "Vhs <i>chartreuse tattooed sriracha food truck viral single-origin coffee</i> iphone.",
-      "clean_label": "Data",
-      "clean_description": "Vhs chartreuse tattooed sriracha food truck viral single-origin coffee iphone.",
+      "short_display": "<span><i>Oglethorpe</i> (1913-1980). Next level vhs typewriter tumblr.</span>",
+      "description": "Next level vhs typewriter tumblr.",
+      "clean_label": "Oglethorpe",
+      "clean_description": "Next level vhs typewriter tumblr.",
       "alternate_spellings": [
-        "Valentina"
+        "Carmen Carrera"
       ],
       "finding_aids": [
-        "http://mante.org/chauncey"
+        "http://leffler-howe.info/leona"
       ],
-      "first_name": "Kasey",
-      "last_name": "Trantow",
-      "life_dates": "(1905-1983)",
+      "first_name": "Arnette",
+      "last_name": "Miller",
+      "life_dates": "(1913-1980)",
       "links": [
-        "http://hills.com/dave"
+        "http://boyer-schimmel.biz/julian"
       ],
-      "profile": "I'm the dude, so that's what you call me. That or, uh His Dudeness, or uh Duder, or El Duderino, if you're not into the whole brevity thing."
+      "profile": "So what are you saying? When you get divorced you turn in your library card? You get a new license? You stop being Jewish?"
+    },
+    {
+      "id": "http://example.org/entities/d7a04b29-f860-4fd6-8f3c-ecba9fbc5a40",
+      "label": "Oglethorpe",
+      "type": "person",
+      "short_display": "<span>Oglethorpe (1900-1996). Vinyl <i>diy echo cray kickstarter yolo poutine</i> kogi.</span>",
+      "description": "Vinyl <i>diy echo cray kickstarter yolo poutine</i> kogi.",
+      "clean_label": "Oglethorpe",
+      "clean_description": "Vinyl diy echo cray kickstarter yolo poutine kogi.",
+      "alternate_spellings": [
+        "Jinkx Monsoon"
+      ],
+      "finding_aids": [
+        "http://boyer.name/min"
+      ],
+      "first_name": "Britt",
+      "last_name": "Stehr",
+      "life_dates": "(1900-1996)",
+      "links": [
+        "http://johnson.org/sha"
+      ],
+      "profile": "Hell, I can get you a toe by 3 o'clock this afternoon...with nail polish."
+    },
+    {
+      "id": "http://example.org/entities/ffb6344a-1462-46f2-a17e-30e73c45c56c",
+      "label": "<i>Oglethorpe</i>",
+      "type": "person",
+      "short_display": "<span><i>Oglethorpe</i> (1907-1988). Food truck lo-fi taxidermy migas polaroid church-key everyday.</span>",
+      "description": "Food truck lo-fi taxidermy migas polaroid church-key everyday.",
+      "clean_label": "Oglethorpe",
+      "clean_description": "Food truck lo-fi taxidermy migas polaroid church-key everyday.",
+      "alternate_spellings": [
+        "Kim Chi"
+      ],
+      "finding_aids": [
+        "http://dooley-legros.org/mandi"
+      ],
+      "first_name": "Dessie",
+      "last_name": "Murray",
+      "life_dates": "(1907-1988)",
+      "links": [
+        "http://mccullough-nitzsche.org/zane"
+      ],
+      "profile": "Oh, the usual. I bowl. Drive around. The occasional acid flashback."
     }
   ],
   "aggs": {
@@ -203,11 +225,11 @@ Content-Length: 4866</pre>
       "buckets": [
         {
           "key": "person",
-          "doc_count": 6
+          "doc_count": 7
         },
         {
           "key": "publication",
-          "doc_count": 3
+          "doc_count": 6
         }
       ]
     }
@@ -216,9 +238,9 @@ Content-Length: 4866</pre>
     "page": 1,
     "per_page": 25,
     "page_count": 1,
-    "total_count": 6,
+    "total_count": 7,
     "links": {
-      "self": "http://example.org/entities?page=1&search=Data&type=person"
+      "self": "http://example.org/entities?page=1&search=Oglethorpe&type=person"
     }
   }
 }</pre>

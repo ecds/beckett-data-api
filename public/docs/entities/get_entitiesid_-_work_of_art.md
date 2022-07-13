@@ -5,6 +5,23 @@
 ## GET /entities/:id - Work Of Art
 
 ### GET /entities/:id
+
+### Response Fields
+
+| Name | Default | Description | Not Null |
+|------|---------|-------------|----------|
+| label | HTML String |  | true |
+| clean_label | String |  | true |
+| description | HTML String |  | true |
+| clean_description | String |  | true |
+| short_display | HTML String |  | true |
+| alternate_spellings | Array |  | true |
+| artist | String |  | false |
+| artist_alternate_spellings | Array |  | true |
+| notes | String |  | false |
+| owner_location_accession_number_current | String |  | false |
+| owner_location_accession_number_contemporaneous | String |  | false |
+
 ### Request
 
 #### Headers
@@ -17,7 +34,7 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /entities/8a9c0216-05d9-4876-bc94-ea09189db428</pre>
+<pre>GET /entities/2ebb5fb3-083a-4c8e-9edf-6fd080d70520</pre>
 
 ### Response
 
@@ -30,12 +47,12 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;b61e763456309f1acee0bf6333975d20&quot;
+ETag: W/&quot;f778946810e576905607dfa3b1919b2d&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 9938133c-cba0-4c61-8a69-cf4e92c7a76b
-X-Runtime: 1.004261
+X-Request-Id: e908e6c0-ac84-4f69-97be-4a15d51567bc
+X-Runtime: 1.233438
 Vary: Origin
-Content-Length: 443</pre>
+Content-Length: 524</pre>
 
 #### Status
 
@@ -45,16 +62,18 @@ Content-Length: 443</pre>
 
 <pre>{
   "type": "work_of_art",
-  "label": "<i>Partyman</i>",
-  "description": "Tofu <i>blue bottle before they sold out chartreuse cray</i> franzen.",
+  "label": "Uptown",
+  "clean_label": "Uptown",
+  "description": "Pork belly humblebrag actually schlitz.",
+  "clean_description": "Pork belly humblebrag actually schlitz.",
   "alternate_spellings": [
-    "Morgan McMichaels"
+    "Stacy Layne Matthews"
   ],
-  "artist": "Eccentrica Gallumbits",
+  "artist": "Barry Manilow",
   "artist_alternate_spellings": [
-    "Ra'jah O'Hara"
+    "Ariel Versace"
   ],
-  "notes": "Life? Don't talk to me about life.",
-  "owner_location_accession_number_current": 744,
-  "owner_location_accession_number_contemporaneous": 602
+  "notes": "Pardon me for breathing, which I never do anyway so I don't know why I bother to say it, Oh God, I'm so depressed.",
+  "owner_location_accession_number_current": 859,
+  "owner_location_accession_number_contemporaneous": 818
 }</pre>

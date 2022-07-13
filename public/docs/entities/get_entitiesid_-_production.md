@@ -5,6 +5,30 @@
 ## GET /entities/:id - Production
 
 ### GET /entities/:id
+
+### Response Fields
+
+| Name | Default | Description | Not Null |
+|------|---------|-------------|----------|
+| label | HTML String |  | true |
+| clean_label | String |  | true |
+| description | HTML String |  | true |
+| clean_description | String |  | true |
+| short_display | HTML String |  | true |
+| alternate_spellings | Array |  | true |
+| cast | Array |  | true |
+| city | String |  | false |
+| date | String |  | false |
+| director | String |  | false |
+| links | Array |  | true |
+| notes | String |  | false |
+| personnel | Array |  | true |
+| proposal | String |  | false |
+| response | String |  | false |
+| reason | String |  | false |
+| staging_beckett | String |  | false |
+| theater | String |  | false |
+
 ### Request
 
 #### Headers
@@ -17,7 +41,7 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /entities/7b3237c6-4827-4a78-8113-48e7dd82d68c</pre>
+<pre>GET /entities/b81c4d6d-c39d-4231-8480-83ae7af28d39</pre>
 
 ### Response
 
@@ -30,12 +54,12 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;1326214fb5b7e8321672e2594e0155ce&quot;
+ETag: W/&quot;1fa98933ab32a7634a23f83bb2b9b165&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 9655bba7-41f5-49b3-8e29-022bbb473a29
-X-Runtime: 0.987094
+X-Request-Id: 14c4d6fb-de37-4012-889c-8dd4b875a164
+X-Runtime: 1.149179
 Vary: Origin
-Content-Length: 714</pre>
+Content-Length: 868</pre>
 
 #### Status
 
@@ -45,28 +69,30 @@ Content-Length: 714</pre>
 
 <pre>{
   "type": "production",
-  "label": "Terminator 2: Judgment Day",
-  "description": "Offal fingerstache normcore sartorial ethical carry stumptown deep v.",
+  "label": "<i>The Help</i>",
+  "clean_label": "The Help",
+  "description": "Kale <i>chips raw denim meggings blog tote bag listicle art party</i> polaroid.",
+  "clean_description": "Kale chips raw denim meggings blog tote bag listicle art party polaroid.",
   "alternate_spellings": [
-    "Mercedes Iman Diamond"
+    "Thorgy Thor"
   ],
   "cast": [
-    "Pizpot Gargravarr",
-    "Bunny Lebowski"
+    "Zarquon",
+    "Jackie Treehorn"
   ],
-  "city": "Dennisberg",
-  "date": "1963-07-05",
-  "director": "The Big Lebowski",
+  "city": "Haleyfort",
+  "date": "1970-03-24",
+  "director": "The Dude",
   "links": [
-    "http://parisian.co/madeleine_schimmel"
+    "http://wehner.biz/mollie.stroman"
   ],
-  "notes": "Etsy kitsch vinegar organic flexitarian goth.",
+  "notes": "Vinegar keffiyeh vice pop-up echo organic.",
   "personnel": [
-    "Charles Darwin"
+    "Loonquawl"
   ],
-  "proposal": "I wish you'd just tell me rather trying to engage my enthusiasm, because I haven't got one.",
-  "response": "Hell, I can get you a toe by 3 o'clock this afternoon...with nail polish.",
+  "proposal": "Here I am, brain the size of a planet, and they tell me to take you up to the bridge. Call that job satisfaction? 'Cos I don't.",
+  "response": "Yeah, well, that's just, like, your opinion, man.",
   "reason": null,
-  "staging_beckett": "http://nitzsche.io/ginette",
-  "theater": "RW6"
+  "staging_beckett": "http://graham.org/stacy",
+  "theater": "Golgafrinchan Ark Fleet Ship B"
 }</pre>

@@ -15,7 +15,7 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /letters/d8c8874e-3255-4579-a0f6-245ca51a5036</pre>
+<pre>GET /letters/6ae6e87d-7a14-488c-9ef3-15f91a5e2edf</pre>
 
 ### Response
 
@@ -28,12 +28,12 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;b0db81525f0a7aebae3d76df5b220793&quot;
+ETag: W/&quot;82a220c894f1a95bff12672d411761dc&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 5f357490-0b0f-4724-b0d1-485888fef17e
-X-Runtime: 0.568744
+X-Request-Id: 88972d04-2117-4dbb-ace5-163ddaf672d4
+X-Runtime: 0.715219
 Vary: Origin
-Content-Length: 2683</pre>
+Content-Length: 3521</pre>
 
 #### Status
 
@@ -42,91 +42,118 @@ Content-Length: 2683</pre>
 #### Body
 
 <pre>{
-  "id": "http://example.org/letters/d8c8874e-3255-4579-a0f6-245ca51a5036",
-  "date": "1957-04-04T00:00:00.000-05:00",
+  "id": "http://example.org/letters/6ae6e87d-7a14-488c-9ef3-15f91a5e2edf",
+  "date": "1961-03-27T00:00:00.000-05:00",
   "recipients": [
     {
-      "id": "http://example.org/entities/4fa3ac1d-cd29-4326-9a7c-c334169e9752.json",
+      "id": "http://example.org/entities/1e8d3d48-a9bb-496b-a696-5fea8ad2bada.json",
       "type": "person",
-      "label": "<i>Emory</i>",
-      "description": "<span><i>Emory</i> (1921-1973). Five <i>dollar toast actually listicle bicycle rights banh</i> mi.</span>"
+      "label": "<i>Majikthise</i>",
+      "description": "<span><i>Majikthise</i> (1912-1977). Listicle gluten-free muggle magic brunch polaroid.</span>"
     }
   ],
   "destinations": [
     {
-      "id": "http://example.org/entities/433589cf-167e-40e9-95f9-600a3f1fe99b.json",
+      "id": "http://example.org/entities/c914859c-65a0-49e4-815e-61686e5ca368.json",
       "type": "place",
-      "label": "<i>Asbleg</i>",
-      "description": "<span><i>Asbleg</i>.</span>"
+      "label": "<i>Zarss</i>",
+      "description": "<span><i>Zarss</i>.</span>"
     }
   ],
   "mentions": {
-    "people": [
+    "attendances": [
       {
-        "id": "http://example.org/entities/1e495a56-df8b-4a9f-b3e2-2afbf32eed59.json",
-        "type": "person",
-        "label": "<i>Brandt</i>",
-        "description": "<span><i>Brandt</i> (1928-1980). Gentrify farm-to-table brunch raw denim heirloom.</span>",
-        "tags": [
-
-        ]
-      }
-    ],
-    "publications": [
-      {
-        "id": "http://example.org/entities/d733e536-cd37-4e0f-a269-539165663121.json",
-        "type": "publication",
-        "label": "<i>Ned Gerblansky</i>",
-        "description": "<span>Brandt, <i>Ned Gerblansky</i>, Wonko the Sane Fingerstache retro meh tumblr ennui fixie organic.</span>",
-        "tags": [
-
-        ]
-      }
-    ],
-    "work_of_arts": [
-      {
-        "id": "http://example.org/entities/21aed110-cbdf-4f5f-90e9-10d0cf1ffe75.json",
-        "type": "work_of_art",
-        "label": "Thunder",
-        "description": "<span>Grunthos the Flatulent, Thunder, Cray whatever bespoke loko williamsburg next level skateboard bicycle rights health.</span>",
+        "id": "http://example.org/entities/526f4b96-93c8-47c6-9571-5dca1b91aa1c.json",
+        "type": "attendance",
+        "label": "The Lord of the Rings: The Fellowship of the Ring",
+        "description": "<span>stumptown, The Lord of the Rings: The Fellowship of the Ring, Armstrongville, 15 December 1923.</span>",
         "tags": [
 
         ]
       },
       {
-        "id": "http://example.org/entities/5f9513ec-d340-43ae-ad4c-5fd3ec7b7b89.json",
-        "type": "work_of_art",
-        "label": "Paisley Park",
-        "description": "<span>Vroomfondel, Paisley Park, Blue bottle austin heirloom etsy hella.</span>",
+        "id": "http://example.org/entities/9a0610fc-f616-41c6-8f3e-fdc13b7a4a72.json",
+        "type": "attendance",
+        "label": "<i>The Great Escape</i>",
+        "description": "<span>sustainable, <i>The Great Escape</i>, Cormierhaven, 27 May 1932.</span>",
+        "tags": [
+
+        ]
+      },
+      {
+        "id": "http://example.org/entities/f6852fb3-e28f-44af-9c0c-d0cbad3f3142.json",
+        "type": "attendance",
+        "label": "<i>Donnie Darko</i>",
+        "description": "<span>pour-over, <i>Donnie Darko</i>, Shinview, 16 September 1963.</span>",
         "tags": [
 
         ]
       }
     ],
-    "writings": [
+    "productions": [
       {
-        "id": "http://example.org/entities/c5916c98-e0da-4bdf-8909-c949daec4390.json",
-        "type": "writing",
-        "label": "<i>The Other Side of Silence</i>",
-        "description": "<span><i>The Other Side of Silence</i>.</span>",
+        "id": "http://example.org/entities/3b0c1393-52f5-40d4-8ec2-b31ccad33c7a.json",
+        "type": "production",
+        "label": "<i>Catch Me If You Can</i>",
+        "description": "<span><i>Catch Me If You Can</i>, dir. Jackie Treehorn, Bistromath, North Shiela, 1954-12-16.</span>",
+        "tags": [
+
+        ]
+      }
+    ],
+    "public_events": [
+      {
+        "id": "http://example.org/entities/01fbe36b-75d7-4983-a966-9b79c167e4ab.json",
+        "type": "public_event",
+        "label": "Mercury",
+        "description": "<span>Mercury (1928-12-30).</span>",
         "tags": [
 
         ]
       },
       {
-        "id": "http://example.org/entities/9ccce74d-d686-42f9-a457-acd058b0077a.json",
-        "type": "writing",
-        "label": "<i>Bury My Heart at Wounded Knee</i>",
-        "description": "<span><i>Bury My Heart at Wounded Knee</i>.</span>",
+        "id": "http://example.org/entities/72c945e9-832e-407a-b7c4-cdeaa2b03694.json",
+        "type": "public_event",
+        "label": "<i>Gemini</i>",
+        "description": "<span><i>Gemini</i> (1923-09-05).</span>",
         "tags": [
 
         ]
       },
       {
-        "id": "http://example.org/entities/286fef23-8912-4f89-8b9a-ba74788dfaed.json",
-        "type": "writing",
-        "label": "Oh! To be in England",
-        "description": "<span>Oh! To be in England.</span>",
+        "id": "http://example.org/entities/edc3b6b4-1d9c-4d6f-80a0-27eb952ee121.json",
+        "type": "public_event",
+        "label": "Enterprise",
+        "description": "<span>Enterprise (1969-08-13).</span>",
+        "tags": [
+
+        ]
+      }
+    ],
+    "translatings": [
+      {
+        "id": "http://example.org/entities/1e2295f8-df9c-422a-9c89-46145f6287e0.json",
+        "type": "translating",
+        "label": "<i>The Way of All Flesh</i>",
+        "description": "<span>Random Dent, <i>The Way of All Flesh</i>, Translated into Sesefras Magna by Rob McKenna.</span>",
+        "tags": [
+
+        ]
+      },
+      {
+        "id": "http://example.org/entities/a121840a-3adb-450d-a0a4-fed93248cf53.json",
+        "type": "translating",
+        "label": "<i>All Passion Spent</i>",
+        "description": "<span>Hotblack Desiato's bodyguard, <i>All Passion Spent</i>, Translated into Krikkit by Slartibartfast.</span>",
+        "tags": [
+
+        ]
+      },
+      {
+        "id": "http://example.org/entities/d84fe409-85c7-4521-8209-9b26f1497820.json",
+        "type": "translating",
+        "label": "The Soldier's Art",
+        "description": "<span>Agda, The Soldier's Art, Translated into Rupert by Prak.</span>",
         "tags": [
 
         ]

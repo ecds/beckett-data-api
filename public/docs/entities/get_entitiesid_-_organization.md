@@ -5,6 +5,19 @@
 ## GET /entities/:id - Organization
 
 ### GET /entities/:id
+
+### Response Fields
+
+| Name | Default | Description | Not Null |
+|------|---------|-------------|----------|
+| label | HTML String |  | true |
+| clean_label | String |  | true |
+| description | HTML String |  | true |
+| clean_description | String |  | true |
+| short_display | HTML String |  | true |
+| alternate_spellings | Array |  | true |
+| profile | HTML String |  | false |
+
 ### Request
 
 #### Headers
@@ -17,7 +30,7 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /entities/a3737064-29f2-48fc-aab0-ab1bd8a3f151</pre>
+<pre>GET /entities/61e0902d-01dd-4142-a0cc-145e87c0bee7</pre>
 
 ### Response
 
@@ -30,12 +43,12 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;94f72e479a93c726787129e2fda9cb62&quot;
+ETag: W/&quot;2d75adac97f97e9d2233fc0ed201c696&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: f78841ee-076b-4d53-bb51-88479bfd8abb
-X-Runtime: 0.972116
+X-Request-Id: 14dac23f-8f9e-42b9-967f-da8db6dc3675
+X-Runtime: 1.186051
 Vary: Origin
-Content-Length: 213</pre>
+Content-Length: 365</pre>
 
 #### Status
 
@@ -45,10 +58,12 @@ Content-Length: 213</pre>
 
 <pre>{
   "type": "organization",
-  "label": "Eroticon VI",
-  "description": "Fingerstache banjo direct trade hoodie heirloom paleo.",
+  "label": "<i>Happi-Werld III</i>",
+  "clean_label": "Happi-Werld III",
+  "description": "Ennui <i>seitan green juice</i> readymade.",
+  "clean_description": "Ennui seitan green juice readymade.",
   "alternate_spellings": [
-    "Darienne Lake"
+    "Tatianna"
   ],
-  "profile": "Mr. Treehorn treats objects like women, man."
+  "profile": "Three thousand years of beautiful tradition, from Moses to Sandy Koufax."
 }</pre>

@@ -5,6 +5,23 @@
 ## GET /entities/:id - Attendance
 
 ### GET /entities/:id
+
+### Response Fields
+
+| Name | Default | Description | Not Null |
+|------|---------|-------------|----------|
+| label | HTML String |  | true |
+| clean_label | String |  | true |
+| description | HTML String |  | true |
+| clean_description | String |  | true |
+| short_display | HTML String |  | true |
+| alternate_spellings | Array |  | true |
+| attended_with | Array |  | true |
+| director | String |  | false |
+| event_type | String |  | false |
+| performed_by | Array |  | true |
+| place_date | String |  | false |
+
 ### Request
 
 #### Headers
@@ -17,7 +34,7 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /entities/ff7c0cd2-a9c0-4323-acd1-263398e60dee</pre>
+<pre>GET /entities/33550ba2-23f6-4dd7-a803-d1fca1af8cff</pre>
 
 ### Response
 
@@ -30,12 +47,12 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;4c4f0bba0214da714ae65d5819397981&quot;
+ETag: W/&quot;766bd315c356282b7550b9463ac65021&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 6dca7eab-d1f6-4f5a-b5e3-855f314a5067
-X-Runtime: 0.966539
+X-Request-Id: c2a9b370-885c-488f-b59f-c2a9453f9886
+X-Runtime: 1.412760
 Vary: Origin
-Content-Length: 315</pre>
+Content-Length: 467</pre>
 
 #### Status
 
@@ -45,19 +62,21 @@ Content-Length: 315</pre>
 
 <pre>{
   "type": "attendance",
-  "label": "Fight Club",
-  "description": "Actually chartreuse viral truffaut.",
+  "label": "12 Years a Slave",
+  "clean_label": "12 Years a Slave",
+  "description": "Paleo keytar kale chips meh 90's five dollar toast typewriter pour-over.",
+  "clean_description": "Paleo keytar kale chips meh 90's five dollar toast typewriter pour-over.",
   "alternate_spellings": [
-    "Detox"
+    "Yvie Oddly"
   ],
   "attended_with": [
     "Maude Lebowski",
-    "Tricia McMillan"
+    "Dan Streetmentioner"
   ],
-  "director": "Random Dent",
-  "event_type": "pabst",
+  "director": "Trillian",
+  "event_type": "kogi",
   "performed_by": [
-    "Paula Nancy Millstone Jennings"
+    "Prak"
   ],
-  "place_date": "Leoburgh, 10 August 1926"
+  "place_date": "Port Charlott, 26 May 1923"
 }</pre>

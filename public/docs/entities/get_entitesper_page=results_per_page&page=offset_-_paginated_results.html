@@ -162,7 +162,7 @@ table th, table td {
                     <span class="name">type</span>
                 </td>
                 <td>
-                  <span class="description">Limit responses by single type. Options are attendance, music, organization, person, place, production, public_event, publication, reading, translating, work_of_art, writing.</span>
+                  <span class="description">Limit responses by single type. Options are attendance, music, organization, person, place, production, public_event, publication, reading, translating, work_of_art, and writing.</span>
                 </td>
                 <td>
                   <span class="default">null</span>
@@ -209,87 +209,86 @@ X-Content-Type-Options: nosniff
 X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
-Link: &lt;http://example.org/entities?page=2&amp;per_page=5&gt;; rel=&#39;self&#39;, &lt;http://example.org/entities?page=1&amp;per_page=5&gt;; rel=&#39;first&#39;, &lt;http://example.org/entities?page=114&amp;per_page=5&gt;; rel=&#39;last&#39;, &lt;http://example.org/entities?page=3&amp;per_page=5&gt;; rel=&#39;next&#39;, &lt;http://example.org/entities?page=1&amp;per_page=5&gt;; rel=&#39;prev&#39;
-X-Total-Count: 567
+Link: &lt;http://example.org/entities?page=2&amp;per_page=5&gt;; rel=&#39;self&#39;, &lt;http://example.org/entities?page=1&amp;per_page=5&gt;; rel=&#39;first&#39;, &lt;http://example.org/entities?page=113&amp;per_page=5&gt;; rel=&#39;last&#39;, &lt;http://example.org/entities?page=3&amp;per_page=5&gt;; rel=&#39;next&#39;, &lt;http://example.org/entities?page=1&amp;per_page=5&gt;; rel=&#39;prev&#39;
+X-Total-Count: 562
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;8057c1678492136f15c981e2ff6d9703&quot;
+ETag: W/&quot;69c3ea1bb6595ed2547302f1a0175ada&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 10eddad8-eacf-4ec3-b10b-6d892ae5edc1
-X-Runtime: 10.604844
+X-Request-Id: 87d7684a-4da8-4cc5-9cde-7157b5f988e3
+X-Runtime: 13.806146
 Vary: Origin
-Content-Length: 3524</pre>
+Content-Length: 3758</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
   &quot;entities&quot;: [
     {
-      &quot;id&quot;: &quot;/entities/00f6e85f-7555-4ede-a88b-e95b24eaa09f&quot;,
-      &quot;label&quot;: &quot;&lt;i&gt;The Grapes of Wrath&lt;/i&gt;&quot;,
-      &quot;type&quot;: &quot;writing&quot;,
-      &quot;short_display&quot;: &quot;&lt;span&gt;&lt;i&gt;The Grapes of Wrath&lt;/i&gt;.&lt;/span&gt;&quot;,
-      &quot;description&quot;: &quot;Forage &lt;i&gt;twee tousled iphone viral lomo&lt;/i&gt; brooklyn.&quot;,
-      &quot;clean_label&quot;: &quot;The Grapes of Wrath&quot;,
-      &quot;clean_description&quot;: &quot;Forage twee tousled iphone viral lomo brooklyn.&quot;,
-      &quot;date&quot;: &quot;1970-04-15&quot;,
-      &quot;notes&quot;: &quot;I think you ought to know I&#39;m feeling very depressed.&quot;,
-      &quot;porposal&quot;: null,
-      &quot;beckett_digital_manuscript_project&quot;: &quot;http://lockman-osinski.net/fred.beer&quot;
-    },
-    {
-      &quot;id&quot;: &quot;/entities/01394a8f-d892-4998-b1f1-788764100763&quot;,
-      &quot;label&quot;: &quot;Space&quot;,
-      &quot;type&quot;: &quot;place&quot;,
-      &quot;short_display&quot;: &quot;&lt;span&gt;Space.&lt;/span&gt;&quot;,
-      &quot;description&quot;: &quot;Health &lt;i&gt;farm-to-table mlkshk before they sold out post-ironic&lt;/i&gt; typewriter.&quot;,
-      &quot;clean_label&quot;: &quot;Space&quot;,
-      &quot;clean_description&quot;: &quot;Health farm-to-table mlkshk before they sold out post-ironic typewriter.&quot;,
+      &quot;id&quot;: &quot;http://example.org/entities/022ec1e1-91ae-470f-a90f-6118b9891ae7&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;Allosimanius Syneca&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;organization&quot;,
+      &quot;short_display&quot;: &quot;&lt;span&gt;&lt;i&gt;Allosimanius Syneca&lt;/i&gt;, Vanessa Vanjie Mateo.&lt;/span&gt;&quot;,
+      &quot;description&quot;: &quot;Biodiesel echo gluten-free kogi tofu knausgaard.&quot;,
+      &quot;clean_label&quot;: &quot;Allosimanius Syneca&quot;,
+      &quot;clean_description&quot;: &quot;Biodiesel echo gluten-free kogi tofu knausgaard.&quot;,
       &quot;alternate_spellings&quot;: [
-        &quot;Yvie Oddly&quot;
+        &quot;Vanessa Vanjie Mateo&quot;
       ],
-      &quot;links&quot;: [
-        &quot;http://kutch.biz/judson.kirlin&quot;
-      ]
+      &quot;profile&quot;: &quot;I don&#39;t roll on Shabbos!&quot;
     },
     {
-      &quot;id&quot;: &quot;/entities/017e2e37-60f5-4a0b-952e-8d8e21b73e65&quot;,
-      &quot;label&quot;: &quot;The Moon by Night&quot;,
-      &quot;type&quot;: &quot;reading&quot;,
-      &quot;short_display&quot;: &quot;&lt;span&gt;Sherril Gulgowski DDS, The Moon by Night, Nauka.&lt;/span&gt;&quot;,
-      &quot;description&quot;: &quot;Pbr&amp;b &lt;i&gt;gastropub direct trade tofu irony blue bottle semiotics&lt;/i&gt; drinking.&quot;,
-      &quot;clean_label&quot;: &quot;The Moon by Night&quot;,
-      &quot;clean_description&quot;: &quot;Pbr&amp;amp;b gastropub direct trade tofu irony blue bottle semiotics drinking.&quot;,
-      &quot;authors&quot;: [
-        &quot;Sherril Gulgowski DDS&quot;
-      ],
-      &quot;comment&quot;: &quot;Life? Don&#39;t talk to me about life.&quot;,
-      &quot;publication&quot;: &quot;Nauka&quot;,
-      &quot;publication_format&quot;: &quot;schlitz&quot;
-    },
-    {
-      &quot;id&quot;: &quot;/entities/018e00e4-97a5-481b-9799-d3870f4d0f35&quot;,
-      &quot;label&quot;: &quot;Frogstar system&quot;,
-      &quot;type&quot;: &quot;place&quot;,
-      &quot;short_display&quot;: &quot;&lt;span&gt;Frogstar system.&lt;/span&gt;&quot;,
-      &quot;description&quot;: &quot;Bushwick &lt;i&gt;stumptown before they sold out seitan dreamcatcher master cardigan put a bird on it&lt;/i&gt; chartreuse.&quot;,
-      &quot;clean_label&quot;: &quot;Frogstar system&quot;,
-      &quot;clean_description&quot;: &quot;Bushwick stumptown before they sold out seitan dreamcatcher master cardigan put a bird on it chartreuse.&quot;,
-      &quot;alternate_spellings&quot;: [
-        &quot;Asia O&#39;Hara&quot;
-      ],
-      &quot;links&quot;: [
-        &quot;http://hettinger-raynor.io/marina.casper&quot;
-      ]
-    },
-    {
-      &quot;id&quot;: &quot;/entities/025eb502-8b3e-4ab0-98f3-fac8ab36c59a&quot;,
-      &quot;label&quot;: &quot;&lt;i&gt;Apollo&lt;/i&gt;&quot;,
+      &quot;id&quot;: &quot;http://example.org/entities/028910e1-057f-4301-884e-451700d8f306&quot;,
+      &quot;label&quot;: &quot;Discovery&quot;,
       &quot;type&quot;: &quot;public_event&quot;,
-      &quot;short_display&quot;: &quot;&lt;span&gt;&lt;i&gt;Apollo&lt;/i&gt; (1965-07-08).&lt;/span&gt;&quot;,
-      &quot;description&quot;: &quot;Mustache occupy mlkshk austin chartreuse pour-over.&quot;,
-      &quot;clean_label&quot;: &quot;Apollo&quot;,
-      &quot;clean_description&quot;: &quot;Mustache occupy mlkshk austin chartreuse pour-over.&quot;,
-      &quot;date&quot;: &quot;1965-07-08&quot;
+      &quot;short_display&quot;: &quot;&lt;span&gt;Discovery (1938-09-19).&lt;/span&gt;&quot;,
+      &quot;description&quot;: &quot;Hammock lumbersexual meditation offal asymmetrical austin vinyl farm-to-table pork belly.&quot;,
+      &quot;clean_label&quot;: &quot;Discovery&quot;,
+      &quot;clean_description&quot;: &quot;Hammock lumbersexual meditation offal asymmetrical austin vinyl farm-to-table pork belly.&quot;,
+      &quot;date&quot;: &quot;1938-09-19&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/02e470db-ef63-4d1e-afca-0ab90ef4ed69&quot;,
+      &quot;label&quot;: &quot;The Domain of The King&quot;,
+      &quot;type&quot;: &quot;place&quot;,
+      &quot;short_display&quot;: &quot;&lt;span&gt;The Domain of The King.&lt;/span&gt;&quot;,
+      &quot;description&quot;: &quot;Poutine yolo salvia yuccie neutra.&quot;,
+      &quot;clean_label&quot;: &quot;The Domain of The King&quot;,
+      &quot;clean_description&quot;: &quot;Poutine yolo salvia yuccie neutra.&quot;,
+      &quot;alternate_spellings&quot;: [
+        &quot;Jiggly Caliente&quot;
+      ],
+      &quot;links&quot;: [
+        &quot;http://kuvalis-macejkovic.co/frederic.fritsch&quot;
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/0395cdf2-7cde-4d20-87c4-e871a73c8b4d&quot;,
+      &quot;label&quot;: &quot;Mercury&quot;,
+      &quot;type&quot;: &quot;public_event&quot;,
+      &quot;short_display&quot;: &quot;&lt;span&gt;Mercury (1940-07-27).&lt;/span&gt;&quot;,
+      &quot;description&quot;: &quot;Kitsch &lt;i&gt;put a bird on it actually jean&lt;/i&gt; shorts.&quot;,
+      &quot;clean_label&quot;: &quot;Mercury&quot;,
+      &quot;clean_description&quot;: &quot;Kitsch put a bird on it actually jean shorts.&quot;,
+      &quot;date&quot;: &quot;1940-07-27&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/03ae6778-d805-4b75-bdb4-5a5ee8c142a2&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;The Most Beautiful Girl In The World&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;work_of_art&quot;,
+      &quot;short_display&quot;: &quot;&lt;span&gt;Vroomfondel, &lt;i&gt;The Most Beautiful Girl In The World&lt;/i&gt;, Bicycle &lt;i&gt;rights gastropub health slow-carb fashion axe franzen raw denim&lt;/i&gt; tattooed.&lt;/span&gt;&quot;,
+      &quot;description&quot;: &quot;Bicycle &lt;i&gt;rights gastropub health slow-carb fashion axe franzen raw denim&lt;/i&gt; tattooed.&quot;,
+      &quot;clean_label&quot;: &quot;The Most Beautiful Girl In The World&quot;,
+      &quot;clean_description&quot;: &quot;Bicycle rights gastropub health slow-carb fashion axe franzen raw denim tattooed.&quot;,
+      &quot;alternate_spellings&quot;: [
+        &quot;Jiggly Caliente&quot;
+      ],
+      &quot;artist&quot;: &quot;Vroomfondel&quot;,
+      &quot;artist_alternate_spellings&quot;: [
+        &quot;Alyssa Edwards&quot;
+      ],
+      &quot;notes&quot;: &quot;Here I am, brain the size of a planet, and they tell me to take you up to the bridge. Call that job satisfaction? &#39;Cos I don&#39;t.&quot;,
+      &quot;owner_location_accession_number_current&quot;: 222,
+      &quot;owner_location_accession_number_contemporaneous&quot;: 980
     }
   ],
   &quot;aggs&quot;: {
@@ -299,51 +298,51 @@ Content-Length: 3524</pre>
       &quot;buckets&quot;: [
         {
           &quot;key&quot;: &quot;place&quot;,
-          &quot;doc_count&quot;: 132
+          &quot;doc_count&quot;: 126
         },
         {
           &quot;key&quot;: &quot;person&quot;,
-          &quot;doc_count&quot;: 94
+          &quot;doc_count&quot;: 92
+        },
+        {
+          &quot;key&quot;: &quot;organization&quot;,
+          &quot;doc_count&quot;: 50
+        },
+        {
+          &quot;key&quot;: &quot;writing&quot;,
+          &quot;doc_count&quot;: 41
         },
         {
           &quot;key&quot;: &quot;reading&quot;,
-          &quot;doc_count&quot;: 43
-        },
-        {
-          &quot;key&quot;: &quot;public_event&quot;,
           &quot;doc_count&quot;: 40
         },
         {
-          &quot;key&quot;: &quot;production&quot;,
-          &quot;doc_count&quot;: 39
-        },
-        {
-          &quot;key&quot;: &quot;attendance&quot;,
-          &quot;doc_count&quot;: 37
-        },
-        {
           &quot;key&quot;: &quot;music&quot;,
-          &quot;doc_count&quot;: 37
-        },
-        {
-          &quot;key&quot;: &quot;publication&quot;,
-          &quot;doc_count&quot;: 36
+          &quot;doc_count&quot;: 39
         },
         {
           &quot;key&quot;: &quot;work_of_art&quot;,
           &quot;doc_count&quot;: 36
         },
         {
-          &quot;key&quot;: &quot;writing&quot;,
+          &quot;key&quot;: &quot;attendance&quot;,
           &quot;doc_count&quot;: 30
         },
         {
-          &quot;key&quot;: &quot;organization&quot;,
-          &quot;doc_count&quot;: 26
+          &quot;key&quot;: &quot;production&quot;,
+          &quot;doc_count&quot;: 29
+        },
+        {
+          &quot;key&quot;: &quot;public_event&quot;,
+          &quot;doc_count&quot;: 28
         },
         {
           &quot;key&quot;: &quot;translating&quot;,
-          &quot;doc_count&quot;: 17
+          &quot;doc_count&quot;: 26
+        },
+        {
+          &quot;key&quot;: &quot;publication&quot;,
+          &quot;doc_count&quot;: 25
         }
       ]
     }
@@ -351,12 +350,12 @@ Content-Length: 3524</pre>
   &quot;meta&quot;: {
     &quot;page&quot;: 2,
     &quot;per_page&quot;: 5,
-    &quot;page_count&quot;: 114,
-    &quot;total_count&quot;: 567,
+    &quot;page_count&quot;: 113,
+    &quot;total_count&quot;: 562,
     &quot;links&quot;: {
       &quot;self&quot;: &quot;http://example.org/entities?page=2&amp;per_page=5&quot;,
       &quot;first&quot;: &quot;http://example.org/entities?page=1&amp;per_page=5&quot;,
-      &quot;last&quot;: &quot;http://example.org/entities?page=114&amp;per_page=5&quot;,
+      &quot;last&quot;: &quot;http://example.org/entities?page=113&amp;per_page=5&quot;,
       &quot;next&quot;: &quot;http://example.org/entities?page=3&amp;per_page=5&quot;,
       &quot;prev&quot;: &quot;http://example.org/entities?page=1&amp;per_page=5&quot;
     }

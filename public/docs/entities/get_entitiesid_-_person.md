@@ -5,6 +5,24 @@
 ## GET /entities/:id - Person
 
 ### GET /entities/:id
+
+### Response Fields
+
+| Name | Default | Description | Not Null |
+|------|---------|-------------|----------|
+| label | HTML String |  | true |
+| clean_label | String |  | true |
+| description | HTML String |  | true |
+| clean_description | String |  | true |
+| short_display | HTML String |  | true |
+| alternate_spellings | Array |  | true |
+| finding_aids | Array |  | true |
+| first_name | String |  | false |
+| last_name | String |  | false |
+| life_dates | String |  | false |
+| links | Array |  | true |
+| profile | HTML String |  | false |
+
 ### Request
 
 #### Headers
@@ -17,7 +35,7 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /entities/6398b133-cbcf-4e76-9a44-6a4fc7ba10fc</pre>
+<pre>GET /entities/49c3aa6c-de67-4c6a-8d1b-661f3d3fcc4d</pre>
 
 ### Response
 
@@ -30,12 +48,12 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;fc00e839368d282b76547e4a20a41193&quot;
+ETag: W/&quot;fd707fccb56ba97ecc0ce1f4bdc8ec4b&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 1f8fb9e2-77e2-496c-a3ce-11814bb37eae
-X-Runtime: 0.930158
+X-Request-Id: 6a371f9d-3bf5-438b-ad78-154305bd54e7
+X-Runtime: 1.261688
 Vary: Origin
-Content-Length: 492</pre>
+Content-Length: 473</pre>
 
 #### Status
 
@@ -45,19 +63,21 @@ Content-Length: 492</pre>
 
 <pre>{
   "type": "person",
-  "label": "Ned Gerblansky",
-  "description": "Dreamcatcher <i>williamsburg tilde gastropub cleanse</i> viral.",
+  "label": "Bunny Lebowski",
+  "clean_label": "Bunny Lebowski",
+  "description": "Leggings <i>knausgaard pbr&b xoxo</i> seitan.",
+  "clean_description": "Leggings knausgaard pbr&amp;b xoxo seitan.",
   "alternate_spellings": [
-    "Shangela Wadley"
+    "Cynthia Lee Fontaine"
   ],
   "finding_aids": [
-    "http://crona-mccullough.name/jesica"
+    "http://bins.net/jules"
   ],
-  "first_name": "Lang",
-  "last_name": "Hahn",
-  "life_dates": "(1918-1989)",
+  "first_name": "Lovetta",
+  "last_name": "Braun",
+  "life_dates": "(1918-1977)",
   "links": [
-    "http://brown.io/alyce"
+    "http://bashirian.net/stephany"
   ],
-  "profile": "I'm the dude, so that's what you call me. That or, uh His Dudeness, or uh Duder, or El Duderino, if you're not into the whole brevity thing."
+  "profile": "Obviously, you're not a golfer"
 }</pre>

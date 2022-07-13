@@ -5,6 +5,18 @@
 ## GET /entities/:id - Public Event
 
 ### GET /entities/:id
+
+### Response Fields
+
+| Name | Default | Description | Not Null |
+|------|---------|-------------|----------|
+| label | HTML String |  | true |
+| clean_label | String |  | true |
+| description | HTML String |  | true |
+| clean_description | String |  | true |
+| short_display | HTML String |  | true |
+| date | String |  | false |
+
 ### Request
 
 #### Headers
@@ -17,7 +29,7 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /entities/0668c195-74ae-4413-baba-16bc09d9c1f6</pre>
+<pre>GET /entities/e7570ac5-76e5-48cc-bd32-5163fa32e7cb</pre>
 
 ### Response
 
@@ -30,12 +42,12 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;912dec4878b99a4d5faba37562e83331&quot;
+ETag: W/&quot;e84318b05b7d29af4e7ec6b57181a21a&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 66502cd7-0b4e-41cd-ae0b-7abd3ae31b46
-X-Runtime: 1.087178
+X-Request-Id: 16444013-cd56-4520-8c20-bd75362eedb4
+X-Runtime: 1.369708
 Vary: Origin
-Content-Length: 153</pre>
+Content-Length: 357</pre>
 
 #### Status
 
@@ -45,7 +57,9 @@ Content-Length: 153</pre>
 
 <pre>{
   "type": "public_event",
-  "label": "<i>Apollo</i>",
-  "description": "Kombucha helvetica waistcoat fanny pack keffiyeh.",
-  "date": "1933-01-08"
+  "label": "<i>Atlantis</i>",
+  "clean_label": "Atlantis",
+  "description": "Distillery <i>bushwick small batch vhs wayfarers put a bird on it actually yolo fanny</i> pack.",
+  "clean_description": "Distillery bushwick small batch vhs wayfarers put a bird on it actually yolo fanny pack.",
+  "date": "1968-10-12"
 }</pre>

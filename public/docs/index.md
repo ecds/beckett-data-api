@@ -23,10 +23,10 @@
 * [GET /entities/:id - Translating](entities/get_entitiesid_-_translating.md)
 * [GET /entities/:id - Work Of Art](entities/get_entitiesid_-_work_of_art.md)
 * [GET /entities/:id - Writing](entities/get_entitiesid_-_writing.md)
-* [GET /entities/autocomplete?search=:fragment](entities/get_entitiesautocompletesearch=fragment.md)
 * [POST /entities](entities/post_entities.md)
 * [PUT /entities/:id](entities/put_entitiesid.md)
 * [DELETE /entities/:id](entities/delete_entitiesid.md)
+* [GET /entities/autocomplete?search=:fragment](entities/get_entitiesautocompletesearch=fragment.md)
 
 ## Letters
 

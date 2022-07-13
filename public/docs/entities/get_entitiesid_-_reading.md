@@ -5,6 +5,21 @@
 ## GET /entities/:id - Reading
 
 ### GET /entities/:id
+
+### Response Fields
+
+| Name | Default | Description | Not Null |
+|------|---------|-------------|----------|
+| label | HTML String |  | true |
+| clean_label | String |  | true |
+| description | HTML String |  | true |
+| clean_description | String |  | true |
+| short_display | HTML String |  | true |
+| authors | Array |  | true |
+| comment | String |  | false |
+| publication | String |  | false |
+| publication_format | String |  | false |
+
 ### Request
 
 #### Headers
@@ -17,7 +32,7 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /entities/0613bd20-0531-4e27-9bdf-9f02c5814cc6</pre>
+<pre>GET /entities/55460f56-b2dc-4f1f-9711-9d83f9fc29ee</pre>
 
 ### Response
 
@@ -30,12 +45,12 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;27217af457205285b91cb74ce0ae895b&quot;
+ETag: W/&quot;c71bafa49474b462d752d657e764374e&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: dfb029e1-8945-48fc-8408-0e4b6d40e2fc
-X-Runtime: 1.019083
+X-Request-Id: 60a8bde5-3469-47c3-ba23-d9073f8fde9d
+X-Runtime: 1.232794
 Vary: Origin
-Content-Length: 324</pre>
+Content-Length: 382</pre>
 
 #### Status
 
@@ -45,12 +60,14 @@ Content-Length: 324</pre>
 
 <pre>{
   "type": "reading",
-  "label": "<i>Shall not Perish</i>",
-  "description": "Polaroid bespoke ugh vice.",
+  "label": "East of Eden",
+  "clean_label": "East of Eden",
+  "description": "Pop-up <i>asymmetrical green juice fashion</i> axe.",
+  "clean_description": "Pop-up asymmetrical green juice fashion axe.",
   "authors": [
-    "Gustavo Bartoletti"
+    "Curtis Pacocha"
   ],
-  "comment": "There's only one life-form as intelligent as me within thirty parsecs of here and that's me.",
-  "publication": "Charles Scribner's Sons",
-  "publication_format": "hashtag"
+  "comment": "I think you ought to know I'm feeling very depressed.",
+  "publication": "Marshall Cavendish",
+  "publication_format": "VHS"
 }</pre>

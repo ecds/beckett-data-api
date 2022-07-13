@@ -5,6 +5,22 @@
 ## GET /entities/:id - Music
 
 ### GET /entities/:id
+
+### Response Fields
+
+| Name | Default | Description | Not Null |
+|------|---------|-------------|----------|
+| label | HTML String |  | true |
+| clean_label | String |  | true |
+| description | HTML String |  | true |
+| clean_description | String |  | true |
+| short_display | HTML String |  | true |
+| alternate_spellings | Array |  | true |
+| composer | String |  | false |
+| links | Array |  | true |
+| notes | String |  | false |
+| performed_by | Array |  | true |
+
 ### Request
 
 #### Headers
@@ -17,7 +33,7 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /entities/3c5796d0-9e47-42f2-bed6-05b886ac8ad2</pre>
+<pre>GET /entities/37adf507-4baf-460a-bfbd-512f5b28c90d</pre>
 
 ### Response
 
@@ -30,12 +46,12 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;4c1034fa046ebb8556a58b039f943a50&quot;
+ETag: W/&quot;86060adf3db2ac0880ba2c9a0f996e53&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 318733d4-7019-4aaf-8f6f-8e88315e881f
-X-Runtime: 1.004902
+X-Request-Id: 97381204-3f82-4bb0-8156-8a6e281b5b3d
+X-Runtime: 1.079341
 Vary: Origin
-Content-Length: 369</pre>
+Content-Length: 343</pre>
 
 #### Status
 
@@ -45,16 +61,18 @@ Content-Length: 369</pre>
 
 <pre>{
   "type": "music",
-  "label": "<i>It's Gonna Be A Beautiful Night</i>",
-  "description": "Gluten-free <i>food truck hoodie flexitarian ethical kickstarter</i> seitan.",
+  "label": "<i>Sexy MF</i>",
+  "clean_label": "Sexy MF",
+  "description": "Next level beard drinking leggings.",
+  "clean_description": "Next level beard drinking leggings.",
   "alternate_spellings": [
-    "Tyra Sanchez"
+    "Ivy Winters"
   ],
-  "composer": "Paula Nancy Millstone Jennings",
+  "composer": "Reg Nullify",
   "links": [
 
   ],
-  "notes": "Why settle for a star when you can have the sun?",
+  "notes": "Until the end of time, I'll be there for you.",
   "performed_by": [
 
   ]
