@@ -36,7 +36,7 @@
 #   "verified": ""
 # }
 
-json.set! 'id', "#{request.protocol}#{request.host}#{letter.url_path}.json"
+json.set! 'id', "#{request.protocol}#{request.host_with_port}#{letter.url_path}"
 json.set! 'date', letter.date
 # json.set! '@type', letter.schema_type
 
@@ -56,13 +56,14 @@ json.destinations do
   end
 end
 
+# TODO: Ask Ben how he wants mention serialized.
 json.mentions do
   Entity.e_types.each_key do |type|
     next if letter.mentions.public_send(type).empty?
 
     json.set! type.pluralize do
       json.array!(letter.mentions.public_send(type)) do |mention|
-        json.partial! 'entities/entity', entity: mention.entity, request: request
+        json.partial! 'mentions/mention', mention: mention, request: request
       end
     end
   end

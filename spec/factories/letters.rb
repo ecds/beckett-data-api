@@ -10,23 +10,26 @@ FactoryBot.define do
     physical_notes { Faker::Lorem.paragraph }
     repository_info { Faker::Hipster.word }
     postcard_image { Faker::Internet.url(path: "/#{Faker::Hipster.word}.jpg") }
-    leaves { Faker::Number.between(from: 1, to: 3) }
-    sides { Faker::Number.between(from: 1, to: 3) }
+    leaves { rand(1..3) }
+    sides { rand(1..3) }
     postmark { "#{Faker::Date.between(from: '1950-01-01', to: '1988-12-31')}, #{Faker::Address.city}" }
     typed { Faker::Boolean.boolean }
     signed { Faker::Boolean.boolean }
     verified { Faker::Boolean.boolean }
     envelope { 'E' }
     notes { Faker::Lorem.paragraph }
-    content { Faker::Lorem.paragraph(sentence_count: Faker::Number.within(range: 12..15)) }
+    content { Faker::Lorem.paragraph(sentence_count: rand(12..15)) }
     language { %w[english french german italian].sample }
     recipients { create_list(:person_entity, 1) }
     destinations { create_list(:place_entity, 1) }
     origins { create_list(:place_entity, 1) }
-    entities { create_list(:entity, Faker::Number.within(range: 4..11)) }
     letter_file { create(:letter_file) }
     letter_owner { create(:letter_owner) }
     letter_publisher { create(:letter_publisher) }
+
+    after :create do |letter|
+      Entity.e_types.keys.sample(4).each {|type| letter.entities << create_list("#{type}_entity".to_sym, rand(1..3)) }
+    end
 
     factory :public_letter do
       date { Faker::Date.between(from: '1957-01-01', to: '1965-12-31') }

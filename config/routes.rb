@@ -11,13 +11,17 @@ Rails.application.routes.draw do
     resources :letter_senders
     resources :mentions
     resources :repositories, only: %i[index show new create edit update destroy]
+    # get 'entities_by_type/:type', to: 'entity_types#index'
 
     root to: 'entities#index'
   end
 
-  resources :entities
+  get '/entities/autocomplete', to: 'entities#autocomplete', defaults: { format: :json }
+  resources :entities, defaults: { format: :json }
   resources :repositories
   resources :letters, defaults: { format: :json }
+
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

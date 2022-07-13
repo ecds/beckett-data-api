@@ -1,14 +1,67 @@
 # frozen_string_literal: true
 
 class LettersController < ApplicationController
+  before_action :reindex
   before_action :set_letter, only: %i[show]
   before_action :set_filters, only: %i[index]
 
   # GET /letters
   def index
-    Letter.reindex if ENV['RAILS_ENV'] == 'test'
+    query = params[:search] || '*'
 
-    facets = {
+    results = Letter.search(
+      query,
+      aggs: facets,
+      page: params[:page] || 1,
+      per_page: params[:per_page] || 25,
+      where: @where,
+      fields: @fields,
+      operator: 'or',
+      order: { date: :asc },
+      load: false
+    )
+
+    @aggs = results.aggs
+
+    include_pagination(results)
+
+    @letters = letters_from_results(results)
+
+    render
+  end
+
+  private
+
+  def set_letter
+    @letter = Letter.find(params[:id])
+  end
+
+  def letters_from_results(results)
+    letters = results.map do |letter|
+      {
+        id: "#{request.protocol}#{request.host_with_port}#{letter.id_path}",
+        date: letter.date,
+        label: letter.label,
+        recipients: letter.recipients,
+        destinations: letter.destinations,
+        origins: letter.orgins,
+        mentions: letter.mentions
+      }
+    end
+
+    letters.each do |letter|
+      letter[:mentions].each_key do |key|
+        letter[:mentions][key].each_with_index do |_, index|
+          letter[:mentions][key][index][:id] = "#{request.protocol}#{request.host_with_port}#{letter[:mentions][key][index][:id]}"
+        end
+      end
+    end
+
+    letters
+  end
+
+  def facets
+    {
       date: {
         date_histogram: {
           field: :date,
@@ -18,36 +71,6 @@ class LettersController < ApplicationController
       language: {},
       repositories: {}
     }
-
-    query = params[:q] || '*'
-
-    @letters = Letter.search(
-      query,
-      aggs: facets,
-      page: params[:page] || 1,
-      per_page: params[:per_page] || 25,
-      where: @where,
-      fields: @fields,
-      operator: 'or',
-      order: { date: :asc }
-    )
-
-    include_pagination(@letters)
-
-    render
-  end
-
-  # GET /letters/1
-  def show
-    render json: @letter
-  end
-
-  private
-
-  # Use callbacks to share common setup or constraints between actions.
-  def set_letter
-    Letter.reindex if ENV['RAILS_ENV'] == 'test'
-    @letter = Letter.find(params[:id])
   end
 
   def set_filters
@@ -100,6 +123,10 @@ class LettersController < ApplicationController
     #   mentions = params[:mentions].split(',')
     #   @where[:mentions] = { in: mentions }
     # end
+  end
+
+  def reindex
+    Letter.reindex if ENV['RAILS_ENV'] == 'test'
   end
 
   def parse_date(date)

@@ -3,6 +3,8 @@
 class Letter < ApplicationRecord
   include Searchable
 
+  # serialize :mentions_hash, HashWithIndifferentAccess
+
   has_many :mentions, dependent: :destroy
   has_many :entities, -> { distinct }, through: :mentions
 
@@ -42,13 +44,34 @@ class Letter < ApplicationRecord
     "#{date.strftime('%d %B %Y')} - #{recipients.map(&:label).join(', ')}"
   end
 
+  def mentions_hash
+    m_hash = {}
+    Entity.e_types.each_key do |type|
+      next if mentions.public_send(type).empty?
+
+      m_hash[type.pluralize.to_sym] = mentions.public_send(type).map do |mention|
+        {
+          type: type,
+          id: mention.entity.url_path,
+          display: mention.entity.short_display
+        }
+      end
+    end
+
+    m_hash
+  end
+
   def search_data
     {
+      id_path: url_path,
       date: date,
+      label: label,
       recipients: recipients.map(&:clean_label),
-      mentions: entities.map(&:clean_label),
-      origins: origins.map(&:clean_label),
-      destinations: destinations.map(&:clean_label),
+      mentions: mentions_hash,
+      origins: origins.map(&:label),
+      origins_clean: origins.map(&:clean_label),
+      destinations: destinations.map(&:label),
+      destinations_clean: destinations.map(&:clean_label),
       repositories: repositories.map(&:label),
       language: language
     }
