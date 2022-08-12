@@ -20,4 +20,4 @@ development:
 
 production:
   <<: *default
-  password: <%= Rails.application.credentials.dig(:dev, :db_pw) %>
+  password: <%= Rails.application.credentials.dig(:production, :db_pw) %>
