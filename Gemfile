@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
 source 'https://rubygems.org'
-git_source(:github) {|_repo| 'https://github.com/#{repo}.git' }
+git_source(:github) {|_repo| "https://github.com/#{repo}.git" }
 
-ruby '3.0.2'
+ruby '3.1.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 7.0.2', '>= 7.0.2.3'
@@ -62,8 +62,8 @@ group :development, :test do
 end
 
 group :development do
-  # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
-  # gem 'spring'
+  gem 'capistrano', '~> 3.10', require: false
+  gem 'capistrano-rails', '~> 1.6', require: false
 end
 
 gem 'pundit', '~> 2.2'
@@ -75,3 +75,15 @@ gem 'jbuilder', '~> 2.11'
 gem 'rspec_api_documentation', '~> 6.1'
 
 gem 'acts-as-taggable-on', '~> 9.0'
+
+gem 'administrate-field-acts_as_taggable', '~> 0.0.4'
+
+gem 'administrate-field-list', '~> 0.0.6'
+
+gem 'httparty', '~> 0.20.0'
+
+gem 'google-api-client'
+
+gem 'roo', '~> 2.9'
+
+gem 'namae', '~> 1.1'

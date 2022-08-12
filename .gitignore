@@ -30,3 +30,7 @@
 
 # Ignore coverage reports
 /coverage
+
+entities.json
+letters.json
+BigSam*

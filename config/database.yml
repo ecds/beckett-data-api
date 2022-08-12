@@ -20,6 +20,4 @@ development:
 
 production:
   <<: *default
-  database: beckett_data_api_production
-  username: beckett_data_api
-  password: <%= ENV["BECKETT_DATA_API_DATABASE_PASSWORD"] %>
+  password: <%= Rails.application.credentials.dig(:dev, :db_pw) %>
