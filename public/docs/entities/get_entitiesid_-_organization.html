@@ -184,7 +184,7 @@ table th, table td {
               </tr>
               <tr>
                 <td>
-                    <span class="name">short_display</span>
+                    <span class="name">display_header</span>
                 </td>
                 <td>
                   <span class="description">HTML String</span>
@@ -198,7 +198,35 @@ table th, table td {
               </tr>
               <tr>
                 <td>
-                    <span class="name">entity[alternate_spellings]</span>
+                    <span class="name">label</span>
+                </td>
+                <td>
+                  <span class="description">HTML String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">false</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">description</span>
+                </td>
+                <td>
+                  <span class="description">HTML String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">false</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">alternate_names</span>
                 </td>
                 <td>
                   <span class="description">Array</span>
@@ -207,12 +235,26 @@ table th, table td {
                   <span class="description"></span>
                 </td>
                 <td>
-                  <span class="description">true</span>
+                  <span class="description">false</span>
                 </td>
               </tr>
               <tr>
                 <td>
-                    <span class="name">entity[profile]</span>
+                    <span class="name">alternate_spellings</span>
+                </td>
+                <td>
+                  <span class="description">Array</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">false</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">profile</span>
                 </td>
                 <td>
                   <span class="description">HTML String</span>
@@ -237,7 +279,7 @@ Host: example.org
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET /entities/61e0902d-01dd-4142-a0cc-145e87c0bee7</pre>
+          <pre class="request route highlight">GET /entities/5fda001a-42c2-4b17-8399-22d8d9a808e3</pre>
 
 
 
@@ -251,25 +293,27 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;2d75adac97f97e9d2233fc0ed201c696&quot;
+ETag: W/&quot;175cb6c68f12206dd68e1bf3ecff9d70&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 14dac23f-8f9e-42b9-967f-da8db6dc3675
-X-Runtime: 1.186051
+X-Request-Id: b154bfda-5ecb-4f4d-b2f5-b201a328fc53
+X-Runtime: 1.221776
 Vary: Origin
-Content-Length: 365</pre>
+Content-Length: 474</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
+  &quot;id&quot;: &quot;http://example.org/entities/5fda001a-42c2-4b17-8399-22d8d9a808e3&quot;,
   &quot;type&quot;: &quot;organization&quot;,
-  &quot;label&quot;: &quot;&lt;i&gt;Happi-Werld III&lt;/i&gt;&quot;,
-  &quot;clean_label&quot;: &quot;Happi-Werld III&quot;,
-  &quot;description&quot;: &quot;Ennui &lt;i&gt;seitan green juice&lt;/i&gt; readymade.&quot;,
-  &quot;clean_description&quot;: &quot;Ennui seitan green juice readymade.&quot;,
+  &quot;label&quot;: &quot;Sesefras Magna&quot;,
+  &quot;clean_label&quot;: &quot;Sesefras Magna&quot;,
+  &quot;description&quot;: &quot;Occupy &lt;i&gt;narwhal meh yr neutra normcore&lt;/i&gt; cornhole.&quot;,
+  &quot;clean_description&quot;: &quot;Occupy narwhal meh yr neutra normcore cornhole.&quot;,
+  &quot;alternate_names&quot;: null,
   &quot;alternate_spellings&quot;: [
-    &quot;Tatianna&quot;
+    &quot;Brook Lynn Hytes&quot;
   ],
-  &quot;profile&quot;: &quot;Three thousand years of beautiful tradition, from Moses to Sandy Koufax.&quot;
+  &quot;profile&quot;: &quot;If they don’t keep exercising their lips, he thought, their brains start working.&quot;
 }</pre>
       </div>
     </div>

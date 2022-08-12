@@ -14,12 +14,14 @@
 | clean_label | String |  | true |
 | description | HTML String |  | true |
 | clean_description | String |  | true |
-| short_display | HTML String |  | true |
-| alternate_spellings | Array |  | true |
-| composer | String |  | false |
-| links | Array |  | true |
-| notes | String |  | false |
-| performed_by | Array |  | true |
+| display_header | HTML String |  | true |
+| label | HTML String |  | false |
+| description | HTML String |  | false |
+| alternate_spellings | Array |  | false |
+| composer | HTML String |  | false |
+| links | Array |  | false |
+| notes | HTML String |  | false |
+| performed_by | Array |  | false |
 
 ### Request
 
@@ -33,7 +35,7 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /entities/37adf507-4baf-460a-bfbd-512f5b28c90d</pre>
+<pre>GET /entities/d7830cb7-8c48-4714-a390-036e20d56cdf</pre>
 
 ### Response
 
@@ -46,12 +48,12 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;86060adf3db2ac0880ba2c9a0f996e53&quot;
+ETag: W/&quot;7689001f93fb051e70d186f97babf3c9&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 97381204-3f82-4bb0-8156-8a6e281b5b3d
-X-Runtime: 1.079341
+X-Request-Id: a509b2c2-0fe4-4464-8125-3feb63d55d2a
+X-Runtime: 1.236032
 Vary: Origin
-Content-Length: 343</pre>
+Content-Length: 474</pre>
 
 #### Status
 
@@ -60,20 +62,19 @@ Content-Length: 343</pre>
 #### Body
 
 <pre>{
+  "id": "http://example.org/entities/d7830cb7-8c48-4714-a390-036e20d56cdf",
   "type": "music",
-  "label": "<i>Sexy MF</i>",
-  "clean_label": "Sexy MF",
-  "description": "Next level beard drinking leggings.",
-  "clean_description": "Next level beard drinking leggings.",
+  "label": "Still Waiting",
+  "clean_label": "Still Waiting",
+  "description": "Chicharrones meggings hammock distillery.",
+  "clean_description": "Chicharrones meggings hammock distillery.",
   "alternate_spellings": [
-    "Ivy Winters"
+    "Willam"
   ],
-  "composer": "Reg Nullify",
-  "links": [
-
-  ],
-  "notes": "Until the end of time, I'll be there for you.",
+  "composer": "Loonquawl and Phouchg",
+  "links": null,
+  "notes": "You're gonna have to fight your own damn war, cause we don't want to fight no more.",
   "performed_by": [
-
+    "Jackie Treehorn"
   ]
 }</pre>

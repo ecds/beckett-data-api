@@ -184,7 +184,7 @@ table th, table td {
               </tr>
               <tr>
                 <td>
-                    <span class="name">short_display</span>
+                    <span class="name">display_header</span>
                 </td>
                 <td>
                   <span class="description">HTML String</span>
@@ -198,7 +198,35 @@ table th, table td {
               </tr>
               <tr>
                 <td>
-                    <span class="name">entity[authors]</span>
+                    <span class="name">label</span>
+                </td>
+                <td>
+                  <span class="description">HTML String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">false</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">description</span>
+                </td>
+                <td>
+                  <span class="description">HTML String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">false</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">authors</span>
                 </td>
                 <td>
                   <span class="description">Array</span>
@@ -207,15 +235,15 @@ table th, table td {
                   <span class="description"></span>
                 </td>
                 <td>
-                  <span class="description">true</span>
+                  <span class="description">false</span>
                 </td>
               </tr>
               <tr>
                 <td>
-                    <span class="name">entity[comment]</span>
+                    <span class="name">notes</span>
                 </td>
                 <td>
-                  <span class="description">String</span>
+                  <span class="description">HTML String</span>
                 </td>
                 <td>
                   <span class="description"></span>
@@ -226,10 +254,10 @@ table th, table td {
               </tr>
               <tr>
                 <td>
-                    <span class="name">entity[publication]</span>
+                    <span class="name">publication</span>
                 </td>
                 <td>
-                  <span class="description">String</span>
+                  <span class="description">HTML String</span>
                 </td>
                 <td>
                   <span class="description"></span>
@@ -240,10 +268,10 @@ table th, table td {
               </tr>
               <tr>
                 <td>
-                    <span class="name">entity[publication_format]</span>
+                    <span class="name">publication_format</span>
                 </td>
                 <td>
-                  <span class="description">String</span>
+                  <span class="description">HTML String</span>
                 </td>
                 <td>
                   <span class="description"></span>
@@ -265,7 +293,7 @@ Host: example.org
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET /entities/55460f56-b2dc-4f1f-9711-9d83f9fc29ee</pre>
+          <pre class="request route highlight">GET /entities/9bcffbb9-b39f-49ca-830a-99f6e9943272</pre>
 
 
 
@@ -279,27 +307,28 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;c71bafa49474b462d752d657e764374e&quot;
+ETag: W/&quot;456556479bea711874b360442d1abadd&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 60a8bde5-3469-47c3-ba23-d9073f8fde9d
-X-Runtime: 1.232794
+X-Request-Id: 8382ab68-c534-4701-a3fd-36341c2f37f9
+X-Runtime: 1.189716
 Vary: Origin
-Content-Length: 382</pre>
+Content-Length: 428</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
+  &quot;id&quot;: &quot;http://example.org/entities/9bcffbb9-b39f-49ca-830a-99f6e9943272&quot;,
   &quot;type&quot;: &quot;reading&quot;,
-  &quot;label&quot;: &quot;East of Eden&quot;,
-  &quot;clean_label&quot;: &quot;East of Eden&quot;,
-  &quot;description&quot;: &quot;Pop-up &lt;i&gt;asymmetrical green juice fashion&lt;/i&gt; axe.&quot;,
-  &quot;clean_description&quot;: &quot;Pop-up asymmetrical green juice fashion axe.&quot;,
+  &quot;label&quot;: &quot;The Line of Beauty&quot;,
+  &quot;clean_label&quot;: &quot;The Line of Beauty&quot;,
+  &quot;description&quot;: &quot;Bicycle rights plaid park tousled chia green juice pug.&quot;,
+  &quot;clean_description&quot;: &quot;Bicycle rights plaid park tousled chia green juice pug.&quot;,
   &quot;authors&quot;: [
-    &quot;Curtis Pacocha&quot;
+    &quot;Fernando Murphy&quot;
   ],
-  &quot;comment&quot;: &quot;I think you ought to know I&#39;m feeling very depressed.&quot;,
-  &quot;publication&quot;: &quot;Marshall Cavendish&quot;,
-  &quot;publication_format&quot;: &quot;VHS&quot;
+  &quot;notes&quot;: &quot;I won&#39;t enjoy it.&quot;,
+  &quot;publication&quot;: &quot;Mainstream Publishing&quot;,
+  &quot;publication_format&quot;: &quot;vice&quot;
 }</pre>
       </div>
     </div>

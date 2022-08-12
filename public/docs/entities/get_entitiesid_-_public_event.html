@@ -184,7 +184,7 @@ table th, table td {
               </tr>
               <tr>
                 <td>
-                    <span class="name">short_display</span>
+                    <span class="name">display_header</span>
                 </td>
                 <td>
                   <span class="description">HTML String</span>
@@ -198,10 +198,38 @@ table th, table td {
               </tr>
               <tr>
                 <td>
-                    <span class="name">entity[date]</span>
+                    <span class="name">label</span>
                 </td>
                 <td>
-                  <span class="description">String</span>
+                  <span class="description">HTML String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">false</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">description</span>
+                </td>
+                <td>
+                  <span class="description">HTML String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">false</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">date</span>
+                </td>
+                <td>
+                  <span class="description">HTML String</span>
                 </td>
                 <td>
                   <span class="description"></span>
@@ -223,7 +251,7 @@ Host: example.org
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET /entities/e7570ac5-76e5-48cc-bd32-5163fa32e7cb</pre>
+          <pre class="request route highlight">GET /entities/2f4e7700-52c6-4b22-97a1-5c3c478c39a4</pre>
 
 
 
@@ -237,22 +265,23 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;e84318b05b7d29af4e7ec6b57181a21a&quot;
+ETag: W/&quot;22a8e6f3d946260f47a0a999456afa8c&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 16444013-cd56-4520-8c20-bd75362eedb4
-X-Runtime: 1.369708
+X-Request-Id: 61022687-88bc-4442-a07e-cbc523edb7bb
+X-Runtime: 1.216297
 Vary: Origin
-Content-Length: 357</pre>
+Content-Length: 413</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
+  &quot;id&quot;: &quot;http://example.org/entities/2f4e7700-52c6-4b22-97a1-5c3c478c39a4&quot;,
   &quot;type&quot;: &quot;public_event&quot;,
-  &quot;label&quot;: &quot;&lt;i&gt;Atlantis&lt;/i&gt;&quot;,
-  &quot;clean_label&quot;: &quot;Atlantis&quot;,
-  &quot;description&quot;: &quot;Distillery &lt;i&gt;bushwick small batch vhs wayfarers put a bird on it actually yolo fanny&lt;/i&gt; pack.&quot;,
-  &quot;clean_description&quot;: &quot;Distillery bushwick small batch vhs wayfarers put a bird on it actually yolo fanny pack.&quot;,
-  &quot;date&quot;: &quot;1968-10-12&quot;
+  &quot;label&quot;: &quot;&lt;i&gt;Discovery&lt;/i&gt;&quot;,
+  &quot;clean_label&quot;: &quot;Discovery&quot;,
+  &quot;description&quot;: &quot;Five &lt;i&gt;dollar toast blue bottle cardigan intelligentsia yuccie mlkshk&lt;/i&gt; distillery.&quot;,
+  &quot;clean_description&quot;: &quot;Five dollar toast blue bottle cardigan intelligentsia yuccie mlkshk distillery.&quot;,
+  &quot;date&quot;: &quot;1960-05-14&quot;
 }</pre>
       </div>
     </div>

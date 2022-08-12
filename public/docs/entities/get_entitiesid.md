@@ -17,7 +17,7 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /entities/32f031f4-1ed5-4273-93f3-869a7bea0cde</pre>
+<pre>GET /entities/531d3933-709d-4cfb-9fa2-c56206215331</pre>
 
 ### Response
 
@@ -30,12 +30,12 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;832eef866475dacffffd6eff21e42929&quot;
+ETag: W/&quot;ea7b7c2290a14bb3777f549556a1ba64&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 5c95e2d2-98ff-4e46-bd6f-abc7c721d51b
-X-Runtime: 1.116702
+X-Request-Id: 445849fe-0cd8-4624-96d4-270e8f5d41fb
+X-Runtime: 1.131998
 Vary: Origin
-Content-Length: 596</pre>
+Content-Length: 647</pre>
 
 #### Status
 
@@ -44,13 +44,15 @@ Content-Length: 596</pre>
 #### Body
 
 <pre>{
-  "type": "writing",
-  "label": "This Side of Paradise",
-  "clean_label": "This Side of Paradise",
-  "description": "Locavore ugh tilde quinoa loko brooklyn.",
-  "clean_description": "Locavore ugh tilde quinoa loko brooklyn.",
-  "date": "1949-04-29",
-  "notes": "You think you've got problems? What are you supposed to do if you are a manically depressed robot? No, don't try to answer that. I'm fifty thousand times more intelligent than you and even I don't know the answer. It gives me a headache just trying to think down to your level.",
-  "porposal": null,
-  "beckett_digital_manuscript_project": "http://mcclure.io/alyssa"
+  "id": "http://example.org/entities/531d3933-709d-4cfb-9fa2-c56206215331",
+  "type": "translating",
+  "label": "The World, the Flesh and the Devil",
+  "clean_label": "The World, the Flesh and the Devil",
+  "description": "Chicharrones <i>blue bottle hoodie salvia paleo normcore banjo</i> authentic.",
+  "clean_description": "Chicharrones blue bottle hoodie salvia paleo normcore banjo authentic.",
+  "author": "Agrajag",
+  "notes": "Here I am, brain the size of a planet, and they tell me to take you up to the bridge. Call that job satisfaction? 'Cos I don't.",
+  "translated_into": "arabic",
+  "translated_title": "Bistromath",
+  "translator": "Eddie the Computer"
 }</pre>

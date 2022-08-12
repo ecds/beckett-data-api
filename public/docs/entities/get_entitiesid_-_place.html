@@ -184,7 +184,7 @@ table th, table td {
               </tr>
               <tr>
                 <td>
-                    <span class="name">short_display</span>
+                    <span class="name">display_header</span>
                 </td>
                 <td>
                   <span class="description">HTML String</span>
@@ -198,21 +198,35 @@ table th, table td {
               </tr>
               <tr>
                 <td>
-                    <span class="name">entity[alternate_spellings]</span>
+                    <span class="name">label</span>
                 </td>
                 <td>
-                  <span class="description">Array</span>
+                  <span class="description">HTML String</span>
                 </td>
                 <td>
                   <span class="description"></span>
                 </td>
                 <td>
-                  <span class="description">true</span>
+                  <span class="description">false</span>
                 </td>
               </tr>
               <tr>
                 <td>
-                    <span class="name">entity[links]</span>
+                    <span class="name">description</span>
+                </td>
+                <td>
+                  <span class="description">HTML String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">false</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">alternate_spellings</span>
                 </td>
                 <td>
                   <span class="description">Array</span>
@@ -221,7 +235,21 @@ table th, table td {
                   <span class="description"></span>
                 </td>
                 <td>
-                  <span class="description">true</span>
+                  <span class="description">false</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">links</span>
+                </td>
+                <td>
+                  <span class="description">Array</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">false</span>
                 </td>
               </tr>
             </tbody>
@@ -237,7 +265,7 @@ Host: example.org
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET /entities/951fa656-9b19-4b1b-9320-3b23d8cc4f7a</pre>
+          <pre class="request route highlight">GET /entities/4b003960-fdc5-492c-97e3-099125b294e1</pre>
 
 
 
@@ -251,26 +279,27 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;d1bcdd9a1c7cc72b11eabba19a4a0060&quot;
+ETag: W/&quot;cef19c712c6098736de479381b0123c2&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: dd5deae3-a7ec-4601-8abc-5d2d6a885f73
-X-Runtime: 1.370353
+X-Request-Id: 946a22d1-d333-428d-8b79-5a8de72d2565
+X-Runtime: 1.324685
 Vary: Origin
-Content-Length: 321</pre>
+Content-Length: 417</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
+  &quot;id&quot;: &quot;http://example.org/entities/4b003960-fdc5-492c-97e3-099125b294e1&quot;,
   &quot;type&quot;: &quot;place&quot;,
-  &quot;label&quot;: &quot;The Domain of The King&quot;,
-  &quot;clean_label&quot;: &quot;The Domain of The King&quot;,
-  &quot;description&quot;: &quot;Vinyl gentrify green juice lumbersexual vice heirloom.&quot;,
-  &quot;clean_description&quot;: &quot;Vinyl gentrify green juice lumbersexual vice heirloom.&quot;,
+  &quot;label&quot;: &quot;&lt;i&gt;Belgium&lt;/i&gt;&quot;,
+  &quot;clean_label&quot;: &quot;Belgium&quot;,
+  &quot;description&quot;: &quot;Cleanse &lt;i&gt;etsy you probably haven&#39;t heard of them&lt;/i&gt; mixtape.&quot;,
+  &quot;clean_description&quot;: &quot;Cleanse etsy you probably haven&#39;t heard of them mixtape.&quot;,
   &quot;alternate_spellings&quot;: [
-    &quot;Kameron Michaels&quot;
+    &quot;Jiggly Caliente&quot;
   ],
   &quot;links&quot;: [
-    &quot;http://gusikowski.net/syreeta&quot;
+    &quot;http://hayes.co/jame.emard&quot;
   ]
 }</pre>
       </div>

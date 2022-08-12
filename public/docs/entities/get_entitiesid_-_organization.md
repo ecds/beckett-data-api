@@ -14,8 +14,11 @@
 | clean_label | String |  | true |
 | description | HTML String |  | true |
 | clean_description | String |  | true |
-| short_display | HTML String |  | true |
-| alternate_spellings | Array |  | true |
+| display_header | HTML String |  | true |
+| label | HTML String |  | false |
+| description | HTML String |  | false |
+| alternate_names | Array |  | false |
+| alternate_spellings | Array |  | false |
 | profile | HTML String |  | false |
 
 ### Request
@@ -30,7 +33,7 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /entities/61e0902d-01dd-4142-a0cc-145e87c0bee7</pre>
+<pre>GET /entities/5fda001a-42c2-4b17-8399-22d8d9a808e3</pre>
 
 ### Response
 
@@ -43,12 +46,12 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;2d75adac97f97e9d2233fc0ed201c696&quot;
+ETag: W/&quot;175cb6c68f12206dd68e1bf3ecff9d70&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 14dac23f-8f9e-42b9-967f-da8db6dc3675
-X-Runtime: 1.186051
+X-Request-Id: b154bfda-5ecb-4f4d-b2f5-b201a328fc53
+X-Runtime: 1.221776
 Vary: Origin
-Content-Length: 365</pre>
+Content-Length: 474</pre>
 
 #### Status
 
@@ -57,13 +60,15 @@ Content-Length: 365</pre>
 #### Body
 
 <pre>{
+  "id": "http://example.org/entities/5fda001a-42c2-4b17-8399-22d8d9a808e3",
   "type": "organization",
-  "label": "<i>Happi-Werld III</i>",
-  "clean_label": "Happi-Werld III",
-  "description": "Ennui <i>seitan green juice</i> readymade.",
-  "clean_description": "Ennui seitan green juice readymade.",
+  "label": "Sesefras Magna",
+  "clean_label": "Sesefras Magna",
+  "description": "Occupy <i>narwhal meh yr neutra normcore</i> cornhole.",
+  "clean_description": "Occupy narwhal meh yr neutra normcore cornhole.",
+  "alternate_names": null,
   "alternate_spellings": [
-    "Tatianna"
+    "Brook Lynn Hytes"
   ],
-  "profile": "Three thousand years of beautiful tradition, from Moses to Sandy Koufax."
+  "profile": "If they don’t keep exercising their lips, he thought, their brains start working."
 }</pre>

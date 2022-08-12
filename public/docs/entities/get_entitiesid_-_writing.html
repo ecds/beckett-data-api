@@ -184,7 +184,7 @@ table th, table td {
               </tr>
               <tr>
                 <td>
-                    <span class="name">short_display</span>
+                    <span class="name">display_header</span>
                 </td>
                 <td>
                   <span class="description">HTML String</span>
@@ -198,24 +198,10 @@ table th, table td {
               </tr>
               <tr>
                 <td>
-                    <span class="name">entity[date]</span>
+                    <span class="name">label</span>
                 </td>
                 <td>
-                  <span class="description">String</span>
-                </td>
-                <td>
-                  <span class="description"></span>
-                </td>
-                <td>
-                  <span class="description">false</span>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                    <span class="name">entity[notes]</span>
-                </td>
-                <td>
-                  <span class="description">String</span>
+                  <span class="description">HTML String</span>
                 </td>
                 <td>
                   <span class="description"></span>
@@ -226,10 +212,10 @@ table th, table td {
               </tr>
               <tr>
                 <td>
-                    <span class="name">entity[porposal]</span>
+                    <span class="name">description</span>
                 </td>
                 <td>
-                  <span class="description">String</span>
+                  <span class="description">HTML String</span>
                 </td>
                 <td>
                   <span class="description"></span>
@@ -240,10 +226,52 @@ table th, table td {
               </tr>
               <tr>
                 <td>
-                    <span class="name">entity[beckett_digital_manuscript_project]</span>
+                    <span class="name">date</span>
                 </td>
                 <td>
-                  <span class="description">String</span>
+                  <span class="description">HTML String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">false</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">links</span>
+                </td>
+                <td>
+                  <span class="description">Array</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">false</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">notes</span>
+                </td>
+                <td>
+                  <span class="description">HTML String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">false</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">porposal</span>
+                </td>
+                <td>
+                  <span class="description">HTML String</span>
                 </td>
                 <td>
                   <span class="description"></span>
@@ -265,7 +293,7 @@ Host: example.org
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET /entities/9e54da9b-96f7-42ed-8552-2131861ecac9</pre>
+          <pre class="request route highlight">GET /entities/517e27a2-a064-4763-99ff-194739add7b3</pre>
 
 
 
@@ -279,25 +307,28 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;2702f778d36399e1be5dc412dc967337&quot;
+ETag: W/&quot;07edb6d186f8fcdb2a712aa409a2c4d6&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 3f9e1303-8c74-4b2e-94ff-6a51c57396ca
-X-Runtime: 1.203153
+X-Request-Id: 8d2256e4-43f1-4d3c-924f-b64d0bd0d966
+X-Runtime: 1.059885
 Vary: Origin
-Content-Length: 478</pre>
+Content-Length: 550</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
+  &quot;id&quot;: &quot;http://example.org/entities/517e27a2-a064-4763-99ff-194739add7b3&quot;,
   &quot;type&quot;: &quot;writing&quot;,
-  &quot;label&quot;: &quot;&lt;i&gt;Quo Vadis&lt;/i&gt;&quot;,
-  &quot;clean_label&quot;: &quot;Quo Vadis&quot;,
-  &quot;description&quot;: &quot;Fanny pack flexitarian meh migas mumblecore ugh.&quot;,
-  &quot;clean_description&quot;: &quot;Fanny pack flexitarian meh migas mumblecore ugh.&quot;,
-  &quot;date&quot;: &quot;1924-02-26&quot;,
-  &quot;notes&quot;: &quot;Here I am, brain the size of a planet, and they tell me to take you up to the bridge. Call that job satisfaction? &#39;Cos I don&#39;t.&quot;,
-  &quot;porposal&quot;: null,
-  &quot;beckett_digital_manuscript_project&quot;: &quot;http://deckow-johns.biz/mariam_blanda&quot;
+  &quot;label&quot;: &quot;&lt;i&gt;A Time to Kill&lt;/i&gt;&quot;,
+  &quot;clean_label&quot;: &quot;A Time to Kill&quot;,
+  &quot;description&quot;: &quot;Single-origin &lt;i&gt;coffee diy listicle yolo humblebrag schlitz&lt;/i&gt; seitan.&quot;,
+  &quot;clean_description&quot;: &quot;Single-origin coffee diy listicle yolo humblebrag schlitz seitan.&quot;,
+  &quot;date&quot;: &quot;1928-05-22&quot;,
+  &quot;links&quot;: [
+    &quot;http://cummings.net/fay.kuhn&quot;
+  ],
+  &quot;notes&quot;: &quot;There&#39;s only one life-form as intelligent as me within thirty parsecs of here and that&#39;s me.&quot;,
+  &quot;porposal&quot;: null
 }</pre>
       </div>
     </div>

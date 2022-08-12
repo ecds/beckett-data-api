@@ -184,7 +184,7 @@ table th, table td {
               </tr>
               <tr>
                 <td>
-                    <span class="name">short_display</span>
+                    <span class="name">display_header</span>
                 </td>
                 <td>
                   <span class="description">HTML String</span>
@@ -198,38 +198,10 @@ table th, table td {
               </tr>
               <tr>
                 <td>
-                    <span class="name">entity[alternate_spellings]</span>
+                    <span class="name">label</span>
                 </td>
                 <td>
-                  <span class="description">Array</span>
-                </td>
-                <td>
-                  <span class="description"></span>
-                </td>
-                <td>
-                  <span class="description">true</span>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                    <span class="name">entity[attended_with]</span>
-                </td>
-                <td>
-                  <span class="description">Array</span>
-                </td>
-                <td>
-                  <span class="description"></span>
-                </td>
-                <td>
-                  <span class="description">true</span>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                    <span class="name">entity[director]</span>
-                </td>
-                <td>
-                  <span class="description">String</span>
+                  <span class="description">HTML String</span>
                 </td>
                 <td>
                   <span class="description"></span>
@@ -240,10 +212,10 @@ table th, table td {
               </tr>
               <tr>
                 <td>
-                    <span class="name">entity[event_type]</span>
+                    <span class="name">description</span>
                 </td>
                 <td>
-                  <span class="description">String</span>
+                  <span class="description">HTML String</span>
                 </td>
                 <td>
                   <span class="description"></span>
@@ -254,7 +226,7 @@ table th, table td {
               </tr>
               <tr>
                 <td>
-                    <span class="name">entity[performed_by]</span>
+                    <span class="name">alternate_spellings</span>
                 </td>
                 <td>
                   <span class="description">Array</span>
@@ -263,15 +235,71 @@ table th, table td {
                   <span class="description"></span>
                 </td>
                 <td>
-                  <span class="description">true</span>
+                  <span class="description">false</span>
                 </td>
               </tr>
               <tr>
                 <td>
-                    <span class="name">entity[place_date]</span>
+                    <span class="name">attended_with</span>
                 </td>
                 <td>
-                  <span class="description">String</span>
+                  <span class="description">Array</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">false</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">director</span>
+                </td>
+                <td>
+                  <span class="description">HTML String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">false</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">event_type</span>
+                </td>
+                <td>
+                  <span class="description">HTML String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">false</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">performed_by</span>
+                </td>
+                <td>
+                  <span class="description">Array</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">false</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">place_date</span>
+                </td>
+                <td>
+                  <span class="description">HTML String</span>
                 </td>
                 <td>
                   <span class="description"></span>
@@ -293,7 +321,7 @@ Host: example.org
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET /entities/33550ba2-23f6-4dd7-a803-d1fca1af8cff</pre>
+          <pre class="request route highlight">GET /entities/453a9524-2944-454d-9358-57a15ff462ad</pre>
 
 
 
@@ -307,34 +335,35 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;766bd315c356282b7550b9463ac65021&quot;
+ETag: W/&quot;d99c79010ac5d4d04ccc38160c3637a5&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: c2a9b370-885c-488f-b59f-c2a9453f9886
-X-Runtime: 1.412760
+X-Request-Id: 42eb18d0-50a0-475f-b71c-59cd7f986dcc
+X-Runtime: 1.167863
 Vary: Origin
-Content-Length: 467</pre>
+Content-Length: 564</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
+  &quot;id&quot;: &quot;http://example.org/entities/453a9524-2944-454d-9358-57a15ff462ad&quot;,
   &quot;type&quot;: &quot;attendance&quot;,
-  &quot;label&quot;: &quot;12 Years a Slave&quot;,
-  &quot;clean_label&quot;: &quot;12 Years a Slave&quot;,
-  &quot;description&quot;: &quot;Paleo keytar kale chips meh 90&#39;s five dollar toast typewriter pour-over.&quot;,
-  &quot;clean_description&quot;: &quot;Paleo keytar kale chips meh 90&#39;s five dollar toast typewriter pour-over.&quot;,
+  &quot;label&quot;: &quot;&lt;i&gt;Judgment at Nuremberg&lt;/i&gt;&quot;,
+  &quot;clean_label&quot;: &quot;Judgment at Nuremberg&quot;,
+  &quot;description&quot;: &quot;Skateboard xoxo offal fingerstache keytar viral ramps literally.&quot;,
+  &quot;clean_description&quot;: &quot;Skateboard xoxo offal fingerstache keytar viral ramps literally.&quot;,
   &quot;alternate_spellings&quot;: [
-    &quot;Yvie Oddly&quot;
+    &quot;Eureka&quot;
   ],
   &quot;attended_with&quot;: [
-    &quot;Maude Lebowski&quot;,
-    &quot;Dan Streetmentioner&quot;
+    &quot;Donny&quot;,
+    &quot;Frankie and Benjy&quot;
   ],
-  &quot;director&quot;: &quot;Trillian&quot;,
-  &quot;event_type&quot;: &quot;kogi&quot;,
+  &quot;director&quot;: &quot;Fenchurch&quot;,
+  &quot;event_type&quot;: &quot;radio_broadcast&quot;,
   &quot;performed_by&quot;: [
-    &quot;Prak&quot;
+    &quot;Rob McKenna&quot;
   ],
-  &quot;place_date&quot;: &quot;Port Charlott, 26 May 1923&quot;
+  &quot;place_date&quot;: &quot;Lessiehaven, 01 April 1959&quot;
 }</pre>
       </div>
     </div>

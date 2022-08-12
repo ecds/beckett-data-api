@@ -14,12 +14,14 @@
 | clean_label | String |  | true |
 | description | HTML String |  | true |
 | clean_description | String |  | true |
-| short_display | HTML String |  | true |
-| author | String |  | false |
-| comments | String |  | false |
-| translated_into | String |  | false |
-| translated_title | String |  | false |
-| translator | String |  | false |
+| display_header | HTML String |  | true |
+| label | HTML String |  | false |
+| description | HTML String |  | false |
+| author | HTML String |  | false |
+| notes | HTML String |  | false |
+| translated_into | HTML String |  | false |
+| translated_title | HTML String |  | false |
+| translator | HTML String |  | false |
 
 ### Request
 
@@ -33,7 +35,7 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /entities/99b816ef-6d1b-4c40-93f4-0dd7f3f0d5cf</pre>
+<pre>GET /entities/efe60f5d-bd37-4489-85a5-6a61b65ef1fc</pre>
 
 ### Response
 
@@ -46,12 +48,12 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;22fd010e5388290f746c45f310d4669a&quot;
+ETag: W/&quot;d46e73439193e74199cd733a84e207a4&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: dce2e7f5-fc84-4852-9371-3cdd69781177
-X-Runtime: 1.254147
+X-Request-Id: 46c5766e-d512-4b39-9228-fbd18e00e0f4
+X-Runtime: 1.066992
 Vary: Origin
-Content-Length: 472</pre>
+Content-Length: 549</pre>
 
 #### Status
 
@@ -60,14 +62,15 @@ Content-Length: 472</pre>
 #### Body
 
 <pre>{
+  "id": "http://example.org/entities/efe60f5d-bd37-4489-85a5-6a61b65ef1fc",
   "type": "translating",
-  "label": "The Heart Is Deceitful Above All Things",
-  "clean_label": "The Heart Is Deceitful Above All Things",
-  "description": "Forage <i>fingerstache lo-fi direct trade ramps</i> irony.",
-  "clean_description": "Forage fingerstache lo-fi direct trade ramps irony.",
-  "author": "Gag Halfrunt",
-  "comments": "I think you ought to know I'm feeling very depressed.",
-  "translated_into": "Frogstar World A",
-  "translated_title": "RW6",
-  "translator": "Roosta"
+  "label": "I Sing the Body Electric",
+  "clean_label": "I Sing the Body Electric",
+  "description": "Hella semiotics photo booth scenester helvetica mixtape.",
+  "clean_description": "Hella semiotics photo booth scenester helvetica mixtape.",
+  "author": "Pizpot Gargravarr",
+  "notes": "And then of course I've got this terrible pain in all the diodes down my left side.",
+  "translated_into": "swedish",
+  "translated_title": "Starship Titanic",
+  "translator": "Grunthos the Flatulent"
 }</pre>

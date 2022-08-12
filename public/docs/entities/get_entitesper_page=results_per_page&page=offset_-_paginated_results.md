@@ -45,15 +45,15 @@ X-Content-Type-Options: nosniff
 X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
-Link: &lt;http://example.org/entities?page=2&amp;per_page=5&gt;; rel=&#39;self&#39;, &lt;http://example.org/entities?page=1&amp;per_page=5&gt;; rel=&#39;first&#39;, &lt;http://example.org/entities?page=113&amp;per_page=5&gt;; rel=&#39;last&#39;, &lt;http://example.org/entities?page=3&amp;per_page=5&gt;; rel=&#39;next&#39;, &lt;http://example.org/entities?page=1&amp;per_page=5&gt;; rel=&#39;prev&#39;
-X-Total-Count: 562
+Link: &lt;http://example.org/entities?page=2&amp;per_page=5&gt;; rel=&#39;self&#39;, &lt;http://example.org/entities?page=1&amp;per_page=5&gt;; rel=&#39;first&#39;, &lt;http://example.org/entities?page=109&amp;per_page=5&gt;; rel=&#39;last&#39;, &lt;http://example.org/entities?page=3&amp;per_page=5&gt;; rel=&#39;next&#39;, &lt;http://example.org/entities?page=1&amp;per_page=5&gt;; rel=&#39;prev&#39;
+X-Total-Count: 541
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;69c3ea1bb6595ed2547302f1a0175ada&quot;
+ETag: W/&quot;f12ecadad6ad8dead178983f39bd43ef&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 87d7684a-4da8-4cc5-9cde-7157b5f988e3
-X-Runtime: 13.806146
+X-Request-Id: eb877d52-28cf-4d5f-a03f-edfa2bfeab10
+X-Runtime: 11.124958
 Vary: Origin
-Content-Length: 3758</pre>
+Content-Length: 3092</pre>
 
 #### Status
 
@@ -64,71 +64,49 @@ Content-Length: 3758</pre>
 <pre>{
   "entities": [
     {
-      "id": "http://example.org/entities/022ec1e1-91ae-470f-a90f-6118b9891ae7",
-      "label": "<i>Allosimanius Syneca</i>",
+      "id": "http://example.org/entities/024669ea-b6a0-43d8-aa70-8aff39dc1f3e",
+      "label": "Martinus Nijhoff Publishers",
+      "type": "publication",
+      "display_header": "Martinus Nijhoff Publishers, Dan Streetmentioner Venmo selvage whatever try-hard bespoke.",
+      "description": "Listicle <i>direct trade truffaut crucifix bicycle rights single-origin</i> coffee.",
+      "clean_label": "Martinus Nijhoff Publishers",
+      "clean_description": "Listicle direct trade truffaut crucifix bicycle rights single-origin coffee."
+    },
+    {
+      "id": "http://example.org/entities/02676cdd-8f12-46e8-b79f-1319ba659c89",
+      "label": "Death Be Not Proud",
+      "type": "reading",
+      "display_header": "Amb. Neva Beier, Death Be Not Proud, Bison Books",
+      "description": "Hella poutine leggings kogi green juice cardigan waistcoat loko.",
+      "clean_label": "Death Be Not Proud",
+      "clean_description": "Hella poutine leggings kogi green juice cardigan waistcoat loko."
+    },
+    {
+      "id": "http://example.org/entities/028882a2-c177-40a5-a9b6-57155374c5c0",
+      "label": "Preliumtarn",
       "type": "organization",
-      "short_display": "<span><i>Allosimanius Syneca</i>, Vanessa Vanjie Mateo.</span>",
-      "description": "Biodiesel echo gluten-free kogi tofu knausgaard.",
-      "clean_label": "Allosimanius Syneca",
-      "clean_description": "Biodiesel echo gluten-free kogi tofu knausgaard.",
-      "alternate_spellings": [
-        "Vanessa Vanjie Mateo"
-      ],
-      "profile": "I don't roll on Shabbos!"
+      "display_header": "<b>Preliumtarn</b>",
+      "description": "Hammock offal mlkshk aesthetic.",
+      "clean_label": "Preliumtarn",
+      "clean_description": "Hammock offal mlkshk aesthetic."
     },
     {
-      "id": "http://example.org/entities/028910e1-057f-4301-884e-451700d8f306",
-      "label": "Discovery",
-      "type": "public_event",
-      "short_display": "<span>Discovery (1938-09-19).</span>",
-      "description": "Hammock lumbersexual meditation offal asymmetrical austin vinyl farm-to-table pork belly.",
-      "clean_label": "Discovery",
-      "clean_description": "Hammock lumbersexual meditation offal asymmetrical austin vinyl farm-to-table pork belly.",
-      "date": "1938-09-19"
+      "id": "http://example.org/entities/034f04c5-ea7f-4276-9843-57eb98034e93",
+      "label": "<i>Witness for the Prosecution</i>",
+      "type": "attendance",
+      "display_header": "<strong>rehearsal</strong> <i>Witness for the Prosecution</i>",
+      "description": "Swag cardigan gluten-free narwhal lomo sustainable keytar.",
+      "clean_label": "Witness for the Prosecution",
+      "clean_description": "Swag cardigan gluten-free narwhal lomo sustainable keytar."
     },
     {
-      "id": "http://example.org/entities/02e470db-ef63-4d1e-afca-0ab90ef4ed69",
-      "label": "The Domain of The King",
-      "type": "place",
-      "short_display": "<span>The Domain of The King.</span>",
-      "description": "Poutine yolo salvia yuccie neutra.",
-      "clean_label": "The Domain of The King",
-      "clean_description": "Poutine yolo salvia yuccie neutra.",
-      "alternate_spellings": [
-        "Jiggly Caliente"
-      ],
-      "links": [
-        "http://kuvalis-macejkovic.co/frederic.fritsch"
-      ]
-    },
-    {
-      "id": "http://example.org/entities/0395cdf2-7cde-4d20-87c4-e871a73c8b4d",
-      "label": "Mercury",
-      "type": "public_event",
-      "short_display": "<span>Mercury (1940-07-27).</span>",
-      "description": "Kitsch <i>put a bird on it actually jean</i> shorts.",
-      "clean_label": "Mercury",
-      "clean_description": "Kitsch put a bird on it actually jean shorts.",
-      "date": "1940-07-27"
-    },
-    {
-      "id": "http://example.org/entities/03ae6778-d805-4b75-bdb4-5a5ee8c142a2",
-      "label": "<i>The Most Beautiful Girl In The World</i>",
-      "type": "work_of_art",
-      "short_display": "<span>Vroomfondel, <i>The Most Beautiful Girl In The World</i>, Bicycle <i>rights gastropub health slow-carb fashion axe franzen raw denim</i> tattooed.</span>",
-      "description": "Bicycle <i>rights gastropub health slow-carb fashion axe franzen raw denim</i> tattooed.",
-      "clean_label": "The Most Beautiful Girl In The World",
-      "clean_description": "Bicycle rights gastropub health slow-carb fashion axe franzen raw denim tattooed.",
-      "alternate_spellings": [
-        "Jiggly Caliente"
-      ],
-      "artist": "Vroomfondel",
-      "artist_alternate_spellings": [
-        "Alyssa Edwards"
-      ],
-      "notes": "Here I am, brain the size of a planet, and they tell me to take you up to the bridge. Call that job satisfaction? 'Cos I don't.",
-      "owner_location_accession_number_current": 222,
-      "owner_location_accession_number_contemporaneous": 980
+      "id": "http://example.org/entities/03a9f06b-0061-4ef7-9366-3e2e7d78a1c6",
+      "label": "<i>No Starch Press</i>",
+      "type": "publication",
+      "display_header": "<i>No Starch Press</i>, Ford Prefect Whatever flexitarian vice diy next level schlitz cliche retro kickstarter.",
+      "description": "Diy quinoa flexitarian irony pabst mumblecore dreamcatcher scenester.",
+      "clean_label": "No Starch Press",
+      "clean_description": "Diy quinoa flexitarian irony pabst mumblecore dreamcatcher scenester."
     }
   ],
   "aggs": {
@@ -138,51 +116,51 @@ Content-Length: 3758</pre>
       "buckets": [
         {
           "key": "place",
-          "doc_count": 126
+          "doc_count": 124
         },
         {
           "key": "person",
-          "doc_count": 92
+          "doc_count": 82
         },
         {
-          "key": "organization",
-          "doc_count": 50
-        },
-        {
-          "key": "writing",
-          "doc_count": 41
-        },
-        {
-          "key": "reading",
-          "doc_count": 40
+          "key": "publication",
+          "doc_count": 47
         },
         {
           "key": "music",
-          "doc_count": 39
+          "doc_count": 43
         },
         {
           "key": "work_of_art",
-          "doc_count": 36
+          "doc_count": 38
+        },
+        {
+          "key": "production",
+          "doc_count": 37
+        },
+        {
+          "key": "public_event",
+          "doc_count": 35
         },
         {
           "key": "attendance",
           "doc_count": 30
         },
         {
-          "key": "production",
+          "key": "organization",
           "doc_count": 29
         },
         {
-          "key": "public_event",
-          "doc_count": 28
+          "key": "reading",
+          "doc_count": 29
         },
         {
           "key": "translating",
-          "doc_count": 26
+          "doc_count": 28
         },
         {
-          "key": "publication",
-          "doc_count": 25
+          "key": "writing",
+          "doc_count": 19
         }
       ]
     }
@@ -190,12 +168,12 @@ Content-Length: 3758</pre>
   "meta": {
     "page": 2,
     "per_page": 5,
-    "page_count": 113,
-    "total_count": 562,
+    "page_count": 109,
+    "total_count": 541,
     "links": {
       "self": "http://example.org/entities?page=2&per_page=5",
       "first": "http://example.org/entities?page=1&per_page=5",
-      "last": "http://example.org/entities?page=113&per_page=5",
+      "last": "http://example.org/entities?page=109&per_page=5",
       "next": "http://example.org/entities?page=3&per_page=5",
       "prev": "http://example.org/entities?page=1&per_page=5"
     }

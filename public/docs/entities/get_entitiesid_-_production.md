@@ -14,20 +14,21 @@
 | clean_label | String |  | true |
 | description | HTML String |  | true |
 | clean_description | String |  | true |
-| short_display | HTML String |  | true |
-| alternate_spellings | Array |  | true |
-| cast | Array |  | true |
-| city | String |  | false |
-| date | String |  | false |
-| director | String |  | false |
-| links | Array |  | true |
-| notes | String |  | false |
-| personnel | Array |  | true |
-| proposal | String |  | false |
-| response | String |  | false |
-| reason | String |  | false |
-| staging_beckett | String |  | false |
-| theater | String |  | false |
+| display_header | HTML String |  | true |
+| label | HTML String |  | false |
+| description | HTML String |  | false |
+| alternate_spellings | Array |  | false |
+| cast | Array |  | false |
+| city | HTML String |  | false |
+| date | HTML String |  | false |
+| director | HTML String |  | false |
+| links | Array |  | false |
+| notes | HTML String |  | false |
+| personnel | Array |  | false |
+| proposal | HTML String |  | false |
+| response | HTML String |  | false |
+| reason | HTML String |  | false |
+| theater | HTML String |  | false |
 
 ### Request
 
@@ -41,7 +42,7 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /entities/b81c4d6d-c39d-4231-8480-83ae7af28d39</pre>
+<pre>GET /entities/57db018e-c68d-4b5e-a0f6-36caaf832b52</pre>
 
 ### Response
 
@@ -54,12 +55,12 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;1fa98933ab32a7634a23f83bb2b9b165&quot;
+ETag: W/&quot;a3126a9f05e0725ca6079d70759ab8a3&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 14c4d6fb-de37-4012-889c-8dd4b875a164
-X-Runtime: 1.149179
+X-Request-Id: b7523c36-6351-49aa-9dcb-69fc6c7b9a62
+X-Runtime: 1.176120
 Vary: Origin
-Content-Length: 868</pre>
+Content-Length: 965</pre>
 
 #### Status
 
@@ -68,31 +69,31 @@ Content-Length: 868</pre>
 #### Body
 
 <pre>{
+  "id": "http://example.org/entities/57db018e-c68d-4b5e-a0f6-36caaf832b52",
   "type": "production",
-  "label": "<i>The Help</i>",
-  "clean_label": "The Help",
-  "description": "Kale <i>chips raw denim meggings blog tote bag listicle art party</i> polaroid.",
-  "clean_description": "Kale chips raw denim meggings blog tote bag listicle art party polaroid.",
+  "label": "The Lord of the Rings: The Two Towers",
+  "clean_label": "The Lord of the Rings: The Two Towers",
+  "description": "Put a bird on it tumblr chillwave you probably haven't heard of them poutine.",
+  "clean_description": "Put a bird on it tumblr chillwave you probably haven't heard of them poutine.",
   "alternate_spellings": [
-    "Thorgy Thor"
+    "Coco Montrese"
   ],
   "cast": [
-    "Zarquon",
-    "Jackie Treehorn"
+    "Yooden Vranx",
+    "Walter Sobchak"
   ],
-  "city": "Haleyfort",
-  "date": "1970-03-24",
-  "director": "The Dude",
+  "city": "Codyshire",
+  "date": "1952-11-11",
+  "director": "Jackie Treehorn",
   "links": [
-    "http://wehner.biz/mollie.stroman"
+    "http://koelpin.biz/dania"
   ],
-  "notes": "Vinegar keffiyeh vice pop-up echo organic.",
+  "notes": "Seitan everyday selvage 8-bit offal before they sold out taxidermy austin.",
   "personnel": [
-    "Loonquawl"
+    "Hotblack Desiato"
   ],
-  "proposal": "Here I am, brain the size of a planet, and they tell me to take you up to the bridge. Call that job satisfaction? 'Cos I don't.",
-  "response": "Yeah, well, that's just, like, your opinion, man.",
+  "proposal": "And then of course I've got this terrible pain in all the diodes down my left side.",
+  "response": "It’s only half completed, I’m afraid – we haven’t even finished burying the artificial dinosaur skeletons in the crust yet.",
   "reason": null,
-  "staging_beckett": "http://graham.org/stacy",
-  "theater": "Golgafrinchan Ark Fleet Ship B"
+  "theater": "RW6"
 }</pre>

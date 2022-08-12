@@ -15,7 +15,7 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /letters/6ae6e87d-7a14-488c-9ef3-15f91a5e2edf</pre>
+<pre>GET /letters/d26fbecb-4489-489b-a1d4-9934db7d132e</pre>
 
 ### Response
 
@@ -28,12 +28,12 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;82a220c894f1a95bff12672d411761dc&quot;
+ETag: W/&quot;82cb50c5c1cc5150cef5f6de2cc77e2a&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 88972d04-2117-4dbb-ace5-163ddaf672d4
-X-Runtime: 0.715219
+X-Request-Id: f0ab2fe8-9641-45ad-9f40-7c59164c7ed2
+X-Runtime: 0.609089
 Vary: Origin
-Content-Length: 3521</pre>
+Content-Length: 2384</pre>
 
 #### Status
 
@@ -42,49 +42,69 @@ Content-Length: 3521</pre>
 #### Body
 
 <pre>{
-  "id": "http://example.org/letters/6ae6e87d-7a14-488c-9ef3-15f91a5e2edf",
-  "date": "1961-03-27T00:00:00.000-05:00",
+  "id": "http://example.org/letters/d26fbecb-4489-489b-a1d4-9934db7d132e",
+  "date": "1958-12-20T00:00:00.000-05:00",
   "recipients": [
     {
-      "id": "http://example.org/entities/1e8d3d48-a9bb-496b-a696-5fea8ad2bada.json",
+      "id": "http://example.org/entities/215302c5-7027-4c2a-a39b-9bc4c837a281.json",
       "type": "person",
-      "label": "<i>Majikthise</i>",
-      "description": "<span><i>Majikthise</i> (1912-1977). Listicle gluten-free muggle magic brunch polaroid.</span>"
+      "label": "Bogan, Aldo",
+      "description": "<b>Bogan, Aldo 1900-1989</b>"
     }
   ],
   "destinations": [
     {
-      "id": "http://example.org/entities/c914859c-65a0-49e4-815e-61686e5ca368.json",
+      "id": "http://example.org/entities/0d94f68e-2f2e-4ac4-b347-18aae96ea750.json",
       "type": "place",
-      "label": "<i>Zarss</i>",
-      "description": "<span><i>Zarss</i>.</span>"
+      "label": "<i>Milliways</i>",
+      "description": "<b><i>Milliways</i></b>"
     }
   ],
   "mentions": {
     "attendances": [
       {
-        "id": "http://example.org/entities/526f4b96-93c8-47c6-9571-5dca1b91aa1c.json",
+        "id": "http://example.org/entities/f5420b2f-65ba-411c-9ed8-f34b58353490.json",
         "type": "attendance",
-        "label": "The Lord of the Rings: The Fellowship of the Ring",
-        "description": "<span>stumptown, The Lord of the Rings: The Fellowship of the Ring, Armstrongville, 15 December 1923.</span>",
+        "label": "TRON",
+        "description": "<strong>rehearsal</strong> TRON",
         "tags": [
 
         ]
       },
       {
-        "id": "http://example.org/entities/9a0610fc-f616-41c6-8f3e-fdc13b7a4a72.json",
+        "id": "http://example.org/entities/e19bbc89-30bd-4c9f-ba14-2c2ab28855b8.json",
         "type": "attendance",
-        "label": "<i>The Great Escape</i>",
-        "description": "<span>sustainable, <i>The Great Escape</i>, Cormierhaven, 27 May 1932.</span>",
+        "label": "<i>Die Hard</i>",
+        "description": "<strong>radio_broadcast</strong> <i>Die Hard</i>",
+        "tags": [
+
+        ]
+      }
+    ],
+    "organizations": [
+      {
+        "id": "http://example.org/entities/4408b7a7-e041-4d0e-bac0-6e49032ffc93.json",
+        "type": "organization",
+        "label": "Fallia",
+        "description": "<b>Fallia</b>",
         "tags": [
 
         ]
       },
       {
-        "id": "http://example.org/entities/f6852fb3-e28f-44af-9c0c-d0cbad3f3142.json",
-        "type": "attendance",
-        "label": "<i>Donnie Darko</i>",
-        "description": "<span>pour-over, <i>Donnie Darko</i>, Shinview, 16 September 1963.</span>",
+        "id": "http://example.org/entities/02786c2b-344c-4146-8c1b-c5f7997fd4c2.json",
+        "type": "organization",
+        "label": "<i>Oglaroon</i>",
+        "description": "<b><i>Oglaroon</i></b>",
+        "tags": [
+
+        ]
+      },
+      {
+        "id": "http://example.org/entities/68a1c186-2127-4d73-ad33-51a76d7d85d1.json",
+        "type": "organization",
+        "label": "Damogran",
+        "description": "<b>Damogran</b>",
         "tags": [
 
         ]
@@ -92,68 +112,30 @@ Content-Length: 3521</pre>
     ],
     "productions": [
       {
-        "id": "http://example.org/entities/3b0c1393-52f5-40d4-8ec2-b31ccad33c7a.json",
+        "id": "http://example.org/entities/2a089a15-5e4a-48bd-9ab8-b0454f3001e6.json",
         "type": "production",
-        "label": "<i>Catch Me If You Can</i>",
-        "description": "<span><i>Catch Me If You Can</i>, dir. Jackie Treehorn, Bistromath, North Shiela, 1954-12-16.</span>",
+        "label": "Gone with the Wind",
+        "description": "Gone with the Wind, dir. Jesus Quintana, Heart of Gold, Andersonmouth, 1957-11-03",
         "tags": [
 
         ]
       }
     ],
-    "public_events": [
+    "readings": [
       {
-        "id": "http://example.org/entities/01fbe36b-75d7-4983-a966-9b79c167e4ab.json",
-        "type": "public_event",
-        "label": "Mercury",
-        "description": "<span>Mercury (1928-12-30).</span>",
+        "id": "http://example.org/entities/7a27a050-d292-4b99-a95a-257b49fc2b7d.json",
+        "type": "reading",
+        "label": "<i>Tirra Lirra by the River</i>",
+        "description": "Jc Thompson, <i>Tirra Lirra by the River</i>, New English Library",
         "tags": [
 
         ]
       },
       {
-        "id": "http://example.org/entities/72c945e9-832e-407a-b7c4-cdeaa2b03694.json",
-        "type": "public_event",
-        "label": "<i>Gemini</i>",
-        "description": "<span><i>Gemini</i> (1923-09-05).</span>",
-        "tags": [
-
-        ]
-      },
-      {
-        "id": "http://example.org/entities/edc3b6b4-1d9c-4d6f-80a0-27eb952ee121.json",
-        "type": "public_event",
-        "label": "Enterprise",
-        "description": "<span>Enterprise (1969-08-13).</span>",
-        "tags": [
-
-        ]
-      }
-    ],
-    "translatings": [
-      {
-        "id": "http://example.org/entities/1e2295f8-df9c-422a-9c89-46145f6287e0.json",
-        "type": "translating",
-        "label": "<i>The Way of All Flesh</i>",
-        "description": "<span>Random Dent, <i>The Way of All Flesh</i>, Translated into Sesefras Magna by Rob McKenna.</span>",
-        "tags": [
-
-        ]
-      },
-      {
-        "id": "http://example.org/entities/a121840a-3adb-450d-a0a4-fed93248cf53.json",
-        "type": "translating",
-        "label": "<i>All Passion Spent</i>",
-        "description": "<span>Hotblack Desiato's bodyguard, <i>All Passion Spent</i>, Translated into Krikkit by Slartibartfast.</span>",
-        "tags": [
-
-        ]
-      },
-      {
-        "id": "http://example.org/entities/d84fe409-85c7-4521-8209-9b26f1497820.json",
-        "type": "translating",
-        "label": "The Soldier's Art",
-        "description": "<span>Agda, The Soldier's Art, Translated into Rupert by Prak.</span>",
+        "id": "http://example.org/entities/7dbcde75-d1c4-46d1-986e-b67198643add.json",
+        "type": "reading",
+        "label": "Things Fall Apart",
+        "description": "Deana Murazik III, Things Fall Apart, Casemate Publishers",
         "tags": [
 
         ]

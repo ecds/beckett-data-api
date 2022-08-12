@@ -33,11 +33,11 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /letters?recipients=%3Ci%3ELyra+Erso%3C%2Fi%3E%2CRevolio+%27Gearhead%27+Clockberg%2C+Jr.</pre>
+<pre>GET /letters?recipients=O%27Conner%2C+Octavio%2CUllrich%2C+Margarett</pre>
 
 #### Query Parameters
 
-<pre>recipients: &lt;i&gt;Lyra Erso&lt;/i&gt;,Revolio &#39;Gearhead&#39; Clockberg, Jr.</pre>
+<pre>recipients: O&#39;Conner, Octavio,Ullrich, Margarett</pre>
 
 ### Response
 
@@ -49,15 +49,15 @@ X-Content-Type-Options: nosniff
 X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
-Link: &lt;http://example.org/letters?page=1&amp;recipients=%3Ci%3ELyra+Erso%3C%2Fi%3E%2CRevolio+%27Gearhead%27+Clockberg%2C+Jr.&gt;; rel=&#39;self&#39;
+Link: &lt;http://example.org/letters?page=1&amp;recipients=O%27Conner%2C+Octavio%2CUllrich%2C+Margarett&gt;; rel=&#39;self&#39;
 X-Total-Count: 0
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;a922d774a4f488c7073fecb2e2c6add8&quot;
+ETag: W/&quot;e49ad1b967e2dbae83e26b2c1dee69c2&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 5a566e91-e1b3-4f47-8328-7c7b217508eb
-X-Runtime: 2.461760
+X-Request-Id: 06bd690d-4ac6-44a0-a6bc-312c6c51ba10
+X-Runtime: 2.444662
 Vary: Origin
-Content-Length: 486</pre>
+Content-Length: 462</pre>
 
 #### Status
 
@@ -105,7 +105,7 @@ Content-Length: 486</pre>
     "page_count": 0,
     "total_count": 0,
     "links": {
-      "self": "http://example.org/letters?page=1&recipients=%3Ci%3ELyra+Erso%3C%2Fi%3E%2CRevolio+%27Gearhead%27+Clockberg%2C+Jr."
+      "self": "http://example.org/letters?page=1&recipients=O%27Conner%2C+Octavio%2CUllrich%2C+Margarett"
     }
   }
 }</pre>

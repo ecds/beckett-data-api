@@ -184,7 +184,7 @@ table th, table td {
               </tr>
               <tr>
                 <td>
-                    <span class="name">short_display</span>
+                    <span class="name">display_header</span>
                 </td>
                 <td>
                   <span class="description">HTML String</span>
@@ -198,24 +198,10 @@ table th, table td {
               </tr>
               <tr>
                 <td>
-                    <span class="name">entity[author]</span>
+                    <span class="name">label</span>
                 </td>
                 <td>
-                  <span class="description">String</span>
-                </td>
-                <td>
-                  <span class="description"></span>
-                </td>
-                <td>
-                  <span class="description">false</span>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                    <span class="name">entity[comments]</span>
-                </td>
-                <td>
-                  <span class="description">String</span>
+                  <span class="description">HTML String</span>
                 </td>
                 <td>
                   <span class="description"></span>
@@ -226,24 +212,10 @@ table th, table td {
               </tr>
               <tr>
                 <td>
-                    <span class="name">entity[translated_into]</span>
+                    <span class="name">description</span>
                 </td>
                 <td>
-                  <span class="description">String</span>
-                </td>
-                <td>
-                  <span class="description"></span>
-                </td>
-                <td>
-                  <span class="description">false</span>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                    <span class="name">entity[translated_title]</span>
-                </td>
-                <td>
-                  <span class="description">String</span>
+                  <span class="description">HTML String</span>
                 </td>
                 <td>
                   <span class="description"></span>
@@ -254,10 +226,66 @@ table th, table td {
               </tr>
               <tr>
                 <td>
-                    <span class="name">entity[translator]</span>
+                    <span class="name">author</span>
                 </td>
                 <td>
-                  <span class="description">String</span>
+                  <span class="description">HTML String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">false</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">notes</span>
+                </td>
+                <td>
+                  <span class="description">HTML String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">false</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">translated_into</span>
+                </td>
+                <td>
+                  <span class="description">HTML String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">false</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">translated_title</span>
+                </td>
+                <td>
+                  <span class="description">HTML String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">false</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">translator</span>
+                </td>
+                <td>
+                  <span class="description">HTML String</span>
                 </td>
                 <td>
                   <span class="description"></span>
@@ -279,7 +307,7 @@ Host: example.org
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET /entities/99b816ef-6d1b-4c40-93f4-0dd7f3f0d5cf</pre>
+          <pre class="request route highlight">GET /entities/efe60f5d-bd37-4489-85a5-6a61b65ef1fc</pre>
 
 
 
@@ -293,26 +321,27 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;22fd010e5388290f746c45f310d4669a&quot;
+ETag: W/&quot;d46e73439193e74199cd733a84e207a4&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: dce2e7f5-fc84-4852-9371-3cdd69781177
-X-Runtime: 1.254147
+X-Request-Id: 46c5766e-d512-4b39-9228-fbd18e00e0f4
+X-Runtime: 1.066992
 Vary: Origin
-Content-Length: 472</pre>
+Content-Length: 549</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
+  &quot;id&quot;: &quot;http://example.org/entities/efe60f5d-bd37-4489-85a5-6a61b65ef1fc&quot;,
   &quot;type&quot;: &quot;translating&quot;,
-  &quot;label&quot;: &quot;The Heart Is Deceitful Above All Things&quot;,
-  &quot;clean_label&quot;: &quot;The Heart Is Deceitful Above All Things&quot;,
-  &quot;description&quot;: &quot;Forage &lt;i&gt;fingerstache lo-fi direct trade ramps&lt;/i&gt; irony.&quot;,
-  &quot;clean_description&quot;: &quot;Forage fingerstache lo-fi direct trade ramps irony.&quot;,
-  &quot;author&quot;: &quot;Gag Halfrunt&quot;,
-  &quot;comments&quot;: &quot;I think you ought to know I&#39;m feeling very depressed.&quot;,
-  &quot;translated_into&quot;: &quot;Frogstar World A&quot;,
-  &quot;translated_title&quot;: &quot;RW6&quot;,
-  &quot;translator&quot;: &quot;Roosta&quot;
+  &quot;label&quot;: &quot;I Sing the Body Electric&quot;,
+  &quot;clean_label&quot;: &quot;I Sing the Body Electric&quot;,
+  &quot;description&quot;: &quot;Hella semiotics photo booth scenester helvetica mixtape.&quot;,
+  &quot;clean_description&quot;: &quot;Hella semiotics photo booth scenester helvetica mixtape.&quot;,
+  &quot;author&quot;: &quot;Pizpot Gargravarr&quot;,
+  &quot;notes&quot;: &quot;And then of course I&#39;ve got this terrible pain in all the diodes down my left side.&quot;,
+  &quot;translated_into&quot;: &quot;swedish&quot;,
+  &quot;translated_title&quot;: &quot;Starship Titanic&quot;,
+  &quot;translator&quot;: &quot;Grunthos the Flatulent&quot;
 }</pre>
       </div>
     </div>

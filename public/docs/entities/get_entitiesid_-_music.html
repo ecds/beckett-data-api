@@ -184,7 +184,7 @@ table th, table td {
               </tr>
               <tr>
                 <td>
-                    <span class="name">short_display</span>
+                    <span class="name">display_header</span>
                 </td>
                 <td>
                   <span class="description">HTML String</span>
@@ -198,24 +198,10 @@ table th, table td {
               </tr>
               <tr>
                 <td>
-                    <span class="name">entity[alternate_spellings]</span>
+                    <span class="name">label</span>
                 </td>
                 <td>
-                  <span class="description">Array</span>
-                </td>
-                <td>
-                  <span class="description"></span>
-                </td>
-                <td>
-                  <span class="description">true</span>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                    <span class="name">entity[composer]</span>
-                </td>
-                <td>
-                  <span class="description">String</span>
+                  <span class="description">HTML String</span>
                 </td>
                 <td>
                   <span class="description"></span>
@@ -226,24 +212,10 @@ table th, table td {
               </tr>
               <tr>
                 <td>
-                    <span class="name">entity[links]</span>
+                    <span class="name">description</span>
                 </td>
                 <td>
-                  <span class="description">Array</span>
-                </td>
-                <td>
-                  <span class="description"></span>
-                </td>
-                <td>
-                  <span class="description">true</span>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                    <span class="name">entity[notes]</span>
-                </td>
-                <td>
-                  <span class="description">String</span>
+                  <span class="description">HTML String</span>
                 </td>
                 <td>
                   <span class="description"></span>
@@ -254,7 +226,7 @@ table th, table td {
               </tr>
               <tr>
                 <td>
-                    <span class="name">entity[performed_by]</span>
+                    <span class="name">alternate_spellings</span>
                 </td>
                 <td>
                   <span class="description">Array</span>
@@ -263,7 +235,63 @@ table th, table td {
                   <span class="description"></span>
                 </td>
                 <td>
-                  <span class="description">true</span>
+                  <span class="description">false</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">composer</span>
+                </td>
+                <td>
+                  <span class="description">HTML String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">false</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">links</span>
+                </td>
+                <td>
+                  <span class="description">Array</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">false</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">notes</span>
+                </td>
+                <td>
+                  <span class="description">HTML String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">false</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">performed_by</span>
+                </td>
+                <td>
+                  <span class="description">Array</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">false</span>
                 </td>
               </tr>
             </tbody>
@@ -279,7 +307,7 @@ Host: example.org
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET /entities/37adf507-4baf-460a-bfbd-512f5b28c90d</pre>
+          <pre class="request route highlight">GET /entities/d7830cb7-8c48-4714-a390-036e20d56cdf</pre>
 
 
 
@@ -293,31 +321,30 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;86060adf3db2ac0880ba2c9a0f996e53&quot;
+ETag: W/&quot;7689001f93fb051e70d186f97babf3c9&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 97381204-3f82-4bb0-8156-8a6e281b5b3d
-X-Runtime: 1.079341
+X-Request-Id: a509b2c2-0fe4-4464-8125-3feb63d55d2a
+X-Runtime: 1.236032
 Vary: Origin
-Content-Length: 343</pre>
+Content-Length: 474</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
+  &quot;id&quot;: &quot;http://example.org/entities/d7830cb7-8c48-4714-a390-036e20d56cdf&quot;,
   &quot;type&quot;: &quot;music&quot;,
-  &quot;label&quot;: &quot;&lt;i&gt;Sexy MF&lt;/i&gt;&quot;,
-  &quot;clean_label&quot;: &quot;Sexy MF&quot;,
-  &quot;description&quot;: &quot;Next level beard drinking leggings.&quot;,
-  &quot;clean_description&quot;: &quot;Next level beard drinking leggings.&quot;,
+  &quot;label&quot;: &quot;Still Waiting&quot;,
+  &quot;clean_label&quot;: &quot;Still Waiting&quot;,
+  &quot;description&quot;: &quot;Chicharrones meggings hammock distillery.&quot;,
+  &quot;clean_description&quot;: &quot;Chicharrones meggings hammock distillery.&quot;,
   &quot;alternate_spellings&quot;: [
-    &quot;Ivy Winters&quot;
+    &quot;Willam&quot;
   ],
-  &quot;composer&quot;: &quot;Reg Nullify&quot;,
-  &quot;links&quot;: [
-
-  ],
-  &quot;notes&quot;: &quot;Until the end of time, I&#39;ll be there for you.&quot;,
+  &quot;composer&quot;: &quot;Loonquawl and Phouchg&quot;,
+  &quot;links&quot;: null,
+  &quot;notes&quot;: &quot;You&#39;re gonna have to fight your own damn war, cause we don&#39;t want to fight no more.&quot;,
   &quot;performed_by&quot;: [
-
+    &quot;Jackie Treehorn&quot;
   ]
 }</pre>
       </div>

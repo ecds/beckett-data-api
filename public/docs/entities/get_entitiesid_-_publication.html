@@ -184,7 +184,7 @@ table th, table td {
               </tr>
               <tr>
                 <td>
-                    <span class="name">short_display</span>
+                    <span class="name">display_header</span>
                 </td>
                 <td>
                   <span class="description">HTML String</span>
@@ -198,24 +198,10 @@ table th, table td {
               </tr>
               <tr>
                 <td>
-                    <span class="name">entity[author]</span>
+                    <span class="name">label</span>
                 </td>
                 <td>
-                  <span class="description">String</span>
-                </td>
-                <td>
-                  <span class="description"></span>
-                </td>
-                <td>
-                  <span class="description">false</span>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                    <span class="name">entity[notes]</span>
-                </td>
-                <td>
-                  <span class="description">String</span>
+                  <span class="description">HTML String</span>
                 </td>
                 <td>
                   <span class="description"></span>
@@ -226,10 +212,10 @@ table th, table td {
               </tr>
               <tr>
                 <td>
-                    <span class="name">entity[publication_information]</span>
+                    <span class="name">description</span>
                 </td>
                 <td>
-                  <span class="description">String</span>
+                  <span class="description">HTML String</span>
                 </td>
                 <td>
                   <span class="description"></span>
@@ -240,10 +226,52 @@ table th, table td {
               </tr>
               <tr>
                 <td>
-                    <span class="name">entity[translator]</span>
+                    <span class="name">authors</span>
                 </td>
                 <td>
-                  <span class="description">String</span>
+                  <span class="description">Array</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">false</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">notes</span>
+                </td>
+                <td>
+                  <span class="description">HTML String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">false</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">publication_information</span>
+                </td>
+                <td>
+                  <span class="description">HTML String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">false</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">translator</span>
+                </td>
+                <td>
+                  <span class="description">HTML String</span>
                 </td>
                 <td>
                   <span class="description"></span>
@@ -265,7 +293,7 @@ Host: example.org
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET /entities/e20e2e0f-905c-478e-9059-83c9ca0c1eea</pre>
+          <pre class="request route highlight">GET /entities/492f277a-88fe-442e-9313-dc8df2a48101</pre>
 
 
 
@@ -279,25 +307,28 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;baf379006ffd1ae896ed7ee09a92c3e4&quot;
+ETag: W/&quot;6316c86bbe7cc751a216c45065154d6e&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 538f104c-56ba-4484-bef4-8f33a8481edd
-X-Runtime: 1.285482
+X-Request-Id: c49021bc-594b-43bb-9d41-f0854b43a050
+X-Runtime: 1.270537
 Vary: Origin
-Content-Length: 419</pre>
+Content-Length: 646</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
+  &quot;id&quot;: &quot;http://example.org/entities/492f277a-88fe-442e-9313-dc8df2a48101&quot;,
   &quot;type&quot;: &quot;publication&quot;,
-  &quot;label&quot;: &quot;Oglethorpe&quot;,
-  &quot;clean_label&quot;: &quot;Oglethorpe&quot;,
-  &quot;description&quot;: &quot;Scenester umami five dollar toast gluten-free distillery.&quot;,
-  &quot;clean_description&quot;: &quot;Scenester umami five dollar toast gluten-free distillery.&quot;,
-  &quot;author&quot;: &quot;Jackie Treehorn&quot;,
-  &quot;notes&quot;: &quot;I won&#39;t enjoy it.&quot;,
-  &quot;publication_information&quot;: &quot;Direct trade selvage tacos skateboard hashtag health williamsburg small batch.&quot;,
-  &quot;translator&quot;: &quot;Lunkwill and Fook&quot;
+  &quot;label&quot;: &quot;&lt;i&gt;Marshall Pickering&lt;/i&gt;&quot;,
+  &quot;clean_label&quot;: &quot;Marshall Pickering&quot;,
+  &quot;description&quot;: &quot;Cred &lt;i&gt;street ethical blog try-hard photo booth single-origin coffee roof&lt;/i&gt; listicle.&quot;,
+  &quot;clean_description&quot;: &quot;Cred street ethical blog try-hard photo booth single-origin coffee roof listicle.&quot;,
+  &quot;authors&quot;: [
+    &quot;The Big Lebowski&quot;
+  ],
+  &quot;notes&quot;: &quot;And then of course I&#39;ve got this terrible pain in all the diodes down my left side.&quot;,
+  &quot;publication_information&quot;: &quot;Migas xoxo shabby chic kombucha pop-up swag tacos.&quot;,
+  &quot;translator&quot;: &quot;Deep Thought&quot;
 }</pre>
       </div>
     </div>

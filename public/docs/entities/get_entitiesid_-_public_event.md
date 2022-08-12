@@ -14,8 +14,10 @@
 | clean_label | String |  | true |
 | description | HTML String |  | true |
 | clean_description | String |  | true |
-| short_display | HTML String |  | true |
-| date | String |  | false |
+| display_header | HTML String |  | true |
+| label | HTML String |  | false |
+| description | HTML String |  | false |
+| date | HTML String |  | false |
 
 ### Request
 
@@ -29,7 +31,7 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /entities/e7570ac5-76e5-48cc-bd32-5163fa32e7cb</pre>
+<pre>GET /entities/2f4e7700-52c6-4b22-97a1-5c3c478c39a4</pre>
 
 ### Response
 
@@ -42,12 +44,12 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;e84318b05b7d29af4e7ec6b57181a21a&quot;
+ETag: W/&quot;22a8e6f3d946260f47a0a999456afa8c&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 16444013-cd56-4520-8c20-bd75362eedb4
-X-Runtime: 1.369708
+X-Request-Id: 61022687-88bc-4442-a07e-cbc523edb7bb
+X-Runtime: 1.216297
 Vary: Origin
-Content-Length: 357</pre>
+Content-Length: 413</pre>
 
 #### Status
 
@@ -56,10 +58,11 @@ Content-Length: 357</pre>
 #### Body
 
 <pre>{
+  "id": "http://example.org/entities/2f4e7700-52c6-4b22-97a1-5c3c478c39a4",
   "type": "public_event",
-  "label": "<i>Atlantis</i>",
-  "clean_label": "Atlantis",
-  "description": "Distillery <i>bushwick small batch vhs wayfarers put a bird on it actually yolo fanny</i> pack.",
-  "clean_description": "Distillery bushwick small batch vhs wayfarers put a bird on it actually yolo fanny pack.",
-  "date": "1968-10-12"
+  "label": "<i>Discovery</i>",
+  "clean_label": "Discovery",
+  "description": "Five <i>dollar toast blue bottle cardigan intelligentsia yuccie mlkshk</i> distillery.",
+  "clean_description": "Five dollar toast blue bottle cardigan intelligentsia yuccie mlkshk distillery.",
+  "date": "1960-05-14"
 }</pre>

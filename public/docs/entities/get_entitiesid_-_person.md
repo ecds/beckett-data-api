@@ -14,13 +14,15 @@
 | clean_label | String |  | true |
 | description | HTML String |  | true |
 | clean_description | String |  | true |
-| short_display | HTML String |  | true |
-| alternate_spellings | Array |  | true |
-| finding_aids | Array |  | true |
-| first_name | String |  | false |
-| last_name | String |  | false |
-| life_dates | String |  | false |
-| links | Array |  | true |
+| display_header | HTML String |  | true |
+| label | HTML String |  | false |
+| description | HTML String |  | false |
+| alternate_names | Array |  | false |
+| alternate_spellings | Array |  | false |
+| first_name | HTML String |  | false |
+| last_name | HTML String |  | false |
+| life_dates | HTML String |  | false |
+| links | Array |  | false |
 | profile | HTML String |  | false |
 
 ### Request
@@ -35,7 +37,7 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /entities/49c3aa6c-de67-4c6a-8d1b-661f3d3fcc4d</pre>
+<pre>GET /entities/2a4a4da8-ce47-4742-9225-9fc73f8a0e0d</pre>
 
 ### Response
 
@@ -48,12 +50,12 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;fd707fccb56ba97ecc0ce1f4bdc8ec4b&quot;
+ETag: W/&quot;12098a2224e80cf975ddbfda01fc530e&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 6a371f9d-3bf5-438b-ad78-154305bd54e7
-X-Runtime: 1.261688
+X-Request-Id: 8c6ef1a9-bd02-40b1-aa81-02238ebce92e
+X-Runtime: 1.069236
 Vary: Origin
-Content-Length: 473</pre>
+Content-Length: 965</pre>
 
 #### Status
 
@@ -62,22 +64,23 @@ Content-Length: 473</pre>
 #### Body
 
 <pre>{
+  "id": "http://example.org/entities/2a4a4da8-ce47-4742-9225-9fc73f8a0e0d",
   "type": "person",
-  "label": "Bunny Lebowski",
-  "clean_label": "Bunny Lebowski",
-  "description": "Leggings <i>knausgaard pbr&b xoxo</i> seitan.",
-  "clean_description": "Leggings knausgaard pbr&amp;b xoxo seitan.",
+  "label": "Windler, Tobias",
+  "clean_label": "Windler, Tobias",
+  "description": "You think you've got problems? What are you supposed to do if you are a manically depressed robot? No, don't try to answer that. I'm fifty thousand times more intelligent than you and even I don't know the answer. It gives me a headache just trying to think down to your level.",
+  "clean_description": "You think you've got problems? What are you supposed to do if you are a manically depressed robot? No, don't try to answer that. I'm fifty thousand times more intelligent than you and even I don't know the answer. It gives me a headache just trying to think down to your level.",
+  "alternate_names": [
+    "Alexis Michelle"
+  ],
   "alternate_spellings": [
-    "Cynthia Lee Fontaine"
+    "Ra'jah O'Hara"
   ],
-  "finding_aids": [
-    "http://bins.net/jules"
-  ],
-  "first_name": "Lovetta",
-  "last_name": "Braun",
-  "life_dates": "(1918-1977)",
+  "first_name": "Tobias",
+  "last_name": "Windler",
+  "life_dates": "1922-1971",
   "links": [
-    "http://bashirian.net/stephany"
+    "http://braun-lebsack.info/wes"
   ],
-  "profile": "Obviously, you're not a golfer"
+  "profile": "Earth: Mostly Harmless"
 }</pre>

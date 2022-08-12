@@ -30,11 +30,11 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /entities?search=leggings</pre>
+<pre>GET /entities?search=mustache</pre>
 
 #### Query Parameters
 
-<pre>search: leggings</pre>
+<pre>search: mustache</pre>
 
 ### Response
 
@@ -46,13 +46,13 @@ X-Content-Type-Options: nosniff
 X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
-Link: &lt;http://example.org/entities?page=1&amp;search=leggings&gt;; rel=&#39;self&#39;
+Link: &lt;http://example.org/entities?page=1&amp;search=mustache&gt;; rel=&#39;self&#39;
 X-Total-Count: 0
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;97407f83f594ab82b9501adfa9b333d9&quot;
+ETag: W/&quot;a5cf5980613df204a0a60459e5c713ba&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: ff20cf55-5806-4348-a0a7-ffb976f62e21
-X-Runtime: 12.048217
+X-Request-Id: 1f11419c-7852-4e4f-a424-d0386f4e75d8
+X-Runtime: 11.606529
 Vary: Origin
 Content-Length: 242</pre>
 
@@ -81,7 +81,7 @@ Content-Length: 242</pre>
     "page_count": 0,
     "total_count": 0,
     "links": {
-      "self": "http://example.org/entities?page=1&search=leggings"
+      "self": "http://example.org/entities?page=1&search=mustache"
     }
   }
 }</pre>

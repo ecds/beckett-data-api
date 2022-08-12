@@ -184,7 +184,7 @@ table th, table td {
               </tr>
               <tr>
                 <td>
-                    <span class="name">short_display</span>
+                    <span class="name">display_header</span>
                 </td>
                 <td>
                   <span class="description">HTML String</span>
@@ -198,7 +198,35 @@ table th, table td {
               </tr>
               <tr>
                 <td>
-                    <span class="name">entity[alternate_spellings]</span>
+                    <span class="name">label</span>
+                </td>
+                <td>
+                  <span class="description">HTML String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">false</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">description</span>
+                </td>
+                <td>
+                  <span class="description">HTML String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">false</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">alternate_spellings</span>
                 </td>
                 <td>
                   <span class="description">Array</span>
@@ -207,12 +235,12 @@ table th, table td {
                   <span class="description"></span>
                 </td>
                 <td>
-                  <span class="description">true</span>
+                  <span class="description">false</span>
                 </td>
               </tr>
               <tr>
                 <td>
-                    <span class="name">entity[cast]</span>
+                    <span class="name">cast</span>
                 </td>
                 <td>
                   <span class="description">Array</span>
@@ -221,15 +249,15 @@ table th, table td {
                   <span class="description"></span>
                 </td>
                 <td>
-                  <span class="description">true</span>
+                  <span class="description">false</span>
                 </td>
               </tr>
               <tr>
                 <td>
-                    <span class="name">entity[city]</span>
+                    <span class="name">city</span>
                 </td>
                 <td>
-                  <span class="description">String</span>
+                  <span class="description">HTML String</span>
                 </td>
                 <td>
                   <span class="description"></span>
@@ -240,24 +268,10 @@ table th, table td {
               </tr>
               <tr>
                 <td>
-                    <span class="name">entity[date]</span>
+                    <span class="name">date</span>
                 </td>
                 <td>
-                  <span class="description">String</span>
-                </td>
-                <td>
-                  <span class="description"></span>
-                </td>
-                <td>
-                  <span class="description">false</span>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                    <span class="name">entity[director]</span>
-                </td>
-                <td>
-                  <span class="description">String</span>
+                  <span class="description">HTML String</span>
                 </td>
                 <td>
                   <span class="description"></span>
@@ -268,7 +282,21 @@ table th, table td {
               </tr>
               <tr>
                 <td>
-                    <span class="name">entity[links]</span>
+                    <span class="name">director</span>
+                </td>
+                <td>
+                  <span class="description">HTML String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">false</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">links</span>
                 </td>
                 <td>
                   <span class="description">Array</span>
@@ -277,15 +305,15 @@ table th, table td {
                   <span class="description"></span>
                 </td>
                 <td>
-                  <span class="description">true</span>
+                  <span class="description">false</span>
                 </td>
               </tr>
               <tr>
                 <td>
-                    <span class="name">entity[notes]</span>
+                    <span class="name">notes</span>
                 </td>
                 <td>
-                  <span class="description">String</span>
+                  <span class="description">HTML String</span>
                 </td>
                 <td>
                   <span class="description"></span>
@@ -296,7 +324,7 @@ table th, table td {
               </tr>
               <tr>
                 <td>
-                    <span class="name">entity[personnel]</span>
+                    <span class="name">personnel</span>
                 </td>
                 <td>
                   <span class="description">Array</span>
@@ -305,15 +333,15 @@ table th, table td {
                   <span class="description"></span>
                 </td>
                 <td>
-                  <span class="description">true</span>
+                  <span class="description">false</span>
                 </td>
               </tr>
               <tr>
                 <td>
-                    <span class="name">entity[proposal]</span>
+                    <span class="name">proposal</span>
                 </td>
                 <td>
-                  <span class="description">String</span>
+                  <span class="description">HTML String</span>
                 </td>
                 <td>
                   <span class="description"></span>
@@ -324,24 +352,10 @@ table th, table td {
               </tr>
               <tr>
                 <td>
-                    <span class="name">entity[response]</span>
+                    <span class="name">response</span>
                 </td>
                 <td>
-                  <span class="description">String</span>
-                </td>
-                <td>
-                  <span class="description"></span>
-                </td>
-                <td>
-                  <span class="description">false</span>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                    <span class="name">entity[reason]</span>
-                </td>
-                <td>
-                  <span class="description">String</span>
+                  <span class="description">HTML String</span>
                 </td>
                 <td>
                   <span class="description"></span>
@@ -352,10 +366,10 @@ table th, table td {
               </tr>
               <tr>
                 <td>
-                    <span class="name">entity[staging_beckett]</span>
+                    <span class="name">reason</span>
                 </td>
                 <td>
-                  <span class="description">String</span>
+                  <span class="description">HTML String</span>
                 </td>
                 <td>
                   <span class="description"></span>
@@ -366,10 +380,10 @@ table th, table td {
               </tr>
               <tr>
                 <td>
-                    <span class="name">entity[theater]</span>
+                    <span class="name">theater</span>
                 </td>
                 <td>
-                  <span class="description">String</span>
+                  <span class="description">HTML String</span>
                 </td>
                 <td>
                   <span class="description"></span>
@@ -391,7 +405,7 @@ Host: example.org
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET /entities/b81c4d6d-c39d-4231-8480-83ae7af28d39</pre>
+          <pre class="request route highlight">GET /entities/57db018e-c68d-4b5e-a0f6-36caaf832b52</pre>
 
 
 
@@ -405,43 +419,43 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;1fa98933ab32a7634a23f83bb2b9b165&quot;
+ETag: W/&quot;a3126a9f05e0725ca6079d70759ab8a3&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 14c4d6fb-de37-4012-889c-8dd4b875a164
-X-Runtime: 1.149179
+X-Request-Id: b7523c36-6351-49aa-9dcb-69fc6c7b9a62
+X-Runtime: 1.176120
 Vary: Origin
-Content-Length: 868</pre>
+Content-Length: 965</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
+  &quot;id&quot;: &quot;http://example.org/entities/57db018e-c68d-4b5e-a0f6-36caaf832b52&quot;,
   &quot;type&quot;: &quot;production&quot;,
-  &quot;label&quot;: &quot;&lt;i&gt;The Help&lt;/i&gt;&quot;,
-  &quot;clean_label&quot;: &quot;The Help&quot;,
-  &quot;description&quot;: &quot;Kale &lt;i&gt;chips raw denim meggings blog tote bag listicle art party&lt;/i&gt; polaroid.&quot;,
-  &quot;clean_description&quot;: &quot;Kale chips raw denim meggings blog tote bag listicle art party polaroid.&quot;,
+  &quot;label&quot;: &quot;The Lord of the Rings: The Two Towers&quot;,
+  &quot;clean_label&quot;: &quot;The Lord of the Rings: The Two Towers&quot;,
+  &quot;description&quot;: &quot;Put a bird on it tumblr chillwave you probably haven&#39;t heard of them poutine.&quot;,
+  &quot;clean_description&quot;: &quot;Put a bird on it tumblr chillwave you probably haven&#39;t heard of them poutine.&quot;,
   &quot;alternate_spellings&quot;: [
-    &quot;Thorgy Thor&quot;
+    &quot;Coco Montrese&quot;
   ],
   &quot;cast&quot;: [
-    &quot;Zarquon&quot;,
-    &quot;Jackie Treehorn&quot;
+    &quot;Yooden Vranx&quot;,
+    &quot;Walter Sobchak&quot;
   ],
-  &quot;city&quot;: &quot;Haleyfort&quot;,
-  &quot;date&quot;: &quot;1970-03-24&quot;,
-  &quot;director&quot;: &quot;The Dude&quot;,
+  &quot;city&quot;: &quot;Codyshire&quot;,
+  &quot;date&quot;: &quot;1952-11-11&quot;,
+  &quot;director&quot;: &quot;Jackie Treehorn&quot;,
   &quot;links&quot;: [
-    &quot;http://wehner.biz/mollie.stroman&quot;
+    &quot;http://koelpin.biz/dania&quot;
   ],
-  &quot;notes&quot;: &quot;Vinegar keffiyeh vice pop-up echo organic.&quot;,
+  &quot;notes&quot;: &quot;Seitan everyday selvage 8-bit offal before they sold out taxidermy austin.&quot;,
   &quot;personnel&quot;: [
-    &quot;Loonquawl&quot;
+    &quot;Hotblack Desiato&quot;
   ],
-  &quot;proposal&quot;: &quot;Here I am, brain the size of a planet, and they tell me to take you up to the bridge. Call that job satisfaction? &#39;Cos I don&#39;t.&quot;,
-  &quot;response&quot;: &quot;Yeah, well, that&#39;s just, like, your opinion, man.&quot;,
+  &quot;proposal&quot;: &quot;And then of course I&#39;ve got this terrible pain in all the diodes down my left side.&quot;,
+  &quot;response&quot;: &quot;It’s only half completed, I’m afraid – we haven’t even finished burying the artificial dinosaur skeletons in the crust yet.&quot;,
   &quot;reason&quot;: null,
-  &quot;staging_beckett&quot;: &quot;http://graham.org/stacy&quot;,
-  &quot;theater&quot;: &quot;Golgafrinchan Ark Fleet Ship B&quot;
+  &quot;theater&quot;: &quot;RW6&quot;
 }</pre>
       </div>
     </div>

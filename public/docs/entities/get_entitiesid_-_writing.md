@@ -14,11 +14,13 @@
 | clean_label | String |  | true |
 | description | HTML String |  | true |
 | clean_description | String |  | true |
-| short_display | HTML String |  | true |
-| date | String |  | false |
-| notes | String |  | false |
-| porposal | String |  | false |
-| beckett_digital_manuscript_project | String |  | false |
+| display_header | HTML String |  | true |
+| label | HTML String |  | false |
+| description | HTML String |  | false |
+| date | HTML String |  | false |
+| links | Array |  | false |
+| notes | HTML String |  | false |
+| porposal | HTML String |  | false |
 
 ### Request
 
@@ -32,7 +34,7 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /entities/9e54da9b-96f7-42ed-8552-2131861ecac9</pre>
+<pre>GET /entities/517e27a2-a064-4763-99ff-194739add7b3</pre>
 
 ### Response
 
@@ -45,12 +47,12 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;2702f778d36399e1be5dc412dc967337&quot;
+ETag: W/&quot;07edb6d186f8fcdb2a712aa409a2c4d6&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 3f9e1303-8c74-4b2e-94ff-6a51c57396ca
-X-Runtime: 1.203153
+X-Request-Id: 8d2256e4-43f1-4d3c-924f-b64d0bd0d966
+X-Runtime: 1.059885
 Vary: Origin
-Content-Length: 478</pre>
+Content-Length: 550</pre>
 
 #### Status
 
@@ -59,13 +61,16 @@ Content-Length: 478</pre>
 #### Body
 
 <pre>{
+  "id": "http://example.org/entities/517e27a2-a064-4763-99ff-194739add7b3",
   "type": "writing",
-  "label": "<i>Quo Vadis</i>",
-  "clean_label": "Quo Vadis",
-  "description": "Fanny pack flexitarian meh migas mumblecore ugh.",
-  "clean_description": "Fanny pack flexitarian meh migas mumblecore ugh.",
-  "date": "1924-02-26",
-  "notes": "Here I am, brain the size of a planet, and they tell me to take you up to the bridge. Call that job satisfaction? 'Cos I don't.",
-  "porposal": null,
-  "beckett_digital_manuscript_project": "http://deckow-johns.biz/mariam_blanda"
+  "label": "<i>A Time to Kill</i>",
+  "clean_label": "A Time to Kill",
+  "description": "Single-origin <i>coffee diy listicle yolo humblebrag schlitz</i> seitan.",
+  "clean_description": "Single-origin coffee diy listicle yolo humblebrag schlitz seitan.",
+  "date": "1928-05-22",
+  "links": [
+    "http://cummings.net/fay.kuhn"
+  ],
+  "notes": "There's only one life-form as intelligent as me within thirty parsecs of here and that's me.",
+  "porposal": null
 }</pre>

@@ -14,13 +14,15 @@
 | clean_label | String |  | true |
 | description | HTML String |  | true |
 | clean_description | String |  | true |
-| short_display | HTML String |  | true |
-| alternate_spellings | Array |  | true |
-| attended_with | Array |  | true |
-| director | String |  | false |
-| event_type | String |  | false |
-| performed_by | Array |  | true |
-| place_date | String |  | false |
+| display_header | HTML String |  | true |
+| label | HTML String |  | false |
+| description | HTML String |  | false |
+| alternate_spellings | Array |  | false |
+| attended_with | Array |  | false |
+| director | HTML String |  | false |
+| event_type | HTML String |  | false |
+| performed_by | Array |  | false |
+| place_date | HTML String |  | false |
 
 ### Request
 
@@ -34,7 +36,7 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /entities/33550ba2-23f6-4dd7-a803-d1fca1af8cff</pre>
+<pre>GET /entities/453a9524-2944-454d-9358-57a15ff462ad</pre>
 
 ### Response
 
@@ -47,12 +49,12 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;766bd315c356282b7550b9463ac65021&quot;
+ETag: W/&quot;d99c79010ac5d4d04ccc38160c3637a5&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: c2a9b370-885c-488f-b59f-c2a9453f9886
-X-Runtime: 1.412760
+X-Request-Id: 42eb18d0-50a0-475f-b71c-59cd7f986dcc
+X-Runtime: 1.167863
 Vary: Origin
-Content-Length: 467</pre>
+Content-Length: 564</pre>
 
 #### Status
 
@@ -61,22 +63,23 @@ Content-Length: 467</pre>
 #### Body
 
 <pre>{
+  "id": "http://example.org/entities/453a9524-2944-454d-9358-57a15ff462ad",
   "type": "attendance",
-  "label": "12 Years a Slave",
-  "clean_label": "12 Years a Slave",
-  "description": "Paleo keytar kale chips meh 90's five dollar toast typewriter pour-over.",
-  "clean_description": "Paleo keytar kale chips meh 90's five dollar toast typewriter pour-over.",
+  "label": "<i>Judgment at Nuremberg</i>",
+  "clean_label": "Judgment at Nuremberg",
+  "description": "Skateboard xoxo offal fingerstache keytar viral ramps literally.",
+  "clean_description": "Skateboard xoxo offal fingerstache keytar viral ramps literally.",
   "alternate_spellings": [
-    "Yvie Oddly"
+    "Eureka"
   ],
   "attended_with": [
-    "Maude Lebowski",
-    "Dan Streetmentioner"
+    "Donny",
+    "Frankie and Benjy"
   ],
-  "director": "Trillian",
-  "event_type": "kogi",
+  "director": "Fenchurch",
+  "event_type": "radio_broadcast",
   "performed_by": [
-    "Prak"
+    "Rob McKenna"
   ],
-  "place_date": "Port Charlott, 26 May 1923"
+  "place_date": "Lessiehaven, 01 April 1959"
 }</pre>

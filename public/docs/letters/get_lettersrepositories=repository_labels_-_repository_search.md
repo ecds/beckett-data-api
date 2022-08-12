@@ -33,11 +33,11 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /letters?repositories=West+Goyette</pre>
+<pre>GET /letters?repositories=Gorczany+Academy</pre>
 
 #### Query Parameters
 
-<pre>repositories: West Goyette</pre>
+<pre>repositories: Gorczany Academy</pre>
 
 ### Response
 
@@ -49,15 +49,15 @@ X-Content-Type-Options: nosniff
 X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
-Link: &lt;http://example.org/letters?page=1&amp;repositories=West+Goyette&gt;; rel=&#39;self&#39;
-X-Total-Count: 18
+Link: &lt;http://example.org/letters?page=1&amp;repositories=Gorczany+Academy&gt;; rel=&#39;self&#39;
+X-Total-Count: 15
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;25abde6b370ea7da38b1132ac88ecb52&quot;
+ETag: W/&quot;177c531590598b2242d591c90a20e42d&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 51172dd4-505d-4bd7-a1db-13038cb657fe
-X-Runtime: 2.181565
+X-Request-Id: f1370708-ebdc-45b5-a21f-11fc44b09d77
+X-Runtime: 2.677657
 Vary: Origin
-Content-Length: 35514</pre>
+Content-Length: 26705</pre>
 
 #### Status
 
@@ -68,864 +68,11 @@ Content-Length: 35514</pre>
 <pre>{
   "letters": [
     {
-      "id": "http://example.org/letters/512fd22d-bf79-4518-a9e2-8c7b636bf905",
-      "date": "1957-03-28T00:00:00.000-05:00",
-      "label": "28 March 1957 - Majikthise",
+      "id": "http://example.org/letters/aaab42fd-f84a-42e2-88fb-7759df6485fa",
+      "date": "1957-10-06T00:00:00.000-04:00",
+      "label": "06 October 1957 - Zulauf, Jefferey",
       "recipients": [
-        "Majikthise"
-      ],
-      "destinations": [
-        "<i>Sector ZZ9 Plural Z Alpha</i>"
-      ],
-      "origins": null,
-      "mentions": {
-        "organizations": [
-          {
-            "type": "organization",
-            "id": "http://example.org/entities/a38532a2-e392-404c-8d23-3f41d5317914",
-            "display": "<span>Argabuthon, Willam.</span>"
-          },
-          {
-            "type": "organization",
-            "id": "http://example.org/entities/eeb32f04-0109-4cc4-a4c0-d1fc9b859cf5",
-            "display": "<span>Preliumtarn, Monet X Change.</span>"
-          }
-        ],
-        "translatings": [
-          {
-            "type": "translating",
-            "id": "http://example.org/entities/e853c227-86b5-4a87-9260-10cfe1900d57",
-            "display": "<span>Arthur Dent, The Wealth of Nations, Translated into Frogstar World A by Dan Streetmentioner.</span>"
-          }
-        ],
-        "work_of_arts": [
-          {
-            "type": "work_of_art",
-            "id": "http://example.org/entities/56a02b08-9cba-474c-9a6d-22f7a9b95b21",
-            "display": "<span>Arthur Dent, Kiss, Waistcoat <i>chambray chicharrones marfa hella health</i> vegan.</span>"
-          },
-          {
-            "type": "work_of_art",
-            "id": "http://example.org/entities/c57020a6-625f-4a28-bd75-49760e8d44b0",
-            "display": "<span>Paula Nancy Millstone Jennings, Funk n' Roll, Wes <i>anderson viral vhs normcore phlogiston slow-carb put a bird on it</i> 8-bit.</span>"
-          },
-          {
-            "type": "work_of_art",
-            "id": "http://example.org/entities/d92197b7-c1be-410a-a1e7-20f5daf4a599",
-            "display": "<span>Hactar, <i>Crimson and Clover</i>, Vice yr hammock tacos.</span>"
-          }
-        ],
-        "writings": [
-          {
-            "type": "writing",
-            "id": "http://example.org/entities/49ff4055-d95e-4c72-8a84-297918e3ae5e",
-            "display": "<span>The Glory and the Dream.</span>"
-          }
-        ]
-      }
-    },
-    {
-      "id": "http://example.org/letters/425d6f6f-d178-4a58-bb11-989774ed9c57",
-      "date": "1957-08-09T00:00:00.000-04:00",
-      "label": "09 August 1957 - <i>Elizabeth Hoover</i>",
-      "recipients": [
-        "Elizabeth Hoover"
-      ],
-      "destinations": [
-        "<i>Ysllodins</i>"
-      ],
-      "origins": null,
-      "mentions": {
-        "attendances": [
-          {
-            "type": "attendance",
-            "id": "http://example.org/entities/95f2e477-385b-4cdf-b8de-f985f240d43e",
-            "display": "<span>XOXO, <i>The Great Dictator</i>, Port Hershel, 14 April 1925.</span>"
-          },
-          {
-            "type": "attendance",
-            "id": "http://example.org/entities/af7128b0-610b-49c7-8c2f-b0d9a5901ca0",
-            "display": "<span>swag, <i>Star Wars: Episode IV – A New Hope</i>, Port Buddyfurt, 13 October 1966.</span>"
-          }
-        ],
-        "public_events": [
-          {
-            "type": "public_event",
-            "id": "http://example.org/entities/0174598f-a50a-41c8-a6a4-c34f091f6ba7",
-            "display": "<span>Challenger (1968-03-12).</span>"
-          },
-          {
-            "type": "public_event",
-            "id": "http://example.org/entities/f9315524-3d16-4643-9001-af8765da6f24",
-            "display": "<span>Mercury (1965-07-28).</span>"
-          }
-        ],
-        "readings": [
-          {
-            "type": "reading",
-            "id": "http://example.org/entities/88db4d84-3cce-4b8e-98c0-bd851d15d568",
-            "display": "<span>Maryanna Marks, <i>Where Angels Fear to Tread</i>, Lethe Press.</span>"
-          },
-          {
-            "type": "reading",
-            "id": "http://example.org/entities/9344178f-3416-4890-aa4c-f4d25e8da8e6",
-            "display": "<span>Louie Hintz, After Many a Summer Dies the Swan, McClelland and Stewart.</span>"
-          },
-          {
-            "type": "reading",
-            "id": "http://example.org/entities/f682fa2a-bc36-4a29-ab5c-03cf5123194f",
-            "display": "<span>Alva Vandervort PhD, To Sail Beyond the Sunset, Hamish Hamilton.</span>"
-          }
-        ],
-        "work_of_arts": [
-          {
-            "type": "work_of_art",
-            "id": "http://example.org/entities/beaba24b-9a3f-48eb-b3ae-8b31094a7b48",
-            "display": "<span>Lintilla, <i>Peach</i>, Cliche food truck photo booth humblebrag park forage.</span>"
-          }
-        ]
-      }
-    },
-    {
-      "id": "http://example.org/letters/f41c440e-24bb-4083-9bd2-4217c93acf1b",
-      "date": "1958-03-31T00:00:00.000-05:00",
-      "label": "31 March 1958 - The Albino",
-      "recipients": [
-        "The Albino"
-      ],
-      "destinations": [
-        "<i>The Domain of The King</i>"
-      ],
-      "origins": null,
-      "mentions": {
-        "attendances": [
-          {
-            "type": "attendance",
-            "id": "http://example.org/entities/0c665f1e-fa4d-40b8-b5a5-cfbdc8d085d8",
-            "display": "<span>chartreuse, The Thing, Wizamouth, 01 November 1954.</span>"
-          },
-          {
-            "type": "attendance",
-            "id": "http://example.org/entities/9cf8c54e-f25a-4caa-9908-3d8a3ca183c8",
-            "display": "<span>narwhal, <i>The Apartment</i>, West Ginoview, 12 June 1948.</span>"
-          }
-        ],
-        "publications": [
-          {
-            "type": "publication",
-            "id": "http://example.org/entities/07599ee2-f0a5-4197-883b-36be11c3ac06",
-            "display": "<span>Walter Sobchak, <i>William T. Riker</i>, Genghis Khan Godard hella vinegar literally trust fund neutra brunch.</span>"
-          },
-          {
-            "type": "publication",
-            "id": "http://example.org/entities/e679e91b-0b3b-4c80-b8b5-93400c11f314",
-            "display": "<span>Bunny Lebowski, Oglethorpe, Phouchg Squid poutine literally chillwave vinyl.</span>"
-          }
-        ],
-        "work_of_arts": [
-          {
-            "type": "work_of_art",
-            "id": "http://example.org/entities/20a45f3b-9251-4cb0-ac1b-f61db5a7ee41",
-            "display": "<span>Trillian, When You Were Mine, Meh tote bag lomo crucifix try-hard butcher chicharrones tumblr.</span>"
-          }
-        ],
-        "writings": [
-          {
-            "type": "writing",
-            "id": "http://example.org/entities/07f5fcaa-1796-4efd-8059-0e1962f9e94e",
-            "display": "<span><i>A Summer Bird-Cage</i>.</span>"
-          },
-          {
-            "type": "writing",
-            "id": "http://example.org/entities/50cfd8d7-adeb-4aff-add2-34aebdc463b0",
-            "display": "<span><i>Pale Kings and Princes</i>.</span>"
-          },
-          {
-            "type": "writing",
-            "id": "http://example.org/entities/a1df7392-7339-419e-8b49-5f84037a71a3",
-            "display": "<span><i>Brandy of the Damned</i>.</span>"
-          }
-        ]
-      }
-    },
-    {
-      "id": "http://example.org/letters/eb429219-4074-45d7-ab07-35effade9aa2",
-      "date": "1959-04-16T00:00:00.000-05:00",
-      "label": "16 April 1959 - <i>Scott Malkinson</i>",
-      "recipients": [
-        "Scott Malkinson"
-      ],
-      "destinations": [
-        "Sector XXXZ5QZX"
-      ],
-      "origins": null,
-      "mentions": {
-        "music": [
-          {
-            "type": "music",
-            "id": "http://example.org/entities/4d3eccc2-2780-4370-9f27-76bc41b02d40",
-            "display": "<span>Trillian, 1-800-Newfunk Ad [Ariel Versace].</span>"
-          }
-        ],
-        "people": [
-          {
-            "type": "person",
-            "id": "http://example.org/entities/72d62954-01fd-42d4-a14b-3130535f9e7e",
-            "display": "<span><i>Lyra Erso</i> (1922-1988). You probably haven't heard of them mumblecore wayfarers sriracha swag photo booth +1 keytar flannel.</span>"
-          },
-          {
-            "type": "person",
-            "id": "http://example.org/entities/cc018aaa-ef97-41bf-abff-441152760db6",
-            "display": "<span><i>Revolio 'Gearhead' Clockberg, Jr.</i> (1929-1992). Jean shorts forage williamsburg tacos iphone helvetica chicharrones cleanse gluten-free.</span>"
-          },
-          {
-            "type": "person",
-            "id": "http://example.org/entities/ea84c16e-de0d-48e4-bbcd-e5accb940e52",
-            "display": "<span><i>Mario</i> (1925-1980). Tattooed selvage austin etsy pbr&b yr cliche pork belly gluten-free.</span>"
-          }
-        ],
-        "places": [
-          {
-            "type": "place",
-            "id": "http://example.org/entities/8895ef44-2c8d-49b9-b922-d11935c90146",
-            "display": "<span><i>Megabrantis cluster</i>.</span>"
-          }
-        ],
-        "productions": [
-          {
-            "type": "production",
-            "id": "http://example.org/entities/3ab14a7e-b81a-4e08-b6d1-6eeea2e1dacb",
-            "display": "<span><i>Dog Day Afternoon</i>, dir. Brandt, Bistromath, North Bonnie, 1968-11-07.</span>"
-          },
-          {
-            "type": "production",
-            "id": "http://example.org/entities/b4579872-39a2-4f81-8642-4840e512744c",
-            "display": "<span>Rocky, dir. Jackie Treehorn, Billion Year Bunker, Stevietown, 1934-02-08.</span>"
-          }
-        ]
-      }
-    },
-    {
-      "id": "http://example.org/letters/3082dea7-0700-42c0-a6a3-37e7d812852d",
-      "date": "1959-12-30T00:00:00.000-05:00",
-      "label": "30 December 1959 - <i>William T. Riker</i>",
-      "recipients": [
-        "William T. Riker"
-      ],
-      "destinations": [
-        "Megabrantis cluster"
-      ],
-      "origins": null,
-      "mentions": {
-        "attendances": [
-          {
-            "type": "attendance",
-            "id": "http://example.org/entities/b8021342-53e2-43bc-9e4f-b5bd644af5cd",
-            "display": "<span>roof, Star Wars: Episode IV – A New Hope, Port Ellamae, 03 June 1924.</span>"
-          }
-        ],
-        "music": [
-          {
-            "type": "music",
-            "id": "http://example.org/entities/01775cbf-6dff-491d-a773-30220a40d6a2",
-            "display": "<span>Galaxia Woonbeam, A Love Bizarre [Ivy Winters].</span>"
-          },
-          {
-            "type": "music",
-            "id": "http://example.org/entities/2a462bda-ac5c-48e7-b56f-ab6be9750f76",
-            "display": "<span>JinJenz, Little Red Corvette [A'keria Chanel Davenport].</span>"
-          },
-          {
-            "type": "music",
-            "id": "http://example.org/entities/7a7712d3-4bfa-4afa-bf3b-1b2c9a8249fc",
-            "display": "<span>Zarniwoop, Do It All Night [Plastique Tiara].</span>"
-          }
-        ],
-        "organizations": [
-          {
-            "type": "organization",
-            "id": "http://example.org/entities/5a7678c8-e833-4d91-b452-a743026cf397",
-            "display": "<span>Krikkit, Detox.</span>"
-          },
-          {
-            "type": "organization",
-            "id": "http://example.org/entities/6e55ba4f-94be-46e7-9994-a67be5c324fd",
-            "display": "<span>Eroticon VI, Pearl.</span>"
-          }
-        ],
-        "places": [
-          {
-            "type": "place",
-            "id": "http://example.org/entities/92d8e7fd-4b35-4f20-b51b-41d3a279cad5",
-            "display": "<span>Barnard's Star.</span>"
-          },
-          {
-            "type": "place",
-            "id": "http://example.org/entities/ef4385cb-0f0a-4927-b4c6-f16004e82e62",
-            "display": "<span>Bistro Illegal.</span>"
-          }
-        ]
-      }
-    },
-    {
-      "id": "http://example.org/letters/f430ce07-d441-4935-8738-1854008065d8",
-      "date": "1960-02-22T00:00:00.000-05:00",
-      "label": "22 February 1960 - Revolio 'Gearhead' Clockberg, Jr.",
-      "recipients": [
-        "Revolio 'Gearhead' Clockberg, Jr."
-      ],
-      "destinations": [
-        "Han Dold City"
-      ],
-      "origins": null,
-      "mentions": {
-        "organizations": [
-          {
-            "type": "organization",
-            "id": "http://example.org/entities/ab6d3c57-70bb-480f-8176-85ca11fd07cf",
-            "display": "<span><i>NowWhat</i>, Miz Cracker.</span>"
-          },
-          {
-            "type": "organization",
-            "id": "http://example.org/entities/fb45bbb8-51d7-4c1f-b7f9-68100c255052",
-            "display": "<span>Vogsphere, Nina West.</span>"
-          }
-        ],
-        "readings": [
-          {
-            "type": "reading",
-            "id": "http://example.org/entities/0bbfd9ae-1ac4-4936-8db0-f52026218c83",
-            "display": "<span>Msgr. Elmo Batz, The Monkey's Raincoat, Ziff Davis Media.</span>"
-          },
-          {
-            "type": "reading",
-            "id": "http://example.org/entities/85327e4d-6add-4152-bfb1-da44c832a1c8",
-            "display": "<span>Regenia Greenholt LLD, <i>Look Homeward, Angel</i>, Gefen Publishing House.</span>"
-          }
-        ],
-        "translatings": [
-          {
-            "type": "translating",
-            "id": "http://example.org/entities/884d6535-3439-4601-ae77-b4bb24978c29",
-            "display": "<span>Zarquon, <i>All the King's Men</i>, Translated into Fallia by Zarquon.</span>"
-          },
-          {
-            "type": "translating",
-            "id": "http://example.org/entities/ec5f8ae0-1c69-45ee-af47-d147105ff460",
-            "display": "<span>Colin the Security Robot, No Highway, Translated into Magrathea by Grunthos the Flatulent.</span>"
-          }
-        ],
-        "writings": [
-          {
-            "type": "writing",
-            "id": "http://example.org/entities/df691729-efd0-48c3-8193-741eb8986118",
-            "display": "<span><i>Number the Stars</i>.</span>"
-          }
-        ]
-      }
-    },
-    {
-      "id": "http://example.org/letters/76128a41-40e7-4768-ac05-5a74e2bf764b",
-      "date": "1961-04-06T00:00:00.000-05:00",
-      "label": "06 April 1961 - <i>Bunny Lebowski</i>",
-      "recipients": [
-        "Bunny Lebowski"
-      ],
-      "destinations": [
-        "Horse and Groom"
-      ],
-      "origins": null,
-      "mentions": {
-        "attendances": [
-          {
-            "type": "attendance",
-            "id": "http://example.org/entities/0c145692-62f8-443b-a2b8-cccf64bc04d3",
-            "display": "<span>dreamcatcher, <i>The Godfather: Part II</i>, Alinefurt, 13 September 1939.</span>"
-          }
-        ],
-        "music": [
-          {
-            "type": "music",
-            "id": "http://example.org/entities/5b4459aa-9454-4fa1-91f3-0e15e522188f",
-            "display": "<span>Tricia McMillan, Something in the Water (Does Not Compute) [Tyra Sanchez].</span>"
-          }
-        ],
-        "places": [
-          {
-            "type": "place",
-            "id": "http://example.org/entities/8dfe323b-7b7e-4ebe-a390-20601d214b17",
-            "display": "<span><i>France</i>.</span>"
-          },
-          {
-            "type": "place",
-            "id": "http://example.org/entities/a7f9d5d8-1398-4568-87e3-d97425532131",
-            "display": "<span><i>Horsehead Nebula</i>.</span>"
-          }
-        ],
-        "writings": [
-          {
-            "type": "writing",
-            "id": "http://example.org/entities/c971090d-5df9-43cf-8473-c773122c3add",
-            "display": "<span>Edna O'Brien.</span>"
-          }
-        ]
-      }
-    },
-    {
-      "id": "http://example.org/letters/42ebb98b-a4e8-46ba-bc50-cbf6916e24f4",
-      "date": "1961-11-04T00:00:00.000-05:00",
-      "label": "04 November 1961 - Mario",
-      "recipients": [
-        "Mario"
-      ],
-      "destinations": [
-        "<i>Boston</i>"
-      ],
-      "origins": null,
-      "mentions": {
-        "organizations": [
-          {
-            "type": "organization",
-            "id": "http://example.org/entities/26d6e7e8-c535-4d4e-9919-e40613e606e3",
-            "display": "<span>Frogstar World B, Farrah Moan.</span>"
-          },
-          {
-            "type": "organization",
-            "id": "http://example.org/entities/5de0e6d0-5fde-45bd-9c94-57e300df8cac",
-            "display": "<span><i>Flargathon</i>, Monique Heart.</span>"
-          },
-          {
-            "type": "organization",
-            "id": "http://example.org/entities/e16849ba-f473-4ca1-9fbc-900185b33582",
-            "display": "<span>Earth, The Vixen.</span>"
-          }
-        ],
-        "public_events": [
-          {
-            "type": "public_event",
-            "id": "http://example.org/entities/16a6e7fc-406b-46fa-94a4-371407c94e7e",
-            "display": "<span>Apollo (1929-11-27).</span>"
-          }
-        ],
-        "readings": [
-          {
-            "type": "reading",
-            "id": "http://example.org/entities/076e654c-71b6-4be8-9375-15b941f0bf37",
-            "display": "<span>Rep. Doreen Abbott, <i>Taming a Sea Horse</i>, Central European University Press.</span>"
-          },
-          {
-            "type": "reading",
-            "id": "http://example.org/entities/0ef52b11-63d7-4f58-b617-bff5d467eb2f",
-            "display": "<span>Norbert Moore, <i>A Glass of Blessings</i>, Da Capo Press.</span>"
-          }
-        ],
-        "writings": [
-          {
-            "type": "writing",
-            "id": "http://example.org/entities/7c684fa4-d8fd-4c06-9f00-03ff52dd46aa",
-            "display": "<span><i>The Heart Is Deceitful Above All Things</i>.</span>"
-          },
-          {
-            "type": "writing",
-            "id": "http://example.org/entities/fe11c117-0e95-4586-916e-bfecba12819f",
-            "display": "<span><i>Ego Dominus Tuus</i>.</span>"
-          }
-        ]
-      }
-    },
-    {
-      "id": "http://example.org/letters/787f49c0-c4bc-4a1b-9015-e8c95c4ae218",
-      "date": "1961-11-24T00:00:00.000-05:00",
-      "label": "24 November 1961 - Scott Malkinson",
-      "recipients": [
-        "Scott Malkinson"
-      ],
-      "destinations": [
-        "<i>Stavro Mueller Beta</i>"
-      ],
-      "origins": null,
-      "mentions": {
-        "organizations": [
-          {
-            "type": "organization",
-            "id": "http://example.org/entities/ad41f0bf-076c-42cb-a893-d97209919dc2",
-            "display": "<span>Han Wavel, Milk.</span>"
-          },
-          {
-            "type": "organization",
-            "id": "http://example.org/entities/e1e56993-806e-45c6-bac2-92d2337c5a1a",
-            "display": "<span>Burphon XII, Plastique Tiara.</span>"
-          }
-        ],
-        "productions": [
-          {
-            "type": "production",
-            "id": "http://example.org/entities/5a8e1b34-e9d3-48e1-ae4e-f38af7790e57",
-            "display": "<span>The Lord of the Rings: The Fellowship of the Ring, dir. The Dude, Heart of Gold, Tammaraton, 1929-11-13.</span>"
-          },
-          {
-            "type": "production",
-            "id": "http://example.org/entities/bcf27928-0973-4511-9ecb-968aeb3150fd",
-            "display": "<span>Back to the Future, dir. The Dude, Tanngrisnir, West Angelenachester, 1965-11-13.</span>"
-          }
-        ],
-        "publications": [
-          {
-            "type": "publication",
-            "id": "http://example.org/entities/82aec861-4afe-4ddf-a737-d3d68c6d1ccb",
-            "display": "<span>Jackie Treehorn, Officer Meow Meow Fuzzyface, Arthur Dent Hashtag put a bird on it tumblr echo.</span>"
-          }
-        ],
-        "translatings": [
-          {
-            "type": "translating",
-            "id": "http://example.org/entities/7a79c5e4-a8b0-4e0c-b9ce-d1f7385becd7",
-            "display": "<span>Prostetnic Vogon Jeltz, A Time to Kill, Translated into Burphon XII by Paula Nancy Millstone Jennings.</span>"
-          },
-          {
-            "type": "translating",
-            "id": "http://example.org/entities/ca1c4699-fb88-4674-a387-4d100717e893",
-            "display": "<span>Hotblack Desiato, Waiting for the Barbarians, Translated into Santraginus V by Questular Rontok.</span>"
-          }
-        ]
-      }
-    },
-    {
-      "id": "http://example.org/letters/94b4cd24-38f1-43bf-8b73-4a08544307d6",
-      "date": "1962-03-15T00:00:00.000-05:00",
-      "label": "15 March 1962 - Elizabeth Hoover",
-      "recipients": [
-        "Elizabeth Hoover"
-      ],
-      "destinations": [
-        "Space"
-      ],
-      "origins": null,
-      "mentions": {
-        "people": [
-          {
-            "type": "person",
-            "id": "http://example.org/entities/caccb62d-b943-44fe-8d7e-086b944e1e6d",
-            "display": "<span>Bunny Lebowski (1927-1987). Vegan <i>banh mi kombucha williamsburg</i> offal.</span>"
-          }
-        ],
-        "publications": [
-          {
-            "type": "publication",
-            "id": "http://example.org/entities/2d6ab488-57db-4d5b-8fd8-cbace59501b9",
-            "display": "<span>Maude Lebowski, Oglethorpe, Charles Darwin Gentrify lumbersexual mustache street chambray lo-fi craft beer pickled whatever.</span>"
-          },
-          {
-            "type": "publication",
-            "id": "http://example.org/entities/ae85100f-2687-4e4d-bb4e-4739f3811cf7",
-            "display": "<span>Jesus Quintana, <i>Scott Malkinson</i>, Hotblack Desiato's bodyguard Farm-to-table freegan echo knausgaard art party meh beard chartreuse.</span>"
-          }
-        ],
-        "readings": [
-          {
-            "type": "reading",
-            "id": "http://example.org/entities/2355e51a-1a47-42f5-a336-4c6da15154f9",
-            "display": "<span>Linn Heathcote, <i>A Glass of Blessings</i>, Bantam Books.</span>"
-          },
-          {
-            "type": "reading",
-            "id": "http://example.org/entities/b2fe49d4-c2b8-4fae-beac-d0bd2d09e745",
-            "display": "<span>Ivana Hills, <i>The Lathe of Heaven</i>, Pen and Sword Books.</span>"
-          },
-          {
-            "type": "reading",
-            "id": "http://example.org/entities/e18b1f60-3ed9-4d44-9d92-e1fc00515098",
-            "display": "<span>Fr. Ana Harber, <i>The Glory and the Dream</i>, Nauka.</span>"
-          }
-        ],
-        "writings": [
-          {
-            "type": "writing",
-            "id": "http://example.org/entities/2261e5f2-9551-4dfb-8b6f-690900d7d654",
-            "display": "<span><i>The Little Foxes</i>.</span>"
-          },
-          {
-            "type": "writing",
-            "id": "http://example.org/entities/5a3089dd-2d12-4379-b9ce-24b77c4223e7",
-            "display": "<span><i>Vile Bodies</i>.</span>"
-          },
-          {
-            "type": "writing",
-            "id": "http://example.org/entities/9b50762b-c0ee-4ef8-ab28-2cf87ddfd1db",
-            "display": "<span><i>Brandy of the Damned</i>.</span>"
-          }
-        ]
-      }
-    },
-    {
-      "id": "http://example.org/letters/547aebd3-6f00-4e3e-83c5-893f0ba32532",
-      "date": "1962-05-21T00:00:00.000-04:00",
-      "label": "21 May 1962 - Steppenwolf",
-      "recipients": [
-        "Steppenwolf"
-      ],
-      "destinations": [
-        "Preliumtarn"
-      ],
-      "origins": null,
-      "mentions": {
-        "attendances": [
-          {
-            "type": "attendance",
-            "id": "http://example.org/entities/5e76ad08-6ef6-400b-a0ca-4bd7c6c9ec35",
-            "display": "<span>hammock, Twelve Monkeys, Skilesland, 06 August 1967.</span>"
-          },
-          {
-            "type": "attendance",
-            "id": "http://example.org/entities/be0064e2-75f5-4b29-9f5d-a2febd21978c",
-            "display": "<span>tilde, <i>Bicycle Thieves</i>, Richardhaven, 27 August 1956.</span>"
-          },
-          {
-            "type": "attendance",
-            "id": "http://example.org/entities/e0b1507e-f710-4f40-ae42-9a7e1f641110",
-            "display": "<span>vice, <i>The Treasure of the Sierra Madre</i>, Lake Dudley, 01 September 1937.</span>"
-          }
-        ],
-        "productions": [
-          {
-            "type": "production",
-            "id": "http://example.org/entities/9395fa06-6daf-452f-8cb8-b516c0a23789",
-            "display": "<span>Star Wars: Episode VIII – The Last Jedi, dir. Jackie Treehorn, Vogon Constructor Fleet, Bernhardburgh, 1964-10-27.</span>"
-          },
-          {
-            "type": "production",
-            "id": "http://example.org/entities/b07a93e3-d23b-46f6-b2ab-d9bd547d3676",
-            "display": "<span>The Big Lebowski, dir. Jackie Treehorn, Golgafrinchan Ark Fleet Ship B, Rippinborough, 1948-03-29.</span>"
-          }
-        ],
-        "public_events": [
-          {
-            "type": "public_event",
-            "id": "http://example.org/entities/07404234-6d0d-46ab-8210-1a52c0d08b65",
-            "display": "<span><i>Apollo</i> (1935-12-21).</span>"
-          },
-          {
-            "type": "public_event",
-            "id": "http://example.org/entities/60fd2a20-42f6-4e6d-95b5-c01e381cbef0",
-            "display": "<span><i>Apollo</i> (1922-09-06).</span>"
-          },
-          {
-            "type": "public_event",
-            "id": "http://example.org/entities/a2ffef75-7513-4299-a828-1e38627c6fb4",
-            "display": "<span>Gemini (1939-03-28).</span>"
-          }
-        ],
-        "publications": [
-          {
-            "type": "publication",
-            "id": "http://example.org/entities/979bc1f3-30bf-4392-94df-248d0005bb20",
-            "display": "<span>Jesus Quintana, <i>Oglethorpe</i>, Mr. Prosser Listicle plaid everyday tote bag swag trust fund goth post-ironic chia.</span>"
-          },
-          {
-            "type": "publication",
-            "id": "http://example.org/entities/ac537840-8274-4c5b-97d9-f92bbcffda14",
-            "display": "<span>Jesus Quintana, Majikthise, Grunthos the Flatulent Bicycle rights marfa green juice wes anderson health whatever williamsburg fixie sustainable.</span>"
-          }
-        ]
-      }
-    },
-    {
-      "id": "http://example.org/letters/6e493f91-82b9-4a33-b9c1-50b2000ad467",
-      "date": "1962-07-08T00:00:00.000-04:00",
-      "label": "08 July 1962 - <i>The Albino</i>",
-      "recipients": [
-        "The Albino"
-      ],
-      "destinations": [
-        "Bistro Illegal"
-      ],
-      "origins": null,
-      "mentions": {
-        "organizations": [
-          {
-            "type": "organization",
-            "id": "http://example.org/entities/2c4debf7-925b-4779-acc4-a4d26c542bbf",
-            "display": "<span>Dangrabad Beta, Plastique Tiara.</span>"
-          },
-          {
-            "type": "organization",
-            "id": "http://example.org/entities/65d6e7e9-b1f2-497e-82e5-83229db7cddb",
-            "display": "<span><i>Flargathon</i>, Ginger Minj.</span>"
-          },
-          {
-            "type": "organization",
-            "id": "http://example.org/entities/a965c84c-ee41-4423-8127-99b3d08dbcef",
-            "display": "<span><i>Gagrakacka</i>, Jujubee.</span>"
-          }
-        ],
-        "people": [
-          {
-            "type": "person",
-            "id": "http://example.org/entities/e1d44858-3357-4955-a231-4eb4eec59006",
-            "display": "<span><i>Elizabeth Hoover</i> (1910-1994). Keffiyeh irony cray pickled small batch butcher cliche stumptown.</span>"
-          },
-          {
-            "type": "person",
-            "id": "http://example.org/entities/f11c1358-3001-45f3-a002-1a791fd67a40",
-            "display": "<span><i>Scott Malkinson</i> (1919-1983). Dreamcatcher five dollar toast try-hard single-origin coffee.</span>"
-          }
-        ],
-        "public_events": [
-          {
-            "type": "public_event",
-            "id": "http://example.org/entities/2ba41817-4788-4829-9c1f-7ebbdb7d36af",
-            "display": "<span>Mercury (1965-09-06).</span>"
-          }
-        ],
-        "writings": [
-          {
-            "type": "writing",
-            "id": "http://example.org/entities/0bee3b47-271d-434c-9ccb-4c9300e04834",
-            "display": "<span>The Far-Distant Oxus.</span>"
-          },
-          {
-            "type": "writing",
-            "id": "http://example.org/entities/76e9f71f-1d69-46b6-85f6-0738998ebf70",
-            "display": "<span><i>I Will Fear No Evil</i>.</span>"
-          },
-          {
-            "type": "writing",
-            "id": "http://example.org/entities/9b9fe815-cf2a-4e8e-a951-1ed5378b2a71",
-            "display": "<span><i>The Wives of Bath</i>.</span>"
-          }
-        ]
-      }
-    },
-    {
-      "id": "http://example.org/letters/c4dfe2c0-3b00-45b5-96ea-710f2e990f5e",
-      "date": "1962-08-17T00:00:00.000-04:00",
-      "label": "17 August 1962 - Revolio 'Gearhead' Clockberg, Jr.",
-      "recipients": [
-        "Revolio 'Gearhead' Clockberg, Jr."
-      ],
-      "destinations": [
-        "Norway"
-      ],
-      "origins": null,
-      "mentions": {
-        "organizations": [
-          {
-            "type": "organization",
-            "id": "http://example.org/entities/6d2c7376-768d-441f-bad4-f73cbfe281de",
-            "display": "<span><i>Earth</i>, Bob The Drag Queen.</span>"
-          },
-          {
-            "type": "organization",
-            "id": "http://example.org/entities/7dbd03b4-4cc2-430a-add0-9871e938e372",
-            "display": "<span><i>Frogstar World B</i>, Eureka.</span>"
-          },
-          {
-            "type": "organization",
-            "id": "http://example.org/entities/dc7fb6f4-fe17-4c4f-869e-895cb1c77ebd",
-            "display": "<span>Frogstar World C, Violet Chachki.</span>"
-          }
-        ],
-        "places": [
-          {
-            "type": "place",
-            "id": "http://example.org/entities/2e603842-a6d2-44f0-81fb-97b0b17fbb0c",
-            "display": "<span>Rupert.</span>"
-          },
-          {
-            "type": "place",
-            "id": "http://example.org/entities/749658c1-572b-4ead-bb18-bc2225bd3e9e",
-            "display": "<span><i>Lamuella</i>.</span>"
-          },
-          {
-            "type": "place",
-            "id": "http://example.org/entities/cc776df5-5ffe-424d-b0ee-7961a32144f1",
-            "display": "<span><i>Ibiza</i>.</span>"
-          }
-        ],
-        "publications": [
-          {
-            "type": "publication",
-            "id": "http://example.org/entities/3ca3624c-1216-404d-8d0b-e89ea7417a30",
-            "display": "<span>The Big Lebowski, Mario, Charles Darwin Brunch salvia mlkshk tilde before they sold out pop-up lomo green juice you probably haven't heard of them.</span>"
-          },
-          {
-            "type": "publication",
-            "id": "http://example.org/entities/55340cd5-5922-4483-b72a-cdb84fed815c",
-            "display": "<span>Jesus Quintana, Elizabeth Hoover, Barry Manilow Pop-up authentic health gentrify raw denim irony gluten-free.</span>"
-          },
-          {
-            "type": "publication",
-            "id": "http://example.org/entities/d0c73d64-9388-43a2-99d5-929160867b74",
-            "display": "<span>The Big Lebowski, The Albino, Vroomfondel Shoreditch pour-over narwhal meh tacos tofu small batch you probably haven't heard of them.</span>"
-          }
-        ],
-        "writings": [
-          {
-            "type": "writing",
-            "id": "http://example.org/entities/62b8950c-bc66-4933-b7bc-8ca0f8ebda68",
-            "display": "<span><i>The Doors of Perception</i>.</span>"
-          }
-        ]
-      }
-    },
-    {
-      "id": "http://example.org/letters/16a04b8b-f8e4-48f8-b5df-9709ac6868e2",
-      "date": "1962-09-23T00:00:00.000-04:00",
-      "label": "23 September 1962 - <i>Steppenwolf</i>",
-      "recipients": [
-        "Steppenwolf"
-      ],
-      "destinations": [
-        "<i>Lamuella</i>"
-      ],
-      "origins": null,
-      "mentions": {
-        "music": [
-          {
-            "type": "music",
-            "id": "http://example.org/entities/bf24ec90-ab0f-4f03-b7c1-7b0aa7f0e2a3",
-            "display": "<span>Hotblack Desiato's bodyguard, <i>Another Lonely Christmas</i> [Miss Fame].</span>"
-          }
-        ],
-        "people": [
-          {
-            "type": "person",
-            "id": "http://example.org/entities/2a2f3fe1-6cbd-4af9-a21f-7044bbb2c4b0",
-            "display": "<span>Elizabeth Hoover (1929-1996). Vinegar actually slow-carb keffiyeh.</span>"
-          }
-        ],
-        "translatings": [
-          {
-            "type": "translating",
-            "id": "http://example.org/entities/d2594f30-957d-4504-b79b-cf6077182cb9",
-            "display": "<span>Hotblack Desiato's bodyguard, <i>The Golden Bowl</i>, Translated into Frogstar World C by Ford Prefect.</span>"
-          }
-        ],
-        "work_of_arts": [
-          {
-            "type": "work_of_art",
-            "id": "http://example.org/entities/8588689c-46bc-4dfe-96dc-e506fc0441cb",
-            "display": "<span>Trillian, <i>Take Me With U</i>, Park <i>pabst ramps normcore church-key</i> brunch.</span>"
-          },
-          {
-            "type": "work_of_art",
-            "id": "http://example.org/entities/87ea647a-8fa8-4b39-b609-55334733af8c",
-            "display": "<span>Galaxia Woonbeam, <i>Automatic</i>, Tilde <i>90's forage retro muggle magic migas pour-over readymade</i> keffiyeh.</span>"
-          },
-          {
-            "type": "work_of_art",
-            "id": "http://example.org/entities/f2f0cd64-4435-4604-b5ec-de11289cc9aa",
-            "display": "<span>Agda, <i>Cloreen Baconskin</i>, 8-bit <i>williamsburg yuccie jean shorts pug waistcoat semiotics wes anderson</i> portland.</span>"
-          }
-        ]
-      }
-    },
-    {
-      "id": "http://example.org/letters/f43e1f20-65ed-40f7-afe4-260bf4314d64",
-      "date": "1963-07-11T00:00:00.000-04:00",
-      "label": "11 July 1963 - The Albino",
-      "recipients": [
-        "The Albino"
+        "Zulauf, Jefferey"
       ],
       "destinations": [
         "Zarss"
@@ -935,205 +82,877 @@ Content-Length: 35514</pre>
         "attendances": [
           {
             "type": "attendance",
-            "id": "http://example.org/entities/c6c0e938-6d4b-4849-b436-75b371cb201c",
-            "display": "<span>XOXO, <i>Monsters, Inc.</i>, East Manuelmouth, 24 November 1933.</span>"
-          }
-        ],
-        "organizations": [
-          {
-            "type": "organization",
-            "id": "http://example.org/entities/07132933-5715-4075-861d-27e7a8435904",
-            "display": "<span>Brontitall, Mimi Imfurst.</span>"
+            "id": "http://example.org/entities/2d382145-2df0-4a91-949b-7192082c1b9f",
+            "display": "<strong>rehearsal</strong> Life Is Beautiful"
           },
           {
-            "type": "organization",
-            "id": "http://example.org/entities/74d2f604-0e1b-423e-b9ac-0843117bd772",
-            "display": "<span><i>Hawalius</i>, Delta Work.</span>"
-          },
-          {
-            "type": "organization",
-            "id": "http://example.org/entities/a2453ace-9389-41f3-8fed-fd6931bbb808",
-            "display": "<span>Jaglan Beta, Joslyn Fox.</span>"
+            "type": "attendance",
+            "id": "http://example.org/entities/ce0d0871-f649-428a-a7d0-3f94e697bbc4",
+            "display": "<strong>radio_broadcast</strong> <i>Toy Story 3</i>"
           }
         ],
-        "readings": [
-          {
-            "type": "reading",
-            "id": "http://example.org/entities/5b75e931-5eb4-4d8f-a2c1-f1657e77afef",
-            "display": "<span>Msgr. Derrick Mayer, Beneath the Bleeding, Shambhala Publications.</span>"
-          }
-        ],
-        "writings": [
-          {
-            "type": "writing",
-            "id": "http://example.org/entities/b2ea5d47-1e27-4c65-829f-2b5397203107",
-            "display": "<span>Oh! To be in England.</span>"
-          }
-        ]
-      }
-    },
-    {
-      "id": "http://example.org/letters/a4fc9c1a-7c2f-45fd-b415-854615614e13",
-      "date": "1963-11-23T00:00:00.000-05:00",
-      "label": "23 November 1963 - Officer Meow Meow Fuzzyface",
-      "recipients": [
-        "Officer Meow Meow Fuzzyface"
-      ],
-      "destinations": [
-        "<i>Norway</i>"
-      ],
-      "origins": null,
-      "mentions": {
-        "places": [
-          {
-            "type": "place",
-            "id": "http://example.org/entities/d6502688-029b-46d5-8dc2-69c095eaef16",
-            "display": "<span><i>Stavromula Beta</i>.</span>"
-          }
-        ],
-        "public_events": [
-          {
-            "type": "public_event",
-            "id": "http://example.org/entities/030a1a99-ea5e-437e-ac8a-c4e2ae47bfc6",
-            "display": "<span><i>Endeavour</i> (1927-08-08).</span>"
-          }
-        ],
-        "publications": [
-          {
-            "type": "publication",
-            "id": "http://example.org/entities/6eefd835-8369-431a-8c92-6a6ea31eb3b5",
-            "display": "<span>Walter Sobchak, <i>The Albino</i>, Paula Nancy Millstone Jennings Helvetica readymade everyday ennui ethical ugh heirloom marfa tattooed.</span>"
-          }
-        ],
-        "work_of_arts": [
-          {
-            "type": "work_of_art",
-            "id": "http://example.org/entities/1bbda61e-c903-4b33-838e-f97ee0e9d636",
-            "display": "<span>Mella, When You Were Mine, Muggle magic direct trade iphone selvage chambray humblebrag bespoke.</span>"
-          },
-          {
-            "type": "work_of_art",
-            "id": "http://example.org/entities/b5f13196-482c-4cc5-8b1d-c3c4224875bc",
-            "display": "<span>Pasta Fasta, Tamborine, Godard echo hammock everyday forage fingerstache celiac fixie loko.</span>"
-          },
-          {
-            "type": "work_of_art",
-            "id": "http://example.org/entities/e12497da-fc78-4d23-9c34-a0cf44f140a5",
-            "display": "<span>Hillman Hunter, <i>Gold</i>, Health direct trade you probably haven't heard of them readymade lo-fi tacos schlitz.</span>"
-          }
-        ]
-      }
-    },
-    {
-      "id": "http://example.org/letters/6359dc8d-64a4-4a04-bac1-b3acdff4cc19",
-      "date": "1964-08-15T00:00:00.000-04:00",
-      "label": "15 August 1964 - Steppenwolf",
-      "recipients": [
-        "Steppenwolf"
-      ],
-      "destinations": [
-        "<i>Evildrome Boozarama</i>"
-      ],
-      "origins": null,
-      "mentions": {
         "music": [
           {
             "type": "music",
-            "id": "http://example.org/entities/9209c9bf-3b4a-483b-99f3-487fa9e1c8ad",
-            "display": "<span>Ford Prefect, <i>It's Gonna Be A Beautiful Night</i> [Valentina].</span>"
+            "id": "http://example.org/entities/79c70591-e3fb-4d02-9497-7f8e9fff1335",
+            "display": "Barry Manilow, <i>Nothing Compares 2 U</i> [Derrick Barry]"
           },
           {
             "type": "music",
-            "id": "http://example.org/entities/be109a92-4837-4c15-a67c-51605fa09f1f",
-            "display": "<span>Humma Kavula, <i>The Greatest Romance Ever Sold</i> [Mercedes Iman Diamond].</span>"
-          }
-        ],
-        "places": [
+            "id": "http://example.org/entities/87fca40a-e6f1-460c-8c1f-a12ddda4a52c",
+            "display": "Dan Streetmentioner, Another Lonely Christmas [Carmen Carrera]"
+          },
           {
-            "type": "place",
-            "id": "http://example.org/entities/75d280cc-7a3e-40b5-8ef8-11b436319429",
-            "display": "<span><i>Cathedral of Chalesm</i>.</span>"
+            "type": "music",
+            "id": "http://example.org/entities/e200111b-4a52-4c36-9c05-9c6febb2717a",
+            "display": "Prostetnic Vogon Kwaltz, <i>Mr. Nelson</i> [The Vixen]"
           }
         ],
         "productions": [
           {
             "type": "production",
-            "id": "http://example.org/entities/c96d5098-e59b-497e-80fa-8e7caad29d57",
-            "display": "<span>Life Is Beautiful, dir. Donny, Golgafrinchan Ark Fleet Ship B, Port Andersonport, 1949-08-15.</span>"
+            "id": "http://example.org/entities/3c5e5006-9397-4fc9-9153-9a7f93007f65",
+            "display": "Scarface, dir. Walter Sobchak, Vogon Constructor Fleet, East Ladybury, 1957-05-02"
+          },
+          {
+            "type": "production",
+            "id": "http://example.org/entities/db58e4d8-0312-4573-8935-2e08bb883c6b",
+            "display": "The Lion King, dir. Karl Hungus, Bistromath, West Alaineside, 1943-01-20"
           }
         ],
-        "writings": [
+        "publications": [
           {
-            "type": "writing",
-            "id": "http://example.org/entities/73a455d8-9088-4372-bdf5-f7e2f7280740",
-            "display": "<span>A Passage to India.</span>"
+            "type": "publication",
+            "id": "http://example.org/entities/10fad6f9-2d1c-47c3-bef2-bcb68d65603f",
+            "display": "<i>Voyager Books</i>, Bowerick Wowbagger Salvia hashtag lo-fi mustache microdosing shoreditch selvage cleanse freegan."
           },
           {
-            "type": "writing",
-            "id": "http://example.org/entities/851e0aeb-65c6-447f-8d05-fbf7e5d533a8",
-            "display": "<span>The Glory and the Dream.</span>"
-          },
-          {
-            "type": "writing",
-            "id": "http://example.org/entities/df8ebd5b-45f3-4502-aedf-35e913fa42ad",
-            "display": "<span><i>Paths of Glory</i>.</span>"
+            "type": "publication",
+            "id": "http://example.org/entities/80c1e278-b8ac-4b3c-af22-ba3c9ce8b246",
+            "display": "Pen and Sword Books, Garkbit Typewriter locavore swag try-hard."
           }
         ]
       }
     },
     {
-      "id": "http://example.org/letters/ea9f2d06-ffa5-4b9d-a283-a5c723375e02",
-      "date": "1965-11-08T00:00:00.000-05:00",
-      "label": "08 November 1965 - <i>Steppenwolf</i>",
+      "id": "http://example.org/letters/88cec09b-a0ae-4f17-9dc7-9cea567ab42f",
+      "date": "1957-10-24T00:00:00.000-04:00",
+      "label": "24 October 1957 - Kulas, Mazie",
       "recipients": [
-        "Steppenwolf"
+        "Kulas, Mazie"
       ],
       "destinations": [
-        "<i>Denmark</i>"
+        "Betelgeuse"
+      ],
+      "origins": null,
+      "mentions": {
+        "attendances": [
+          {
+            "type": "attendance",
+            "id": "http://example.org/entities/68729e24-ecdd-40da-9b9f-979f0deca67d",
+            "display": "<strong>radio_broadcast</strong> 2001: A Space Odyssey"
+          }
+        ],
+        "music": [
+          {
+            "type": "music",
+            "id": "http://example.org/entities/140e67ae-7dc7-40e7-9be2-7d54cc95efcd",
+            "display": "Elvis, <i>Let's Go Crazy</i> [Blair St. Clair]"
+          },
+          {
+            "type": "music",
+            "id": "http://example.org/entities/c064a231-f155-452b-afb7-ffb5f0cc66ab",
+            "display": "Prak, Cream [Pearl]"
+          }
+        ],
+        "organizations": [
+          {
+            "type": "organization",
+            "id": "http://example.org/entities/3483f3e6-f29c-40b0-8805-bed600713780",
+            "display": "<b><i>NowWhat</i></b>"
+          },
+          {
+            "type": "organization",
+            "id": "http://example.org/entities/b3648112-0a30-46f1-b1b3-eab41327589d",
+            "display": "<b><i>Arkintoofle Minor</i></b>"
+          }
+        ],
+        "productions": [
+          {
+            "type": "production",
+            "id": "http://example.org/entities/5462d372-0fc3-49f3-80ef-be1bb26e509f",
+            "display": "<i>Fargo</i>, dir. Karl Hungus, Heart of Gold, Port Shainahaven, 1933-09-29"
+          }
+        ]
+      }
+    },
+    {
+      "id": "http://example.org/letters/115e90fd-3ab2-4f8f-b8ef-57d253d4e883",
+      "date": "1957-11-28T00:00:00.000-05:00",
+      "label": "28 November 1957 - Schamberger, Cleora",
+      "recipients": [
+        "Schamberger, Cleora"
+      ],
+      "destinations": [
+        "<i>Seventh Galaxy of Light and Ingenuity</i>"
+      ],
+      "origins": null,
+      "mentions": {
+        "organizations": [
+          {
+            "type": "organization",
+            "id": "http://example.org/entities/57837a91-6918-4c0e-86a1-19371a920a8b",
+            "display": "<b><i>Magrathea</i></b>"
+          }
+        ],
+        "productions": [
+          {
+            "type": "production",
+            "id": "http://example.org/entities/4f12ec8e-a5fe-4146-b0b1-3749d8b26b7f",
+            "display": "<i>Gladiator</i>, dir. Jackie Treehorn, Starship Titanic, Emileberg, 1958-01-26"
+          },
+          {
+            "type": "production",
+            "id": "http://example.org/entities/d51aa73d-3297-43dd-9fc3-78b359f8e070",
+            "display": "<i>All About Eve</i>, dir. Karl Hungus, Bistromath, Hoytfurt, 1967-06-05"
+          }
+        ],
+        "translatings": [
+          {
+            "type": "translating",
+            "id": "http://example.org/entities/6a8158e1-6a06-4790-b9e3-1e75ca7f858c",
+            "display": "Trillian, <i>A Swiftly Tilting Planet</i>, Translated into finnish by Bowerick Wowbagger"
+          }
+        ],
+        "work_of_arts": [
+          {
+            "type": "work_of_art",
+            "id": "http://example.org/entities/021ee2ae-a1b8-46a9-8c0e-5d387325edd8",
+            "display": "Magrathean sperm whale, New Position, Gluten-free yr humblebrag jean shorts authentic schlitz mixtape."
+          },
+          {
+            "type": "work_of_art",
+            "id": "http://example.org/entities/4741e232-45f1-4ec1-9ef3-ea7f23c9a092",
+            "display": "Eccentrica Gallumbits, D.M.S.R, Vinyl try-hard master ramps aesthetic vhs."
+          },
+          {
+            "type": "work_of_art",
+            "id": "http://example.org/entities/a01e93c3-cd4c-49e0-832f-f41bf3fa357f",
+            "display": "JinJenz, Still Waiting, Tumblr mixtape phlogiston meh."
+          }
+        ]
+      }
+    },
+    {
+      "id": "http://example.org/letters/49e61aa6-a1f8-41b4-8ebe-121728315e14",
+      "date": "1958-01-26T00:00:00.000-05:00",
+      "label": "26 January 1958 - Jacobi, Leandro",
+      "recipients": [
+        "Jacobi, Leandro"
+      ],
+      "destinations": [
+        "<i>Frogstar system</i>"
+      ],
+      "origins": null,
+      "mentions": {
+        "attendances": [
+          {
+            "type": "attendance",
+            "id": "http://example.org/entities/2f98760e-c876-473a-8d6c-98ea7214b0c0",
+            "display": "<strong>theatre</strong> <i>The Thing</i>"
+          },
+          {
+            "type": "attendance",
+            "id": "http://example.org/entities/e748a0ea-6f25-4373-963a-bd770ec052b7",
+            "display": "<strong>theatre</strong> <i>Batman Begins</i>"
+          }
+        ],
+        "places": [
+          {
+            "type": "place",
+            "id": "http://example.org/entities/1a4d49ac-d420-40bd-a219-a9f9ac6f32c1",
+            "display": "<b>Ziggie's Den of Iniquity</b>"
+          },
+          {
+            "type": "place",
+            "id": "http://example.org/entities/300960e4-3a5d-4b5d-ac2f-ad35e4a2998b",
+            "display": "<b><i>The Big Bang Burger Bar</i></b>"
+          },
+          {
+            "type": "place",
+            "id": "http://example.org/entities/4aa5dbc1-955f-401e-94ee-2556089dec5a",
+            "display": "<b><i>Horse and Groom</i></b>"
+          }
+        ],
+        "translatings": [
+          {
+            "type": "translating",
+            "id": "http://example.org/entities/aaf8a95f-b4f2-4824-9efa-dfd8c954f4ee",
+            "display": "Arthur Philip Deodat, <i>Antic Hay</i>, Translated into french_and_english by Arthur Dent"
+          },
+          {
+            "type": "translating",
+            "id": "http://example.org/entities/f1272f01-09a4-4900-a2e6-640d2e8ccbfd",
+            "display": "Questular Rontok, <i>Ego Dominus Tuus</i>, Translated into japanese by Mr. Prosser"
+          },
+          {
+            "type": "translating",
+            "id": "http://example.org/entities/ffaf6572-d73a-478a-b5c2-f3f301e57f2d",
+            "display": "Genghis Khan, <i>Such, Such Were the Joys</i>, Translated into rumanian by Colin the Security Robot"
+          }
+        ],
+        "writings": [
+          {
+            "type": "writing",
+            "id": "http://example.org/entities/1774f1b0-fc10-40a3-99f2-4339d4c6d3c9",
+            "display": "<b>Brandy of the Damned</b>"
+          },
+          {
+            "type": "writing",
+            "id": "http://example.org/entities/1dd328a4-4e6c-471c-beea-1717d38f422d",
+            "display": "<b>The Man Within</b>"
+          },
+          {
+            "type": "writing",
+            "id": "http://example.org/entities/f014a0d3-d9c5-4ad2-ba10-ba419144d5c6",
+            "display": "<b>The Last Enemy</b>"
+          }
+        ]
+      }
+    },
+    {
+      "id": "http://example.org/letters/88fec025-b7bf-44c0-8bdf-6501362b7183",
+      "date": "1959-04-10T00:00:00.000-05:00",
+      "label": "10 April 1959 - Wolf, Lorette",
+      "recipients": [
+        "Wolf, Lorette"
+      ],
+      "destinations": [
+        "29 Arlington Avenue"
+      ],
+      "origins": null,
+      "mentions": {
+        "places": [
+          {
+            "type": "place",
+            "id": "http://example.org/entities/4c9e8cab-8020-4359-abb8-c08f625019e7",
+            "display": "<b>Sector XXXZ5QZX</b>"
+          },
+          {
+            "type": "place",
+            "id": "http://example.org/entities/fc2ff1c0-e640-4b6d-ba36-df8fb7e0e5af",
+            "display": "<b><i>Denmark</i></b>"
+          }
+        ],
+        "readings": [
+          {
+            "type": "reading",
+            "id": "http://example.org/entities/305fc6cd-5848-4751-b2a1-50acba186084",
+            "display": "Walker Boehm, Little Hands Clapping, Mark Batty Publisher"
+          },
+          {
+            "type": "reading",
+            "id": "http://example.org/entities/5de22dac-3818-4991-b5d9-d5c962d8dcab",
+            "display": "Nickie Ortiz, The Doors of Perception, Unfinished Monument Press"
+          },
+          {
+            "type": "reading",
+            "id": "http://example.org/entities/b22acf8f-485a-4476-ac50-f2acae459c35",
+            "display": "Dudley Hayes, <i>Dance Dance Dance</i>, Hodder & Stoughton"
+          }
+        ],
+        "work_of_arts": [
+          {
+            "type": "work_of_art",
+            "id": "http://example.org/entities/3055e87f-8c46-4012-b8dd-cb755a38c547",
+            "display": "Agrajag, <i>Girls & Boys</i>, Poutine <i>put a bird on it pop-up wayfarers leggings literally brooklyn single-origin coffee</i> roof."
+          },
+          {
+            "type": "work_of_art",
+            "id": "http://example.org/entities/7ae7c7f6-700c-45b1-9ae3-2a0c27bd9fc8",
+            "display": "Hotblack Desiato's bodyguard, I Love U, but I Don't Trust U Anymore, Gluten-free meditation listicle bitters."
+          }
+        ],
+        "writings": [
+          {
+            "type": "writing",
+            "id": "http://example.org/entities/38bcb987-1ce6-40bd-99ac-b293fa4f7520",
+            "display": "<b>I Know Why the Caged Bird Sings</b>"
+          },
+          {
+            "type": "writing",
+            "id": "http://example.org/entities/703cffcf-345c-457a-a433-7c6bfb44eec9",
+            "display": "<b>A Glass of Blessings</b>"
+          },
+          {
+            "type": "writing",
+            "id": "http://example.org/entities/fe8ab978-7117-43b0-929d-a5411f66ea42",
+            "display": "<b><i>Number the Stars</i></b>"
+          }
+        ]
+      }
+    },
+    {
+      "id": "http://example.org/letters/b2d2eca4-b558-4416-9c53-4fac25ee38a9",
+      "date": "1959-08-24T00:00:00.000-04:00",
+      "label": "24 August 1959 - Kulas, Benito",
+      "recipients": [
+        "Kulas, Benito"
+      ],
+      "destinations": [
+        "<i>Zarss</i>"
       ],
       "origins": null,
       "mentions": {
         "music": [
           {
             "type": "music",
-            "id": "http://example.org/entities/952e06cb-a608-41e2-9744-2a58cfbf733a",
-            "display": "<span>Charles Darwin, <i>Pretzel Body Logic</i> [Robbie Turner].</span>"
+            "id": "http://example.org/entities/5d27f62b-dcfd-4603-8d18-f0bb0f682663",
+            "display": "Bowerick Wowbagger, <i>Kiss</i> [BenDeLaCreme]"
+          },
+          {
+            "type": "music",
+            "id": "http://example.org/entities/7cf7cc2f-9c8c-4a7e-a8dd-4e6c9b7a5039",
+            "display": "Eccentrica Gallumbits, Partyman [Ginger Minj]"
+          },
+          {
+            "type": "music",
+            "id": "http://example.org/entities/ad39107b-6c49-436d-bae2-38932f5b4d01",
+            "display": "Eccentrica Gallumbits, I Wanna Be Your Lover [Tatianna]"
           }
         ],
         "places": [
           {
             "type": "place",
-            "id": "http://example.org/entities/03ac33fe-53b3-4dd4-935c-ae94de5b9a8a",
-            "display": "<span><i>Sector XXXZ5QZX</i>.</span>"
+            "id": "http://example.org/entities/0c291c75-7142-445a-8c5c-1bb59461d839",
+            "display": "<b>Bournemouth</b>"
           },
           {
             "type": "place",
-            "id": "http://example.org/entities/a62aa1d0-8b2d-45bd-9724-a49ae2cbd2e7",
-            "display": "<span>Rupert.</span>"
-          },
-          {
-            "type": "place",
-            "id": "http://example.org/entities/d21a7538-cdc4-415c-bf9c-3d55b0edbc79",
-            "display": "<span><i>Norway</i>.</span>"
+            "id": "http://example.org/entities/b543cb22-d2cc-44dd-b732-d8beabc6f6ec",
+            "display": "<b>Guildford</b>"
           }
         ],
         "public_events": [
           {
             "type": "public_event",
-            "id": "http://example.org/entities/1c066758-0421-41e3-8e8a-280484c41e5a",
-            "display": "<span>Endeavour (1948-07-12).</span>"
+            "id": "http://example.org/entities/38f5cb7b-3b03-4617-821d-baa2380fb1a1",
+            "display": "<b>Enterprise</b>"
           },
           {
             "type": "public_event",
-            "id": "http://example.org/entities/c6e1a6ce-271a-4ad0-b4bd-193df8a08052",
-            "display": "<span><i>Endeavour</i> (1927-09-05).</span>"
+            "id": "http://example.org/entities/4a082ba5-8eaa-4178-8b02-9e5ea615ef69",
+            "display": "<b>Atlantis</b>"
+          }
+        ],
+        "translatings": [
+          {
+            "type": "translating",
+            "id": "http://example.org/entities/ad3ea26f-5d69-4db1-9804-d0e8b8f002ad",
+            "display": "Zarniwoop, I Will Fear No Evil, Translated into norwegian by Elvis"
+          },
+          {
+            "type": "translating",
+            "id": "http://example.org/entities/eadfa217-3eac-4964-abb7-bc020ce1604a",
+            "display": "Majikthise, The Wealth of Nations, Translated into italian by Max Quordlepleen"
+          }
+        ]
+      }
+    },
+    {
+      "id": "http://example.org/letters/4619e754-3a17-4d75-918d-6c6c9c6091c2",
+      "date": "1959-09-18T00:00:00.000-04:00",
+      "label": "18 September 1959 - Nicolas, Trinidad",
+      "recipients": [
+        "Nicolas, Trinidad"
+      ],
+      "destinations": [
+        "Rickmansworth"
+      ],
+      "origins": null,
+      "mentions": {
+        "music": [
+          {
+            "type": "music",
+            "id": "http://example.org/entities/0b407a51-ab2f-4e99-b251-f9e9b498ccda",
+            "display": "Agrajag, <i>Cindy C.</i> [Pearl]"
+          }
+        ],
+        "people": [
+          {
+            "type": "person",
+            "id": "http://example.org/entities/332a2128-4d1d-4fed-923f-898baf29944a",
+            "display": "<b>Pollich, Neil 1908-1982</b>"
+          },
+          {
+            "type": "person",
+            "id": "http://example.org/entities/b10d4528-2482-4ab9-a438-2d990f84332a",
+            "display": "<b>Mitchell, Lavenia 1907-1996</b>"
+          }
+        ],
+        "readings": [
+          {
+            "type": "reading",
+            "id": "http://example.org/entities/04440859-69a3-4e22-a881-8b920a8dbfa1",
+            "display": "Mr. Gabrielle Schimmel, <i>The Mermaids Singing</i>, Shire Books"
+          }
+        ],
+        "translatings": [
+          {
+            "type": "translating",
+            "id": "http://example.org/entities/ac788fc2-aacb-47fd-ad2b-53f6da4c67bf",
+            "display": "Agda, <i>Brandy of the Damned</i>, Translated into greek by Slartibartfast"
+          },
+          {
+            "type": "translating",
+            "id": "http://example.org/entities/d65c8d9a-47b9-426c-9c68-0c4fa5b7c4e1",
+            "display": "Grunthos the Flatulent, <i>After Many a Summer Dies the Swan</i>, Translated into flemish by Yooden Vranx"
+          },
+          {
+            "type": "translating",
+            "id": "http://example.org/entities/e4e96725-2fa2-4c05-85d5-58f74b2d835f",
+            "display": "Ford Prefect, <i>Those Barren Leaves, Thrones, Dominations</i>, Translated into schweizerdeutsche by Reg Nullify"
+          }
+        ]
+      }
+    },
+    {
+      "id": "http://example.org/letters/e4a83997-339b-4a19-9513-b09a5b571376",
+      "date": "1960-02-29T00:00:00.000-05:00",
+      "label": "29 February 1960 - Pfeffer, Thalia",
+      "recipients": [
+        "Pfeffer, Thalia"
+      ],
+      "destinations": [
+        "<i>Western Spiral Arm</i>"
+      ],
+      "origins": null,
+      "mentions": {
+        "attendances": [
+          {
+            "type": "attendance",
+            "id": "http://example.org/entities/393b8206-536d-46b5-bebb-710b415090f7",
+            "display": "<strong>radio_broadcast</strong> Star Wars: Episode II – Attack of the Clones"
+          },
+          {
+            "type": "attendance",
+            "id": "http://example.org/entities/ad594b9f-d43c-4559-b291-69583565c30a",
+            "display": "<strong>radio_broadcast</strong> <i>Apocalypse Now</i>"
+          }
+        ],
+        "productions": [
+          {
+            "type": "production",
+            "id": "http://example.org/entities/49465863-8f20-44fb-b710-c964f8fa285f",
+            "display": "The Big Lebowski, dir. Brandt, RW6, Kirkview, 1925-05-07"
+          }
+        ],
+        "publications": [
+          {
+            "type": "publication",
+            "id": "http://example.org/entities/93474bde-f3fe-403f-a6bc-f355ec5f926e",
+            "display": "<i>Leafwood Publishers</i>, Paula Nancy Millstone Jennings Pug meditation scenester you probably haven't heard of them letterpress deep v."
           }
         ],
         "work_of_arts": [
           {
             "type": "work_of_art",
-            "id": "http://example.org/entities/3a5dfdac-0e5e-4a8b-acad-6d8cad0ced2c",
-            "display": "<span>Prostetnic Vogon Kwaltz, <i>17 Days</i>, Helvetica <i>try-hard locavore sustainable 8-bit tilde sriracha</i> normcore.</span>"
+            "id": "http://example.org/entities/8b7aee9a-af0c-4268-a95c-ec88776792b8",
+            "display": "Eccentrica Gallumbits, <i>Darling Nikki</i>, Flannel mlkshk godard waistcoat."
+          },
+          {
+            "type": "work_of_art",
+            "id": "http://example.org/entities/fe304546-a9b7-4356-b2aa-a8088d0e99a5",
+            "display": "Agda, I Wish U Heaven, Listicle wes anderson flexitarian narwhal 90's you probably haven't heard of them tofu phlogiston pop-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "http://example.org/letters/f736f479-daf5-470e-baeb-c63da2a4ea7b",
+      "date": "1960-09-26T00:00:00.000-04:00",
+      "label": "26 September 1960 - Lebsack, Kit",
+      "recipients": [
+        "Lebsack, Kit"
+      ],
+      "destinations": [
+        "<i>France</i>"
+      ],
+      "origins": null,
+      "mentions": {
+        "music": [
+          {
+            "type": "music",
+            "id": "http://example.org/entities/8f6fb109-31c3-40f3-b397-1ca1ae29319f",
+            "display": "Mella, <i>Anotherloverholenyohead</i> [The Vixen]"
+          },
+          {
+            "type": "music",
+            "id": "http://example.org/entities/95d8df3c-19c5-481f-9bb7-2170526ee1a5",
+            "display": "Grunthos the Flatulent, Joy In Repetition [Kenya Michaels]"
+          }
+        ],
+        "places": [
+          {
+            "type": "place",
+            "id": "http://example.org/entities/de1e7f1a-12f0-4b58-b24f-e77f6f5a5f5d",
+            "display": "<b><i>29 Arlington Avenue</i></b>"
+          }
+        ],
+        "public_events": [
+          {
+            "type": "public_event",
+            "id": "http://example.org/entities/07d41308-1da8-4f09-b20f-75030cbaf707",
+            "display": "<b>Endeavour</b>"
+          },
+          {
+            "type": "public_event",
+            "id": "http://example.org/entities/b85af0bc-4521-4fcd-a06c-cca7d2857859",
+            "display": "<b><i>Apollo</i></b>"
+          },
+          {
+            "type": "public_event",
+            "id": "http://example.org/entities/ff226779-c466-4c47-9dc2-8b01c7feea71",
+            "display": "<b><i>Atlantis</i></b>"
+          }
+        ],
+        "readings": [
+          {
+            "type": "reading",
+            "id": "http://example.org/entities/710d281b-7b0a-432b-bed4-6d157addbbfd",
+            "display": "Sofia Stamm LLD, A Darkling Plain, University of Minnesota Press"
+          }
+        ]
+      }
+    },
+    {
+      "id": "http://example.org/letters/e186afac-cbff-4887-83a9-73ac5ee3630e",
+      "date": "1960-11-25T00:00:00.000-05:00",
+      "label": "25 November 1960 - Donnelly, Samuel",
+      "recipients": [
+        "Donnelly, Samuel"
+      ],
+      "destinations": [
+        "<i>Fenchurch Street railway station</i>"
+      ],
+      "origins": null,
+      "mentions": {
+        "attendances": [
+          {
+            "type": "attendance",
+            "id": "http://example.org/entities/2fb1e719-f8f5-4499-972e-86ddb6390ea6",
+            "display": "<strong>theatre</strong> <i>Paths of Glory</i>"
+          },
+          {
+            "type": "attendance",
+            "id": "http://example.org/entities/60047171-bae9-43a1-8533-0ae9799d3031",
+            "display": "<strong>_reading</strong> La La Land"
+          }
+        ],
+        "organizations": [
+          {
+            "type": "organization",
+            "id": "http://example.org/entities/c4deda1c-a820-4c50-b531-f250b4e4ab11",
+            "display": "<b><i>Frogstar World C</i></b>"
+          }
+        ],
+        "work_of_arts": [
+          {
+            "type": "work_of_art",
+            "id": "http://example.org/entities/2a8e3894-be3c-4c2d-ab7a-549cea1e408a",
+            "display": "Vroomfondel, <i>She's Always In My Hair</i>, Aesthetic squid cold-pressed franzen."
+          }
+        ],
+        "writings": [
+          {
+            "type": "writing",
+            "id": "http://example.org/entities/a4357030-4e61-475d-93c2-c41e27d5ef97",
+            "display": "<b><i>Clouds of Witness</i></b>"
+          }
+        ]
+      }
+    },
+    {
+      "id": "http://example.org/letters/533fb9b7-8124-499c-b306-afb5abfecd12",
+      "date": "1961-03-07T00:00:00.000-05:00",
+      "label": "07 March 1961 - Turcotte, Jamal",
+      "recipients": [
+        "Turcotte, Jamal"
+      ],
+      "destinations": [
+        "<i>29 Arlington Avenue</i>"
+      ],
+      "origins": null,
+      "mentions": {
+        "attendances": [
+          {
+            "type": "attendance",
+            "id": "http://example.org/entities/27334981-3c16-4eb7-b765-c626f56cd804",
+            "display": "<strong>theatre</strong> <i>Million Dollar Baby</i>"
+          }
+        ],
+        "public_events": [
+          {
+            "type": "public_event",
+            "id": "http://example.org/entities/7fbb5343-40a5-4278-a014-bb631a5fc2fe",
+            "display": "<b>Apollo</b>"
+          }
+        ],
+        "readings": [
+          {
+            "type": "reading",
+            "id": "http://example.org/entities/51216538-4fe8-4233-a707-4115c89e4e87",
+            "display": "Refugio Cruickshank, <i>Tender Is the Night</i>, Virgin Publishing"
+          },
+          {
+            "type": "reading",
+            "id": "http://example.org/entities/7f208a3a-3738-48da-85a2-44580a43f7ce",
+            "display": "Billie Raynor, Wildfire at Midnight, Harlequin Enterprises Ltd"
+          },
+          {
+            "type": "reading",
+            "id": "http://example.org/entities/89b24d99-dab9-4a92-90fb-b0df1037ac70",
+            "display": "Suzanne Rohan DC, Eyeless in Gaza, Velazquez Press"
+          }
+        ],
+        "work_of_arts": [
+          {
+            "type": "work_of_art",
+            "id": "http://example.org/entities/05aac9af-297a-4438-aff9-7ab173d1e2e5",
+            "display": "Prostetnic Vogon Jeltz, Baltimore, Vinegar banh mi beard synth semiotics."
+          },
+          {
+            "type": "work_of_art",
+            "id": "http://example.org/entities/758c228a-6176-41e1-8d5e-adf39dbe1e27",
+            "display": "Hactar, <i>Let's Work</i>, Sriracha typewriter austin cliche semiotics slow-carb."
+          },
+          {
+            "type": "work_of_art",
+            "id": "http://example.org/entities/d4bea2f5-26d1-428e-b825-4a9694ac5109",
+            "display": "Random Dent, <i>Take Me With U</i>, Quinoa brunch kitsch chartreuse roof."
+          }
+        ]
+      }
+    },
+    {
+      "id": "http://example.org/letters/9cdc2e48-f43a-43a7-8af6-8816a8f32b93",
+      "date": "1962-09-28T00:00:00.000-04:00",
+      "label": "28 September 1962 - Ritchie, Sonya",
+      "recipients": [
+        "Ritchie, Sonya"
+      ],
+      "destinations": [
+        "Han Dold City"
+      ],
+      "origins": null,
+      "mentions": {
+        "music": [
+          {
+            "type": "music",
+            "id": "http://example.org/entities/3c32f67f-ff24-45fc-ae27-3bd0b97c550e",
+            "display": "Colin the Security Robot, <i>I Wish U Heaven</i> [Jessica Wild]"
+          }
+        ],
+        "organizations": [
+          {
+            "type": "organization",
+            "id": "http://example.org/entities/87136d6d-8387-422e-a143-9b6aa9bb1802",
+            "display": "<b>Argabuthon</b>"
+          },
+          {
+            "type": "organization",
+            "id": "http://example.org/entities/9a12c4de-c162-4773-a744-f914f169ed1f",
+            "display": "<b><i>Broop Kidron 13</i></b>"
+          },
+          {
+            "type": "organization",
+            "id": "http://example.org/entities/a4eb6c06-6866-45f2-9990-72e066b7594f",
+            "display": "<b>Kakrafoon Kappa</b>"
+          }
+        ],
+        "translatings": [
+          {
+            "type": "translating",
+            "id": "http://example.org/entities/7881c8a3-f213-4256-9f38-7b4d748b8c3a",
+            "display": "Slartibartfast, Eyeless in Gaza, Translated into polish by Tricia McMillan"
+          },
+          {
+            "type": "translating",
+            "id": "http://example.org/entities/ea8f1987-1bc1-416d-97a7-3262deca23fb",
+            "display": "Slartibartfast, <i>Now Sleeps the Crimson Petal</i>, Translated into hebrew by Hillman Hunter"
+          }
+        ],
+        "writings": [
+          {
+            "type": "writing",
+            "id": "http://example.org/entities/0dd96c3b-4846-4c44-ac50-bcce14e07b19",
+            "display": "<b><i>The Last Temptation</i></b>"
+          }
+        ]
+      }
+    },
+    {
+      "id": "http://example.org/letters/2c29bcef-bfbc-4994-ae43-8b6f7cf50993",
+      "date": "1963-11-03T00:00:00.000-05:00",
+      "label": "03 November 1963 - Ritchie, Ronda",
+      "recipients": [
+        "Ritchie, Ronda"
+      ],
+      "destinations": [
+        "<i>Total Perspective Vortex</i>"
+      ],
+      "origins": null,
+      "mentions": {
+        "people": [
+          {
+            "type": "person",
+            "id": "http://example.org/entities/20038a2f-19ab-47ba-aff4-a047c6e8de8b",
+            "display": "<b>Balistreri, Maryanna 1909-1991</b>"
+          }
+        ],
+        "public_events": [
+          {
+            "type": "public_event",
+            "id": "http://example.org/entities/154e2e02-6d69-44ad-b671-249f1a1f0238",
+            "display": "<b>Atlantis</b>"
+          }
+        ],
+        "translatings": [
+          {
+            "type": "translating",
+            "id": "http://example.org/entities/4ff42a0d-c19a-4450-8101-83fc535563a6",
+            "display": "Zarquon, Arms and the Man, Translated into norwegian by Paula Nancy Millstone Jennings"
+          },
+          {
+            "type": "translating",
+            "id": "http://example.org/entities/6d05d38a-edd8-43df-a5be-0401b2670a89",
+            "display": "Lunkwill and Fook, Where Angels Fear to Tread, Translated into dutch by Prostetnic Vogon Jeltz"
+          },
+          {
+            "type": "translating",
+            "id": "http://example.org/entities/e5674399-e892-4ef8-8cc1-55d393f49c82",
+            "display": "Lunkwill and Fook, Have His Carcase, Translated into hebrew by Bowerick Wowbagger"
+          }
+        ],
+        "work_of_arts": [
+          {
+            "type": "work_of_art",
+            "id": "http://example.org/entities/27b52167-2479-4016-8159-3fd4889d65e0",
+            "display": "Emily Saunders, <i>Thunder</i>, 8-bit yuccie bespoke ethical photo booth sartorial put a bird on it."
+          },
+          {
+            "type": "work_of_art",
+            "id": "http://example.org/entities/3f5ede1a-2ab5-48f8-a66d-71bb9d5997e6",
+            "display": "Charles Darwin, <i>319</i>, Roof <i>next level umami flexitarian meditation retro</i> street."
+          }
+        ]
+      }
+    },
+    {
+      "id": "http://example.org/letters/6b34e7eb-4fe0-4591-ab38-f1b7e9a6f485",
+      "date": "1964-09-06T00:00:00.000-04:00",
+      "label": "06 September 1964 - Wyman, Dwayne",
+      "recipients": [
+        "Wyman, Dwayne"
+      ],
+      "destinations": [
+        "<i>Horsehead Nebula</i>"
+      ],
+      "origins": null,
+      "mentions": {
+        "people": [
+          {
+            "type": "person",
+            "id": "http://example.org/entities/db09902c-9870-48a6-aff4-71d576443e83",
+            "display": "<b>Ratke, Javier 1918-1971</b>"
+          },
+          {
+            "type": "person",
+            "id": "http://example.org/entities/e0a8dfad-efff-480c-8349-3a8e134f4cd7",
+            "display": "<b>Hane, Armand 1925-1984</b>"
+          },
+          {
+            "type": "person",
+            "id": "http://example.org/entities/f06bacf1-d4de-41fe-829a-debbbda309ca",
+            "display": "<b>Gutkowski, Randell 1920-1994</b>"
+          }
+        ],
+        "publications": [
+          {
+            "type": "publication",
+            "id": "http://example.org/entities/c554d564-8b3f-40fe-9b11-2cbed6598da1",
+            "display": "<i>Haynes Manuals</i>, Agda Jean shorts fanny pack humblebrag pickled."
+          }
+        ],
+        "readings": [
+          {
+            "type": "reading",
+            "id": "http://example.org/entities/fea3bc0a-555e-4451-8541-263828bb319b",
+            "display": "Adela Koelpin, <i>Frequent Hearses</i>, Brill"
+          }
+        ],
+        "translatings": [
+          {
+            "type": "translating",
+            "id": "http://example.org/entities/165ba2f5-2de3-4b44-bc6d-44186d3bc226",
+            "display": "Lunkwill and Fook, <i>Surprised by Joy</i>, Translated into spanish by The Allitnils"
+          },
+          {
+            "type": "translating",
+            "id": "http://example.org/entities/45b38b44-a928-4483-a388-d09646a49bd5",
+            "display": "Mr. Prosser, <i>Such, Such Were the Joys</i>, Translated into dutch by Slartibartfast"
+          }
+        ]
+      }
+    },
+    {
+      "id": "http://example.org/letters/c7d56054-5638-4621-8d94-d1e3d6167ebb",
+      "date": "1964-09-06T00:00:00.000-04:00",
+      "label": "06 September 1964 - Yundt, Eddie",
+      "recipients": [
+        "Yundt, Eddie"
+      ],
+      "destinations": [
+        "<i>Zarss</i>"
+      ],
+      "origins": null,
+      "mentions": {
+        "attendances": [
+          {
+            "type": "attendance",
+            "id": "http://example.org/entities/1529f50a-3e38-420f-bd4c-366683b2a74b",
+            "display": "<strong>_reading</strong> <i>The Dark Knight</i>"
+          },
+          {
+            "type": "attendance",
+            "id": "http://example.org/entities/cc055b1b-cf04-41d1-ace3-d0ff20ae6a03",
+            "display": "<strong>radio_broadcast</strong> <i>Memento</i>"
+          }
+        ],
+        "public_events": [
+          {
+            "type": "public_event",
+            "id": "http://example.org/entities/f3593eba-803b-4b2f-b95a-5762e5ebcd8c",
+            "display": "<b><i>Apollo</i></b>"
+          }
+        ],
+        "publications": [
+          {
+            "type": "publication",
+            "id": "http://example.org/entities/b6d4fbf1-0469-42f6-bfdd-9a777cd99634",
+            "display": "<i>Martinus Nijhoff Publishers</i>, Eccentrica Gallumbits Tacos health deep v jean shorts hella."
+          }
+        ],
+        "translatings": [
+          {
+            "type": "translating",
+            "id": "http://example.org/entities/68839134-7a15-47bc-bd78-07e907ee259a",
+            "display": "Lintilla, <i>Edna O'Brien</i>, Translated into norwegian by Eddie the Computer"
+          },
+          {
+            "type": "translating",
+            "id": "http://example.org/entities/c4b3c975-e72c-47a7-822a-7fe81153d38e",
+            "display": "Pizpot Gargravarr, Nectar in a Sieve, Translated into german by Bowerick Wowbagger"
           }
         ]
       }
@@ -1143,12 +962,12 @@ Content-Length: 35514</pre>
     "date": {
       "meta": {
       },
-      "doc_count": 18,
+      "doc_count": 15,
       "buckets": [
         {
           "key_as_string": "1957-01-01T00:00:00.000Z",
           "key": -410227200000,
-          "doc_count": 2
+          "doc_count": 3
         },
         {
           "key_as_string": "1958-01-01T00:00:00.000Z",
@@ -1158,37 +977,32 @@ Content-Length: 35514</pre>
         {
           "key_as_string": "1959-01-01T00:00:00.000Z",
           "key": -347155200000,
-          "doc_count": 2
+          "doc_count": 3
         },
         {
           "key_as_string": "1960-01-01T00:00:00.000Z",
           "key": -315619200000,
-          "doc_count": 1
+          "doc_count": 3
         },
         {
           "key_as_string": "1961-01-01T00:00:00.000Z",
           "key": -283996800000,
-          "doc_count": 3
+          "doc_count": 1
         },
         {
           "key_as_string": "1962-01-01T00:00:00.000Z",
           "key": -252460800000,
-          "doc_count": 5
+          "doc_count": 1
         },
         {
           "key_as_string": "1963-01-01T00:00:00.000Z",
           "key": -220924800000,
-          "doc_count": 2
+          "doc_count": 1
         },
         {
           "key_as_string": "1964-01-01T00:00:00.000Z",
           "key": -189388800000,
-          "doc_count": 1
-        },
-        {
-          "key_as_string": "1965-01-01T00:00:00.000Z",
-          "key": -157766400000,
-          "doc_count": 1
+          "doc_count": 2
         }
       ]
     },
@@ -1200,44 +1014,44 @@ Content-Length: 35514</pre>
       "sum_other_doc_count": 0,
       "buckets": [
         {
-          "key": "West Goyette",
-          "doc_count": 18
-        },
-        {
-          "key": "Eastern Haley College",
+          "key": "Gorczany Academy",
           "doc_count": 15
         },
         {
-          "key": "East Kentucky University",
-          "doc_count": 10
+          "key": "Hudson College",
+          "doc_count": 13
         },
         {
-          "key": "The Aufderhar University",
-          "doc_count": 10
+          "key": "West Lockman",
+          "doc_count": 12
+        },
+        {
+          "key": "Eastern Vermont University",
+          "doc_count": 11
         }
       ]
     },
     "language": {
       "meta": {
       },
-      "doc_count": 18,
+      "doc_count": 15,
       "doc_count_error_upper_bound": 0,
       "sum_other_doc_count": 0,
       "buckets": [
         {
-          "key": "german",
-          "doc_count": 9
+          "key": "french",
+          "doc_count": 5
+        },
+        {
+          "key": "english",
+          "doc_count": 4
         },
         {
           "key": "italian",
           "doc_count": 4
         },
         {
-          "key": "english",
-          "doc_count": 3
-        },
-        {
-          "key": "french",
+          "key": "german",
           "doc_count": 2
         }
       ]
@@ -1247,9 +1061,9 @@ Content-Length: 35514</pre>
     "page": 1,
     "per_page": 25,
     "page_count": 1,
-    "total_count": 18,
+    "total_count": 15,
     "links": {
-      "self": "http://example.org/letters?page=1&repositories=West+Goyette"
+      "self": "http://example.org/letters?page=1&repositories=Gorczany+Academy"
     }
   }
 }</pre>

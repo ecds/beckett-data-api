@@ -184,7 +184,7 @@ table th, table td {
               </tr>
               <tr>
                 <td>
-                    <span class="name">short_display</span>
+                    <span class="name">display_header</span>
                 </td>
                 <td>
                   <span class="description">HTML String</span>
@@ -198,7 +198,35 @@ table th, table td {
               </tr>
               <tr>
                 <td>
-                    <span class="name">entity[alternate_spellings]</span>
+                    <span class="name">label</span>
+                </td>
+                <td>
+                  <span class="description">HTML String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">false</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">description</span>
+                </td>
+                <td>
+                  <span class="description">HTML String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">false</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">alternate_spellings</span>
                 </td>
                 <td>
                   <span class="description">Array</span>
@@ -207,15 +235,15 @@ table th, table td {
                   <span class="description"></span>
                 </td>
                 <td>
-                  <span class="description">true</span>
+                  <span class="description">false</span>
                 </td>
               </tr>
               <tr>
                 <td>
-                    <span class="name">entity[artist]</span>
+                    <span class="name">artist</span>
                 </td>
                 <td>
-                  <span class="description">String</span>
+                  <span class="description">HTML String</span>
                 </td>
                 <td>
                   <span class="description"></span>
@@ -226,7 +254,7 @@ table th, table td {
               </tr>
               <tr>
                 <td>
-                    <span class="name">entity[artist_alternate_spellings]</span>
+                    <span class="name">artist_alternate_spellings</span>
                 </td>
                 <td>
                   <span class="description">Array</span>
@@ -235,15 +263,15 @@ table th, table td {
                   <span class="description"></span>
                 </td>
                 <td>
-                  <span class="description">true</span>
+                  <span class="description">false</span>
                 </td>
               </tr>
               <tr>
                 <td>
-                    <span class="name">entity[notes]</span>
+                    <span class="name">notes</span>
                 </td>
                 <td>
-                  <span class="description">String</span>
+                  <span class="description">HTML String</span>
                 </td>
                 <td>
                   <span class="description"></span>
@@ -254,10 +282,10 @@ table th, table td {
               </tr>
               <tr>
                 <td>
-                    <span class="name">entity[owner_location_accession_number_current]</span>
+                    <span class="name">owner_location_accession_number_current</span>
                 </td>
                 <td>
-                  <span class="description">String</span>
+                  <span class="description">HTML String</span>
                 </td>
                 <td>
                   <span class="description"></span>
@@ -268,10 +296,10 @@ table th, table td {
               </tr>
               <tr>
                 <td>
-                    <span class="name">entity[owner_location_accession_number_contemporaneous]</span>
+                    <span class="name">owner_location_accession_number_contemporaneous</span>
                 </td>
                 <td>
-                  <span class="description">String</span>
+                  <span class="description">HTML String</span>
                 </td>
                 <td>
                   <span class="description"></span>
@@ -293,7 +321,7 @@ Host: example.org
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET /entities/2ebb5fb3-083a-4c8e-9edf-6fd080d70520</pre>
+          <pre class="request route highlight">GET /entities/8c8233fa-d1cd-4bb7-92c5-c72aee1d0a18</pre>
 
 
 
@@ -307,31 +335,32 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;f778946810e576905607dfa3b1919b2d&quot;
+ETag: W/&quot;c2ae13aadb47bc7fae5a46cd1b116a45&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: e908e6c0-ac84-4f69-97be-4a15d51567bc
-X-Runtime: 1.233438
+X-Request-Id: 73b862bc-ba4e-4b00-b6ee-48c564147ca9
+X-Runtime: 1.234987
 Vary: Origin
-Content-Length: 524</pre>
+Content-Length: 919</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
+  &quot;id&quot;: &quot;http://example.org/entities/8c8233fa-d1cd-4bb7-92c5-c72aee1d0a18&quot;,
   &quot;type&quot;: &quot;work_of_art&quot;,
-  &quot;label&quot;: &quot;Uptown&quot;,
-  &quot;clean_label&quot;: &quot;Uptown&quot;,
-  &quot;description&quot;: &quot;Pork belly humblebrag actually schlitz.&quot;,
-  &quot;clean_description&quot;: &quot;Pork belly humblebrag actually schlitz.&quot;,
+  &quot;label&quot;: &quot;&lt;i&gt;I Would Die 4 U&lt;/i&gt;&quot;,
+  &quot;clean_label&quot;: &quot;I Would Die 4 U&quot;,
+  &quot;description&quot;: &quot;Chambray &lt;i&gt;dreamcatcher chartreuse cornhole mixtape tattooed cronut sartorial&lt;/i&gt; biodiesel.&quot;,
+  &quot;clean_description&quot;: &quot;Chambray dreamcatcher chartreuse cornhole mixtape tattooed cronut sartorial biodiesel.&quot;,
   &quot;alternate_spellings&quot;: [
-    &quot;Stacy Layne Matthews&quot;
+    &quot;Vanessa Vanjie Mateo&quot;
   ],
-  &quot;artist&quot;: &quot;Barry Manilow&quot;,
+  &quot;artist&quot;: &quot;Roosta&quot;,
   &quot;artist_alternate_spellings&quot;: [
-    &quot;Ariel Versace&quot;
+    &quot;Trinity Taylor&quot;
   ],
-  &quot;notes&quot;: &quot;Pardon me for breathing, which I never do anyway so I don&#39;t know why I bother to say it, Oh God, I&#39;m so depressed.&quot;,
-  &quot;owner_location_accession_number_current&quot;: 859,
-  &quot;owner_location_accession_number_contemporaneous&quot;: 818
+  &quot;notes&quot;: &quot;You think you&#39;ve got problems? What are you supposed to do if you are a manically depressed robot? No, don&#39;t try to answer that. I&#39;m fifty thousand times more intelligent than you and even I don&#39;t know the answer. It gives me a headache just trying to think down to your level.&quot;,
+  &quot;owner_location_accession_number_current&quot;: 415,
+  &quot;owner_location_accession_number_contemporaneous&quot;: 277
 }</pre>
       </div>
     </div>
