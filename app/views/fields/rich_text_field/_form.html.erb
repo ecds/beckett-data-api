@@ -3,5 +3,11 @@
 </div>
 <div class="field-unit__field">
   <%= f.text_field field.attribute, type: 'hidden' %>
-  <trix-editor input=<%= "#{field.resource.class.to_s.downcase}_#{field.attribute}" =%>></trix-editor>
+  <% if field.resource.person? && field.attribute == :label %>
+    <%= field.to_s %>
+    <br>
+    <span style="font-size:.75rem;font-style:italic;">Label is created from the first name and last name properties</span>
+  <% else %>
+    <trix-editor input=<%= "#{field.resource.class.to_s.downcase}_#{field.attribute}" =%>></trix-editor>
+  <% end %>
 </div>

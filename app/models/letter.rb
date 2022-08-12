@@ -23,7 +23,10 @@ class Letter < ApplicationRecord
   has_many :letter_repositories, dependent: :destroy
   has_many :repositories, -> { distinct }, through: :letter_repositories
 
-  belongs_to :letter_file, optional: true
+  has_many :letter_collections, dependent: :destroy
+  has_many :collections, -> { distinct }, through: :letter_collections
+
+  belongs_to :file_folder, optional: true
   belongs_to :letter_owner, optional: true
   belongs_to :letter_publisher, optional: true
 
@@ -40,6 +43,10 @@ class Letter < ApplicationRecord
       .where('letters.date BETWEEN ? AND ?', DateTime.new(1957), DateTime.new(1965, 12).at_end_of_month)
   }
 
+  scope :between, lambda {|min, max|
+    where('letters.date >= ? AND letters.date <= ?', min, max)
+  }
+
   def label
     "#{date.strftime('%d %B %Y')} - #{recipients.map(&:label).join(', ')}"
   end
@@ -51,9 +58,9 @@ class Letter < ApplicationRecord
 
       m_hash[type.pluralize.to_sym] = mentions.public_send(type).map do |mention|
         {
-          type: type,
+          type:,
           id: mention.entity.url_path,
-          display: mention.entity.short_display
+          display: mention.entity.display_header
         }
       end
     end
@@ -64,8 +71,8 @@ class Letter < ApplicationRecord
   def search_data
     {
       id_path: url_path,
-      date: date,
-      label: label,
+      date:,
+      label:,
       recipients: recipients.map(&:clean_label),
       mentions: mentions_hash,
       origins: origins.map(&:label),
@@ -73,11 +80,13 @@ class Letter < ApplicationRecord
       destinations: destinations.map(&:label),
       destinations_clean: destinations.map(&:clean_label),
       repositories: repositories.map(&:label),
-      language: language
+      language:
     }
   end
 
   def should_index?
+    return if date.nil?
+
     date.between? DateTime.new(1957), DateTime.new(1965, 12).at_end_of_month and repositories.any?(&:public)
   end
 

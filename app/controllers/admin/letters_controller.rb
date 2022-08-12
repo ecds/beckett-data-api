@@ -2,6 +2,64 @@
 
 module Admin
   class LettersController < Admin::ApplicationController
+    before_action :original_params, only: %i[index]
+    def default_sorting_attribute
+      :date
+    end
+
+    def default_sorting_direction
+      :asc
+    end
+
+    def index
+      # dashboard.permitted_attributes.push(:start_date)
+      # scoped_resource = Entity.music
+      # super
+      authorize_resource(resource_class)
+      search_term = params[:search].to_s.strip
+      dates = Letter.all.map(&:date).compact
+      Rails.logger.debug { "incoming = #{params}" }
+      min_date = dates.min
+      max_date = dates.max
+      start_date = params.key?(:start_date) ? Date.parse(params[:start_date]) : min_date
+      end_date = params.key?(:end_date) ? Date.parse(params[:end_date]) : max_date
+
+      resources = Administrate::Search.new(scoped_resource,
+                                           dashboard,
+                                           search_term).run
+      resources = resources.between(start_date, end_date)
+      resources = apply_collection_includes(resources)
+      resources = order.apply(resources)
+      resources = resources.page(params[:_page]).per(records_per_page)
+      page = Administrate::Page::Collection.new(dashboard, order:)
+
+      render locals: {
+        resources:,
+        search_term:,
+        page:,
+        show_search_bar: show_search_bar?,
+        min_date:,
+        max_date:,
+        start_date:,
+        end_date:
+      }
+    end
+
+    private
+
+    def search_params
+      # 10.times { puts "************" }
+      params.permit(:start_date)
+    end
+
+    def original_params
+      return if request.referer.nil?
+
+      original_params = Addressable::URI.parse(request.referer).query_values&.compact_blank
+      params.reverse_merge!(original_params)
+    end
+    # min_date: Letter.where.not(date: nil).map(&:date).min,
+    # max_date: Letter.where.not(date: nil).map(&:date).max
     # Overwrite any of the RESTful controller actions to implement custom behavior
     # For example, you may want to send an email after a foo is updated.
     #

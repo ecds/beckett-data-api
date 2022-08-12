@@ -68,13 +68,13 @@ RSpec.describe '/letters', type: :request do
       letters_to_wilkins = create_list(
         :public_letter,
         2,
-        recipients: create_list(:person_entity, 1, label: 'Dominique Wilkins')
+        recipients: create_list(:person_entity, 1, first_name: 'Dominique', last_name: 'Wilkins')
       )
 
       letters_to_webb = create_list(
         :public_letter,
         3,
-        recipients: create_list(:person_entity, 1, label: 'Spud Webb')
+        recipients: create_list(:person_entity, 1, first_name: 'Spud', last_name: 'Webb')
       )
 
       create_list(
@@ -83,7 +83,7 @@ RSpec.describe '/letters', type: :request do
         recipients: [letters_to_wilkins.first.recipients.first, letters_to_webb.first.recipients.first]
       )
 
-      get "#{letters_url}.json?q=Dominique, Spud Webb&fields=recipients"
+      get "#{letters_url}.json?search=Dominique, Spud Webb&fields=recipients"
       expect(json[:letters].count).to eq(6)
     end
 
@@ -91,12 +91,14 @@ RSpec.describe '/letters', type: :request do
       create_list(:public_letter, 4)
       create_list(:public_letter, 3, destinations: create_list(:place_entity, 1, label: 'Reynoldstown'))
       create_list(:public_letter, 4, destinations: create_list(:place_entity, 1, label: 'Grant Park'))
+
       create_list(
         :public_letter,
         2,
         destinations: [Entity.find_by(label: 'Reynoldstown'), Entity.find_by(label: 'Grant Park')]
       )
-      get "#{letters_url}.json?q=Reynoldstwn, Grant&fields=destinations"
+
+      get "#{letters_url}.json?search=Reynoldstwn, Grant&fields=destinations"
       expect(json[:letters].count).to eq(9)
     end
 

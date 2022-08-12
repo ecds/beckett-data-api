@@ -1,0 +1,38 @@
+<style>
+  .select-type {
+    background-color: #1976d2;
+    border: 0;
+    border-radius: 4px;
+    color: #fff;
+    padding: .5rem;
+  }
+</style>
+
+<% content_for(:title) do %>
+  <%= display_resource_name(page.resource_name) %>
+<% end %>
+
+<header class="main-content__header" role="banner">
+  <h1 class="main-content__page-title" id="page-title">
+    <%= content_for(:title) %>
+  </h1>
+
+  <% if show_search_bar %>
+    <%= render(
+      "search",
+      search_term: search_term,
+      resource_name: display_resource_name(page.resource_name)
+    ) %>
+  <% end %>
+
+  <div>
+    <select class="select-type" onchange="window.open(this.value, '_self')">
+    <option value="#">Create New</option>
+    <% types.each do |type| -%>
+      <option value=<%= "/admin/entities/new?type=#{type}" %>>
+        <%= type.titleize %>
+      </option>
+    <% end -%>
+  </select>
+  </div>
+</header>

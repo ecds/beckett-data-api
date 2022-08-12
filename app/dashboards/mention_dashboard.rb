@@ -14,7 +14,8 @@ class MentionDashboard < Administrate::BaseDashboard
     letter: Field::BelongsTo,
     id: Field::Number,
     created_at: Field::DateTime,
-    updated_at: Field::DateTime
+    updated_at: Field::DateTime,
+    tags: Field::ActsAsTaggable
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -40,6 +41,7 @@ class MentionDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = %i[
     entity
     letter
+    tags
   ].freeze
 
   # COLLECTION_FILTERS

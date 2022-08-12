@@ -10,21 +10,93 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_07_07_125422) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_12_124158) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
 
+  create_table "collections", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "label"
+    t.uuid "repository_id"
+    t.string "url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["repository_id"], name: "index_collections_on_repository_id"
+  end
+
   create_table "entities", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.integer "legacy_pk"
-    t.string "label", default: "", null: false
+    t.text "alternate_names", array: true
+    t.text "alternate_spellings", array: true
+    t.string "artist"
+    t.text "artist_alternate_spellings", array: true
+    t.text "attended_with", array: true
+    t.text "authors", array: true
+    t.text "cast", array: true
+    t.string "city"
+    t.string "composer"
+    t.date "date"
     t.text "description"
-    t.jsonb "properties"
+    t.string "director"
+    t.integer "event_type", default: 0
+    t.string "first_name"
+    t.string "label", default: "", null: false
+    t.string "last_name"
+    t.string "life_dates"
+    t.text "links", array: true
+    t.text "notes"
+    t.integer "owner_location_accession_number_contemporaneous"
+    t.integer "owner_location_accession_number_current"
+    t.text "performed_by", array: true
+    t.text "personnel", array: true
+    t.string "place_date"
+    t.text "porposal"
+    t.text "profile"
+    t.text "proposal"
+    t.text "publication_format"
+    t.text "publication_information"
+    t.text "reason"
+    t.text "response"
+    t.string "theater"
+    t.integer "translated_into", default: 4
+    t.string "translated_title"
+    t.text "translators", array: true
     t.boolean "flagged", default: true, null: false
     t.boolean "is_public", default: false, null: false
     t.integer "e_type", default: 3, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "date_str"
+    t.uuid "event_type_id"
+    t.index ["event_type_id"], name: "index_entities_on_event_type_id"
+  end
+
+  create_table "event_types", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "label"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "file_folders", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.text "label"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "languages", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "label"
+    t.string "code"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "letter_collections", force: :cascade do |t|
+    t.uuid "letter_id"
+    t.uuid "collection_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["collection_id"], name: "index_letter_collections_on_collection_id"
+    t.index ["letter_id"], name: "index_letter_collections_on_letter_id"
   end
 
   create_table "letter_destinations", force: :cascade do |t|
@@ -117,6 +189,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_07_125422) do
     t.uuid "letter_owner_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.uuid "file_folder_id"
+    t.index ["file_folder_id"], name: "index_letters_on_file_folder_id"
     t.index ["letter_file_id"], name: "index_letters_on_letter_file_id"
     t.index ["letter_owner_id"], name: "index_letters_on_letter_owner_id"
     t.index ["letter_publisher_id"], name: "index_letters_on_letter_publisher_id"
@@ -138,6 +212,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_07_125422) do
     t.string "format"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.uuid "collection_id"
+    t.index ["collection_id"], name: "index_repositories_on_collection_id"
   end
 
   create_table "taggings", force: :cascade do |t|
@@ -171,5 +247,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_07_125422) do
     t.index ["name"], name: "index_tags_on_name", unique: true
   end
 
+  add_foreign_key "collections", "repositories"
+  add_foreign_key "entities", "event_types"
+  add_foreign_key "letters", "file_folders"
+  add_foreign_key "repositories", "collections"
   add_foreign_key "taggings", "tags"
 end

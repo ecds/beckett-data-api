@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::API
+  include ActionView::Helpers::SanitizeHelper
+
   class_attribute :pagination_links, default: {}
 
   # GET /:id

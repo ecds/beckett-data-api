@@ -52,7 +52,8 @@ class LettersController < ApplicationController
     letters.each do |letter|
       letter[:mentions].each_key do |key|
         letter[:mentions][key].each_with_index do |_, index|
-          letter[:mentions][key][index][:id] = "#{request.protocol}#{request.host_with_port}#{letter[:mentions][key][index][:id]}"
+          letter[:mentions][key][index][:id] =
+            "#{request.protocol}#{request.host_with_port}#{letter[:mentions][key][index][:id]}"
         end
       end
     end
@@ -81,6 +82,8 @@ class LettersController < ApplicationController
               else
                 %i[recipients destinations origins mentions repositories]
               end
+
+    10.times { @fields }
 
     if params[:start_date]
       @where[:_and].push(

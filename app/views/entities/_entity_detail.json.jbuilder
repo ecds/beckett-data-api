@@ -12,12 +12,12 @@
 #   "url": "https://beckett.emory.edu/resource/a9935672-b5bf-11ec-b909-0242ac120002"
 # }
 
+json.set! 'id', "#{request.protocol}#{request.host_with_port}#{entity.url_path}"
 json.set! 'type', entity.e_type
 json.set! 'label', entity.label
 json.set! 'clean_label', entity.clean_label
 json.set! 'description', entity.description
 json.set! 'clean_description', entity.clean_description
-entity.properties.each_key do |key|
-  json.set! key, entity.properties[key]
+entity.allowed_attributes.each do |attribute|
+  json.set! attribute, entity.public_send(attribute)
 end
-# json.set! 'properties', entity.properties

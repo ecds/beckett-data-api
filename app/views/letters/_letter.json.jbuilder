@@ -43,7 +43,7 @@ json.set! 'date', letter.date
 json.recipients do
   letter.recipients.each do |recipient|
     json.child! do
-      json.partial! 'entities/entity', entity: recipient, request: request
+      json.partial! 'entities/entity', entity: recipient, request:
     end
   end
 end
@@ -51,7 +51,7 @@ end
 json.destinations do
   letter.destinations.each do |destination|
     json.child! do
-      json.partial! 'entities/entity', entity: destination, request: request
+      json.partial! 'entities/entity', entity: destination, request:
     end
   end
 end
@@ -63,7 +63,7 @@ json.mentions do
 
     json.set! type.pluralize do
       json.array!(letter.mentions.public_send(type)) do |mention|
-        json.partial! 'mentions/mention', mention: mention, request: request
+        json.partial! 'mentions/mention', mention:, request:
       end
     end
   end

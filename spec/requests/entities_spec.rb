@@ -20,7 +20,7 @@ RSpec.describe '/entities', type: :request do
       types = Entity.e_types.keys.sample(4)
       types.each do |type|
         create_list("#{type}_entity".to_sym, rand(3..6), :public)
-        get entities_url, params: { type: type }
+        get entities_url, params: { type: }
         expect(json[:entities].pluck(:type)).to all eq(type)
         expect(json[:meta][:total_count]).to be < Entity.count
       end

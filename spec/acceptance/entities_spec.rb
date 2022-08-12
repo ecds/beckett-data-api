@@ -2,49 +2,17 @@
 
 require 'acceptance_helper'
 
-entity_properties = {
-  alternate_spellings: '',
-  artist: '',
-  artist_alternate_spellings:'',
-  attended_with: '',
-  author: '',
-  authors: '',
-  beckett_digital_manuscript_project: '',
-  cast: '',
-  city: '',
-  comment: '',
-  comments: '',
-  composer: '',
-  date: '',
-  director: '',
-  event_type: '',
-  finding_aids: '',
-  first_name: '',
-  last_name: '',
-  life_dates: '',
-  links: '',
-  notes: '',
-  owner_location_accession_number_contemporaneous: '',
-  owner_location_accession_number_current: '',
-  performed_by: '',
-  personnel: '',
-  place_date: '',
-  porposal: '',
-  profile: '',
-  proposal: '',
-  publication: '',
-  publication_format: '',
-  publication_information: '',
-  reason: '',
-  response: '',
-  staging_beckett: '',
-  theater: '',
-  translated_into: '',
-  translated_title: '',
-  translator: ''
-}
-
-formatted_properties = %i[label description formatting short_display profile]
+list_attributes = %i[
+  alternate_names
+  alternate_spellings
+  artist_alternate_spellings
+  attended_with
+  authors
+  cast
+  links
+  performed_by
+  personnel
+]
 
 # Documentation refers to the Entity model
 resource 'Entities' do
@@ -130,19 +98,13 @@ resource 'Entities' do
         response_field :clean_label, '', { default: 'String', not_null: true }
         response_field :description, '', { default: 'HTML String', not_null: true }
         response_field :clean_description, '', { default: 'String', not_null: true }
-        response_field :short_display, '', { default: 'HTML String', not_null: true }
+        response_field :display_header, '', { default: 'HTML String', not_null: true }
         # response_field :clean_description, 'Same as description with HTML removed.'
 
-        Entity.new(e_type: type).default_properties.each do |key, value|
-          default = if value.is_a?(Array)
-                      'Array'
-                    elsif formatted_properties.include?(key)
-                      'HTML String'
-                    else
-                      'String'
-                    end
+        Entity.new(e_type: type).allowed_attributes.each do |attribute|
+          default = list_attributes.include?(attribute) ? 'Array' : 'HTML String'
 
-          response_field key.to_sym, '', { scope: :entity, default: default, not_null: !value.nil? }
+          response_field attribute.to_sym, '', { default:, not_null: false }
         end
 
         example_request "GET /entities/:id - #{type.titleize}" do

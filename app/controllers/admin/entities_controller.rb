@@ -2,37 +2,53 @@
 
 module Admin
   class EntitiesController < Admin::ApplicationController
+    def default_sorting_attribute
+      :label
+    end
+
+    def default_sorting_direction
+      :asc
+    end
 
     # def scoped_resource
     #   Entity.person
     # end
 
-    # def index
-    #   scoped_resource = Entity.music
-    #   super
-    #   # authorize_resource(resource_class)
-    #   # search_term = params[:search].to_s.strip
-    #   # # resources = filter_resources(Entity.person, search_term: search_term)
-    #   # resources = apply_collection_includes(Entity.person)
-    #   # resources = order.apply(resources)
-    #   # resources = resources.page(params[:_page]).per(records_per_page)
-    #   # page = Administrate::Page::Collection.new(dashboard, order: order)
+    def index
+      Rails.logger.debug params
+      # scoped_resource = Entity.music
+      # super
+      authorize_resource(resource_class)
+      search_term = params[:search].to_s.strip
+      resources = Administrate::Search.new(scoped_resource,
+                                           dashboard,
+                                           search_term).run
+      resources = apply_collection_includes(resources)
+      resources = resources.where.not(label: '').where.not(label: '-').where.not(label: ' ').where.not(label: ', ')
+      resources = order.apply(resources)
+      resources = resources.page(params[:_page]).per(records_per_page)
+      page = Administrate::Page::Collection.new(dashboard, order:)
 
-    #   # render locals: {
-    #   #   resources: resources,
-    #   #   search_term: search_term,
-    #   #   page: page,
-    #   #   show_search_bar: show_search_bar?,
-    #   # }
-    # end
+      render locals: {
+        resources:,
+        search_term:,
+        page:,
+        show_search_bar: show_search_bar?,
+        types: Entity.e_types.keys
+      }
+    end
     # Overwrite any of the RESTful controller actions to implement custom behavior
     # For example, you may want to send an email after a foo is updated.
     #
-    def update
-      requested_resource.properties = JSON.parse(params[:entity].delete(:properties)).with_indifferent_access
-      super
-      # send_foo_updated_email(requested_resource)
-    end
+    # def update
+    #   # requested_resource.properties = JSON.parse(params[:entity].delete(:properties)).with_indifferent_access
+    #   super
+    #   # send_foo_updated_email(requested_resource)
+    # end
+
+    # def dashboard
+    #   @dashboard ||= dashboard_class.new
+    # end
 
     def create
       params[:entity][:properties] = JSON.parse(params[:entity][:properties]).with_indifferent_access
@@ -78,6 +94,12 @@ module Admin
 
     def entity_params
       params.require(:entity).permit(:description, :properties)
+    end
+
+    def new_resource
+      return Entity.new(e_type: params[:type]) if params.include?(:type)
+
+      super
     end
   end
 end

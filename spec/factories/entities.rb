@@ -14,232 +14,143 @@ FactoryBot.define do
     end
 
     after :create do |entity|
-      entity.update(label: "<i>#{entity.label}</i>") if Faker::Boolean.boolean
+      control = ['Reynoldstown', 'Grant Park']
 
-      parts = entity.description.split
+      unless control.include? entity.label
+        entity.update(label: "<i>#{entity.label}</i>") if Faker::Boolean.boolean
 
-      if Faker::Boolean.boolean && parts.count > 4
-        parts[1] = "<i>#{parts[1]}"
-        parts[-2] = "#{parts[-2]}</i>"
+        parts = entity.description.split
 
-        entity.update(
-          description: parts.join(' ')
-        )
+        if Faker::Boolean.boolean && parts.count > 4
+          parts[1] = "<i>#{parts[1]}"
+          parts[-2] = "#{parts[-2]}</i>"
+
+          entity.update(
+            description: parts.join(' ')
+          )
+        end
       end
     end
 
     factory :attendance_entity do
       e_type { 0 }
       label { Faker::Movie.title }
-      properties {
-        ActiveSupport::HashWithIndifferentAccess.new(
-          {
-            alternate_spellings: [Faker::TvShows::RuPaul.queen],
-            attended_with: [
-              Faker::Movies::Lebowski.character,
-              Faker::Movies::HitchhikersGuideToTheGalaxy.character
-            ],
-            director: Faker::Movies::HitchhikersGuideToTheGalaxy.character,
-            event_type: Faker::Hipster.word,
-            performed_by: [Faker::Movies::HitchhikersGuideToTheGalaxy.character],
-            place_date: "#{Faker::Address.city}, #{Faker::Date.between(from: 100.years.ago, to: 50.years.ago).strftime('%d %B %Y')}"
-          }
-        )
+      alternate_spellings { [Faker::TvShows::RuPaul.queen] }
+      attended_with {
+        [
+          Faker::Movies::Lebowski.character,
+          Faker::Movies::HitchhikersGuideToTheGalaxy.character
+        ]
       }
+      director { Faker::Movies::HitchhikersGuideToTheGalaxy.character }
+      event_type { rand(0..3) }
+      performed_by { [Faker::Movies::HitchhikersGuideToTheGalaxy.character] }
+      place_date { "#{Faker::Address.city}, #{Faker::Date.between(from: 100.years.ago, to: 50.years.ago).strftime('%d %B %Y')}" }
     end
 
     factory :music_entity do
       e_type { 1 }
       label { Faker::Music::Prince.song }
-      properties {
-        ActiveSupport::HashWithIndifferentAccess.new(
-          {
-            alternate_spellings: [Faker::TvShows::RuPaul.queen],
-            composer: Faker::Movies::HitchhikersGuideToTheGalaxy.character,
-            notes: Faker::Music::Prince.lyric,
-            perfrormedBy: [
-              Faker::Movies::Lebowski.character
-            ]
-          }
-        )
-      }
+      alternate_spellings { [Faker::TvShows::RuPaul.queen] }
+      composer { Faker::Movies::HitchhikersGuideToTheGalaxy.character }
+      notes { Faker::Music::Prince.lyric }
+      performed_by { [Faker::Movies::Lebowski.character] }
     end
 
     factory :organization_entity do
       e_type { 2 }
       label { Faker::Movies::HitchhikersGuideToTheGalaxy.planet }
-      properties {
-        ActiveSupport::HashWithIndifferentAccess.new(
-          {
-            alternate_spellings: [Faker::TvShows::RuPaul.queen],
-            profile: Faker::Movies::HitchhikersGuideToTheGalaxy.quote
-          }
-        )
-      }
+      profile { Faker::Movies::HitchhikersGuideToTheGalaxy.quote }
+      alternate_spellings { [Faker::TvShows::RuPaul.queen] }
     end
 
     factory :person_entity do
       e_type { 3 }
-      properties {
-        ActiveSupport::HashWithIndifferentAccess.new(
-          {
-            alternate_spellings: [Faker::TvShows::RuPaul.queen],
-            first_name: Faker::Name.first_name,
-            last_name: Faker::Name.last_name,
-            life_dates: "(#{Faker::Date.between(from: '1900-1-1', to: '1930-1-1').year}-#{Faker::Date.between(from: '1970-1-1', to: '1999-1-1').year})",
-            description: Faker::Movies::HitchhikersGuideToTheGalaxy.marvin_quote,
-            links: [
-              Faker::Internet.url
-            ],
-            profile: Faker::Movies::HitchhikersGuideToTheGalaxy.quote,
-            finding_aids: [
-              Faker::Internet.url
-            ],
-            media: {
-              images: [
-                {
-                  link: Faker::Internet.url,
-                  caption: Faker::Movies::HitchhikersGuideToTheGalaxy.quote,
-                  attribution: Faker::Movies::Lebowski.character
-                }
-              ],
-              videos: [
-                {
-                  link: Faker::Internet.url,
-                  caption: Faker::Movies::HitchhikersGuideToTheGalaxy.quote,
-                  attribution: Faker::Movies::Lebowski.character
-                }
-              ]
-            }
-          }
-        )
-      }
+      profile { Faker::Movies::HitchhikersGuideToTheGalaxy.quote }
+      alternate_names { [Faker::TvShows::RuPaul.queen] }
+      alternate_spellings { [Faker::TvShows::RuPaul.queen] }
+      first_name { Faker::Name.first_name }
+      last_name { Faker::Name.last_name }
+      life_dates { "#{Faker::Date.between(from: '1900-1-1', to: '1930-1-1').year}-#{Faker::Date.between(from: '1970-1-1', to: '1999-1-1').year}" }
+      description { Faker::Movies::HitchhikersGuideToTheGalaxy.marvin_quote }
+      links { [Faker::Internet.url] }
     end
 
     factory :place_entity do
       e_type { 4 }
       label { Faker::Movies::HitchhikersGuideToTheGalaxy.location }
-      properties {
-        ActiveSupport::HashWithIndifferentAccess.new(
-          {
-            alternate_spellings: [Faker::TvShows::RuPaul.queen],
-            links: [Faker::Internet.url]
-          }
-        )
-      }
+      alternate_spellings { [Faker::TvShows::RuPaul.queen] }
+      links { [Faker::Internet.url] }
     end
 
     factory :production_entity do
       e_type { 5 }
       label { Faker::Movie.title }
-      properties {
-        ActiveSupport::HashWithIndifferentAccess.new(
-          {
-            alternate_spellings: [Faker::TvShows::RuPaul.queen],
-            cast: [Faker::Movies::HitchhikersGuideToTheGalaxy.character, Faker::Movies::Lebowski.character],
-            city: Faker::Address.city,
-            date: Faker::Date.between(from: 100.years.ago, to: 50.years.ago),
-            director: Faker::Movies::Lebowski.character,
-            links: [Faker::Internet.url],
-            notes: Faker::Hipster.sentence,
-            personnel: [Faker::Movies::HitchhikersGuideToTheGalaxy.character],
-            proposal: Faker::Movies::HitchhikersGuideToTheGalaxy.marvin_quote,
-            response: Faker::Movies::HitchhikersGuideToTheGalaxy.quote,
-            staging_beckett: Faker::Internet.url,
-            theater: Faker::Movies::HitchhikersGuideToTheGalaxy.starship
-          }
-        )
-      }
+      alternate_spellings { [Faker::TvShows::RuPaul.queen] }
+      cast { [Faker::Movies::HitchhikersGuideToTheGalaxy.character, Faker::Movies::Lebowski.character] }
+      city { Faker::Address.city }
+      date { Faker::Date.between(from: 100.years.ago, to: 50.years.ago) }
+      director { Faker::Movies::Lebowski.character }
+      links { [Faker::Internet.url] }
+      notes { Faker::Hipster.sentence }
+      personnel { [Faker::Movies::HitchhikersGuideToTheGalaxy.character] }
+      proposal { Faker::Movies::HitchhikersGuideToTheGalaxy.marvin_quote }
+      response { Faker::Movies::HitchhikersGuideToTheGalaxy.quote }
+      theater { Faker::Movies::HitchhikersGuideToTheGalaxy.starship }
     end
 
     factory :public_event_entity do
       e_type { 6 }
       label { Faker::Space.nasa_space_craft }
-      properties {
-        ActiveSupport::HashWithIndifferentAccess.new(
-          {
-            date: Faker::Date.between(from: 100.years.ago, to: 50.years.ago)
-          }
-        )
-      }
+      date { Faker::Date.between(from: 100.years.ago, to: 50.years.ago) }
     end
 
     factory :publication_entity do
       e_type { 7 }
       label { Faker::Book.publisher }
-      properties {
-        ActiveSupport::HashWithIndifferentAccess.new(
-          {
-            author: Faker::Movies::Lebowski.character,
-            notes: Faker::Movies::HitchhikersGuideToTheGalaxy.marvin_quote,
-            publication_information: Faker::Hipster.sentence,
-            translator: Faker::Movies::HitchhikersGuideToTheGalaxy.character
-          }
-        )
-      }
+      authors { [Faker::Movies::Lebowski.character] }
+      notes { Faker::Movies::HitchhikersGuideToTheGalaxy.marvin_quote }
+      publication_information { Faker::Hipster.sentence }
+      translators { [Faker::Movies::HitchhikersGuideToTheGalaxy.character] }
     end
 
     factory :reading_entity do
       e_type { 8 }
       label { Faker::Book.title }
-      properties {
-        ActiveSupport::HashWithIndifferentAccess.new(
-          {
-            authors: [Faker::Book.author],
-            comment: Faker::Movies::HitchhikersGuideToTheGalaxy.marvin_quote,
-            publication: Faker::Book.publisher,
-            publicationFormat: Faker::Hipster.word
-          }
-        )
-      }
+      authors { [Faker::Book.author] }
+      notes { Faker::Movies::HitchhikersGuideToTheGalaxy.marvin_quote }
+      publication_information { Faker::Book.publisher }
+      publication_format { Faker::Hipster.word }
     end
 
     factory :translating_entity do
       e_type { 9 }
       label { Faker::Book.title }
-      properties {
-        ActiveSupport::HashWithIndifferentAccess.new(
-          {
-            author: Faker::Movies::HitchhikersGuideToTheGalaxy.character,
-            comments: Faker::Movies::HitchhikersGuideToTheGalaxy.marvin_quote,
-            translatedTitle: Faker::Movies::HitchhikersGuideToTheGalaxy.starship,
-            translatedInto: Faker::Movies::HitchhikersGuideToTheGalaxy.planet,
-            translator: Faker::Movies::HitchhikersGuideToTheGalaxy.character
-          }
-        )
-      }
+      authors { [Faker::Movies::HitchhikersGuideToTheGalaxy.character] }
+      notes { Faker::Movies::HitchhikersGuideToTheGalaxy.marvin_quote }
+      translated_title { Faker::Movies::HitchhikersGuideToTheGalaxy.starship }
+      translated_into { rand(0..29) }
+      translators { [Faker::Movies::HitchhikersGuideToTheGalaxy.character] }
     end
 
     factory :work_of_art_entity do
       e_type { 10 }
       label { Faker::Music::Prince.song }
-      properties {
-        ActiveSupport::HashWithIndifferentAccess.new(
-          {
-            alternate_spellings: [Faker::TvShows::RuPaul.queen],
-            artist: Faker::Movies::HitchhikersGuideToTheGalaxy.character,
-            artist_alternate_spellings: [Faker::TvShows::RuPaul.queen],
-            notes: Faker::Movies::HitchhikersGuideToTheGalaxy.marvin_quote,
-            owner_location_accession_number_current: rand(1..1000),
-            owner_location_accession_number_contemporaneous: rand(1..1000)
-          }
-        )
-      }
+      alternate_spellings { [Faker::TvShows::RuPaul.queen] }
+      artist { Faker::Movies::HitchhikersGuideToTheGalaxy.character }
+      artist_alternate_spellings { [Faker::TvShows::RuPaul.queen] }
+      notes { Faker::Movies::HitchhikersGuideToTheGalaxy.marvin_quote }
+      owner_location_accession_number_current { rand(1..1000) }
+      owner_location_accession_number_contemporaneous { rand(1..1000) }
     end
 
     factory :writing_entity do
       e_type { 11 }
       label { Faker::Book.title }
-      properties {
-        ActiveSupport::HashWithIndifferentAccess.new(
-          {
-            date: Faker::Date.between(from: 100.years.ago, to: 50.years.ago),
-            proposal: Faker::Movies::HitchhikersGuideToTheGalaxy.quote,
-            notes: Faker::Movies::HitchhikersGuideToTheGalaxy.marvin_quote,
-            beckettDigitalManuscriptProject: Faker::Internet.url
-          }
-        )
-      }
+      date { Faker::Date.between(from: 100.years.ago, to: 50.years.ago) }
+      proposal { Faker::Movies::HitchhikersGuideToTheGalaxy.quote }
+      notes { Faker::Movies::HitchhikersGuideToTheGalaxy.marvin_quote }
+      links { [Faker::Internet.url] }
     end
   end
 end

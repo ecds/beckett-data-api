@@ -40,7 +40,7 @@ RSpec.describe Letter, type: :model do
     letter = create(:letter)
     entity = create(:work_of_art_entity)
     2.times { letter.entities << entity }
-    expect(letter.entities.count).to be >= 1
+    expect(letter.entities.count).to eq(letter.entities.uniq.count)
   end
 
   it 'has distinct recipients' do
@@ -83,7 +83,7 @@ RSpec.describe Letter, type: :model do
     expect {
       letter.destroy
     }.not_to change(Entity, :count)
-    expect(Mention.where(letter: letter)).to be_empty
+    expect(Mention.where(letter:)).to be_empty
   end
 
   it 'deletes senders but not entity' do
@@ -95,7 +95,7 @@ RSpec.describe Letter, type: :model do
     expect {
       letter.destroy
     }.not_to change(Entity, :count)
-    expect(LetterSender.where(letter: letter)).to be_empty
+    expect(LetterSender.where(letter:)).to be_empty
   end
 
   it 'deletes recipients but not entity' do
@@ -107,7 +107,7 @@ RSpec.describe Letter, type: :model do
     expect {
       letter.destroy
     }.not_to change(Entity, :count)
-    expect(LetterRecipient.where(letter: letter)).to be_empty
+    expect(LetterRecipient.where(letter:)).to be_empty
   end
 
   it 'deletes destinations but not entity' do
@@ -119,7 +119,7 @@ RSpec.describe Letter, type: :model do
     expect {
       letter.destroy
     }.not_to change(Entity, :count)
-    expect(LetterDestination.where(letter: letter)).to be_empty
+    expect(LetterDestination.where(letter:)).to be_empty
   end
 
   it 'deletes origins but not entity' do
@@ -131,7 +131,7 @@ RSpec.describe Letter, type: :model do
     expect {
       letter.destroy
     }.not_to change(Entity, :count)
-    expect(LetterOrigin.where(letter: letter)).to be_empty
+    expect(LetterOrigin.where(letter:)).to be_empty
   end
 
   it 'deletes letter_repository but not repository' do

@@ -45,6 +45,11 @@ class EntitiesController < ApplicationController
     ).map(&:label).uniq
   end
 
+  def list
+    entities = Entity.where.not(legacy_pk: 99_999_999).where.not(legacy_pk: 88_888_888)
+    render json: entities.map {|e| { id: e.id, legacy_pk: e.legacy_pk, type: e.e_type } }
+  end
+
   private
 
   def reindex
@@ -80,11 +85,11 @@ class EntitiesController < ApplicationController
         id: "#{request.protocol}#{request.host_with_port}#{entity.id_path}",
         label: entity.label,
         type: entity.e_type,
-        short_display: entity.short_display,
+        display_header: entity.display_header,
         description: entity.description,
         clean_label: entity.clean_label,
         clean_description: entity.clean_description
-      }.merge(entity.properties)
+      }
     end
   end
 

@@ -4,5 +4,7 @@
 //= link_tree ../../../vendor/javascript .js
 //= link administrate-field-jsonb/application.css
 //= link administrate-field-jsonb/application.js
+//= link administrate-field-taggable/application.js
+//= link administrate-field-taggable/application.css
 //= require trix
 // application.js
