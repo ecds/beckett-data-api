@@ -13,8 +13,8 @@ module Admin
     before_action :authenticate_admin
 
     http_basic_authenticate_with(
-      name: 'admin',
-      password: 'password'
+      name: Rails.application.credentials.dig(:basic_auth, :name),
+      password: Rails.application.credentials.dig(:basic_auth, :pass)
     )
 
     def authenticate_admin

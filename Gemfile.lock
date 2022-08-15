@@ -80,6 +80,9 @@ GEM
       momentjs-rails (~> 2.8)
       sassc-rails (~> 2.1)
       selectize-rails (~> 0.6)
+    administrate-field-active_storage (0.4.1)
+      administrate (>= 0.2.2)
+      rails (>= 7.0)
     administrate-field-acts_as_taggable (0.0.4)
       acts-as-taggable-on (>= 6.0)
       administrate (< 1.0.0)
@@ -438,6 +441,7 @@ PLATFORMS
 DEPENDENCIES
   acts-as-taggable-on (~> 9.0)
   administrate
+  administrate-field-active_storage (~> 0.4.1)
   administrate-field-acts_as_taggable (~> 0.0.4)
   administrate-field-jsonb
   administrate-field-list (~> 0.0.6)

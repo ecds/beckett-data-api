@@ -6,5 +6,6 @@
 //= link administrate-field-jsonb/application.js
 //= link administrate-field-taggable/application.js
 //= link administrate-field-taggable/application.css
+//= link administrate-field-active_storage/application.css
 //= require trix
 // application.js
