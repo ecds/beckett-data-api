@@ -59,7 +59,7 @@ class LetterDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = %i[
     date
     recipients
-    entities
+    mentions
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES

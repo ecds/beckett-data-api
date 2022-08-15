@@ -31,7 +31,7 @@ entities.each do |e|
   else
     entity.update(label: e['label'], legacy_pk: e['legacy_pk'])
   end
-  Rails.logger.debug entity.label
+  puts entity.label
 end
 
 entities.each do |p|

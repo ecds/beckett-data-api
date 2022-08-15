@@ -79,7 +79,7 @@ class EntityDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = %i[
     label
     e_type
-    letters
+    mentions
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES

@@ -70,12 +70,7 @@ to display a collection of resources in an HTML table.
                  tabindex="-1"
                  class="action-show"
                  >
-                 <% if attribute.is_a? Administrate::Field::HasMany %>
-                 <%= attribute.data.count %>
-                 <%= resource.all_letters.count -%>
-                 <% else %>
                 <%= render_field attribute %>
-                <% end %>
               </a>
             <% else %>
               <%= render_field attribute %>
