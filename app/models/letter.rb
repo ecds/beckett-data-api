@@ -60,7 +60,7 @@ class Letter < ApplicationRecord
         {
           type:,
           id: mention.entity.url_path,
-          display: mention.entity.display_header
+          display: mention.entity.short_display
         }
       end
     end

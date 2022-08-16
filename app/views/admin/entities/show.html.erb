@@ -16,7 +16,17 @@ as well as a link to its edit page.
 [1]: http://www.rubydoc.info/gems/administrate/Administrate/Page/Show
 %>
 
-<% content_for(:title) { t("administrate.actions.show_resource", name: page.page_title) } %>
+<style>
+ .label {
+  font-weight: 400;
+ }
+
+ .section-head {
+  padding-bottom: 1rem;
+ }
+</style>
+
+<% content_for(:title) { t("administrate.actions.show_resource", name: '') } %>
 
 <header class="main-content__header" role="banner">
   <h1 class="main-content__page-title">
@@ -25,7 +35,7 @@ as well as a link to its edit page.
 
   <div>
     <%= link_to(
-      t("administrate.actions.edit_resource", name: page.page_title),
+      t("administrate.actions.edit_resource", name: ''),
       [:edit, namespace, page.resource],
       class: "button",
     ) if valid_action?(:edit) && show_action?(:edit, page.resource) %>
@@ -33,18 +43,14 @@ as well as a link to its edit page.
 </header>
 
 <section class="main-content__body">
-  <dl>
-    <% page.attributes.each do |attribute| %>
-      <% next unless page.resource.allowed_attributes.include? attribute.name.to_sym %>
-      <dt class="attribute-label" id="<%= attribute.name %>">
-      <%= t(
-        "helpers.label.#{resource_name}.#{attribute.name}",
-        default: page.resource.class.human_attribute_name(attribute.name),
-      ) %>
-      </dt>
+  <h1 class="section-head">Short Display</h1>
+  <%= render inline: page.resource.short_display %>
+</section>
 
-      <dd class="attribute-data attribute-data--<%=attribute.html_class%>"
-          ><%= render_field attribute, page: page %></dd>
-    <% end %>
-  </dl>
+<hr />
+
+<section class="main-content__body">
+  <h1 class="section-head">Full Display</h1>
+  <h2><%= page.resource.e_type.titleize %>: <span class="label"><%= render inline: page.resource.label %></span></h2>
+  <%= render inline: page.resource.full_display %>
 </section>

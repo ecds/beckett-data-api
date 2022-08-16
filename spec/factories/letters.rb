@@ -23,7 +23,7 @@ FactoryBot.define do
     recipients { create_list(:person_entity, 1) }
     destinations { create_list(:place_entity, 1) }
     origins { create_list(:place_entity, 1) }
-    letter_file { create(:letter_file) }
+    # letter_file { create(:letter_file) }
     letter_owner { create(:letter_owner) }
     letter_publisher { create(:letter_publisher) }
 

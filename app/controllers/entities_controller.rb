@@ -85,7 +85,7 @@ class EntitiesController < ApplicationController
         id: "#{request.protocol}#{request.host_with_port}#{entity.id_path}",
         label: entity.label,
         type: entity.e_type,
-        display_header: entity.display_header,
+        short_display: entity.short_display,
         description: entity.description,
         clean_label: entity.clean_label,
         clean_description: entity.clean_description

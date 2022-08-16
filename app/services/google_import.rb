@@ -261,7 +261,7 @@ class GoogleImport
         10.times { @logger.debug("********** #{event_type} *************") }
       end
     elsif values[:index] == 2
-      entity.label = values[:value]
+      entity.description = values[:value]
     elsif values[:index] == 3 && !values[:value].nil?
       entity.alternate_spellings = values[:value].split(';').map(&:strip)
     elsif values[:index] == 4
@@ -361,10 +361,10 @@ class GoogleImport
       entity.label = values[:value]
     elsif values[:index] == 2 && !values[:value].nil?
       entity.proposal = values[:value]
-    # elsif values[:index] == 3 && !values[:value].nil?
-    #   entity.response = values[:value]
-    # elsif values[:index] == 4 && !values[:value].nil?
-    #   entity.reason = values[:value]
+    elsif values[:index] == 3 && !values[:value].nil?
+      entity.response = values[:value]
+    elsif values[:index] == 4 && !values[:value].nil?
+      entity.reason = values[:value]
     elsif values[:index] == 5 && !values[:value].nil?
       entity.director = values[:value]
     elsif values[:index] == 6 && !values[:value].nil?

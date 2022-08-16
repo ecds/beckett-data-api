@@ -77,6 +77,7 @@ class EntityDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
+    legacy_pk
     label
     e_type
     mentions
@@ -178,7 +179,6 @@ class EntityDashboard < Administrate::BaseDashboard
     translated_into
     translated_title
     translators
-    e_type
   ].freeze
 
   # COLLECTION_FILTERS
