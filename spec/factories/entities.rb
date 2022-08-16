@@ -35,7 +35,7 @@ FactoryBot.define do
     factory :attendance_entity do
       e_type { 0 }
       label { Faker::Movie.title }
-      alternate_spellings { [Faker::TvShows::RuPaul.queen] }
+      alternate_names { [Faker::TvShows::RuPaul.queen] }
       attended_with {
         [
           Faker::Movies::Lebowski.character,
@@ -46,22 +46,26 @@ FactoryBot.define do
       event_type { rand(0..3) }
       performed_by { [Faker::Movies::HitchhikersGuideToTheGalaxy.character] }
       place_date { "#{Faker::Address.city}, #{Faker::Date.between(from: 100.years.ago, to: 50.years.ago).strftime('%d %B %Y')}" }
+      notes { Faker::Music::Prince.lyric }
     end
 
     factory :music_entity do
       e_type { 1 }
       label { Faker::Music::Prince.song }
-      alternate_spellings { [Faker::TvShows::RuPaul.queen] }
+      alternate_names { [Faker::TvShows::RuPaul.queen] }
       composer { Faker::Movies::HitchhikersGuideToTheGalaxy.character }
       notes { Faker::Music::Prince.lyric }
       performed_by { [Faker::Movies::Lebowski.character] }
+      links { [Faker::Internet.url] }
     end
 
     factory :organization_entity do
       e_type { 2 }
       label { Faker::Movies::HitchhikersGuideToTheGalaxy.planet }
       profile { Faker::Movies::HitchhikersGuideToTheGalaxy.quote }
-      alternate_spellings { [Faker::TvShows::RuPaul.queen] }
+      alternate_names { [Faker::TvShows::RuPaul.queen] }
+      notes { Faker::Music::Prince.lyric }
+      description { Faker::Movies::HitchhikersGuideToTheGalaxy.marvin_quote }
     end
 
     factory :person_entity do
@@ -89,13 +93,14 @@ FactoryBot.define do
       alternate_spellings { [Faker::TvShows::RuPaul.queen] }
       cast { [Faker::Movies::HitchhikersGuideToTheGalaxy.character, Faker::Movies::Lebowski.character] }
       city { Faker::Address.city }
-      date { Faker::Date.between(from: 100.years.ago, to: 50.years.ago) }
+      date_str { Faker::Date.between(from: 100.years.ago, to: 50.years.ago).to_s }
       director { Faker::Movies::Lebowski.character }
       links { [Faker::Internet.url] }
       notes { Faker::Hipster.sentence }
       personnel { [Faker::Movies::HitchhikersGuideToTheGalaxy.character] }
       proposal { Faker::Movies::HitchhikersGuideToTheGalaxy.marvin_quote }
       response { Faker::Movies::HitchhikersGuideToTheGalaxy.quote }
+      reason { Faker::Music::Prince.lyric }
       theater { Faker::Movies::HitchhikersGuideToTheGalaxy.starship }
     end
 
@@ -103,6 +108,8 @@ FactoryBot.define do
       e_type { 6 }
       label { Faker::Space.nasa_space_craft }
       date { Faker::Date.between(from: 100.years.ago, to: 50.years.ago) }
+      links { [Faker::Internet.url] }
+      description { Faker::Music::Prince.lyric }
     end
 
     factory :publication_entity do
@@ -136,12 +143,13 @@ FactoryBot.define do
     factory :work_of_art_entity do
       e_type { 10 }
       label { Faker::Music::Prince.song }
-      alternate_spellings { [Faker::TvShows::RuPaul.queen] }
+      alternate_names { [Faker::TvShows::RuPaul.queen] }
       artist { Faker::Movies::HitchhikersGuideToTheGalaxy.character }
       artist_alternate_spellings { [Faker::TvShows::RuPaul.queen] }
       notes { Faker::Movies::HitchhikersGuideToTheGalaxy.marvin_quote }
       owner_location_accession_number_current { rand(1..1000) }
       owner_location_accession_number_contemporaneous { rand(1..1000) }
+      links { [Faker::Internet.url] }
     end
 
     factory :writing_entity do
@@ -149,8 +157,10 @@ FactoryBot.define do
       label { Faker::Book.title }
       date { Faker::Date.between(from: 100.years.ago, to: 50.years.ago) }
       proposal { Faker::Movies::HitchhikersGuideToTheGalaxy.quote }
+      response { Faker::Movies::HitchhikersGuideToTheGalaxy.marvin_quote }
       notes { Faker::Movies::HitchhikersGuideToTheGalaxy.marvin_quote }
       links { [Faker::Internet.url] }
+      publication_information { Faker::Book.publisher }
     end
   end
 end
