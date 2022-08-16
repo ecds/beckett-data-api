@@ -447,6 +447,7 @@ DEPENDENCIES
   administrate-field-list (~> 0.0.6)
   bootsnap
   capistrano (~> 3.10)
+  capistrano-bundler (~> 2.1)
   capistrano-passenger (~> 0.2.1)
   capistrano-rails (~> 1.6)
   capistrano-rbenv (~> 2.2)

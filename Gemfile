@@ -91,3 +91,5 @@ gem 'roo', '~> 2.9'
 gem 'namae', '~> 1.1'
 
 gem "administrate-field-active_storage", "~> 0.4.1"
+
+gem "capistrano-bundler", "~> 2.1"
