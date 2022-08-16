@@ -488,7 +488,7 @@ class Entity < ApplicationRecord
   def link_list
     link_items = links.map do |link|
       "<li>\
-      <a href='#{link}' targe='_blank' rel='noopener'>\
+      <a href='#{link}' target='_blank' rel='noopener'>\
       #{link}\
       <span calss='screen-reader-only'>(opens in new tab)</span>\
       </a>\
