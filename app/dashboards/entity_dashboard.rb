@@ -33,6 +33,7 @@ class EntityDashboard < Administrate::BaseDashboard
     city: Field::String,
     composer: Field::String,
     date: Field::Date,
+    date_str: RichTextField,
     description: RichTextField,
     director: Field::String,
     event_type: Field::Select.with_options(searchable: false, collection: lambda {|field|
@@ -105,6 +106,7 @@ class EntityDashboard < Administrate::BaseDashboard
     theater
     place_date
     date
+    date_str
     proposal
     response
     reason

@@ -227,7 +227,7 @@ class Entity < ApplicationRecord
       lines.push("<strong>Publication</strong> #{publication_information}") unless publication_information.nil?
     when 'public_event'
       lines.push("<strong>#{label}</strong>")
-      lines.push("<strong>#{date}</strong>") unless date.nil?
+      lines.push("<strong>#{date_str}</strong>") unless date_str.nil?
     when 'reading'
       lines.push("<strong>Author</strong> #{authors.to_sentence}") unless authors.nil?
       lines.push("<strong>Title</strong> #{label}")
@@ -321,7 +321,7 @@ class Entity < ApplicationRecord
       rows.push("<th scope='row'>Notes</th><td>#{notes}</td>") unless notes.nil?
     when 'public_event'
       rows.push("<th scope='row'>Description</th><td>#{description}</td>") unless description.nil?
-      rows.push("<th scope='row'>Date</th><td>#{date}</td>") unless date.nil?
+      rows.push("<th scope='row'>Date</th><td>#{date_str}</td>") unless date_str.nil?
       rows.push("<th scope='row'>See Also</th><td>#{link_list}</td>") unless links.nil?
     when 'reading'
       rows.push("<th scope='row'>Author</th><td>#{authors.join(', ')}</td>") unless authors.nil?

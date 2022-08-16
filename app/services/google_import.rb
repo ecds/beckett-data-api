@@ -25,7 +25,7 @@ class GoogleImport
       {
         sheet_id: '1nd88cZegFqC_IbjY2G8C5nejmkgNCtDlsf-4oMmSykU',
         type: 'organization',
-        range: 'A2:D'
+        range: 'A2:I'
       },
       {
         sheet_id: '1JvjvU-70ApkYCXcIXRLGiagASmYih8mfYxuo9kqP_Sg',
@@ -40,7 +40,7 @@ class GoogleImport
       {
         sheet_id: '1yuQykRVY4S-FQuOg1P-nRQ9C5Ma439e5v9_uVALs2ns',
         type: 'writing',
-        range: 'A2:F'
+        range: 'A2:G'
       },
       {
         sheet_id: '1FUAzp9McmDOK8-xIZk-JdSfomxQYmrjGoBNrhYLkZF4',
@@ -55,7 +55,7 @@ class GoogleImport
       {
         sheet_id: '1b1J0Gt9NPLsrfXJ-agc2GjCRb-7Upq7w1ddW40dV4i4',
         type: 'attendance',
-        range: 'A2:H'
+        range: 'A2:M'
       },
       {
         sheet_id: '13RbWm78OXzNt6AfjvXzY7b6ldIsFtIrBFaw01v9ciQs',
