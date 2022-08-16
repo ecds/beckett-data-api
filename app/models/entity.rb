@@ -375,6 +375,7 @@ class Entity < ApplicationRecord
         attended_with
         director
         event_type
+        notes
         performed_by
         place_date
       ],

@@ -68,7 +68,7 @@ class EntityDashboard < Administrate::BaseDashboard
                   }
     ),
     translated_title: RichTextField,
-    translators: RichTextField,
+    translators: Field::List,
     flagged: Field::Boolean,
     is_public: Field::Boolean,
     e_type: Field::Select.with_options(
