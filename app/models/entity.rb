@@ -491,7 +491,7 @@ class Entity < ApplicationRecord
   end
 
   def add_full_stops
-    if publication_information.present? && !description.last.match('.*\\p{Punct}')
+    if publication_information.present? && !publication_information.last.match('.*\\p{Punct}')
       self.publication_information = "#{publication_information}."
     end
 
