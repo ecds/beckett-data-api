@@ -191,7 +191,7 @@ class Entity < ApplicationRecord
     public_letters.present?
   end
 
-  # rubocop:disable Metrics/PerceivedComplexity, Metrics/AbcSize, Metrics/CyclomaticComplexity, Layout/LineLength
+  # rubocop:disable Metrics/PerceivedComplexity, Metrics/MethodLength, Metrics/AbcSize, Metrics/CyclomaticComplexity, Layout/LineLength
   def short_display
     lines = []
     case e_type
@@ -208,7 +208,7 @@ class Entity < ApplicationRecord
       lines.push("<strong>#{label}</strong>")
       lines.push(description) unless description.nil?
     when 'person'
-      lines.push("<strong>#{[label, life_dates].compact.join(', ')}</strong>")
+      lines.push("<strong>#{[person__name, life_dates].compact.join(', ')}</strong>")
       lines.push(description) unless description.nil?
     when 'production'
       lines.push("<strong>Title</strong>, #{label}")
@@ -279,7 +279,7 @@ class Entity < ApplicationRecord
       rows.push("<th scope='row'>Profile</th><td>#{profile}</td>") unless profile.nil?
       rows.push("<th scope='row'>Notes</th><td>#{notes}</td>") unless notes.nil?
     when 'person'
-      rows.push("<th scope='row'>Name</th><td>#{first_name} #{last_name}</td>")
+      rows.push("<th scope='row'>Name</th><td>#{person_name}</td>")
       rows.push("<th scope='row'>Alternative Name(s)</th><td>#{alternate_names.join(', ')}</td>") unless alternate_names.nil?
       rows.push("<th scope='row'>Life Dates</th><td>#{life_dates}</td>") unless life_dates.nil?
       rows.push("<th scope='row'>Description</th><td>#{description}</td>") unless description.nil?
@@ -446,7 +446,7 @@ class Entity < ApplicationRecord
 
     [:label, :description, :e_type, *props[e_type.to_sym]]
   end
-  # rubocop:enable Metrics/PerceivedComplexity, Metrics/AbcSize, Metrics/CyclomaticComplexity, Layout/LineLength
+  # rubocop:enable Metrics/PerceivedComplexity, Metrics/MethodLength, Metrics/AbcSize, Metrics/CyclomaticComplexity, Layout/LineLength
 
   private
 
@@ -502,5 +502,9 @@ class Entity < ApplicationRecord
     return if alternate_names.blank?
 
     "<strong>Alternate name(s)</storng> #{alternate_names.join(', ')}"
+  end
+
+  def person__name
+    "#{first_name} #{last_name}".strip
   end
 end
