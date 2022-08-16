@@ -25,49 +25,58 @@ class EntityDashboard < Administrate::BaseDashboard
     legacy_pk: Field::Number,
     alternate_names: Field::List,
     alternate_spellings: Field::List,
-    artist: Field::String,
+    artist: RichTextField,
     artist_alternate_spellings: Field::List,
     attended_with: Field::List,
     authors: Field::List,
     cast: Field::List,
-    city: Field::String,
-    composer: Field::String,
+    city: RichTextField,
+    composer: RichTextField,
     date: Field::Date,
     date_str: RichTextField,
     description: RichTextField,
-    director: Field::String,
-    event_type: Field::Select.with_options(searchable: false, collection: lambda {|field|
-                                                                            field.resource.class.send(field.attribute.to_s.pluralize).keys
-                                                                          }),
-    first_name: Field::String,
+    director: RichTextField,
+    event_type: Field::Select.with_options(
+      searchable: false,
+      collection: lambda {|field|
+                    field.resource.class.send(field.attribute.to_s.pluralize).keys
+                  }
+    ),
+    first_name: RichTextField,
     label: RichTextField,
-    last_name: Field::String,
-    life_dates: Field::String,
+    last_name: RichTextField,
+    life_dates: RichTextField,
     links: Field::List,
     notes: RichTextField,
     owner_location: RichTextField,
     owner_location_current: RichTextField,
-    performed_by: Field::Text,
+    performed_by: RichTextField,
     personnel: Field::List,
-    place_date: Field::String,
-    porposal: Field::Text,
+    place_date: RichTextField,
+    porposal: RichTextField,
     profile: RichTextField,
-    proposal: Field::Text,
-    publication_format: Field::Text,
-    publication_information: Field::Text,
-    reason: Field::Text,
-    response: Field::Text,
-    theater: Field::String,
-    translated_into: Field::Select.with_options(searchable: false, collection: lambda {|field|
-                                                                                 field.resource.class.send(field.attribute.to_s.pluralize).keys
-                                                                               }),
-    translated_title: Field::String,
-    translators: Field::String,
+    proposal: RichTextField,
+    publication_format: RichTextField,
+    publication_information: RichTextField,
+    reason: RichTextField,
+    response: RichTextField,
+    theater: RichTextField,
+    translated_into: Field::Select.with_options(
+      searchable: false,
+      collection: lambda {|field|
+                    field.resource.class.send(field.attribute.to_s.pluralize).keys
+                  }
+    ),
+    translated_title: RichTextField,
+    translators: RichTextField,
     flagged: Field::Boolean,
     is_public: Field::Boolean,
-    e_type: Field::Select.with_options(searchable: false, collection: lambda {|field|
-                                                                        field.resource.class.send(field.attribute.to_s.pluralize).keys
-                                                                      }),
+    e_type: Field::Select.with_options(
+      searchable: false,
+      collection: lambda {|field|
+                    field.resource.class.send(field.attribute.to_s.pluralize).keys
+                  }
+    ),
     created_at: Field::DateTime,
     updated_at: Field::DateTime
   }.freeze
