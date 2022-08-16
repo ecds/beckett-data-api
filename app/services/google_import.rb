@@ -416,7 +416,7 @@ class GoogleImport
       entity.owner_location_current = values[:value]
     elsif values[:index] == 8
       entity.notes = values[:value]
-    elsif value[:index] == 10
+    elsif values[:index] == 10
       entity.date = values[:value]
     elsif values[:index] == 11
       entity.links = [values[:value]]
