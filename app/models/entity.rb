@@ -208,7 +208,7 @@ class Entity < ApplicationRecord
       lines.push("<strong>#{label}</strong>")
       lines.push(description) unless description.nil?
     when 'person'
-      lines.push("<strong>#{[person__name, life_dates].compact.join(', ')}</strong>")
+      lines.push("<strong>#{[person_name, life_dates].compact.join(', ')}</strong>")
       lines.push(description) unless description.nil?
     when 'production'
       lines.push("<strong>Title</strong>, #{label}")
@@ -504,7 +504,7 @@ class Entity < ApplicationRecord
     "<strong>Alternate name(s)</storng> #{alternate_names.join(', ')}"
   end
 
-  def person__name
+  def person_name
     "#{first_name} #{last_name}".strip
   end
 end
