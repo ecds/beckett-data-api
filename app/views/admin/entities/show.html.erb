@@ -25,8 +25,25 @@ as well as a link to its edit page.
   padding-bottom: 1rem;
  }
 
- table, th, td {
-  white-space: nowrap;
+ .attribute-data--select {
+  text-transform: capitalize;
+ }
+
+ table a {
+  color: #1976d2;
+  text-decoration: underline;
+ }
+
+ h2 {
+  font-size: 2rem;
+ }
+
+ table {
+  max-width: 50vw;
+ }
+
+ th:first-child {
+  padding-left: 0;
   width: 0;
  }
 </style>
@@ -58,4 +75,22 @@ as well as a link to its edit page.
   <h1 class="section-head">Full Display</h1>
   <h2><%= page.resource.e_type.titleize %>: <span class="label"><%= render inline: page.resource.label %></span></h2>
   <%= render inline: page.resource.full_display %>
+</section>
+
+<section class="main-content__body">
+  <dl>
+    <% page.attributes.each do |attribute| %>
+    <% next unless page.resource.allowed_attributes.include? attribute.name.to_sym %>
+      <% puts attribute.name %>
+      <dt class="attribute-label" id="<%= attribute.name %>">
+      <%= t(
+        "helpers.label.#{resource_name}.#{attribute.name}",
+        default: page.resource.class.human_attribute_name(attribute.name),
+      ) %>
+      </dt>
+
+      <dd class="attribute-data attribute-data--<%=attribute.html_class%>"
+          ><%= render_field attribute, page: page %></dd>
+    <% end %>
+  </dl>
 </section>

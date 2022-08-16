@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_15_161149) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_16_172809) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
@@ -78,8 +78,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_15_161149) do
     t.string "life_dates"
     t.text "links", array: true
     t.text "notes"
-    t.integer "owner_location_accession_number_contemporaneous"
-    t.integer "owner_location_accession_number_current"
     t.text "performed_by", array: true
     t.text "personnel", array: true
     t.string "place_date"
@@ -101,6 +99,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_15_161149) do
     t.datetime "updated_at", null: false
     t.string "date_str"
     t.uuid "event_type_id"
+    t.text "owner_location"
+    t.text "owner_location_current"
     t.index ["event_type_id"], name: "index_entities_on_event_type_id"
   end
 

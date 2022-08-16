@@ -1,1 +1,3 @@
-<%= field.data.join(', ') %>
+<% unless field.data.nil? %>
+  <%= field.data.join(', ') %>
+<% end %>

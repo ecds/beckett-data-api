@@ -20,7 +20,7 @@ class GoogleImport
       {
         sheet_id: '1lrbBrMM3cV9d_foQfi5VyJO4gwtl4UkL4N3JWa-fjeo',
         type: 'person',
-        range: 'A2:H'
+        range: 'A2:P'
       },
       {
         sheet_id: '1nd88cZegFqC_IbjY2G8C5nejmkgNCtDlsf-4oMmSykU',
@@ -65,7 +65,7 @@ class GoogleImport
       {
         sheet_id: '1DVByIJWiDNi78yUs81eidPQYAqL9E6ovsCztimwnCTg',
         type: 'work_of_art',
-        range: 'A2:H'
+        range: 'A2:M'
       },
       {
         sheet_id: '1fOuJX-w3Tv6ZfK8_d6JRM29PIYaZk7i-_5Qdt3AtSck',
@@ -272,7 +272,9 @@ class GoogleImport
       entity.director = values[:value]
     elsif values[:index] == 7 && !values[:value].nil?
       entity.performed_by = values[:value].split(';').map(&:strip)
-    elsif values[:index] == 12
+    elsif values[:index] == 9
+      entity.notes = values[:value]
+    elsif values[:index] == 12 && !values[:value].nil?
       entity.alternate_names = values[:value].split(';').map(&:strip)
     end
     entity
@@ -296,7 +298,7 @@ class GoogleImport
       entity.alternate_spellings = values[:value].split(';').map {|e| e.tr('"', '').strip }
     elsif values[:index] == 6
       entity.links = [values[:value]]
-    elsif values[:index] == 13
+    elsif values[:index] == 14 && !values[:value].nil?
       entity.alternate_names = values[:value].split(';').map(&:strip)
     end
     entity
@@ -313,6 +315,10 @@ class GoogleImport
       entity.alternate_spellings = values[:value].split(';').map {|e| e.tr('"', '').strip }
     elsif values[:index] == 3
       entity.description = values[:value]
+    elsif values[:index] == 7
+      entity.links = [values[:value]]
+    elsif values[:index] == 8
+      entity.alternate_names = values[:value].split(';').map(&:strip)
     end
     entity
   end
@@ -393,6 +399,7 @@ class GoogleImport
   def _art(values)
     entity = values[:entity]
     if (values[:index]).zero?
+      entity.legacy_pk = values[:value]
     elsif values[:index] == 1
       entity.artist = values[:value]
     elsif values[:index] == 2
@@ -402,13 +409,15 @@ class GoogleImport
     elsif values[:index] == 4
       entity.description = values[:value]
     elsif values[:index] == 5 && !values[:value].nil?
-      entity.alternate_spellings = values[:value].split(';').map(&:strip)
+      entity.alternate_names = values[:value].split(';').map(&:strip)
     elsif values[:index] == 6
-      entity.owner_location_accession_number_contemporaneous = values[:value]
+      entity.owner_location = values[:value]
     elsif values[:index] == 7
-      entity.owner_location_accession_number_current = values[:value]
+      entity.owner_location_current = values[:value]
     elsif values[:index] == 8
       entity.notes = values[:value]
+    elsif value[:index] == 10
+      entity.date = values[:value]
     elsif values[:index] == 11
       entity.links = [values[:value]]
     end
@@ -451,7 +460,7 @@ class GoogleImport
     when 4
       entity.notes = values[:value]
     when 6
-      entity.date = values[:value]
+      entity.date_str = values[:value]
     end
     entity
   end

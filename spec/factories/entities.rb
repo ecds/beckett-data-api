@@ -147,15 +147,15 @@ FactoryBot.define do
       artist { Faker::Movies::HitchhikersGuideToTheGalaxy.character }
       artist_alternate_spellings { [Faker::TvShows::RuPaul.queen] }
       notes { Faker::Movies::HitchhikersGuideToTheGalaxy.marvin_quote }
-      owner_location_accession_number_current { rand(1..1000) }
-      owner_location_accession_number_contemporaneous { rand(1..1000) }
+      owner_location { Faker::Movies::HitchhikersGuideToTheGalaxy.starship }
+      owner_location_current { Faker::Movies::HitchhikersGuideToTheGalaxy.starship }
       links { [Faker::Internet.url] }
     end
 
     factory :writing_entity do
       e_type { 11 }
       label { Faker::Book.title }
-      date { Faker::Date.between(from: 100.years.ago, to: 50.years.ago) }
+      date_str { Faker::Date.between(from: 100.years.ago, to: 50.years.ago).to_s }
       proposal { Faker::Movies::HitchhikersGuideToTheGalaxy.quote }
       response { Faker::Movies::HitchhikersGuideToTheGalaxy.marvin_quote }
       notes { Faker::Movies::HitchhikersGuideToTheGalaxy.marvin_quote }

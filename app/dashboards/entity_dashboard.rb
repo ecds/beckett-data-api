@@ -44,8 +44,8 @@ class EntityDashboard < Administrate::BaseDashboard
     life_dates: Field::String,
     links: Field::List,
     notes: RichTextField,
-    owner_location_accession_number_contemporaneous: Field::Number,
-    owner_location_accession_number_current: Field::Number,
+    owner_location: RichTextField,
+    owner_location_current: RichTextField,
     performed_by: Field::Text,
     personnel: Field::List,
     place_date: Field::String,
@@ -86,6 +86,43 @@ class EntityDashboard < Administrate::BaseDashboard
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
+    legacy_pk
+    e_type
+    label
+    first_name
+    last_name
+    life_dates
+    event_type
+    description
+    profile
+    authors
+    composer
+    director
+    artist
+    artist_alternate_spellings
+    alternate_names
+    city
+    theater
+    place_date
+    date
+    proposal
+    response
+    reason
+    owner_location
+    owner_location_current
+    attended_with
+    cast
+    performed_by
+    personnel
+    publication_format
+    publication_information
+    translated_into
+    translated_title
+    translators
+    links
+    notes
+    alternate_spellings
+
     mentions
     letters
     letter_destinations
@@ -96,46 +133,8 @@ class EntityDashboard < Administrate::BaseDashboard
     letters_sent_from
     letter_recipients
     letters_received
-    id
-    legacy_pk
-    alternate_names
-    alternate_spellings
-    artist
-    artist_alternate_spellings
-    attended_with
-    authors
-    cast
-    city
-    composer
-    date
-    description
-    director
-    event_type
-    first_name
-    label
-    last_name
-    life_dates
-    links
-    notes
-    owner_location_accession_number_contemporaneous
-    owner_location_accession_number_current
-    performed_by
-    personnel
-    place_date
-    porposal
-    profile
-    proposal
-    publication_format
-    publication_information
-    reason
-    response
-    theater
-    translated_into
-    translated_title
-    translators
     flagged
     is_public
-    e_type
     created_at
     updated_at
   ].freeze
@@ -164,12 +163,11 @@ class EntityDashboard < Administrate::BaseDashboard
     life_dates
     links
     notes
-    owner_location_accession_number_contemporaneous
-    owner_location_accession_number_current
+    owner_location
+    owner_location_current
     performed_by
     personnel
     place_date
-    porposal
     proposal
     publication_format
     publication_information
