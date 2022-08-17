@@ -503,7 +503,7 @@ class Entity < ApplicationRecord
 
       next unless missing_punct?(self[field])
 
-      self[filed] = "#{self[field]}."
+      self[field] = "#{self[field]}."
     end
   end
 
