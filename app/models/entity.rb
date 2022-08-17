@@ -249,8 +249,7 @@ class Entity < ApplicationRecord
       lines.push("<strong>Owner/location</strong> #{owner_location}") unless owner_location.nil?
     when 'writing'
       lines.push("<strong>Title</strong> #{label}")
-      lines.push("<strong>Proposal/Response</strong> #{proposal} / #{response}") if proposal && response
-      lines.push("<strong>Proposal</strong> #{proposal}") if proposal && response.nil?
+      lines.push("<strong>Proposal/Response</strong> #{proposal}") if proposal
       lines.push("<strong>Translatero</strong> #{translators.to_sentence}") unless translators.nil?
       lines.push("<strong>Date</strong> #{date_str}") unless date.nil?
     end
@@ -351,11 +350,10 @@ class Entity < ApplicationRecord
       rows.push("<th scope='row'>Title</th><td colsapn=3>#{label}</td>")
       unless proposal.nil?
         cells = []
-        cells.push("<th scope='row'>Proposal</th><td>#{proposal}</td>") unless proposal.nil?
-        cells.push("<th scope='row'>Response</th><td>#{response}</td>") unless response.nil?
+        cells.push("<th scope='row'>Proposal/Response</th><td>#{proposal}</td>") unless proposal.nil?
         rows.push(cells.join)
       end
-      rows.push("<th scope='row'>Date</th><td colsapn=3>#{date_str}</td>") unless date.nil?
+      rows.push("<th scope='row'>Date</th><td colsapn=3>#{date_str}</td>") unless date_str.nil?
       rows.push("<th scope='row'>Notes</th><td colsapn=3>#{notes}</td>") unless notes.nil?
       rows.push("<th scope='row'>Archival Infromation</th><td colsapn=3>#{publication_information}</td>") unless publication_information.nil?
       rows.push("<th scope='row'>See Also</th><td colsapn=3>#{link_list}</td>") unless links.nil?
