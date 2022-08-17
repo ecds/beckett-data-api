@@ -251,7 +251,7 @@ class Entity < ApplicationRecord
       lines.push("<strong>Title</strong> #{label}")
       lines.push("<strong>Proposal/Response</strong> #{proposal}") if proposal
       lines.push("<strong>Translatero</strong> #{translators.to_sentence}") unless translators.nil?
-      lines.push("<strong>Date</strong> #{date_str}") unless date.nil?
+      lines.push("<strong>Date</strong> #{date_str}") unless date_str.nil?
     end
 
     paragraphs = lines.map {|line| "<p>#{line}</p>" }.flatten.join
@@ -489,11 +489,26 @@ class Entity < ApplicationRecord
   end
 
   def add_full_stops
-    if publication_information.present? && !publication_information.last.match('.*\\p{Punct}')
-      self.publication_information = "#{publication_information}."
-    end
+    fields = %i[
+      date_str
+      description
+      publication_information
+      translated_title
+    ]
 
-    self.description = "#{description}." if description.present? && !description.last.match('.*\\p{Punct}')
+    fields.each do |field|
+      next unless allowed_attributes.include? field
+
+      next if self[field].nil?
+
+      next unless missing_punct?(self[field])
+
+      self[filed] = "#{self[field]}."
+    end
+  end
+
+  def missing_punct?(text)
+    text.last.match('.*\\p{Punct}').nil?
   end
 
   # TODO: How to add icon
