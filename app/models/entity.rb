@@ -501,14 +501,14 @@ class Entity < ApplicationRecord
 
       next if self[field].nil?
 
-      next unless missing_punct?(self[field])
+      next unless missing_full_stop?(self[field])
 
       self[field] = "#{self[field]}."
     end
   end
 
-  def missing_punct?(text)
-    text.last.match('.*\\p{Punct}').nil?
+  def missing_full_stop?(text)
+    text.last.match(/\.|!|\?/).nil?
   end
 
   # TODO: How to add icon
