@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_16_172809) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_17_134444) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
@@ -81,7 +81,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_16_172809) do
     t.text "performed_by", array: true
     t.text "personnel", array: true
     t.string "place_date"
-    t.text "porposal"
     t.text "profile"
     t.text "proposal"
     t.text "publication_format"
@@ -101,6 +100,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_16_172809) do
     t.uuid "event_type_id"
     t.text "owner_location"
     t.text "owner_location_current"
+    t.text "label_plain"
+    t.text "description_plain"
+    t.text "lists_plain"
     t.index ["event_type_id"], name: "index_entities_on_event_type_id"
   end
 

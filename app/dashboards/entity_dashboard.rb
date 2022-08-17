@@ -22,7 +22,7 @@ class EntityDashboard < Administrate::BaseDashboard
     letter_recipients: Field::HasMany,
     letters_received: Field::HasMany,
     id: Field::String,
-    legacy_pk: Field::Number,
+    legacy_pk: Field::Number.with_options(searchable: true),
     alternate_names: Field::List,
     alternate_spellings: Field::List,
     artist: RichTextField,
@@ -37,23 +37,22 @@ class EntityDashboard < Administrate::BaseDashboard
     description: RichTextField,
     director: RichTextField,
     event_type: Field::Select.with_options(
-      searchable: false,
+      searchable: true,
       collection: lambda {|field|
                     field.resource.class.send(field.attribute.to_s.pluralize).keys
                   }
     ),
-    first_name: RichTextField,
-    label: RichTextField,
-    last_name: RichTextField,
+    first_name: RichTextField.with_options(searchable: true),
+    label: RichTextField.with_options(searchable: true),
+    last_name: RichTextField.with_options(searchable: true),
     life_dates: RichTextField,
     links: Field::List,
     notes: RichTextField,
     owner_location: RichTextField,
     owner_location_current: RichTextField,
-    performed_by: RichTextField,
+    performed_by: Field::List,
     personnel: Field::List,
     place_date: RichTextField,
-    porposal: RichTextField,
     profile: RichTextField,
     proposal: RichTextField,
     publication_format: RichTextField,
@@ -62,7 +61,7 @@ class EntityDashboard < Administrate::BaseDashboard
     response: RichTextField,
     theater: RichTextField,
     translated_into: Field::Select.with_options(
-      searchable: false,
+      searchable: true,
       collection: lambda {|field|
                     field.resource.class.send(field.attribute.to_s.pluralize).keys
                   }
@@ -72,13 +71,16 @@ class EntityDashboard < Administrate::BaseDashboard
     flagged: Field::Boolean,
     is_public: Field::Boolean,
     e_type: Field::Select.with_options(
-      searchable: false,
+      searchable: true,
       collection: lambda {|field|
                     field.resource.class.send(field.attribute.to_s.pluralize).keys
                   }
     ),
     created_at: Field::DateTime,
-    updated_at: Field::DateTime
+    updated_at: Field::DateTime,
+    label_plain: Field::Text.with_options(searchable: true),
+    description_plain: Field::Text.with_options(searchable: true),
+    lists_plain: Field::Text.with_options(searchable: true)
   }.freeze
 
   # COLLECTION_ATTRIBUTES

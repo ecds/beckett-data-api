@@ -8,9 +8,7 @@ class Entity < ApplicationRecord
 
   self.implicit_order_column = 'label'
 
-  before_save :concat_label
-  before_save :remove_div
-  before_save :add_full_stops
+  before_save :concat_label, :remove_div, :add_full_stops, :to_plain_text
 
   has_many :mentions, dependent: :destroy
   has_many :letters, through: :mentions, source: :letter
@@ -251,8 +249,8 @@ class Entity < ApplicationRecord
       lines.push("<strong>Owner/location</strong> #{owner_location}") unless owner_location.nil?
     when 'writing'
       lines.push("<strong>Title</strong> #{label}")
-      lines.push("<strong>Proposal/Response</strong> #{proposal} / #{response}") if porposal && response
-      lines.push("<strong>Proposal</strong> #{proposal}") if porposal && response.nil?
+      lines.push("<strong>Proposal/Response</strong> #{proposal} / #{response}") if proposal && response
+      lines.push("<strong>Proposal</strong> #{proposal}") if proposal && response.nil?
       lines.push("<strong>Translatero</strong> #{translators.to_sentence}") unless translators.nil?
       lines.push("<strong>Date</strong> #{date_str}") unless date.nil?
     end
@@ -388,6 +386,7 @@ class Entity < ApplicationRecord
         performed_by
       ],
       organization: %i[
+        alternate_names
         alternate_spellings
         profile
       ],
@@ -453,7 +452,7 @@ class Entity < ApplicationRecord
         date_str
         links
         notes
-        porposal
+        proposal
         publication_information
       ]
     }
@@ -521,5 +520,24 @@ class Entity < ApplicationRecord
 
   def person_name
     "#{first_name} #{last_name}".strip
+  end
+
+  def to_plain_text
+    rich_text_fields = %i[label description]
+    list_fields = %i[alternate_names alternate_spellings authors cast personnel translators]
+
+    rich_text_fields.each do |field|
+      next if self[field].nil?
+
+      self["#{field}_plain"] = scrub_text(self[field])
+    end
+
+    lists = list_fields.map {|field| scrub_text(self[field].join(' ')) unless self[field].nil? }.join(' ')
+
+    self.lists_plain = lists.strip.squeeze(' ') if lists.present?
+  end
+
+  def scrub_text(text)
+    strip_tags(text).gsub(/[^0-9A-Za-z\s]/, '')
   end
 end
