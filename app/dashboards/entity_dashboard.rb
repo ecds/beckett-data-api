@@ -210,6 +210,6 @@ class EntityDashboard < Administrate::BaseDashboard
   # across all pages of the admin dashboard.
   #
   def display_resource(entity)
-    "Entity #{entity.legacy_pk}: #{strip_tags(entity.label)}"
+    "#{entity.e_type.titleize}: #{strip_tags(entity.label)}"
   end
 end

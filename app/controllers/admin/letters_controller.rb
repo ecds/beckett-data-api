@@ -12,9 +12,6 @@ module Admin
     end
 
     def index
-      # dashboard.permitted_attributes.push(:start_date)
-      # scoped_resource = Entity.music
-      # super
       authorize_resource(resource_class)
       search_term = params[:search].to_s.strip
       dates = Letter.all.map(&:date).compact
@@ -45,10 +42,30 @@ module Admin
       }
     end
 
+    def edit
+      @requested_resource = Letter.includes(
+        :entities,
+        :recipients,
+        :destinations,
+        :senders,
+        :origins
+      ).references(:entities).find(params[:id])
+
+      # @requested_resource = Letter.find(params[:id])
+      #                             .mentions.includes(:entity)
+      #                             .letter_recipients.includes(:entity)
+      #                             .letter_destinations.includes(:entity)
+      #                             .letter_senders.includes(:entity)
+      #                             .letter_origins.includes(:entity)
+      # super
+      render locals: {
+        page: Administrate::Page::Form.new(dashboard, @requested_resource)
+      }
+    end
+
     private
 
     def search_params
-      # 10.times { puts "************" }
       params.permit(:start_date)
     end
 

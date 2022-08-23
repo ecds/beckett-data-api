@@ -11,17 +11,17 @@ class LetterDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     mentions: Field::HasMany,
-    entities: Field::HasMany,
+    entities: HasManyThroughField,
     letter_destinations: Field::HasMany,
-    destinations: Field::HasMany,
+    destinations: HasManyThroughField.with_options(type: 'place'),
     letter_senders: Field::HasMany,
-    senders: Field::HasMany,
+    senders: HasManyThroughField.with_options(type: 'person'),
     letter_origins: Field::HasMany,
-    origins: Field::HasMany,
+    origins: HasManyThroughField.with_options(type: 'place'),
     letter_recipients: Field::HasMany,
-    recipients: Field::HasMany,
+    recipients: HasManyThroughField.with_options(type: %w[person organization]),
     letter_repositories: Field::HasMany,
-    repositories: Field::HasMany,
+    repositories: HasManyThroughField,
     id: Field::String,
     legacy_pk: Field::Number,
     code: Field::String,
@@ -59,7 +59,7 @@ class LetterDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = %i[
     date
     recipients
-    mentions
+    entities
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_17_134444) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_23_190129) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
@@ -71,7 +71,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_17_134444) do
     t.date "date"
     t.text "description"
     t.string "director"
-    t.integer "event_type", default: 0
+    t.integer "event_type"
     t.string "first_name"
     t.string "label", default: "", null: false
     t.string "last_name"
@@ -88,12 +88,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_17_134444) do
     t.text "reason"
     t.text "response"
     t.string "theater"
-    t.integer "translated_into", default: 4
+    t.integer "translated_into"
     t.string "translated_title"
     t.text "translators", array: true
     t.boolean "flagged", default: true, null: false
     t.boolean "is_public", default: false, null: false
-    t.integer "e_type", default: 3, null: false
+    t.integer "e_type", default: 12, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "date_str"
@@ -286,7 +286,21 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_17_134444) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "collections", "repositories"
   add_foreign_key "entities", "event_types"
+  add_foreign_key "letter_collections", "collections"
+  add_foreign_key "letter_collections", "letters"
+  add_foreign_key "letter_destinations", "entities"
+  add_foreign_key "letter_destinations", "letters"
+  add_foreign_key "letter_origins", "entities"
+  add_foreign_key "letter_origins", "letters"
+  add_foreign_key "letter_recipients", "entities"
+  add_foreign_key "letter_recipients", "letters"
+  add_foreign_key "letter_repositories", "letters"
+  add_foreign_key "letter_repositories", "repositories"
+  add_foreign_key "letter_senders", "entities"
+  add_foreign_key "letter_senders", "letters"
   add_foreign_key "letters", "file_folders"
+  add_foreign_key "mentions", "entities"
+  add_foreign_key "mentions", "letters"
   add_foreign_key "repositories", "collections"
   add_foreign_key "taggings", "tags"
 end

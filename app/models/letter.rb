@@ -26,6 +26,7 @@ class Letter < ApplicationRecord
   has_many :letter_collections, dependent: :destroy
   has_many :collections, -> { distinct }, through: :letter_collections
 
+  belongs_to :letter_file, optional: true
   belongs_to :file_folder, optional: true
   belongs_to :letter_owner, optional: true
   belongs_to :letter_publisher, optional: true

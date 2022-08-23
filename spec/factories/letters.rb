@@ -28,7 +28,7 @@ FactoryBot.define do
     letter_publisher { create(:letter_publisher) }
 
     after :create do |letter|
-      Entity.e_types.keys.sample(4).each {|type| letter.entities << create_list("#{type}_entity".to_sym, rand(1..3)) }
+      Entity.e_types.keys[0..11].sample(4).each {|type| letter.entities << create_list("#{type}_entity".to_sym, rand(1..3)) }
     end
 
     factory :public_letter do

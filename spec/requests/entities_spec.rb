@@ -17,7 +17,7 @@ RSpec.describe '/entities', type: :request do
     end
 
     it 'returns entities by type' do
-      types = Entity.e_types.keys.sample(4)
+      types = Entity.e_types.keys[0..11].sample(4)
       types.each do |type|
         create_list("#{type}_entity".to_sym, rand(3..6), :public)
         get entities_url, params: { type: }

@@ -84,7 +84,6 @@ as well as a link to its edit page.
   <dl>
     <% page.attributes.each do |attribute| %>
     <% next unless page.resource.allowed_attributes.include? attribute.name.to_sym %>
-      <% puts attribute.name %>
       <dt class="attribute-label" id="<%= attribute.name %>">
       <%= t(
         "helpers.label.#{resource_name}.#{attribute.name}",

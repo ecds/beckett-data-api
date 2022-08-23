@@ -30,7 +30,7 @@ resource 'Entities' do
     parameter :label, 'Clean label (no HTML) of entity', { default: 'null' }
 
     before {
-      Entity.e_types.each_key do |type|
+      Entity.e_types.keys[0..11].each do |type|
         create_list("#{type}_entity".to_sym, rand(3..5), :public)
       end
     }
@@ -43,7 +43,7 @@ resource 'Entities' do
     end
 
     get 'entities by type' do
-      let(:type) { Entity.e_types.keys.sample }
+      let(:type) { Entity.e_types.keys[0..11].sample }
       example_request 'GET /entities?type=:entity_type - By Type' do
         explanation "Returns a paginated list of entities by type. Valid types are #{Entity.e_types.keys.to_sentence}."
         expect(status).to eq(200)
@@ -78,19 +78,19 @@ resource 'Entities' do
 
   route '/entities/:id', 'Single Entity' do
     before {
-      Entity.e_types.each_key do |type|
+      Entity.e_types.keys[0..11].each do |type|
         create("#{type}_entity".to_sym)
       end
     }
 
     get 'Specific entity' do
-      let(:id) { create("#{Entity.e_types.keys.sample}_entity".to_sym, :public).id }
+      let(:id) { create("#{Entity.e_types.keys[0..11].sample}_entity".to_sym, :public).id }
       example_request 'GET /entities/:id' do
         expect(status).to eq(200)
       end
     end
 
-    Entity.e_types.each_key do |type|
+    Entity.e_types.keys[0..11].each do |type|
       get "#{type} Entity" do
         let(:id) { create("#{type}_entity".to_sym, :public).id }
 

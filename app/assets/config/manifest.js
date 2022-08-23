@@ -7,5 +7,6 @@
 //= link administrate-field-taggable/application.js
 //= link administrate-field-taggable/application.css
 //= link administrate-field-active_storage/application.css
+//= require selectize
 //= require trix
 // application.js

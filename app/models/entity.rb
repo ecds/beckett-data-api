@@ -8,7 +8,7 @@ class Entity < ApplicationRecord
 
   self.implicit_order_column = 'label'
 
-  before_save :concat_label, :remove_div, :add_full_stops, :to_plain_text
+  before_save :add_full_stops, :concat_label, :remove_div, :to_plain_text
 
   has_many :mentions, dependent: :destroy
   has_many :letters, through: :mentions, source: :letter
@@ -39,7 +39,8 @@ class Entity < ApplicationRecord
     reading: 8,
     translating: 9,
     work_of_art: 10,
-    writing: 11
+    writing: 11,
+    generic: 12
   }
 
   enum event_type: {
@@ -210,14 +211,18 @@ class Entity < ApplicationRecord
       lines.push(description) unless description.nil?
     when 'production'
       lines.push("<strong>Title</strong> #{label}")
-      lines.push("<strong>Proposal/Response</strong> #{proposal} / #{response}") unless proposal.nil?
+      if proposal && response
+        lines.push("<strong>Proposal/Response</strong> #{proposal} / #{response}") unless proposal.nil?
+      else
+        lines.push("<strong>Proposal</strong> #{proposal}") unless proposal.nil?
+      end
       if director && theater && city
         lines.push("<strong>Director</strong> #{director} <strong>Theatre, City</strong> #{theater}, #{city}")
       else
         lines.push("<strong>Director</strong> #{director}") unless director.nil?
         lines.push("<strong>Theatre, City</strong> #{[theater, city].join(', ')}") unless theater.nil?
       end
-      lines.push("<strong>Date(s)</strong> #{date}") unless date.nil?
+      lines.push("<strong>Date(s)</strong> #{date_str}") unless date_str.nil?
     when 'publication'
       lines.push("<strong>Author</strong> #{authors.to_sentence}") unless authors.nil?
       lines.push("<strong>Title</strong> #{label}")
@@ -237,9 +242,9 @@ class Entity < ApplicationRecord
         lines.push("<strong>Original Title</strong> #{label}")
       end
       if translated_into && translators
-        lines.push("<strong>Translated into </strong> #{translated_into.titleize} by #{translators.to_sentence}") unless translated_into.nil?
+        lines.push("<strong>Translated into</strong> #{translated_into.titleize} by #{translators.to_sentence}") unless translated_into.nil?
       else
-        lines.push("<strong>Translated into </strong> #{translated_into.titleize}") unless translated_into.nil?
+        lines.push("<strong>Translated into</strong> #{translated_into.titleize}") unless translated_into.nil?
       end
       lines.push("<strong>Translated title</strong> #{translated_title}") unless translated_title.nil?
     when 'work_of_art'
@@ -250,7 +255,7 @@ class Entity < ApplicationRecord
     when 'writing'
       lines.push("<strong>Title</strong> #{label}")
       lines.push("<strong>Proposal/Response</strong> #{proposal}") if proposal
-      lines.push("<strong>Translatero</strong> #{translators.to_sentence}") unless translators.nil?
+      lines.push("<strong>Translator</strong> #{translators.to_sentence}") unless translators.nil?
       lines.push("<strong>Date</strong> #{date_str}") unless date_str.nil?
     end
 
@@ -278,7 +283,7 @@ class Entity < ApplicationRecord
       rows.push("<th scope='row'>Notes</th><td>#{notes}</td>") unless notes.nil?
       rows.push("<th scope='row'>See Also</th><td>#{link_list}</td>") unless links.nil?
     when 'organization'
-      rows.push("<th scope='row'>Name</th><td>#{label}</td>") unless label.nil?
+      rows.push("<th scope='row'>Name</th><td>#{label}</td>")
       rows.push("<th scope='row'>Description</th><td>#{description}</td>") unless description.nil?
       rows.push("<th scope='row'>Alternate Name(s)</th><td>#{alternate_names.join(', ')}</td>") unless alternate_names.nil?
       rows.push("<th scope='row'>Profile</th><td>#{profile}</td>") unless profile.nil?
@@ -313,7 +318,7 @@ class Entity < ApplicationRecord
     when 'publication'
       rows.push("<th scope='row'>Author</th><td>#{authors.join(', ')}</td>") unless authors.nil?
       rows.push("<th scope='row'>Title</th><td>#{label}</td>")
-      rows.push("<th scope='row'>translator</th><td>#{translators.join(', ')}</td>") unless translators.nil?
+      rows.push("<th scope='row'>Translator</th><td>#{translators.join(', ')}</td>") unless translators.nil?
       rows.push("<th scope='row'>Publication</th><td>#{publication_information}</td>") unless publication_information.nil?
       rows.push("<th scope='row'>Notes</th><td>#{notes}</td>") unless notes.nil?
     when 'public_event'
@@ -338,9 +343,9 @@ class Entity < ApplicationRecord
       rows.push("<th scope='row'>Publication/Production</th><td>#{notes}</td>") unless notes.nil?
     when 'work_of_art'
       rows.push("<th scope='row'>Artist</th><td>#{artist}</td>") unless artist.nil?
-      rows.push("<th scope='row'>Artist Alternative Names</th><td>#{artist_alternate_spellings.join(', ')}</td>") unless artist_alternate_spellings.nil?
+      rows.push("<th scope='row'>Artist Alternative Name(s)</th><td>#{artist_alternate_spellings.join(', ')}</td>") unless artist_alternate_spellings.nil?
       rows.push("<th scope='row'>Title</th><td>#{label}</td>")
-      rows.push("<th scope='row'>Alternative Titles</th><td>#{alternate_names.join(', ')}</td>") unless alternate_names.nil?
+      rows.push("<th scope='row'>Alternative Title(s)</th><td>#{alternate_names.join(', ')}</td>") unless alternate_names.nil?
       rows.push("<th scope='row'>Description</th><td>#{description}</td>") unless description.nil?
       rows.push("<th scope='row'>Ownership and Location</th><td>#{owner_location}</td>") unless owner_location.nil?
       rows.push("<th scope='row'>Current Ownership and Location</th><td>#{owner_location_current}</td>") unless owner_location_current.nil?
@@ -348,14 +353,10 @@ class Entity < ApplicationRecord
       rows.push("<th scope='row'>See Also</th><td>#{link_list}</td>") unless links.nil?
     when 'writing'
       rows.push("<th scope='row'>Title</th><td colsapn=3>#{label}</td>")
-      unless proposal.nil?
-        cells = []
-        cells.push("<th scope='row'>Proposal/Response</th><td>#{proposal}</td>") unless proposal.nil?
-        rows.push(cells.join)
-      end
+      rows.push("<th scope='row'>Proposal/Response</th><td>#{proposal}</td>") unless proposal.nil?
       rows.push("<th scope='row'>Date</th><td colsapn=3>#{date_str}</td>") unless date_str.nil?
       rows.push("<th scope='row'>Notes</th><td colsapn=3>#{notes}</td>") unless notes.nil?
-      rows.push("<th scope='row'>Archival Infromation</th><td colsapn=3>#{publication_information}</td>") unless publication_information.nil?
+      rows.push("<th scope='row'>Archival Information</th><td colsapn=3>#{publication_information}</td>") unless publication_information.nil?
       rows.push("<th scope='row'>See Also</th><td colsapn=3>#{link_list}</td>") unless links.nil?
     end
 
@@ -452,10 +453,11 @@ class Entity < ApplicationRecord
         notes
         proposal
         publication_information
-      ]
+      ],
+      generic: attributes.keys.map(&:to_sym)
     }
 
-    [:label, :description, :e_type, :legacy_pk, *props[e_type.to_sym]]
+    [:label, :description, :e_type, :legacy_pk, *props[e_type.to_sym]].uniq
   end
   # rubocop:enable Metrics/PerceivedComplexity, Metrics/MethodLength, Metrics/AbcSize, Metrics/CyclomaticComplexity, Layout/LineLength
 
@@ -464,11 +466,10 @@ class Entity < ApplicationRecord
   def concat_label
     case e_type
     when 'attendance'
-
       self.label = if event_type && description
                      "#{event_type.titleize}, #{description}"
                    else
-                     "#{event_type.titleize} #{description}".strip
+                     "#{event_type&.titleize} #{description}".strip
                    end
     when 'person'
       self.label = "#{last_name}, #{first_name}" if last_name && first_name

@@ -5,9 +5,9 @@
 FactoryBot.define do
   factory :entity do
     label { Faker::Movies::HitchhikersGuideToTheGalaxy.character }
-    description { Faker::Hipster.sentence }
+    description { Faker::Hipster.sentence.gsub!(/[^0-9A-Za-z\s]/, '') }
     legacy_pk { Faker::Number.unique.within(range: 1..100_000) }
-    e_type { Entity.e_types.keys.sample }
+    e_type { Entity.e_types.keys[0..11].sample }
 
     trait :public do
       letters { [create(:public_letter)] }
@@ -107,7 +107,7 @@ FactoryBot.define do
     factory :public_event_entity do
       e_type { 6 }
       label { Faker::Space.nasa_space_craft }
-      date { Faker::Date.between(from: 100.years.ago, to: 50.years.ago) }
+      date_str { Faker::Date.between(from: 100.years.ago, to: 50.years.ago).to_s }
       links { [Faker::Internet.url] }
       description { Faker::Music::Prince.lyric }
     end
@@ -157,7 +157,7 @@ FactoryBot.define do
       label { Faker::Book.title }
       date_str { Faker::Date.between(from: 100.years.ago, to: 50.years.ago).to_s }
       proposal { Faker::Movies::HitchhikersGuideToTheGalaxy.quote }
-      response { Faker::Movies::HitchhikersGuideToTheGalaxy.marvin_quote }
+      translators { [Faker::Movies::HitchhikersGuideToTheGalaxy.character] }
       notes { Faker::Movies::HitchhikersGuideToTheGalaxy.marvin_quote }
       links { [Faker::Internet.url] }
       publication_information { Faker::Book.publisher }
