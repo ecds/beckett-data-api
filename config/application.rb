@@ -32,5 +32,10 @@ module BeckettDataApi
     config.middleware.use ActionDispatch::Cookies
     config.middleware.use ActionDispatch::Session::CookieStore, config.session_options
     config.middleware.use ::Rack::MethodOverride
+
+    config.active_job.queue_adapter = :sidekiq
+
+    # Use inline job processing to make things happen immediately
+    # config.active_job.queue_adapter = :inline
   end
 end

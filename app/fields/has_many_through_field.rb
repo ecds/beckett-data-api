@@ -1,4 +1,6 @@
-require "administrate/field/base"
+# frozen_string_literal: true
+
+require 'administrate/field/base'
 
 class HasManyThroughField < Administrate::Field::HasMany
   def to_s
@@ -6,8 +8,7 @@ class HasManyThroughField < Administrate::Field::HasMany
   end
 
   def associated_resource_options
-
-    10.times { puts "^^^^ #{options}" }
+    10.times { Rails.logger.debug "^^^^ #{options}" }
     where = {}
     where[:e_type] = options[:type] if options[:type]
     associated_class.search('*', where:).map do |resource|
