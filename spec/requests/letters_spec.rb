@@ -11,23 +11,23 @@ RSpec.describe '/letters', type: :request do
 
   describe 'GET /index' do
     it 'renders a successful response' do
-      create_list(:public_letter, 3)
+      create_list(:published_letter, 3)
       get letters_url, headers: valid_headers, as: :json
       expect(response).to be_successful
     end
 
     it 'renders only plblically avaliable letters' do
-      create_list(:public_letter, 4)
+      create_list(:published_letter, 4)
       create_list(:old_letter, 3)
       create_list(:new_letter, 5)
       get "#{letters_url}.json", headers: valid_headers, as: :json
-      expect(Letter._public.count).to eq(4)
+      expect(Letter.published.count).to eq(4)
       expect(json[:letters].count).to eq(4)
       expect(Letter.count).to eq(12)
     end
 
     it 'renders paginated links in json response' do
-      create_list(:public_letter, 10)
+      create_list(:published_letter, 10)
       get "#{letters_url}.json?page=2&per_page=2"
       expect(json[:letters].count).to eq(2)
       expect(json[:meta][:links][:next]).to eq("#{letters_url}.json?page=3&per_page=2")
@@ -41,7 +41,7 @@ RSpec.describe '/letters', type: :request do
     end
 
     it 'includes pagination information in the headers' do
-      create_list(:public_letter, 20)
+      create_list(:published_letter, 20)
       get "#{letters_url}.json?page=3&per_page=5"
       links = response.headers['Link'].split(',')
       expect(links.count).to eq(5)
@@ -64,21 +64,21 @@ RSpec.describe '/letters', type: :request do
     end
 
     it 'renders letters from specific recipients' do
-      create_list(:public_letter, 5)
+      create_list(:published_letter, 5)
       letters_to_wilkins = create_list(
-        :public_letter,
+        :published_letter,
         2,
         recipients: create_list(:person_entity, 1, first_name: 'Dominique', last_name: 'Wilkins')
       )
 
       letters_to_webb = create_list(
-        :public_letter,
+        :published_letter,
         3,
         recipients: create_list(:person_entity, 1, first_name: 'Spud', last_name: 'Webb')
       )
 
       create_list(
-        :public_letter,
+        :published_letter,
         1,
         recipients: [letters_to_wilkins.first.recipients.first, letters_to_webb.first.recipients.first]
       )
@@ -88,12 +88,12 @@ RSpec.describe '/letters', type: :request do
     end
 
     it 'renders letters to specific destinations' do
-      create_list(:public_letter, 4)
-      create_list(:public_letter, 3, destinations: create_list(:place_entity, 1, label: 'Reynoldstown'))
-      create_list(:public_letter, 4, destinations: create_list(:place_entity, 1, label: 'Grant Park'))
+      create_list(:published_letter, 4)
+      create_list(:published_letter, 3, destinations: create_list(:place_entity, 1, label: 'Reynoldstown'))
+      create_list(:published_letter, 4, destinations: create_list(:place_entity, 1, label: 'Grant Park'))
 
       create_list(
-        :public_letter,
+        :published_letter,
         2,
         destinations: [Entity.find_by(label: 'Reynoldstown'), Entity.find_by(label: 'Grant Park')]
       )
@@ -103,24 +103,24 @@ RSpec.describe '/letters', type: :request do
     end
 
     it 'returns letters with start_date param' do
-      create_list(:public_letter, 10)
-      create(:public_letter, date: DateTime.new(1961, 2, 22))
+      create_list(:published_letter, 10)
+      create(:published_letter, date: DateTime.new(1961, 2, 22))
       get "#{letters_url}?start_date=1960-03-14"
       expect(json[:letters].map {|letter| Date.parse(letter[:date]) }.min).to be >= DateTime.new(1960, 3, 14)
       expect(json[:letters].count).to be > 0
     end
 
     it 'returns letters with end_date param' do
-      create_list(:public_letter, 10)
-      create(:public_letter, date: DateTime.new(1961, 2, 22))
+      create_list(:published_letter, 10)
+      create(:published_letter, date: DateTime.new(1961, 2, 22))
       get "#{letters_url}?end_date=1964-03-14"
       expect(json[:letters].map {|letter| Date.parse(letter[:date]) }.max).to be <= DateTime.new(1964, 3, 14)
       expect(json[:letters].count).to be > 0
     end
 
     it 'returns letters with start_date and end_date params' do
-      create_list(:public_letter, 10)
-      create(:public_letter, date: DateTime.new(1961, 2, 22))
+      create_list(:published_letter, 10)
+      create(:published_letter, date: DateTime.new(1961, 2, 22))
       get "#{letters_url}?start_date=1957-03-14&end_date=1963-03-14"
       expect(json[:letters].map {|letter| Date.parse(letter[:date]) }.min).to be >= DateTime.new(1957, 3, 14)
       expect(json[:letters].map {|letter| Date.parse(letter[:date]) }.max).to be <= DateTime.new(1963, 3, 14)
@@ -130,7 +130,7 @@ RSpec.describe '/letters', type: :request do
 
   describe 'GET /show' do
     it 'renders a successful response' do
-      letter = create(:public_letter)
+      letter = create(:published_letter)
       get letter_url(letter), as: :json
       expect(response).to be_successful
     end

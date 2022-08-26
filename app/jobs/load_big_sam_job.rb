@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# rubocop:disable Metrics/BlockLength, Metrics/PerceivedComplexity, Metrics/MethodLength, Metrics/AbcSize, Metrics/CyclomaticComplexity, Layout/LineLength
+# rubocop:disable Metrics/BlockLength, Metrics/PerceivedComplexity, Metrics/MethodLength, Metrics/AbcSize, Metrics/CyclomaticComplexity
 
 require 'roo'
 
@@ -22,28 +22,15 @@ class LoadBigSamJob < ApplicationJob
       rows.push([headers, row].transpose.to_h.symbolize_keys)
     end
 
+    load_letters(rows)
+  end
+
+  def load_letters(rows)
+
     rows.each do |row|
-      row[:day] = '1' if row[:day] == '0'
-      row[:month] = '1' if row[:month] == '0'
-      row[:year] = '99' if row[:year] == '0'
+      letter = get_letter(row)
 
-      row[:day] = row[:day].gsub(/[\[!@%&?"\]]/, '').to_i if row[:day].is_a?(String)
-      row[:month] = row[:month].gsub(/[\[!@%&?"\]]/, '').to_i if row[:month].is_a?(String)
-      row[:year] = "19#{row[:year]}".gsub(/[\[!@%&?"\]]/, '').to_i if row[:year].is_a?(String)
-
-      row[:year] = row[:year] + 1900 if row[:year].to_s.size == 2
-
-      # existing = Letter.find_by(legacy_pk: row['ID'])
-      # next if existing
-
-      letter = Letter.find_or_create_by(legacy_pk: row[:id])
-
-      if row[:exclude] == 'y' && letter.present?
-        letter.delete
-        next
-      end
-
-      next if row[:exclude] == 'y'
+      next if letter.nil?
 
       letter.attributes = {
         code: row[:code],
@@ -75,6 +62,7 @@ class LoadBigSamJob < ApplicationJob
       letter.collections.clear
 
       begin
+        row = fix_date(row)
         letter.date = (DateTime.new(row[:year], row[:month], row[:day]) if row[:year] != 0)
       rescue ArgumentError, NoMethodError
         # 'Bad date'
@@ -83,7 +71,7 @@ class LoadBigSamJob < ApplicationJob
 
       if row[:reg_place_written]
         begin
-          from = get_entity(row[:reg_place_written], 'place')
+          from = get_entity(label: row[:reg_place_written], type: 'place')
           letter.origins << from
         rescue ActiveRecord::RecordInvalid,
                Elasticsearch::Transport::Transport::Errors::BadRequest,
@@ -93,7 +81,7 @@ class LoadBigSamJob < ApplicationJob
 
       if row[:reg_place_written_city]
         begin
-          place = get_entity(row[:reg_place_written_city], 'place')
+          place = get_entity(label: row[:reg_place_written_city], type: 'place')
           letter.origins << place unless letter.origins.include?(place)
         rescue ActiveRecord::RecordInvalid, Elasticsearch::Transport::Transport::Errors::BadRequest,
                Elasticsearch::Transport::Transport::Errors::NotFound
@@ -102,7 +90,7 @@ class LoadBigSamJob < ApplicationJob
 
       if row[:reg_place_written_country]
         begin
-          place = get_entity(row[:reg_place_written_country], 'place')
+          place = get_entity(label: row[:reg_place_written_country], type: 'place')
           letter.origins << place unless letter.origins.include?(place)
         rescue ActiveRecord::RecordInvalid, Elasticsearch::Transport::Transport::Errors::BadRequest,
                Elasticsearch::Transport::Transport::Errors::NotFound
@@ -111,16 +99,20 @@ class LoadBigSamJob < ApplicationJob
 
       if row[:reg_place_written_second_city]
         begin
-          place = get_entity(row[:reg_place_written_second_city], 'place')
+          place = get_entity(label: row[:reg_place_written_second_city], type: 'place')
           letter.origins << place unless letter.origins.include?(place)
-        rescue ActiveRecord::RecordInvalid, Elasticsearch::Transport::Transport::Errors::BadRequest,
+        rescue ActiveRecord::RecordInvalid,
+               Elasticsearch::Transport::Transport::Errors::BadRequest,
                Elasticsearch::Transport::Transport::Errors::NotFound
         end
       end
 
       row[:reg_recipient]&.split(';')&.each do |recipient|
-        entity = Entity.organization.find_by(label: recipient.strip.titleize)
-        entity = get_entity(recipient, 'person') if entity.nil?
+        recipient = recipient.strip.titleize
+        entity = Entity.find_by(label: recipient)
+        entity = get_entity(label: recipient, type: 'person', return_nil: true) if entity.nil?
+        entity = get_entity(label: recipient, type: 'organization', return_nil: true) if entity.nil?
+        entity = Entity.create(label: recipient) if entity.nil?
         LetterRecipient.find_or_create_by(letter:, entity:)
 
       rescue ActiveRecord::RecordInvalid,
@@ -131,7 +123,7 @@ class LoadBigSamJob < ApplicationJob
 
       if row[:reg_placesent_sent]
         begin
-          destination = get_entity(row[:reg_placesent_sent], 'place')
+          destination = get_entity(label: row[:reg_placesent_sent], type: 'place')
           letter.destinations << destination
         rescue ActiveRecord::RecordInvalid, Elasticsearch::Transport::Transport::Errors::BadRequest,
                Elasticsearch::Transport::Transport::Errors::NotFound
@@ -140,7 +132,7 @@ class LoadBigSamJob < ApplicationJob
 
       if row[:reg_placesent_city]
         begin
-          entity = get_entity(row[:reg_placesent_city], 'place')
+          entity = get_entity(label: row[:reg_placesent_city], type: 'place')
           letter.destinations << entity
         rescue ActiveRecord::RecordInvalid, Elasticsearch::Transport::Transport::Errors::BadRequest,
                Elasticsearch::Transport::Transport::Errors::NotFound
@@ -149,7 +141,7 @@ class LoadBigSamJob < ApplicationJob
 
       if row[:reg_placesent_country]
         begin
-          entity = get_entity(row[:reg_placesent_country], 'place')
+          entity = get_entity(label: row[:reg_placesent_country], type: 'place')
           letter.destinations << entity
         rescue ActiveRecord::RecordInvalid, Elasticsearch::Transport::Transport::Errors::BadRequest,
                Elasticsearch::Transport::Transport::Errors::NotFound
@@ -208,7 +200,7 @@ class LoadBigSamJob < ApplicationJob
       letter.letter_publisher = LetterPublisher.find_or_create_by(label: row[:placeprevpubl]) if row[:placeprevpubl]
 
       row[:sender]&.split(';')&.each do |sender|
-        entity = get_entity(sender, 'person')
+        entity = get_entity(label: sender, type: 'person')
         letter.senders << entity unless letter.senders.include?(entity)
       rescue ActiveRecord::RecordInvalid,
              Elasticsearch::Transport::Transport::Errors::BadRequest,
@@ -233,8 +225,18 @@ class LoadBigSamJob < ApplicationJob
 
   private
 
-  def get_entity(label, type)
-    label = label.downcase.strip.gsub(/[\[!@%&?"\]]/, '').titleize
+  def get_letter(row)
+    if row[:exclude] == 'y'
+      letter = Letter.find_by(legacy_pk: row[:id])
+      letter.delete unless letter.nil?
+      return nil
+    end
+
+    Letter.find_or_create_by(legacy_pk: row[:id])
+  end
+
+  def get_entity(label: nil, type: nil, return_nil: false)
+    label = label.strip.gsub(/[\[!@%&?"\]]/, '').titleize
     entity = Entity.public_send(type)
                    .where(label:)
                    .or(
@@ -242,25 +244,32 @@ class LoadBigSamJob < ApplicationJob
                            .where('? = ANY (alternate_spellings)', label)
                    ).first
 
-    if type == 'person'
-      names = Namae.parse label.strip.gsub(/[\[!@%&?"\]]/, '').titleize
+    if type == 'person' && entity.nil?
+      names = Namae.parse label
       if names&.first&.given && names&.first&.family
-        entity = Entity.find_or_create_by(first_name: names.first.given, last_name: names.first.family)
+        entity = Entity.find_by(first_name: names.first.given, last_name: names.first.family)
       end
     end
 
-    if entity.nil?
-      entity = Entity.find_or_create_by(label:, e_type: type)
+    return nil if entity.nil? && return_nil
 
-      if entity.legacy_pk == 99_999_999
-        entity.legacy_pk = 88_888_888
-        entity.save
-      end
-    end
+    entity = Entity.find_or_create_by(label:, e_type: type) if entity.nil?
 
     logger.debug { entity.label }
     entity
   end
+
+  def fix_date(row)
+    row[:day] = '1' if row[:day] == '0'
+    row[:month] = '1' if row[:month] == '0'
+    row[:year] = '99' if row[:year] == '0'
+    row[:day] = row[:day].gsub(/[\[!@%&?"\]]/, '').to_i if row[:day].is_a?(String)
+    row[:month] = row[:month].gsub(/[\[!@%&?"\]]/, '').to_i if row[:month].is_a?(String)
+    row[:year] = "19#{row[:year]}".gsub(/[\[!@%&?"\]]/, '').to_i if row[:year].is_a?(String)
+    row[:year] = row[:year] + 1900 if row[:year].to_s.size == 2
+
+    row
+  end
 end
 
-# rubocop:enable Metrics/BlockLength, Metrics/PerceivedComplexity, Metrics/MethodLength, Metrics/AbcSize, Metrics/CyclomaticComplexity, Layout/LineLength
+# rubocop:enable Metrics/BlockLength, Metrics/PerceivedComplexity, Metrics/MethodLength, Metrics/AbcSize, Metrics/CyclomaticComplexity

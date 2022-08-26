@@ -8,7 +8,7 @@ class Entity < ApplicationRecord
 
   self.implicit_order_column = 'label'
 
-  before_save :add_full_stops, :concat_label, :remove_div, :to_plain_text
+  before_save :add_full_stops, :concat_label, :remove_div, :to_plain_text, :check_published
 
   has_many :mentions, dependent: :destroy
   has_many :letters, through: :mentions, source: :letter
@@ -147,17 +147,17 @@ class Entity < ApplicationRecord
     letters_received
   end
 
-  def public_letters
-    letters._public +
-    letters_sent_to._public +
-    letters_sent._public +
-    letters_sent_from._public +
-    letters_received._public
+  def published_letters
+    letters.published +
+    letters_sent_to.published +
+    letters_sent.published +
+    letters_sent_from.published +
+    letters_received.published
   end
 
-  def public_letters_hash
-    # public_letters.reject! {|l| l.recipients.count.zero? }
-    public_letters.uniq.sort_by(&:date).map {|letter|
+  def published_letters_hash
+    # published_letters.reject! {|l| l.recipients.count.zero? }
+    published_letters.uniq.sort_by(&:date).map {|letter|
       {
         id: letter.id,
         date: letter.date,
@@ -187,7 +187,7 @@ class Entity < ApplicationRecord
   end
 
   def should_index?
-    public_letters.present?
+    published_letters.present?
   end
 
   # rubocop:disable Metrics/PerceivedComplexity, Metrics/MethodLength, Metrics/AbcSize, Metrics/CyclomaticComplexity, Layout/LineLength
@@ -459,7 +459,6 @@ class Entity < ApplicationRecord
 
     [:label, :description, :e_type, :legacy_pk, *props[e_type.to_sym]].uniq
   end
-  # rubocop:enable Metrics/PerceivedComplexity, Metrics/MethodLength, Metrics/AbcSize, Metrics/CyclomaticComplexity, Layout/LineLength
 
   private
 
@@ -472,11 +471,21 @@ class Entity < ApplicationRecord
                      "#{event_type&.titleize} #{description}".strip
                    end
     when 'person'
+      if label && (last_name.nil? && first_name.nil?)
+        names = Namae.parse label
+        if names&.first&.given && names&.first&.family
+          self.first_name = names.first.given
+          self.last_name = names.first.family
+        end
+      end
+
       self.label = "#{last_name}, #{first_name}" if last_name && first_name
       self.life_dates = nil if life_dates == 'nd'
       self.life_dates = life_dates.gsub(/[()]/, '') if life_dates
     end
   end
+
+  # rubocop:enable Metrics/PerceivedComplexity, Metrics/MethodLength, Metrics/AbcSize, Metrics/CyclomaticComplexity, Layout/LineLength
 
   def remove_div
     allowed_attributes.each do |attribute|
@@ -553,5 +562,9 @@ class Entity < ApplicationRecord
 
   def scrub_text(text)
     strip_tags(text).gsub(/[^0-9A-Za-z\s]/, '')
+  end
+
+  def check_published
+    self.published = published_letters_hash.present?
   end
 end

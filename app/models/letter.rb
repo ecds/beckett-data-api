@@ -33,12 +33,12 @@ class Letter < ApplicationRecord
 
   enum :language, { english: 0, french: 1, german: 2, italian: 3 }
 
-  scope :_public, lambda {
+  scope :published, lambda {
     includes(:repositories)
       .references(:repositories)
       .where(
         repositories: {
-          public: true
+          published: true
         }
       )
       .where('letters.date BETWEEN ? AND ?', DateTime.new(1957), DateTime.new(1965, 12).at_end_of_month)
@@ -88,7 +88,7 @@ class Letter < ApplicationRecord
   def should_index?
     return if date.nil?
 
-    date.between? DateTime.new(1957), DateTime.new(1965, 12).at_end_of_month and repositories.any?(&:public)
+    date.between? DateTime.new(1957), DateTime.new(1965, 12).at_end_of_month and repositories.any?(&:published)
   end
 
   def volume

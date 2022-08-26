@@ -8,11 +8,14 @@ class HasManyThroughField < Administrate::Field::HasMany
   end
 
   def associated_resource_options
-    10.times { Rails.logger.debug "^^^^ #{options}" }
     where = {}
     where[:e_type] = options[:type] if options[:type]
     associated_class.search('*', where:).map do |resource|
-      [resource.label, resource.id]
+      if options[:verbose_option] && resource.is_a?(Entity)
+        ["#{resource.e_type.titleize} #{resource.legacy_pk}: #{resource.clean_label}", resource.id]
+      else
+        [resource.label, resource.id]
+      end
     end
   end
 end

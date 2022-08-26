@@ -33,23 +33,23 @@ FactoryBot.define do
       }
     end
 
-    factory :public_letter do
+    factory :published_letter do
       date { Faker::Date.between(from: '1957-01-01', to: '1965-12-31') }
-      repositories { create_list(:repository, 1, public: true) }
+      repositories { create_list(:repository, 1, published: true) }
 
-      factory :public_letter_existing_repos do
-        repositories { [Repository.where(public: true).sample, Repository.where(public: true).sample] }
+      factory :published_letter_existing_repos do
+        repositories { [Repository.where(published: true).sample, Repository.where(published: true).sample] }
       end
     end
 
     factory :new_letter do
       date { Faker::Date.between(from: '1966-01-01', to: '1988-12-31') }
-      repositories { create_list(:repository, 1, public: true) }
+      repositories { create_list(:repository, 1, published: true) }
     end
 
     factory :old_letter do
       date { Faker::Date.between(from: '1944-01-01', to: '1956-12-31') }
-      repositories { create_list(:repository, 1, public: true) }
+      repositories { create_list(:repository, 1, published: true) }
     end
   end
 end

@@ -9,8 +9,8 @@ FactoryBot.define do
     legacy_pk { Faker::Number.unique.within(range: 1..100_000) }
     e_type { Entity.e_types.keys[0..11].sample }
 
-    trait :public do
-      letters { [create(:public_letter)] }
+    trait :published do
+      letters { [create(:published_letter)] }
     end
 
     after :create do |entity|

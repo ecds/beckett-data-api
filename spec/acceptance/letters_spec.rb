@@ -32,9 +32,9 @@ resource 'Letters' do
               { default: 'null' }
 
     before {
-      create_list(:repository, 4, public: true)
-      create_list(:public_letter_existing_repos, 30)
-      Letter._public.order(:date).limit(25).sample(6).each do |letter|
+      create_list(:repository, 4, published: true)
+      create_list(:published_letter_existing_repos, 30)
+      Letter.published.order(:date).limit(25).sample(6).each do |letter|
         letter.mentions.shuffle[0..(letter.mentions.count / 3)].each do |mention|
           mention.tag_list.add Faker::Movies::HitchhikersGuideToTheGalaxy.planet
           mention.save
@@ -118,7 +118,7 @@ resource 'Letters' do
 
   route '/letters/:id', 'Single Letter' do
     get 'Specific letter' do
-      let(:id) { create(:public_letter).id }
+      let(:id) { create(:published_letter).id }
       example_request 'GET /letters/:id' do
         expect(status).to eq(200)
       end

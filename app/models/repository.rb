@@ -8,7 +8,7 @@ class Repository < ApplicationRecord
   has_many :letter_repositories, dependent: :destroy
   has_many :letters, through: :letter_repositories
 
-  scope :_public, lambda {
+  scope :published, lambda {
     where(public: true)
   }
 end

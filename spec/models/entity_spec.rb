@@ -17,7 +17,7 @@ RSpec.describe Entity, type: :model do
       :letter,
       4,
       date: Faker::Date.between(from: '1900-1-1', to: '1930-1-1'),
-      repositories: create_list(:repository, 1, public: true),
+      repositories: create_list(:repository, 1, published: true),
       entities: [entity]
     )
 
@@ -25,7 +25,7 @@ RSpec.describe Entity, type: :model do
       :letter,
       2,
       date: Faker::Date.between(from: '1957-1-1', to: '1965-12-31'),
-      repositories: create_list(:repository, 1, public: true),
+      repositories: create_list(:repository, 1, published: true),
       destinations: [entity],
       recipients: create_list(:person_entity, 2)
     )
@@ -34,7 +34,7 @@ RSpec.describe Entity, type: :model do
       :letter,
       2,
       date: Faker::Date.between(from: '1957-1-1', to: '1965-12-31'),
-      repositories: create_list(:repository, 1, public: true),
+      repositories: create_list(:repository, 1, published: true),
       origins: [entity],
       recipients: create_list(:person_entity, 2)
     )
@@ -43,7 +43,7 @@ RSpec.describe Entity, type: :model do
       :letter,
       2,
       date: Faker::Date.between(from: '1957-1-1', to: '1965-12-31'),
-      repositories: create_list(:repository, 1, public: true),
+      repositories: create_list(:repository, 1, published: true),
       entities: [entity],
       recipients: create_list(:person_entity, 2)
     )
@@ -52,7 +52,7 @@ RSpec.describe Entity, type: :model do
       :letter,
       2,
       date: Faker::Date.between(from: '1957-1-1', to: '1965-12-31'),
-      repositories: create_list(:repository, 1, public: false),
+      repositories: create_list(:repository, 1, published: false),
       entities: [entity]
     )
 
@@ -60,7 +60,7 @@ RSpec.describe Entity, type: :model do
       :letter,
       3,
       date: Faker::Date.between(from: '1966-1-1', to: '2000-12-31'),
-      repositories: create_list(:repository, 1, public: false),
+      repositories: create_list(:repository, 1, published: false),
       destinations: [entity],
       recipients: create_list(:person_entity, 2)
     )
@@ -68,8 +68,8 @@ RSpec.describe Entity, type: :model do
     expect(entity.all_letters.count).to be < Letter.count
     expect(entity.all_letters.count).to eq(15)
     expect(entity.letters.count).to eq(8)
-    expect(entity.public_letters_hash.length).to eq(6)
-    expect(entity.public_letters_hash[0][:recipients].length).to eq(2)
+    expect(entity.published_letters_hash.length).to eq(6)
+    expect(entity.published_letters_hash[0][:recipients].length).to eq(2)
   end
 
   context 'when attribute wrapped in div' do
@@ -85,6 +85,12 @@ RSpec.describe Entity, type: :model do
     it 'labels a person with last_name, first_name' do
       person = create(:person_entity)
       expect(person.label).to eq("#{person.last_name}, #{person.first_name}")
+    end
+
+    it 'adds first and last name when label and no names' do
+      person = create(:person_entity, label: 'Miguel Almirón', first_name: nil, last_name: nil)
+      expect(person.first_name).to eq('Miguel')
+      expect(person.last_name).to eq('Almirón')
     end
 
     it 'sets life_dates to nil when saved as nd' do

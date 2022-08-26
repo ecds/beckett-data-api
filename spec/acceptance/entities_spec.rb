@@ -31,7 +31,7 @@ resource 'Entities' do
 
     before {
       Entity.e_types.keys[0..11].each do |type|
-        create_list("#{type}_entity".to_sym, rand(3..5), :public)
+        create_list("#{type}_entity".to_sym, rand(3..5), :published)
       end
     }
 
@@ -84,7 +84,7 @@ resource 'Entities' do
     }
 
     get 'Specific entity' do
-      let(:id) { create("#{Entity.e_types.keys[0..11].sample}_entity".to_sym, :public).id }
+      let(:id) { create("#{Entity.e_types.keys[0..11].sample}_entity".to_sym, :published).id }
       example_request 'GET /entities/:id' do
         expect(status).to eq(200)
       end
@@ -92,7 +92,7 @@ resource 'Entities' do
 
     Entity.e_types.keys[0..11].each do |type|
       get "#{type} Entity" do
-        let(:id) { create("#{type}_entity".to_sym, :public).id }
+        let(:id) { create("#{type}_entity".to_sym, :published).id }
 
         response_field :label, '', { default: 'HTML String', not_null: true }
         response_field :clean_label, '', { default: 'String', not_null: true }
@@ -150,7 +150,7 @@ resource 'Entities' do
               "Limit responses by single type. Options are #{Entity.e_types.keys.join(', ')}.",
               { default: 'null' }
 
-    before { create_list(:person_entity, 50, :public) }
+    before { create_list(:person_entity, 50, :published) }
 
     get 'GET /entities/autocomplete' do
       let(:search) { Entity.all.sample.clean_label[0..1].downcase }

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_23_190129) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_25_190109) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
@@ -96,13 +96,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_23_190129) do
     t.integer "e_type", default: 12, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "date_str"
     t.uuid "event_type_id"
+    t.string "date_str"
     t.text "owner_location"
     t.text "owner_location_current"
     t.text "label_plain"
     t.text "description_plain"
     t.text "lists_plain"
+    t.boolean "published"
     t.index ["event_type_id"], name: "index_entities_on_event_type_id"
   end
 
@@ -241,7 +242,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_23_190129) do
   end
 
   create_table "repositories", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.boolean "public", default: false, null: false
+    t.boolean "published", default: false, null: false
     t.string "label", null: false
     t.boolean "american", default: false
     t.string "format"

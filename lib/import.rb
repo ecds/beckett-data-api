@@ -8,8 +8,6 @@ entities.each do |e|
   next if all.include?(e['id'])
 
   e['label'] = "#{Faker::Name.name} - 88" if e['label'].nil?
-  e['e_type'] = 'person' if e['e_type'].nil?
-  Rails.logger.debug e
   if e['e_type'] == 'person'
     names = Namae.parse e['label']
     unless names[0].nil?
@@ -22,17 +20,19 @@ entities.each do |e|
 end; nil
 
 entities = HTTParty.get('https://ot-api.ecdsdev.org/list-entities', timeout: 1000)
+ids = Entity.all.map(&:id)
 entities.each do |e|
+  next if ids.include? e['id']
   entity = Entity.create(id: e['id'], e_type: e['e_type'])
   e['label'] = '-' if e['label'].nil? || e['label'] == ' '
   if e['e_type'] == 'person'
     names = Namae.parse e['label']
-    entity.update(fist_name: names[0].given, last_name: names[0].family, legacy_pk: e['legacy_pk']) unless names[0].nil?
+    entity.update(first_name: names[0].given, last_name: names[0].family, legacy_pk: e['legacy_pk']) unless names[0].nil?
   else
     entity.update(label: e['label'], legacy_pk: e['legacy_pk'])
   end
   Rails.logger.debug entity.label
-end
+end; nil
 
 entities.each do |p|
   next unless p['e_type'] == 'person'
@@ -42,9 +42,7 @@ end
 
 letters = HTTParty.get('https://ot-api.ecdsdev.org/list-letters', timeout: 1000)
 letters.each do |letter|
-  l = Letter.find(letter['id'])
-  # next if l.date.present?
-  # l.update(legacy_pk: letter['legacy_pk'], date: letter['date'])
+  l = Letter.find_or_create_by(id: letter['id'], legacy_pk: letter['legacy_pk'], date: letter['date'])
   letter['mentions'].each do |mention|
     m = Mention.create(
       letter: l,
@@ -53,7 +51,7 @@ letters.each do |letter|
     mention['tags'].each {|tag| m.tag_list.add(tag) }
     m.save
   end
-end
+end; nil
 
 recipients = HTTParty.get('https://ot-api.ecdsdev.org/list-recipients', timeout: 1000)
 recipients.each do |r|

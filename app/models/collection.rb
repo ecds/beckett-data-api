@@ -6,11 +6,11 @@ class Collection < ApplicationRecord
   has_many :letter_collections, dependent: :destroy
   has_many :letters, -> { distinct }, through: :letter_collections
 
-  scope :_public, lambda {
+  scope :published, lambda {
     includes(:repository)
       .where(
         repositories: {
-          public: true
+          published: true
         }
       )
   }
