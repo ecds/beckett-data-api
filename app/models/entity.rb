@@ -182,13 +182,14 @@ class Entity < ApplicationRecord
       e_type:,
       id_path: url_path,
       short_display:,
-      full_display:
+      full_display:,
+      published:
     }.merge(attributes)
   end
 
-  def should_index?
-    published_letters.present?
-  end
+  # def should_index?
+  #   published_letters.present?
+  # end
 
   # rubocop:disable Metrics/PerceivedComplexity, Metrics/MethodLength, Metrics/AbcSize, Metrics/CyclomaticComplexity, Layout/LineLength
   def short_display
