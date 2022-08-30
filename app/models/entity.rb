@@ -462,7 +462,7 @@ class Entity < ApplicationRecord
       generic: attributes.keys.map(&:to_sym)
     }
 
-    e_type = 'generic' if e_type.nil?
+    self.e_type = 'generic' if e_type.nil?
 
     [:label, :description, :e_type, :legacy_pk, *props[e_type.to_sym]].uniq
   end
