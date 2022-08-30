@@ -19,6 +19,10 @@ and renders all form fields for a resource's editable attributes.
   text-transform: captalize;
  }
 
+ pre {
+  white-space: pre-wrap;
+ }
+
  .letter-content {
   height: 500px;
   line-spacing: 2rem;
@@ -83,7 +87,9 @@ and renders all form fields for a resource's editable attributes.
       <label>Content</label>
     </div>
     <div class="field-unit__field letter-content">
-      <%= sanitize page.resource.content %>
+      <pre>
+        <%= sanitize page.resource.content %>
+      </pre>
     </div>
   </div>
 
