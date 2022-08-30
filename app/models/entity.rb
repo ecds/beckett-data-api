@@ -195,7 +195,12 @@ class Entity < ApplicationRecord
     lines = []
     case e_type
     when 'attendance'
-      lines.push("<strong>#{event_type.titleize}</strong>, #{description}")
+      if event_type && description
+        lines.push("<strong>#{event_type.titleize}</strong>, #{description}")
+      else
+        lines.push("<strong>#{event_type.titleize}</strong>") unless event_type.nil?
+        lines.push(description) unless description.nil?
+      end
       lines.push("<strong>Attended with</strong> #{attended_with.to_sentence}") unless attended_with.nil?
       lines.push("<strong>Place, Date</strong> #{place_date}") unless place_date.nil?
       lines.push("<strong>Director</strong> #{director}") unless director.nil?
