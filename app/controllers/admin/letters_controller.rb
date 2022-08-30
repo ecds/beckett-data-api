@@ -15,7 +15,6 @@ module Admin
       authorize_resource(resource_class)
       search_term = params[:search].to_s.strip
       dates = Letter.all.map(&:date).compact
-      Rails.logger.debug { "incoming = #{params}" }
       min_date = dates.min
       max_date = dates.max
       start_date = params.key?(:start_date) ? Date.parse(params[:start_date]) : min_date
@@ -72,7 +71,12 @@ module Admin
     def original_params
       return if request.referer.nil?
 
-      original_params = Addressable::URI.parse(request.referer).query_values&.compact_blank
+      referer_url = Addressable::URI.parse(request.referer)
+
+      return unless referer_url.path.include?('admin/letters')
+
+      original_params = referer_url.query_values&.compact_blank
+
       params.reverse_merge!(original_params)
     end
     # min_date: Letter.where.not(date: nil).map(&:date).min,
