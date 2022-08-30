@@ -98,32 +98,7 @@ class LetterDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-    legacy_pk
-    date
-    recipients
-    destinations
-    senders
-    origins
     entities
-    repositories
-    addressed_to
-    addressed_from
-    language
-    physical_desc
-    physical_detail
-    physical_notes
-    repository_info
-    postcard_image
-    leaves
-    sides
-    postmark
-    typed
-    signed
-    verified
-    envelope
-    notes
-    letter_owner
-    letter_publisher
   ].freeze
 
   # COLLECTION_FILTERS

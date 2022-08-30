@@ -457,6 +457,8 @@ class Entity < ApplicationRecord
       generic: attributes.keys.map(&:to_sym)
     }
 
+    e_type = 'generic' if e_type.nil?
+
     [:label, :description, :e_type, :legacy_pk, *props[e_type.to_sym]].uniq
   end
 
@@ -495,6 +497,8 @@ class Entity < ApplicationRecord
       next unless fragment.elements.first&.name == 'div'
 
       self[attribute] = fragment.children.first.inner_html.gsub('em>', 'i>')
+
+      self[attribute] = nil if self[attribute].blank?
     end
   end
 

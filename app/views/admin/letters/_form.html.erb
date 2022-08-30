@@ -18,6 +18,12 @@ and renders all form fields for a resource's editable attributes.
  option {
   text-transform: captalize;
  }
+
+ .letter-content {
+  height: 500px;
+  line-spacing: 2rem;
+  overflow: scroll;
+ }
 </style>
 
 <%= form_for([namespace, page.resource], html: { class: "form" }) do |f| %>
@@ -39,11 +45,47 @@ and renders all form fields for a resource's editable attributes.
     </div>
   <% end %>
 
+  <div class="field-unit field-unit--string field-unit--optional">
+    <div class="field-unit__label">
+      <label>Date</label>
+    </div>
+    <div class="field-unit__field">
+      <%= page.resource.date.strftime('%d %B %Y') %>
+    </div>
+  </div>
+
+  <div class="field-unit field-unit--string field-unit--optional">
+    <div class="field-unit__label">
+      <label>Recipient(s)</label>
+    </div>
+    <div class="field-unit__field">
+      <%= page.resource.recipients.map(&:label).to_sentence %>
+    </div>
+  </div>
+
+  <div class="field-unit field-unit--string field-unit--optional">
+    <div class="field-unit__label">
+      <label>Legacy ID</label>
+    </div>
+    <div class="field-unit__field">
+      <%= page.resource.legacy_pk %>
+    </div>
+  </div>
+
   <% page.attributes(controller.action_name).each do |attribute| -%>
     <div class="field-unit field-unit--<%= attribute.html_class %> field-unit--<%= requireness(attribute) %>">
       <%= render_field attribute, f: f %>
     </div>
   <% end -%>
+
+  <div class="field-unit field-unit--string field-unit--optional">
+    <div class="field-unit__label">
+      <label>Content</label>
+    </div>
+    <div class="field-unit__field letter-content">
+      <%= sanitize page.resource.content %>
+    </div>
+  </div>
 
   <div class="form-actions">
     <%= f.submit %>

@@ -43,14 +43,6 @@ end
 letters = HTTParty.get('https://ot-api.ecdsdev.org/list-letters', timeout: 1000)
 letters.each do |letter|
   l = Letter.find_or_create_by(id: letter['id'], legacy_pk: letter['legacy_pk'], date: letter['date'])
-  letter['mentions'].each do |mention|
-    m = Mention.create(
-      letter: l,
-      entity: Entity.find_or_create_by(id: mention['entity'])
-    )
-    mention['tags'].each {|tag| m.tag_list.add(tag) }
-    m.save
-  end
 end; nil
 
 recipients = HTTParty.get('https://ot-api.ecdsdev.org/list-recipients', timeout: 1000)

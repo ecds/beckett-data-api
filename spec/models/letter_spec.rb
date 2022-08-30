@@ -144,4 +144,10 @@ RSpec.describe Letter, type: :model do
     expect(Repository.count).to eq(2)
     expect(LetterRepository.count).to eq(0)
   end
+
+  it 'does not allow content to be updated' do
+    letter = create(:letter)
+    letter.update(content: 'new content')
+    expect(described_class.find(letter.id).content).not_to eq('new content')
+  end
 end

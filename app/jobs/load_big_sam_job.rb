@@ -152,7 +152,7 @@ class LoadBigSamJob < ApplicationJob
         repo = Repository.find_or_create_by(label: row[:first_repository])
         repo.format = row[:first_format]
         repo.american = row[:euro_or_am].downcase == 'american' if row[:euro_or_am]
-        repo.public = row[:first_public].downcase == 'public' if row[:first_public]
+        repo.published = row[:first_public].downcase == 'public' if row[:first_public]
         begin
           if row[:first_collection]
             collection = Collection.find_or_create_by(label: row[:first_collection])
@@ -177,7 +177,7 @@ class LoadBigSamJob < ApplicationJob
       if row[:second_repository]
         repo = Repository.find_or_create_by(label: row[:second_repository])
         repo.format = row[:second_format]
-        repo.public = row[:second_public].downcase == 'public' if row[:second_public]
+        repo.published = row[:second_public].downcase == 'public' if row[:second_public]
         begin
           if row[:second_collection]
             collection = Collection.find_or_create_by(label: row[:second_collection])
@@ -218,7 +218,7 @@ class LoadBigSamJob < ApplicationJob
       letter.save
     end
 
-    big_sam.destroy
+    BigSam.last.destroy
 
     logger.info { "#{Time.zone.now} ALL DONE" }
   end
