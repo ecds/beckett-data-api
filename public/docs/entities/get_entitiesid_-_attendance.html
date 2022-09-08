@@ -226,6 +226,48 @@ table th, table td {
               </tr>
               <tr>
                 <td>
+                    <span class="name">e_type</span>
+                </td>
+                <td>
+                  <span class="description">HTML String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">false</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">legacy_pk</span>
+                </td>
+                <td>
+                  <span class="description">HTML String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">false</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">alternate_names</span>
+                </td>
+                <td>
+                  <span class="description">Array</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">false</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
                     <span class="name">alternate_spellings</span>
                 </td>
                 <td>
@@ -282,6 +324,20 @@ table th, table td {
               </tr>
               <tr>
                 <td>
+                    <span class="name">notes</span>
+                </td>
+                <td>
+                  <span class="description">HTML String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">false</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
                     <span class="name">performed_by</span>
                 </td>
                 <td>
@@ -321,7 +377,7 @@ Host: example.org
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET /entities/453a9524-2944-454d-9358-57a15ff462ad</pre>
+          <pre class="request route highlight">GET /entities/73e8a612-71df-4520-9dc5-72bd259de16d</pre>
 
 
 
@@ -335,35 +391,41 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;d99c79010ac5d4d04ccc38160c3637a5&quot;
+ETag: W/&quot;08d1c00d4220d6458f05de7a2a30aaeb&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 42eb18d0-50a0-475f-b71c-59cd7f986dcc
-X-Runtime: 1.167863
+X-Request-Id: 14879ed3-32d7-4bc8-97ab-a86ef4e04e6c
+X-Runtime: 1.106578
 Vary: Origin
-Content-Length: 564</pre>
+Content-Length: 2163</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
-  &quot;id&quot;: &quot;http://example.org/entities/453a9524-2944-454d-9358-57a15ff462ad&quot;,
+  &quot;id&quot;: &quot;http://example.org/entities/73e8a612-71df-4520-9dc5-72bd259de16d&quot;,
   &quot;type&quot;: &quot;attendance&quot;,
-  &quot;label&quot;: &quot;&lt;i&gt;Judgment at Nuremberg&lt;/i&gt;&quot;,
-  &quot;clean_label&quot;: &quot;Judgment at Nuremberg&quot;,
-  &quot;description&quot;: &quot;Skateboard xoxo offal fingerstache keytar viral ramps literally.&quot;,
-  &quot;clean_description&quot;: &quot;Skateboard xoxo offal fingerstache keytar viral ramps literally.&quot;,
-  &quot;alternate_spellings&quot;: [
-    &quot;Eureka&quot;
+  &quot;label&quot;: &quot;Reading, Neutra cred schlitz lofi.&quot;,
+  &quot;clean_label&quot;: &quot;Reading, Neutra cred schlitz lofi.&quot;,
+  &quot;description&quot;: &quot;Neutra cred schlitz lofi.&quot;,
+  &quot;clean_description&quot;: &quot;Neutra cred schlitz lofi.&quot;,
+  &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Reading&lt;/strong&gt;, Neutra cred schlitz lofi.&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Attended with&lt;/strong&gt; Jackie Treehorn and Genghis Khan&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Place, Date&lt;/strong&gt; Ritchieville, 21 November 1959&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Director&lt;/strong&gt; Trillian&lt;/p&gt;&lt;/section&gt;&quot;,
+  &quot;full_display&quot;: &quot;&lt;table&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Description&lt;/th&gt;\n&lt;td&gt;Neutra cred schlitz lofi.&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Alternate Name(s)&lt;/th&gt;\n&lt;td&gt;Kennedy Davenport&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Director&lt;/th&gt;\n&lt;td&gt;Trillian&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Performed by&lt;/th&gt;\n&lt;td&gt;Loonquawl&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Attended with&lt;/th&gt;\n&lt;td&gt;Jackie Treehorn and Genghis Khan&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Place, Date&lt;/th&gt;\n&lt;td&gt;Ritchieville, 21 November 1959&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Notes&lt;/th&gt;\n&lt;td&gt;How can you just leave me standing alone in a world so cold?&lt;/td&gt;\n&lt;/tr&gt;\n&lt;/table&gt;&quot;,
+  &quot;e_type&quot;: &quot;attendance&quot;,
+  &quot;legacy_pk&quot;: 2359,
+  &quot;alternate_names&quot;: [
+    &quot;Kennedy Davenport&quot;
   ],
+  &quot;alternate_spellings&quot;: null,
   &quot;attended_with&quot;: [
-    &quot;Donny&quot;,
-    &quot;Frankie and Benjy&quot;
+    &quot;Jackie Treehorn&quot;,
+    &quot;Genghis Khan&quot;
   ],
-  &quot;director&quot;: &quot;Fenchurch&quot;,
-  &quot;event_type&quot;: &quot;radio_broadcast&quot;,
+  &quot;director&quot;: &quot;Trillian&quot;,
+  &quot;event_type&quot;: &quot;_reading&quot;,
+  &quot;notes&quot;: &quot;How can you just leave me standing alone in a world so cold?&quot;,
   &quot;performed_by&quot;: [
-    &quot;Rob McKenna&quot;
+    &quot;Loonquawl&quot;
   ],
-  &quot;place_date&quot;: &quot;Lessiehaven, 01 April 1959&quot;
+  &quot;place_date&quot;: &quot;Ritchieville, 21 November 1959&quot;
 }</pre>
       </div>
     </div>

@@ -226,7 +226,35 @@ table th, table td {
               </tr>
               <tr>
                 <td>
-                    <span class="name">date</span>
+                    <span class="name">e_type</span>
+                </td>
+                <td>
+                  <span class="description">HTML String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">false</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">legacy_pk</span>
+                </td>
+                <td>
+                  <span class="description">HTML String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">false</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">date_str</span>
                 </td>
                 <td>
                   <span class="description">HTML String</span>
@@ -268,7 +296,21 @@ table th, table td {
               </tr>
               <tr>
                 <td>
-                    <span class="name">porposal</span>
+                    <span class="name">proposal</span>
+                </td>
+                <td>
+                  <span class="description">HTML String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">false</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">publication_information</span>
                 </td>
                 <td>
                   <span class="description">HTML String</span>
@@ -293,7 +335,7 @@ Host: example.org
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET /entities/517e27a2-a064-4763-99ff-194739add7b3</pre>
+          <pre class="request route highlight">GET /entities/0f6ea540-34bf-4a34-8d8d-3f523297df81</pre>
 
 
 
@@ -307,28 +349,33 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;07edb6d186f8fcdb2a712aa409a2c4d6&quot;
+ETag: W/&quot;87ba185a91536731bef6160772e0afde&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 8d2256e4-43f1-4d3c-924f-b64d0bd0d966
-X-Runtime: 1.059885
+X-Request-Id: 9d16b14c-642a-4905-b835-4de182771bae
+X-Runtime: 0.985191
 Vary: Origin
-Content-Length: 550</pre>
+Content-Length: 2663</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
-  &quot;id&quot;: &quot;http://example.org/entities/517e27a2-a064-4763-99ff-194739add7b3&quot;,
+  &quot;id&quot;: &quot;http://example.org/entities/0f6ea540-34bf-4a34-8d8d-3f523297df81&quot;,
   &quot;type&quot;: &quot;writing&quot;,
-  &quot;label&quot;: &quot;&lt;i&gt;A Time to Kill&lt;/i&gt;&quot;,
-  &quot;clean_label&quot;: &quot;A Time to Kill&quot;,
-  &quot;description&quot;: &quot;Single-origin &lt;i&gt;coffee diy listicle yolo humblebrag schlitz&lt;/i&gt; seitan.&quot;,
-  &quot;clean_description&quot;: &quot;Single-origin coffee diy listicle yolo humblebrag schlitz seitan.&quot;,
-  &quot;date&quot;: &quot;1928-05-22&quot;,
+  &quot;label&quot;: &quot;Postern of Fate&quot;,
+  &quot;clean_label&quot;: &quot;Postern of Fate&quot;,
+  &quot;description&quot;: &quot;Kogi &lt;i&gt;chambray synth muggle magic organic roof&lt;/i&gt; chicharrones.&quot;,
+  &quot;clean_description&quot;: &quot;Kogi chambray synth muggle magic organic roof chicharrones.&quot;,
+  &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Title&lt;/strong&gt; Postern of Fate&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Proposal/Response&lt;/strong&gt; He was staring at the instruments with the air of one who is trying to convert Fahrenheit to centigrade in his head while his house is burning down.&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Translator&lt;/strong&gt; Deep Thought&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Date&lt;/strong&gt; 1951-02-14.&lt;/p&gt;&lt;/section&gt;&quot;,
+  &quot;full_display&quot;: &quot;&lt;table&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Title&lt;/th&gt;\n&lt;td&gt;Postern of Fate&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Proposal/Response&lt;/th&gt;\n&lt;td&gt;He was staring at the instruments with the air of one who is trying to convert Fahrenheit to centigrade in his head while his house is burning down.&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Date&lt;/th&gt;\n&lt;td&gt;1951-02-14.&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Notes&lt;/th&gt;\n&lt;td&gt;Here I am, brain the size of a planet, and they tell me to take you up to the bridge. Call that job satisfaction? &#39;Cos I don&#39;t.&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Archival Information&lt;/th&gt;\n&lt;td&gt;New Directions Publishing.&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;See Also&lt;/th&gt;\n&lt;td&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=\&quot;http://bode.name/valentine\&quot; target=\&quot;_blank\&quot; rel=\&quot;noopener\&quot;&gt;http://bode.name/valentine&lt;span&gt;(opens in new tab)&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;\n&lt;/tr&gt;\n&lt;/table&gt;&quot;,
+  &quot;e_type&quot;: &quot;writing&quot;,
+  &quot;legacy_pk&quot;: 10809,
+  &quot;date_str&quot;: &quot;1951-02-14.&quot;,
   &quot;links&quot;: [
-    &quot;http://cummings.net/fay.kuhn&quot;
+    &quot;http://bode.name/valentine&quot;
   ],
-  &quot;notes&quot;: &quot;There&#39;s only one life-form as intelligent as me within thirty parsecs of here and that&#39;s me.&quot;,
-  &quot;porposal&quot;: null
+  &quot;notes&quot;: &quot;Here I am, brain the size of a planet, and they tell me to take you up to the bridge. Call that job satisfaction? &#39;Cos I don&#39;t.&quot;,
+  &quot;proposal&quot;: &quot;He was staring at the instruments with the air of one who is trying to convert Fahrenheit to centigrade in his head while his house is burning down.&quot;,
+  &quot;publication_information&quot;: &quot;New Directions Publishing.&quot;
 }</pre>
       </div>
     </div>

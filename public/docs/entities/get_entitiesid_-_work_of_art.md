@@ -17,12 +17,15 @@
 | display_header | HTML String |  | true |
 | label | HTML String |  | false |
 | description | HTML String |  | false |
+| e_type | HTML String |  | false |
+| legacy_pk | HTML String |  | false |
 | alternate_spellings | Array |  | false |
 | artist | HTML String |  | false |
 | artist_alternate_spellings | Array |  | false |
+| links | Array |  | false |
 | notes | HTML String |  | false |
-| owner_location_accession_number_current | HTML String |  | false |
-| owner_location_accession_number_contemporaneous | HTML String |  | false |
+| owner_location | HTML String |  | false |
+| owner_location_current | HTML String |  | false |
 
 ### Request
 
@@ -36,7 +39,7 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /entities/8c8233fa-d1cd-4bb7-92c5-c72aee1d0a18</pre>
+<pre>GET /entities/877c43ee-d7a1-4cfc-9885-364f25df3559</pre>
 
 ### Response
 
@@ -49,12 +52,12 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;c2ae13aadb47bc7fae5a46cd1b116a45&quot;
+ETag: W/&quot;1f330b064b80290897c8884dffda9f54&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 73b862bc-ba4e-4b00-b6ee-48c564147ca9
-X-Runtime: 1.234987
+X-Request-Id: 7e66b842-eedc-4e13-bea6-de6089001d78
+X-Runtime: 0.962935
 Vary: Origin
-Content-Length: 919</pre>
+Content-Length: 2757</pre>
 
 #### Status
 
@@ -63,20 +66,25 @@ Content-Length: 919</pre>
 #### Body
 
 <pre>{
-  "id": "http://example.org/entities/8c8233fa-d1cd-4bb7-92c5-c72aee1d0a18",
+  "id": "http://example.org/entities/877c43ee-d7a1-4cfc-9885-364f25df3559",
   "type": "work_of_art",
-  "label": "<i>I Would Die 4 U</i>",
-  "clean_label": "I Would Die 4 U",
-  "description": "Chambray <i>dreamcatcher chartreuse cornhole mixtape tattooed cronut sartorial</i> biodiesel.",
-  "clean_description": "Chambray dreamcatcher chartreuse cornhole mixtape tattooed cronut sartorial biodiesel.",
-  "alternate_spellings": [
-    "Vanessa Vanjie Mateo"
-  ],
-  "artist": "Roosta",
+  "label": "My Name Is Prince",
+  "clean_label": "My Name Is Prince",
+  "description": "Fashion axe actually occupy tacos 90s vinegar thundercats kitsch.",
+  "clean_description": "Fashion axe actually occupy tacos 90s vinegar thundercats kitsch.",
+  "short_display": "<section><p><strong>Artist</strong> Galaxia Woonbeam</p>\n<p><strong>Title</strong> My Name Is Prince</p>\n<p><strong>Description</strong> Fashion axe actually occupy tacos 90s vinegar thundercats kitsch.</p>\n<p><strong>Owner/location</strong> Bistromath</p></section>",
+  "full_display": "<table>\n<tr>\n<th scope=\"row\">Artist</th>\n<td>Galaxia Woonbeam</td>\n</tr>\n<tr>\n<th scope=\"row\">Artist Alternative Name(s)</th>\n<td>Pandora Boxx</td>\n</tr>\n<tr>\n<th scope=\"row\">Title</th>\n<td>My Name Is Prince</td>\n</tr>\n<tr>\n<th scope=\"row\">Alternative Title(s)</th>\n<td>Aja</td>\n</tr>\n<tr>\n<th scope=\"row\">Description</th>\n<td>Fashion axe actually occupy tacos 90s vinegar thundercats kitsch.</td>\n</tr>\n<tr>\n<th scope=\"row\">Ownership and Location</th>\n<td>Bistromath</td>\n</tr>\n<tr>\n<th scope=\"row\">Current Ownership and Location</th>\n<td>Krikkit One</td>\n</tr>\n<tr>\n<th scope=\"row\">Notes</th>\n<td>And then of course I've got this terrible pain in all the diodes down my left side.</td>\n</tr>\n<tr>\n<th scope=\"row\">See Also</th>\n<td><ul><li><a href=\"http://stanton.io/roderick\" target=\"_blank\" rel=\"noopener\">http://stanton.io/roderick<span>(opens in new tab)</span></a></li></ul></td>\n</tr>\n</table>",
+  "e_type": "work_of_art",
+  "legacy_pk": 55026,
+  "alternate_spellings": null,
+  "artist": "Galaxia Woonbeam",
   "artist_alternate_spellings": [
-    "Trinity Taylor"
+    "Pandora Boxx"
   ],
-  "notes": "You think you've got problems? What are you supposed to do if you are a manically depressed robot? No, don't try to answer that. I'm fifty thousand times more intelligent than you and even I don't know the answer. It gives me a headache just trying to think down to your level.",
-  "owner_location_accession_number_current": 415,
-  "owner_location_accession_number_contemporaneous": 277
+  "links": [
+    "http://stanton.io/roderick"
+  ],
+  "notes": "And then of course I've got this terrible pain in all the diodes down my left side.",
+  "owner_location": "Bistromath",
+  "owner_location_current": "Krikkit One"
 }</pre>

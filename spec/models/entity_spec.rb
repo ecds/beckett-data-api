@@ -169,7 +169,7 @@ RSpec.describe Entity, type: :model do
   context 'when entity info is complete - short display' do
     it 'has short display - attendance' do
       entity = create(:attendance_entity)
-      doc = Nokogiri::HTML5 entity.short_display.to_html
+      doc = Nokogiri::HTML5 entity.short_display
       expect(doc.xpath('//p').count).to eq(4)
       expect(doc.xpath('//strong').count).to eq(4)
       expect(sanitize(doc.xpath('//p')[0].text)).to eq("#{entity.event_type.titleize}, #{sanitize(strip_tags(entity.description))}")
@@ -184,7 +184,7 @@ RSpec.describe Entity, type: :model do
 
     it 'has short display - music' do
       entity = create(:music_entity)
-      doc = Nokogiri::HTML5 entity.short_display.to_html
+      doc = Nokogiri::HTML5 entity.short_display
       expect(doc.xpath('//p').count).to eq(3)
       expect(doc.xpath('//strong').count).to eq(3)
       expect(sanitize(doc.xpath('//p')[0].text)).to include(sanitize(strip_tags(entity.composer)))
@@ -197,7 +197,7 @@ RSpec.describe Entity, type: :model do
 
     it 'has short display - organization' do
       entity = create(:organization_entity)
-      doc = Nokogiri::HTML5 entity.short_display.to_html
+      doc = Nokogiri::HTML5 entity.short_display
       expect(doc.xpath('//p').count).to eq(2)
       expect(doc.xpath('//strong').count).to eq(1)
       expect(sanitize(doc.xpath('//p')[0].text)).to eq(sanitize(strip_tags(entity.label)))
@@ -207,7 +207,7 @@ RSpec.describe Entity, type: :model do
 
     it 'has short display - person' do
       entity = create(:person_entity)
-      doc = Nokogiri::HTML5 entity.short_display.to_html
+      doc = Nokogiri::HTML5 entity.short_display
       expect(doc.xpath('//p').count).to eq(2)
       expect(doc.xpath('//strong').count).to eq(1)
       expect(sanitize(doc.xpath('//p')[0].text)).to eq("#{sanitize(strip_tags(entity.first_name))} #{sanitize(strip_tags(entity.last_name))}, #{entity.life_dates}")
@@ -217,7 +217,7 @@ RSpec.describe Entity, type: :model do
 
     it 'has short display - place' do
       entity = create(:place_entity)
-      doc = Nokogiri::HTML5 entity.short_display.to_html
+      doc = Nokogiri::HTML5 entity.short_display
       expect(doc.xpath('//p').count).to eq(2)
       expect(doc.xpath('//strong').count).to eq(1)
       expect(sanitize(doc.xpath('//p')[0].text)).to include(sanitize(strip_tags(entity.label)))
@@ -227,7 +227,7 @@ RSpec.describe Entity, type: :model do
 
     it 'has short display - production' do
       entity = create(:production_entity)
-      doc = Nokogiri::HTML5 entity.short_display.to_html
+      doc = Nokogiri::HTML5 entity.short_display
       expect(doc.xpath('//p').count).to eq(4)
       expect(doc.xpath('//strong').count).to eq(5)
       expect(sanitize(doc.xpath('//p')[0].text)).to include(sanitize(strip_tags(entity.label)))
@@ -247,7 +247,7 @@ RSpec.describe Entity, type: :model do
 
     it 'has short display - publication' do
       entity = create(:publication_entity)
-      doc = Nokogiri::HTML5 entity.short_display.to_html
+      doc = Nokogiri::HTML5 entity.short_display
       expect(doc.xpath('//p').count).to eq(4)
       expect(doc.xpath('//strong').count).to eq(4)
       entity.authors.each {|author| expect(sanitize(doc.xpath('//p')[0].text)).to include(sanitize(strip_tags(author))) }
@@ -262,7 +262,7 @@ RSpec.describe Entity, type: :model do
 
     it 'has short display - public_event' do
       entity = create(:public_event_entity)
-      doc = Nokogiri::HTML5 entity.short_display.to_html
+      doc = Nokogiri::HTML5 entity.short_display
       expect(doc.xpath('//p').count).to eq(2)
       expect(doc.xpath('//strong').count).to eq(2)
       expect(sanitize(doc.xpath('//p')[0].text)).to eq(sanitize(strip_tags(entity.label)))
@@ -273,7 +273,7 @@ RSpec.describe Entity, type: :model do
 
     it 'has short display - reading' do
       entity = create(:reading_entity)
-      doc = Nokogiri::HTML5 entity.short_display.to_html
+      doc = Nokogiri::HTML5 entity.short_display
       expect(doc.xpath('//p').count).to eq(3)
       expect(doc.xpath('//strong').count).to eq(3)
       entity.authors.each {|author| expect(sanitize(doc.xpath('//p')[0].text)).to include(sanitize(strip_tags(author))) }
@@ -286,7 +286,7 @@ RSpec.describe Entity, type: :model do
 
     it 'has short display - translating' do
       entity = create(:translating_entity)
-      doc = Nokogiri::HTML5 entity.short_display.to_html
+      doc = Nokogiri::HTML5 entity.short_display
       expect(doc.xpath('//p').count).to eq(3)
       expect(doc.xpath('//strong').count).to eq(4)
       entity.authors.each {|author| expect(sanitize(doc.xpath('//p')[0].text)).to include(sanitize(strip_tags(author))) }
@@ -303,7 +303,7 @@ RSpec.describe Entity, type: :model do
 
     it 'has short display - work_of_art' do
       entity = create(:work_of_art_entity)
-      doc = Nokogiri::HTML5 entity.short_display.to_html
+      doc = Nokogiri::HTML5 entity.short_display
       expect(doc.xpath('//p').count).to eq(4)
       expect(doc.xpath('//strong').count).to eq(4)
       expect(sanitize(doc.xpath('//p')[0].text)).to include(sanitize(strip_tags(entity.artist)))
@@ -318,7 +318,7 @@ RSpec.describe Entity, type: :model do
 
     it 'has short display - writing' do
       entity = create(:writing_entity)
-      doc = Nokogiri::HTML5 entity.short_display.to_html
+      doc = Nokogiri::HTML5 entity.short_display
       expect(doc.xpath('//p').count).to eq(4)
       expect(doc.xpath('//strong').count).to eq(4)
       expect(sanitize(doc.xpath('//p')[0].text)).to include(sanitize(strip_tags(entity.label)))
@@ -335,7 +335,7 @@ RSpec.describe Entity, type: :model do
   context 'when entity info is partial - short dispalys' do
     it 'does not show life dates - person' do
       entity = create(:person_entity, life_dates: nil)
-      doc = Nokogiri::HTML5 entity.short_display.to_html
+      doc = Nokogiri::HTML5 entity.short_display
       expect(doc.xpath('//p').count).to eq(2)
       expect(doc.xpath('//strong').count).to eq(1)
       expect(sanitize(doc.xpath('//p')[0].text)).to eq("#{sanitize(strip_tags(entity.first_name))} #{sanitize(strip_tags(entity.last_name))}")
@@ -345,7 +345,7 @@ RSpec.describe Entity, type: :model do
 
     it 'does not show response or director/theater/city - production' do
       entity = create(:production_entity, director: nil, response: nil)
-      doc = Nokogiri::HTML5 entity.short_display.to_html
+      doc = Nokogiri::HTML5 entity.short_display
       expect(doc.xpath('//p').count).to eq(4)
       expect(doc.xpath('//strong').count).to eq(4)
       expect(sanitize(doc.xpath('//p')[0].text)).to include(sanitize(strip_tags(entity.label)))
@@ -361,7 +361,7 @@ RSpec.describe Entity, type: :model do
 
     it 'does not show authors or translators - translating' do
       entity = create(:translating_entity, authors: nil, translators: nil)
-      doc = Nokogiri::HTML5 entity.short_display.to_html
+      doc = Nokogiri::HTML5 entity.short_display
       expect(doc.xpath('//p').count).to eq(3)
       expect(doc.xpath('//strong').count).to eq(3)
       expect(sanitize(doc.xpath('//p')[0].text)).to include(sanitize(strip_tags(entity.label)))
@@ -381,7 +381,7 @@ RSpec.describe Entity, type: :model do
         event_type: rand(0..3),
         description: Faker::Hipster.sentence.gsub!(/[^0-9A-Za-z\s]/, '')
       )
-      doc = Nokogiri::HTML5 entity.short_display.to_html
+      doc = Nokogiri::HTML5 entity.short_display
       expect(doc.xpath('//p').count).to eq(1)
       expect(doc.xpath('//strong').count).to eq(1)
       expect(sanitize(doc.xpath('//p')[0].text)).to eq("#{entity.event_type.titleize}, #{sanitize(strip_tags(entity.description))}")
@@ -393,7 +393,7 @@ RSpec.describe Entity, type: :model do
         e_type: 'music',
         label: Faker::Music::Prince.song
       )
-      doc = Nokogiri::HTML5 entity.short_display.to_html
+      doc = Nokogiri::HTML5 entity.short_display
       expect(doc.xpath('//p').count).to eq(1)
       expect(doc.xpath('//strong').count).to eq(1)
       expect(sanitize(doc.xpath('//p')[0].text)).to include(sanitize(strip_tags(entity.label)))
@@ -405,7 +405,7 @@ RSpec.describe Entity, type: :model do
         e_type: 'organization',
         label: Faker::Movies::HitchhikersGuideToTheGalaxy.planet
       )
-      doc = Nokogiri::HTML5 entity.short_display.to_html
+      doc = Nokogiri::HTML5 entity.short_display
       expect(doc.xpath('//p').count).to eq(1)
       expect(doc.xpath('//strong').count).to eq(1)
       expect(sanitize(doc.xpath('//p')[0].text)).to eq(sanitize(strip_tags(entity.label)))
@@ -418,7 +418,7 @@ RSpec.describe Entity, type: :model do
         first_name: 'Andre',
         last_name: '3000'
       )
-      doc = Nokogiri::HTML5 entity.short_display.to_html
+      doc = Nokogiri::HTML5 entity.short_display
       expect(doc.xpath('//p').count).to eq(1)
       expect(doc.xpath('//strong').count).to eq(1)
       expect(sanitize(doc.xpath('//p')[0].text)).to eq("#{entity.first_name} #{entity.last_name}")
@@ -430,7 +430,7 @@ RSpec.describe Entity, type: :model do
         e_type: 'place',
         label: Faker::Movies::HitchhikersGuideToTheGalaxy.planet
       )
-      doc = Nokogiri::HTML5 entity.short_display.to_html
+      doc = Nokogiri::HTML5 entity.short_display
       expect(doc.xpath('//p').count).to eq(1)
       expect(doc.xpath('//strong').count).to eq(1)
       expect(sanitize(doc.xpath('//p')[0].text)).to include(sanitize(strip_tags(entity.label)))
@@ -442,7 +442,7 @@ RSpec.describe Entity, type: :model do
         e_type: 'production',
         label: Faker::Movie.title
       )
-      doc = Nokogiri::HTML5 entity.short_display.to_html
+      doc = Nokogiri::HTML5 entity.short_display
       expect(doc.xpath('//p').count).to eq(1)
       expect(doc.xpath('//strong').count).to eq(1)
       expect(sanitize(doc.xpath('//p')[0].text)).to include(sanitize(strip_tags(entity.label)))
@@ -454,7 +454,7 @@ RSpec.describe Entity, type: :model do
         e_type: 'publication',
         label: Faker::Book.publisher
       )
-      doc = Nokogiri::HTML5 entity.short_display.to_html
+      doc = Nokogiri::HTML5 entity.short_display
       expect(doc.xpath('//p').count).to eq(1)
       expect(doc.xpath('//strong').count).to eq(1)
       expect(sanitize(doc.xpath('//p')[0].text)).to include(sanitize(strip_tags(entity.label)))
@@ -466,7 +466,7 @@ RSpec.describe Entity, type: :model do
         e_type: 'public_event',
         label: Faker::Space.nasa_space_craft
       )
-      doc = Nokogiri::HTML5 entity.short_display.to_html
+      doc = Nokogiri::HTML5 entity.short_display
       expect(doc.xpath('//p').count).to eq(1)
       expect(doc.xpath('//strong').count).to eq(1)
       expect(sanitize(doc.xpath('//p')[0].text)).to eq(sanitize(strip_tags(entity.label)))
@@ -478,7 +478,7 @@ RSpec.describe Entity, type: :model do
         e_type: 'reading',
         label: Faker::Book.title
       )
-      doc = Nokogiri::HTML5 entity.short_display.to_html
+      doc = Nokogiri::HTML5 entity.short_display
       expect(doc.xpath('//p').count).to eq(1)
       expect(doc.xpath('//strong').count).to eq(1)
       expect(sanitize(doc.xpath('//p')[0].text)).to include(sanitize(strip_tags(entity.label)))
@@ -490,7 +490,7 @@ RSpec.describe Entity, type: :model do
         e_type: 'translating',
         label: Faker::Book.title
       )
-      doc = Nokogiri::HTML5 entity.short_display.to_html
+      doc = Nokogiri::HTML5 entity.short_display
       expect(doc.xpath('//p').count).to eq(1)
       expect(doc.xpath('//strong').count).to eq(1)
       expect(sanitize(doc.xpath('//p')[0].text)).to include(sanitize(strip_tags(entity.label)))
@@ -502,7 +502,7 @@ RSpec.describe Entity, type: :model do
         e_type: 'work_of_art',
         label: Faker::Space.nasa_space_craft
       )
-      doc = Nokogiri::HTML5 entity.short_display.to_html
+      doc = Nokogiri::HTML5 entity.short_display
       expect(doc.xpath('//p').count).to eq(1)
       expect(doc.xpath('//strong').count).to eq(1)
       expect(sanitize(doc.xpath('//p')[0].text)).to include(sanitize(strip_tags(entity.label)))
@@ -514,7 +514,7 @@ RSpec.describe Entity, type: :model do
         e_type: 'writing',
         label: Faker::Space.nasa_space_craft
       )
-      doc = Nokogiri::HTML5 entity.short_display.to_html
+      doc = Nokogiri::HTML5 entity.short_display
       expect(doc.xpath('//p').count).to eq(1)
       expect(doc.xpath('//strong').count).to eq(1)
       expect(sanitize(doc.xpath('//p')[0].text)).to include(sanitize(strip_tags(entity.label)))
@@ -525,7 +525,7 @@ RSpec.describe Entity, type: :model do
   context 'when entity info is complete - full display' do
     it 'has full display - attendance' do
       entity = create(:attendance_entity)
-      doc = Nokogiri::HTML5 entity.full_display.to_html
+      doc = Nokogiri::HTML5 entity.full_display
       expect(doc.xpath('//th').count).to eq(7)
       expect(doc.xpath('//td').count).to eq(7)
       rows = [
@@ -549,7 +549,7 @@ RSpec.describe Entity, type: :model do
 
     it 'has full display - music' do
       entity = create(:music_entity)
-      doc = Nokogiri::HTML5 entity.full_display.to_html
+      doc = Nokogiri::HTML5 entity.full_display
       expect(doc.xpath('//th').count).to eq(7)
       expect(doc.xpath('//td').count).to eq(7)
       expect(doc.xpath('//a').count).to eq(entity.links.count)
@@ -576,7 +576,7 @@ RSpec.describe Entity, type: :model do
 
     it 'has full display - organization' do
       entity = create(:organization_entity)
-      doc = Nokogiri::HTML5 entity.full_display.to_html
+      doc = Nokogiri::HTML5 entity.full_display
       expect(doc.xpath('//th').count).to eq(5)
       expect(doc.xpath('//td').count).to eq(5)
       rows = [
@@ -596,7 +596,7 @@ RSpec.describe Entity, type: :model do
 
     it 'has full display - person' do
       entity = create(:person_entity)
-      doc = Nokogiri::HTML5 entity.full_display.to_html
+      doc = Nokogiri::HTML5 entity.full_display
       expect(doc.xpath('//th').count).to eq(6)
       expect(doc.xpath('//td').count).to eq(6)
       expect(doc.xpath('//a').count).to eq(entity.links.count)
@@ -621,7 +621,7 @@ RSpec.describe Entity, type: :model do
 
     it 'has full display - place' do
       entity = create(:place_entity)
-      doc = Nokogiri::HTML5 entity.full_display.to_html
+      doc = Nokogiri::HTML5 entity.full_display
       expect(doc.xpath('//th').count).to eq(3)
       expect(doc.xpath('//td').count).to eq(3)
       expect(doc.xpath('//a').count).to eq(entity.links.count)
@@ -640,7 +640,7 @@ RSpec.describe Entity, type: :model do
 
     it 'has full display - production' do
       entity = create(:production_entity)
-      doc = Nokogiri::HTML5 entity.full_display.to_html
+      doc = Nokogiri::HTML5 entity.full_display
       expect(doc.xpath('//th').count).to eq(11)
       expect(doc.xpath('//td').count).to eq(11)
       rows = [
@@ -675,7 +675,7 @@ RSpec.describe Entity, type: :model do
 
     it 'has full display - publication' do
       entity = create(:publication_entity)
-      doc = Nokogiri::HTML5 entity.full_display.to_html
+      doc = Nokogiri::HTML5 entity.full_display
       expect(doc.xpath('//th').count).to eq(5)
       expect(doc.xpath('//td').count).to eq(5)
       rows = %w[
@@ -695,7 +695,7 @@ RSpec.describe Entity, type: :model do
 
     it 'has full display - public_event' do
       entity = create(:public_event_entity)
-      doc = Nokogiri::HTML5 entity.full_display.to_html
+      doc = Nokogiri::HTML5 entity.full_display
       expect(doc.xpath('//th').count).to eq(3)
       expect(doc.xpath('//td').count).to eq(3)
       rows = [
@@ -713,7 +713,7 @@ RSpec.describe Entity, type: :model do
 
     it 'has full display - reading' do
       entity = create(:reading_entity)
-      doc = Nokogiri::HTML5 entity.full_display.to_html
+      doc = Nokogiri::HTML5 entity.full_display
       expect(doc.xpath('//th').count).to eq(4)
       expect(doc.xpath('//td').count).to eq(4)
       rows = %w[
@@ -731,7 +731,7 @@ RSpec.describe Entity, type: :model do
 
     it 'has full display - translating' do
       entity = create(:translating_entity)
-      doc = Nokogiri::HTML5 entity.full_display.to_html
+      doc = Nokogiri::HTML5 entity.full_display
       expect(doc.xpath('//th').count).to eq(5)
       expect(doc.xpath('//td').count).to eq(5)
       rows = [
@@ -753,7 +753,7 @@ RSpec.describe Entity, type: :model do
 
     it 'has full display - work_of_art' do
       entity = create(:work_of_art_entity)
-      doc = Nokogiri::HTML5 entity.full_display.to_html
+      doc = Nokogiri::HTML5 entity.full_display
       expect(doc.xpath('//th').count).to eq(9)
       expect(doc.xpath('//td').count).to eq(9)
       rows = [
@@ -783,7 +783,7 @@ RSpec.describe Entity, type: :model do
 
     it 'has full display - writing' do
       entity = create(:writing_entity)
-      doc = Nokogiri::HTML5 entity.full_display.to_html
+      doc = Nokogiri::HTML5 entity.full_display
       expect(doc.xpath('//th').count).to eq(6)
       expect(doc.xpath('//td').count).to eq(6)
       rows = [
@@ -809,7 +809,7 @@ RSpec.describe Entity, type: :model do
   context 'when entity info is partial - full dispalys' do
     it 'has partial full display - production' do
       entity = create(:production_entity, response: nil, reason: nil)
-      doc = Nokogiri::HTML5 entity.full_display.to_html
+      doc = Nokogiri::HTML5 entity.full_display
       expect(doc.xpath('//th').count).to eq(9)
       expect(doc.xpath('//td').count).to eq(9)
       rows = [
@@ -840,7 +840,7 @@ RSpec.describe Entity, type: :model do
 
     it 'has partial without translated into - full display - translating' do
       entity = create(:translating_entity, translated_into: nil)
-      doc = Nokogiri::HTML5 entity.full_display.to_html
+      doc = Nokogiri::HTML5 entity.full_display
       expect(doc.xpath('//th').count).to eq(5)
       expect(doc.xpath('//td').count).to eq(5)
       rows = [
@@ -861,7 +861,7 @@ RSpec.describe Entity, type: :model do
 
     it 'has partial without translators - full display - translating' do
       entity = create(:translating_entity, translators: nil)
-      doc = Nokogiri::HTML5 entity.full_display.to_html
+      doc = Nokogiri::HTML5 entity.full_display
       expect(doc.xpath('//th').count).to eq(5)
       expect(doc.xpath('//td').count).to eq(5)
       rows = [
@@ -887,7 +887,7 @@ RSpec.describe Entity, type: :model do
         label: Faker::Music::Prince.song,
         e_type: 'attendance'
       )
-      doc = Nokogiri::HTML5 entity.full_display.to_html
+      doc = Nokogiri::HTML5 entity.full_display
       expect(doc.xpath('//th').count).to be_zero
       expect(doc.xpath('//td').count).to be_zero
     end
@@ -897,7 +897,7 @@ RSpec.describe Entity, type: :model do
         e_type: 'music',
         label: Faker::Music::Prince.song
       )
-      doc = Nokogiri::HTML5 entity.full_display.to_html
+      doc = Nokogiri::HTML5 entity.full_display
       expect(doc.xpath('//th').count).to eq(1)
       expect(doc.xpath('//td').count).to eq(1)
       expect(doc.xpath('//a').count).to be_zero
@@ -913,7 +913,7 @@ RSpec.describe Entity, type: :model do
         e_type: 'organization',
         label: Faker::Music::Prince.song
       )
-      doc = Nokogiri::HTML5 entity.full_display.to_html
+      doc = Nokogiri::HTML5 entity.full_display
       expect(doc.xpath('//th').count).to eq(1)
       expect(doc.xpath('//td').count).to eq(1)
       rows = [
@@ -929,7 +929,7 @@ RSpec.describe Entity, type: :model do
         first_name: Faker::Name.first_name,
         last_name: Faker::Name.last_name
       )
-      doc = Nokogiri::HTML5 entity.full_display.to_html
+      doc = Nokogiri::HTML5 entity.full_display
       expect(doc.xpath('//th').count).to eq(1)
       expect(doc.xpath('//td').count).to eq(1)
       expect(doc.xpath('//a').count).to be_zero
@@ -945,7 +945,7 @@ RSpec.describe Entity, type: :model do
         e_type: 'place',
         label: Faker::Music::Prince.song
       )
-      doc = Nokogiri::HTML5 entity.full_display.to_html
+      doc = Nokogiri::HTML5 entity.full_display
       expect(doc.xpath('//th').count).to eq(1)
       expect(doc.xpath('//td').count).to eq(1)
       rows = [
@@ -960,7 +960,7 @@ RSpec.describe Entity, type: :model do
         e_type: 'production',
         label: Faker::Music::Prince.song
       )
-      doc = Nokogiri::HTML5 entity.full_display.to_html
+      doc = Nokogiri::HTML5 entity.full_display
       expect(doc.xpath('//th').count).to eq(1)
       expect(doc.xpath('//td').count).to eq(1)
       expect(doc.xpath('//a').count).to be_zero
@@ -976,7 +976,7 @@ RSpec.describe Entity, type: :model do
         e_type: 'publication',
         label: Faker::Music::Prince.song
       )
-      doc = Nokogiri::HTML5 entity.full_display.to_html
+      doc = Nokogiri::HTML5 entity.full_display
       expect(doc.xpath('//th').count).to eq(1)
       expect(doc.xpath('//td').count).to eq(1)
       rows = %w[Title]
@@ -989,7 +989,7 @@ RSpec.describe Entity, type: :model do
         e_type: 'public_event',
         label: Faker::Music::Prince.song
       )
-      doc = Nokogiri::HTML5 entity.full_display.to_html
+      doc = Nokogiri::HTML5 entity.full_display
       expect(doc.xpath('//th').count).to be_zero
       expect(doc.xpath('//td').count).to be_zero
     end
@@ -999,7 +999,7 @@ RSpec.describe Entity, type: :model do
         e_type: 'reading',
         label: Faker::Music::Prince.song
       )
-      doc = Nokogiri::HTML5 entity.full_display.to_html
+      doc = Nokogiri::HTML5 entity.full_display
       expect(doc.xpath('//th').count).to eq(1)
       expect(doc.xpath('//td').count).to eq(1)
       rows = %w[Title]
@@ -1012,7 +1012,7 @@ RSpec.describe Entity, type: :model do
         e_type: 'translating',
         label: Faker::Music::Prince.song
       )
-      doc = Nokogiri::HTML5 entity.full_display.to_html
+      doc = Nokogiri::HTML5 entity.full_display
       expect(doc.xpath('//th').count).to eq(1)
       expect(doc.xpath('//td').count).to eq(1)
       rows = [
@@ -1027,7 +1027,7 @@ RSpec.describe Entity, type: :model do
         e_type: 'work_of_art',
         label: Faker::Music::Prince.song
       )
-      doc = Nokogiri::HTML5 entity.full_display.to_html
+      doc = Nokogiri::HTML5 entity.full_display
       expect(doc.xpath('//th').count).to eq(1)
       expect(doc.xpath('//td').count).to eq(1)
       expect(doc.xpath('//a').count).to be_zero
@@ -1041,7 +1041,7 @@ RSpec.describe Entity, type: :model do
         e_type: 'writing',
         label: Faker::Music::Prince.song
       )
-      doc = Nokogiri::HTML5 entity.full_display.to_html
+      doc = Nokogiri::HTML5 entity.full_display
       expect(doc.xpath('//th').count).to eq(1)
       expect(doc.xpath('//td').count).to eq(1)
       expect(doc.xpath('//a').count).to be_zero

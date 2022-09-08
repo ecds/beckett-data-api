@@ -162,7 +162,7 @@ table th, table td {
                     <span class="name">type</span>
                 </td>
                 <td>
-                  <span class="description">Limit responses by single type. Options are attendance, music, organization, person, place, production, public_event, publication, reading, translating, work_of_art, and writing.</span>
+                  <span class="description">Limit responses by single type. Options are attendance, music, organization, person, place, production, public_event, publication, reading, translating, work_of_art, writing, and generic.</span>
                 </td>
                 <td>
                   <span class="default">null</span>
@@ -193,10 +193,10 @@ Host: example.org
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET /entities?search=Heathcote%2C+Sharice&amp;type=person</pre>
+          <pre class="request route highlight">GET /entities?search=Hyatt%2C+Eric&amp;type=person</pre>
 
             <h4>Query Parameters</h4>
-            <pre class="request query_parameters highlight">search: Heathcote, Sharice
+            <pre class="request query_parameters highlight">search: Hyatt, Eric
 type: person</pre>
 
 
@@ -209,28 +209,63 @@ X-Content-Type-Options: nosniff
 X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
-Link: &lt;http://example.org/entities?page=1&amp;search=Heathcote%2C+Sharice&amp;type=person&gt;; rel=&#39;self&#39;
-X-Total-Count: 1
+Link: &lt;http://example.org/entities?page=1&amp;search=Hyatt%2C+Eric&amp;type=person&gt;; rel=&#39;self&#39;
+X-Total-Count: 4
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;d100e679a3acefeddb110afab37ddaec&quot;
+ETag: W/&quot;decb8b7f10f2a70e8b466bbe952ec513&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 8e1f5b86-57de-4526-b724-2cf6ae6be88d
-X-Runtime: 11.741865
+X-Request-Id: ce48237e-a365-41d0-a794-c526682ea65e
+X-Runtime: 2.559356
 Vary: Origin
-Content-Length: 850</pre>
+Content-Length: 1785</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
   &quot;entities&quot;: [
     {
-      &quot;id&quot;: &quot;http://example.org/entities/aad86d24-e4fa-476d-b0ac-72de89ee6b25&quot;,
-      &quot;label&quot;: &quot;Heathcote, Sharice&quot;,
+      &quot;id&quot;: &quot;http://example.org/entities/a6091db3-10f4-4ed0-a70b-9b2ba8cf0fa8&quot;,
+      &quot;label&quot;: &quot;Hyatt, Eric&quot;,
       &quot;type&quot;: &quot;person&quot;,
-      &quot;display_header&quot;: &quot;&lt;b&gt;Heathcote, Sharice 1913-1987&lt;/b&gt;&quot;,
-      &quot;description&quot;: &quot;Here &lt;i&gt;I am, brain the size of a planet, and they tell me to take you up to the bridge. Call that job satisfaction? &#39;Cos I&lt;/i&gt; don&#39;t.&quot;,
-      &quot;clean_label&quot;: &quot;Heathcote, Sharice&quot;,
+      &quot;short_display&quot;: [
+
+      ],
+      &quot;description&quot;: &quot;Here I am, brain the size of a planet, and they tell me to take you up to the bridge. Call that job satisfaction? &#39;Cos I don&#39;t.&quot;,
+      &quot;clean_label&quot;: &quot;Hyatt, Eric&quot;,
       &quot;clean_description&quot;: &quot;Here I am, brain the size of a planet, and they tell me to take you up to the bridge. Call that job satisfaction? &#39;Cos I don&#39;t.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/79d6c2a4-4993-4abb-a7d3-fc40e4da8461&quot;,
+      &quot;label&quot;: &quot;Keeling, Erin&quot;,
+      &quot;type&quot;: &quot;person&quot;,
+      &quot;short_display&quot;: [
+
+      ],
+      &quot;description&quot;: &quot;I think you ought to know I&#39;m feeling very depressed.&quot;,
+      &quot;clean_label&quot;: &quot;Keeling, Erin&quot;,
+      &quot;clean_description&quot;: &quot;I think you ought to know I&#39;m feeling very depressed.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/34901af7-4e1b-4210-b719-65a0bc949874&quot;,
+      &quot;label&quot;: &quot;Price, Donte&quot;,
+      &quot;type&quot;: &quot;person&quot;,
+      &quot;short_display&quot;: [
+
+      ],
+      &quot;description&quot;: &quot;There&#39;s only one life-form as intelligent as me within thirty parsecs of here and that&#39;s me.&quot;,
+      &quot;clean_label&quot;: &quot;Price, Donte&quot;,
+      &quot;clean_description&quot;: &quot;There&#39;s only one life-form as intelligent as me within thirty parsecs of here and that&#39;s me.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/4c4466b4-68fc-4828-a9ea-6896f55248c8&quot;,
+      &quot;label&quot;: &quot;Reichert, Estela&quot;,
+      &quot;type&quot;: &quot;person&quot;,
+      &quot;short_display&quot;: [
+
+      ],
+      &quot;description&quot;: &quot;I think you ought to know I&#39;m feeling very depressed.&quot;,
+      &quot;clean_label&quot;: &quot;Reichert, Estela&quot;,
+      &quot;clean_description&quot;: &quot;I think you ought to know I&#39;m feeling very depressed.&quot;
     }
   ],
   &quot;aggs&quot;: {
@@ -240,6 +275,10 @@ Content-Length: 850</pre>
       &quot;buckets&quot;: [
         {
           &quot;key&quot;: &quot;person&quot;,
+          &quot;doc_count&quot;: 4
+        },
+        {
+          &quot;key&quot;: &quot;place&quot;,
           &quot;doc_count&quot;: 1
         }
       ]
@@ -249,9 +288,9 @@ Content-Length: 850</pre>
     &quot;page&quot;: 1,
     &quot;per_page&quot;: 25,
     &quot;page_count&quot;: 1,
-    &quot;total_count&quot;: 1,
+    &quot;total_count&quot;: 4,
     &quot;links&quot;: {
-      &quot;self&quot;: &quot;http://example.org/entities?page=1&amp;search=Heathcote%2C+Sharice&amp;type=person&quot;
+      &quot;self&quot;: &quot;http://example.org/entities?page=1&amp;search=Hyatt%2C+Eric&amp;type=person&quot;
     }
   }
 }</pre>

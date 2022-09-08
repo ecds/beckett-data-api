@@ -17,10 +17,14 @@
 | display_header | HTML String |  | true |
 | label | HTML String |  | false |
 | description | HTML String |  | false |
+| e_type | HTML String |  | false |
+| legacy_pk | HTML String |  | false |
+| alternate_names | Array |  | false |
 | alternate_spellings | Array |  | false |
 | attended_with | Array |  | false |
 | director | HTML String |  | false |
 | event_type | HTML String |  | false |
+| notes | HTML String |  | false |
 | performed_by | Array |  | false |
 | place_date | HTML String |  | false |
 
@@ -36,7 +40,7 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /entities/453a9524-2944-454d-9358-57a15ff462ad</pre>
+<pre>GET /entities/73e8a612-71df-4520-9dc5-72bd259de16d</pre>
 
 ### Response
 
@@ -49,12 +53,12 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;d99c79010ac5d4d04ccc38160c3637a5&quot;
+ETag: W/&quot;08d1c00d4220d6458f05de7a2a30aaeb&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 42eb18d0-50a0-475f-b71c-59cd7f986dcc
-X-Runtime: 1.167863
+X-Request-Id: 14879ed3-32d7-4bc8-97ab-a86ef4e04e6c
+X-Runtime: 1.106578
 Vary: Origin
-Content-Length: 564</pre>
+Content-Length: 2163</pre>
 
 #### Status
 
@@ -63,23 +67,29 @@ Content-Length: 564</pre>
 #### Body
 
 <pre>{
-  "id": "http://example.org/entities/453a9524-2944-454d-9358-57a15ff462ad",
+  "id": "http://example.org/entities/73e8a612-71df-4520-9dc5-72bd259de16d",
   "type": "attendance",
-  "label": "<i>Judgment at Nuremberg</i>",
-  "clean_label": "Judgment at Nuremberg",
-  "description": "Skateboard xoxo offal fingerstache keytar viral ramps literally.",
-  "clean_description": "Skateboard xoxo offal fingerstache keytar viral ramps literally.",
-  "alternate_spellings": [
-    "Eureka"
+  "label": "Reading, Neutra cred schlitz lofi.",
+  "clean_label": "Reading, Neutra cred schlitz lofi.",
+  "description": "Neutra cred schlitz lofi.",
+  "clean_description": "Neutra cred schlitz lofi.",
+  "short_display": "<section><p><strong>Reading</strong>, Neutra cred schlitz lofi.</p>\n<p><strong>Attended with</strong> Jackie Treehorn and Genghis Khan</p>\n<p><strong>Place, Date</strong> Ritchieville, 21 November 1959</p>\n<p><strong>Director</strong> Trillian</p></section>",
+  "full_display": "<table>\n<tr>\n<th scope=\"row\">Description</th>\n<td>Neutra cred schlitz lofi.</td>\n</tr>\n<tr>\n<th scope=\"row\">Alternate Name(s)</th>\n<td>Kennedy Davenport</td>\n</tr>\n<tr>\n<th scope=\"row\">Director</th>\n<td>Trillian</td>\n</tr>\n<tr>\n<th scope=\"row\">Performed by</th>\n<td>Loonquawl</td>\n</tr>\n<tr>\n<th scope=\"row\">Attended with</th>\n<td>Jackie Treehorn and Genghis Khan</td>\n</tr>\n<tr>\n<th scope=\"row\">Place, Date</th>\n<td>Ritchieville, 21 November 1959</td>\n</tr>\n<tr>\n<th scope=\"row\">Notes</th>\n<td>How can you just leave me standing alone in a world so cold?</td>\n</tr>\n</table>",
+  "e_type": "attendance",
+  "legacy_pk": 2359,
+  "alternate_names": [
+    "Kennedy Davenport"
   ],
+  "alternate_spellings": null,
   "attended_with": [
-    "Donny",
-    "Frankie and Benjy"
+    "Jackie Treehorn",
+    "Genghis Khan"
   ],
-  "director": "Fenchurch",
-  "event_type": "radio_broadcast",
+  "director": "Trillian",
+  "event_type": "_reading",
+  "notes": "How can you just leave me standing alone in a world so cold?",
   "performed_by": [
-    "Rob McKenna"
+    "Loonquawl"
   ],
-  "place_date": "Lessiehaven, 01 April 1959"
+  "place_date": "Ritchieville, 21 November 1959"
 }</pre>

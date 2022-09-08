@@ -14,7 +14,7 @@ Returns a list of no more than ten entity lables that start with the search para
 | Name | Description | Required | Default |
 |------|-------------|----------|---------|
 | search | Text to search. | false | *
-| type | Limit responses by single type. Options are attendance, music, organization, person, place, production, public_event, publication, reading, translating, work_of_art, writing. | false | null
+| type | Limit responses by single type. Options are attendance, music, organization, person, place, production, public_event, publication, reading, translating, work_of_art, writing, generic. | false | null
 
 ### Request
 
@@ -28,11 +28,11 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /entities/autocomplete?search=fa</pre>
+<pre>GET /entities/autocomplete?search=jo</pre>
 
 #### Query Parameters
 
-<pre>search: fa</pre>
+<pre>search: jo</pre>
 
 ### Response
 
@@ -47,8 +47,8 @@ Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
 ETag: W/&quot;4f53cda18c2baa0c0354bb5f9a3ecbe5&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 273bab4f-a209-48b7-a307-9a13c1861e34
-X-Runtime: 13.101545
+X-Request-Id: 40dd6460-61f8-4c3b-9bb5-9972c666985c
+X-Runtime: 2.829938
 Vary: Origin
 Content-Length: 2</pre>
 

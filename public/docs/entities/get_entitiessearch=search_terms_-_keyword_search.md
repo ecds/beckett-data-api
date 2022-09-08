@@ -15,7 +15,7 @@ Returns a paginated list of entities from key word search.
 | page | Current page of entities | false | 1
 | per_page | Number of entities on a single response. | false | 25
 | search | Text to search. | false | *
-| type | Limit responses by single type. Options are attendance, music, organization, person, place, production, public_event, publication, reading, translating, work_of_art, and writing. | false | null
+| type | Limit responses by single type. Options are attendance, music, organization, person, place, production, public_event, publication, reading, translating, work_of_art, writing, and generic. | false | null
 | label | Clean label (no HTML) of entity | false | null
 
 ### Request
@@ -30,11 +30,11 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /entities?search=mustache</pre>
+<pre>GET /entities?search=banjo</pre>
 
 #### Query Parameters
 
-<pre>search: mustache</pre>
+<pre>search: banjo</pre>
 
 ### Response
 
@@ -46,15 +46,15 @@ X-Content-Type-Options: nosniff
 X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
-Link: &lt;http://example.org/entities?page=1&amp;search=mustache&gt;; rel=&#39;self&#39;
-X-Total-Count: 0
+Link: &lt;http://example.org/entities?page=1&amp;search=banjo&gt;; rel=&#39;self&#39;
+X-Total-Count: 1
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;a5cf5980613df204a0a60459e5c713ba&quot;
+ETag: W/&quot;72dfdcdb868f3971791a534cb0ee92b0&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 1f11419c-7852-4e4f-a424-d0386f4e75d8
-X-Runtime: 11.606529
+X-Request-Id: c0c06d15-f76c-4a51-b295-6b9254327624
+X-Runtime: 2.910418
 Vary: Origin
-Content-Length: 242</pre>
+Content-Length: 727</pre>
 
 #### Status
 
@@ -64,24 +64,37 @@ Content-Length: 242</pre>
 
 <pre>{
   "entities": [
+    {
+      "id": "http://example.org/entities/f0ba7bf8-aefe-4532-834e-4da1ce422e92",
+      "label": "Radio Broadcast, Phlogiston leggings street truffaut banjo quinoa skateboard.",
+      "type": "attendance",
+      "short_display": [
 
+      ],
+      "description": "Phlogiston leggings street truffaut banjo quinoa skateboard.",
+      "clean_label": "Radio Broadcast, Phlogiston leggings street truffaut banjo quinoa skateboard.",
+      "clean_description": "Phlogiston leggings street truffaut banjo quinoa skateboard."
+    }
   ],
   "aggs": {
     "e_type": {
       "doc_count_error_upper_bound": 0,
       "sum_other_doc_count": 0,
       "buckets": [
-
+        {
+          "key": "attendance",
+          "doc_count": 1
+        }
       ]
     }
   },
   "meta": {
     "page": 1,
     "per_page": 25,
-    "page_count": 0,
-    "total_count": 0,
+    "page_count": 1,
+    "total_count": 1,
     "links": {
-      "self": "http://example.org/entities?page=1&search=mustache"
+      "self": "http://example.org/entities?page=1&search=banjo"
     }
   }
 }</pre>

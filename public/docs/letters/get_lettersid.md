@@ -15,7 +15,7 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /letters/d26fbecb-4489-489b-a1d4-9934db7d132e</pre>
+<pre>GET /letters/8d180b0b-056c-4c3d-8a51-e38731e12a4d</pre>
 
 ### Response
 
@@ -28,12 +28,12 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;82cb50c5c1cc5150cef5f6de2cc77e2a&quot;
+ETag: W/&quot;fc2b827551ede65de16f797e01824413&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: f0ab2fe8-9641-45ad-9f40-7c59164c7ed2
-X-Runtime: 0.609089
+X-Request-Id: 2c4c78fa-aa27-41b0-acbc-0faf6287faa9
+X-Runtime: 0.844590
 Vary: Origin
-Content-Length: 2384</pre>
+Content-Length: 2024</pre>
 
 #### Status
 
@@ -42,80 +42,61 @@ Content-Length: 2384</pre>
 #### Body
 
 <pre>{
-  "id": "http://example.org/letters/d26fbecb-4489-489b-a1d4-9934db7d132e",
-  "date": "1958-12-20T00:00:00.000-05:00",
+  "id": "http://example.org/letters/8d180b0b-056c-4c3d-8a51-e38731e12a4d",
+  "date": "1958-08-22T00:00:00.000-04:00",
   "recipients": [
     {
-      "id": "http://example.org/entities/215302c5-7027-4c2a-a39b-9bc4c837a281.json",
+      "id": "http://example.org/entities/d95d3cce-e9c1-44a6-abaa-e05c16392e0f.json",
       "type": "person",
-      "label": "Bogan, Aldo",
-      "description": "<b>Bogan, Aldo 1900-1989</b>"
+      "label": "Kulas, Luciano",
+      "description": [
+
+      ]
     }
   ],
   "destinations": [
     {
-      "id": "http://example.org/entities/0d94f68e-2f2e-4ac4-b347-18aae96ea750.json",
+      "id": "http://example.org/entities/5dc5bfbb-d083-4810-85f1-e6911da1bfd0.json",
       "type": "place",
-      "label": "<i>Milliways</i>",
-      "description": "<b><i>Milliways</i></b>"
+      "label": "<i>Asbleg</i>",
+      "description": [
+
+      ]
     }
   ],
   "mentions": {
     "attendances": [
       {
-        "id": "http://example.org/entities/f5420b2f-65ba-411c-9ed8-f34b58353490.json",
+        "id": "http://example.org/entities/0b752bb8-e866-4fa3-9b3d-191ca8e24172.json",
         "type": "attendance",
-        "label": "TRON",
-        "description": "<strong>rehearsal</strong> TRON",
+        "label": "Radio Broadcast, Tattooed hashtag microdosing wayfarers.",
+        "description": [
+
+        ],
         "tags": [
 
         ]
       },
       {
-        "id": "http://example.org/entities/e19bbc89-30bd-4c9f-ba14-2c2ab28855b8.json",
+        "id": "http://example.org/entities/0705941a-6423-4902-baef-4b9381d52886.json",
         "type": "attendance",
-        "label": "<i>Die Hard</i>",
-        "description": "<strong>radio_broadcast</strong> <i>Die Hard</i>",
+        "label": "Reading, Mustache <i>distillery truffaut readymade sustainable food truck ugh</i> authentic.",
+        "description": [
+
+        ],
         "tags": [
 
         ]
       }
     ],
-    "organizations": [
+    "people": [
       {
-        "id": "http://example.org/entities/4408b7a7-e041-4d0e-bac0-6e49032ffc93.json",
-        "type": "organization",
-        "label": "Fallia",
-        "description": "<b>Fallia</b>",
-        "tags": [
+        "id": "http://example.org/entities/ed57f365-4763-44c4-875c-171c23530080.json",
+        "type": "person",
+        "label": "West, Waldo",
+        "description": [
 
-        ]
-      },
-      {
-        "id": "http://example.org/entities/02786c2b-344c-4146-8c1b-c5f7997fd4c2.json",
-        "type": "organization",
-        "label": "<i>Oglaroon</i>",
-        "description": "<b><i>Oglaroon</i></b>",
-        "tags": [
-
-        ]
-      },
-      {
-        "id": "http://example.org/entities/68a1c186-2127-4d73-ad33-51a76d7d85d1.json",
-        "type": "organization",
-        "label": "Damogran",
-        "description": "<b>Damogran</b>",
-        "tags": [
-
-        ]
-      }
-    ],
-    "productions": [
-      {
-        "id": "http://example.org/entities/2a089a15-5e4a-48bd-9ab8-b0454f3001e6.json",
-        "type": "production",
-        "label": "Gone with the Wind",
-        "description": "Gone with the Wind, dir. Jesus Quintana, Heart of Gold, Andersonmouth, 1957-11-03",
+        ],
         "tags": [
 
         ]
@@ -123,19 +104,69 @@ Content-Length: 2384</pre>
     ],
     "readings": [
       {
-        "id": "http://example.org/entities/7a27a050-d292-4b99-a95a-257b49fc2b7d.json",
+        "id": "http://example.org/entities/dca41824-59e0-4274-bf7b-d78c4136e3e6.json",
         "type": "reading",
-        "label": "<i>Tirra Lirra by the River</i>",
-        "description": "Jc Thompson, <i>Tirra Lirra by the River</i>, New English Library",
+        "label": "Look Homeward, Angel",
+        "description": [
+
+        ],
         "tags": [
 
         ]
       },
       {
-        "id": "http://example.org/entities/7dbcde75-d1c4-46d1-986e-b67198643add.json",
+        "id": "http://example.org/entities/641bc92e-6f95-4467-96f8-c56ed57a6904.json",
         "type": "reading",
-        "label": "Things Fall Apart",
-        "description": "Deana Murazik III, Things Fall Apart, Casemate Publishers",
+        "label": "A Summer Bird-Cage",
+        "description": [
+
+        ],
+        "tags": [
+
+        ]
+      },
+      {
+        "id": "http://example.org/entities/3a2a647e-aab4-4043-a36a-53e8b2946914.json",
+        "type": "reading",
+        "label": "The Wives of Bath",
+        "description": [
+
+        ],
+        "tags": [
+
+        ]
+      }
+    ],
+    "writings": [
+      {
+        "id": "http://example.org/entities/3ad1b260-f41c-4fc3-b93f-2cea77a5131a.json",
+        "type": "writing",
+        "label": "No Longer at Ease",
+        "description": [
+
+        ],
+        "tags": [
+
+        ]
+      },
+      {
+        "id": "http://example.org/entities/aefaa035-6225-48d0-b775-3090f8bbc681.json",
+        "type": "writing",
+        "label": "The Needle's Eye",
+        "description": [
+
+        ],
+        "tags": [
+
+        ]
+      },
+      {
+        "id": "http://example.org/entities/6960cd82-b8e2-46e6-9773-5d2577940033.json",
+        "type": "writing",
+        "label": "<i>All the King's Men</i>",
+        "description": [
+
+        ],
         "tags": [
 
         ]

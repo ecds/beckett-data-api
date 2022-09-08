@@ -226,7 +226,35 @@ table th, table td {
               </tr>
               <tr>
                 <td>
-                    <span class="name">alternate_spellings</span>
+                    <span class="name">e_type</span>
+                </td>
+                <td>
+                  <span class="description">HTML String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">false</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">legacy_pk</span>
+                </td>
+                <td>
+                  <span class="description">HTML String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">false</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">alternate_names</span>
                 </td>
                 <td>
                   <span class="description">Array</span>
@@ -268,7 +296,7 @@ table th, table td {
               </tr>
               <tr>
                 <td>
-                    <span class="name">date</span>
+                    <span class="name">date_str</span>
                 </td>
                 <td>
                   <span class="description">HTML String</span>
@@ -405,7 +433,7 @@ Host: example.org
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET /entities/57db018e-c68d-4b5e-a0f6-36caaf832b52</pre>
+          <pre class="request route highlight">GET /entities/6b426c1c-e3d3-4d15-88a2-1b2e2f56014e</pre>
 
 
 
@@ -419,43 +447,45 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;a3126a9f05e0725ca6079d70759ab8a3&quot;
+ETag: W/&quot;85018600a5355d3bd0b3ed98cc9c6dff&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: b7523c36-6351-49aa-9dcb-69fc6c7b9a62
-X-Runtime: 1.176120
+X-Request-Id: d4a797f9-182d-4185-901d-bddaae615902
+X-Runtime: 0.900749
 Vary: Origin
-Content-Length: 965</pre>
+Content-Length: 4364</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
-  &quot;id&quot;: &quot;http://example.org/entities/57db018e-c68d-4b5e-a0f6-36caaf832b52&quot;,
+  &quot;id&quot;: &quot;http://example.org/entities/6b426c1c-e3d3-4d15-88a2-1b2e2f56014e&quot;,
   &quot;type&quot;: &quot;production&quot;,
-  &quot;label&quot;: &quot;The Lord of the Rings: The Two Towers&quot;,
-  &quot;clean_label&quot;: &quot;The Lord of the Rings: The Two Towers&quot;,
-  &quot;description&quot;: &quot;Put a bird on it tumblr chillwave you probably haven&#39;t heard of them poutine.&quot;,
-  &quot;clean_description&quot;: &quot;Put a bird on it tumblr chillwave you probably haven&#39;t heard of them poutine.&quot;,
-  &quot;alternate_spellings&quot;: [
-    &quot;Coco Montrese&quot;
-  ],
+  &quot;label&quot;: &quot;It Happened One Night&quot;,
+  &quot;clean_label&quot;: &quot;It Happened One Night&quot;,
+  &quot;description&quot;: &quot;Bushwick &lt;i&gt;vinyl churchkey swag crucifix street heirloom park&lt;/i&gt; cornhole.&quot;,
+  &quot;clean_description&quot;: &quot;Bushwick vinyl churchkey swag crucifix street heirloom park cornhole.&quot;,
+  &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Title&lt;/strong&gt; It Happened One Night&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Proposal/Response&lt;/strong&gt; You think you&#39;ve got problems? What are you supposed to do if you are a manically depressed robot? No, don&#39;t try to answer that. I&#39;m fifty thousand times more intelligent than you and even I don&#39;t know the answer. It gives me a headache just trying to think down to your level. / If they don’t keep exercising their lips, he thought, their brains start working.&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Director&lt;/strong&gt; Bunny Lebowski &lt;strong&gt;Theatre, City&lt;/strong&gt; Vogon Constructor Fleet, Thurmanfort&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Date(s)&lt;/strong&gt; 1924-04-20.&lt;/p&gt;&lt;/section&gt;&quot;,
+  &quot;full_display&quot;: &quot;&lt;table&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Title&lt;/th&gt;\n&lt;td colspan=\&quot;5\&quot;&gt;It Happened One Night&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Proposal&lt;/th&gt;\n&lt;td&gt;You think you&#39;ve got problems? What are you supposed to do if you are a manically depressed robot? No, don&#39;t try to answer that. I&#39;m fifty thousand times more intelligent than you and even I don&#39;t know the answer. It gives me a headache just trying to think down to your level.&lt;/td&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Response&lt;/th&gt;\n&lt;td&gt;If they don’t keep exercising their lips, he thought, their brains start working.&lt;/td&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Reason&lt;/th&gt;\n&lt;td&gt;Paint a perfect picture, bring to life a vision in one&#39;s mind. The beautiful ones always smash the picture. Always. Everytime.&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Date(s)&lt;/th&gt;\n&lt;td colspan=\&quot;5\&quot;&gt;1924-04-20.&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Director&lt;/th&gt;\n&lt;td colspan=\&quot;5\&quot;&gt;Bunny Lebowski&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Cast&lt;/th&gt;\n&lt;td colspan=\&quot;5\&quot;&gt;Random Dent and Donny&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Personnel&lt;/th&gt;\n&lt;td colspan=\&quot;5\&quot;&gt;Effrafax of Wug&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Theatre, City&lt;/th&gt;\n&lt;td colspan=\&quot;5\&quot;&gt;Vogon Constructor Fleet, Thurmanfort&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Notes&lt;/th&gt;\n&lt;td colspan=\&quot;5\&quot;&gt;Craft beer ugh goth marfa jean shorts lo-fi pop-up.&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;See Also&lt;/th&gt;\n&lt;td colspan=\&quot;5\&quot;&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=\&quot;http://stark.net/elvis_kunde\&quot; target=\&quot;_blank\&quot; rel=\&quot;noopener\&quot;&gt;http://stark.net/elvis_kunde&lt;span&gt;(opens in new tab)&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;\n&lt;/tr&gt;\n&lt;/table&gt;&quot;,
+  &quot;e_type&quot;: &quot;production&quot;,
+  &quot;legacy_pk&quot;: 92955,
+  &quot;alternate_names&quot;: null,
   &quot;cast&quot;: [
-    &quot;Yooden Vranx&quot;,
-    &quot;Walter Sobchak&quot;
+    &quot;Random Dent&quot;,
+    &quot;Donny&quot;
   ],
-  &quot;city&quot;: &quot;Codyshire&quot;,
-  &quot;date&quot;: &quot;1952-11-11&quot;,
-  &quot;director&quot;: &quot;Jackie Treehorn&quot;,
+  &quot;city&quot;: &quot;Thurmanfort&quot;,
+  &quot;date_str&quot;: &quot;1924-04-20.&quot;,
+  &quot;director&quot;: &quot;Bunny Lebowski&quot;,
   &quot;links&quot;: [
-    &quot;http://koelpin.biz/dania&quot;
+    &quot;http://stark.net/elvis_kunde&quot;
   ],
-  &quot;notes&quot;: &quot;Seitan everyday selvage 8-bit offal before they sold out taxidermy austin.&quot;,
+  &quot;notes&quot;: &quot;Craft beer ugh goth marfa jean shorts lo-fi pop-up.&quot;,
   &quot;personnel&quot;: [
-    &quot;Hotblack Desiato&quot;
+    &quot;Effrafax of Wug&quot;
   ],
-  &quot;proposal&quot;: &quot;And then of course I&#39;ve got this terrible pain in all the diodes down my left side.&quot;,
-  &quot;response&quot;: &quot;It’s only half completed, I’m afraid – we haven’t even finished burying the artificial dinosaur skeletons in the crust yet.&quot;,
-  &quot;reason&quot;: null,
-  &quot;theater&quot;: &quot;RW6&quot;
+  &quot;proposal&quot;: &quot;You think you&#39;ve got problems? What are you supposed to do if you are a manically depressed robot? No, don&#39;t try to answer that. I&#39;m fifty thousand times more intelligent than you and even I don&#39;t know the answer. It gives me a headache just trying to think down to your level.&quot;,
+  &quot;response&quot;: &quot;If they don’t keep exercising their lips, he thought, their brains start working.&quot;,
+  &quot;reason&quot;: &quot;Paint a perfect picture, bring to life a vision in one&#39;s mind. The beautiful ones always smash the picture. Always. Everytime.&quot;,
+  &quot;theater&quot;: &quot;Vogon Constructor Fleet&quot;
 }</pre>
       </div>
     </div>

@@ -17,6 +17,8 @@
 | display_header | HTML String |  | true |
 | label | HTML String |  | false |
 | description | HTML String |  | false |
+| e_type | HTML String |  | false |
+| legacy_pk | HTML String |  | false |
 | alternate_names | Array |  | false |
 | alternate_spellings | Array |  | false |
 | profile | HTML String |  | false |
@@ -33,7 +35,7 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /entities/5fda001a-42c2-4b17-8399-22d8d9a808e3</pre>
+<pre>GET /entities/29408cf9-b103-4685-a2d9-0a04ff26efb0</pre>
 
 ### Response
 
@@ -46,12 +48,12 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;175cb6c68f12206dd68e1bf3ecff9d70&quot;
+ETag: W/&quot;0e9a35caef579b50a8c7d8b5a4bbcd4d&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: b154bfda-5ecb-4f4d-b2f5-b201a328fc53
-X-Runtime: 1.221776
+X-Request-Id: 04859bf0-e987-4de6-aefb-f70778b93629
+X-Runtime: 0.898545
 Vary: Origin
-Content-Length: 474</pre>
+Content-Length: 1935</pre>
 
 #### Status
 
@@ -60,15 +62,19 @@ Content-Length: 474</pre>
 #### Body
 
 <pre>{
-  "id": "http://example.org/entities/5fda001a-42c2-4b17-8399-22d8d9a808e3",
+  "id": "http://example.org/entities/29408cf9-b103-4685-a2d9-0a04ff26efb0",
   "type": "organization",
-  "label": "Sesefras Magna",
-  "clean_label": "Sesefras Magna",
-  "description": "Occupy <i>narwhal meh yr neutra normcore</i> cornhole.",
-  "clean_description": "Occupy narwhal meh yr neutra normcore cornhole.",
-  "alternate_names": null,
-  "alternate_spellings": [
-    "Brook Lynn Hytes"
+  "label": "<i>Argabuthon</i>",
+  "clean_label": "Argabuthon",
+  "description": "I think you ought to know I'm feeling very depressed.",
+  "clean_description": "I think you ought to know I'm feeling very depressed.",
+  "short_display": "<section><p><strong><i>Argabuthon</i></strong></p>\n<p>I think you ought to know I'm feeling very depressed.</p></section>",
+  "full_display": "<table>\n<tr>\n<th scope=\"row\">Name</th>\n<td><i>Argabuthon</i></td>\n</tr>\n<tr>\n<th scope=\"row\">Description</th>\n<td>I think you ought to know I'm feeling very depressed.</td>\n</tr>\n<tr>\n<th scope=\"row\">Alternate Name(s)</th>\n<td>Vanessa Vanjie Mateo</td>\n</tr>\n<tr>\n<th scope=\"row\">Profile</th>\n<td>It seemed to me that any civilization that had so far lost its head as to need to include a set of detailed instructions for use in a packet of toothpicks, was no longer a civilization in which I could live and stay sane.</td>\n</tr>\n<tr>\n<th scope=\"row\">Notes</th>\n<td>Life it ain't real funky, unless it's got that pop. Dig it.</td>\n</tr>\n</table>",
+  "e_type": "organization",
+  "legacy_pk": 884,
+  "alternate_names": [
+    "Vanessa Vanjie Mateo"
   ],
-  "profile": "If they don’t keep exercising their lips, he thought, their brains start working."
+  "alternate_spellings": null,
+  "profile": "It seemed to me that any civilization that had so far lost its head as to need to include a set of detailed instructions for use in a packet of toothpicks, was no longer a civilization in which I could live and stay sane."
 }</pre>

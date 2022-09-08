@@ -17,9 +17,11 @@
 | display_header | HTML String |  | true |
 | label | HTML String |  | false |
 | description | HTML String |  | false |
+| e_type | HTML String |  | false |
+| legacy_pk | HTML String |  | false |
 | authors | Array |  | false |
 | notes | HTML String |  | false |
-| publication | HTML String |  | false |
+| publication_information | HTML String |  | false |
 | publication_format | HTML String |  | false |
 
 ### Request
@@ -34,7 +36,7 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /entities/9bcffbb9-b39f-49ca-830a-99f6e9943272</pre>
+<pre>GET /entities/63bdcb25-8ace-43a9-b324-99737fd8fdce</pre>
 
 ### Response
 
@@ -47,12 +49,12 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;456556479bea711874b360442d1abadd&quot;
+ETag: W/&quot;101509d048ee2dc1a9cdc6752104af19&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 8382ab68-c534-4701-a3fd-36341c2f37f9
-X-Runtime: 1.189716
+X-Request-Id: 33f01602-2fce-4cd8-8ec5-bf6eab0a3cab
+X-Runtime: 0.933312
 Vary: Origin
-Content-Length: 428</pre>
+Content-Length: 1396</pre>
 
 #### Status
 
@@ -61,16 +63,20 @@ Content-Length: 428</pre>
 #### Body
 
 <pre>{
-  "id": "http://example.org/entities/9bcffbb9-b39f-49ca-830a-99f6e9943272",
+  "id": "http://example.org/entities/63bdcb25-8ace-43a9-b324-99737fd8fdce",
   "type": "reading",
-  "label": "The Line of Beauty",
-  "clean_label": "The Line of Beauty",
-  "description": "Bicycle rights plaid park tousled chia green juice pug.",
-  "clean_description": "Bicycle rights plaid park tousled chia green juice pug.",
+  "label": "The Golden Apples of the Sun",
+  "clean_label": "The Golden Apples of the Sun",
+  "description": "Whatever cornhole pug ramps.",
+  "clean_description": "Whatever cornhole pug ramps.",
+  "short_display": "<section><p><strong>Author</strong> Becki Jacobs DDS</p>\n<p><strong>Title</strong> The Golden Apples of the Sun</p>\n<p><strong>Publication</strong> Edupedia Publications.</p></section>",
+  "full_display": "<table>\n<tr>\n<th scope=\"row\">Author</th>\n<td>Becki Jacobs DDS</td>\n</tr>\n<tr>\n<th scope=\"row\">Title</th>\n<td>The Golden Apples of the Sun</td>\n</tr>\n<tr>\n<th scope=\"row\">Publication</th>\n<td>Edupedia Publications.</td>\n</tr>\n<tr>\n<th scope=\"row\">Notes</th>\n<td>I won't enjoy it.</td>\n</tr>\n</table>",
+  "e_type": "reading",
+  "legacy_pk": 62033,
   "authors": [
-    "Fernando Murphy"
+    "Becki Jacobs DDS"
   ],
   "notes": "I won't enjoy it.",
-  "publication": "Mainstream Publishing",
-  "publication_format": "vice"
+  "publication_information": "Edupedia Publications.",
+  "publication_format": "scenester"
 }</pre>

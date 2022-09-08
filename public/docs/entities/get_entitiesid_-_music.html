@@ -226,6 +226,48 @@ table th, table td {
               </tr>
               <tr>
                 <td>
+                    <span class="name">e_type</span>
+                </td>
+                <td>
+                  <span class="description">HTML String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">false</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">legacy_pk</span>
+                </td>
+                <td>
+                  <span class="description">HTML String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">false</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">alternate_names</span>
+                </td>
+                <td>
+                  <span class="description">Array</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">false</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
                     <span class="name">alternate_spellings</span>
                 </td>
                 <td>
@@ -307,7 +349,7 @@ Host: example.org
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET /entities/d7830cb7-8c48-4714-a390-036e20d56cdf</pre>
+          <pre class="request route highlight">GET /entities/abdc72ba-e677-4399-bfbe-b70423711ff3</pre>
 
 
 
@@ -321,28 +363,35 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;7689001f93fb051e70d186f97babf3c9&quot;
+ETag: W/&quot;242b5e33f31f02ec8c5ef2e364ee42f0&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: a509b2c2-0fe4-4464-8125-3feb63d55d2a
-X-Runtime: 1.236032
+X-Request-Id: 8568ac00-0639-4073-bb87-64d79d9aa122
+X-Runtime: 1.089073
 Vary: Origin
-Content-Length: 474</pre>
+Content-Length: 2416</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
-  &quot;id&quot;: &quot;http://example.org/entities/d7830cb7-8c48-4714-a390-036e20d56cdf&quot;,
+  &quot;id&quot;: &quot;http://example.org/entities/abdc72ba-e677-4399-bfbe-b70423711ff3&quot;,
   &quot;type&quot;: &quot;music&quot;,
-  &quot;label&quot;: &quot;Still Waiting&quot;,
-  &quot;clean_label&quot;: &quot;Still Waiting&quot;,
-  &quot;description&quot;: &quot;Chicharrones meggings hammock distillery.&quot;,
-  &quot;clean_description&quot;: &quot;Chicharrones meggings hammock distillery.&quot;,
-  &quot;alternate_spellings&quot;: [
-    &quot;Willam&quot;
+  &quot;label&quot;: &quot;Sometimes It Snows In April&quot;,
+  &quot;clean_label&quot;: &quot;Sometimes It Snows In April&quot;,
+  &quot;description&quot;: &quot;Cronut &lt;i&gt;chicharrones authentic tacos&lt;/i&gt; sriracha.&quot;,
+  &quot;clean_description&quot;: &quot;Cronut chicharrones authentic tacos sriracha.&quot;,
+  &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Composer&lt;/strong&gt; Pizpot Gargravarr&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Title&lt;/strong&gt; Sometimes It Snows In April&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt; Cronut &lt;i&gt;chicharrones authentic tacos&lt;/i&gt; sriracha.&lt;/p&gt;&lt;/section&gt;&quot;,
+  &quot;full_display&quot;: &quot;&lt;table&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Composer&lt;/th&gt;\n&lt;td&gt;Pizpot Gargravarr&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Title&lt;/th&gt;\n&lt;td&gt;Sometimes It Snows In April&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Alternate Title(s)&lt;/th&gt;\n&lt;td&gt;Sharon Needles&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Description&lt;/th&gt;\n&lt;td&gt;Cronut &lt;i&gt;chicharrones authentic tacos&lt;/i&gt; sriracha.&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Performed by&lt;/th&gt;\n&lt;td&gt;Jackie Treehorn&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Notes&lt;/th&gt;\n&lt;td&gt;There&#39;s a brand new groove going &#39;round, in your funky town, and the kick drum is the fault.&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;See Also&lt;/th&gt;\n&lt;td&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=\&quot;http://kerluke-bode.net/emilee.mills\&quot; target=\&quot;_blank\&quot; rel=\&quot;noopener\&quot;&gt;http://kerluke-bode.net/emilee.mills&lt;span&gt;(opens in new tab)&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;\n&lt;/tr&gt;\n&lt;/table&gt;&quot;,
+  &quot;e_type&quot;: &quot;music&quot;,
+  &quot;legacy_pk&quot;: 97510,
+  &quot;alternate_names&quot;: [
+    &quot;Sharon Needles&quot;
   ],
-  &quot;composer&quot;: &quot;Loonquawl and Phouchg&quot;,
-  &quot;links&quot;: null,
-  &quot;notes&quot;: &quot;You&#39;re gonna have to fight your own damn war, cause we don&#39;t want to fight no more.&quot;,
+  &quot;alternate_spellings&quot;: null,
+  &quot;composer&quot;: &quot;Pizpot Gargravarr&quot;,
+  &quot;links&quot;: [
+    &quot;http://kerluke-bode.net/emilee.mills&quot;
+  ],
+  &quot;notes&quot;: &quot;There&#39;s a brand new groove going &#39;round, in your funky town, and the kick drum is the fault.&quot;,
   &quot;performed_by&quot;: [
     &quot;Jackie Treehorn&quot;
   ]

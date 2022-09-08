@@ -33,11 +33,11 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /letters?search=stevie</pre>
+<pre>GET /letters?search=rochell</pre>
 
 #### Query Parameters
 
-<pre>search: stevie</pre>
+<pre>search: rochell</pre>
 
 ### Response
 
@@ -49,15 +49,15 @@ X-Content-Type-Options: nosniff
 X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
-Link: &lt;http://example.org/letters?page=1&amp;search=stevie&gt;; rel=&#39;self&#39;
+Link: &lt;http://example.org/letters?page=1&amp;search=rochell&gt;; rel=&#39;self&#39;
 X-Total-Count: 1
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;b10bacd7544971833a023cecda182b36&quot;
+ETag: W/&quot;394582bd4d4c51f0f0acea4274f50ad8&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 9a9e002a-ab95-4486-9e0e-d28c673bf628
-X-Runtime: 2.537864
+X-Request-Id: c26baf05-9b84-49bf-84bd-23a81d07623c
+X-Runtime: 2.448394
 Vary: Origin
-Content-Length: 2344</pre>
+Content-Length: 2018</pre>
 
 #### Status
 
@@ -68,68 +68,93 @@ Content-Length: 2344</pre>
 <pre>{
   "letters": [
     {
-      "id": "http://example.org/letters/8b7f5157-4b35-4722-b9e6-8484b9f6251d",
-      "date": "1961-12-04T00:00:00.000-05:00",
-      "label": "04 December 1961 - Bernier, Stevie",
+      "id": "http://example.org/letters/ec371c56-79cd-468b-afce-a0ca3d5a1e93",
+      "date": "1961-10-08T00:00:00.000-04:00",
+      "label": "08 October 1961 - Beer, Rochell",
       "recipients": [
-        "Bernier, Stevie"
+        "Beer, Rochell"
       ],
       "destinations": [
-        "Horse and Groom"
+        "<i>Barnard's Star</i>"
       ],
       "origins": null,
       "mentions": {
-        "attendances": [
+        "organizations": [
           {
-            "type": "attendance",
-            "id": "http://example.org/entities/5e59ee65-0ce9-4d25-a2be-16f60c47bea9",
-            "display": "<strong>_reading</strong> Twelve Monkeys"
+            "type": "organization",
+            "id": "http://example.org/entities/0c338f3c-b616-448c-b2b7-72183693100e",
+            "display": [
+
+            ]
           },
           {
-            "type": "attendance",
-            "id": "http://example.org/entities/31fda4ce-9b04-4b52-9a44-fb034e7540b6",
-            "display": "<strong>_reading</strong> Donnie Darko"
-          }
-        ],
-        "music": [
-          {
-            "type": "music",
-            "id": "http://example.org/entities/d26a379d-3aac-45ee-933b-038da2eed945",
-            "display": "Effrafax of Wug, Guitar [Ginger Minj]"
+            "type": "organization",
+            "id": "http://example.org/entities/0ecf9faf-4989-4882-9d7e-c661d6216d0c",
+            "display": [
+
+            ]
           },
           {
-            "type": "music",
-            "id": "http://example.org/entities/61316f51-fcd7-4c83-b7cc-10972ddb0486",
-            "display": "Barry Manilow, <i>Housequake</i> [Adore Delano]"
-          },
-          {
-            "type": "music",
-            "id": "http://example.org/entities/36273378-f962-40a0-899c-a7d849c3d56a",
-            "display": "Rob McKenna, Head [Bob The Drag Queen]"
+            "type": "organization",
+            "id": "http://example.org/entities/e6f0e766-81e7-47f7-a588-e1ff40db298f",
+            "display": [
+
+            ]
           }
         ],
         "people": [
           {
             "type": "person",
-            "id": "http://example.org/entities/718e6fec-b0d0-43bf-b2f0-586ee9d27157",
-            "display": "<b>Lesch, Karl 1925-1989</b>"
+            "id": "http://example.org/entities/50bb44eb-65cd-42b5-a0a4-fc180b16ad7a",
+            "display": [
+
+            ]
+          },
+          {
+            "type": "person",
+            "id": "http://example.org/entities/f93b8641-6025-4574-9a87-90d9f37ec3ac",
+            "display": [
+
+            ]
           }
         ],
-        "public_events": [
+        "readings": [
           {
-            "type": "public_event",
-            "id": "http://example.org/entities/8361d0c0-07be-422f-a787-d41654d2efac",
-            "display": "<b><i>Apollo</i></b>"
+            "type": "reading",
+            "id": "http://example.org/entities/e5beeb2e-757f-4d92-b2a2-654d4ebc2a12",
+            "display": [
+
+            ]
           },
           {
-            "type": "public_event",
-            "id": "http://example.org/entities/32872c6d-a782-4bcb-bf4b-c0196ff8c4a8",
-            "display": "<b><i>Discovery</i></b>"
+            "type": "reading",
+            "id": "http://example.org/entities/fae38ebb-dcff-4fdf-8f2f-91c4e8d2cc6c",
+            "display": [
+
+            ]
+          }
+        ],
+        "work_of_arts": [
+          {
+            "type": "work_of_art",
+            "id": "http://example.org/entities/55aa00fc-2b1f-409a-89fa-04ae7f80f71e",
+            "display": [
+
+            ]
           },
           {
-            "type": "public_event",
-            "id": "http://example.org/entities/a4e8222d-4ffe-4689-b9e8-8b0b738e556e",
-            "display": "<b>Atlantis</b>"
+            "type": "work_of_art",
+            "id": "http://example.org/entities/748bec7f-35de-42ef-9984-769f355aec5e",
+            "display": [
+
+            ]
+          },
+          {
+            "type": "work_of_art",
+            "id": "http://example.org/entities/d92c62fb-cb6b-4b3e-a769-9d8dd646c8d9",
+            "display": [
+
+            ]
           }
         ]
       }
@@ -156,11 +181,11 @@ Content-Length: 2344</pre>
       "sum_other_doc_count": 0,
       "buckets": [
         {
-          "key": "Nikolaus College",
+          "key": "Southern Connecticut Academy",
           "doc_count": 1
         },
         {
-          "key": "North Rhode Island Institute",
+          "key": "Ziemann College",
           "doc_count": 1
         }
       ]
@@ -185,7 +210,7 @@ Content-Length: 2344</pre>
     "page_count": 1,
     "total_count": 1,
     "links": {
-      "self": "http://example.org/letters?page=1&search=stevie"
+      "self": "http://example.org/letters?page=1&search=rochell"
     }
   }
 }</pre>

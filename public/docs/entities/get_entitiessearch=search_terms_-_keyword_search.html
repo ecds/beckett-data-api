@@ -165,7 +165,7 @@ table th, table td {
                     <span class="name">type</span>
                 </td>
                 <td>
-                  <span class="description">Limit responses by single type. Options are attendance, music, organization, person, place, production, public_event, publication, reading, translating, work_of_art, and writing.</span>
+                  <span class="description">Limit responses by single type. Options are attendance, music, organization, person, place, production, public_event, publication, reading, translating, work_of_art, writing, and generic.</span>
                 </td>
                 <td>
                   <span class="default">null</span>
@@ -196,10 +196,10 @@ Host: example.org
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET /entities?search=mustache</pre>
+          <pre class="request route highlight">GET /entities?search=banjo</pre>
 
             <h4>Query Parameters</h4>
-            <pre class="request query_parameters highlight">search: mustache</pre>
+            <pre class="request query_parameters highlight">search: banjo</pre>
 
 
 
@@ -211,38 +211,51 @@ X-Content-Type-Options: nosniff
 X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
-Link: &lt;http://example.org/entities?page=1&amp;search=mustache&gt;; rel=&#39;self&#39;
-X-Total-Count: 0
+Link: &lt;http://example.org/entities?page=1&amp;search=banjo&gt;; rel=&#39;self&#39;
+X-Total-Count: 1
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;a5cf5980613df204a0a60459e5c713ba&quot;
+ETag: W/&quot;72dfdcdb868f3971791a534cb0ee92b0&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 1f11419c-7852-4e4f-a424-d0386f4e75d8
-X-Runtime: 11.606529
+X-Request-Id: c0c06d15-f76c-4a51-b295-6b9254327624
+X-Runtime: 2.910418
 Vary: Origin
-Content-Length: 242</pre>
+Content-Length: 727</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
   &quot;entities&quot;: [
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/f0ba7bf8-aefe-4532-834e-4da1ce422e92&quot;,
+      &quot;label&quot;: &quot;Radio Broadcast, Phlogiston leggings street truffaut banjo quinoa skateboard.&quot;,
+      &quot;type&quot;: &quot;attendance&quot;,
+      &quot;short_display&quot;: [
 
+      ],
+      &quot;description&quot;: &quot;Phlogiston leggings street truffaut banjo quinoa skateboard.&quot;,
+      &quot;clean_label&quot;: &quot;Radio Broadcast, Phlogiston leggings street truffaut banjo quinoa skateboard.&quot;,
+      &quot;clean_description&quot;: &quot;Phlogiston leggings street truffaut banjo quinoa skateboard.&quot;
+    }
   ],
   &quot;aggs&quot;: {
     &quot;e_type&quot;: {
       &quot;doc_count_error_upper_bound&quot;: 0,
       &quot;sum_other_doc_count&quot;: 0,
       &quot;buckets&quot;: [
-
+        {
+          &quot;key&quot;: &quot;attendance&quot;,
+          &quot;doc_count&quot;: 1
+        }
       ]
     }
   },
   &quot;meta&quot;: {
     &quot;page&quot;: 1,
     &quot;per_page&quot;: 25,
-    &quot;page_count&quot;: 0,
-    &quot;total_count&quot;: 0,
+    &quot;page_count&quot;: 1,
+    &quot;total_count&quot;: 1,
     &quot;links&quot;: {
-      &quot;self&quot;: &quot;http://example.org/entities?page=1&amp;search=mustache&quot;
+      &quot;self&quot;: &quot;http://example.org/entities?page=1&amp;search=banjo&quot;
     }
   }
 }</pre>

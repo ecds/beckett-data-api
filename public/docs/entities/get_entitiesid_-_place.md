@@ -17,6 +17,8 @@
 | display_header | HTML String |  | true |
 | label | HTML String |  | false |
 | description | HTML String |  | false |
+| e_type | HTML String |  | false |
+| legacy_pk | HTML String |  | false |
 | alternate_spellings | Array |  | false |
 | links | Array |  | false |
 
@@ -32,7 +34,7 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /entities/4b003960-fdc5-492c-97e3-099125b294e1</pre>
+<pre>GET /entities/771d4468-655d-439e-a9f7-3e9f84173a86</pre>
 
 ### Response
 
@@ -45,12 +47,12 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;cef19c712c6098736de479381b0123c2&quot;
+ETag: W/&quot;77b06d93af95e0c5600484002ec3300f&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 946a22d1-d333-428d-8b79-5a8de72d2565
-X-Runtime: 1.324685
+X-Request-Id: b9cb3975-6065-4572-83da-98a233abbd51
+X-Runtime: 1.170707
 Vary: Origin
-Content-Length: 417</pre>
+Content-Length: 1458</pre>
 
 #### Status
 
@@ -59,16 +61,20 @@ Content-Length: 417</pre>
 #### Body
 
 <pre>{
-  "id": "http://example.org/entities/4b003960-fdc5-492c-97e3-099125b294e1",
+  "id": "http://example.org/entities/771d4468-655d-439e-a9f7-3e9f84173a86",
   "type": "place",
-  "label": "<i>Belgium</i>",
-  "clean_label": "Belgium",
-  "description": "Cleanse <i>etsy you probably haven't heard of them</i> mixtape.",
-  "clean_description": "Cleanse etsy you probably haven't heard of them mixtape.",
+  "label": "Western Spiral Arm",
+  "clean_label": "Western Spiral Arm",
+  "description": "Truffaut pitchfork glutenfree scenester chartreuse green juice normcore vice.",
+  "clean_description": "Truffaut pitchfork glutenfree scenester chartreuse green juice normcore vice.",
+  "short_display": "<section><p><strong>Western Spiral Arm</strong></p>\n<p>Truffaut pitchfork glutenfree scenester chartreuse green juice normcore vice.</p></section>",
+  "full_display": "<table>\n<tr>\n<th scope=\"row\">Name</th>\n<td>Western Spiral Arm</td>\n</tr>\n<tr>\n<th scope=\"row\">Description</th>\n<td>Truffaut pitchfork glutenfree scenester chartreuse green juice normcore vice.</td>\n</tr>\n<tr>\n<th scope=\"row\">See Also</th>\n<td><ul><li><a href=\"http://friesen.biz/dian.cummerata\" target=\"_blank\" rel=\"noopener\">http://friesen.biz/dian.cummerata<span>(opens in new tab)</span></a></li></ul></td>\n</tr>\n</table>",
+  "e_type": "place",
+  "legacy_pk": 17107,
   "alternate_spellings": [
-    "Jiggly Caliente"
+    "Ivy Winters"
   ],
   "links": [
-    "http://hayes.co/jame.emard"
+    "http://friesen.biz/dian.cummerata"
   ]
 }</pre>

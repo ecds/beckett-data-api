@@ -15,7 +15,7 @@ Cookie: </pre>
 
 #### Route
 
-<pre>PUT /letters/3cc5c873-db80-4b12-9d52-0fa5319d1635</pre>
+<pre>PUT /letters/88025bcf-fa23-400f-8175-a4a31d5c4d15</pre>
 
 ### Response
 
@@ -29,8 +29,8 @@ X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json
 Cache-Control: no-cache
-X-Request-Id: ba14162f-ced2-4313-8fb5-1e5c22f1ab51
-X-Runtime: 0.382826
+X-Request-Id: 4fa6126b-d9fd-49c2-a8ee-bc7fc8757733
+X-Runtime: 0.406468
 Vary: Origin
 Content-Length: 0</pre>
 

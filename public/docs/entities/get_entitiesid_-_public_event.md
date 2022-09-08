@@ -17,7 +17,9 @@
 | display_header | HTML String |  | true |
 | label | HTML String |  | false |
 | description | HTML String |  | false |
-| date | HTML String |  | false |
+| e_type | HTML String |  | false |
+| legacy_pk | HTML String |  | false |
+| date_str | HTML String |  | false |
 
 ### Request
 
@@ -31,7 +33,7 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /entities/2f4e7700-52c6-4b22-97a1-5c3c478c39a4</pre>
+<pre>GET /entities/acddba99-ce39-4246-93e1-ef81f3fd90cb</pre>
 
 ### Response
 
@@ -44,12 +46,12 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;22a8e6f3d946260f47a0a999456afa8c&quot;
+ETag: W/&quot;24d0baff580bf13196912852ce6694d8&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 61022687-88bc-4442-a07e-cbc523edb7bb
-X-Runtime: 1.216297
+X-Request-Id: 125e878d-696e-4453-a624-e9aedaf727e2
+X-Runtime: 1.026135
 Vary: Origin
-Content-Length: 413</pre>
+Content-Length: 1394</pre>
 
 #### Status
 
@@ -58,11 +60,15 @@ Content-Length: 413</pre>
 #### Body
 
 <pre>{
-  "id": "http://example.org/entities/2f4e7700-52c6-4b22-97a1-5c3c478c39a4",
+  "id": "http://example.org/entities/acddba99-ce39-4246-93e1-ef81f3fd90cb",
   "type": "public_event",
-  "label": "<i>Discovery</i>",
-  "clean_label": "Discovery",
-  "description": "Five <i>dollar toast blue bottle cardigan intelligentsia yuccie mlkshk</i> distillery.",
-  "clean_description": "Five dollar toast blue bottle cardigan intelligentsia yuccie mlkshk distillery.",
-  "date": "1960-05-14"
+  "label": "<i>Gemini</i>",
+  "clean_label": "Gemini",
+  "description": "Before <i>my life is done, some way, some how, I'm going to have</i> fun.",
+  "clean_description": "Before my life is done, some way, some how, I'm going to have fun.",
+  "short_display": "<section><p><strong><i>Gemini</i></strong></p>\n<p><strong>1949-08-14.</strong></p></section>",
+  "full_display": "<table>\n<tr>\n<th scope=\"row\">Description</th>\n<td>Before <i>my life is done, some way, some how, I'm going to have</i> fun.</td>\n</tr>\n<tr>\n<th scope=\"row\">Date</th>\n<td>1949-08-14.</td>\n</tr>\n<tr>\n<th scope=\"row\">See Also</th>\n<td><ul><li><a href=\"http://hills.biz/darci\" target=\"_blank\" rel=\"noopener\">http://hills.biz/darci<span>(opens in new tab)</span></a></li></ul></td>\n</tr>\n</table>",
+  "e_type": "public_event",
+  "legacy_pk": 95049,
+  "date_str": "1949-08-14."
 }</pre>

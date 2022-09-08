@@ -17,10 +17,12 @@
 | display_header | HTML String |  | true |
 | label | HTML String |  | false |
 | description | HTML String |  | false |
+| e_type | HTML String |  | false |
+| legacy_pk | HTML String |  | false |
 | authors | Array |  | false |
 | notes | HTML String |  | false |
 | publication_information | HTML String |  | false |
-| translator | HTML String |  | false |
+| translators | HTML String |  | false |
 
 ### Request
 
@@ -34,7 +36,7 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /entities/492f277a-88fe-442e-9313-dc8df2a48101</pre>
+<pre>GET /entities/80dfc7a9-17bb-4160-a343-29503d50845b</pre>
 
 ### Response
 
@@ -47,12 +49,12 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;6316c86bbe7cc751a216c45065154d6e&quot;
+ETag: W/&quot;8c43ddd83ec6727535dd21d6ca88bf40&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: c49021bc-594b-43bb-9d41-f0854b43a050
-X-Runtime: 1.270537
+X-Request-Id: 02350413-b8d6-4d68-81e3-edaf850b2cce
+X-Runtime: 0.998861
 Vary: Origin
-Content-Length: 646</pre>
+Content-Length: 1703</pre>
 
 #### Status
 
@@ -61,16 +63,22 @@ Content-Length: 646</pre>
 #### Body
 
 <pre>{
-  "id": "http://example.org/entities/492f277a-88fe-442e-9313-dc8df2a48101",
+  "id": "http://example.org/entities/80dfc7a9-17bb-4160-a343-29503d50845b",
   "type": "publication",
-  "label": "<i>Marshall Pickering</i>",
-  "clean_label": "Marshall Pickering",
-  "description": "Cred <i>street ethical blog try-hard photo booth single-origin coffee roof</i> listicle.",
-  "clean_description": "Cred street ethical blog try-hard photo booth single-origin coffee roof listicle.",
+  "label": "Charles Scribner's Sons",
+  "clean_label": "Charles Scribner's Sons",
+  "description": "Brooklyn xoxo tote bag small batch.",
+  "clean_description": "Brooklyn xoxo tote bag small batch.",
+  "short_display": "<section><p><strong>Author</strong> Walter Sobchak</p>\n<p><strong>Title</strong> Charles Scribner's Sons</p>\n<p><strong>Translator</strong> Slartibartfast</p>\n<p><strong>Publication</strong> Poutine knausgaard leggings biodiesel iphone lo-fi.</p></section>",
+  "full_display": "<table>\n<tr>\n<th scope=\"row\">Author</th>\n<td>Walter Sobchak</td>\n</tr>\n<tr>\n<th scope=\"row\">Title</th>\n<td>Charles Scribner's Sons</td>\n</tr>\n<tr>\n<th scope=\"row\">Translator</th>\n<td>Slartibartfast</td>\n</tr>\n<tr>\n<th scope=\"row\">Publication</th>\n<td>Poutine knausgaard leggings biodiesel iphone lo-fi.</td>\n</tr>\n<tr>\n<th scope=\"row\">Notes</th>\n<td>I won't enjoy it.</td>\n</tr>\n</table>",
+  "e_type": "publication",
+  "legacy_pk": 90252,
   "authors": [
-    "The Big Lebowski"
+    "Walter Sobchak"
   ],
-  "notes": "And then of course I've got this terrible pain in all the diodes down my left side.",
-  "publication_information": "Migas xoxo shabby chic kombucha pop-up swag tacos.",
-  "translator": "Deep Thought"
+  "notes": "I won't enjoy it.",
+  "publication_information": "Poutine knausgaard leggings biodiesel iphone lo-fi.",
+  "translators": [
+    "Slartibartfast"
+  ]
 }</pre>

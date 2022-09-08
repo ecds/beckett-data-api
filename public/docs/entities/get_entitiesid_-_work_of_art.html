@@ -226,6 +226,34 @@ table th, table td {
               </tr>
               <tr>
                 <td>
+                    <span class="name">e_type</span>
+                </td>
+                <td>
+                  <span class="description">HTML String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">false</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">legacy_pk</span>
+                </td>
+                <td>
+                  <span class="description">HTML String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">false</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
                     <span class="name">alternate_spellings</span>
                 </td>
                 <td>
@@ -268,6 +296,20 @@ table th, table td {
               </tr>
               <tr>
                 <td>
+                    <span class="name">links</span>
+                </td>
+                <td>
+                  <span class="description">Array</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">false</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
                     <span class="name">notes</span>
                 </td>
                 <td>
@@ -282,7 +324,7 @@ table th, table td {
               </tr>
               <tr>
                 <td>
-                    <span class="name">owner_location_accession_number_current</span>
+                    <span class="name">owner_location</span>
                 </td>
                 <td>
                   <span class="description">HTML String</span>
@@ -296,7 +338,7 @@ table th, table td {
               </tr>
               <tr>
                 <td>
-                    <span class="name">owner_location_accession_number_contemporaneous</span>
+                    <span class="name">owner_location_current</span>
                 </td>
                 <td>
                   <span class="description">HTML String</span>
@@ -321,7 +363,7 @@ Host: example.org
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET /entities/8c8233fa-d1cd-4bb7-92c5-c72aee1d0a18</pre>
+          <pre class="request route highlight">GET /entities/877c43ee-d7a1-4cfc-9885-364f25df3559</pre>
 
 
 
@@ -335,32 +377,37 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;c2ae13aadb47bc7fae5a46cd1b116a45&quot;
+ETag: W/&quot;1f330b064b80290897c8884dffda9f54&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 73b862bc-ba4e-4b00-b6ee-48c564147ca9
-X-Runtime: 1.234987
+X-Request-Id: 7e66b842-eedc-4e13-bea6-de6089001d78
+X-Runtime: 0.962935
 Vary: Origin
-Content-Length: 919</pre>
+Content-Length: 2757</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
-  &quot;id&quot;: &quot;http://example.org/entities/8c8233fa-d1cd-4bb7-92c5-c72aee1d0a18&quot;,
+  &quot;id&quot;: &quot;http://example.org/entities/877c43ee-d7a1-4cfc-9885-364f25df3559&quot;,
   &quot;type&quot;: &quot;work_of_art&quot;,
-  &quot;label&quot;: &quot;&lt;i&gt;I Would Die 4 U&lt;/i&gt;&quot;,
-  &quot;clean_label&quot;: &quot;I Would Die 4 U&quot;,
-  &quot;description&quot;: &quot;Chambray &lt;i&gt;dreamcatcher chartreuse cornhole mixtape tattooed cronut sartorial&lt;/i&gt; biodiesel.&quot;,
-  &quot;clean_description&quot;: &quot;Chambray dreamcatcher chartreuse cornhole mixtape tattooed cronut sartorial biodiesel.&quot;,
-  &quot;alternate_spellings&quot;: [
-    &quot;Vanessa Vanjie Mateo&quot;
-  ],
-  &quot;artist&quot;: &quot;Roosta&quot;,
+  &quot;label&quot;: &quot;My Name Is Prince&quot;,
+  &quot;clean_label&quot;: &quot;My Name Is Prince&quot;,
+  &quot;description&quot;: &quot;Fashion axe actually occupy tacos 90s vinegar thundercats kitsch.&quot;,
+  &quot;clean_description&quot;: &quot;Fashion axe actually occupy tacos 90s vinegar thundercats kitsch.&quot;,
+  &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Artist&lt;/strong&gt; Galaxia Woonbeam&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Title&lt;/strong&gt; My Name Is Prince&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt; Fashion axe actually occupy tacos 90s vinegar thundercats kitsch.&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Owner/location&lt;/strong&gt; Bistromath&lt;/p&gt;&lt;/section&gt;&quot;,
+  &quot;full_display&quot;: &quot;&lt;table&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Artist&lt;/th&gt;\n&lt;td&gt;Galaxia Woonbeam&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Artist Alternative Name(s)&lt;/th&gt;\n&lt;td&gt;Pandora Boxx&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Title&lt;/th&gt;\n&lt;td&gt;My Name Is Prince&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Alternative Title(s)&lt;/th&gt;\n&lt;td&gt;Aja&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Description&lt;/th&gt;\n&lt;td&gt;Fashion axe actually occupy tacos 90s vinegar thundercats kitsch.&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Ownership and Location&lt;/th&gt;\n&lt;td&gt;Bistromath&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Current Ownership and Location&lt;/th&gt;\n&lt;td&gt;Krikkit One&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Notes&lt;/th&gt;\n&lt;td&gt;And then of course I&#39;ve got this terrible pain in all the diodes down my left side.&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;See Also&lt;/th&gt;\n&lt;td&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=\&quot;http://stanton.io/roderick\&quot; target=\&quot;_blank\&quot; rel=\&quot;noopener\&quot;&gt;http://stanton.io/roderick&lt;span&gt;(opens in new tab)&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;\n&lt;/tr&gt;\n&lt;/table&gt;&quot;,
+  &quot;e_type&quot;: &quot;work_of_art&quot;,
+  &quot;legacy_pk&quot;: 55026,
+  &quot;alternate_spellings&quot;: null,
+  &quot;artist&quot;: &quot;Galaxia Woonbeam&quot;,
   &quot;artist_alternate_spellings&quot;: [
-    &quot;Trinity Taylor&quot;
+    &quot;Pandora Boxx&quot;
   ],
-  &quot;notes&quot;: &quot;You think you&#39;ve got problems? What are you supposed to do if you are a manically depressed robot? No, don&#39;t try to answer that. I&#39;m fifty thousand times more intelligent than you and even I don&#39;t know the answer. It gives me a headache just trying to think down to your level.&quot;,
-  &quot;owner_location_accession_number_current&quot;: 415,
-  &quot;owner_location_accession_number_contemporaneous&quot;: 277
+  &quot;links&quot;: [
+    &quot;http://stanton.io/roderick&quot;
+  ],
+  &quot;notes&quot;: &quot;And then of course I&#39;ve got this terrible pain in all the diodes down my left side.&quot;,
+  &quot;owner_location&quot;: &quot;Bistromath&quot;,
+  &quot;owner_location_current&quot;: &quot;Krikkit One&quot;
 }</pre>
       </div>
     </div>

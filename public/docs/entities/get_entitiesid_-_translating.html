@@ -226,10 +226,38 @@ table th, table td {
               </tr>
               <tr>
                 <td>
-                    <span class="name">author</span>
+                    <span class="name">e_type</span>
                 </td>
                 <td>
                   <span class="description">HTML String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">false</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">legacy_pk</span>
+                </td>
+                <td>
+                  <span class="description">HTML String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">false</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">authors</span>
+                </td>
+                <td>
+                  <span class="description">Array</span>
                 </td>
                 <td>
                   <span class="description"></span>
@@ -282,7 +310,7 @@ table th, table td {
               </tr>
               <tr>
                 <td>
-                    <span class="name">translator</span>
+                    <span class="name">translators</span>
                 </td>
                 <td>
                   <span class="description">HTML String</span>
@@ -307,7 +335,7 @@ Host: example.org
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET /entities/efe60f5d-bd37-4489-85a5-6a61b65ef1fc</pre>
+          <pre class="request route highlight">GET /entities/5187ef64-9209-442a-94a0-a52d10fb2288</pre>
 
 
 
@@ -321,27 +349,35 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;d46e73439193e74199cd733a84e207a4&quot;
+ETag: W/&quot;d9320e9b61b1df1406cc786b50a4f8f7&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 46c5766e-d512-4b39-9228-fbd18e00e0f4
-X-Runtime: 1.066992
+X-Request-Id: 3393065c-cd15-4100-b850-a804f81ea281
+X-Runtime: 1.007948
 Vary: Origin
-Content-Length: 549</pre>
+Content-Length: 2343</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
-  &quot;id&quot;: &quot;http://example.org/entities/efe60f5d-bd37-4489-85a5-6a61b65ef1fc&quot;,
+  &quot;id&quot;: &quot;http://example.org/entities/5187ef64-9209-442a-94a0-a52d10fb2288&quot;,
   &quot;type&quot;: &quot;translating&quot;,
-  &quot;label&quot;: &quot;I Sing the Body Electric&quot;,
-  &quot;clean_label&quot;: &quot;I Sing the Body Electric&quot;,
-  &quot;description&quot;: &quot;Hella semiotics photo booth scenester helvetica mixtape.&quot;,
-  &quot;clean_description&quot;: &quot;Hella semiotics photo booth scenester helvetica mixtape.&quot;,
-  &quot;author&quot;: &quot;Pizpot Gargravarr&quot;,
-  &quot;notes&quot;: &quot;And then of course I&#39;ve got this terrible pain in all the diodes down my left side.&quot;,
-  &quot;translated_into&quot;: &quot;swedish&quot;,
-  &quot;translated_title&quot;: &quot;Starship Titanic&quot;,
-  &quot;translator&quot;: &quot;Grunthos the Flatulent&quot;
+  &quot;label&quot;: &quot;&lt;i&gt;Fair Stood the Wind for France&lt;/i&gt;&quot;,
+  &quot;clean_label&quot;: &quot;Fair Stood the Wind for France&quot;,
+  &quot;description&quot;: &quot;Tote bag butcher hella pork belly ugh.&quot;,
+  &quot;clean_description&quot;: &quot;Tote bag butcher hella pork belly ugh.&quot;,
+  &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Author&lt;/strong&gt; Tricia McMillan, &lt;strong&gt;Original Title&lt;/strong&gt; &lt;i&gt;Fair Stood the Wind for France&lt;/i&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Translated into&lt;/strong&gt; Icelandic by Max Quordlepleen&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Translated title&lt;/strong&gt; Vogon Constructor Fleet.&lt;/p&gt;&lt;/section&gt;&quot;,
+  &quot;full_display&quot;: &quot;&lt;table&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Original Title&lt;/th&gt;\n&lt;td&gt;&lt;i&gt;Fair Stood the Wind for France&lt;/i&gt;&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Author&lt;/th&gt;\n&lt;td&gt;Tricia McMillan&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Translated into&lt;/th&gt;\n&lt;td&gt;Icelandic by Max Quordlepleen&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Translated Title&lt;/th&gt;\n&lt;td&gt;Vogon Constructor Fleet.&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Publication/Production&lt;/th&gt;\n&lt;td&gt;You think you&#39;ve got problems? What are you supposed to do if you are a manically depressed robot? No, don&#39;t try to answer that. I&#39;m fifty thousand times more intelligent than you and even I don&#39;t know the answer. It gives me a headache just trying to think down to your level.&lt;/td&gt;\n&lt;/tr&gt;\n&lt;/table&gt;&quot;,
+  &quot;e_type&quot;: &quot;translating&quot;,
+  &quot;legacy_pk&quot;: 86758,
+  &quot;authors&quot;: [
+    &quot;Tricia McMillan&quot;
+  ],
+  &quot;notes&quot;: &quot;You think you&#39;ve got problems? What are you supposed to do if you are a manically depressed robot? No, don&#39;t try to answer that. I&#39;m fifty thousand times more intelligent than you and even I don&#39;t know the answer. It gives me a headache just trying to think down to your level.&quot;,
+  &quot;translated_into&quot;: &quot;icelandic&quot;,
+  &quot;translated_title&quot;: &quot;Vogon Constructor Fleet.&quot;,
+  &quot;translators&quot;: [
+    &quot;Max Quordlepleen&quot;
+  ]
 }</pre>
       </div>
     </div>

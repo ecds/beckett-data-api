@@ -226,6 +226,34 @@ table th, table td {
               </tr>
               <tr>
                 <td>
+                    <span class="name">e_type</span>
+                </td>
+                <td>
+                  <span class="description">HTML String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">false</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">legacy_pk</span>
+                </td>
+                <td>
+                  <span class="description">HTML String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">false</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
                     <span class="name">authors</span>
                 </td>
                 <td>
@@ -254,7 +282,7 @@ table th, table td {
               </tr>
               <tr>
                 <td>
-                    <span class="name">publication</span>
+                    <span class="name">publication_information</span>
                 </td>
                 <td>
                   <span class="description">HTML String</span>
@@ -293,7 +321,7 @@ Host: example.org
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET /entities/9bcffbb9-b39f-49ca-830a-99f6e9943272</pre>
+          <pre class="request route highlight">GET /entities/63bdcb25-8ace-43a9-b324-99737fd8fdce</pre>
 
 
 
@@ -307,28 +335,32 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;456556479bea711874b360442d1abadd&quot;
+ETag: W/&quot;101509d048ee2dc1a9cdc6752104af19&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 8382ab68-c534-4701-a3fd-36341c2f37f9
-X-Runtime: 1.189716
+X-Request-Id: 33f01602-2fce-4cd8-8ec5-bf6eab0a3cab
+X-Runtime: 0.933312
 Vary: Origin
-Content-Length: 428</pre>
+Content-Length: 1396</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
-  &quot;id&quot;: &quot;http://example.org/entities/9bcffbb9-b39f-49ca-830a-99f6e9943272&quot;,
+  &quot;id&quot;: &quot;http://example.org/entities/63bdcb25-8ace-43a9-b324-99737fd8fdce&quot;,
   &quot;type&quot;: &quot;reading&quot;,
-  &quot;label&quot;: &quot;The Line of Beauty&quot;,
-  &quot;clean_label&quot;: &quot;The Line of Beauty&quot;,
-  &quot;description&quot;: &quot;Bicycle rights plaid park tousled chia green juice pug.&quot;,
-  &quot;clean_description&quot;: &quot;Bicycle rights plaid park tousled chia green juice pug.&quot;,
+  &quot;label&quot;: &quot;The Golden Apples of the Sun&quot;,
+  &quot;clean_label&quot;: &quot;The Golden Apples of the Sun&quot;,
+  &quot;description&quot;: &quot;Whatever cornhole pug ramps.&quot;,
+  &quot;clean_description&quot;: &quot;Whatever cornhole pug ramps.&quot;,
+  &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Author&lt;/strong&gt; Becki Jacobs DDS&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Title&lt;/strong&gt; The Golden Apples of the Sun&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Publication&lt;/strong&gt; Edupedia Publications.&lt;/p&gt;&lt;/section&gt;&quot;,
+  &quot;full_display&quot;: &quot;&lt;table&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Author&lt;/th&gt;\n&lt;td&gt;Becki Jacobs DDS&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Title&lt;/th&gt;\n&lt;td&gt;The Golden Apples of the Sun&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Publication&lt;/th&gt;\n&lt;td&gt;Edupedia Publications.&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Notes&lt;/th&gt;\n&lt;td&gt;I won&#39;t enjoy it.&lt;/td&gt;\n&lt;/tr&gt;\n&lt;/table&gt;&quot;,
+  &quot;e_type&quot;: &quot;reading&quot;,
+  &quot;legacy_pk&quot;: 62033,
   &quot;authors&quot;: [
-    &quot;Fernando Murphy&quot;
+    &quot;Becki Jacobs DDS&quot;
   ],
   &quot;notes&quot;: &quot;I won&#39;t enjoy it.&quot;,
-  &quot;publication&quot;: &quot;Mainstream Publishing&quot;,
-  &quot;publication_format&quot;: &quot;vice&quot;
+  &quot;publication_information&quot;: &quot;Edupedia Publications.&quot;,
+  &quot;publication_format&quot;: &quot;scenester&quot;
 }</pre>
       </div>
     </div>

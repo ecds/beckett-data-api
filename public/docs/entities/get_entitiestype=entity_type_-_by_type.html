@@ -114,7 +114,7 @@ table th, table td {
         <h2>GET /entities?type=:entity_type - By Type</h2>
         <h3>GET /entities</h3>
           <p class="explanation">
-            Returns a paginated list of entities by type. Valid types are attendance, music, organization, person, place, production, public_event, publication, reading, translating, work_of_art, and writing.
+            Returns a paginated list of entities by type. Valid types are attendance, music, organization, person, place, production, public_event, publication, reading, translating, work_of_art, writing, and generic.
           </p>
 
           <h3>Parameters</h3>
@@ -165,7 +165,7 @@ table th, table td {
                     <span class="name">type</span>
                 </td>
                 <td>
-                  <span class="description">Limit responses by single type. Options are attendance, music, organization, person, place, production, public_event, publication, reading, translating, work_of_art, and writing.</span>
+                  <span class="description">Limit responses by single type. Options are attendance, music, organization, person, place, production, public_event, publication, reading, translating, work_of_art, writing, and generic.</span>
                 </td>
                 <td>
                   <span class="default">null</span>
@@ -196,10 +196,10 @@ Host: example.org
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET /entities?type=writing</pre>
+          <pre class="request route highlight">GET /entities?type=production</pre>
 
             <h4>Query Parameters</h4>
-            <pre class="request query_parameters highlight">type: writing</pre>
+            <pre class="request query_parameters highlight">type: production</pre>
 
 
 
@@ -211,244 +211,294 @@ X-Content-Type-Options: nosniff
 X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
-Link: &lt;http://example.org/entities?page=1&amp;type=writing&gt;; rel=&#39;self&#39;, &lt;http://example.org/entities?page=2&amp;type=writing&gt;; rel=&#39;last&#39;, &lt;http://example.org/entities?page=2&amp;type=writing&gt;; rel=&#39;next&#39;
-X-Total-Count: 44
+Link: &lt;http://example.org/entities?page=1&amp;type=production&gt;; rel=&#39;self&#39;, &lt;http://example.org/entities?page=2&amp;type=production&gt;; rel=&#39;last&#39;, &lt;http://example.org/entities?page=2&amp;type=production&gt;; rel=&#39;next&#39;
+X-Total-Count: 43
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;3948c49721336397bd8add9e61d165f4&quot;
+ETag: W/&quot;76d4e31a4a22c8e38180f0bd93e43fc2&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 76098afe-725c-451b-a871-53b0afc3c579
-X-Runtime: 14.752715
+X-Request-Id: b8c1f0c6-6af7-43d7-a5ff-26cd4c08f656
+X-Runtime: 2.569858
 Vary: Origin
-Content-Length: 11109</pre>
+Content-Length: 9664</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
   &quot;entities&quot;: [
     {
-      &quot;id&quot;: &quot;http://example.org/entities/058aae0d-8c37-4315-977e-6476c6043b4b&quot;,
-      &quot;label&quot;: &quot;Noli Me Tangere&quot;,
-      &quot;type&quot;: &quot;writing&quot;,
-      &quot;display_header&quot;: &quot;&lt;b&gt;Noli Me Tangere&lt;/b&gt;&quot;,
-      &quot;description&quot;: &quot;Beard roof fashion axe bicycle rights flannel try-hard wayfarers vegan mixtape.&quot;,
-      &quot;clean_label&quot;: &quot;Noli Me Tangere&quot;,
-      &quot;clean_description&quot;: &quot;Beard roof fashion axe bicycle rights flannel try-hard wayfarers vegan mixtape.&quot;
+      &quot;id&quot;: &quot;http://example.org/entities/07b943c5-45eb-4ac1-99f8-56bd92bf2b21&quot;,
+      &quot;label&quot;: &quot;A Beautiful Mind&quot;,
+      &quot;type&quot;: &quot;production&quot;,
+      &quot;short_display&quot;: [
+
+      ],
+      &quot;description&quot;: &quot;Authentic cronut tattooed yolo.&quot;,
+      &quot;clean_label&quot;: &quot;A Beautiful Mind&quot;,
+      &quot;clean_description&quot;: &quot;Authentic cronut tattooed yolo.&quot;
     },
     {
-      &quot;id&quot;: &quot;http://example.org/entities/09f7858b-281b-4e81-98c8-786debd9be94&quot;,
-      &quot;label&quot;: &quot;Sleep the Brave&quot;,
-      &quot;type&quot;: &quot;writing&quot;,
-      &quot;display_header&quot;: &quot;&lt;b&gt;Sleep the Brave&lt;/b&gt;&quot;,
-      &quot;description&quot;: &quot;Forage &lt;i&gt;xoxo kickstarter sriracha heirloom plaid wolf&lt;/i&gt; lumbersexual.&quot;,
-      &quot;clean_label&quot;: &quot;Sleep the Brave&quot;,
-      &quot;clean_description&quot;: &quot;Forage xoxo kickstarter sriracha heirloom plaid wolf lumbersexual.&quot;
+      &quot;id&quot;: &quot;http://example.org/entities/0e9e23e0-2e12-4a41-bd71-cd67bc731c3c&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;There Will Be Blood&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;production&quot;,
+      &quot;short_display&quot;: [
+
+      ],
+      &quot;description&quot;: &quot;90s &lt;i&gt;kombucha loko ugh iphone viral deep v&lt;/i&gt; leggings.&quot;,
+      &quot;clean_label&quot;: &quot;There Will Be Blood&quot;,
+      &quot;clean_description&quot;: &quot;90s kombucha loko ugh iphone viral deep v leggings.&quot;
     },
     {
-      &quot;id&quot;: &quot;http://example.org/entities/1c43c4be-e360-4619-8bca-b022d4325d01&quot;,
-      &quot;label&quot;: &quot;Alone on a Wide, Wide Sea&quot;,
-      &quot;type&quot;: &quot;writing&quot;,
-      &quot;display_header&quot;: &quot;&lt;b&gt;Alone on a Wide, Wide Sea&lt;/b&gt;&quot;,
-      &quot;description&quot;: &quot;Intelligentsia &lt;i&gt;whatever park biodiesel cleanse&lt;/i&gt; tilde.&quot;,
-      &quot;clean_label&quot;: &quot;Alone on a Wide, Wide Sea&quot;,
-      &quot;clean_description&quot;: &quot;Intelligentsia whatever park biodiesel cleanse tilde.&quot;
+      &quot;id&quot;: &quot;http://example.org/entities/1ccd9a85-a06c-48df-802c-609fb8cc834b&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;The Intouchables&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;production&quot;,
+      &quot;short_display&quot;: [
+
+      ],
+      &quot;description&quot;: &quot;Umami &lt;i&gt;authentic pbrb blue bottle mumblecore flannel&lt;/i&gt; wolf.&quot;,
+      &quot;clean_label&quot;: &quot;The Intouchables&quot;,
+      &quot;clean_description&quot;: &quot;Umami authentic pbrb blue bottle mumblecore flannel wolf.&quot;
     },
     {
-      &quot;id&quot;: &quot;http://example.org/entities/1f8933d5-3f35-45d5-8bd4-5315f8714d41&quot;,
-      &quot;label&quot;: &quot;A Monstrous Regiment of Women&quot;,
-      &quot;type&quot;: &quot;writing&quot;,
-      &quot;display_header&quot;: &quot;&lt;b&gt;A Monstrous Regiment of Women&lt;/b&gt;&quot;,
-      &quot;description&quot;: &quot;Dreamcatcher &lt;i&gt;mlkshk asymmetrical vice disrupt&lt;/i&gt; meggings.&quot;,
-      &quot;clean_label&quot;: &quot;A Monstrous Regiment of Women&quot;,
-      &quot;clean_description&quot;: &quot;Dreamcatcher mlkshk asymmetrical vice disrupt meggings.&quot;
+      &quot;id&quot;: &quot;http://example.org/entities/2223b648-e97a-43ee-b8f1-db2261c4f07a&quot;,
+      &quot;label&quot;: &quot;The Great Dictator&quot;,
+      &quot;type&quot;: &quot;production&quot;,
+      &quot;short_display&quot;: [
+
+      ],
+      &quot;description&quot;: &quot;Paleo &lt;i&gt;kogi fixie tacos&lt;/i&gt; whatever.&quot;,
+      &quot;clean_label&quot;: &quot;The Great Dictator&quot;,
+      &quot;clean_description&quot;: &quot;Paleo kogi fixie tacos whatever.&quot;
     },
     {
-      &quot;id&quot;: &quot;http://example.org/entities/22ba83ed-7b71-47f2-bc76-d8bc5245b19f&quot;,
-      &quot;label&quot;: &quot;&lt;i&gt;Cover Her Face&lt;/i&gt;&quot;,
-      &quot;type&quot;: &quot;writing&quot;,
-      &quot;display_header&quot;: &quot;&lt;b&gt;&lt;i&gt;Cover Her Face&lt;/i&gt;&lt;/b&gt;&quot;,
-      &quot;description&quot;: &quot;Cleanse mustache pug photo booth.&quot;,
-      &quot;clean_label&quot;: &quot;Cover Her Face&quot;,
-      &quot;clean_description&quot;: &quot;Cleanse mustache pug photo booth.&quot;
+      &quot;id&quot;: &quot;http://example.org/entities/33b0decb-3a7c-444a-85df-07877ad8f1ea&quot;,
+      &quot;label&quot;: &quot;Pulp Fiction&quot;,
+      &quot;type&quot;: &quot;production&quot;,
+      &quot;short_display&quot;: [
+
+      ],
+      &quot;description&quot;: &quot;Thundercats mustache health 3 wolf moon blue bottle actually.&quot;,
+      &quot;clean_label&quot;: &quot;Pulp Fiction&quot;,
+      &quot;clean_description&quot;: &quot;Thundercats mustache health 3 wolf moon blue bottle actually.&quot;
     },
     {
-      &quot;id&quot;: &quot;http://example.org/entities/2398ff16-7a48-48e8-a39b-3726de31f3f5&quot;,
-      &quot;label&quot;: &quot;Mr Standfast&quot;,
-      &quot;type&quot;: &quot;writing&quot;,
-      &quot;display_header&quot;: &quot;&lt;b&gt;Mr Standfast&lt;/b&gt;&quot;,
-      &quot;description&quot;: &quot;Butcher &lt;i&gt;cold-pressed drinking vinyl pabst green juice&lt;/i&gt; yr.&quot;,
-      &quot;clean_label&quot;: &quot;Mr Standfast&quot;,
-      &quot;clean_description&quot;: &quot;Butcher cold-pressed drinking vinyl pabst green juice yr.&quot;
+      &quot;id&quot;: &quot;http://example.org/entities/359fa52d-838d-4104-994e-9edc4e1e9f6d&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;Once Upon a Time in the West&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;production&quot;,
+      &quot;short_display&quot;: [
+
+      ],
+      &quot;description&quot;: &quot;Drinking cleanse ethical fingerstache.&quot;,
+      &quot;clean_label&quot;: &quot;Once Upon a Time in the West&quot;,
+      &quot;clean_description&quot;: &quot;Drinking cleanse ethical fingerstache.&quot;
     },
     {
-      &quot;id&quot;: &quot;http://example.org/entities/2608f42f-0a6a-4260-86dc-8625c0e16c8b&quot;,
-      &quot;label&quot;: &quot;&lt;i&gt;The Painted Veil&lt;/i&gt;&quot;,
-      &quot;type&quot;: &quot;writing&quot;,
-      &quot;display_header&quot;: &quot;&lt;b&gt;&lt;i&gt;The Painted Veil&lt;/i&gt;&lt;/b&gt;&quot;,
-      &quot;description&quot;: &quot;Biodiesel mlkshk tattooed retro locavore.&quot;,
-      &quot;clean_label&quot;: &quot;The Painted Veil&quot;,
-      &quot;clean_description&quot;: &quot;Biodiesel mlkshk tattooed retro locavore.&quot;
+      &quot;id&quot;: &quot;http://example.org/entities/3e6322e5-b2a5-4d5a-9dae-f1403aa50747&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;To Kill a Mockingbird&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;production&quot;,
+      &quot;short_display&quot;: [
+
+      ],
+      &quot;description&quot;: &quot;Dreamcatcher everyday stumptown park.&quot;,
+      &quot;clean_label&quot;: &quot;To Kill a Mockingbird&quot;,
+      &quot;clean_description&quot;: &quot;Dreamcatcher everyday stumptown park.&quot;
     },
     {
-      &quot;id&quot;: &quot;http://example.org/entities/2bacddc6-4201-4f8d-8761-d7859d114141&quot;,
-      &quot;label&quot;: &quot;Surprised by Joy&quot;,
-      &quot;type&quot;: &quot;writing&quot;,
-      &quot;display_header&quot;: &quot;&lt;b&gt;Surprised by Joy&lt;/b&gt;&quot;,
-      &quot;description&quot;: &quot;Taxidermy &lt;i&gt;yolo narwhal lomo&lt;/i&gt; everyday.&quot;,
-      &quot;clean_label&quot;: &quot;Surprised by Joy&quot;,
-      &quot;clean_description&quot;: &quot;Taxidermy yolo narwhal lomo everyday.&quot;
+      &quot;id&quot;: &quot;http://example.org/entities/3f2de5cf-a62e-4f06-a872-e0c48bc605d5&quot;,
+      &quot;label&quot;: &quot;Eternal Sunshine of the Spotless Mind&quot;,
+      &quot;type&quot;: &quot;production&quot;,
+      &quot;short_display&quot;: [
+
+      ],
+      &quot;description&quot;: &quot;Intelligentsia &lt;i&gt;wolf blue bottle poutine everyday wes anderson tilde tryhard&lt;/i&gt; vinegar.&quot;,
+      &quot;clean_label&quot;: &quot;Eternal Sunshine of the Spotless Mind&quot;,
+      &quot;clean_description&quot;: &quot;Intelligentsia wolf blue bottle poutine everyday wes anderson tilde tryhard vinegar.&quot;
     },
     {
-      &quot;id&quot;: &quot;http://example.org/entities/32875397-4df3-4f4c-9d8f-7b32433374df&quot;,
-      &quot;label&quot;: &quot;No Country for Old Men&quot;,
-      &quot;type&quot;: &quot;writing&quot;,
-      &quot;display_header&quot;: &quot;&lt;b&gt;No Country for Old Men&lt;/b&gt;&quot;,
-      &quot;description&quot;: &quot;8-bit &lt;i&gt;squid meggings phlogiston shoreditch venmo meh&lt;/i&gt; kickstarter.&quot;,
-      &quot;clean_label&quot;: &quot;No Country for Old Men&quot;,
-      &quot;clean_description&quot;: &quot;8-bit squid meggings phlogiston shoreditch venmo meh kickstarter.&quot;
+      &quot;id&quot;: &quot;http://example.org/entities/4a484c26-49c8-4c37-99fb-ba8f9022cc22&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;Dog Day Afternoon&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;production&quot;,
+      &quot;short_display&quot;: [
+
+      ],
+      &quot;description&quot;: &quot;Everyday &lt;i&gt;portland fingerstache vinyl&lt;/i&gt; blog.&quot;,
+      &quot;clean_label&quot;: &quot;Dog Day Afternoon&quot;,
+      &quot;clean_description&quot;: &quot;Everyday portland fingerstache vinyl blog.&quot;
     },
     {
-      &quot;id&quot;: &quot;http://example.org/entities/47a05321-c0a3-4e58-9d5d-df0a1efb931d&quot;,
-      &quot;label&quot;: &quot;&lt;i&gt;Look to Windward&lt;/i&gt;&quot;,
-      &quot;type&quot;: &quot;writing&quot;,
-      &quot;display_header&quot;: &quot;&lt;b&gt;&lt;i&gt;Look to Windward&lt;/i&gt;&lt;/b&gt;&quot;,
-      &quot;description&quot;: &quot;Fanny pack xoxo sustainable pabst deep v williamsburg lo-fi gastropub fingerstache.&quot;,
-      &quot;clean_label&quot;: &quot;Look to Windward&quot;,
-      &quot;clean_description&quot;: &quot;Fanny pack xoxo sustainable pabst deep v williamsburg lo-fi gastropub fingerstache.&quot;
+      &quot;id&quot;: &quot;http://example.org/entities/4bbcea04-2181-4c66-aad1-e664d4761c2c&quot;,
+      &quot;label&quot;: &quot;Saving Private Ryan&quot;,
+      &quot;type&quot;: &quot;production&quot;,
+      &quot;short_display&quot;: [
+
+      ],
+      &quot;description&quot;: &quot;Pbrb &lt;i&gt;cardigan swag meh 8bit&lt;/i&gt; neutra.&quot;,
+      &quot;clean_label&quot;: &quot;Saving Private Ryan&quot;,
+      &quot;clean_description&quot;: &quot;Pbrb cardigan swag meh 8bit neutra.&quot;
     },
     {
-      &quot;id&quot;: &quot;http://example.org/entities/4af20542-2c66-4436-a760-3c6c5854350d&quot;,
-      &quot;label&quot;: &quot;After Many a Summer Dies the Swan&quot;,
-      &quot;type&quot;: &quot;writing&quot;,
-      &quot;display_header&quot;: &quot;&lt;b&gt;After Many a Summer Dies the Swan&lt;/b&gt;&quot;,
-      &quot;description&quot;: &quot;Pabst occupy selfies meggings.&quot;,
-      &quot;clean_label&quot;: &quot;After Many a Summer Dies the Swan&quot;,
-      &quot;clean_description&quot;: &quot;Pabst occupy selfies meggings.&quot;
+      &quot;id&quot;: &quot;http://example.org/entities/4c7bf66d-7b89-4a93-8f0c-8164b094c3c7&quot;,
+      &quot;label&quot;: &quot;The Best Years of Our Lives&quot;,
+      &quot;type&quot;: &quot;production&quot;,
+      &quot;short_display&quot;: [
+
+      ],
+      &quot;description&quot;: &quot;Carry &lt;i&gt;actually messenger bag portland farmtotable&lt;/i&gt; thundercats.&quot;,
+      &quot;clean_label&quot;: &quot;The Best Years of Our Lives&quot;,
+      &quot;clean_description&quot;: &quot;Carry actually messenger bag portland farmtotable thundercats.&quot;
     },
     {
-      &quot;id&quot;: &quot;http://example.org/entities/6165adb0-cdff-4708-9d05-d439601ecb5e&quot;,
-      &quot;label&quot;: &quot;Eyeless in Gaza&quot;,
-      &quot;type&quot;: &quot;writing&quot;,
-      &quot;display_header&quot;: &quot;&lt;b&gt;Eyeless in Gaza&lt;/b&gt;&quot;,
-      &quot;description&quot;: &quot;Chillwave pickled vinegar try-hard.&quot;,
-      &quot;clean_label&quot;: &quot;Eyeless in Gaza&quot;,
-      &quot;clean_description&quot;: &quot;Chillwave pickled vinegar try-hard.&quot;
+      &quot;id&quot;: &quot;http://example.org/entities/4c80c4b0-8e9d-4984-bd75-e53d5bddf0a6&quot;,
+      &quot;label&quot;: &quot;Toy Story 3&quot;,
+      &quot;type&quot;: &quot;production&quot;,
+      &quot;short_display&quot;: [
+
+      ],
+      &quot;description&quot;: &quot;Distillery &lt;i&gt;bicycle rights ethical franzen&lt;/i&gt; lumbersexual.&quot;,
+      &quot;clean_label&quot;: &quot;Toy Story 3&quot;,
+      &quot;clean_description&quot;: &quot;Distillery bicycle rights ethical franzen lumbersexual.&quot;
     },
     {
-      &quot;id&quot;: &quot;http://example.org/entities/6373fc56-8c42-472b-ab38-07505c8ded10&quot;,
-      &quot;label&quot;: &quot;The Heart Is a Lonely Hunter&quot;,
-      &quot;type&quot;: &quot;writing&quot;,
-      &quot;display_header&quot;: &quot;&lt;b&gt;The Heart Is a Lonely Hunter&lt;/b&gt;&quot;,
-      &quot;description&quot;: &quot;Dreamcatcher gentrify vinyl actually fingerstache squid.&quot;,
-      &quot;clean_label&quot;: &quot;The Heart Is a Lonely Hunter&quot;,
-      &quot;clean_description&quot;: &quot;Dreamcatcher gentrify vinyl actually fingerstache squid.&quot;
+      &quot;id&quot;: &quot;http://example.org/entities/5bb25052-eedc-4ac6-b058-524cb7644012&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;Star Wars: Episode IV – A New Hope&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;production&quot;,
+      &quot;short_display&quot;: [
+
+      ],
+      &quot;description&quot;: &quot;Irony &lt;i&gt;flannel venmo intelligentsia fixie&lt;/i&gt; vhs.&quot;,
+      &quot;clean_label&quot;: &quot;Star Wars: Episode IV – A New Hope&quot;,
+      &quot;clean_description&quot;: &quot;Irony flannel venmo intelligentsia fixie vhs.&quot;
     },
     {
-      &quot;id&quot;: &quot;http://example.org/entities/643585dc-cc90-43c2-bf3a-a7ac22e67eec&quot;,
-      &quot;label&quot;: &quot;Consider the Lilies&quot;,
-      &quot;type&quot;: &quot;writing&quot;,
-      &quot;display_header&quot;: &quot;&lt;b&gt;Consider the Lilies&lt;/b&gt;&quot;,
-      &quot;description&quot;: &quot;Helvetica readymade street next level chia.&quot;,
-      &quot;clean_label&quot;: &quot;Consider the Lilies&quot;,
-      &quot;clean_description&quot;: &quot;Helvetica readymade street next level chia.&quot;
+      &quot;id&quot;: &quot;http://example.org/entities/5d28a458-5b41-43e2-bfb0-d4eef27c1246&quot;,
+      &quot;label&quot;: &quot;Sunset Blvd.&quot;,
+      &quot;type&quot;: &quot;production&quot;,
+      &quot;short_display&quot;: [
+
+      ],
+      &quot;description&quot;: &quot;Organic &lt;i&gt;8bit yuccie kogi shabby chic kale chips blue bottle intelligentsia&lt;/i&gt; carry.&quot;,
+      &quot;clean_label&quot;: &quot;Sunset Blvd.&quot;,
+      &quot;clean_description&quot;: &quot;Organic 8bit yuccie kogi shabby chic kale chips blue bottle intelligentsia carry.&quot;
     },
     {
-      &quot;id&quot;: &quot;http://example.org/entities/681862d2-a190-4be8-9b90-dd41de385047&quot;,
-      &quot;label&quot;: &quot;&lt;i&gt;Consider Phlebas&lt;/i&gt;&quot;,
-      &quot;type&quot;: &quot;writing&quot;,
-      &quot;display_header&quot;: &quot;&lt;b&gt;&lt;i&gt;Consider Phlebas&lt;/i&gt;&lt;/b&gt;&quot;,
-      &quot;description&quot;: &quot;Trust &lt;i&gt;fund cray truffaut muggle magic cold-pressed yr leggings beard&lt;/i&gt; franzen.&quot;,
-      &quot;clean_label&quot;: &quot;Consider Phlebas&quot;,
-      &quot;clean_description&quot;: &quot;Trust fund cray truffaut muggle magic cold-pressed yr leggings beard franzen.&quot;
+      &quot;id&quot;: &quot;http://example.org/entities/62ad3419-6bb0-4dc4-86d2-6ee3c84e1c44&quot;,
+      &quot;label&quot;: &quot;Finding Nemo&quot;,
+      &quot;type&quot;: &quot;production&quot;,
+      &quot;short_display&quot;: [
+
+      ],
+      &quot;description&quot;: &quot;Kickstarter popup goth taxidermy jean shorts knausgaard vinyl vegan readymade.&quot;,
+      &quot;clean_label&quot;: &quot;Finding Nemo&quot;,
+      &quot;clean_description&quot;: &quot;Kickstarter popup goth taxidermy jean shorts knausgaard vinyl vegan readymade.&quot;
     },
     {
-      &quot;id&quot;: &quot;http://example.org/entities/692a9d69-4311-46ba-b8df-44f9fd5f0568&quot;,
-      &quot;label&quot;: &quot;&lt;i&gt;Tiger! Tiger!&lt;/i&gt;&quot;,
-      &quot;type&quot;: &quot;writing&quot;,
-      &quot;display_header&quot;: &quot;&lt;b&gt;&lt;i&gt;Tiger! Tiger!&lt;/i&gt;&lt;/b&gt;&quot;,
-      &quot;description&quot;: &quot;Cold-pressed &lt;i&gt;green juice xoxo dreamcatcher next level&lt;/i&gt; migas.&quot;,
-      &quot;clean_label&quot;: &quot;Tiger! Tiger!&quot;,
-      &quot;clean_description&quot;: &quot;Cold-pressed green juice xoxo dreamcatcher next level migas.&quot;
+      &quot;id&quot;: &quot;http://example.org/entities/7069dad0-1461-48fc-880f-dbb4a517967b&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;Bicycle Thieves&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;production&quot;,
+      &quot;short_display&quot;: [
+
+      ],
+      &quot;description&quot;: &quot;Blog &lt;i&gt;pork belly schlitz coldpressed poutine&lt;/i&gt; pitchfork.&quot;,
+      &quot;clean_label&quot;: &quot;Bicycle Thieves&quot;,
+      &quot;clean_description&quot;: &quot;Blog pork belly schlitz coldpressed poutine pitchfork.&quot;
     },
     {
-      &quot;id&quot;: &quot;http://example.org/entities/6e31b2db-75d6-4e2e-9335-2e855c5c86cd&quot;,
-      &quot;label&quot;: &quot;The Waste Land&quot;,
-      &quot;type&quot;: &quot;writing&quot;,
-      &quot;display_header&quot;: &quot;&lt;b&gt;The Waste Land&lt;/b&gt;&quot;,
-      &quot;description&quot;: &quot;Blog &lt;i&gt;schlitz etsy asymmetrical gentrify normcore kale chips&lt;/i&gt; yolo.&quot;,
-      &quot;clean_label&quot;: &quot;The Waste Land&quot;,
-      &quot;clean_description&quot;: &quot;Blog schlitz etsy asymmetrical gentrify normcore kale chips yolo.&quot;
+      &quot;id&quot;: &quot;http://example.org/entities/71cca897-6b81-4596-8803-5edc8bf57f3e&quot;,
+      &quot;label&quot;: &quot;Beauty and the Beast&quot;,
+      &quot;type&quot;: &quot;production&quot;,
+      &quot;short_display&quot;: [
+
+      ],
+      &quot;description&quot;: &quot;Wayfarers &lt;i&gt;art party ethical&lt;/i&gt; yr.&quot;,
+      &quot;clean_label&quot;: &quot;Beauty and the Beast&quot;,
+      &quot;clean_description&quot;: &quot;Wayfarers art party ethical yr.&quot;
     },
     {
-      &quot;id&quot;: &quot;http://example.org/entities/708ac6bf-8658-4ca9-adb3-b4cf9145de1b&quot;,
-      &quot;label&quot;: &quot;&lt;i&gt;Taming a Sea Horse&lt;/i&gt;&quot;,
-      &quot;type&quot;: &quot;writing&quot;,
-      &quot;display_header&quot;: &quot;&lt;b&gt;&lt;i&gt;Taming a Sea Horse&lt;/i&gt;&lt;/b&gt;&quot;,
-      &quot;description&quot;: &quot;Food &lt;i&gt;truck yolo +1 meditation distillery listicle craft beer&lt;/i&gt; mixtape.&quot;,
-      &quot;clean_label&quot;: &quot;Taming a Sea Horse&quot;,
-      &quot;clean_description&quot;: &quot;Food truck yolo +1 meditation distillery listicle craft beer mixtape.&quot;
+      &quot;id&quot;: &quot;http://example.org/entities/73f358be-b4a2-49fd-8749-1b84af0e42cc&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;The Bourne Ultimatum&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;production&quot;,
+      &quot;short_display&quot;: [
+
+      ],
+      &quot;description&quot;: &quot;Paleo &lt;i&gt;carry synth whatever truffaut umami locavore&lt;/i&gt; tumblr.&quot;,
+      &quot;clean_label&quot;: &quot;The Bourne Ultimatum&quot;,
+      &quot;clean_description&quot;: &quot;Paleo carry synth whatever truffaut umami locavore tumblr.&quot;
     },
     {
-      &quot;id&quot;: &quot;http://example.org/entities/71a83b16-47ce-4eae-a318-507c20068343&quot;,
-      &quot;label&quot;: &quot;Eyeless in Gaza&quot;,
-      &quot;type&quot;: &quot;writing&quot;,
-      &quot;display_header&quot;: &quot;&lt;b&gt;Eyeless in Gaza&lt;/b&gt;&quot;,
-      &quot;description&quot;: &quot;Vhs beard raw denim post-ironic kickstarter meh.&quot;,
-      &quot;clean_label&quot;: &quot;Eyeless in Gaza&quot;,
-      &quot;clean_description&quot;: &quot;Vhs beard raw denim post-ironic kickstarter meh.&quot;
+      &quot;id&quot;: &quot;http://example.org/entities/75052ea8-abd5-4db1-b178-feed50ab9315&quot;,
+      &quot;label&quot;: &quot;Chinatown&quot;,
+      &quot;type&quot;: &quot;production&quot;,
+      &quot;short_display&quot;: [
+
+      ],
+      &quot;description&quot;: &quot;Kale chips pourover fanny pack offal gastropub banh mi.&quot;,
+      &quot;clean_label&quot;: &quot;Chinatown&quot;,
+      &quot;clean_description&quot;: &quot;Kale chips pourover fanny pack offal gastropub banh mi.&quot;
     },
     {
-      &quot;id&quot;: &quot;http://example.org/entities/7512b5d2-7166-4cb5-888f-1230c13c94b9&quot;,
-      &quot;label&quot;: &quot;&lt;i&gt;Endless Night&lt;/i&gt;&quot;,
-      &quot;type&quot;: &quot;writing&quot;,
-      &quot;display_header&quot;: &quot;&lt;b&gt;&lt;i&gt;Endless Night&lt;/i&gt;&lt;/b&gt;&quot;,
-      &quot;description&quot;: &quot;Fashion &lt;i&gt;axe synth cornhole before they sold out&lt;/i&gt; butcher.&quot;,
-      &quot;clean_label&quot;: &quot;Endless Night&quot;,
-      &quot;clean_description&quot;: &quot;Fashion axe synth cornhole before they sold out butcher.&quot;
+      &quot;id&quot;: &quot;http://example.org/entities/7551dae9-e2ff-4dd4-ac8d-a24eeabb6857&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;12 Angry Men&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;production&quot;,
+      &quot;short_display&quot;: [
+
+      ],
+      &quot;description&quot;: &quot;Lomo &lt;i&gt;five dollar toast meditation blog loko wes anderson tote bag&lt;/i&gt; cardigan.&quot;,
+      &quot;clean_label&quot;: &quot;12 Angry Men&quot;,
+      &quot;clean_description&quot;: &quot;Lomo five dollar toast meditation blog loko wes anderson tote bag cardigan.&quot;
     },
     {
-      &quot;id&quot;: &quot;http://example.org/entities/814c8ce7-06ae-4ef4-8958-699a4b060507&quot;,
-      &quot;label&quot;: &quot;An Instant In The Wind&quot;,
-      &quot;type&quot;: &quot;writing&quot;,
-      &quot;display_header&quot;: &quot;&lt;b&gt;An Instant In The Wind&lt;/b&gt;&quot;,
-      &quot;description&quot;: &quot;Readymade &lt;i&gt;flexitarian typewriter craft beer gentrify&lt;/i&gt; lumbersexual.&quot;,
-      &quot;clean_label&quot;: &quot;An Instant In The Wind&quot;,
-      &quot;clean_description&quot;: &quot;Readymade flexitarian typewriter craft beer gentrify lumbersexual.&quot;
+      &quot;id&quot;: &quot;http://example.org/entities/75d52432-3074-4f2e-92fd-bb350af68348&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;In the Name of the Father&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;production&quot;,
+      &quot;short_display&quot;: [
+
+      ],
+      &quot;description&quot;: &quot;Authentic &lt;i&gt;narwhal blue bottle beard&lt;/i&gt; bushwick.&quot;,
+      &quot;clean_label&quot;: &quot;In the Name of the Father&quot;,
+      &quot;clean_description&quot;: &quot;Authentic narwhal blue bottle beard bushwick.&quot;
     },
     {
-      &quot;id&quot;: &quot;http://example.org/entities/87ab2d7f-d6c7-4cd8-84bb-b09c4d90dbba&quot;,
-      &quot;label&quot;: &quot;The Way Through the Woods&quot;,
-      &quot;type&quot;: &quot;writing&quot;,
-      &quot;display_header&quot;: &quot;&lt;b&gt;The Way Through the Woods&lt;/b&gt;&quot;,
-      &quot;description&quot;: &quot;Single-origin coffee keffiyeh beard pitchfork.&quot;,
-      &quot;clean_label&quot;: &quot;The Way Through the Woods&quot;,
-      &quot;clean_description&quot;: &quot;Single-origin coffee keffiyeh beard pitchfork.&quot;
+      &quot;id&quot;: &quot;http://example.org/entities/85f112d6-6aab-45f2-a80c-1565bc49872a&quot;,
+      &quot;label&quot;: &quot;Star Wars: Episode VIII – The Last Jedi&quot;,
+      &quot;type&quot;: &quot;production&quot;,
+      &quot;short_display&quot;: [
+
+      ],
+      &quot;description&quot;: &quot;Wes &lt;i&gt;anderson cray biodiesel mlkshk&lt;/i&gt; scenester.&quot;,
+      &quot;clean_label&quot;: &quot;Star Wars: Episode VIII – The Last Jedi&quot;,
+      &quot;clean_description&quot;: &quot;Wes anderson cray biodiesel mlkshk scenester.&quot;
     },
     {
-      &quot;id&quot;: &quot;http://example.org/entities/96e7258a-82e7-495a-8484-bf00aac41c93&quot;,
-      &quot;label&quot;: &quot;&lt;i&gt;The Mirror Crack&#39;d from Side to Side&lt;/i&gt;&quot;,
-      &quot;type&quot;: &quot;writing&quot;,
-      &quot;display_header&quot;: &quot;&lt;b&gt;&lt;i&gt;The Mirror Crack&#39;d from Side to Side&lt;/i&gt;&lt;/b&gt;&quot;,
-      &quot;description&quot;: &quot;Tousled hella cliche vhs kickstarter iphone sriracha knausgaard sustainable.&quot;,
-      &quot;clean_label&quot;: &quot;The Mirror Crack&#39;d from Side to Side&quot;,
-      &quot;clean_description&quot;: &quot;Tousled hella cliche vhs kickstarter iphone sriracha knausgaard sustainable.&quot;
+      &quot;id&quot;: &quot;http://example.org/entities/92f471ed-da51-4fbb-8d42-3f29561ffc9b&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;The Lion King&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;production&quot;,
+      &quot;short_display&quot;: [
+
+      ],
+      &quot;description&quot;: &quot;Craft &lt;i&gt;beer distillery vegan venmo pug umami meh&lt;/i&gt; brooklyn.&quot;,
+      &quot;clean_label&quot;: &quot;The Lion King&quot;,
+      &quot;clean_description&quot;: &quot;Craft beer distillery vegan venmo pug umami meh brooklyn.&quot;
     },
     {
-      &quot;id&quot;: &quot;http://example.org/entities/9f489e71-668b-4ef1-8127-533c37db409a&quot;,
-      &quot;label&quot;: &quot;&lt;i&gt;I Know Why the Caged Bird Sings&lt;/i&gt;&quot;,
-      &quot;type&quot;: &quot;writing&quot;,
-      &quot;display_header&quot;: &quot;&lt;b&gt;&lt;i&gt;I Know Why the Caged Bird Sings&lt;/i&gt;&lt;/b&gt;&quot;,
-      &quot;description&quot;: &quot;Put &lt;i&gt;a bird on it marfa pug photo booth actually before they sold out&lt;/i&gt; post-ironic.&quot;,
-      &quot;clean_label&quot;: &quot;I Know Why the Caged Bird Sings&quot;,
-      &quot;clean_description&quot;: &quot;Put a bird on it marfa pug photo booth actually before they sold out post-ironic.&quot;
+      &quot;id&quot;: &quot;http://example.org/entities/a27f77b5-2ca0-45a2-a423-fd3949ee3ce8&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;Braveheart&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;production&quot;,
+      &quot;short_display&quot;: [
+
+      ],
+      &quot;description&quot;: &quot;Whatever &lt;i&gt;polaroid green juice venmo&lt;/i&gt; 1.&quot;,
+      &quot;clean_label&quot;: &quot;Braveheart&quot;,
+      &quot;clean_description&quot;: &quot;Whatever polaroid green juice venmo 1.&quot;
     },
     {
-      &quot;id&quot;: &quot;http://example.org/entities/a6525118-fa28-40fb-bef4-4262f7699682&quot;,
-      &quot;label&quot;: &quot;&lt;i&gt;Edna O&#39;Brien&lt;/i&gt;&quot;,
-      &quot;type&quot;: &quot;writing&quot;,
-      &quot;display_header&quot;: &quot;&lt;b&gt;&lt;i&gt;Edna O&#39;Brien&lt;/i&gt;&lt;/b&gt;&quot;,
-      &quot;description&quot;: &quot;Tumblr diy offal poutine vegan.&quot;,
-      &quot;clean_label&quot;: &quot;Edna O&#39;Brien&quot;,
-      &quot;clean_description&quot;: &quot;Tumblr diy offal poutine vegan.&quot;
+      &quot;id&quot;: &quot;http://example.org/entities/a4389bd9-28ea-43c5-b52e-060832932c27&quot;,
+      &quot;label&quot;: &quot;Paths of Glory&quot;,
+      &quot;type&quot;: &quot;production&quot;,
+      &quot;short_display&quot;: [
+
+      ],
+      &quot;description&quot;: &quot;Helvetica cliche meh echo yuccie drinking.&quot;,
+      &quot;clean_label&quot;: &quot;Paths of Glory&quot;,
+      &quot;clean_description&quot;: &quot;Helvetica cliche meh echo yuccie drinking.&quot;
     }
   ],
   &quot;aggs&quot;: {
@@ -458,23 +508,23 @@ Content-Length: 11109</pre>
       &quot;buckets&quot;: [
         {
           &quot;key&quot;: &quot;place&quot;,
-          &quot;doc_count&quot;: 129
+          &quot;doc_count&quot;: 116
         },
         {
           &quot;key&quot;: &quot;person&quot;,
-          &quot;doc_count&quot;: 82
-        },
-        {
-          &quot;key&quot;: &quot;work_of_art&quot;,
-          &quot;doc_count&quot;: 50
+          &quot;doc_count&quot;: 80
         },
         {
           &quot;key&quot;: &quot;writing&quot;,
           &quot;doc_count&quot;: 44
         },
         {
-          &quot;key&quot;: &quot;organization&quot;,
-          &quot;doc_count&quot;: 39
+          &quot;key&quot;: &quot;production&quot;,
+          &quot;doc_count&quot;: 43
+        },
+        {
+          &quot;key&quot;: &quot;work_of_art&quot;,
+          &quot;doc_count&quot;: 40
         },
         {
           &quot;key&quot;: &quot;public_event&quot;,
@@ -482,27 +532,27 @@ Content-Length: 11109</pre>
         },
         {
           &quot;key&quot;: &quot;publication&quot;,
-          &quot;doc_count&quot;: 30
+          &quot;doc_count&quot;: 33
         },
         {
           &quot;key&quot;: &quot;music&quot;,
-          &quot;doc_count&quot;: 29
-        },
-        {
-          &quot;key&quot;: &quot;reading&quot;,
-          &quot;doc_count&quot;: 29
-        },
-        {
-          &quot;key&quot;: &quot;attendance&quot;,
-          &quot;doc_count&quot;: 26
-        },
-        {
-          &quot;key&quot;: &quot;production&quot;,
-          &quot;doc_count&quot;: 24
+          &quot;doc_count&quot;: 32
         },
         {
           &quot;key&quot;: &quot;translating&quot;,
-          &quot;doc_count&quot;: 23
+          &quot;doc_count&quot;: 31
+        },
+        {
+          &quot;key&quot;: &quot;reading&quot;,
+          &quot;doc_count&quot;: 28
+        },
+        {
+          &quot;key&quot;: &quot;attendance&quot;,
+          &quot;doc_count&quot;: 27
+        },
+        {
+          &quot;key&quot;: &quot;organization&quot;,
+          &quot;doc_count&quot;: 20
         }
       ]
     }
@@ -511,11 +561,11 @@ Content-Length: 11109</pre>
     &quot;page&quot;: 1,
     &quot;per_page&quot;: 25,
     &quot;page_count&quot;: 2,
-    &quot;total_count&quot;: 44,
+    &quot;total_count&quot;: 43,
     &quot;links&quot;: {
-      &quot;self&quot;: &quot;http://example.org/entities?page=1&amp;type=writing&quot;,
-      &quot;last&quot;: &quot;http://example.org/entities?page=2&amp;type=writing&quot;,
-      &quot;next&quot;: &quot;http://example.org/entities?page=2&amp;type=writing&quot;
+      &quot;self&quot;: &quot;http://example.org/entities?page=1&amp;type=production&quot;,
+      &quot;last&quot;: &quot;http://example.org/entities?page=2&amp;type=production&quot;,
+      &quot;next&quot;: &quot;http://example.org/entities?page=2&amp;type=production&quot;
     }
   }
 }</pre>

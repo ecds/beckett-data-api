@@ -17,6 +17,8 @@
 | display_header | HTML String |  | true |
 | label | HTML String |  | false |
 | description | HTML String |  | false |
+| e_type | HTML String |  | false |
+| legacy_pk | HTML String |  | false |
 | alternate_names | Array |  | false |
 | alternate_spellings | Array |  | false |
 | first_name | HTML String |  | false |
@@ -37,7 +39,7 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /entities/2a4a4da8-ce47-4742-9225-9fc73f8a0e0d</pre>
+<pre>GET /entities/f169095c-6f5f-45ac-ab65-17bcee3c760e</pre>
 
 ### Response
 
@@ -50,12 +52,12 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;12098a2224e80cf975ddbfda01fc530e&quot;
+ETag: W/&quot;36c5cda448ac38aa33bc5733dcf6af81&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 8c6ef1a9-bd02-40b1-aa81-02238ebce92e
-X-Runtime: 1.069236
+X-Request-Id: 0bb867b7-2d75-4403-8aa5-94ca48dcede9
+X-Runtime: 1.187908
 Vary: Origin
-Content-Length: 965</pre>
+Content-Length: 1855</pre>
 
 #### Status
 
@@ -64,23 +66,27 @@ Content-Length: 965</pre>
 #### Body
 
 <pre>{
-  "id": "http://example.org/entities/2a4a4da8-ce47-4742-9225-9fc73f8a0e0d",
+  "id": "http://example.org/entities/f169095c-6f5f-45ac-ab65-17bcee3c760e",
   "type": "person",
-  "label": "Windler, Tobias",
-  "clean_label": "Windler, Tobias",
-  "description": "You think you've got problems? What are you supposed to do if you are a manically depressed robot? No, don't try to answer that. I'm fifty thousand times more intelligent than you and even I don't know the answer. It gives me a headache just trying to think down to your level.",
-  "clean_description": "You think you've got problems? What are you supposed to do if you are a manically depressed robot? No, don't try to answer that. I'm fifty thousand times more intelligent than you and even I don't know the answer. It gives me a headache just trying to think down to your level.",
+  "label": "Abernathy, Tarra",
+  "clean_label": "Abernathy, Tarra",
+  "description": "Life? <i>Don't talk to me about</i> life.",
+  "clean_description": "Life? Don't talk to me about life.",
+  "short_display": "<section><p><strong>Tarra Abernathy, 1906-1986</strong></p>\n<p>Life? <i>Don't talk to me about</i> life.</p></section>",
+  "full_display": "<table>\n<tr>\n<th scope=\"row\">Name</th>\n<td>Tarra Abernathy</td>\n</tr>\n<tr>\n<th scope=\"row\">Alternative Name(s)</th>\n<td>Pearl</td>\n</tr>\n<tr>\n<th scope=\"row\">Life Dates</th>\n<td>1906-1986</td>\n</tr>\n<tr>\n<th scope=\"row\">Description</th>\n<td>Life? <i>Don't talk to me about</i> life.</td>\n</tr>\n<tr>\n<th scope=\"row\">Profile</th>\n<td>Don’t Panic</td>\n</tr>\n<tr>\n<th scope=\"row\">See Also</th>\n<td><ul><li><a href=\"http://beahan.info/gale\" target=\"_blank\" rel=\"noopener\">http://beahan.info/gale<span>(opens in new tab)</span></a></li></ul></td>\n</tr>\n</table>",
+  "e_type": "person",
+  "legacy_pk": 74853,
   "alternate_names": [
-    "Alexis Michelle"
+    "Pearl"
   ],
   "alternate_spellings": [
-    "Ra'jah O'Hara"
+    "Scarlet Envy"
   ],
-  "first_name": "Tobias",
-  "last_name": "Windler",
-  "life_dates": "1922-1971",
+  "first_name": "Tarra",
+  "last_name": "Abernathy",
+  "life_dates": "1906-1986",
   "links": [
-    "http://braun-lebsack.info/wes"
+    "http://beahan.info/gale"
   ],
-  "profile": "Earth: Mostly Harmless"
+  "profile": "Don’t Panic"
 }</pre>

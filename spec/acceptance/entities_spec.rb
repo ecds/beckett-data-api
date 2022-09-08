@@ -77,14 +77,8 @@ resource 'Entities' do
   end
 
   route '/entities/:id', 'Single Entity' do
-    before {
-      Entity.e_types.keys[0..11].each do |type|
-        create("#{type}_entity".to_sym)
-      end
-    }
-
     get 'Specific entity' do
-      let(:id) { create("#{Entity.e_types.keys[0..11].sample}_entity".to_sym, :published).id }
+      let(:id) { create(:person_entity, :published).id }
       example_request 'GET /entities/:id' do
         expect(status).to eq(200)
       end
@@ -95,17 +89,19 @@ resource 'Entities' do
         let(:id) { create("#{type}_entity".to_sym, :published).id }
 
         response_field :label, '', { default: 'HTML String', not_null: true }
-        response_field :clean_label, '', { default: 'String', not_null: true }
-        response_field :description, '', { default: 'HTML String', not_null: true }
-        response_field :clean_description, '', { default: 'String', not_null: true }
-        response_field :display_header, '', { default: 'HTML String', not_null: true }
+        response_field :short_display, '', { default: 'HTML String', not_null: true }
+        response_field :full_display, '', { default: 'HTML String', not_null: true }
+        # response_field :clean_label, '', { default: 'String', not_null: true }
+        # response_field :description, '', { default: 'HTML String', not_null: true }
+        # response_field :clean_description, '', { default: 'String', not_null: true }
+        # response_field :display_header, '', { default: 'HTML String', not_null: true }
         # response_field :clean_description, 'Same as description with HTML removed.'
 
-        Entity.new(e_type: type).allowed_attributes.each do |attribute|
-          default = list_attributes.include?(attribute) ? 'Array' : 'HTML String'
+        # Entity.new(e_type: type).allowed_attributes.each do |attribute|
+        #   default = list_attributes.include?(attribute) ? 'Array' : 'HTML String'
 
-          response_field attribute.to_sym, '', { default:, not_null: false }
-        end
+        #   response_field attribute.to_sym, '', { default:, not_null: false }
+        # end
 
         example_request "GET /entities/:id - #{type.titleize}" do
           expect(status).to eq(200)
