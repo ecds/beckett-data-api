@@ -14,7 +14,7 @@ class RepositoryDashboard < Administrate::BaseDashboard
     letter_repositories: Field::HasMany,
     letters: Field::HasMany,
     id: Field::String,
-    public: Field::Boolean,
+    published: Field::Boolean,
     created_at: Field::DateTime,
     updated_at: Field::DateTime
   }.freeze
@@ -27,7 +27,7 @@ class RepositoryDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = %i[
     label
     letters
-    public
+    published
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -37,7 +37,7 @@ class RepositoryDashboard < Administrate::BaseDashboard
     letter_repositories
     letters
     id
-    public
+    published
     created_at
     updated_at
   ].freeze
@@ -47,7 +47,7 @@ class RepositoryDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
     label
-    public
+    published
   ].freeze
 
   # COLLECTION_FILTERS

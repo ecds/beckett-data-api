@@ -62,7 +62,7 @@ class EntitiesController < ApplicationController
   end
 
   def set_filters
-    @where = {}
+    @where = { published: true }
 
     @where[:e_type] = params[:type] if params[:type].present?
 

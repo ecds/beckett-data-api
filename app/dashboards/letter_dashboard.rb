@@ -11,7 +11,7 @@ class LetterDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     mentions: Field::HasMany,
-    entities: HasManyThroughField.with_options(verbose_option: true),
+    entities: HasManyThroughField.with_options(verbose_option: true, order_by: 'e_type'),
     letter_destinations: Field::HasMany,
     destinations: HasManyThroughField.with_options(type: 'place'),
     letter_senders: Field::HasMany,
@@ -44,7 +44,7 @@ class LetterDashboard < Administrate::BaseDashboard
     verified: Field::Boolean,
     envelope: Field::String,
     notes: Field::Text,
-    content: Field::Text,
+    content: ContenteditableField,
     letter_owner: Field::BelongsTo,
     letter_publisher: Field::BelongsTo,
     created_at: Field::DateTime,
@@ -89,7 +89,6 @@ class LetterDashboard < Administrate::BaseDashboard
     verified
     envelope
     notes
-    content
     letter_owner
     letter_publisher
   ].freeze
@@ -99,6 +98,7 @@ class LetterDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
     entities
+    content
   ].freeze
 
   # COLLECTION_FILTERS

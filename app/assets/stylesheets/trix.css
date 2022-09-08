@@ -484,3 +484,41 @@ trix-editor .attachment__metadata .attachment__size {
 #entity_e_type {
   text-transform: uppercase;
 }
+
+.trix-button-group--block-tools,
+.trix-button--icon-strike,
+.trix-button--icon-link { display: none !important; }
+
+trix-toolbar {
+  white-space: nowrap;
+  border-top: solid;
+  border-left: solid;
+  border-right: solid;
+  border-color: #bbb;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.btn-danger:hover {
+  color: #fff;
+  background-color: #c82333;
+  border-color: #bd2130;
+}
+
+.btn-warning {
+  color: #212529;
+  background-color: #ffc107;
+  border-color: #ffc107;
+}
+
+.btn-warning:hover {
+  color: #212529;
+  background-color: #e0a800;
+  border-color: #d39e00;
+}

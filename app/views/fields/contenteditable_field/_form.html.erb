@@ -1,0 +1,48 @@
+<div class="field-unit__label">
+  <%= f.label field.attribute %>
+</div>
+<div class="field-unit__field">
+  <%= f.text_field field.attribute, type: 'hidden' %>
+  <div class="field-unit__field letter-content" id="<%= field.attribute.downcase %>">
+      <pre>
+        <%= sanitize field.to_s %>
+      </pre>
+    </div>
+    <div>
+      <button id="<%= "#{field.attribute.downcase}-button" %>" class="btn-danger" type="button" onClick="toggleEdit(event)">
+        Edit <%= field.attribute %>
+      </button>
+    </div>
+</div>
+
+<script type="text/javascript">
+  const input = document.getElementById("letter_content");
+  const field = document.getElementById("<%= field.attribute.downcase %>");
+  const updateContent = () => {
+     input.value = field.children[0].innerHTML;
+  };
+
+  const form = document.querySelector("form");
+  const hiddenInput = document.createElement("input");
+  hiddenInput.type = "hidden";
+  hiddenInput.name = "redirect";
+  hiddenInput.value = "no";
+
+  const toggleEdit = (event) => {
+    let isEditing = field.getAttribute('contenteditable');
+    if (isEditing && isEditing !== 'false') {
+      field.setAttribute('contenteditable', false);
+      field.removeEventListener("input", updateContent, false);
+      event.target.innerText = "Edit <%= field.attribute %>";
+      event.target.classList.remove('btn-warning');
+      form.appendChild(hiddenInput);
+      form.submit();
+      form.removeChild(hiddenInput);
+    } else {
+      field.setAttribute('contenteditable', true);
+      field.addEventListener("input", updateContent, false);
+      event.target.innerText = "Done";
+      event.target.classList.add('btn-warning');
+    }
+  };
+</script>

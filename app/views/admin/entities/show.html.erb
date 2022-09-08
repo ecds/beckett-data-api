@@ -96,3 +96,58 @@ as well as a link to its edit page.
     <% end %>
   </dl>
 </section>
+
+<section class="main-content__body">
+  <dl>
+    <dt class="attribute-label">Mentions</dt>
+      <dd class="attribute-data">
+        <% page.resource.letters.each do |letter| %>
+          <a href="<%= "/admin/letters/#{letter.id}" -%>"><%= letter.label %></a><br>
+        <% end %>
+      </dd>
+  </dl>
+</section>
+
+<section class="main-content__body">
+  <dl>
+    <dt class="attribute-label">Letters Received</dt>
+      <dd class="attribute-data">
+        <% page.resource.letters_received.each do |letter| %>
+          <a href="<%= "/admin/letters/#{letter.id}" -%>"><%= letter.label %></a><br>
+        <% end %>
+      </dd>
+  </dl>
+</section>
+
+<section class="main-content__body">
+  <dl>
+    <dt class="attribute-label">Letters Sent to Place</dt>
+      <dd class="attribute-data">
+        <% page.resource.letters_sent_to.each do |letter| %>
+          <a href="<%= "/admin/letters/#{letter.id}" -%>"><%= letter.label %></a><br>
+        <% end %>
+      </dd>
+  </dl>
+</section>
+
+<section class="main-content__body">
+  <dl>
+    <dt class="attribute-label">Letters Sent from Place</dt>
+      <dd class="attribute-data">
+        <% page.resource.letters_sent_from.each do |letter| %>
+          <a href="<%= "/admin/letters/#{letter.id}" -%>"><%= letter.label %></a><br>
+        <% end %>
+      </dd>
+  </dl>
+</section>
+
+<section class="main-content__body">
+  <dl>
+    <dt class="attribute-label">Letters Sent</dt>
+      <dd class="attribute-data">
+        <% page.resource.letters_sent.each do |letter| %>
+          <a href="<%= "/admin/letters/#{letter.id}" -%>"><%= letter.label %></a><br>
+        <% end %>
+      </dd>
+  </dl>
+</section>

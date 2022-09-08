@@ -15,9 +15,8 @@
 json.set! 'id', "#{request.protocol}#{request.host_with_port}#{entity.url_path}"
 json.set! 'type', entity.e_type
 json.set! 'label', entity.label
-json.set! 'clean_label', entity.clean_label
-json.set! 'description', entity.description
-json.set! 'clean_description', entity.clean_description
+json.set! 'short_display', entity.short_display
+json.set! 'full_display', entity.full_display
 entity.allowed_attributes.each do |attribute|
   json.set! attribute, entity.public_send(attribute)
 end

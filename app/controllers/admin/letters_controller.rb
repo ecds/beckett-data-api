@@ -62,6 +62,22 @@ module Admin
       }
     end
 
+    # def update_mentions
+    #   100.times { puts params[:task] }
+    #   letter = Letter.find(params[:letter])
+    #   entity = Entity.find(params[:entity])
+    #   letter.entities << entity #if params[:task] == 'add'
+    #   # letter.entities.delete(entity) if params[:task] == 'remove'
+    # end
+
+    def update
+      if params[:redirect] == 'no'
+        requested_resource.update(resource_params)
+      else
+        super
+      end
+    end
+
     private
 
     def search_params

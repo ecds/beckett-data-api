@@ -97,6 +97,23 @@ senders.each do |r|
   end
 end; nil
 
+mentions = HTTParty.get('https://ot-api.ecdsdev.org/list-senders', timeout: 1000)
+mentions.each do |m|
+  begin
+    next if m['letter'].nil? || m['entity'].nil?
+    letter = Letter.find(m['letter'])
+    entity = Entity.find(m['entity'])
+  rescue
+    next
+  end
+  mention = Mention.create(
+    letter:,
+    entity:
+  )
+  m['tags'].each {|tag| mention.tag_list.add(tag) }
+  mention.save
+end; nil
+
 def poo
   opts = { sheet_id: '1HeTeJqueJR4TWqgSCMJOgOglLLyYGfKux8YL57OYfg8', range: 'A2:G', entity_type: 'publication' }
   i = GoogleImport.new(opts)

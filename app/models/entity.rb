@@ -11,19 +11,19 @@ class Entity < ApplicationRecord
   before_save :add_full_stops, :concat_label, :remove_div, :to_plain_text, :check_published
 
   has_many :mentions, dependent: :destroy
-  has_many :letters, through: :mentions, source: :letter
+  has_many :letters, -> { order('letters.date') }, through: :mentions, source: :letter
 
   has_many :letter_destinations, dependent: :destroy
-  has_many :letters_sent_to, through: :letter_destinations, source: :letter
+  has_many :letters_sent_to, -> { order('letters.date') }, through: :letter_destinations, source: :letter
 
   has_many :letter_senders, dependent: :destroy
-  has_many :letters_sent, through: :letter_senders, source: :letter
+  has_many :letters_sent, -> { order('letters.date') }, through: :letter_senders, source: :letter
 
   has_many :letter_origins, dependent: :destroy
-  has_many :letters_sent_from, through: :letter_origins, source: :letter
+  has_many :letters_sent_from, -> { order('letters.date') }, through: :letter_origins, source: :letter
 
   has_many :letter_recipients, dependent: :destroy
-  has_many :letters_received, through: :letter_recipients, source: :letter
+  has_many :letters_received, -> { order('letters.date') }, through: :letter_recipients, source: :letter
 
   # belongs_to :event_type, optional: true
 
@@ -112,7 +112,8 @@ class Entity < ApplicationRecord
     spanisn: 27,
     swedish: 28,
     ukrainian: 29,
-    spanish_tr_and_production_rights: 30
+    spanish_tr_and_production_rights: 30,
+    romanian: 31
   }
 
   scope :deletable, lambda {
@@ -265,8 +266,8 @@ class Entity < ApplicationRecord
       lines.push("<strong>Date</strong> #{date_str}") unless date_str.nil?
     end
 
-    paragraphs = lines.map {|line| "<p>#{line}</p>" }.flatten.join
-    Loofah.fragment("<section>#{paragraphs}</section>").scrub!(:prune)
+    paragraphs = lines.map {|line| "<p>#{line}</p>" }.flatten.join.strip
+    Loofah.fragment("<section>#{paragraphs}</section>").scrub!(:prune).to_html
   end
 
   def full_display
@@ -366,8 +367,8 @@ class Entity < ApplicationRecord
       rows.push("<th scope='row'>See Also</th><td colsapn=3>#{link_list}</td>") unless links.nil?
     end
 
-    table_rows = rows.map {|row| "<tr>#{row}</tr>" }.flatten.join
-    Loofah.fragment("<table>#{table_rows}</table>").scrub!(:prune)
+    table_rows = rows.map {|row| "<tr>#{row}</tr>" }.flatten.join.strip
+    Loofah.fragment("<table>#{table_rows}</table>").scrub!(:prune).to_html
   end
 
   def allowed_attributes
@@ -487,7 +488,7 @@ class Entity < ApplicationRecord
         end
       end
 
-      self.label = "#{last_name}, #{first_name}" if last_name && first_name
+      self.label = [last_name, first_name].compact.join(', ') if last_name || first_name
       self.life_dates = nil if life_dates == 'nd'
       self.life_dates = life_dates.gsub(/[()]/, '') if life_dates
     end
@@ -534,15 +535,17 @@ class Entity < ApplicationRecord
   # TODO: How to add icon
   def link_list
     link_items = links.map do |link|
-      "<li>\
-      <a href='#{link}' target='_blank' rel='noopener'>\
-      #{link}\
-      <span calss='screen-reader-only'>(opens in new tab)</span>\
-      </a>\
-      </li>"
+      [
+        '<li>',
+        "<a href='#{link}' target='_blank' rel='noopener'>",
+        link,
+        '<span calss="screen-reader-only">(opens in new tab)</span>',
+        '</a>',
+        '</li>'
+      ].join
     end
 
-    "<ul>#{link_items.join}</ul>"
+    "<ul>#{link_items.join.strip}</ul>".strip
   end
 
   def alt_names

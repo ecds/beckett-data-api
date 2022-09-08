@@ -28,6 +28,55 @@ and renders all form fields for a resource's editable attributes.
   line-spacing: 2rem;
   overflow: scroll;
  }
+
+ .option {
+  cursor: pointer !important;
+ }
+
+ *,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  padding: 50px 10vw 100px;
+  font-size: 40px;
+}
+
+.container h1 {
+  margin-bottom: 20px;
+}
+
+.tooltip-container {
+  width: 425px;
+  min-height: 200px;
+  height: auto;
+  padding: 15px;
+  font-size: 25px;
+  background: white;
+  box-shadow: 0 30px 90px -20px rgba(0,0,0,0.3);
+  position: absolute;
+  z-index: 100;
+  display: none;
+  opacity: 0;
+}
+
+.fade-in {
+  display: block;
+  animation: fade 0.2s linear forwards;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 </style>
 
 <%= form_for([namespace, page.resource], html: { class: "form" }) do |f| %>
@@ -82,21 +131,9 @@ and renders all form fields for a resource's editable attributes.
     </div>
   <% end -%>
 
-  <div class="field-unit field-unit--string field-unit--optional">
-    <div class="field-unit__label">
-      <label>Content</label>
-    </div>
-    <div class="field-unit__field letter-content">
-      <pre>
-        <%= sanitize page.resource.content %>
-      </pre>
-    </div>
-  </div>
-
-  <div class="form-actions">
-    <%= f.submit %>
-  </div>
 <% end %>
+
+<div class="tooltip-container">Loading...</div>
 
 <script type="text/javascript">
   const defer = (method) => {
@@ -109,7 +146,99 @@ and renders all form fields for a resource's editable attributes.
     }
   }
 
+  let controller = null;
+
+  const addTooltip = () => {
+    const tooltips = document.querySelectorAll(".item, .option");
+    const tooltipContainer = document.querySelector(".tooltip-container");
+
+    let tooltipID;
+    for (const tooltip of tooltips ) {
+      try {
+        tooltip.removeEventListener("mouseenter");
+      } catch {
+        //
+      }
+
+      tooltip.addEventListener("mouseenter", (event) => {
+        controller = new AbortController();
+        const signal = controller.signal;
+        tooltipID = event.target.getAttribute('data-value');
+        tooltipContainer.classList.add("fade-in");
+        tooltipContainer.style.left = `${event.pageX + 50}px`;
+        tooltipContainer.style.top = `${event.pageY}px`;
+        fetch(`/entities/${tooltipID}`, { signal })
+          .then((response) => {
+            response.json()
+              .then((data) => {
+                tooltipContainer.innerHTML = data.short_display;
+            });
+        })
+        .catch(() => {
+          // aborted
+        });
+      });
+
+      tooltip.addEventListener("mouseout", (event) => {
+        tooltipContainer.innerText = "Loading...";
+        controller.abort();
+        tooltipContainer.classList.remove("fade-in");
+      });
+
+    tooltipContainer.addEventListener('mouseenter', () => {
+      tooltipContainer.classList.add("fade-in");
+    });
+
+    tooltipContainer.addEventListener('mouseout', () => {
+      tooltipContainer.innerText = "Loading...";
+      tooltipContainer.classList.remove("fade-in");
+    });
+    };
+  }
+
   defer(() => {
-    jQuery(".field-unit--has-many-through-field select").selectize({});
+    let authenticity_token = document.querySelector("[name='authenticity_token']").value;
+    let headers = {
+      "content-type": "application/x-www-form-urlencoded"
+    };
+    // let letter = "<%= page.resource.id %>"
+    const input = document.createElement("input");
+    input.type = "hidden";
+    input.name = "redirect";
+    input.value = "no";
+    let abortDelete = false;
+
+    let item = null;
+
+    let select = jQuery(".field-unit--has-many-through-field select").selectize({
+      onChange: function(items) {
+        const form = document.querySelector("form");
+        if (abortDelete) {
+          this.addItem(item, true);
+          return false;
+        }
+        form.appendChild(input);
+        form.submit();
+        form.removeChild(input);
+        addTooltip();
+      },
+      onDelete: function(items) {
+        item = items[0];
+        if (window.confirm("Do you really want to remove this entity from the letter?")) {
+          abortDelete = false;
+        } else {
+          abortDelete = true;
+        }
+      },
+      onInitialize: () => {
+        addTooltip();
+      },
+      onDropdownOpen: () => {
+        addTooltip();
+      },
+      onType: (data) => {
+        addTooltip();
+      }
+    });
   });
 </script>

@@ -10,3 +10,4 @@
 //= require selectize
 //= require trix
 // application.js
+// application.css
