@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_25_190109) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_29_164528) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
@@ -226,6 +226,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_25_190109) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.uuid "file_folder_id"
+    t.integer "volume"
     t.index ["file_folder_id"], name: "index_letters_on_file_folder_id"
     t.index ["letter_file_id"], name: "index_letters_on_letter_file_id"
     t.index ["letter_owner_id"], name: "index_letters_on_letter_owner_id"

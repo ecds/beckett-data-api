@@ -14,7 +14,7 @@ resource 'Letters' do
   # we extract a path to a parent block, so descendant blocks can describe each method
   route '/letters{page,per_page}', 'Letters Collection' do
     # List of optional parameters with description for request
-    parameter :page, 'Current page of letters', { type: 'String', default: '1' }
+    parameter :page, 'Current page of paginated letters response.', { type: 'String', default: '1' }
     parameter :per_page, 'Number of letters on a single response.', { default: '25' }
     parameter :search, 'Text to search.', { default: '*' }
     parameter :fields,
@@ -22,13 +22,16 @@ resource 'Letters' do
               { default: 'recipients, mentions, destinations, origins, repositories' }
     parameter :start_date, 'Letters dated on or after given date. Must be in YYYY-MM-DD format.', { default: 'null' }
     parameter :end_date, 'Letters dated on or before given date. Must be in YYYY-MM-DD format.', { default: 'null' }
-    parameter :recipients, 'Comma seperated list of recipient labels', { default: 'null' }
+    parameter :recipients, 'Comma seperated list of recipient labels.', { default: 'null' }
     parameter :destinations, 'Comma seperated list of destination labels', { default: 'null' }
-    parameter :origins, 'Comma seperated list of origin labels', { default: 'null' }
-    parameter :senders, 'Comma seperated list of sender labels', { default: 'null' }
-    parameter :repositories, 'Comma seperated list of repository labels', { default: 'null' }
+    parameter :origins, 'Comma seperated list of origin labels.', { default: 'null' }
+    parameter :senders, 'Comma seperated list of sender labels.', { default: 'null' }
+    parameter :repositories, 'Comma seperated list of repository labels.', { default: 'null' }
     parameter :languages,
-              'Comma seperated list of languages. Options are English, French, German, or Italian',
+              'Case insensitive comma seperated list of languages. Options are English, French, German, and Italian.',
+              { default: 'null' }
+    parameter :volumes,
+              'Comma sperated list of volumes. Options are 0, 1, 2, 3, and 4. Zero means no volume.',
               { default: 'null' }
 
     before {
@@ -103,6 +106,13 @@ resource 'Letters' do
     get 'letters by language' do
       let(:languages) { 'German, italian' }
       example_request 'GET /letters?languages=:list_of_languages' do
+        expect(status).to eq(200)
+      end
+    end
+
+    get 'letters by volume' do
+      let(:volumes) { '1, 3' }
+      example_request 'GET /letters?volumes=:list_of_volumes' do
         expect(status).to eq(200)
       end
     end

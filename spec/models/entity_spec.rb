@@ -68,8 +68,7 @@ RSpec.describe Entity, type: :model do
     expect(entity.all_letters.count).to be < Letter.count
     expect(entity.all_letters.count).to eq(15)
     expect(entity.letters.count).to eq(8)
-    expect(entity.published_letters_hash.length).to eq(6)
-    expect(entity.published_letters_hash[0][:recipients].length).to eq(2)
+    expect(entity.published_letters_hash.length).to eq(10)
   end
 
   context 'when attribute wrapped in div' do

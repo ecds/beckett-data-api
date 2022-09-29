@@ -18,8 +18,8 @@ RSpec.describe '/letters', type: :request do
 
     it 'renders only plblically avaliable letters' do
       create_list(:published_letter, 4)
-      create_list(:old_letter, 3)
-      create_list(:new_letter, 5)
+      create_list(:letter, 3, repositories: create_list(:repository, 1, published: false))
+      create_list(:new_letter, 5, repositories: create_list(:repository, 1, published: false))
       get "#{letters_url}.json", headers: valid_headers, as: :json
       expect(Letter.published.count).to eq(4)
       expect(json[:letters].count).to eq(4)

@@ -169,6 +169,7 @@ class EntityDashboard < Administrate::BaseDashboard
     city
     composer
     date
+    date_str
     director
     event_type
     first_name

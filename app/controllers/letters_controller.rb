@@ -42,6 +42,8 @@ class LettersController < ApplicationController
         id: "#{request.protocol}#{request.host_with_port}#{letter.id_path}",
         date: letter.date,
         label: letter.label,
+        language: letter.language,
+        volume: letter.volume,
         recipients: letter.recipients,
         destinations: letter.destinations,
         origins: letter.orgins,
@@ -70,20 +72,19 @@ class LettersController < ApplicationController
         }
       },
       language: {},
-      repositories: {}
+      repositories: {},
+      volume: {}
     }
   end
 
   def set_filters
-    @where = { _and: [] }
+    @where = { published: true, _and: [] }
 
     @fields = if params[:fields].present?
                 params[:fields].split(',').map(&:strip).map(&:to_sym)
               else
                 %i[recipients destinations origins mentions repositories]
               end
-
-    10.times { @fields }
 
     if params[:start_date]
       @where[:_and].push(
@@ -117,25 +118,11 @@ class LettersController < ApplicationController
 
     @where[:language] = { in: params[:languages].downcase.split(',').map(&:strip) } if params[:languages].present?
 
-    # if params[:recipients].present?
-    #   recipients = params[:recipients].split(',')
-    #   @where[:recipients] = { in: recipients }
-    # end
-
-    # if params[:mentions].present?
-    #   mentions = params[:mentions].split(',')
-    #   @where[:mentions] = { in: mentions }
-    # end
+    @where[:volume] = { in: params[:volumes].split(',').map(&:to_i) } if params[:volumes].present?
   end
 
   def reindex
     Letter.reindex if ENV['RAILS_ENV'] == 'test'
-  end
-
-  def parse_date(date)
-    return if date.nil?
-
-    Date.parse(date)
   end
 
   # Only allow a list of trusted parameters through.

@@ -26,6 +26,7 @@ FactoryBot.define do
     # letter_file { create(:letter_file) }
     letter_owner { create(:letter_owner) }
     letter_publisher { create(:letter_publisher) }
+    volume { rand(0..4) }
 
     after :create do |letter|
       Entity.e_types.keys[0..11].sample(4).each {|type|
@@ -34,7 +35,7 @@ FactoryBot.define do
     end
 
     factory :published_letter do
-      date { Faker::Date.between(from: '1957-01-01', to: '1965-12-31') }
+      # date { Faker::Date.between(from: '1957-01-01', to: '1965-12-31') }
       repositories { create_list(:repository, 1, published: true) }
 
       factory :published_letter_existing_repos do

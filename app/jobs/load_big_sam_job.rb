@@ -197,6 +197,25 @@ class LoadBigSamJob < ApplicationJob
         end
       end
 
+      if row[:volumeinfo]
+        parts = row[:volumeinfo].split(',')
+        if parts.length == 3
+          letter.volume_pages = parts[2].strip
+          letter.volume = case parts[0].strip
+                          when '1929-1940'
+                            1
+                          when '1941-1956'
+                            2
+                          when '1957-1965'
+                            3
+                          when '1966-1989'
+                            4
+                          else
+                            0
+                          end
+        end
+      end
+
       letter.letter_publisher = LetterPublisher.find_or_create_by(label: row[:placeprevpubl]) if row[:placeprevpubl]
 
       row[:sender]&.split(';')&.each do |sender|

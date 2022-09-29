@@ -2,17 +2,17 @@
 
 require 'acceptance_helper'
 
-list_attributes = %i[
-  alternate_names
-  alternate_spellings
-  artist_alternate_spellings
-  attended_with
-  authors
-  cast
-  links
-  performed_by
-  personnel
-]
+# list_attributes = %i[
+#   alternate_names
+#   alternate_spellings
+#   artist_alternate_spellings
+#   attended_with
+#   authors
+#   cast
+#   links
+#   performed_by
+#   personnel
+# ]
 
 # Documentation refers to the Entity model
 resource 'Entities' do

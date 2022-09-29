@@ -33,7 +33,7 @@ RSpec.describe Letter, type: :model do
     )
 
     expect(described_class.count).to eq(15)
-    expect(described_class.published.count).to eq(6)
+    expect(described_class.published.count).to eq(10)
   end
 
   it 'has distinct mentions' do
@@ -143,11 +143,5 @@ RSpec.describe Letter, type: :model do
     letter.destroy
     expect(Repository.count).to eq(2)
     expect(LetterRepository.count).to eq(0)
-  end
-
-  it 'does not allow content to be updated' do
-    letter = create(:letter)
-    letter.update(content: 'new content')
-    expect(described_class.find(letter.id).content).not_to eq('new content')
   end
 end

@@ -43,7 +43,7 @@ class Letter < ApplicationRecord
           published: true
         }
       )
-      .where('letters.date BETWEEN ? AND ?', DateTime.new(1957), DateTime.new(1965, 12).at_end_of_month)
+      # .where('letters.date BETWEEN ? AND ?', DateTime.new(1957), DateTime.new(1965, 12).at_end_of_month)
   }
 
   scope :between, lambda {|min, max|
@@ -51,7 +51,9 @@ class Letter < ApplicationRecord
   }
 
   def label
-    "#{date.strftime('%d %B %Y')} - #{recipients.map(&:label).join(', ')}"
+    return "#{date.strftime('%d %B %Y')} - #{recipients.map(&:label).join(', ')}" if date
+
+    recipients.map(&:label).join(', ')
   end
 
   def mentions_hash
@@ -83,28 +85,16 @@ class Letter < ApplicationRecord
       destinations: destinations.map(&:label),
       destinations_clean: destinations.map(&:clean_label),
       repositories: repositories.map(&:label),
-      language:
+      language:,
+      published: repositories.any?(&:published),
+      volume:
     }
   end
 
   def should_index?
     return if date.nil?
 
-    date.between? DateTime.new(1957), DateTime.new(1965, 12).at_end_of_month and repositories.any?(&:published)
-  end
-
-  def volume
-    case date
-    when DateTime.new(1929)..DateTime.new(1940, 12).at_end_of_month
-      '1929-1940'
-    when DateTime.new(1941)..DateTime.new(1956, 12).at_end_of_month
-      '1941-1956'
-    when DateTime.new(1957)..DateTime.new(1965, 12).at_end_of_month
-      '1957-1965'
-    when DateTime.new(1966)..DateTime.new(1989, 12).at_end_of_month
-      '1966-1989'
-    else
-      'unknown'
-    end
+    repositories.any?(&:published)
+    # date.between? DateTime.new(1957), DateTime.new(1965, 12).at_end_of_month and repositories.any?(&:published)
   end
 end
