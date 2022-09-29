@@ -11,16 +11,8 @@
 | Name | Default | Description | Not Null |
 |------|---------|-------------|----------|
 | label | HTML String |  | true |
-| clean_label | String |  | true |
-| description | HTML String |  | true |
-| clean_description | String |  | true |
-| display_header | HTML String |  | true |
-| label | HTML String |  | false |
-| description | HTML String |  | false |
-| e_type | HTML String |  | false |
-| legacy_pk | HTML String |  | false |
-| alternate_spellings | Array |  | false |
-| links | Array |  | false |
+| short_display | HTML String |  | true |
+| full_display | HTML String |  | true |
 
 ### Request
 
@@ -34,7 +26,7 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /entities/771d4468-655d-439e-a9f7-3e9f84173a86</pre>
+<pre>GET /entities/b1e87be5-647c-4f59-a28d-67e977e09259</pre>
 
 ### Response
 
@@ -47,12 +39,12 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;77b06d93af95e0c5600484002ec3300f&quot;
+ETag: W/&quot;6c48a7d17945c28998180565a6753f7d&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: b9cb3975-6065-4572-83da-98a233abbd51
-X-Runtime: 1.170707
+X-Request-Id: 3ee21789-7881-4522-9338-e3dc249f54da
+X-Runtime: 0.781529
 Vary: Origin
-Content-Length: 1458</pre>
+Content-Length: 1200</pre>
 
 #### Status
 
@@ -61,20 +53,18 @@ Content-Length: 1458</pre>
 #### Body
 
 <pre>{
-  "id": "http://example.org/entities/771d4468-655d-439e-a9f7-3e9f84173a86",
+  "id": "http://example.org/entities/b1e87be5-647c-4f59-a28d-67e977e09259",
   "type": "place",
-  "label": "Western Spiral Arm",
-  "clean_label": "Western Spiral Arm",
-  "description": "Truffaut pitchfork glutenfree scenester chartreuse green juice normcore vice.",
-  "clean_description": "Truffaut pitchfork glutenfree scenester chartreuse green juice normcore vice.",
-  "short_display": "<section><p><strong>Western Spiral Arm</strong></p>\n<p>Truffaut pitchfork glutenfree scenester chartreuse green juice normcore vice.</p></section>",
-  "full_display": "<table>\n<tr>\n<th scope=\"row\">Name</th>\n<td>Western Spiral Arm</td>\n</tr>\n<tr>\n<th scope=\"row\">Description</th>\n<td>Truffaut pitchfork glutenfree scenester chartreuse green juice normcore vice.</td>\n</tr>\n<tr>\n<th scope=\"row\">See Also</th>\n<td><ul><li><a href=\"http://friesen.biz/dian.cummerata\" target=\"_blank\" rel=\"noopener\">http://friesen.biz/dian.cummerata<span>(opens in new tab)</span></a></li></ul></td>\n</tr>\n</table>",
+  "label": "Cathedral of Chalesm",
+  "short_display": "<section><p><strong>Cathedral of Chalesm</strong></p>\n<p>Meh vegan food truck kogi migas.</p></section>",
+  "full_display": "<table>\n<tr>\n<th scope=\"row\">Name</th>\n<td>Cathedral of Chalesm</td>\n</tr>\n<tr>\n<th scope=\"row\">Description</th>\n<td>Meh vegan food truck kogi migas.</td>\n</tr>\n<tr>\n<th scope=\"row\">See Also</th>\n<td><ul><li><a href=\"http://rogahn-heaney.net/alfonzo\" target=\"_blank\" rel=\"noopener\">http://rogahn-heaney.net/alfonzo<span>(opens in new tab)</span></a></li></ul></td>\n</tr>\n</table>",
+  "description": "Meh vegan food truck kogi migas.",
   "e_type": "place",
-  "legacy_pk": 17107,
+  "legacy_pk": 21879,
   "alternate_spellings": [
-    "Ivy Winters"
+    "Vanessa Vanjie Mateo"
   ],
   "links": [
-    "http://friesen.biz/dian.cummerata"
+    "http://rogahn-heaney.net/alfonzo"
   ]
 }</pre>

@@ -142,21 +142,7 @@ table th, table td {
               </tr>
               <tr>
                 <td>
-                    <span class="name">clean_label</span>
-                </td>
-                <td>
-                  <span class="description">String</span>
-                </td>
-                <td>
-                  <span class="description"></span>
-                </td>
-                <td>
-                  <span class="description">true</span>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                    <span class="name">description</span>
+                    <span class="name">short_display</span>
                 </td>
                 <td>
                   <span class="description">HTML String</span>
@@ -170,21 +156,7 @@ table th, table td {
               </tr>
               <tr>
                 <td>
-                    <span class="name">clean_description</span>
-                </td>
-                <td>
-                  <span class="description">String</span>
-                </td>
-                <td>
-                  <span class="description"></span>
-                </td>
-                <td>
-                  <span class="description">true</span>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                    <span class="name">display_header</span>
+                    <span class="name">full_display</span>
                 </td>
                 <td>
                   <span class="description">HTML String</span>
@@ -194,90 +166,6 @@ table th, table td {
                 </td>
                 <td>
                   <span class="description">true</span>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                    <span class="name">label</span>
-                </td>
-                <td>
-                  <span class="description">HTML String</span>
-                </td>
-                <td>
-                  <span class="description"></span>
-                </td>
-                <td>
-                  <span class="description">false</span>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                    <span class="name">description</span>
-                </td>
-                <td>
-                  <span class="description">HTML String</span>
-                </td>
-                <td>
-                  <span class="description"></span>
-                </td>
-                <td>
-                  <span class="description">false</span>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                    <span class="name">e_type</span>
-                </td>
-                <td>
-                  <span class="description">HTML String</span>
-                </td>
-                <td>
-                  <span class="description"></span>
-                </td>
-                <td>
-                  <span class="description">false</span>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                    <span class="name">legacy_pk</span>
-                </td>
-                <td>
-                  <span class="description">HTML String</span>
-                </td>
-                <td>
-                  <span class="description"></span>
-                </td>
-                <td>
-                  <span class="description">false</span>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                    <span class="name">alternate_spellings</span>
-                </td>
-                <td>
-                  <span class="description">Array</span>
-                </td>
-                <td>
-                  <span class="description"></span>
-                </td>
-                <td>
-                  <span class="description">false</span>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                    <span class="name">links</span>
-                </td>
-                <td>
-                  <span class="description">Array</span>
-                </td>
-                <td>
-                  <span class="description"></span>
-                </td>
-                <td>
-                  <span class="description">false</span>
                 </td>
               </tr>
             </tbody>
@@ -293,7 +181,7 @@ Host: example.org
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET /entities/771d4468-655d-439e-a9f7-3e9f84173a86</pre>
+          <pre class="request route highlight">GET /entities/b1e87be5-647c-4f59-a28d-67e977e09259</pre>
 
 
 
@@ -307,31 +195,29 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;77b06d93af95e0c5600484002ec3300f&quot;
+ETag: W/&quot;6c48a7d17945c28998180565a6753f7d&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: b9cb3975-6065-4572-83da-98a233abbd51
-X-Runtime: 1.170707
+X-Request-Id: 3ee21789-7881-4522-9338-e3dc249f54da
+X-Runtime: 0.781529
 Vary: Origin
-Content-Length: 1458</pre>
+Content-Length: 1200</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
-  &quot;id&quot;: &quot;http://example.org/entities/771d4468-655d-439e-a9f7-3e9f84173a86&quot;,
+  &quot;id&quot;: &quot;http://example.org/entities/b1e87be5-647c-4f59-a28d-67e977e09259&quot;,
   &quot;type&quot;: &quot;place&quot;,
-  &quot;label&quot;: &quot;Western Spiral Arm&quot;,
-  &quot;clean_label&quot;: &quot;Western Spiral Arm&quot;,
-  &quot;description&quot;: &quot;Truffaut pitchfork glutenfree scenester chartreuse green juice normcore vice.&quot;,
-  &quot;clean_description&quot;: &quot;Truffaut pitchfork glutenfree scenester chartreuse green juice normcore vice.&quot;,
-  &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Western Spiral Arm&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;Truffaut pitchfork glutenfree scenester chartreuse green juice normcore vice.&lt;/p&gt;&lt;/section&gt;&quot;,
-  &quot;full_display&quot;: &quot;&lt;table&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Name&lt;/th&gt;\n&lt;td&gt;Western Spiral Arm&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Description&lt;/th&gt;\n&lt;td&gt;Truffaut pitchfork glutenfree scenester chartreuse green juice normcore vice.&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;See Also&lt;/th&gt;\n&lt;td&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=\&quot;http://friesen.biz/dian.cummerata\&quot; target=\&quot;_blank\&quot; rel=\&quot;noopener\&quot;&gt;http://friesen.biz/dian.cummerata&lt;span&gt;(opens in new tab)&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;\n&lt;/tr&gt;\n&lt;/table&gt;&quot;,
+  &quot;label&quot;: &quot;Cathedral of Chalesm&quot;,
+  &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Cathedral of Chalesm&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;Meh vegan food truck kogi migas.&lt;/p&gt;&lt;/section&gt;&quot;,
+  &quot;full_display&quot;: &quot;&lt;table&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Name&lt;/th&gt;\n&lt;td&gt;Cathedral of Chalesm&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Description&lt;/th&gt;\n&lt;td&gt;Meh vegan food truck kogi migas.&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;See Also&lt;/th&gt;\n&lt;td&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=\&quot;http://rogahn-heaney.net/alfonzo\&quot; target=\&quot;_blank\&quot; rel=\&quot;noopener\&quot;&gt;http://rogahn-heaney.net/alfonzo&lt;span&gt;(opens in new tab)&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;\n&lt;/tr&gt;\n&lt;/table&gt;&quot;,
+  &quot;description&quot;: &quot;Meh vegan food truck kogi migas.&quot;,
   &quot;e_type&quot;: &quot;place&quot;,
-  &quot;legacy_pk&quot;: 17107,
+  &quot;legacy_pk&quot;: 21879,
   &quot;alternate_spellings&quot;: [
-    &quot;Ivy Winters&quot;
+    &quot;Vanessa Vanjie Mateo&quot;
   ],
   &quot;links&quot;: [
-    &quot;http://friesen.biz/dian.cummerata&quot;
+    &quot;http://rogahn-heaney.net/alfonzo&quot;
   ]
 }</pre>
       </div>

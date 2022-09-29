@@ -127,7 +127,7 @@ table th, table td {
                     <span class="name">page</span>
                 </td>
                 <td>
-                  <span class="description">Current page of letters</span>
+                  <span class="description">Current page of paginated letters response.</span>
                 </td>
                 <td>
                   <span class="default">1</span>
@@ -193,7 +193,7 @@ table th, table td {
                     <span class="name">recipients</span>
                 </td>
                 <td>
-                  <span class="description">Comma seperated list of recipient labels</span>
+                  <span class="description">Comma seperated list of recipient labels.</span>
                 </td>
                 <td>
                   <span class="default">null</span>
@@ -215,7 +215,7 @@ table th, table td {
                     <span class="name">origins</span>
                 </td>
                 <td>
-                  <span class="description">Comma seperated list of origin labels</span>
+                  <span class="description">Comma seperated list of origin labels.</span>
                 </td>
                 <td>
                   <span class="default">null</span>
@@ -226,7 +226,7 @@ table th, table td {
                     <span class="name">senders</span>
                 </td>
                 <td>
-                  <span class="description">Comma seperated list of sender labels</span>
+                  <span class="description">Comma seperated list of sender labels.</span>
                 </td>
                 <td>
                   <span class="default">null</span>
@@ -237,7 +237,7 @@ table th, table td {
                     <span class="name">repositories</span>
                 </td>
                 <td>
-                  <span class="description">Comma seperated list of repository labels</span>
+                  <span class="description">Comma seperated list of repository labels.</span>
                 </td>
                 <td>
                   <span class="default">null</span>
@@ -248,7 +248,18 @@ table th, table td {
                     <span class="name">languages</span>
                 </td>
                 <td>
-                  <span class="description">Comma seperated list of languages. Options are English, French, German, or Italian</span>
+                  <span class="description">Case insensitive comma seperated list of languages. Options are English, French, German, and Italian.</span>
+                </td>
+                <td>
+                  <span class="default">null</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">volumes</span>
+                </td>
+                <td>
+                  <span class="description">Comma sperated list of volumes. Options are 0, 1, 2, 3, and 4. Zero means no volume.</span>
                 </td>
                 <td>
                   <span class="default">null</span>
@@ -268,10 +279,10 @@ Host: example.org
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET /letters?end_date=1959-10-19</pre>
+          <pre class="request route highlight">GET /letters?end_date=1956-07-23</pre>
 
             <h4>Query Parameters</h4>
-            <pre class="request query_parameters highlight">end_date: 1959-10-19</pre>
+            <pre class="request query_parameters highlight">end_date: 1956-07-23</pre>
 
 
 
@@ -283,553 +294,468 @@ X-Content-Type-Options: nosniff
 X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
-Link: &lt;http://example.org/letters?end_date=1959-10-19&amp;page=1&gt;; rel=&#39;self&#39;
-X-Total-Count: 7
+Link: &lt;http://example.org/letters?end_date=1956-07-23&amp;page=1&gt;; rel=&#39;self&#39;
+X-Total-Count: 6
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;fc5c19318a61167858167e56cb986bbe&quot;
+ETag: W/&quot;d2a35b2c0439c1c221fee2e8e976538e&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 6ca223b0-d13b-44dc-8bda-0735482c01ec
-X-Runtime: 2.561560
+X-Request-Id: 12855375-64bc-410f-9d1a-6b9c77e71786
+X-Runtime: 2.792151
 Vary: Origin
-Content-Length: 8010</pre>
+Content-Length: 24206</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
   &quot;letters&quot;: [
     {
-      &quot;id&quot;: &quot;http://example.org/letters/7c1406e7-a3b2-4f9a-9033-eb3328cc0104&quot;,
-      &quot;date&quot;: &quot;1957-06-21T00:00:00.000-04:00&quot;,
-      &quot;label&quot;: &quot;21 June 1957 - Stoltenberg, Carlo&quot;,
+      &quot;id&quot;: &quot;http://example.org/letters/8568bee9-e4ad-45db-86da-40f2de0204b0&quot;,
+      &quot;date&quot;: &quot;1950-04-29T00:00:00.000-05:00&quot;,
+      &quot;label&quot;: &quot;29 April 1950 - Rogahn, Charley&quot;,
+      &quot;language&quot;: &quot;italian&quot;,
+      &quot;volume&quot;: 1,
       &quot;recipients&quot;: [
-        &quot;Stoltenberg, Carlo&quot;
+        &quot;Rogahn, Charley&quot;
       ],
       &quot;destinations&quot;: [
-        &quot;Han Dold City&quot;
+        &quot;&lt;i&gt;Fenchurch Street railway station&lt;/i&gt;&quot;
       ],
       &quot;origins&quot;: null,
       &quot;mentions&quot;: {
-        &quot;music&quot;: [
+        &quot;people&quot;: [
           {
-            &quot;type&quot;: &quot;music&quot;,
-            &quot;id&quot;: &quot;http://example.org/entities/b2f337cd-4174-4178-8b7e-52d1f04a2d27&quot;,
-            &quot;display&quot;: [
-
-            ]
+            &quot;type&quot;: &quot;person&quot;,
+            &quot;id&quot;: &quot;http://example.org/entities/f8ccbdbb-964c-4c2c-aa1f-2fc3e2ce225d&quot;,
+            &quot;display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Raymond Cole, 1902-1986&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;You &lt;i&gt;think you&#39;ve got problems? What are you supposed to do if you are a manically depressed robot? No, don&#39;t try to answer that. I&#39;m fifty thousand times more intelligent than you and even I don&#39;t know the answer. It gives me a headache just trying to think down to your&lt;/i&gt; level.&lt;/p&gt;&lt;/section&gt;&quot;
           }
         ],
-        &quot;productions&quot;: [
+        &quot;places&quot;: [
           {
-            &quot;type&quot;: &quot;production&quot;,
-            &quot;id&quot;: &quot;http://example.org/entities/6cdd2e20-b8b4-4882-bfaf-5e2be0e00679&quot;,
-            &quot;display&quot;: [
-
-            ]
+            &quot;type&quot;: &quot;place&quot;,
+            &quot;id&quot;: &quot;http://example.org/entities/022f6536-8eb6-456d-bde5-ff9335a96aa9&quot;,
+            &quot;display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Belgium&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;Hashtag occupy synth keytar sriracha food truck butcher.&lt;/p&gt;&lt;/section&gt;&quot;
+          }
+        ],
+        &quot;public_events&quot;: [
+          {
+            &quot;type&quot;: &quot;public_event&quot;,
+            &quot;id&quot;: &quot;http://example.org/entities/2cb490a9-cafd-48f0-9c7c-b0acbd03b619&quot;,
+            &quot;display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Endeavour&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;1965-08-21.&lt;/strong&gt;&lt;/p&gt;&lt;/section&gt;&quot;
           },
           {
-            &quot;type&quot;: &quot;production&quot;,
-            &quot;id&quot;: &quot;http://example.org/entities/6c4d1208-def4-47ba-b36a-7250c88368f2&quot;,
-            &quot;display&quot;: [
-
-            ]
+            &quot;type&quot;: &quot;public_event&quot;,
+            &quot;id&quot;: &quot;http://example.org/entities/3b4546d5-2057-4370-b37c-c351c246f907&quot;,
+            &quot;display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Atlantis&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;1944-02-04.&lt;/strong&gt;&lt;/p&gt;&lt;/section&gt;&quot;
+          },
+          {
+            &quot;type&quot;: &quot;public_event&quot;,
+            &quot;id&quot;: &quot;http://example.org/entities/332adb59-a706-46ad-8ec9-d66af1b8e881&quot;,
+            &quot;display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;&lt;i&gt;Challenger&lt;/i&gt;&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;1939-04-17.&lt;/strong&gt;&lt;/p&gt;&lt;/section&gt;&quot;
           }
         ],
         &quot;publications&quot;: [
           {
             &quot;type&quot;: &quot;publication&quot;,
-            &quot;id&quot;: &quot;http://example.org/entities/9c8d0a43-1cfc-4aae-8253-eda69796a329&quot;,
-            &quot;display&quot;: [
-
-            ]
+            &quot;id&quot;: &quot;http://example.org/entities/aaef7a1c-f61b-462e-9d39-13322c27bed9&quot;,
+            &quot;display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Author&lt;/strong&gt; Jackie Treehorn&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Title&lt;/strong&gt; Berkley Books&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Translator&lt;/strong&gt; Hillman Hunter&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Publication&lt;/strong&gt; Cronut try-hard brunch yuccie venmo pabst tacos fashion axe.&lt;/p&gt;&lt;/section&gt;&quot;
           },
           {
             &quot;type&quot;: &quot;publication&quot;,
-            &quot;id&quot;: &quot;http://example.org/entities/f3106b80-fd25-4765-bdcb-869eb14007c5&quot;,
-            &quot;display&quot;: [
-
-            ]
-          }
-        ],
-        &quot;translatings&quot;: [
-          {
-            &quot;type&quot;: &quot;translating&quot;,
-            &quot;id&quot;: &quot;http://example.org/entities/99e36ee2-94ec-42d2-a992-c6c03d73600c&quot;,
-            &quot;display&quot;: [
-
-            ]
+            &quot;id&quot;: &quot;http://example.org/entities/e10d1a3d-a20c-40c1-ba38-48b154dac06c&quot;,
+            &quot;display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Author&lt;/strong&gt; Karl Hungus&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Title&lt;/strong&gt; University of Alaska Press&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Translator&lt;/strong&gt; Eddie the Computer&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Publication&lt;/strong&gt; Fixie typewriter farm-to-table forage before they sold out scenester.&lt;/p&gt;&lt;/section&gt;&quot;
           }
         ]
       }
     },
     {
-      &quot;id&quot;: &quot;http://example.org/letters/c6448cf9-fd40-43be-b905-94b5f652786a&quot;,
-      &quot;date&quot;: &quot;1958-11-13T00:00:00.000-05:00&quot;,
-      &quot;label&quot;: &quot;13 November 1958 - Purdy, Merlin&quot;,
+      &quot;id&quot;: &quot;http://example.org/letters/0f408d4b-0ace-4619-bd62-59b2e65e7ced&quot;,
+      &quot;date&quot;: &quot;1952-03-31T00:00:00.000-05:00&quot;,
+      &quot;label&quot;: &quot;31 March 1952 - Jacobs, Meg&quot;,
+      &quot;language&quot;: &quot;german&quot;,
+      &quot;volume&quot;: 4,
       &quot;recipients&quot;: [
-        &quot;Purdy, Merlin&quot;
+        &quot;Jacobs, Meg&quot;
       ],
       &quot;destinations&quot;: [
         &quot;Stavro Mueller Beta&quot;
       ],
       &quot;origins&quot;: null,
       &quot;mentions&quot;: {
-        &quot;music&quot;: [
-          {
-            &quot;type&quot;: &quot;music&quot;,
-            &quot;id&quot;: &quot;http://example.org/entities/1b4a6078-0e6a-4390-91bc-9f2c10cc967f&quot;,
-            &quot;display&quot;: [
-
-            ]
-          }
-        ],
-        &quot;people&quot;: [
-          {
-            &quot;type&quot;: &quot;person&quot;,
-            &quot;id&quot;: &quot;http://example.org/entities/5eec6441-098f-4c3a-8002-d08ddd934725&quot;,
-            &quot;display&quot;: [
-
-            ]
-          },
-          {
-            &quot;type&quot;: &quot;person&quot;,
-            &quot;id&quot;: &quot;http://example.org/entities/b5234448-7095-4836-bbe8-7a5848aa03b1&quot;,
-            &quot;display&quot;: [
-
-            ]
-          }
-        ],
-        &quot;translatings&quot;: [
-          {
-            &quot;type&quot;: &quot;translating&quot;,
-            &quot;id&quot;: &quot;http://example.org/entities/2a0843bc-5f81-4bf8-9fd9-f00f1917322c&quot;,
-            &quot;display&quot;: [
-
-            ]
-          }
-        ],
-        &quot;writings&quot;: [
-          {
-            &quot;type&quot;: &quot;writing&quot;,
-            &quot;id&quot;: &quot;http://example.org/entities/fa4c1ca9-15e2-464c-a4f3-fadb4d3b6e8c&quot;,
-            &quot;display&quot;: [
-
-            ]
-          }
-        ]
-      }
-    },
-    {
-      &quot;id&quot;: &quot;http://example.org/letters/5f62154a-7f9a-44c1-bea4-1b9d16e36ce5&quot;,
-      &quot;date&quot;: &quot;1959-06-22T00:00:00.000-04:00&quot;,
-      &quot;label&quot;: &quot;22 June 1959 - Monahan, Loren&quot;,
-      &quot;recipients&quot;: [
-        &quot;Monahan, Loren&quot;
-      ],
-      &quot;destinations&quot;: [
-        &quot;&lt;i&gt;Barnard&#39;s Star&lt;/i&gt;&quot;
-      ],
-      &quot;origins&quot;: null,
-      &quot;mentions&quot;: {
-        &quot;productions&quot;: [
-          {
-            &quot;type&quot;: &quot;production&quot;,
-            &quot;id&quot;: &quot;http://example.org/entities/614632c2-865d-4122-b2af-d1bda980c7a9&quot;,
-            &quot;display&quot;: [
-
-            ]
-          }
-        ],
-        &quot;public_events&quot;: [
-          {
-            &quot;type&quot;: &quot;public_event&quot;,
-            &quot;id&quot;: &quot;http://example.org/entities/83d593bb-28aa-45a0-823a-a174a866d7c2&quot;,
-            &quot;display&quot;: [
-
-            ]
-          },
-          {
-            &quot;type&quot;: &quot;public_event&quot;,
-            &quot;id&quot;: &quot;http://example.org/entities/7ac6bfa7-463a-49fa-a711-28e68bc2c4cf&quot;,
-            &quot;display&quot;: [
-
-            ]
-          }
-        ],
-        &quot;translatings&quot;: [
-          {
-            &quot;type&quot;: &quot;translating&quot;,
-            &quot;id&quot;: &quot;http://example.org/entities/c589ebda-b8e8-463a-b95d-cc33c0ab935e&quot;,
-            &quot;display&quot;: [
-
-            ]
-          }
-        ],
-        &quot;writings&quot;: [
-          {
-            &quot;type&quot;: &quot;writing&quot;,
-            &quot;id&quot;: &quot;http://example.org/entities/1295c63a-45e2-4376-a5fb-a0d87034d147&quot;,
-            &quot;display&quot;: [
-
-            ]
-          },
-          {
-            &quot;type&quot;: &quot;writing&quot;,
-            &quot;id&quot;: &quot;http://example.org/entities/c7d670d6-9ab4-4460-8f55-c602bca0c289&quot;,
-            &quot;display&quot;: [
-
-            ]
-          }
-        ]
-      }
-    },
-    {
-      &quot;id&quot;: &quot;http://example.org/letters/6977ada4-3f0c-4868-b351-13c10cee720a&quot;,
-      &quot;date&quot;: &quot;1959-08-23T00:00:00.000-04:00&quot;,
-      &quot;label&quot;: &quot;23 August 1959 - Prohaska, Markus&quot;,
-      &quot;recipients&quot;: [
-        &quot;Prohaska, Markus&quot;
-      ],
-      &quot;destinations&quot;: [
-        &quot;&lt;i&gt;Preliumtarn&lt;/i&gt;&quot;
-      ],
-      &quot;origins&quot;: null,
-      &quot;mentions&quot;: {
         &quot;attendances&quot;: [
           {
             &quot;type&quot;: &quot;attendance&quot;,
-            &quot;id&quot;: &quot;http://example.org/entities/7b500bc7-6c59-4deb-9803-4d51dc9fa15e&quot;,
-            &quot;display&quot;: [
-
-            ]
-          },
-          {
-            &quot;type&quot;: &quot;attendance&quot;,
-            &quot;id&quot;: &quot;http://example.org/entities/2cdb4552-c341-42c7-8eee-872887990dfc&quot;,
-            &quot;display&quot;: [
-
-            ]
+            &quot;id&quot;: &quot;http://example.org/entities/81d8c015-f859-4bf4-b8d2-00082791f754&quot;,
+            &quot;display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Radio Broadcast&lt;/strong&gt;, Blog &lt;i&gt;chambray squid tattooed paleo microdosing&lt;/i&gt; 90s.&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Attended with&lt;/strong&gt; Maude Lebowski and Charles Darwin&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Place, Date&lt;/strong&gt; Torphyfurt, 19 September 1960&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Director&lt;/strong&gt; Effrafax of Wug&lt;/p&gt;&lt;/section&gt;&quot;
           }
         ],
-        &quot;music&quot;: [
+        &quot;organizations&quot;: [
           {
-            &quot;type&quot;: &quot;music&quot;,
-            &quot;id&quot;: &quot;http://example.org/entities/ea109882-d73b-4936-a7db-175339a5a57c&quot;,
-            &quot;display&quot;: [
-
-            ]
-          },
-          {
-            &quot;type&quot;: &quot;music&quot;,
-            &quot;id&quot;: &quot;http://example.org/entities/fde2e0b7-343d-4995-8ceb-4346045e0829&quot;,
-            &quot;display&quot;: [
-
-            ]
+            &quot;type&quot;: &quot;organization&quot;,
+            &quot;id&quot;: &quot;http://example.org/entities/31823cba-5261-4ac5-91c5-91f8e0b45764&quot;,
+            &quot;display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Happi-Werld III&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;I &lt;i&gt;wish you&#39;d just tell me rather trying to engage my enthusiasm, because I haven&#39;t got&lt;/i&gt; one.&lt;/p&gt;&lt;/section&gt;&quot;
           }
         ],
-        &quot;work_of_arts&quot;: [
+        &quot;publications&quot;: [
           {
-            &quot;type&quot;: &quot;work_of_art&quot;,
-            &quot;id&quot;: &quot;http://example.org/entities/52da8f7a-695f-4d9c-9dcd-c7ba9f68e486&quot;,
-            &quot;display&quot;: [
-
-            ]
+            &quot;type&quot;: &quot;publication&quot;,
+            &quot;id&quot;: &quot;http://example.org/entities/aecd56e4-541e-4337-b067-88834a1d0cd1&quot;,
+            &quot;display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Author&lt;/strong&gt; Bunny Lebowski&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Title&lt;/strong&gt; Carcanet Press&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Translator&lt;/strong&gt; Phouchg&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Publication&lt;/strong&gt; Iphone messenger bag kitsch cronut offal deep v.&lt;/p&gt;&lt;/section&gt;&quot;
           },
           {
-            &quot;type&quot;: &quot;work_of_art&quot;,
-            &quot;id&quot;: &quot;http://example.org/entities/263e6d4d-07b9-4be3-a51e-fad4c5beaf9e&quot;,
-            &quot;display&quot;: [
-
-            ]
+            &quot;type&quot;: &quot;publication&quot;,
+            &quot;id&quot;: &quot;http://example.org/entities/1065b041-a9f5-4dfd-b10a-5bee037ec9fb&quot;,
+            &quot;display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Author&lt;/strong&gt; Donny&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Title&lt;/strong&gt; &lt;i&gt;Shoemaker &amp;amp; Hoard Publishers&lt;/i&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Translator&lt;/strong&gt; Hactar&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Publication&lt;/strong&gt; Tumblr wolf ethical organic church-key slow-carb pabst sustainable celiac.&lt;/p&gt;&lt;/section&gt;&quot;
           },
           {
-            &quot;type&quot;: &quot;work_of_art&quot;,
-            &quot;id&quot;: &quot;http://example.org/entities/9e9beed7-8260-4c61-b643-d65ef2353632&quot;,
-            &quot;display&quot;: [
-
-            ]
+            &quot;type&quot;: &quot;publication&quot;,
+            &quot;id&quot;: &quot;http://example.org/entities/70f7aa7c-ae5f-4d65-9c90-fc3f952eea9f&quot;,
+            &quot;display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Author&lt;/strong&gt; The Dude&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Title&lt;/strong&gt; &lt;i&gt;Blackwell Publishing&lt;/i&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Translator&lt;/strong&gt; Prostetnic Vogon Kwaltz&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Publication&lt;/strong&gt; Schlitz lumbersexual chillwave flexitarian ramps cleanse waistcoat pbr&amp;amp;b ugh.&lt;/p&gt;&lt;/section&gt;&quot;
           }
         ],
-        &quot;writings&quot;: [
+        &quot;translatings&quot;: [
           {
-            &quot;type&quot;: &quot;writing&quot;,
-            &quot;id&quot;: &quot;http://example.org/entities/7b77d558-e926-4683-9179-bc99786f30dc&quot;,
-            &quot;display&quot;: [
-
-            ]
+            &quot;type&quot;: &quot;translating&quot;,
+            &quot;id&quot;: &quot;http://example.org/entities/a7c81f7b-ac57-484b-8dba-ef8f631f37cf&quot;,
+            &quot;display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Author&lt;/strong&gt; Elvis, &lt;strong&gt;Original Title&lt;/strong&gt; &lt;i&gt;Jacob Have I Loved&lt;/i&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Translated into&lt;/strong&gt; Swedish by Roosta&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Translated title&lt;/strong&gt; RW6.&lt;/p&gt;&lt;/section&gt;&quot;
           },
           {
-            &quot;type&quot;: &quot;writing&quot;,
-            &quot;id&quot;: &quot;http://example.org/entities/5efe56dc-bd91-4252-a30e-ab983e7a9343&quot;,
-            &quot;display&quot;: [
-
-            ]
+            &quot;type&quot;: &quot;translating&quot;,
+            &quot;id&quot;: &quot;http://example.org/entities/86d13fed-ea58-40e2-a484-1aa7a3b55473&quot;,
+            &quot;display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Author&lt;/strong&gt; JinJenz, &lt;strong&gt;Original Title&lt;/strong&gt; &lt;i&gt;I Know Why the Caged Bird Sings&lt;/i&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Translated into&lt;/strong&gt; German by Trillian&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Translated title&lt;/strong&gt; RW6.&lt;/p&gt;&lt;/section&gt;&quot;
           },
           {
-            &quot;type&quot;: &quot;writing&quot;,
-            &quot;id&quot;: &quot;http://example.org/entities/c330e378-e7d5-4fd8-aaf4-2bcf09f7bbde&quot;,
-            &quot;display&quot;: [
-
-            ]
+            &quot;type&quot;: &quot;translating&quot;,
+            &quot;id&quot;: &quot;http://example.org/entities/5174d4e0-0373-4116-810b-ec6c45eadd47&quot;,
+            &quot;display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Author&lt;/strong&gt; Elvis, &lt;strong&gt;Original Title&lt;/strong&gt; &lt;i&gt;The Line of Beauty&lt;/i&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Translated into&lt;/strong&gt; Norwegian by Dan Streetmentioner&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Translated title&lt;/strong&gt; Golgafrinchan Ark Fleet Ship B.&lt;/p&gt;&lt;/section&gt;&quot;
           }
         ]
       }
     },
     {
-      &quot;id&quot;: &quot;http://example.org/letters/00450f5b-4c5c-41db-a073-51ee542e221c&quot;,
-      &quot;date&quot;: &quot;1959-08-30T00:00:00.000-04:00&quot;,
-      &quot;label&quot;: &quot;30 August 1959 - Reilly, Kraig&quot;,
+      &quot;id&quot;: &quot;http://example.org/letters/4d106040-17f8-4fa8-ac28-45d9399eabf6&quot;,
+      &quot;date&quot;: &quot;1952-10-21T00:00:00.000-05:00&quot;,
+      &quot;label&quot;: &quot;21 October 1952 - Cassin, Louis&quot;,
+      &quot;language&quot;: &quot;french&quot;,
+      &quot;volume&quot;: 2,
       &quot;recipients&quot;: [
-        &quot;Reilly, Kraig&quot;
+        &quot;Cassin, Louis&quot;
       ],
       &quot;destinations&quot;: [
-        &quot;&lt;i&gt;Sector XXXZ5QZX&lt;/i&gt;&quot;
+        &quot;Pleiades system&quot;
       ],
       &quot;origins&quot;: null,
       &quot;mentions&quot;: {
         &quot;music&quot;: [
           {
             &quot;type&quot;: &quot;music&quot;,
-            &quot;id&quot;: &quot;http://example.org/entities/27b3554e-cb39-4f1c-8be1-99d3421a7d41&quot;,
-            &quot;display&quot;: [
-
-            ]
+            &quot;id&quot;: &quot;http://example.org/entities/c3d75073-622b-4f5b-a1d7-e9053646886a&quot;,
+            &quot;display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Composer&lt;/strong&gt; Arthur Dent&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Title&lt;/strong&gt; &lt;i&gt;When You Were Mine&lt;/i&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt; Carry vice master street letterpress helvetica flannel portland.&lt;/p&gt;&lt;/section&gt;&quot;
           }
         ],
         &quot;people&quot;: [
           {
             &quot;type&quot;: &quot;person&quot;,
-            &quot;id&quot;: &quot;http://example.org/entities/6cbfa2ce-e43b-46bc-8875-3b64e62be7e1&quot;,
-            &quot;display&quot;: [
-
-            ]
+            &quot;id&quot;: &quot;http://example.org/entities/16cf37cb-027f-44eb-98ab-985adb72c7ae&quot;,
+            &quot;display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Ezekiel Kulas, 1920-1984&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;You think you&#39;ve got problems? What are you supposed to do if you are a manically depressed robot? No, don&#39;t try to answer that. I&#39;m fifty thousand times more intelligent than you and even I don&#39;t know the answer. It gives me a headache just trying to think down to your level.&lt;/p&gt;&lt;/section&gt;&quot;
           }
         ],
         &quot;places&quot;: [
           {
             &quot;type&quot;: &quot;place&quot;,
-            &quot;id&quot;: &quot;http://example.org/entities/a43556f1-a67d-459c-a529-9a667811bf86&quot;,
-            &quot;display&quot;: [
-
-            ]
-          },
-          {
-            &quot;type&quot;: &quot;place&quot;,
-            &quot;id&quot;: &quot;http://example.org/entities/2a0722fc-baa5-40cc-9884-f145ef0b0787&quot;,
-            &quot;display&quot;: [
-
-            ]
+            &quot;id&quot;: &quot;http://example.org/entities/279618ed-48d4-4781-9583-41abe026713a&quot;,
+            &quot;display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Guildford&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;Tofu &lt;i&gt;selvage sriracha neutra keffiyeh beard tousled&lt;/i&gt; locavore.&lt;/p&gt;&lt;/section&gt;&quot;
           }
         ],
-        &quot;productions&quot;: [
+        &quot;translatings&quot;: [
           {
-            &quot;type&quot;: &quot;production&quot;,
-            &quot;id&quot;: &quot;http://example.org/entities/116aac93-e505-4f9a-aa4c-9ec256a20fa2&quot;,
-            &quot;display&quot;: [
-
-            ]
+            &quot;type&quot;: &quot;translating&quot;,
+            &quot;id&quot;: &quot;http://example.org/entities/69bf8597-c18a-4ba1-ae55-b2d76468d7ea&quot;,
+            &quot;display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Author&lt;/strong&gt; Fenchurch, &lt;strong&gt;Original Title&lt;/strong&gt; &lt;i&gt;To Sail Beyond the Sunset&lt;/i&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Translated into&lt;/strong&gt; Gaelic by Slartibartfast&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Translated title&lt;/strong&gt; Vogon Constructor Fleet.&lt;/p&gt;&lt;/section&gt;&quot;
+          },
+          {
+            &quot;type&quot;: &quot;translating&quot;,
+            &quot;id&quot;: &quot;http://example.org/entities/747e98b8-3bf0-4bda-8e90-d42adc7521ad&quot;,
+            &quot;display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Author&lt;/strong&gt; Effrafax of Wug, &lt;strong&gt;Original Title&lt;/strong&gt; &lt;i&gt;Many Waters&lt;/i&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Translated into&lt;/strong&gt; Russian by Effrafax of Wug&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Translated title&lt;/strong&gt; Heart of Gold.&lt;/p&gt;&lt;/section&gt;&quot;
           }
         ]
       }
     },
     {
-      &quot;id&quot;: &quot;http://example.org/letters/44940e69-adff-4c0c-9ab8-f436310b134a&quot;,
-      &quot;date&quot;: &quot;1959-09-03T00:00:00.000-04:00&quot;,
-      &quot;label&quot;: &quot;03 September 1959 - Bashirian, Eduardo&quot;,
+      &quot;id&quot;: &quot;http://example.org/letters/062a34bd-dcbc-4f6f-89d9-d0a15754c35b&quot;,
+      &quot;date&quot;: &quot;1955-12-14T00:00:00.000-05:00&quot;,
+      &quot;label&quot;: &quot;14 December 1955 - Hauck, Darrick&quot;,
+      &quot;language&quot;: &quot;french&quot;,
+      &quot;volume&quot;: 1,
       &quot;recipients&quot;: [
-        &quot;Bashirian, Eduardo&quot;
+        &quot;Hauck, Darrick&quot;
       ],
       &quot;destinations&quot;: [
-        &quot;Arthur Dent&#39;s house&quot;
+        &quot;Frogstar system&quot;
       ],
       &quot;origins&quot;: null,
       &quot;mentions&quot;: {
         &quot;organizations&quot;: [
           {
             &quot;type&quot;: &quot;organization&quot;,
-            &quot;id&quot;: &quot;http://example.org/entities/78951083-ddea-4afa-ab3b-fe32df58b880&quot;,
-            &quot;display&quot;: [
-
-            ]
-          },
-          {
-            &quot;type&quot;: &quot;organization&quot;,
-            &quot;id&quot;: &quot;http://example.org/entities/aba3f0eb-bc76-4d12-9f53-a9a4fda789d2&quot;,
-            &quot;display&quot;: [
-
-            ]
+            &quot;id&quot;: &quot;http://example.org/entities/d7845c69-ecfe-4b19-bb50-1221a73e9d0f&quot;,
+            &quot;display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;&lt;i&gt;Krikkit&lt;/i&gt;&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;I won&#39;t enjoy it.&lt;/p&gt;&lt;/section&gt;&quot;
           }
         ],
         &quot;productions&quot;: [
           {
             &quot;type&quot;: &quot;production&quot;,
-            &quot;id&quot;: &quot;http://example.org/entities/466f9f0b-d7e1-4c15-98ea-33f60bb3cce3&quot;,
-            &quot;display&quot;: [
-
-            ]
+            &quot;id&quot;: &quot;http://example.org/entities/7a68a826-d6dc-44fa-867f-e392e208cc0f&quot;,
+            &quot;display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Title&lt;/strong&gt; Beauty and the Beast&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Proposal/Response&lt;/strong&gt; I think you ought to know I&#39;m feeling very depressed. / He was staring at the instruments with the air of one who is trying to convert Fahrenheit to centigrade in his head while his house is burning down.&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Director&lt;/strong&gt; Jackie Treehorn &lt;strong&gt;Theatre, City&lt;/strong&gt; Tanngrisnir, Port Elmer&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Date(s)&lt;/strong&gt; 1966-12-07.&lt;/p&gt;&lt;/section&gt;&quot;
           }
         ],
-        &quot;readings&quot;: [
+        &quot;public_events&quot;: [
           {
-            &quot;type&quot;: &quot;reading&quot;,
-            &quot;id&quot;: &quot;http://example.org/entities/c6b0dbd8-f764-4a58-8828-8f3dc461febc&quot;,
-            &quot;display&quot;: [
-
-            ]
+            &quot;type&quot;: &quot;public_event&quot;,
+            &quot;id&quot;: &quot;http://example.org/entities/8a2d2bdc-a7f2-442a-8143-4bb51585b3fa&quot;,
+            &quot;display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;&lt;i&gt;Apollo&lt;/i&gt;&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;1926-03-06.&lt;/strong&gt;&lt;/p&gt;&lt;/section&gt;&quot;
           }
         ],
-        &quot;work_of_arts&quot;: [
+        &quot;translatings&quot;: [
           {
-            &quot;type&quot;: &quot;work_of_art&quot;,
-            &quot;id&quot;: &quot;http://example.org/entities/a613c37d-6009-4c9d-bb0c-444ce88e9b9e&quot;,
-            &quot;display&quot;: [
-
-            ]
+            &quot;type&quot;: &quot;translating&quot;,
+            &quot;id&quot;: &quot;http://example.org/entities/aadb0cbc-12f4-4849-be83-f8b1664fd1e1&quot;,
+            &quot;display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Author&lt;/strong&gt; Eccentrica Gallumbits, &lt;strong&gt;Original Title&lt;/strong&gt; &lt;i&gt;Blithe Spirit&lt;/i&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Translated into&lt;/strong&gt; Rumanian by Ford Prefect&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Translated title&lt;/strong&gt; Golgafrinchan Ark Fleet Ship B.&lt;/p&gt;&lt;/section&gt;&quot;
           },
           {
-            &quot;type&quot;: &quot;work_of_art&quot;,
-            &quot;id&quot;: &quot;http://example.org/entities/4c71ae84-71c2-42b8-b3e1-97844b4ae919&quot;,
-            &quot;display&quot;: [
-
-            ]
+            &quot;type&quot;: &quot;translating&quot;,
+            &quot;id&quot;: &quot;http://example.org/entities/5bf143c3-3901-4a27-94d3-ed4c33900b8e&quot;,
+            &quot;display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Author&lt;/strong&gt; JinJenz, &lt;strong&gt;Original Title&lt;/strong&gt; &lt;i&gt;The Little Foxes&lt;/i&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Translated into&lt;/strong&gt; Norwegian by Marvin&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Translated title&lt;/strong&gt; Golgafrinchan Ark Fleet Ship B.&lt;/p&gt;&lt;/section&gt;&quot;
           }
         ]
       }
     },
     {
-      &quot;id&quot;: &quot;http://example.org/letters/dcf5b264-3a83-42b6-bbf2-c786ac8f6ce0&quot;,
-      &quot;date&quot;: &quot;1959-10-19T00:00:00.000-04:00&quot;,
-      &quot;label&quot;: &quot;19 October 1959 - Oberbrunner, Johana&quot;,
+      &quot;id&quot;: &quot;http://example.org/letters/17419489-3edb-45c0-9aea-0c3beb45df60&quot;,
+      &quot;date&quot;: &quot;1956-05-24T00:00:00.000-04:00&quot;,
+      &quot;label&quot;: &quot;24 May 1956 - Buckridge, Christoper&quot;,
+      &quot;language&quot;: &quot;english&quot;,
+      &quot;volume&quot;: 3,
       &quot;recipients&quot;: [
-        &quot;Oberbrunner, Johana&quot;
+        &quot;Buckridge, Christoper&quot;
       ],
       &quot;destinations&quot;: [
-        &quot;Highgate Cemetery&quot;
+        &quot;Croydon&quot;
+      ],
+      &quot;origins&quot;: null,
+      &quot;mentions&quot;: {
+        &quot;organizations&quot;: [
+          {
+            &quot;type&quot;: &quot;organization&quot;,
+            &quot;id&quot;: &quot;http://example.org/entities/ea54df6c-86c9-4bc1-817e-2ec4f6db4ab7&quot;,
+            &quot;display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Damogran&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;You &lt;i&gt;think you&#39;ve got problems? What are you supposed to do if you are a manically depressed robot? No, don&#39;t try to answer that. I&#39;m fifty thousand times more intelligent than you and even I don&#39;t know the answer. It gives me a headache just trying to think down to your&lt;/i&gt; level.&lt;/p&gt;&lt;/section&gt;&quot;
+          }
+        ],
+        &quot;places&quot;: [
+          {
+            &quot;type&quot;: &quot;place&quot;,
+            &quot;id&quot;: &quot;http://example.org/entities/9511eaad-12dc-4e98-b3df-ff7a5b603039&quot;,
+            &quot;display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;France&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;Wayfarers microdosing selvage shabby chic.&lt;/p&gt;&lt;/section&gt;&quot;
+          }
+        ],
+        &quot;publications&quot;: [
+          {
+            &quot;type&quot;: &quot;publication&quot;,
+            &quot;id&quot;: &quot;http://example.org/entities/6d2783e6-a6cf-47af-ad28-57393319d7e5&quot;,
+            &quot;display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Author&lt;/strong&gt; Jesus Quintana&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Title&lt;/strong&gt; &lt;i&gt;Marshall Cavendish&lt;/i&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Translator&lt;/strong&gt; Hotblack Desiato&#39;s bodyguard&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Publication&lt;/strong&gt; Sustainable craft beer chartreuse actually locavore drinking offal ennui.&lt;/p&gt;&lt;/section&gt;&quot;
+          },
+          {
+            &quot;type&quot;: &quot;publication&quot;,
+            &quot;id&quot;: &quot;http://example.org/entities/77dafae4-bd97-41a3-9832-51cd40c0c126&quot;,
+            &quot;display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Author&lt;/strong&gt; Maude Lebowski&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Title&lt;/strong&gt; &lt;i&gt;Harcourt Trade Publishers&lt;/i&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Translator&lt;/strong&gt; Prostetnic Vogon Kwaltz&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Publication&lt;/strong&gt; Celiac actually wayfarers tote bag.&lt;/p&gt;&lt;/section&gt;&quot;
+          }
+        ],
+        &quot;writings&quot;: [
+          {
+            &quot;type&quot;: &quot;writing&quot;,
+            &quot;id&quot;: &quot;http://example.org/entities/df696cda-f9d4-4ef3-b9f7-669602e5e481&quot;,
+            &quot;display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Title&lt;/strong&gt; &lt;i&gt;Paths of Glory&lt;/i&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Proposal/Response&lt;/strong&gt; According to the legends, the Magratheans lived most of their lives underground.&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Translator&lt;/strong&gt; Eddie the Computer&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Date&lt;/strong&gt; 1964-12-04.&lt;/p&gt;&lt;/section&gt;&quot;
+          }
+        ]
+      }
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/letters/65e115ee-d343-4de6-b2d7-df4d4f3e23dc&quot;,
+      &quot;date&quot;: &quot;1956-07-23T00:00:00.000-04:00&quot;,
+      &quot;label&quot;: &quot;23 July 1956 - Rolfson, Edison&quot;,
+      &quot;language&quot;: &quot;german&quot;,
+      &quot;volume&quot;: 3,
+      &quot;recipients&quot;: [
+        &quot;Rolfson, Edison&quot;
+      ],
+      &quot;destinations&quot;: [
+        &quot;Ysllodins&quot;
       ],
       &quot;origins&quot;: null,
       &quot;mentions&quot;: {
         &quot;attendances&quot;: [
           {
             &quot;type&quot;: &quot;attendance&quot;,
-            &quot;id&quot;: &quot;http://example.org/entities/48c55d88-03ef-433b-8c2e-0323afb49266&quot;,
-            &quot;display&quot;: [
-
-            ]
+            &quot;id&quot;: &quot;http://example.org/entities/8b6d898a-75d6-49c1-b1c4-538c5595dc0e&quot;,
+            &quot;display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Theatre&lt;/strong&gt;, Carry &lt;i&gt;quinoa art party pbrb&lt;/i&gt; portland.&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Attended with&lt;/strong&gt; Maude Lebowski and Tricia McMillan&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Place, Date&lt;/strong&gt; West Elvisside, 04 May 1962&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Director&lt;/strong&gt; Deep Thought&lt;/p&gt;&lt;/section&gt;&quot;
+          },
+          {
+            &quot;type&quot;: &quot;attendance&quot;,
+            &quot;id&quot;: &quot;http://example.org/entities/a373d921-c61c-44b7-af0e-3cea51d61228&quot;,
+            &quot;display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Rehearsal&lt;/strong&gt;, Cornhole &lt;i&gt;tumblr vice trust fund crucifix&lt;/i&gt; synth.&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Attended with&lt;/strong&gt; Karl Hungus and Deep Thought&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Place, Date&lt;/strong&gt; Grimesfurt, 06 September 1951&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Director&lt;/strong&gt; Phouchg&lt;/p&gt;&lt;/section&gt;&quot;
+          },
+          {
+            &quot;type&quot;: &quot;attendance&quot;,
+            &quot;id&quot;: &quot;http://example.org/entities/feb0551f-de67-48d8-8a9f-0ffd09d2ba6d&quot;,
+            &quot;display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Radio Broadcast&lt;/strong&gt;, Vinegar &lt;i&gt;aesthetic muggle magic you probably havent heard of them everyday organic&lt;/i&gt; biodiesel.&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Attended with&lt;/strong&gt; The Big Lebowski and The Allitnils&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Place, Date&lt;/strong&gt; North Mattie, 06 February 1940&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Director&lt;/strong&gt; Wonko the Sane&lt;/p&gt;&lt;/section&gt;&quot;
           }
         ],
-        &quot;music&quot;: [
+        &quot;translatings&quot;: [
           {
-            &quot;type&quot;: &quot;music&quot;,
-            &quot;id&quot;: &quot;http://example.org/entities/df51563f-c0d9-44b8-a6cf-02c572fa427b&quot;,
-            &quot;display&quot;: [
-
-            ]
-          },
-          {
-            &quot;type&quot;: &quot;music&quot;,
-            &quot;id&quot;: &quot;http://example.org/entities/914e15bf-c025-4239-a881-4cf4c60cd94a&quot;,
-            &quot;display&quot;: [
-
-            ]
-          },
-          {
-            &quot;type&quot;: &quot;music&quot;,
-            &quot;id&quot;: &quot;http://example.org/entities/43d2fe8d-b7a6-4fb8-91f2-eb7e3333d4c7&quot;,
-            &quot;display&quot;: [
-
-            ]
+            &quot;type&quot;: &quot;translating&quot;,
+            &quot;id&quot;: &quot;http://example.org/entities/2b44eb84-c58a-4aa8-8ebf-f79b33320786&quot;,
+            &quot;display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Author&lt;/strong&gt; Zarniwoop, &lt;strong&gt;Original Title&lt;/strong&gt; East of Eden&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Translated into&lt;/strong&gt; Dutch by Zarniwoop&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Translated title&lt;/strong&gt; Heart of Gold.&lt;/p&gt;&lt;/section&gt;&quot;
           }
         ],
-        &quot;people&quot;: [
+        &quot;work_of_arts&quot;: [
           {
-            &quot;type&quot;: &quot;person&quot;,
-            &quot;id&quot;: &quot;http://example.org/entities/bf5e5790-633c-4bff-99a6-9cc41bac1ea4&quot;,
-            &quot;display&quot;: [
-
-            ]
+            &quot;type&quot;: &quot;work_of_art&quot;,
+            &quot;id&quot;: &quot;http://example.org/entities/5fcdc0f0-c011-4be1-9048-837d3fb0de5a&quot;,
+            &quot;display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Artist&lt;/strong&gt; Loonquawl and Phouchg&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Title&lt;/strong&gt; &lt;i&gt;U Got The Look&lt;/i&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt; Pitchfork butcher ugh marfa meditation cardigan chartreuse.&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Owner/location&lt;/strong&gt; Starship Titanic&lt;/p&gt;&lt;/section&gt;&quot;
+          },
+          {
+            &quot;type&quot;: &quot;work_of_art&quot;,
+            &quot;id&quot;: &quot;http://example.org/entities/a538a804-ab24-4181-936c-7b3499d49ee5&quot;,
+            &quot;display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Artist&lt;/strong&gt; Rob McKenna&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Title&lt;/strong&gt; Let&#39;s Work&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt; Green &lt;i&gt;juice whatever vinyl dreamcatcher&lt;/i&gt; cray.&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Owner/location&lt;/strong&gt; Golgafrinchan Ark Fleet Ship B&lt;/p&gt;&lt;/section&gt;&quot;
+          },
+          {
+            &quot;type&quot;: &quot;work_of_art&quot;,
+            &quot;id&quot;: &quot;http://example.org/entities/99953240-4b88-4d5b-b215-a6a39972a955&quot;,
+            &quot;display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Artist&lt;/strong&gt; Humma Kavula&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Title&lt;/strong&gt; &lt;i&gt;Little Red Corvette&lt;/i&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt; Brunch &lt;i&gt;vinegar scenester keytar disrupt asymmetrical&lt;/i&gt; migas.&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Owner/location&lt;/strong&gt; Bistromath&lt;/p&gt;&lt;/section&gt;&quot;
           }
         ],
-        &quot;readings&quot;: [
+        &quot;writings&quot;: [
           {
-            &quot;type&quot;: &quot;reading&quot;,
-            &quot;id&quot;: &quot;http://example.org/entities/c5b7eb8f-1e8b-4364-b450-ed981d789815&quot;,
-            &quot;display&quot;: [
-
-            ]
+            &quot;type&quot;: &quot;writing&quot;,
+            &quot;id&quot;: &quot;http://example.org/entities/2a79f6c3-d74e-4f4b-afd4-e7993af59280&quot;,
+            &quot;display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Title&lt;/strong&gt; &lt;i&gt;Frequent Hearses&lt;/i&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Proposal/Response&lt;/strong&gt; It seemed to me that any civilization that had so far lost its head as to need to include a set of detailed instructions for use in a packet of toothpicks, was no longer a civilization in which I could live and stay sane.&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Translator&lt;/strong&gt; Hillman Hunter&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Date&lt;/strong&gt; 1953-03-01.&lt;/p&gt;&lt;/section&gt;&quot;
           },
           {
-            &quot;type&quot;: &quot;reading&quot;,
-            &quot;id&quot;: &quot;http://example.org/entities/a21e27fb-4649-4813-a5bd-fe48e2561477&quot;,
-            &quot;display&quot;: [
-
-            ]
+            &quot;type&quot;: &quot;writing&quot;,
+            &quot;id&quot;: &quot;http://example.org/entities/ec8ef25d-bc1f-49d2-b31f-275e3c14ae57&quot;,
+            &quot;display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Title&lt;/strong&gt; After Many a Summer Dies the Swan&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Proposal/Response&lt;/strong&gt; Whatever your tastes, Magrathea can cater for you. We are not proud.&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Translator&lt;/strong&gt; Agrajag&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Date&lt;/strong&gt; 1963-06-20.&lt;/p&gt;&lt;/section&gt;&quot;
           },
           {
-            &quot;type&quot;: &quot;reading&quot;,
-            &quot;id&quot;: &quot;http://example.org/entities/58514783-103b-4372-b475-1e9481cdb7a4&quot;,
-            &quot;display&quot;: [
-
-            ]
+            &quot;type&quot;: &quot;writing&quot;,
+            &quot;id&quot;: &quot;http://example.org/entities/5e84b6af-265b-43f5-a40d-9b6dee8b0626&quot;,
+            &quot;display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Title&lt;/strong&gt; A Time to Kill&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Proposal/Response&lt;/strong&gt; Curiously enough, the only thing that went through the mind of the bowl of petunias as it fell was Oh no, not again.&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Translator&lt;/strong&gt; Arthur Dent&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Date&lt;/strong&gt; 1923-03-22.&lt;/p&gt;&lt;/section&gt;&quot;
           }
         ]
       }
     }
   ],
   &quot;aggs&quot;: {
-    &quot;date&quot;: {
-      &quot;doc_count&quot;: 7,
+    &quot;volume&quot;: {
+      &quot;doc_count&quot;: 6,
+      &quot;doc_count_error_upper_bound&quot;: 0,
+      &quot;sum_other_doc_count&quot;: 0,
       &quot;buckets&quot;: [
         {
-          &quot;key_as_string&quot;: &quot;1957-01-01T00:00:00.000Z&quot;,
-          &quot;key&quot;: -410227200000,
+          &quot;key&quot;: 1,
+          &quot;doc_count&quot;: 2
+        },
+        {
+          &quot;key&quot;: 3,
+          &quot;doc_count&quot;: 2
+        },
+        {
+          &quot;key&quot;: 2,
           &quot;doc_count&quot;: 1
         },
         {
-          &quot;key_as_string&quot;: &quot;1958-01-01T00:00:00.000Z&quot;,
-          &quot;key&quot;: -378691200000,
+          &quot;key&quot;: 4,
+          &quot;doc_count&quot;: 1
+        }
+      ]
+    },
+    &quot;date&quot;: {
+      &quot;doc_count&quot;: 6,
+      &quot;buckets&quot;: [
+        {
+          &quot;key_as_string&quot;: &quot;1950-01-01T00:00:00.000Z&quot;,
+          &quot;key&quot;: -631152000000,
           &quot;doc_count&quot;: 1
         },
         {
-          &quot;key_as_string&quot;: &quot;1959-01-01T00:00:00.000Z&quot;,
-          &quot;key&quot;: -347155200000,
-          &quot;doc_count&quot;: 5
+          &quot;key_as_string&quot;: &quot;1951-01-01T00:00:00.000Z&quot;,
+          &quot;key&quot;: -599616000000,
+          &quot;doc_count&quot;: 0
+        },
+        {
+          &quot;key_as_string&quot;: &quot;1952-01-01T00:00:00.000Z&quot;,
+          &quot;key&quot;: -568080000000,
+          &quot;doc_count&quot;: 2
+        },
+        {
+          &quot;key_as_string&quot;: &quot;1953-01-01T00:00:00.000Z&quot;,
+          &quot;key&quot;: -536457600000,
+          &quot;doc_count&quot;: 0
+        },
+        {
+          &quot;key_as_string&quot;: &quot;1954-01-01T00:00:00.000Z&quot;,
+          &quot;key&quot;: -504921600000,
+          &quot;doc_count&quot;: 0
+        },
+        {
+          &quot;key_as_string&quot;: &quot;1955-01-01T00:00:00.000Z&quot;,
+          &quot;key&quot;: -473385600000,
+          &quot;doc_count&quot;: 1
+        },
+        {
+          &quot;key_as_string&quot;: &quot;1956-01-01T00:00:00.000Z&quot;,
+          &quot;key&quot;: -441849600000,
+          &quot;doc_count&quot;: 2
         }
       ]
     },
     &quot;repositories&quot;: {
-      &quot;doc_count&quot;: 7,
+      &quot;doc_count&quot;: 6,
       &quot;doc_count_error_upper_bound&quot;: 0,
       &quot;sum_other_doc_count&quot;: 0,
       &quot;buckets&quot;: [
         {
-          &quot;key&quot;: &quot;Lindgren Institute&quot;,
+          &quot;key&quot;: &quot;Borer College&quot;,
+          &quot;doc_count&quot;: 5
+        },
+        {
+          &quot;key&quot;: &quot;North South Dakota College&quot;,
           &quot;doc_count&quot;: 3
         },
         {
-          &quot;key&quot;: &quot;Northern Michigan University&quot;,
-          &quot;doc_count&quot;: 3
+          &quot;key&quot;: &quot;Northern Weber&quot;,
+          &quot;doc_count&quot;: 2
         },
         {
-          &quot;key&quot;: &quot;Western Volkman Academy&quot;,
-          &quot;doc_count&quot;: 3
-        },
-        {
-          &quot;key&quot;: &quot;The Mississippi Institute&quot;,
-          &quot;doc_count&quot;: 1
+          &quot;key&quot;: &quot;Okuneva Academy&quot;,
+          &quot;doc_count&quot;: 2
         }
       ]
     },
     &quot;language&quot;: {
-      &quot;doc_count&quot;: 7,
+      &quot;doc_count&quot;: 6,
       &quot;doc_count_error_upper_bound&quot;: 0,
       &quot;sum_other_doc_count&quot;: 0,
       &quot;buckets&quot;: [
         {
-          &quot;key&quot;: &quot;english&quot;,
-          &quot;doc_count&quot;: 4
+          &quot;key&quot;: &quot;french&quot;,
+          &quot;doc_count&quot;: 2
         },
         {
           &quot;key&quot;: &quot;german&quot;,
           &quot;doc_count&quot;: 2
+        },
+        {
+          &quot;key&quot;: &quot;english&quot;,
+          &quot;doc_count&quot;: 1
         },
         {
           &quot;key&quot;: &quot;italian&quot;,
@@ -842,9 +768,9 @@ Content-Length: 8010</pre>
     &quot;page&quot;: 1,
     &quot;per_page&quot;: 25,
     &quot;page_count&quot;: 1,
-    &quot;total_count&quot;: 7,
+    &quot;total_count&quot;: 6,
     &quot;links&quot;: {
-      &quot;self&quot;: &quot;http://example.org/letters?end_date=1959-10-19&amp;page=1&quot;
+      &quot;self&quot;: &quot;http://example.org/letters?end_date=1956-07-23&amp;page=1&quot;
     }
   }
 }</pre>

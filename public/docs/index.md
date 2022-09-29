@@ -38,6 +38,7 @@
 * [GET /letters?end_date=:YYYY-MM-DD - On or Before Date](letters/get_lettersend_date=yyyy-mm-dd_-_on_or_before_date.md)
 * [GET /letters?start_date=:YYYY-MM-DD&amp;end_date=:YYYY-MM-DD - On or Between Dates](letters/get_lettersstart_date=yyyy-mm-dd&amp;end_date=yyyy-mm-dd_-_on_or_between_dates.md)
 * [GET /letters?languages=:list_of_languages](letters/get_letterslanguages=list_of_languages.md)
+* [GET /letters?volumes=:list_of_volumes](letters/get_lettersvolumes=list_of_volumes.md)
 * [GET /letters?per_page=:results_per_page&amp;page=:offset - Paginated results](letters/get_lettersper_page=results_per_page&amp;page=offset_-_paginated_results.md)
 * [GET /letters/:id](letters/get_lettersid.md)
 * [POST /letters](letters/post_letters.md)

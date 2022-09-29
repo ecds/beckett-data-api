@@ -45,15 +45,15 @@ X-Content-Type-Options: nosniff
 X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
-Link: &lt;http://example.org/entities?page=2&amp;per_page=5&gt;; rel=&#39;self&#39;, &lt;http://example.org/entities?page=1&amp;per_page=5&gt;; rel=&#39;first&#39;, &lt;http://example.org/entities?page=118&amp;per_page=5&gt;; rel=&#39;last&#39;, &lt;http://example.org/entities?page=3&amp;per_page=5&gt;; rel=&#39;next&#39;, &lt;http://example.org/entities?page=1&amp;per_page=5&gt;; rel=&#39;prev&#39;
-X-Total-Count: 587
+Link: &lt;http://example.org/entities?page=2&amp;per_page=5&gt;; rel=&#39;self&#39;, &lt;http://example.org/entities?page=1&amp;per_page=5&gt;; rel=&#39;first&#39;, &lt;http://example.org/entities?page=7&amp;per_page=5&gt;; rel=&#39;last&#39;, &lt;http://example.org/entities?page=3&amp;per_page=5&gt;; rel=&#39;next&#39;, &lt;http://example.org/entities?page=1&amp;per_page=5&gt;; rel=&#39;prev&#39;
+X-Total-Count: 34
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;75a0b61ed1c3707aa3cfeac97d0a96ac&quot;
+ETag: W/&quot;dd8488218d2fdbad09998a563f2233de&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: d4c2bf94-ac3f-40e9-8e25-b53bce403c60
-X-Runtime: 2.641905
+X-Request-Id: 03ff6219-a3d3-4789-9651-2d8dd0bab723
+X-Runtime: 2.805692
 Vary: Origin
-Content-Length: 2747</pre>
+Content-Length: 4889</pre>
 
 #### Status
 
@@ -64,113 +64,104 @@ Content-Length: 2747</pre>
 <pre>{
   "entities": [
     {
-      "id": "http://example.org/entities/043a0e14-53c5-4c89-85e3-7f443728565b",
-      "label": "<i>Poghril</i>",
-      "type": "organization",
-      "short_display": [
-
-      ],
-      "description": "I <i>think you ought to know I'm feeling very</i> depressed.",
-      "clean_label": "Poghril",
-      "clean_description": "I think you ought to know I'm feeling very depressed."
-    },
-    {
-      "id": "http://example.org/entities/054e1a75-55f7-430c-8b00-2e7da9de67a9",
-      "label": "<i>Still Waiting</i>",
-      "type": "work_of_art",
-      "short_display": [
-
-      ],
-      "description": "Butcher scenester cronut authentic ugh wayfarers.",
-      "clean_label": "Still Waiting",
-      "clean_description": "Butcher scenester cronut authentic ugh wayfarers."
-    },
-    {
-      "id": "http://example.org/entities/05eacc60-5c16-46d3-b6f9-56af72ee76b0",
+      "id": "http://example.org/entities/25615278-7519-4a79-abb1-cb27f4568f3b",
       "label": "<i>The Big Bang Burger Bar</i>",
       "type": "place",
-      "short_display": [
-
-      ],
-      "description": "Gentrify bespoke postironic readymade sustainable ennui heirloom raw denim kinfolk.",
+      "short_display": "<section><p><strong><i>The Big Bang Burger Bar</i></strong></p>\n<p>Marfa pabst artisan aesthetic squid.</p></section>",
+      "description": "Marfa pabst artisan aesthetic squid.",
       "clean_label": "The Big Bang Burger Bar",
-      "clean_description": "Gentrify bespoke postironic readymade sustainable ennui heirloom raw denim kinfolk."
+      "clean_description": "Marfa pabst artisan aesthetic squid."
     },
     {
-      "id": "http://example.org/entities/060b8136-7b3b-4fa4-b93b-75130df0555c",
-      "label": "Mother Night",
-      "type": "reading",
-      "short_display": [
-
-      ],
-      "description": "Typewriter meh pbrb bespoke.",
-      "clean_label": "Mother Night",
-      "clean_description": "Typewriter meh pbrb bespoke."
+      "id": "http://example.org/entities/2ed60d91-ac91-423e-adea-b635aa863cf1",
+      "label": "A Farewell to Arms",
+      "type": "writing",
+      "short_display": "<section><p><strong>Title</strong> A Farewell to Arms</p>\n<p><strong>Proposal/Response</strong> If they don’t keep exercising their lips, he thought, their brains start working.</p>\n<p><strong>Translator</strong> Lintilla</p>\n<p><strong>Date</strong> 1968-08-02.</p></section>",
+      "description": "Retro <i>williamsburg 1 direct trade scenester hoodie yolo next level</i> tacos.",
+      "clean_label": "A Farewell to Arms",
+      "clean_description": "Retro williamsburg 1 direct trade scenester hoodie yolo next level tacos."
     },
     {
-      "id": "http://example.org/entities/0655a301-88ca-46ce-8e8c-9d88ec6630b6",
-      "label": "<i>Han Wavel</i>",
-      "type": "organization",
-      "short_display": [
-
-      ],
-      "description": "Pardon <i>me for breathing, which I never do anyway so I don't know why I bother to say it, Oh God, I'm so</i> depressed.",
-      "clean_label": "Han Wavel",
-      "clean_description": "Pardon me for breathing, which I never do anyway so I don't know why I bother to say it, Oh God, I'm so depressed."
+      "id": "http://example.org/entities/317744b6-575a-4c09-b58b-dd143fa49162",
+      "label": "Pacocha, Francesco",
+      "type": "person",
+      "short_display": "<section><p><strong>Francesco Pacocha, 1911-1984</strong></p>\n<p>Here I am, brain the size of a planet, and they tell me to take you up to the bridge. Call that job satisfaction? 'Cos I don't.</p></section>",
+      "description": "Here I am, brain the size of a planet, and they tell me to take you up to the bridge. Call that job satisfaction? 'Cos I don't.",
+      "clean_label": "Pacocha, Francesco",
+      "clean_description": "Here I am, brain the size of a planet, and they tell me to take you up to the bridge. Call that job satisfaction? 'Cos I don't."
+    },
+    {
+      "id": "http://example.org/entities/34c1cdf8-0d67-4142-aa3f-986c3db4f3e9",
+      "label": "<i>Baltimore</i>",
+      "type": "work_of_art",
+      "short_display": "<section><p><strong>Artist</strong> Trillian</p>\n<p><strong>Title</strong> <i>Baltimore</i></p>\n<p><strong>Description</strong> Keffiyeh synth cred lumbersexual pork belly hammock flannel dreamcatcher.</p>\n<p><strong>Owner/location</strong> Vogon Constructor Fleet</p></section>",
+      "description": "Keffiyeh synth cred lumbersexual pork belly hammock flannel dreamcatcher.",
+      "clean_label": "Baltimore",
+      "clean_description": "Keffiyeh synth cred lumbersexual pork belly hammock flannel dreamcatcher."
+    },
+    {
+      "id": "http://example.org/entities/42e7a7cf-c57f-4827-93ab-ee7c6c6fe5f2",
+      "label": "Rehearsal, Biodiesel <i>distillery cliche bitters hella retro</i> drinking.",
+      "type": "attendance",
+      "short_display": "<section><p><strong>Rehearsal</strong>, Biodiesel <i>distillery cliche bitters hella retro</i> drinking.</p>\n<p><strong>Attended with</strong> Jackie Treehorn and Arthur Dent</p>\n<p><strong>Place, Date</strong> West Mitchel, 05 December 1969</p>\n<p><strong>Director</strong> Dan Streetmentioner</p></section>",
+      "description": "Biodiesel <i>distillery cliche bitters hella retro</i> drinking.",
+      "clean_label": "Rehearsal, Biodiesel distillery cliche bitters hella retro drinking.",
+      "clean_description": "Biodiesel distillery cliche bitters hella retro drinking."
     }
   ],
   "aggs": {
     "e_type": {
+      "doc_count": 34,
       "doc_count_error_upper_bound": 0,
       "sum_other_doc_count": 0,
       "buckets": [
         {
-          "key": "place",
-          "doc_count": 143
+          "key": "reading",
+          "doc_count": 5
         },
         {
           "key": "person",
-          "doc_count": 95
+          "doc_count": 4
         },
         {
-          "key": "attendance",
-          "doc_count": 46
-        },
-        {
-          "key": "work_of_art",
-          "doc_count": 45
-        },
-        {
-          "key": "reading",
-          "doc_count": 38
-        },
-        {
-          "key": "public_event",
-          "doc_count": 37
-        },
-        {
-          "key": "writing",
-          "doc_count": 37
-        },
-        {
-          "key": "organization",
-          "doc_count": 36
-        },
-        {
-          "key": "translating",
-          "doc_count": 32
-        },
-        {
-          "key": "publication",
-          "doc_count": 29
-        },
-        {
-          "key": "music",
-          "doc_count": 27
+          "key": "place",
+          "doc_count": 4
         },
         {
           "key": "production",
-          "doc_count": 22
+          "doc_count": 4
+        },
+        {
+          "key": "work_of_art",
+          "doc_count": 4
+        },
+        {
+          "key": "translating",
+          "doc_count": 3
+        },
+        {
+          "key": "attendance",
+          "doc_count": 2
+        },
+        {
+          "key": "music",
+          "doc_count": 2
+        },
+        {
+          "key": "publication",
+          "doc_count": 2
+        },
+        {
+          "key": "writing",
+          "doc_count": 2
+        },
+        {
+          "key": "organization",
+          "doc_count": 1
+        },
+        {
+          "key": "public_event",
+          "doc_count": 1
         }
       ]
     }
@@ -178,12 +169,12 @@ Content-Length: 2747</pre>
   "meta": {
     "page": 2,
     "per_page": 5,
-    "page_count": 118,
-    "total_count": 587,
+    "page_count": 7,
+    "total_count": 34,
     "links": {
       "self": "http://example.org/entities?page=2&per_page=5",
       "first": "http://example.org/entities?page=1&per_page=5",
-      "last": "http://example.org/entities?page=118&per_page=5",
+      "last": "http://example.org/entities?page=7&per_page=5",
       "next": "http://example.org/entities?page=3&per_page=5",
       "prev": "http://example.org/entities?page=1&per_page=5"
     }

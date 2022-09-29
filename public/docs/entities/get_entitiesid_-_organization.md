@@ -11,17 +11,8 @@
 | Name | Default | Description | Not Null |
 |------|---------|-------------|----------|
 | label | HTML String |  | true |
-| clean_label | String |  | true |
-| description | HTML String |  | true |
-| clean_description | String |  | true |
-| display_header | HTML String |  | true |
-| label | HTML String |  | false |
-| description | HTML String |  | false |
-| e_type | HTML String |  | false |
-| legacy_pk | HTML String |  | false |
-| alternate_names | Array |  | false |
-| alternate_spellings | Array |  | false |
-| profile | HTML String |  | false |
+| short_display | HTML String |  | true |
+| full_display | HTML String |  | true |
 
 ### Request
 
@@ -35,7 +26,7 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /entities/29408cf9-b103-4685-a2d9-0a04ff26efb0</pre>
+<pre>GET /entities/b1c71cae-d4cd-4287-96b2-c98cc6b79364</pre>
 
 ### Response
 
@@ -48,12 +39,12 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;0e9a35caef579b50a8c7d8b5a4bbcd4d&quot;
+ETag: W/&quot;50dd8ddc70e8c10e099dbe065d403e00&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 04859bf0-e987-4de6-aefb-f70778b93629
-X-Runtime: 0.898545
+X-Request-Id: c1348b3c-b3e4-45b0-827a-697c0679c16c
+X-Runtime: 0.885263
 Vary: Origin
-Content-Length: 1935</pre>
+Content-Length: 1648</pre>
 
 #### Status
 
@@ -62,19 +53,17 @@ Content-Length: 1935</pre>
 #### Body
 
 <pre>{
-  "id": "http://example.org/entities/29408cf9-b103-4685-a2d9-0a04ff26efb0",
+  "id": "http://example.org/entities/b1c71cae-d4cd-4287-96b2-c98cc6b79364",
   "type": "organization",
-  "label": "<i>Argabuthon</i>",
-  "clean_label": "Argabuthon",
-  "description": "I think you ought to know I'm feeling very depressed.",
-  "clean_description": "I think you ought to know I'm feeling very depressed.",
-  "short_display": "<section><p><strong><i>Argabuthon</i></strong></p>\n<p>I think you ought to know I'm feeling very depressed.</p></section>",
-  "full_display": "<table>\n<tr>\n<th scope=\"row\">Name</th>\n<td><i>Argabuthon</i></td>\n</tr>\n<tr>\n<th scope=\"row\">Description</th>\n<td>I think you ought to know I'm feeling very depressed.</td>\n</tr>\n<tr>\n<th scope=\"row\">Alternate Name(s)</th>\n<td>Vanessa Vanjie Mateo</td>\n</tr>\n<tr>\n<th scope=\"row\">Profile</th>\n<td>It seemed to me that any civilization that had so far lost its head as to need to include a set of detailed instructions for use in a packet of toothpicks, was no longer a civilization in which I could live and stay sane.</td>\n</tr>\n<tr>\n<th scope=\"row\">Notes</th>\n<td>Life it ain't real funky, unless it's got that pop. Dig it.</td>\n</tr>\n</table>",
+  "label": "Frogstar World C",
+  "short_display": "<section><p><strong>Frogstar World C</strong></p>\n<p>I wish you'd just tell me rather trying to engage my enthusiasm, because I haven't got one.</p></section>",
+  "full_display": "<table>\n<tr>\n<th scope=\"row\">Name</th>\n<td>Frogstar World C</td>\n</tr>\n<tr>\n<th scope=\"row\">Description</th>\n<td>I wish you'd just tell me rather trying to engage my enthusiasm, because I haven't got one.</td>\n</tr>\n<tr>\n<th scope=\"row\">Alternate Name(s)</th>\n<td>Phi Phi O'Hara</td>\n</tr>\n<tr>\n<th scope=\"row\">Profile</th>\n<td>If they don’t keep exercising their lips, he thought, their brains start working.</td>\n</tr>\n<tr>\n<th scope=\"row\">Notes</th>\n<td>If it ain't Chuck D, or Jam Master Jay, know what? They're losin', cause we got a PhD in advanced body movin'.</td>\n</tr>\n</table>",
+  "description": "I wish you'd just tell me rather trying to engage my enthusiasm, because I haven't got one.",
   "e_type": "organization",
-  "legacy_pk": 884,
+  "legacy_pk": 15724,
   "alternate_names": [
-    "Vanessa Vanjie Mateo"
+    "Phi Phi O'Hara"
   ],
   "alternate_spellings": null,
-  "profile": "It seemed to me that any civilization that had so far lost its head as to need to include a set of detailed instructions for use in a packet of toothpicks, was no longer a civilization in which I could live and stay sane."
+  "profile": "If they don’t keep exercising their lips, he thought, their brains start working."
 }</pre>

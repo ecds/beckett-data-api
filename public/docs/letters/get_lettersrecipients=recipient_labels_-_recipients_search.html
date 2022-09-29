@@ -127,7 +127,7 @@ table th, table td {
                     <span class="name">page</span>
                 </td>
                 <td>
-                  <span class="description">Current page of letters</span>
+                  <span class="description">Current page of paginated letters response.</span>
                 </td>
                 <td>
                   <span class="default">1</span>
@@ -193,7 +193,7 @@ table th, table td {
                     <span class="name">recipients</span>
                 </td>
                 <td>
-                  <span class="description">Comma seperated list of recipient labels</span>
+                  <span class="description">Comma seperated list of recipient labels.</span>
                 </td>
                 <td>
                   <span class="default">null</span>
@@ -215,7 +215,7 @@ table th, table td {
                     <span class="name">origins</span>
                 </td>
                 <td>
-                  <span class="description">Comma seperated list of origin labels</span>
+                  <span class="description">Comma seperated list of origin labels.</span>
                 </td>
                 <td>
                   <span class="default">null</span>
@@ -226,7 +226,7 @@ table th, table td {
                     <span class="name">senders</span>
                 </td>
                 <td>
-                  <span class="description">Comma seperated list of sender labels</span>
+                  <span class="description">Comma seperated list of sender labels.</span>
                 </td>
                 <td>
                   <span class="default">null</span>
@@ -237,7 +237,7 @@ table th, table td {
                     <span class="name">repositories</span>
                 </td>
                 <td>
-                  <span class="description">Comma seperated list of repository labels</span>
+                  <span class="description">Comma seperated list of repository labels.</span>
                 </td>
                 <td>
                   <span class="default">null</span>
@@ -248,7 +248,18 @@ table th, table td {
                     <span class="name">languages</span>
                 </td>
                 <td>
-                  <span class="description">Comma seperated list of languages. Options are English, French, German, or Italian</span>
+                  <span class="description">Case insensitive comma seperated list of languages. Options are English, French, German, and Italian.</span>
+                </td>
+                <td>
+                  <span class="default">null</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">volumes</span>
+                </td>
+                <td>
+                  <span class="description">Comma sperated list of volumes. Options are 0, 1, 2, 3, and 4. Zero means no volume.</span>
                 </td>
                 <td>
                   <span class="default">null</span>
@@ -268,10 +279,10 @@ Host: example.org
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET /letters?recipients=Weissnat%2C+Christian%2CKlein%2C+Jeffrey</pre>
+          <pre class="request route highlight">GET /letters?recipients=Kozey%2C+Livia%2CRoob%2C+Jenae</pre>
 
             <h4>Query Parameters</h4>
-            <pre class="request query_parameters highlight">recipients: Weissnat, Christian,Klein, Jeffrey</pre>
+            <pre class="request query_parameters highlight">recipients: Kozey, Livia,Roob, Jenae</pre>
 
 
 
@@ -283,15 +294,15 @@ X-Content-Type-Options: nosniff
 X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
-Link: &lt;http://example.org/letters?page=1&amp;recipients=Weissnat%2C+Christian%2CKlein%2C+Jeffrey&gt;; rel=&#39;self&#39;
+Link: &lt;http://example.org/letters?page=1&amp;recipients=Kozey%2C+Livia%2CRoob%2C+Jenae&gt;; rel=&#39;self&#39;
 X-Total-Count: 0
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;32a415eb32fe2dca390db05a3cc37ee6&quot;
+ETag: W/&quot;9083532ea40803756b274be494113788&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 514362ad-1458-4363-934c-461c48ead4c7
-X-Runtime: 2.650251
+X-Request-Id: 8f19fb2c-f794-4360-8526-0f0b063eefc1
+X-Runtime: 2.863948
 Vary: Origin
-Content-Length: 458</pre>
+Content-Length: 552</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
@@ -300,6 +311,16 @@ Content-Length: 458</pre>
 
   ],
   &quot;aggs&quot;: {
+    &quot;volume&quot;: {
+      &quot;meta&quot;: {
+      },
+      &quot;doc_count&quot;: 0,
+      &quot;doc_count_error_upper_bound&quot;: 0,
+      &quot;sum_other_doc_count&quot;: 0,
+      &quot;buckets&quot;: [
+
+      ]
+    },
     &quot;date&quot;: {
       &quot;meta&quot;: {
       },
@@ -335,7 +356,7 @@ Content-Length: 458</pre>
     &quot;page_count&quot;: 0,
     &quot;total_count&quot;: 0,
     &quot;links&quot;: {
-      &quot;self&quot;: &quot;http://example.org/letters?page=1&amp;recipients=Weissnat%2C+Christian%2CKlein%2C+Jeffrey&quot;
+      &quot;self&quot;: &quot;http://example.org/letters?page=1&amp;recipients=Kozey%2C+Livia%2CRoob%2C+Jenae&quot;
     }
   }
 }</pre>

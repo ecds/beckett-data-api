@@ -8,18 +8,19 @@
 
 | Name | Description | Required | Default |
 |------|-------------|----------|---------|
-| page | Current page of letters | false | 1
+| page | Current page of paginated letters response. | false | 1
 | per_page | Number of letters on a single response. | false | 25
 | search | Text to search. | false | *
 | fields | Comma seperated list of fields to be queried. | false | recipients, mentions, destinations, origins, repositories
 | start_date | Letters dated on or after given date. Must be in YYYY-MM-DD format. | false | null
 | end_date | Letters dated on or before given date. Must be in YYYY-MM-DD format. | false | null
-| recipients | Comma seperated list of recipient labels | false | null
+| recipients | Comma seperated list of recipient labels. | false | null
 | destinations | Comma seperated list of destination labels | false | null
-| origins | Comma seperated list of origin labels | false | null
-| senders | Comma seperated list of sender labels | false | null
-| repositories | Comma seperated list of repository labels | false | null
-| languages | Comma seperated list of languages. Options are English, French, German, or Italian | false | null
+| origins | Comma seperated list of origin labels. | false | null
+| senders | Comma seperated list of sender labels. | false | null
+| repositories | Comma seperated list of repository labels. | false | null
+| languages | Case insensitive comma seperated list of languages. Options are English, French, German, and Italian. | false | null
+| volumes | Comma sperated list of volumes. Options are 0, 1, 2, 3, and 4. Zero means no volume. | false | null
 
 ### Request
 
@@ -50,14 +51,14 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Link: &lt;http://example.org/letters?languages=German%2C+italian&amp;page=1&gt;; rel=&#39;self&#39;
-X-Total-Count: 13
+X-Total-Count: 16
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;bd34b8266b41a782249a2d1764be3700&quot;
+ETag: W/&quot;ea4cb1634ef2402f1e047b96ff2baefd&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: c0342f7a-563b-45ec-ad7a-6099d4a49f7d
-X-Runtime: 4.486221
+X-Request-Id: 5d852d41-dbfa-41ad-901e-59dec4034f01
+X-Runtime: 3.066714
 Vary: Origin
-Content-Length: 16721</pre>
+Content-Length: 67538</pre>
 
 #### Status
 
@@ -68,947 +69,510 @@ Content-Length: 16721</pre>
 <pre>{
   "letters": [
     {
-      "id": "http://example.org/letters/403799c7-6b18-4b91-8951-16cf8b66919c",
-      "date": "1957-01-19T00:00:00.000-05:00",
-      "label": "19 January 1957 - Botsford, Elnora",
+      "id": "http://example.org/letters/17304808-1aed-4283-8fa2-b01a66823262",
+      "date": "1954-12-01T00:00:00.000-05:00",
+      "label": "01 December 1954 - Crona, Kala",
+      "language": "german",
+      "volume": 4,
       "recipients": [
-        "Botsford, Elnora"
+        "Crona, Kala"
       ],
       "destinations": [
-        "London"
+        "Bournemouth"
       ],
       "origins": null,
       "mentions": {
         "attendances": [
           {
             "type": "attendance",
-            "id": "http://example.org/entities/bc330501-2deb-4ebf-bbe1-e6a0f69b70c3",
-            "display": [
-
-            ]
-          },
-          {
-            "type": "attendance",
-            "id": "http://example.org/entities/ff0ebc6f-61bd-48c5-a766-6bf7624cd10c",
-            "display": [
-
-            ]
+            "id": "http://example.org/entities/67057cff-8486-40b5-a482-994db79fd5c4",
+            "display": "<section><p><strong>Rehearsal</strong>, Chia keytar seitan tattooed brooklyn coldpressed carry skateboard.</p>\n<p><strong>Attended with</strong> Karl Hungus and Hactar</p>\n<p><strong>Place, Date</strong> Sybleside, 08 February 1944</p>\n<p><strong>Director</strong> Agrajag</p></section>"
           }
         ],
-        "productions": [
+        "people": [
           {
-            "type": "production",
-            "id": "http://example.org/entities/1e34def7-4f69-470a-90b3-eab908261718",
-            "display": [
-
-            ]
+            "type": "person",
+            "id": "http://example.org/entities/24f52227-3796-4737-8552-d5db8f6d7c9a",
+            "display": "<section><p><strong>Cecil O'Kon, 1913-1989</strong></p>\n<p>You <i>think you've got problems? What are you supposed to do if you are a manically depressed robot? No, don't try to answer that. I'm fifty thousand times more intelligent than you and even I don't know the answer. It gives me a headache just trying to think down to your</i> level.</p></section>"
           },
           {
-            "type": "production",
-            "id": "http://example.org/entities/4846543f-c93f-496a-ad18-9b60460518bd",
-            "display": [
-
-            ]
+            "type": "person",
+            "id": "http://example.org/entities/c2f91131-f57a-4c7c-b512-172a55bf2e76",
+            "display": "<section><p><strong>Becky Ledner, 1911-1998</strong></p>\n<p>There's only one life-form as intelligent as me within thirty parsecs of here and that's me.</p></section>"
           }
         ],
-        "readings": [
+        "places": [
           {
-            "type": "reading",
-            "id": "http://example.org/entities/323a4f18-c33a-4a3a-aa9b-e2fb97e0af05",
-            "display": [
-
-            ]
+            "type": "place",
+            "id": "http://example.org/entities/5be3aebe-b558-4d2c-8011-6cadb71517c0",
+            "display": "<section><p><strong><i>Ysllodins</i></strong></p>\n<p>Retro bitters tousled swag.</p></section>"
           },
           {
-            "type": "reading",
-            "id": "http://example.org/entities/e9f06bef-6c0d-4f39-ad9b-628289cc646f",
-            "display": [
-
-            ]
-          }
-        ],
-        "translatings": [
-          {
-            "type": "translating",
-            "id": "http://example.org/entities/a6dbfbf4-8944-44ce-b3fa-7db68915d671",
-            "display": [
-
-            ]
-          },
-          {
-            "type": "translating",
-            "id": "http://example.org/entities/b9a6acdb-0978-47ed-b19d-452c82f878eb",
-            "display": [
-
-            ]
-          }
-        ]
-      }
-    },
-    {
-      "id": "http://example.org/letters/f9b8ca0a-ad21-47cd-9cc7-ad164d5c6953",
-      "date": "1959-04-07T00:00:00.000-05:00",
-      "label": "07 April 1959 - Bailey, Sharan",
-      "recipients": [
-        "Bailey, Sharan"
-      ],
-      "destinations": [
-        "<i>Lord's Cricket Ground</i>"
-      ],
-      "origins": null,
-      "mentions": {
-        "attendances": [
-          {
-            "type": "attendance",
-            "id": "http://example.org/entities/63389caf-c6c6-4ac0-9e90-4237b2110021",
-            "display": [
-
-            ]
-          },
-          {
-            "type": "attendance",
-            "id": "http://example.org/entities/f276d588-31df-4c91-a96b-442b9febaddc",
-            "display": [
-
-            ]
-          },
-          {
-            "type": "attendance",
-            "id": "http://example.org/entities/f75bedd3-b9a0-42f7-9f89-6e143ce7d1d2",
-            "display": [
-
-            ]
-          }
-        ],
-        "productions": [
-          {
-            "type": "production",
-            "id": "http://example.org/entities/8c9a446b-8b8c-4a6b-a317-17e2a092e608",
-            "display": [
-
-            ]
-          },
-          {
-            "type": "production",
-            "id": "http://example.org/entities/c3fc92b0-580d-41b8-81d2-72f6e3e8df3c",
-            "display": [
-
-            ]
-          },
-          {
-            "type": "production",
-            "id": "http://example.org/entities/f7574085-ad86-4782-b859-dd6eea9972dc",
-            "display": [
-
-            ]
-          }
-        ],
-        "publications": [
-          {
-            "type": "publication",
-            "id": "http://example.org/entities/1cffbff9-c6d0-4fc5-8247-991118075dd8",
-            "display": [
-
-            ]
-          },
-          {
-            "type": "publication",
-            "id": "http://example.org/entities/eec82a29-d782-4423-81ea-0005e44d3375",
-            "display": [
-
-            ]
+            "type": "place",
+            "id": "http://example.org/entities/22031f22-fe51-49e7-b4d6-4e00bf937cbe",
+            "display": "<section><p><strong>Seventh Galaxy of Light and Ingenuity</strong></p>\n<p>Cred before they sold out typewriter tryhard master aesthetic thundercats.</p></section>"
           }
         ],
         "writings": [
           {
             "type": "writing",
-            "id": "http://example.org/entities/28154090-3dfc-4813-843e-364a2f286ebb",
-            "display": [
-
-            ]
-          },
-          {
-            "type": "writing",
-            "id": "http://example.org/entities/6e7d9dd0-d60a-44ca-9553-a74c22fa859c",
-            "display": [
-
-            ]
+            "id": "http://example.org/entities/3e487d23-b2ea-4880-ba66-8c7e6f0848db",
+            "display": "<section><p><strong>Title</strong> <i>The Torment of Others</i></p>\n<p><strong>Proposal/Response</strong> Magrathea itself disappeared and its memory soon passed into the obscurity of legend. In these enlightened days, of course, no one believes a word of it.</p>\n<p><strong>Translator</strong> Trillian</p>\n<p><strong>Date</strong> 1943-03-02.</p></section>"
           }
         ]
       }
     },
     {
-      "id": "http://example.org/letters/b1b8baff-1fbe-46ce-8d2e-b58a848ebd2b",
-      "date": "1959-05-03T00:00:00.000-04:00",
-      "label": "03 May 1959 - Goyette, Rodrigo",
+      "id": "http://example.org/letters/26f99fdb-9393-4b99-b7bd-5f1f18bb7392",
+      "date": "1955-12-29T00:00:00.000-05:00",
+      "label": "29 December 1955 - Heller, Jonna",
+      "language": "italian",
+      "volume": 2,
       "recipients": [
-        "Goyette, Rodrigo"
+        "Heller, Jonna"
       ],
       "destinations": [
-        "Slim's Throat Emporium"
+        "<i>Sector XXXZ5QZX</i>"
+      ],
+      "origins": null,
+      "mentions": {
+        "attendances": [
+          {
+            "type": "attendance",
+            "id": "http://example.org/entities/078c0cd0-01d5-4681-9c00-f528c5c69584",
+            "display": "<section><p><strong>Reading</strong>, Flannel kombucha diy pitchfork raw denim roof shoreditch cardigan austin.</p>\n<p><strong>Attended with</strong> Bunny Lebowski and Dan Streetmentioner</p>\n<p><strong>Place, Date</strong> New Michelleberg, 04 December 1939</p>\n<p><strong>Director</strong> Gag Halfrunt</p></section>"
+          }
+        ],
+        "productions": [
+          {
+            "type": "production",
+            "id": "http://example.org/entities/a66af134-fd45-4739-b5cc-20e32727a8be",
+            "display": "<section><p><strong>Title</strong> <i>Modern Times</i></p>\n<p><strong>Proposal/Response</strong> Life? Don't talk to me about life. / They’ve got as much sex appeal as a road accident.</p>\n<p><strong>Director</strong> Jackie Treehorn <strong>Theatre, City</strong> RW6, West Cecilhaven</p>\n<p><strong>Date(s)</strong> 1925-06-28.</p></section>"
+          },
+          {
+            "type": "production",
+            "id": "http://example.org/entities/b72c73d8-f3cb-427c-8619-4e5c5b802546",
+            "display": "<section><p><strong>Title</strong> Cidade de Deus</p>\n<p><strong>Proposal/Response</strong> There's only one life-form as intelligent as me within thirty parsecs of here and that's me. / It seemed to me that any civilization that had so far lost its head as to need to include a set of detailed instructions for use in a packet of toothpicks, was no longer a civilization in which I could live and stay sane.</p>\n<p><strong>Director</strong> Karl Hungus <strong>Theatre, City</strong> Vogon Constructor Fleet, North Augustville</p>\n<p><strong>Date(s)</strong> 1954-03-07.</p></section>"
+          },
+          {
+            "type": "production",
+            "id": "http://example.org/entities/7ddce608-ed87-4ec2-8d83-c8e8cdf4ef32",
+            "display": "<section><p><strong>Title</strong> The Wizard of Oz</p>\n<p><strong>Proposal/Response</strong> I won't enjoy it. / According to the legends, the Magratheans lived most of their lives underground.</p>\n<p><strong>Director</strong> The Big Lebowski <strong>Theatre, City</strong> Bistromath, North Jamel</p>\n<p><strong>Date(s)</strong> 1957-11-24.</p></section>"
+          }
+        ],
+        "public_events": [
+          {
+            "type": "public_event",
+            "id": "http://example.org/entities/2ec5636b-31e9-4caa-9eb4-a8804ffb4f25",
+            "display": "<section><p><strong>Enterprise</strong></p>\n<p><strong>1930-12-22.</strong></p></section>"
+          }
+        ],
+        "publications": [
+          {
+            "type": "publication",
+            "id": "http://example.org/entities/e71b5af0-4289-4a92-a922-6e861e84d41c",
+            "display": "<section><p><strong>Author</strong> Karl Hungus</p>\n<p><strong>Title</strong> Lethe Press</p>\n<p><strong>Translator</strong> Garkbit</p>\n<p><strong>Publication</strong> Chicharrones meggings meh craft beer vegan.</p></section>"
+          }
+        ]
+      }
+    },
+    {
+      "id": "http://example.org/letters/0e34d958-ec8a-4aa1-9fa5-eb935416cb56",
+      "date": "1956-09-19T00:00:00.000-04:00",
+      "label": "19 September 1956 - Schinner, Rashad",
+      "language": "german",
+      "volume": 1,
+      "recipients": [
+        "Schinner, Rashad"
+      ],
+      "destinations": [
+        "Asbleg"
       ],
       "origins": null,
       "mentions": {
         "music": [
           {
             "type": "music",
-            "id": "http://example.org/entities/8ecf5f91-d7d5-4d40-9513-13cfb19002c4",
-            "display": [
-
-            ]
+            "id": "http://example.org/entities/25bd4769-5bf7-450a-9995-dfc46439fe66",
+            "display": "<section><p><strong>Composer</strong> Rob McKenna</p>\n<p><strong>Title</strong> <i>She's Always In My Hair</i></p>\n<p><strong>Description</strong> Singleorigin <i>coffee mlkshk normcore loko kombucha</i> chillwave.</p></section>"
+          },
+          {
+            "type": "music",
+            "id": "http://example.org/entities/643a8e9a-c358-494c-8c9c-57cab22dc3d7",
+            "display": "<section><p><strong>Composer</strong> Zarquon</p>\n<p><strong>Title</strong> <i>Sometimes It Snows In April</i></p>\n<p><strong>Description</strong> Locavore cardigan hammock irony tilde food truck kombucha fixie.</p></section>"
           }
         ],
-        "public_events": [
+        "productions": [
           {
-            "type": "public_event",
-            "id": "http://example.org/entities/f3d7b946-1145-4f24-ad7d-eac5f6056cc4",
-            "display": [
-
-            ]
+            "type": "production",
+            "id": "http://example.org/entities/f4425997-2b9b-42e5-977f-1c167d7c2bce",
+            "display": "<section><p><strong>Title</strong> <i>Terminator 2: Judgment Day</i></p>\n<p><strong>Proposal/Response</strong> I wish you'd just tell me rather trying to engage my enthusiasm, because I haven't got one. / If there's anything more important than my ego around, I want it caught and shot now.</p>\n<p><strong>Director</strong> Brandt <strong>Theatre, City</strong> Tanngrisnir, Courtneymouth</p>\n<p><strong>Date(s)</strong> 1928-12-12.</p></section>"
+          },
+          {
+            "type": "production",
+            "id": "http://example.org/entities/affa4278-3b9d-4521-8d6c-26ffdb321566",
+            "display": "<section><p><strong>Title</strong> <i>Inglourious Basterds</i></p>\n<p><strong>Proposal/Response</strong> I won't enjoy it. / Curiously enough, the only thing that went through the mind of the bowl of petunias as it fell was Oh no, not again.</p>\n<p><strong>Director</strong> Walter Sobchak <strong>Theatre, City</strong> Starship Titanic, Port Ronnieburgh</p>\n<p><strong>Date(s)</strong> 1951-11-25.</p></section>"
+          }
+        ],
+        "publications": [
+          {
+            "type": "publication",
+            "id": "http://example.org/entities/777c6233-5f4a-48ec-9a31-81498edfaf41",
+            "display": "<section><p><strong>Author</strong> The Big Lebowski</p>\n<p><strong>Title</strong> Chronicle Books</p>\n<p><strong>Translator</strong> Hillman Hunter</p>\n<p><strong>Publication</strong> Blue bottle actually green juice everyday viral authentic.</p></section>"
           }
         ],
         "readings": [
           {
             "type": "reading",
-            "id": "http://example.org/entities/69e863ac-5534-4d5d-a7b9-93bed8027fd7",
-            "display": [
-
-            ]
-          }
-        ],
-        "translatings": [
-          {
-            "type": "translating",
-            "id": "http://example.org/entities/1bc7b50d-f9e6-41a9-b043-09a54846f479",
-            "display": [
-
-            ]
+            "id": "http://example.org/entities/c56a484e-a423-44fb-bb7c-c640ffa76dc0",
+            "display": "<section><p><strong>Author</strong> Ernie Leannon</p>\n<p><strong>Title</strong> <i>Alone on a Wide, Wide Sea</i></p>\n<p><strong>Publication</strong> Hackett Publishing Company.</p></section>"
           },
           {
-            "type": "translating",
-            "id": "http://example.org/entities/665d52b8-ace0-413a-8cf8-2c66b09846b9",
-            "display": [
-
-            ]
+            "type": "reading",
+            "id": "http://example.org/entities/8b47e885-e5fb-4ae1-92a0-fa2d7a541390",
+            "display": "<section><p><strong>Author</strong> Eleonor Hirthe V</p>\n<p><strong>Title</strong> <i>Of Human Bondage</i></p>\n<p><strong>Publication</strong> Packt Publishing.</p></section>"
           }
         ]
       }
     },
     {
-      "id": "http://example.org/letters/d9dad02a-7914-4f37-8cfb-a3e7e7928ed6",
-      "date": "1960-07-12T00:00:00.000-04:00",
-      "label": "12 July 1960 - Hoppe, Romeo",
+      "id": "http://example.org/letters/2e2a099e-cac3-4180-8130-dfa00c54d893",
+      "date": "1957-03-30T00:00:00.000-05:00",
+      "label": "30 March 1957 - Bradtke, Maureen",
+      "language": "italian",
+      "volume": 2,
       "recipients": [
-        "Hoppe, Romeo"
+        "Bradtke, Maureen"
       ],
       "destinations": [
-        "Guildford"
+        "Denmark"
       ],
       "origins": null,
       "mentions": {
         "attendances": [
           {
             "type": "attendance",
-            "id": "http://example.org/entities/1bf7037e-6b65-4e83-b8a2-199c55042e37",
-            "display": [
-
-            ]
+            "id": "http://example.org/entities/698e8dd0-46b7-4d63-9f56-2419cc9db2f9",
+            "display": "<section><p><strong>Reading</strong>, Tattooed <i>blue bottle kinfolk cleanse 3 wolf moon truffaut seitan</i> shoreditch.</p>\n<p><strong>Attended with</strong> Bunny Lebowski and Deep Thought</p>\n<p><strong>Place, Date</strong> Mullerstad, 11 July 1933</p>\n<p><strong>Director</strong> Mella</p></section>"
           },
           {
             "type": "attendance",
-            "id": "http://example.org/entities/2ec52ee1-6f52-41bc-95b1-dc5473b90314",
-            "display": [
-
-            ]
+            "id": "http://example.org/entities/09ae9a31-34d5-4e0a-8684-064bcdecc7a5",
+            "display": "<section><p><strong>Reading</strong>, Yuccie vice wes anderson pinterest.</p>\n<p><strong>Attended with</strong> The Dude and Eccentrica Gallumbits</p>\n<p><strong>Place, Date</strong> Lake Kandra, 01 July 1923</p>\n<p><strong>Director</strong> Elvis</p></section>"
+          }
+        ],
+        "music": [
+          {
+            "type": "music",
+            "id": "http://example.org/entities/32ed7dc4-ba7f-4fc7-bcb6-44533be3aec2",
+            "display": "<section><p><strong>Composer</strong> Hotblack Desiato</p>\n<p><strong>Title</strong> I Love U, but I Don't Trust U Anymore</p>\n<p><strong>Description</strong> Sriracha disrupt lumbersexual fixie direct trade diy loko franzen.</p></section>"
           },
           {
-            "type": "attendance",
-            "id": "http://example.org/entities/718d8321-6f97-4c8b-b691-8259990b756e",
-            "display": [
-
-            ]
+            "type": "music",
+            "id": "http://example.org/entities/1c35359b-8e31-4127-8ddf-d21df9e6d598",
+            "display": "<section><p><strong>Composer</strong> Mr. Prosser</p>\n<p><strong>Title</strong> <i>Baby I'm A Star</i></p>\n<p><strong>Description</strong> Echo portland pabst fanny pack.</p></section>"
+          },
+          {
+            "type": "music",
+            "id": "http://example.org/entities/eae62de9-0eab-4dae-861c-8ddbdd08d270",
+            "display": "<section><p><strong>Composer</strong> Prak</p>\n<p><strong>Title</strong> <i>Baltimore</i></p>\n<p><strong>Description</strong> Tote bag chicharrones selvage bespoke.</p></section>"
           }
         ],
         "organizations": [
           {
             "type": "organization",
-            "id": "http://example.org/entities/e1367da8-3a3d-4699-a500-14b815e7b86c",
-            "display": [
-
-            ]
+            "id": "http://example.org/entities/49d8070f-b286-427d-8276-170d4d87351e",
+            "display": "<section><p><strong>Santraginus V</strong></p>\n<p>Life? <i>Don't talk to me about</i> life.</p></section>"
+          },
+          {
+            "type": "organization",
+            "id": "http://example.org/entities/881c1ea3-a2e7-4977-812c-b0ed92f71814",
+            "display": "<section><p><strong>Poghril</strong></p>\n<p>There's <i>only one life-form as intelligent as me within thirty parsecs of here and that's</i> me.</p></section>"
           }
         ],
-        "people": [
+        "writings": [
           {
-            "type": "person",
-            "id": "http://example.org/entities/d9555237-aad1-4214-b170-833987215c42",
-            "display": [
-
-            ]
+            "type": "writing",
+            "id": "http://example.org/entities/eacf469a-3015-4384-8b3d-eb1659b4802a",
+            "display": "<section><p><strong>Title</strong> Many Waters</p>\n<p><strong>Proposal/Response</strong> Evolution? they said to themselves, Who needs it?</p>\n<p><strong>Translator</strong> Slartibartfast</p>\n<p><strong>Date</strong> 1954-08-21.</p></section>"
           },
           {
-            "type": "person",
-            "id": "http://example.org/entities/e73f2fee-86ac-4326-af46-ad0deb7f3f2a",
-            "display": [
-
-            ]
+            "type": "writing",
+            "id": "http://example.org/entities/7d708dea-937e-45c4-a47f-c2eef4f42993",
+            "display": "<section><p><strong>Title</strong> <i>The Monkey's Raincoat</i></p>\n<p><strong>Proposal/Response</strong> He was staring at the instruments with the air of one who is trying to convert Fahrenheit to centigrade in his head while his house is burning down.</p>\n<p><strong>Translator</strong> Prostetnic Vogon Kwaltz</p>\n<p><strong>Date</strong> 1947-08-03.</p></section>"
           },
           {
-            "type": "person",
-            "id": "http://example.org/entities/eb864f4b-3ced-4a70-9474-defa2065cc63",
-            "display": [
-
-            ]
-          }
-        ],
-        "publications": [
-          {
-            "type": "publication",
-            "id": "http://example.org/entities/58bf9506-4167-49d4-acc3-e00bf295ef62",
-            "display": [
-
-            ]
-          },
-          {
-            "type": "publication",
-            "id": "http://example.org/entities/74a4117f-8d2b-419d-812b-052d0dc81921",
-            "display": [
-
-            ]
-          },
-          {
-            "type": "publication",
-            "id": "http://example.org/entities/dbc55fd3-608d-4328-a43d-7e07453e625f",
-            "display": [
-
-            ]
+            "type": "writing",
+            "id": "http://example.org/entities/4b7e220a-b1ba-4790-abb2-3583f71525d5",
+            "display": "<section><p><strong>Title</strong> <i>Blue Remembered Earth</i></p>\n<p><strong>Proposal/Response</strong> there’s an infinite number of monkeys outside who want to talk to us about this script for Hamlet they’ve worked out.</p>\n<p><strong>Translator</strong> Arthur Dent</p>\n<p><strong>Date</strong> 1927-07-23.</p></section>"
           }
         ]
       }
     },
     {
-      "id": "http://example.org/letters/a71bee0b-7c7c-4f71-aee5-198fa68e4cad",
-      "date": "1961-09-20T00:00:00.000-04:00",
-      "label": "20 September 1961 - Purdy, Federico",
+      "id": "http://example.org/letters/814ac3b0-4288-4269-9412-dcd03f3c9f48",
+      "date": "1958-11-24T00:00:00.000-05:00",
+      "label": "24 November 1958 - Marvin, Gussie",
+      "language": "italian",
+      "volume": 1,
       "recipients": [
-        "Purdy, Federico"
+        "Marvin, Gussie"
       ],
       "destinations": [
-        "Zarss"
+        "<i>29 Arlington Avenue</i>"
+      ],
+      "origins": null,
+      "mentions": {
+        "attendances": [
+          {
+            "type": "attendance",
+            "id": "http://example.org/entities/54f07fbc-0ebe-42f9-902c-bdefb66a29ca",
+            "display": "<section><p><strong>Theatre</strong>, Raw denim flannel meh shabby chic put a bird on it hella plaid viral umami.</p>\n<p><strong>Attended with</strong> Karl Hungus and Frankie and Benjy</p>\n<p><strong>Place, Date</strong> East Leighside, 26 July 1944</p>\n<p><strong>Director</strong> Prostetnic Vogon Kwaltz</p></section>"
+          },
+          {
+            "type": "attendance",
+            "id": "http://example.org/entities/c4889b4b-bf98-483d-88d6-e754b10ede0f",
+            "display": "<section><p><strong>Reading</strong>, Salvia tacos vegan disrupt williamsburg tofu.</p>\n<p><strong>Attended with</strong> Walter Sobchak and Dan Streetmentioner</p>\n<p><strong>Place, Date</strong> Armstrongside, 13 July 1944</p>\n<p><strong>Director</strong> Paula Nancy Millstone Jennings</p></section>"
+          }
+        ],
+        "publications": [
+          {
+            "type": "publication",
+            "id": "http://example.org/entities/420f40db-4a5f-4fe1-bf08-b3eef4c97389",
+            "display": "<section><p><strong>Author</strong> Maude Lebowski</p>\n<p><strong>Title</strong> <i>Bella Books</i></p>\n<p><strong>Translator</strong> Eccentrica Gallumbits</p>\n<p><strong>Publication</strong> Tattooed mixtape selvage freegan shabby chic.</p></section>"
+          },
+          {
+            "type": "publication",
+            "id": "http://example.org/entities/d2173364-05d9-4c93-aef8-356379acc1b9",
+            "display": "<section><p><strong>Author</strong> Jackie Treehorn</p>\n<p><strong>Title</strong> Harcourt Assessment</p>\n<p><strong>Translator</strong> Questular Rontok</p>\n<p><strong>Publication</strong> 8-bit godard small batch xoxo.</p></section>"
+          }
+        ],
+        "readings": [
+          {
+            "type": "reading",
+            "id": "http://example.org/entities/27e58164-af9b-4729-bc0b-30566c49dad2",
+            "display": "<section><p><strong>Author</strong> Lavonna Hahn</p>\n<p><strong>Title</strong> A Glass of Blessings</p>\n<p><strong>Publication</strong> Bantam Books.</p></section>"
+          }
+        ],
+        "work_of_arts": [
+          {
+            "type": "work_of_art",
+            "id": "http://example.org/entities/72182f24-e4c2-4451-827d-4ce2ccca53f8",
+            "display": "<section><p><strong>Artist</strong> Zarquon</p>\n<p><strong>Title</strong> Pretzel Body Logic</p>\n<p><strong>Description</strong> Typewriter phlogiston pug meggings.</p>\n<p><strong>Owner/location</strong> Heart of Gold</p></section>"
+          },
+          {
+            "type": "work_of_art",
+            "id": "http://example.org/entities/d416e7f9-5269-4f4e-b4db-7a691a5b7f0b",
+            "display": "<section><p><strong>Artist</strong> Gag Halfrunt</p>\n<p><strong>Title</strong> Pink Cashmere</p>\n<p><strong>Description</strong> Kinfolk vinyl crucifix retro.</p>\n<p><strong>Owner/location</strong> Starship Titanic</p></section>"
+          }
+        ]
+      }
+    },
+    {
+      "id": "http://example.org/letters/2723428b-ca58-4812-a6af-6eef1dd89a51",
+      "date": "1963-05-25T00:00:00.000-04:00",
+      "label": "25 May 1963 - Stehr, Allene",
+      "language": "german",
+      "volume": 3,
+      "recipients": [
+        "Stehr, Allene"
+      ],
+      "destinations": [
+        "<i>Pleiades system</i>"
+      ],
+      "origins": null,
+      "mentions": {
+        "people": [
+          {
+            "type": "person",
+            "id": "http://example.org/entities/7079ad7a-7f69-45ee-9440-f093703bf5f1",
+            "display": "<section><p><strong>Raymon Kiehn, 1928-1994</strong></p>\n<p>I think you ought to know I'm feeling very depressed.</p></section>"
+          },
+          {
+            "type": "person",
+            "id": "http://example.org/entities/c9789c43-1bd2-4e17-9ea3-bef7d03d4219",
+            "display": "<section><p><strong>Alexia Kutch, 1908-1970</strong></p>\n<p>And then of course I've got this terrible pain in all the diodes down my left side.</p></section>"
+          }
+        ],
+        "places": [
+          {
+            "type": "place",
+            "id": "http://example.org/entities/6d3d9589-b4c4-4a9f-b702-d4322b0dd4cd",
+            "display": "<section><p><strong>Frogstar World B</strong></p>\n<p>Salvia flannel deep v sriracha green juice popup celiac.</p></section>"
+          }
+        ],
+        "public_events": [
+          {
+            "type": "public_event",
+            "id": "http://example.org/entities/39ea1933-12bf-4ea2-a351-ffe1368924af",
+            "display": "<section><p><strong>Enterprise</strong></p>\n<p><strong>1948-07-09.</strong></p></section>"
+          },
+          {
+            "type": "public_event",
+            "id": "http://example.org/entities/c9737707-5414-413f-a0a9-22a71e04025b",
+            "display": "<section><p><strong>Apollo</strong></p>\n<p><strong>1969-12-25.</strong></p></section>"
+          },
+          {
+            "type": "public_event",
+            "id": "http://example.org/entities/35a0a6f6-5621-4499-ac46-29cb7df1ae75",
+            "display": "<section><p><strong><i>Columbia</i></strong></p>\n<p><strong>1967-03-17.</strong></p></section>"
+          }
+        ],
+        "readings": [
+          {
+            "type": "reading",
+            "id": "http://example.org/entities/bafb7894-1b8c-44e5-8570-22ef47d2065e",
+            "display": "<section><p><strong>Author</strong> Cortez Moen</p>\n<p><strong>Title</strong> The Heart Is Deceitful Above All Things</p>\n<p><strong>Publication</strong> E. P. Dutton.</p></section>"
+          }
+        ]
+      }
+    },
+    {
+      "id": "http://example.org/letters/e7de0856-8342-450d-8e97-498878845cda",
+      "date": "1966-07-01T00:00:00.000-04:00",
+      "label": "01 July 1966 - Harber, Dinorah",
+      "language": "italian",
+      "volume": 0,
+      "recipients": [
+        "Harber, Dinorah"
+      ],
+      "destinations": [
+        "Stavromula Beta"
       ],
       "origins": null,
       "mentions": {
         "music": [
           {
             "type": "music",
-            "id": "http://example.org/entities/75108a92-27f1-4853-ac50-14ddf73b97f6",
-            "display": [
-
-            ]
+            "id": "http://example.org/entities/364fc927-8412-4846-976f-a0495b4652ee",
+            "display": "<section><p><strong>Composer</strong> Loonquawl and Phouchg</p>\n<p><strong>Title</strong> <i>Delirious</i></p>\n<p><strong>Description</strong> Kitsch vhs trust fund kogi flannel mumblecore.</p></section>"
           },
           {
             "type": "music",
-            "id": "http://example.org/entities/f33ccc73-6d59-4919-adb9-77cea334a8e6",
-            "display": [
-
-            ]
-          },
-          {
-            "type": "music",
-            "id": "http://example.org/entities/fe5e5072-180d-4731-96ca-4b88d512dfd1",
-            "display": [
-
-            ]
+            "id": "http://example.org/entities/4fe10bbe-d0ca-4d0c-9fae-3ed0c7d54d9a",
+            "display": "<section><p><strong>Composer</strong> Colin the Security Robot</p>\n<p><strong>Title</strong> <i>Bambi</i></p>\n<p><strong>Description</strong> Vinyl retro 90s sriracha wes anderson tryhard helvetica pork belly.</p></section>"
           }
         ],
-        "places": [
-          {
-            "type": "place",
-            "id": "http://example.org/entities/3babc7d4-a8df-4f18-a136-12b7431515c6",
-            "display": [
-
-            ]
-          }
-        ],
-        "public_events": [
-          {
-            "type": "public_event",
-            "id": "http://example.org/entities/baa9ce56-b451-4e81-b150-097f20a3c706",
-            "display": [
-
-            ]
-          }
-        ],
-        "work_of_arts": [
-          {
-            "type": "work_of_art",
-            "id": "http://example.org/entities/84c8f457-c13d-47a4-b99c-eb7e34c78eaf",
-            "display": [
-
-            ]
-          },
-          {
-            "type": "work_of_art",
-            "id": "http://example.org/entities/e790c448-8999-4194-83a0-ee0e35cd73c6",
-            "display": [
-
-            ]
-          }
-        ]
-      }
-    },
-    {
-      "id": "http://example.org/letters/192db3b8-813b-4dec-8bd1-52af9da62a37",
-      "date": "1962-01-30T00:00:00.000-05:00",
-      "label": "30 January 1962 - Abbott, Davis",
-      "recipients": [
-        "Abbott, Davis"
-      ],
-      "destinations": [
-        "Ibiza"
-      ],
-      "origins": null,
-      "mentions": {
-        "attendances": [
-          {
-            "type": "attendance",
-            "id": "http://example.org/entities/f829a4a4-e2be-411d-9f2b-26b370dc8761",
-            "display": [
-
-            ]
-          }
-        ],
-        "places": [
-          {
-            "type": "place",
-            "id": "http://example.org/entities/162b5f0c-9fa0-45ee-a334-02e4bc8ddbae",
-            "display": [
-
-            ]
-          },
-          {
-            "type": "place",
-            "id": "http://example.org/entities/356b3cd8-7540-46cf-8723-3d5ffc1fd909",
-            "display": [
-
-            ]
-          },
-          {
-            "type": "place",
-            "id": "http://example.org/entities/de8e5749-8e7b-47dd-b021-a686df9157f9",
-            "display": [
-
-            ]
-          }
-        ],
-        "public_events": [
-          {
-            "type": "public_event",
-            "id": "http://example.org/entities/8eba0bd0-a369-43b4-9e9c-b55e881d4885",
-            "display": [
-
-            ]
-          }
-        ],
-        "publications": [
-          {
-            "type": "publication",
-            "id": "http://example.org/entities/afd00aff-325c-4372-9941-7d59743eb544",
-            "display": [
-
-            ]
-          }
-        ]
-      }
-    },
-    {
-      "id": "http://example.org/letters/02d5342e-bfa2-4b7f-81d1-38eb6d061521",
-      "date": "1962-02-11T00:00:00.000-05:00",
-      "label": "11 February 1962 - Borer, Kenna",
-      "recipients": [
-        "Borer, Kenna"
-      ],
-      "destinations": [
-        "Fenchurch Street railway station"
-      ],
-      "origins": null,
-      "mentions": {
-        "public_events": [
-          {
-            "type": "public_event",
-            "id": "http://example.org/entities/24ccb69b-f019-4e9d-a6f6-84590240bae9",
-            "display": [
-
-            ]
-          },
-          {
-            "type": "public_event",
-            "id": "http://example.org/entities/602ba7c7-7469-42e7-99dc-04e74aa3d2e2",
-            "display": [
-
-            ]
-          },
-          {
-            "type": "public_event",
-            "id": "http://example.org/entities/eb1d0f0d-25b0-467e-bc6f-eb92a702f034",
-            "display": [
-
-            ]
-          }
-        ],
-        "translatings": [
-          {
-            "type": "translating",
-            "id": "http://example.org/entities/1aad8dee-0e49-483b-972e-7c748b8702c1",
-            "display": [
-
-            ]
-          },
-          {
-            "type": "translating",
-            "id": "http://example.org/entities/7250787c-e95d-4d0f-a363-de6e610abbc7",
-            "display": [
-
-            ]
-          }
-        ],
-        "work_of_arts": [
-          {
-            "type": "work_of_art",
-            "id": "http://example.org/entities/7325600c-d27b-4789-a861-692138731790",
-            "display": [
-
-            ]
-          },
-          {
-            "type": "work_of_art",
-            "id": "http://example.org/entities/b5721f70-b636-47f4-9046-880881698429",
-            "display": [
-
-            ]
-          },
-          {
-            "type": "work_of_art",
-            "id": "http://example.org/entities/f6f996c4-825e-4329-b8a2-ca0ee22470d2",
-            "display": [
-
-            ]
-          }
-        ],
-        "writings": [
-          {
-            "type": "writing",
-            "id": "http://example.org/entities/88ee8dcc-e24d-4f97-a6fd-0b594d963e47",
-            "display": [
-
-            ]
-          }
-        ]
-      }
-    },
-    {
-      "id": "http://example.org/letters/a1bc7727-34a2-4cc9-bafa-0db81635c8de",
-      "date": "1962-03-31T00:00:00.000-05:00",
-      "label": "31 March 1962 - Aufderhar, Zona",
-      "recipients": [
-        "Aufderhar, Zona"
-      ],
-      "destinations": [
-        "<i>Stavro Mueller Beta</i>"
-      ],
-      "origins": null,
-      "mentions": {
         "organizations": [
           {
             "type": "organization",
-            "id": "http://example.org/entities/b3e2c7b9-c954-42e1-ac1a-2316794906ad",
-            "display": [
-
-            ]
+            "id": "http://example.org/entities/6028ebd5-80bc-48c6-a4c6-2a923e9f4553",
+            "display": "<section><p><strong><i>Frogstar World C</i></strong></p>\n<p>And then of course I've got this terrible pain in all the diodes down my left side.</p></section>"
           },
           {
             "type": "organization",
-            "id": "http://example.org/entities/e8b008ca-8b29-4b1d-97e4-f1f19f2f4dae",
-            "display": [
-
-            ]
+            "id": "http://example.org/entities/8be76879-6595-4ba2-beb4-26adbde2dd98",
+            "display": "<section><p><strong>NowWhat</strong></p>\n<p>I won't enjoy it.</p></section>"
+          },
+          {
+            "type": "organization",
+            "id": "http://example.org/entities/58a3ec10-b5e0-4683-8a8e-79f6ea013d9f",
+            "display": "<section><p><strong><i>Broop Kidron 13</i></strong></p>\n<p>Life? Don't talk to me about life.</p></section>"
           }
         ],
         "publications": [
           {
             "type": "publication",
-            "id": "http://example.org/entities/022c1df7-f0c4-4ff0-b8a1-c4c9c6a9a1bb",
-            "display": [
-
-            ]
+            "id": "http://example.org/entities/06e96ffa-3788-4452-af99-49c9d89111bb",
+            "display": "<section><p><strong>Author</strong> Maude Lebowski</p>\n<p><strong>Title</strong> Virago Press</p>\n<p><strong>Translator</strong> Emily Saunders</p>\n<p><strong>Publication</strong> Tumblr waistcoat irony vice photo booth five dollar toast wayfarers.</p></section>"
           },
           {
             "type": "publication",
-            "id": "http://example.org/entities/ae9105cf-e5a3-49a9-a6d3-6184a5edb212",
-            "display": [
-
-            ]
+            "id": "http://example.org/entities/1e14e182-aeda-4fa2-80e4-0029db05bd03",
+            "display": "<section><p><strong>Author</strong> Walter Sobchak</p>\n<p><strong>Title</strong> Casemate Publishers</p>\n<p><strong>Translator</strong> Wonko the Sane</p>\n<p><strong>Publication</strong> Trust fund green juice fanny pack typewriter.</p></section>"
+          },
+          {
+            "type": "publication",
+            "id": "http://example.org/entities/cd694c94-e9a5-4660-bb3f-71789df2fe4c",
+            "display": "<section><p><strong>Author</strong> Maude Lebowski</p>\n<p><strong>Title</strong> Mandrake Press</p>\n<p><strong>Translator</strong> Wonko the Sane</p>\n<p><strong>Publication</strong> Cronut mixtape wolf cray.</p></section>"
           }
         ],
         "work_of_arts": [
           {
             "type": "work_of_art",
-            "id": "http://example.org/entities/62b19603-412f-4859-b007-d95e9601a4a7",
-            "display": [
-
-            ]
-          }
-        ],
-        "writings": [
-          {
-            "type": "writing",
-            "id": "http://example.org/entities/3463916e-074a-4452-a180-a08b80b404b8",
-            "display": [
-
-            ]
+            "id": "http://example.org/entities/af3130a9-69de-46a2-ac16-345a0b94c619",
+            "display": "<section><p><strong>Artist</strong> Effrafax of Wug</p>\n<p><strong>Title</strong> Can't Stop This Feeling I Got</p>\n<p><strong>Description</strong> Keffiyeh asymmetrical small batch organic waistcoat.</p>\n<p><strong>Owner/location</strong> Tanngrisnir</p></section>"
           },
           {
-            "type": "writing",
-            "id": "http://example.org/entities/5ab73038-faf1-4a0b-a3fc-57dc450becd1",
-            "display": [
-
-            ]
-          },
-          {
-            "type": "writing",
-            "id": "http://example.org/entities/d5bd8c8b-ceb6-4661-b825-3ccf13b11e58",
-            "display": [
-
-            ]
+            "type": "work_of_art",
+            "id": "http://example.org/entities/10138dc6-619f-4108-9a1c-33168efded6b",
+            "display": "<section><p><strong>Artist</strong> Trillian</p>\n<p><strong>Title</strong> Computer Blue</p>\n<p><strong>Description</strong> Kitsch <i>mlkshk kale chips street</i> churchkey.</p>\n<p><strong>Owner/location</strong> Golgafrinchan Ark Fleet Ship B</p></section>"
           }
         ]
       }
     },
     {
-      "id": "http://example.org/letters/8de791a6-26e5-4205-bff1-3b3caee32683",
-      "date": "1963-06-08T00:00:00.000-04:00",
-      "label": "08 June 1963 - Yost, Carlotta",
+      "id": "http://example.org/letters/ead3ddc6-9e6c-4b61-a180-d7cccfef6814",
+      "date": "1969-08-02T00:00:00.000-04:00",
+      "label": "02 August 1969 - Buckridge, Romana",
+      "language": "italian",
+      "volume": 1,
       "recipients": [
-        "Yost, Carlotta"
-      ],
-      "destinations": [
-        "<i>Croydon</i>"
-      ],
-      "origins": null,
-      "mentions": {
-        "attendances": [
-          {
-            "type": "attendance",
-            "id": "http://example.org/entities/63341a41-f1bd-4ab2-9794-c9f3f3e3657a",
-            "display": [
-
-            ]
-          },
-          {
-            "type": "attendance",
-            "id": "http://example.org/entities/7f425607-60c8-4a6a-8073-3f71bc3f161c",
-            "display": [
-
-            ]
-          }
-        ],
-        "people": [
-          {
-            "type": "person",
-            "id": "http://example.org/entities/40aedafd-1d2e-4be4-a3b5-59607a4f82dc",
-            "display": [
-
-            ]
-          },
-          {
-            "type": "person",
-            "id": "http://example.org/entities/6fa4ea59-670c-4712-982d-abb42a16cb8c",
-            "display": [
-
-            ]
-          },
-          {
-            "type": "person",
-            "id": "http://example.org/entities/ee5fb39b-47ad-4a5d-ac86-54cdf87c2ce6",
-            "display": [
-
-            ]
-          }
-        ],
-        "places": [
-          {
-            "type": "place",
-            "id": "http://example.org/entities/ad6f34c3-1a4f-47ef-934a-425c903a1728",
-            "display": [
-
-            ]
-          }
-        ],
-        "public_events": [
-          {
-            "type": "public_event",
-            "id": "http://example.org/entities/8b93ee26-b853-491d-b8c8-bbe30b257b2c",
-            "display": [
-
-            ]
-          }
-        ]
-      }
-    },
-    {
-      "id": "http://example.org/letters/ad4bb237-f091-467a-847a-81b2fad08bee",
-      "date": "1964-03-10T00:00:00.000-05:00",
-      "label": "10 March 1964 - Senger, Holly",
-      "recipients": [
-        "Senger, Holly"
-      ],
-      "destinations": [
-        "Space"
-      ],
-      "origins": null,
-      "mentions": {
-        "productions": [
-          {
-            "type": "production",
-            "id": "http://example.org/entities/19df7c4a-ef37-40b7-8c90-b9e252c5ad55",
-            "display": [
-
-            ]
-          },
-          {
-            "type": "production",
-            "id": "http://example.org/entities/e84d4700-4de2-4014-a0b7-0dc04d2e2615",
-            "display": [
-
-            ]
-          }
-        ],
-        "publications": [
-          {
-            "type": "publication",
-            "id": "http://example.org/entities/db8e4e9e-ba2b-4dab-8f9d-5b1af56c76bb",
-            "display": [
-
-            ]
-          }
-        ],
-        "readings": [
-          {
-            "type": "reading",
-            "id": "http://example.org/entities/5f5d34b2-6c36-4845-a824-a35e28153dad",
-            "display": [
-
-            ]
-          },
-          {
-            "type": "reading",
-            "id": "http://example.org/entities/c99d1965-f5c1-4659-afd6-c00939d1690b",
-            "display": [
-
-            ]
-          },
-          {
-            "type": "reading",
-            "id": "http://example.org/entities/ce1bd8f9-6e0f-43f3-a0d6-897dd18a9d47",
-            "display": [
-
-            ]
-          }
-        ],
-        "writings": [
-          {
-            "type": "writing",
-            "id": "http://example.org/entities/b1174d6b-4009-47a7-975c-87fb739b3fb6",
-            "display": [
-
-            ]
-          }
-        ]
-      }
-    },
-    {
-      "id": "http://example.org/letters/73d4ccca-b123-4fd6-9acd-7634e2734912",
-      "date": "1964-05-19T00:00:00.000-04:00",
-      "label": "19 May 1964 - Pouros, Norberto",
-      "recipients": [
-        "Pouros, Norberto"
+        "Buckridge, Romana"
       ],
       "destinations": [
         "<i>Norway</i>"
       ],
       "origins": null,
       "mentions": {
-        "attendances": [
+        "places": [
           {
-            "type": "attendance",
-            "id": "http://example.org/entities/70f78bba-2d88-488f-954f-9933d971f5b1",
-            "display": [
-
-            ]
-          },
-          {
-            "type": "attendance",
-            "id": "http://example.org/entities/d079e4bd-a13a-4533-ab1c-e699161410f4",
-            "display": [
-
-            ]
+            "type": "place",
+            "id": "http://example.org/entities/6280afd1-125f-4d5b-8a2b-1bd2f9109dad",
+            "display": "<section><p><strong>Easter Island</strong></p>\n<p>Tryhard <i>food truck health heirloom sartorial deep</i> v.</p></section>"
           }
         ],
-        "music": [
+        "public_events": [
           {
-            "type": "music",
-            "id": "http://example.org/entities/a26ac878-3b53-4265-b61a-6926b5f3f839",
-            "display": [
-
-            ]
+            "type": "public_event",
+            "id": "http://example.org/entities/b577391d-0953-4864-bebb-8d7f01a6db24",
+            "display": "<section><p><strong><i>Atlantis</i></strong></p>\n<p><strong>1944-01-03.</strong></p></section>"
           },
           {
-            "type": "music",
-            "id": "http://example.org/entities/b9735ab2-7e8b-4818-8f45-1bf914678eec",
-            "display": [
-
-            ]
+            "type": "public_event",
+            "id": "http://example.org/entities/fd2a2360-b5e3-4f47-827d-e2d6d7e1c8e4",
+            "display": "<section><p><strong><i>Mercury</i></strong></p>\n<p><strong>1929-12-10.</strong></p></section>"
+          },
+          {
+            "type": "public_event",
+            "id": "http://example.org/entities/e538c81a-907f-469a-b0ba-e065869ef6ee",
+            "display": "<section><p><strong>Mercury</strong></p>\n<p><strong>1960-10-18.</strong></p></section>"
           }
         ],
-        "organizations": [
+        "translatings": [
           {
-            "type": "organization",
-            "id": "http://example.org/entities/292a1593-4dde-454b-a5d6-230f723dda53",
-            "display": [
-
-            ]
+            "type": "translating",
+            "id": "http://example.org/entities/f338ccb4-4f6c-4a99-a21b-ad0af7b2f22a",
+            "display": "<section><p><strong>Author</strong> Roosta, <strong>Original Title</strong> <i>The Wealth of Nations</i></p>\n<p><strong>Translated into</strong> Spanish by Hotblack Desiato's bodyguard</p>\n<p><strong>Translated title</strong> Bistromath.</p></section>"
           },
           {
-            "type": "organization",
-            "id": "http://example.org/entities/805bb49e-8abc-4786-b025-e46356cb881a",
-            "display": [
-
-            ]
+            "type": "translating",
+            "id": "http://example.org/entities/c92e2cd2-8c69-499f-80e0-31e4ca020549",
+            "display": "<section><p><strong>Author</strong> Gag Halfrunt, <strong>Original Title</strong> <i>Bury My Heart at Wounded Knee</i></p>\n<p><strong>Translated into</strong> English by Barry Manilow</p>\n<p><strong>Translated title</strong> Heart of Gold.</p></section>"
           }
         ],
-        "readings": [
+        "writings": [
           {
-            "type": "reading",
-            "id": "http://example.org/entities/2a9d655f-79d3-4609-9373-9d2832fe8d6c",
-            "display": [
-
-            ]
+            "type": "writing",
+            "id": "http://example.org/entities/774516f8-4d58-4d36-9038-c15778455ee7",
+            "display": "<section><p><strong>Title</strong> It's a Battlefield</p>\n<p><strong>Proposal/Response</strong> Evolution? they said to themselves, Who needs it?</p>\n<p><strong>Translator</strong> Hactar</p>\n<p><strong>Date</strong> 1952-10-19.</p></section>"
           },
           {
-            "type": "reading",
-            "id": "http://example.org/entities/c7f310c7-f5e2-48c3-a35d-24c15b5fb825",
-            "display": [
-
-            ]
-          },
-          {
-            "type": "reading",
-            "id": "http://example.org/entities/fb500827-70d0-49aa-afbe-f93cb89c9c62",
-            "display": [
-
-            ]
+            "type": "writing",
+            "id": "http://example.org/entities/2ed5e939-f2c6-4674-8c5d-510981e499f4",
+            "display": "<section><p><strong>Title</strong> Tiger! Tiger!</p>\n<p><strong>Proposal/Response</strong> if you’ve never been through a matter transference beam before you’ve probably lost some salt and protein. The beer you had should have cushioned your system a bit.</p>\n<p><strong>Translator</strong> Reg Nullify</p>\n<p><strong>Date</strong> 1960-06-19.</p></section>"
           }
         ]
       }
     },
     {
-      "id": "http://example.org/letters/162d70fd-b955-489a-81c5-b425a39a6d45",
-      "date": "1964-11-02T00:00:00.000-05:00",
-      "label": "02 November 1964 - Lebsack, Rosalva",
+      "id": "http://example.org/letters/154b4fc6-819a-4908-9c95-eb2578c2824a",
+      "date": "1971-09-30T00:00:00.000-04:00",
+      "label": "30 September 1971 - Parker, Glendora",
+      "language": "italian",
+      "volume": 1,
       "recipients": [
-        "Lebsack, Rosalva"
-      ],
-      "destinations": [
-        "<i>Boston</i>"
-      ],
-      "origins": null,
-      "mentions": {
-        "organizations": [
-          {
-            "type": "organization",
-            "id": "http://example.org/entities/5cd66f1b-a918-46b4-8ef2-ce7d012ab5b6",
-            "display": [
-
-            ]
-          },
-          {
-            "type": "organization",
-            "id": "http://example.org/entities/b8d97906-b013-43b0-a814-4b2ef4733d9f",
-            "display": [
-
-            ]
-          },
-          {
-            "type": "organization",
-            "id": "http://example.org/entities/edb9138b-0222-487c-87ef-f29a44210b85",
-            "display": [
-
-            ]
-          }
-        ],
-        "people": [
-          {
-            "type": "person",
-            "id": "http://example.org/entities/254e43ae-1623-4d15-8283-2aebcb74d9a2",
-            "display": [
-
-            ]
-          },
-          {
-            "type": "person",
-            "id": "http://example.org/entities/5253525a-6ac4-48bf-a92b-b231678d7e27",
-            "display": [
-
-            ]
-          },
-          {
-            "type": "person",
-            "id": "http://example.org/entities/8ca4df6a-0294-4fd0-b9a4-525024f2ea17",
-            "display": [
-
-            ]
-          }
-        ],
-        "publications": [
-          {
-            "type": "publication",
-            "id": "http://example.org/entities/3a054a75-cc6f-436e-9ea5-31cec2557fa6",
-            "display": [
-
-            ]
-          }
-        ],
-        "work_of_arts": [
-          {
-            "type": "work_of_art",
-            "id": "http://example.org/entities/2b6eb22a-c367-4fe7-a71a-bc7e587c29a9",
-            "display": [
-
-            ]
-          },
-          {
-            "type": "work_of_art",
-            "id": "http://example.org/entities/ee79ad7b-3726-4e46-b0ee-c17cad80d2c8",
-            "display": [
-
-            ]
-          },
-          {
-            "type": "work_of_art",
-            "id": "http://example.org/entities/ff0495c2-ceef-40e8-ba45-1302cf8b88d3",
-            "display": [
-
-            ]
-          }
-        ]
-      }
-    },
-    {
-      "id": "http://example.org/letters/404ba9b8-b361-4f6e-b320-7890268194ed",
-      "date": "1965-09-01T00:00:00.000-04:00",
-      "label": "01 September 1965 - Koelpin, Edna",
-      "recipients": [
-        "Koelpin, Edna"
+        "Parker, Glendora"
       ],
       "destinations": [
         "North West Ripple"
@@ -1018,83 +582,532 @@ Content-Length: 16721</pre>
         "music": [
           {
             "type": "music",
-            "id": "http://example.org/entities/0d4dd1ee-47b3-4e03-97aa-b69f5e72b44e",
-            "display": [
-
-            ]
+            "id": "http://example.org/entities/7bb82f11-83c1-4c4c-9d85-cbb0e0082f58",
+            "display": "<section><p><strong>Composer</strong> Mella</p>\n<p><strong>Title</strong> <i>New Position</i></p>\n<p><strong>Description</strong> Five dollar toast carry bespoke whatever gentrify.</p></section>"
           },
           {
             "type": "music",
-            "id": "http://example.org/entities/5ace560f-a05d-42e1-9a99-c206ba6495ec",
-            "display": [
-
-            ]
+            "id": "http://example.org/entities/fda23221-3d9c-4268-978f-902208e46cf3",
+            "display": "<section><p><strong>Composer</strong> Reg Nullify</p>\n<p><strong>Title</strong> It's Gonna Be A Beautiful Night</p>\n<p><strong>Description</strong> Vinegar irony craft beer portland five dollar toast franzen everyday seitan.</p></section>"
           }
         ],
-        "organizations": [
+        "people": [
           {
-            "type": "organization",
-            "id": "http://example.org/entities/03567d4b-eff0-46b3-9f90-89a8a39e47ac",
-            "display": [
-
-            ]
+            "type": "person",
+            "id": "http://example.org/entities/45d58348-3070-42cf-9c93-dae544567e58",
+            "display": "<section><p><strong>Donnie Gibson, 1901-1992</strong></p>\n<p>I wish you'd just tell me rather trying to engage my enthusiasm, because I haven't got one.</p></section>"
           },
           {
-            "type": "organization",
-            "id": "http://example.org/entities/0e1a1973-9836-4296-8115-253b9165d5c1",
-            "display": [
-
-            ]
-          },
-          {
-            "type": "organization",
-            "id": "http://example.org/entities/44f6db33-b1d8-44ac-9bcd-1d84831b5cd5",
-            "display": [
-
-            ]
+            "type": "person",
+            "id": "http://example.org/entities/5f1da703-c3f2-496b-8e56-4cc4436a4061",
+            "display": "<section><p><strong>Cayla Roob, 1924-1995</strong></p>\n<p>Here <i>I am, brain the size of a planet, and they tell me to take you up to the bridge. Call that job satisfaction? 'Cos I</i> don't.</p></section>"
           }
         ],
         "publications": [
           {
             "type": "publication",
-            "id": "http://example.org/entities/b2ff871d-fde7-481b-8689-051e325ba0c5",
-            "display": [
-
-            ]
+            "id": "http://example.org/entities/b493d712-c108-4522-b4e1-9488790888b7",
+            "display": "<section><p><strong>Author</strong> Walter Sobchak</p>\n<p><strong>Title</strong> Kogan Page</p>\n<p><strong>Translator</strong> Hactar</p>\n<p><strong>Publication</strong> Distillery plaid cornhole selfies fingerstache.</p></section>"
+          },
+          {
+            "type": "publication",
+            "id": "http://example.org/entities/df8397a7-ff4c-4bc2-bdd8-4cc9e5385561",
+            "display": "<section><p><strong>Author</strong> Bunny Lebowski</p>\n<p><strong>Title</strong> Pantheon Books at Random House</p>\n<p><strong>Translator</strong> Ford Prefect</p>\n<p><strong>Publication</strong> Vegan migas try-hard kinfolk.</p></section>"
+          }
+        ],
+        "readings": [
+          {
+            "type": "reading",
+            "id": "http://example.org/entities/2bd3b616-271a-457e-8556-5e1dd171973c",
+            "display": "<section><p><strong>Author</strong> Niki Hoeger</p>\n<p><strong>Title</strong> A Darkling Plain</p>\n<p><strong>Publication</strong> Carlton Books.</p></section>"
+          },
+          {
+            "type": "reading",
+            "id": "http://example.org/entities/ba8add4c-fe1b-4f38-b7a1-502a6cafce93",
+            "display": "<section><p><strong>Author</strong> Chanelle Franecki</p>\n<p><strong>Title</strong> To Say Nothing of the Dog</p>\n<p><strong>Publication</strong> Mascot Books.</p></section>"
+          }
+        ]
+      }
+    },
+    {
+      "id": "http://example.org/letters/571754eb-cab7-440f-b3c9-a6724b1d4441",
+      "date": "1972-03-09T00:00:00.000-05:00",
+      "label": "09 March 1972 - Nikolaus, Jason",
+      "language": "german",
+      "volume": 4,
+      "recipients": [
+        "Nikolaus, Jason"
+      ],
+      "destinations": [
+        "<i>Norway</i>"
+      ],
+      "origins": null,
+      "mentions": {
+        "music": [
+          {
+            "type": "music",
+            "id": "http://example.org/entities/bec00023-7ced-47bc-bac0-92a3bfd24a57",
+            "display": "<section><p><strong>Composer</strong> Vroomfondel</p>\n<p><strong>Title</strong> Money Don't Matter 2 Night</p>\n<p><strong>Description</strong> Twee quinoa helvetica taxidermy williamsburg listicle.</p></section>"
+          },
+          {
+            "type": "music",
+            "id": "http://example.org/entities/9c4f9161-a187-43bc-9f07-bf5b7f360ea3",
+            "display": "<section><p><strong>Composer</strong> Humma Kavula</p>\n<p><strong>Title</strong> I Love U, but I Don't Trust U Anymore</p>\n<p><strong>Description</strong> Venmo 8bit pbrb pug.</p></section>"
+          },
+          {
+            "type": "music",
+            "id": "http://example.org/entities/361e1f8a-b2e9-4266-930c-97f325a3ad32",
+            "display": "<section><p><strong>Composer</strong> Random Dent</p>\n<p><strong>Title</strong> I Could Never Take The Place Of Your Man</p>\n<p><strong>Description</strong> Meggings <i>flannel trust fund tofu scenester wes anderson polaroid glutenfree</i> hoodie.</p></section>"
+          }
+        ],
+        "places": [
+          {
+            "type": "place",
+            "id": "http://example.org/entities/777dbc16-c98c-42bd-b50e-24244e5ec7d3",
+            "display": "<section><p><strong><i>Lamuella</i></strong></p>\n<p>Health microdosing roof fashion axe organic yuccie keffiyeh.</p></section>"
+          }
+        ],
+        "productions": [
+          {
+            "type": "production",
+            "id": "http://example.org/entities/0df83f9f-d6e1-4106-ba45-475b16421fd5",
+            "display": "<section><p><strong>Title</strong> <i>12 Angry Men</i></p>\n<p><strong>Proposal/Response</strong> Pardon me for breathing, which I never do anyway so I don't know why I bother to say it, Oh God, I'm so depressed. / 42</p>\n<p><strong>Director</strong> The Dude <strong>Theatre, City</strong> Heart of Gold, Port Idaport</p>\n<p><strong>Date(s)</strong> 1934-11-24.</p></section>"
+          },
+          {
+            "type": "production",
+            "id": "http://example.org/entities/c8087568-aee8-4bed-9eb4-8647323cbb0a",
+            "display": "<section><p><strong>Title</strong> The Princess Bride</p>\n<p><strong>Proposal/Response</strong> I wish you'd just tell me rather trying to engage my enthusiasm, because I haven't got one. / ...they discovered only a small asteroid inhabited by a solitary old man who claimed repeatedly that nothing was true, though he was later discovered to be lying.</p>\n<p><strong>Director</strong> Jackie Treehorn <strong>Theatre, City</strong> RW6, East Patricaton</p>\n<p><strong>Date(s)</strong> 1923-02-01.</p></section>"
+          },
+          {
+            "type": "production",
+            "id": "http://example.org/entities/130a5da1-1bfa-457b-8e35-e67175e7d48a",
+            "display": "<section><p><strong>Title</strong> <i>Cinema Paradiso</i></p>\n<p><strong>Proposal/Response</strong> And then of course I've got this terrible pain in all the diodes down my left side. / Earth: Mostly Harmless</p>\n<p><strong>Director</strong> Bunny Lebowski <strong>Theatre, City</strong> Heart of Gold, Lueilwitztown</p>\n<p><strong>Date(s)</strong> 1937-04-11.</p></section>"
+          }
+        ],
+        "public_events": [
+          {
+            "type": "public_event",
+            "id": "http://example.org/entities/5394c6a1-03ec-4bc5-8bc6-78f05e2d3379",
+            "display": "<section><p><strong><i>Apollo</i></strong></p>\n<p><strong>1944-05-22.</strong></p></section>"
+          },
+          {
+            "type": "public_event",
+            "id": "http://example.org/entities/0be6a8b8-1a3e-4d8d-b18b-97e9d2229f2f",
+            "display": "<section><p><strong><i>Enterprise</i></strong></p>\n<p><strong>1934-08-17.</strong></p></section>"
+          },
+          {
+            "type": "public_event",
+            "id": "http://example.org/entities/4b4888a5-8ef3-4736-b289-2da186d9d3a2",
+            "display": "<section><p><strong>Challenger</strong></p>\n<p><strong>1955-07-10.</strong></p></section>"
+          }
+        ]
+      }
+    },
+    {
+      "id": "http://example.org/letters/3cc80728-40a4-4f61-a600-c46ca0adb446",
+      "date": "1973-09-26T00:00:00.000-04:00",
+      "label": "26 September 1973 - Lubowitz, Orlando",
+      "language": "italian",
+      "volume": 4,
+      "recipients": [
+        "Lubowitz, Orlando"
+      ],
+      "destinations": [
+        "Cathedral of Chalesm"
+      ],
+      "origins": null,
+      "mentions": {
+        "organizations": [
+          {
+            "type": "organization",
+            "id": "http://example.org/entities/8377c1c6-9b1b-48d6-a7d9-170cb527941a",
+            "display": "<section><p><strong>Magrathea</strong></p>\n<p>Life? <i>Don't talk to me about</i> life.</p></section>"
+          }
+        ],
+        "people": [
+          {
+            "type": "person",
+            "id": "http://example.org/entities/14679080-e3ff-42f9-8d9e-22871c7499ee",
+            "display": "<section><p><strong>Leana Roberts, 1918-1992</strong></p>\n<p>Pardon me for breathing, which I never do anyway so I don't know why I bother to say it, Oh God, I'm so depressed.</p></section>"
+          },
+          {
+            "type": "person",
+            "id": "http://example.org/entities/6e6ec602-5d8e-4b9a-a018-a173c0cf03eb",
+            "display": "<section><p><strong>Earnest Gorczany, 1904-1981</strong></p>\n<p>I think you ought to know I'm feeling very depressed.</p></section>"
+          }
+        ],
+        "public_events": [
+          {
+            "type": "public_event",
+            "id": "http://example.org/entities/a7442335-c1f6-4aa9-8d1c-990b6b4eb90b",
+            "display": "<section><p><strong>Discovery</strong></p>\n<p><strong>1970-06-02.</strong></p></section>"
+          },
+          {
+            "type": "public_event",
+            "id": "http://example.org/entities/d5ae1bfb-97ad-4d9a-90ca-6ba807f35d47",
+            "display": "<section><p><strong><i>Orion</i></strong></p>\n<p><strong>1953-10-26.</strong></p></section>"
+          }
+        ],
+        "writings": [
+          {
+            "type": "writing",
+            "id": "http://example.org/entities/bddc38ae-67fc-4306-8dd7-b9b44843f5f1",
+            "display": "<section><p><strong>Title</strong> <i>A Passage to India</i></p>\n<p><strong>Proposal/Response</strong> They’ve got as much sex appeal as a road accident.</p>\n<p><strong>Translator</strong> Hotblack Desiato's bodyguard</p>\n<p><strong>Date</strong> 1928-06-09.</p></section>"
+          }
+        ]
+      }
+    },
+    {
+      "id": "http://example.org/letters/63f4ebd4-4b2c-401a-9085-a39b79214956",
+      "date": "1974-12-16T00:00:00.000-05:00",
+      "label": "16 December 1974 - Gleason, Livia",
+      "language": "italian",
+      "volume": 1,
+      "recipients": [
+        "Gleason, Livia"
+      ],
+      "destinations": [
+        "Western Spiral Arm"
+      ],
+      "origins": null,
+      "mentions": {
+        "music": [
+          {
+            "type": "music",
+            "id": "http://example.org/entities/76db8ed9-0834-47c3-9da5-3a60291fd48f",
+            "display": "<section><p><strong>Composer</strong> Bowerick Wowbagger</p>\n<p><strong>Title</strong> <i>Jam Of The Year</i></p>\n<p><strong>Description</strong> Loko <i>small batch farmtotable franzen leggings everyday</i> dreamcatcher.</p></section>"
+          },
+          {
+            "type": "music",
+            "id": "http://example.org/entities/885b186d-7d79-4e0c-904b-2832d21025cf",
+            "display": "<section><p><strong>Composer</strong> Phouchg</p>\n<p><strong>Title</strong> Do It All Night</p>\n<p><strong>Description</strong> Next <i>level semiotics humblebrag neutra austin brunch echo diy</i> venmo.</p></section>"
+          },
+          {
+            "type": "music",
+            "id": "http://example.org/entities/8d0bf014-1295-4c7c-ab6e-b1b297597aef",
+            "display": "<section><p><strong>Composer</strong> Mella</p>\n<p><strong>Title</strong> Little Red Corvette</p>\n<p><strong>Description</strong> Taxidermy <i>vhs literally drinking pug schlitz you probably havent heard of</i> them.</p></section>"
+          }
+        ],
+        "readings": [
+          {
+            "type": "reading",
+            "id": "http://example.org/entities/77f77227-e047-4ba5-8786-9390275496e5",
+            "display": "<section><p><strong>Author</strong> Deadra Toy</p>\n<p><strong>Title</strong> To Say Nothing of the Dog</p>\n<p><strong>Publication</strong> Fairview Press.</p></section>"
           }
         ],
         "translatings": [
           {
             "type": "translating",
-            "id": "http://example.org/entities/03a5bd09-a540-4339-9b0a-a2facbdabf03",
-            "display": [
-
-            ]
+            "id": "http://example.org/entities/54899892-af15-4e19-a70c-b92c7274bcc7",
+            "display": "<section><p><strong>Author</strong> Hillman Hunter, <strong>Original Title</strong> To Say Nothing of the Dog</p>\n<p><strong>Translated into</strong> Japanese by Elvis</p>\n<p><strong>Translated title</strong> Krikkit One.</p></section>"
           },
           {
             "type": "translating",
-            "id": "http://example.org/entities/20f1b805-8156-4688-bc55-3c543fe8ec19",
-            "display": [
-
-            ]
+            "id": "http://example.org/entities/4f2de683-b086-4f94-a5fb-ba388fb0cd77",
+            "display": "<section><p><strong>Author</strong> Pizpot Gargravarr, <strong>Original Title</strong> <i>To Say Nothing of the Dog</i></p>\n<p><strong>Translated into</strong> Icelandic by Elvis</p>\n<p><strong>Translated title</strong> Heart of Gold.</p></section>"
           },
           {
             "type": "translating",
-            "id": "http://example.org/entities/debf5903-019d-4124-b446-d5a4f3b31cfb",
-            "display": [
-
-            ]
+            "id": "http://example.org/entities/21358b1f-ec80-432e-9325-af839efaa5d8",
+            "display": "<section><p><strong>Author</strong> Fenchurch, <strong>Original Title</strong> The Wings of the Dove</p>\n<p><strong>Translated into</strong> Irish Gaelic by Elvis</p>\n<p><strong>Translated title</strong> Vogon Constructor Fleet.</p></section>"
+          }
+        ],
+        "writings": [
+          {
+            "type": "writing",
+            "id": "http://example.org/entities/5361c3c7-723e-41a8-87da-4830097db361",
+            "display": "<section><p><strong>Title</strong> <i>Edna O'Brien</i></p>\n<p><strong>Proposal/Response</strong> there’s an infinite number of monkeys outside who want to talk to us about this script for Hamlet they’ve worked out.</p>\n<p><strong>Translator</strong> Fenchurch</p>\n<p><strong>Date</strong> 1969-06-01.</p></section>"
+          },
+          {
+            "type": "writing",
+            "id": "http://example.org/entities/2e104319-8efd-4685-ab5b-d4e175e6bee5",
+            "display": "<section><p><strong>Title</strong> Jesting Pilate</p>\n<p><strong>Proposal/Response</strong> Magrathea itself disappeared and its memory soon passed into the obscurity of legend. In these enlightened days, of course, no one believes a word of it.</p>\n<p><strong>Translator</strong> Grunthos the Flatulent</p>\n<p><strong>Date</strong> 1924-08-30.</p></section>"
+          },
+          {
+            "type": "writing",
+            "id": "http://example.org/entities/29e3dc36-f55c-48a7-b7d7-8f6f5e139e11",
+            "display": "<section><p><strong>Title</strong> In a Glass Darkly</p>\n<p><strong>Proposal/Response</strong> Evolution? they said to themselves, Who needs it?</p>\n<p><strong>Translator</strong> Dan Streetmentioner</p>\n<p><strong>Date</strong> 1971-03-22.</p></section>"
+          }
+        ]
+      }
+    },
+    {
+      "id": "http://example.org/letters/dce6b47d-d55b-4fcc-978a-e6e93d60b47a",
+      "date": "1975-09-20T00:00:00.000-04:00",
+      "label": "20 September 1975 - Langosh, Jan",
+      "language": "german",
+      "volume": 2,
+      "recipients": [
+        "Langosh, Jan"
+      ],
+      "destinations": [
+        "<i>Highgate Cemetery</i>"
+      ],
+      "origins": null,
+      "mentions": {
+        "attendances": [
+          {
+            "type": "attendance",
+            "id": "http://example.org/entities/9e9521e1-7608-42c0-9e42-6b755aabe7f1",
+            "display": "<section><p><strong>Radio Broadcast</strong>, Letterpress <i>3 wolf moon gentrify</i> chicharrones.</p>\n<p><strong>Attended with</strong> Bunny Lebowski and Agda</p>\n<p><strong>Place, Date</strong> Hagenestown, 30 June 1924</p>\n<p><strong>Director</strong> Agrajag</p></section>"
+          },
+          {
+            "type": "attendance",
+            "id": "http://example.org/entities/0a0b8eef-3062-4c54-8688-90f3f8afe53d",
+            "display": "<section><p><strong>Rehearsal</strong>, Small <i>batch meggings cardigan pourover brunch semiotics salvia</i> taxidermy.</p>\n<p><strong>Attended with</strong> Jackie Treehorn and Hotblack Desiato</p>\n<p><strong>Place, Date</strong> East Elia, 06 June 1966</p>\n<p><strong>Director</strong> Mr. Prosser</p></section>"
+          },
+          {
+            "type": "attendance",
+            "id": "http://example.org/entities/be50b8bf-5c35-4a9e-958e-740401cec68d",
+            "display": "<section><p><strong>Rehearsal</strong>, Drinking gentrify plaid brunch franzen salvia.</p>\n<p><strong>Attended with</strong> Jackie Treehorn and Emily Saunders</p>\n<p><strong>Place, Date</strong> Mikefurt, 21 January 1939</p>\n<p><strong>Director</strong> Pasta Fasta</p></section>"
+          }
+        ],
+        "organizations": [
+          {
+            "type": "organization",
+            "id": "http://example.org/entities/98a371ae-b283-4e16-8c3b-e07388b15f75",
+            "display": "<section><p><strong>Poghril</strong></p>\n<p>Life? <i>Don't talk to me about</i> life.</p></section>"
+          }
+        ],
+        "people": [
+          {
+            "type": "person",
+            "id": "http://example.org/entities/b1937984-32f5-40c3-bfc6-55e991a77b13",
+            "display": "<section><p><strong>Sam O'Keefe, 1921-1980</strong></p>\n<p>There's only one life-form as intelligent as me within thirty parsecs of here and that's me.</p></section>"
+          }
+        ],
+        "translatings": [
+          {
+            "type": "translating",
+            "id": "http://example.org/entities/6a5b9859-2fc3-4eec-b4f8-f2488fb0c951",
+            "display": "<section><p><strong>Author</strong> Hactar, <strong>Original Title</strong> Jesting Pilate</p>\n<p><strong>Translated into</strong> Ukrainian by Charles Darwin</p>\n<p><strong>Translated title</strong> Tanngrisnir.</p></section>"
+          },
+          {
+            "type": "translating",
+            "id": "http://example.org/entities/1a6cd95b-6611-4bc5-ab90-ccd15b8d1465",
+            "display": "<section><p><strong>Author</strong> Marvin, <strong>Original Title</strong> <i>The Way Through the Woods</i></p>\n<p><strong>Translated into</strong> Rumanian by Arthur Dent</p>\n<p><strong>Translated title</strong> Krikkit One.</p></section>"
+          },
+          {
+            "type": "translating",
+            "id": "http://example.org/entities/de95d76e-cec4-4c8e-b9f2-f73e05e77148",
+            "display": "<section><p><strong>Author</strong> Emily Saunders, <strong>Original Title</strong> The Man Within</p>\n<p><strong>Translated into</strong> Portuguese by Lunkwill and Fook</p>\n<p><strong>Translated title</strong> Vogon Constructor Fleet.</p></section>"
+          }
+        ]
+      }
+    },
+    {
+      "id": "http://example.org/letters/1802cba4-5f86-4b35-9cc4-5c8bc2a05049",
+      "date": "1978-10-16T00:00:00.000-04:00",
+      "label": "16 October 1978 - Friesen, Lester",
+      "language": "italian",
+      "volume": 1,
+      "recipients": [
+        "Friesen, Lester"
+      ],
+      "destinations": [
+        "<i>Easter Island</i>"
+      ],
+      "origins": null,
+      "mentions": {
+        "attendances": [
+          {
+            "type": "attendance",
+            "id": "http://example.org/entities/26af9f70-3026-48ca-905d-1c2460c569d4",
+            "display": "<section><p><strong>Rehearsal</strong>, Lomo <i>green juice shoreditch kickstarter godard yolo singleorigin coffee chia</i> offal.</p>\n<p><strong>Attended with</strong> Donny and Vroomfondel</p>\n<p><strong>Place, Date</strong> Donnellyside, 15 February 1967</p>\n<p><strong>Director</strong> Hotblack Desiato's bodyguard</p></section>"
+          },
+          {
+            "type": "attendance",
+            "id": "http://example.org/entities/19cd1de2-e32a-47a6-94ab-9a9d13736a41",
+            "display": "<section><p><strong>Theatre</strong>, Brunch ennui salvia knausgaard lofi neutra disrupt intelligentsia yuccie.</p>\n<p><strong>Attended with</strong> Brandt and Prostetnic Vogon Jeltz</p>\n<p><strong>Place, Date</strong> North Margoborough, 27 October 1968</p>\n<p><strong>Director</strong> Grunthos the Flatulent</p></section>"
+          }
+        ],
+        "places": [
+          {
+            "type": "place",
+            "id": "http://example.org/entities/e5c7d300-0eaf-4df3-87a7-14e3acdfcac1",
+            "display": "<section><p><strong>Frogstar World B</strong></p>\n<p>Meh <i>direct trade yolo tumblr keffiyeh wolf salvia</i> popup.</p></section>"
+          },
+          {
+            "type": "place",
+            "id": "http://example.org/entities/ba03d3f6-6309-440f-b866-3244082695a6",
+            "display": "<section><p><strong>Norway</strong></p>\n<p>Hammock <i>ennui popup churchkey echo</i> humblebrag.</p></section>"
+          },
+          {
+            "type": "place",
+            "id": "http://example.org/entities/7118aed5-14fe-49df-8540-63a50b10beaf",
+            "display": "<section><p><strong>Belgium</strong></p>\n<p>Stumptown quinoa iphone cronut.</p></section>"
+          }
+        ],
+        "publications": [
+          {
+            "type": "publication",
+            "id": "http://example.org/entities/af5e8bf7-fc5f-46d1-a720-520f05eda2ed",
+            "display": "<section><p><strong>Author</strong> Bunny Lebowski</p>\n<p><strong>Title</strong> Target Books</p>\n<p><strong>Translator</strong> Genghis Khan</p>\n<p><strong>Publication</strong> Paleo fixie authentic godard.</p></section>"
+          }
+        ],
+        "writings": [
+          {
+            "type": "writing",
+            "id": "http://example.org/entities/e4ca00b2-48ed-45d9-943e-d7dab5469a5e",
+            "display": "<section><p><strong>Title</strong> The Monkey's Raincoat</p>\n<p><strong>Proposal/Response</strong> Magrathea itself disappeared and its memory soon passed into the obscurity of legend. In these enlightened days, of course, no one believes a word of it.</p>\n<p><strong>Translator</strong> JinJenz</p>\n<p><strong>Date</strong> 1935-08-14.</p></section>"
+          }
+        ]
+      }
+    },
+    {
+      "id": "http://example.org/letters/7460ee47-d21b-42fe-9243-24b748fb90b3",
+      "date": "1980-11-25T00:00:00.000-05:00",
+      "label": "25 November 1980 - Cruickshank, Elliott",
+      "language": "italian",
+      "volume": 4,
+      "recipients": [
+        "Cruickshank, Elliott"
+      ],
+      "destinations": [
+        "<i>Madagascar</i>"
+      ],
+      "origins": null,
+      "mentions": {
+        "music": [
+          {
+            "type": "music",
+            "id": "http://example.org/entities/afc9ba0c-4937-47c3-b8fe-eefa4fc2ee29",
+            "display": "<section><p><strong>Composer</strong> Agrajag</p>\n<p><strong>Title</strong> <i>Pretzel Body Logic</i></p>\n<p><strong>Description</strong> Singleorigin <i>coffee kickstarter synth fanny pack kogi green</i> juice.</p></section>"
+          },
+          {
+            "type": "music",
+            "id": "http://example.org/entities/b81bfb21-b202-434a-80e2-e1e494f0fdf3",
+            "display": "<section><p><strong>Composer</strong> Zarquon</p>\n<p><strong>Title</strong> 1-800-Newfunk Ad</p>\n<p><strong>Description</strong> Kombucha kitsch lofi cliche selvage williamsburg everyday echo.</p></section>"
+          }
+        ],
+        "people": [
+          {
+            "type": "person",
+            "id": "http://example.org/entities/edf18883-46b2-42dc-94ea-80f896e893ac",
+            "display": "<section><p><strong>Alfonso Casper, 1908-1996</strong></p>\n<p>Here I am, brain the size of a planet, and they tell me to take you up to the bridge. Call that job satisfaction? 'Cos I don't.</p></section>"
+          },
+          {
+            "type": "person",
+            "id": "http://example.org/entities/7737184f-144d-4076-b5e3-95feb974d737",
+            "display": "<section><p><strong>Vicky Witting, 1923-1970</strong></p>\n<p>I won't enjoy it.</p></section>"
+          }
+        ],
+        "readings": [
+          {
+            "type": "reading",
+            "id": "http://example.org/entities/7643dd3c-d0e9-4fa1-b0c2-739e30d45d90",
+            "display": "<section><p><strong>Author</strong> Young Beer</p>\n<p><strong>Title</strong> <i>Dying of the Light</i></p>\n<p><strong>Publication</strong> Schocken Books.</p></section>"
+          },
+          {
+            "type": "reading",
+            "id": "http://example.org/entities/12e9456a-2df0-42a6-9f36-76e6cb8ae5b0",
+            "display": "<section><p><strong>Author</strong> Pres. Norberto Mraz</p>\n<p><strong>Title</strong> <i>Carrion Comfort</i></p>\n<p><strong>Publication</strong> Mark Batty Publisher.</p></section>"
+          }
+        ],
+        "work_of_arts": [
+          {
+            "type": "work_of_art",
+            "id": "http://example.org/entities/9adc324d-e4f1-4c93-ae4e-5f5b8d7af95b",
+            "display": "<section><p><strong>Artist</strong> Gail Andrews</p>\n<p><strong>Title</strong> <i>Partyman</i></p>\n<p><strong>Description</strong> Retro <i>artisan iphone gentrify chartreuse pabst</i> semiotics.</p>\n<p><strong>Owner/location</strong> Heart of Gold</p></section>"
+          }
+        ]
+      }
+    },
+    {
+      "id": "http://example.org/letters/f5f2d657-c8b1-45af-bdf4-e82d006711db",
+      "date": "1986-09-28T00:00:00.000-04:00",
+      "label": "28 September 1986 - Zboncak, Bulah",
+      "language": "german",
+      "volume": 4,
+      "recipients": [
+        "Zboncak, Bulah"
+      ],
+      "destinations": [
+        "Kakrafoon Kappa"
+      ],
+      "origins": null,
+      "mentions": {
+        "attendances": [
+          {
+            "type": "attendance",
+            "id": "http://example.org/entities/a7004e80-6811-47ac-b942-b8b8335eb4bf",
+            "display": "<section><p><strong>Radio Broadcast</strong>, Chia goth asymmetrical taxidermy.</p>\n<p><strong>Attended with</strong> Bunny Lebowski and Hotblack Desiato</p>\n<p><strong>Place, Date</strong> West Debbraland, 25 January 1959</p>\n<p><strong>Director</strong> Eccentrica Gallumbits</p></section>"
+          }
+        ],
+        "places": [
+          {
+            "type": "place",
+            "id": "http://example.org/entities/afe44699-2dac-4bc5-a3af-589d6ea86e69",
+            "display": "<section><p><strong>Horse and Groom</strong></p>\n<p>Occupy <i>deep v ugh fixie</i> typewriter.</p></section>"
+          }
+        ],
+        "productions": [
+          {
+            "type": "production",
+            "id": "http://example.org/entities/d64d7a0b-5bfa-4a42-9e25-a0c8678d5a9a",
+            "display": "<section><p><strong>Title</strong> <i>Paris, Texas</i></p>\n<p><strong>Proposal/Response</strong> There's only one life-form as intelligent as me within thirty parsecs of here and that's me. / ...they discovered only a small asteroid inhabited by a solitary old man who claimed repeatedly that nothing was true, though he was later discovered to be lying.</p>\n<p><strong>Director</strong> Karl Hungus <strong>Theatre, City</strong> Tanngrisnir, West Walton</p>\n<p><strong>Date(s)</strong> 1933-01-28.</p></section>"
+          }
+        ],
+        "writings": [
+          {
+            "type": "writing",
+            "id": "http://example.org/entities/b6f42607-a700-4486-85cd-20469b6b2207",
+            "display": "<section><p><strong>Title</strong> The Wealth of Nations</p>\n<p><strong>Proposal/Response</strong> Parts of the inside of her head screamed at other parts of the inside of her head.</p>\n<p><strong>Translator</strong> Magrathean sperm whale</p>\n<p><strong>Date</strong> 1953-09-17.</p></section>"
           }
         ]
       }
     }
   ],
   "aggs": {
+    "volume": {
+      "meta": {
+      },
+      "doc_count": 16,
+      "doc_count_error_upper_bound": 0,
+      "sum_other_doc_count": 0,
+      "buckets": [
+        {
+          "key": 1,
+          "doc_count": 6
+        },
+        {
+          "key": 4,
+          "doc_count": 5
+        },
+        {
+          "key": 2,
+          "doc_count": 3
+        },
+        {
+          "key": 0,
+          "doc_count": 1
+        },
+        {
+          "key": 3,
+          "doc_count": 1
+        }
+      ]
+    },
     "date": {
       "meta": {
       },
-      "doc_count": 13,
+      "doc_count": 16,
       "buckets": [
+        {
+          "key_as_string": "1954-01-01T00:00:00.000Z",
+          "key": -504921600000,
+          "doc_count": 1
+        },
+        {
+          "key_as_string": "1955-01-01T00:00:00.000Z",
+          "key": -473385600000,
+          "doc_count": 1
+        },
+        {
+          "key_as_string": "1956-01-01T00:00:00.000Z",
+          "key": -441849600000,
+          "doc_count": 1
+        },
         {
           "key_as_string": "1957-01-01T00:00:00.000Z",
           "key": -410227200000,
@@ -1103,27 +1116,27 @@ Content-Length: 16721</pre>
         {
           "key_as_string": "1958-01-01T00:00:00.000Z",
           "key": -378691200000,
-          "doc_count": 0
+          "doc_count": 1
         },
         {
           "key_as_string": "1959-01-01T00:00:00.000Z",
           "key": -347155200000,
-          "doc_count": 2
+          "doc_count": 0
         },
         {
           "key_as_string": "1960-01-01T00:00:00.000Z",
           "key": -315619200000,
-          "doc_count": 1
+          "doc_count": 0
         },
         {
           "key_as_string": "1961-01-01T00:00:00.000Z",
           "key": -283996800000,
-          "doc_count": 1
+          "doc_count": 0
         },
         {
           "key_as_string": "1962-01-01T00:00:00.000Z",
           "key": -252460800000,
-          "doc_count": 3
+          "doc_count": 0
         },
         {
           "key_as_string": "1963-01-01T00:00:00.000Z",
@@ -1133,11 +1146,116 @@ Content-Length: 16721</pre>
         {
           "key_as_string": "1964-01-01T00:00:00.000Z",
           "key": -189388800000,
-          "doc_count": 3
+          "doc_count": 0
         },
         {
           "key_as_string": "1965-01-01T00:00:00.000Z",
           "key": -157766400000,
+          "doc_count": 0
+        },
+        {
+          "key_as_string": "1966-01-01T00:00:00.000Z",
+          "key": -126230400000,
+          "doc_count": 1
+        },
+        {
+          "key_as_string": "1967-01-01T00:00:00.000Z",
+          "key": -94694400000,
+          "doc_count": 0
+        },
+        {
+          "key_as_string": "1968-01-01T00:00:00.000Z",
+          "key": -63158400000,
+          "doc_count": 0
+        },
+        {
+          "key_as_string": "1969-01-01T00:00:00.000Z",
+          "key": -31536000000,
+          "doc_count": 1
+        },
+        {
+          "key_as_string": "1970-01-01T00:00:00.000Z",
+          "key": 0,
+          "doc_count": 0
+        },
+        {
+          "key_as_string": "1971-01-01T00:00:00.000Z",
+          "key": 31536000000,
+          "doc_count": 1
+        },
+        {
+          "key_as_string": "1972-01-01T00:00:00.000Z",
+          "key": 63072000000,
+          "doc_count": 1
+        },
+        {
+          "key_as_string": "1973-01-01T00:00:00.000Z",
+          "key": 94694400000,
+          "doc_count": 1
+        },
+        {
+          "key_as_string": "1974-01-01T00:00:00.000Z",
+          "key": 126230400000,
+          "doc_count": 1
+        },
+        {
+          "key_as_string": "1975-01-01T00:00:00.000Z",
+          "key": 157766400000,
+          "doc_count": 1
+        },
+        {
+          "key_as_string": "1976-01-01T00:00:00.000Z",
+          "key": 189302400000,
+          "doc_count": 0
+        },
+        {
+          "key_as_string": "1977-01-01T00:00:00.000Z",
+          "key": 220924800000,
+          "doc_count": 0
+        },
+        {
+          "key_as_string": "1978-01-01T00:00:00.000Z",
+          "key": 252460800000,
+          "doc_count": 1
+        },
+        {
+          "key_as_string": "1979-01-01T00:00:00.000Z",
+          "key": 283996800000,
+          "doc_count": 0
+        },
+        {
+          "key_as_string": "1980-01-01T00:00:00.000Z",
+          "key": 315532800000,
+          "doc_count": 1
+        },
+        {
+          "key_as_string": "1981-01-01T00:00:00.000Z",
+          "key": 347155200000,
+          "doc_count": 0
+        },
+        {
+          "key_as_string": "1982-01-01T00:00:00.000Z",
+          "key": 378691200000,
+          "doc_count": 0
+        },
+        {
+          "key_as_string": "1983-01-01T00:00:00.000Z",
+          "key": 410227200000,
+          "doc_count": 0
+        },
+        {
+          "key_as_string": "1984-01-01T00:00:00.000Z",
+          "key": 441763200000,
+          "doc_count": 0
+        },
+        {
+          "key_as_string": "1985-01-01T00:00:00.000Z",
+          "key": 473385600000,
+          "doc_count": 0
+        },
+        {
+          "key_as_string": "1986-01-01T00:00:00.000Z",
+          "key": 504921600000,
           "doc_count": 1
         }
       ]
@@ -1145,25 +1263,25 @@ Content-Length: 16721</pre>
     "repositories": {
       "meta": {
       },
-      "doc_count": 13,
+      "doc_count": 16,
       "doc_count_error_upper_bound": 0,
       "sum_other_doc_count": 0,
       "buckets": [
         {
-          "key": "Douglas Institute",
-          "doc_count": 7
+          "key": "Southern Cormier",
+          "doc_count": 9
         },
         {
-          "key": "Koch College",
-          "doc_count": 7
+          "key": "Eastern Arizona Academy",
+          "doc_count": 6
         },
         {
-          "key": "Eastern Mississippi Academy",
-          "doc_count": 5
+          "key": "Goldner Academy",
+          "doc_count": 6
         },
         {
-          "key": "The Pacocha",
-          "doc_count": 3
+          "key": "Northern Marks",
+          "doc_count": 6
         }
       ]
     },
@@ -1175,12 +1293,12 @@ Content-Length: 16721</pre>
       "sum_other_doc_count": 0,
       "buckets": [
         {
-          "key": "french",
-          "doc_count": 11
+          "key": "italian",
+          "doc_count": 10
         },
         {
-          "key": "italian",
-          "doc_count": 9
+          "key": "french",
+          "doc_count": 8
         },
         {
           "key": "english",
@@ -1188,7 +1306,7 @@ Content-Length: 16721</pre>
         },
         {
           "key": "german",
-          "doc_count": 4
+          "doc_count": 6
         }
       ]
     }
@@ -1197,7 +1315,7 @@ Content-Length: 16721</pre>
     "page": 1,
     "per_page": 25,
     "page_count": 1,
-    "total_count": 13,
+    "total_count": 16,
     "links": {
       "self": "http://example.org/letters?languages=German%2C+italian&page=1"
     }

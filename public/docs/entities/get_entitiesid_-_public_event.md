@@ -11,15 +11,8 @@
 | Name | Default | Description | Not Null |
 |------|---------|-------------|----------|
 | label | HTML String |  | true |
-| clean_label | String |  | true |
-| description | HTML String |  | true |
-| clean_description | String |  | true |
-| display_header | HTML String |  | true |
-| label | HTML String |  | false |
-| description | HTML String |  | false |
-| e_type | HTML String |  | false |
-| legacy_pk | HTML String |  | false |
-| date_str | HTML String |  | false |
+| short_display | HTML String |  | true |
+| full_display | HTML String |  | true |
 
 ### Request
 
@@ -33,7 +26,7 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /entities/acddba99-ce39-4246-93e1-ef81f3fd90cb</pre>
+<pre>GET /entities/a9ad30ac-e0b2-46b8-87d7-b87db79c0993</pre>
 
 ### Response
 
@@ -46,12 +39,12 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;24d0baff580bf13196912852ce6694d8&quot;
+ETag: W/&quot;067a15e0717a132c338c06e87b246815&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 125e878d-696e-4453-a624-e9aedaf727e2
-X-Runtime: 1.026135
+X-Request-Id: bb1015cb-6e64-4d63-93d8-e33a89abfda9
+X-Runtime: 0.826686
 Vary: Origin
-Content-Length: 1394</pre>
+Content-Length: 1235</pre>
 
 #### Status
 
@@ -60,15 +53,13 @@ Content-Length: 1394</pre>
 #### Body
 
 <pre>{
-  "id": "http://example.org/entities/acddba99-ce39-4246-93e1-ef81f3fd90cb",
+  "id": "http://example.org/entities/a9ad30ac-e0b2-46b8-87d7-b87db79c0993",
   "type": "public_event",
   "label": "<i>Gemini</i>",
-  "clean_label": "Gemini",
-  "description": "Before <i>my life is done, some way, some how, I'm going to have</i> fun.",
-  "clean_description": "Before my life is done, some way, some how, I'm going to have fun.",
-  "short_display": "<section><p><strong><i>Gemini</i></strong></p>\n<p><strong>1949-08-14.</strong></p></section>",
-  "full_display": "<table>\n<tr>\n<th scope=\"row\">Description</th>\n<td>Before <i>my life is done, some way, some how, I'm going to have</i> fun.</td>\n</tr>\n<tr>\n<th scope=\"row\">Date</th>\n<td>1949-08-14.</td>\n</tr>\n<tr>\n<th scope=\"row\">See Also</th>\n<td><ul><li><a href=\"http://hills.biz/darci\" target=\"_blank\" rel=\"noopener\">http://hills.biz/darci<span>(opens in new tab)</span></a></li></ul></td>\n</tr>\n</table>",
+  "short_display": "<section><p><strong><i>Gemini</i></strong></p>\n<p><strong>1943-08-31.</strong></p></section>",
+  "full_display": "<table>\n<tr>\n<th scope=\"row\">Description</th>\n<td>You <i>can relax now, the max is in</i> control.</td>\n</tr>\n<tr>\n<th scope=\"row\">Date</th>\n<td>1943-08-31.</td>\n</tr>\n<tr>\n<th scope=\"row\">See Also</th>\n<td><ul><li><a href=\"http://kihn.io/genevieve\" target=\"_blank\" rel=\"noopener\">http://kihn.io/genevieve<span>(opens in new tab)</span></a></li></ul></td>\n</tr>\n</table>",
+  "description": "You <i>can relax now, the max is in</i> control.",
   "e_type": "public_event",
-  "legacy_pk": 95049,
-  "date_str": "1949-08-14."
+  "legacy_pk": 5950,
+  "date_str": "1943-08-31."
 }</pre>

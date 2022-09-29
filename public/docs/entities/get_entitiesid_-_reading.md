@@ -11,18 +11,8 @@
 | Name | Default | Description | Not Null |
 |------|---------|-------------|----------|
 | label | HTML String |  | true |
-| clean_label | String |  | true |
-| description | HTML String |  | true |
-| clean_description | String |  | true |
-| display_header | HTML String |  | true |
-| label | HTML String |  | false |
-| description | HTML String |  | false |
-| e_type | HTML String |  | false |
-| legacy_pk | HTML String |  | false |
-| authors | Array |  | false |
-| notes | HTML String |  | false |
-| publication_information | HTML String |  | false |
-| publication_format | HTML String |  | false |
+| short_display | HTML String |  | true |
+| full_display | HTML String |  | true |
 
 ### Request
 
@@ -36,7 +26,7 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /entities/63bdcb25-8ace-43a9-b324-99737fd8fdce</pre>
+<pre>GET /entities/669c60a4-e908-40e5-b51f-151710da0493</pre>
 
 ### Response
 
@@ -49,12 +39,12 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;101509d048ee2dc1a9cdc6752104af19&quot;
+ETag: W/&quot;db28f51d197ad3b1802ddecc85b89bd3&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 33f01602-2fce-4cd8-8ec5-bf6eab0a3cab
-X-Runtime: 0.933312
+X-Request-Id: 621bde69-ffbf-4a9a-a569-ae348f07269b
+X-Runtime: 0.757063
 Vary: Origin
-Content-Length: 1396</pre>
+Content-Length: 1853</pre>
 
 #### Status
 
@@ -63,20 +53,18 @@ Content-Length: 1396</pre>
 #### Body
 
 <pre>{
-  "id": "http://example.org/entities/63bdcb25-8ace-43a9-b324-99737fd8fdce",
+  "id": "http://example.org/entities/669c60a4-e908-40e5-b51f-151710da0493",
   "type": "reading",
-  "label": "The Golden Apples of the Sun",
-  "clean_label": "The Golden Apples of the Sun",
-  "description": "Whatever cornhole pug ramps.",
-  "clean_description": "Whatever cornhole pug ramps.",
-  "short_display": "<section><p><strong>Author</strong> Becki Jacobs DDS</p>\n<p><strong>Title</strong> The Golden Apples of the Sun</p>\n<p><strong>Publication</strong> Edupedia Publications.</p></section>",
-  "full_display": "<table>\n<tr>\n<th scope=\"row\">Author</th>\n<td>Becki Jacobs DDS</td>\n</tr>\n<tr>\n<th scope=\"row\">Title</th>\n<td>The Golden Apples of the Sun</td>\n</tr>\n<tr>\n<th scope=\"row\">Publication</th>\n<td>Edupedia Publications.</td>\n</tr>\n<tr>\n<th scope=\"row\">Notes</th>\n<td>I won't enjoy it.</td>\n</tr>\n</table>",
+  "label": "A Scanner Darkly",
+  "short_display": "<section><p><strong>Author</strong> Gabriel Breitenberg</p>\n<p><strong>Title</strong> A Scanner Darkly</p>\n<p><strong>Publication</strong> Koren Publishers Jerusalem.</p></section>",
+  "full_display": "<table>\n<tr>\n<th scope=\"row\">Author</th>\n<td>Gabriel Breitenberg</td>\n</tr>\n<tr>\n<th scope=\"row\">Title</th>\n<td>A Scanner Darkly</td>\n</tr>\n<tr>\n<th scope=\"row\">Publication</th>\n<td>Koren Publishers Jerusalem.</td>\n</tr>\n<tr>\n<th scope=\"row\">Notes</th>\n<td>You think you've got problems? What are you supposed to do if you are a manically depressed robot? No, don't try to answer that. I'm fifty thousand times more intelligent than you and even I don't know the answer. It gives me a headache just trying to think down to your level.</td>\n</tr>\n</table>",
+  "description": "Meggings <i>vinyl normcore trust fund food</i> truck.",
   "e_type": "reading",
-  "legacy_pk": 62033,
+  "legacy_pk": 48789,
   "authors": [
-    "Becki Jacobs DDS"
+    "Gabriel Breitenberg"
   ],
-  "notes": "I won't enjoy it.",
-  "publication_information": "Edupedia Publications.",
-  "publication_format": "scenester"
+  "notes": "You think you've got problems? What are you supposed to do if you are a manically depressed robot? No, don't try to answer that. I'm fifty thousand times more intelligent than you and even I don't know the answer. It gives me a headache just trying to think down to your level.",
+  "publication_information": "Koren Publishers Jerusalem.",
+  "publication_format": "slow-carb"
 }</pre>

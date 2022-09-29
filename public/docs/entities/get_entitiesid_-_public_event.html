@@ -142,21 +142,7 @@ table th, table td {
               </tr>
               <tr>
                 <td>
-                    <span class="name">clean_label</span>
-                </td>
-                <td>
-                  <span class="description">String</span>
-                </td>
-                <td>
-                  <span class="description"></span>
-                </td>
-                <td>
-                  <span class="description">true</span>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                    <span class="name">description</span>
+                    <span class="name">short_display</span>
                 </td>
                 <td>
                   <span class="description">HTML String</span>
@@ -170,21 +156,7 @@ table th, table td {
               </tr>
               <tr>
                 <td>
-                    <span class="name">clean_description</span>
-                </td>
-                <td>
-                  <span class="description">String</span>
-                </td>
-                <td>
-                  <span class="description"></span>
-                </td>
-                <td>
-                  <span class="description">true</span>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                    <span class="name">display_header</span>
+                    <span class="name">full_display</span>
                 </td>
                 <td>
                   <span class="description">HTML String</span>
@@ -194,76 +166,6 @@ table th, table td {
                 </td>
                 <td>
                   <span class="description">true</span>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                    <span class="name">label</span>
-                </td>
-                <td>
-                  <span class="description">HTML String</span>
-                </td>
-                <td>
-                  <span class="description"></span>
-                </td>
-                <td>
-                  <span class="description">false</span>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                    <span class="name">description</span>
-                </td>
-                <td>
-                  <span class="description">HTML String</span>
-                </td>
-                <td>
-                  <span class="description"></span>
-                </td>
-                <td>
-                  <span class="description">false</span>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                    <span class="name">e_type</span>
-                </td>
-                <td>
-                  <span class="description">HTML String</span>
-                </td>
-                <td>
-                  <span class="description"></span>
-                </td>
-                <td>
-                  <span class="description">false</span>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                    <span class="name">legacy_pk</span>
-                </td>
-                <td>
-                  <span class="description">HTML String</span>
-                </td>
-                <td>
-                  <span class="description"></span>
-                </td>
-                <td>
-                  <span class="description">false</span>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                    <span class="name">date_str</span>
-                </td>
-                <td>
-                  <span class="description">HTML String</span>
-                </td>
-                <td>
-                  <span class="description"></span>
-                </td>
-                <td>
-                  <span class="description">false</span>
                 </td>
               </tr>
             </tbody>
@@ -279,7 +181,7 @@ Host: example.org
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET /entities/acddba99-ce39-4246-93e1-ef81f3fd90cb</pre>
+          <pre class="request route highlight">GET /entities/a9ad30ac-e0b2-46b8-87d7-b87db79c0993</pre>
 
 
 
@@ -293,27 +195,25 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;24d0baff580bf13196912852ce6694d8&quot;
+ETag: W/&quot;067a15e0717a132c338c06e87b246815&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 125e878d-696e-4453-a624-e9aedaf727e2
-X-Runtime: 1.026135
+X-Request-Id: bb1015cb-6e64-4d63-93d8-e33a89abfda9
+X-Runtime: 0.826686
 Vary: Origin
-Content-Length: 1394</pre>
+Content-Length: 1235</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
-  &quot;id&quot;: &quot;http://example.org/entities/acddba99-ce39-4246-93e1-ef81f3fd90cb&quot;,
+  &quot;id&quot;: &quot;http://example.org/entities/a9ad30ac-e0b2-46b8-87d7-b87db79c0993&quot;,
   &quot;type&quot;: &quot;public_event&quot;,
   &quot;label&quot;: &quot;&lt;i&gt;Gemini&lt;/i&gt;&quot;,
-  &quot;clean_label&quot;: &quot;Gemini&quot;,
-  &quot;description&quot;: &quot;Before &lt;i&gt;my life is done, some way, some how, I&#39;m going to have&lt;/i&gt; fun.&quot;,
-  &quot;clean_description&quot;: &quot;Before my life is done, some way, some how, I&#39;m going to have fun.&quot;,
-  &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;&lt;i&gt;Gemini&lt;/i&gt;&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;1949-08-14.&lt;/strong&gt;&lt;/p&gt;&lt;/section&gt;&quot;,
-  &quot;full_display&quot;: &quot;&lt;table&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Description&lt;/th&gt;\n&lt;td&gt;Before &lt;i&gt;my life is done, some way, some how, I&#39;m going to have&lt;/i&gt; fun.&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Date&lt;/th&gt;\n&lt;td&gt;1949-08-14.&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;See Also&lt;/th&gt;\n&lt;td&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=\&quot;http://hills.biz/darci\&quot; target=\&quot;_blank\&quot; rel=\&quot;noopener\&quot;&gt;http://hills.biz/darci&lt;span&gt;(opens in new tab)&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;\n&lt;/tr&gt;\n&lt;/table&gt;&quot;,
+  &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;&lt;i&gt;Gemini&lt;/i&gt;&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;1943-08-31.&lt;/strong&gt;&lt;/p&gt;&lt;/section&gt;&quot;,
+  &quot;full_display&quot;: &quot;&lt;table&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Description&lt;/th&gt;\n&lt;td&gt;You &lt;i&gt;can relax now, the max is in&lt;/i&gt; control.&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Date&lt;/th&gt;\n&lt;td&gt;1943-08-31.&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;See Also&lt;/th&gt;\n&lt;td&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=\&quot;http://kihn.io/genevieve\&quot; target=\&quot;_blank\&quot; rel=\&quot;noopener\&quot;&gt;http://kihn.io/genevieve&lt;span&gt;(opens in new tab)&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;\n&lt;/tr&gt;\n&lt;/table&gt;&quot;,
+  &quot;description&quot;: &quot;You &lt;i&gt;can relax now, the max is in&lt;/i&gt; control.&quot;,
   &quot;e_type&quot;: &quot;public_event&quot;,
-  &quot;legacy_pk&quot;: 95049,
-  &quot;date_str&quot;: &quot;1949-08-14.&quot;
+  &quot;legacy_pk&quot;: 5950,
+  &quot;date_str&quot;: &quot;1943-08-31.&quot;
 }</pre>
       </div>
     </div>

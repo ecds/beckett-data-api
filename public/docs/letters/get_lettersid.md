@@ -15,7 +15,7 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /letters/8d180b0b-056c-4c3d-8a51-e38731e12a4d</pre>
+<pre>GET /letters/490b331b-bb0d-4256-8e9f-36ea86e3cfb0</pre>
 
 ### Response
 
@@ -28,12 +28,12 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;fc2b827551ede65de16f797e01824413&quot;
+ETag: W/&quot;501ebd040ebb4f4d2bf0f1f03891920b&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 2c4c78fa-aa27-41b0-acbc-0faf6287faa9
-X-Runtime: 0.844590
+X-Request-Id: b85bc0d5-77ce-430b-8c93-9bdcec75106d
+X-Runtime: 0.726727
 Vary: Origin
-Content-Length: 2024</pre>
+Content-Length: 7005</pre>
 
 #### Status
 
@@ -42,61 +42,49 @@ Content-Length: 2024</pre>
 #### Body
 
 <pre>{
-  "id": "http://example.org/letters/8d180b0b-056c-4c3d-8a51-e38731e12a4d",
-  "date": "1958-08-22T00:00:00.000-04:00",
+  "id": "http://example.org/letters/490b331b-bb0d-4256-8e9f-36ea86e3cfb0",
+  "date": "1965-07-12T00:00:00.000-04:00",
   "recipients": [
     {
-      "id": "http://example.org/entities/d95d3cce-e9c1-44a6-abaa-e05c16392e0f.json",
+      "id": "http://example.org/entities/c371fd15-b1e2-481f-91e5-67f7405d7a47.json",
       "type": "person",
-      "label": "Kulas, Luciano",
-      "description": [
-
-      ]
+      "label": "Gutmann, Shirley",
+      "short_display": "<section><p><strong>Shirley Gutmann, 1908-1995</strong></p>\n<p>I wish you'd just tell me rather trying to engage my enthusiasm, because I haven't got one.</p></section>"
     }
   ],
   "destinations": [
     {
-      "id": "http://example.org/entities/5dc5bfbb-d083-4810-85f1-e6911da1bfd0.json",
+      "id": "http://example.org/entities/2a422f42-077e-4047-a89e-562098cd8a65.json",
       "type": "place",
-      "label": "<i>Asbleg</i>",
-      "description": [
-
-      ]
+      "label": "<i>Cathedral of Chalesm</i>",
+      "short_display": "<section><p><strong><i>Cathedral of Chalesm</i></strong></p>\n<p>Pitchfork <i>cronut everyday tote bag listicle 1</i> chicharrones.</p></section>"
     }
   ],
   "mentions": {
-    "attendances": [
+    "places": [
       {
-        "id": "http://example.org/entities/0b752bb8-e866-4fa3-9b3d-191ca8e24172.json",
-        "type": "attendance",
-        "label": "Radio Broadcast, Tattooed hashtag microdosing wayfarers.",
-        "description": [
-
-        ],
+        "id": "http://example.org/entities/bf596d52-df5e-4d78-939d-bea13078ba8f.json",
+        "type": "place",
+        "label": "Madagascar",
+        "short_display": "<section><p><strong>Madagascar</strong></p>\n<p>Beard sustainable dreamcatcher selfies helvetica 90s.</p></section>",
         "tags": [
 
         ]
       },
       {
-        "id": "http://example.org/entities/0705941a-6423-4902-baef-4b9381d52886.json",
-        "type": "attendance",
-        "label": "Reading, Mustache <i>distillery truffaut readymade sustainable food truck ugh</i> authentic.",
-        "description": [
-
-        ],
+        "id": "http://example.org/entities/343accf7-6edf-4a31-89bc-edba5d074bb0.json",
+        "type": "place",
+        "label": "<i>Ziggie's Den of Iniquity</i>",
+        "short_display": "<section><p><strong><i>Ziggie's Den of Iniquity</i></strong></p>\n<p>Swag <i>tilde locavore loko semiotics disrupt chambray schlitz singleorigin</i> coffee.</p></section>",
         "tags": [
 
         ]
-      }
-    ],
-    "people": [
+      },
       {
-        "id": "http://example.org/entities/ed57f365-4763-44c4-875c-171c23530080.json",
-        "type": "person",
-        "label": "West, Waldo",
-        "description": [
-
-        ],
+        "id": "http://example.org/entities/07d7c1ba-7321-4852-b604-f98d8364fa97.json",
+        "type": "place",
+        "label": "<i>Ziggie's Den of Iniquity</i>",
+        "short_display": "<section><p><strong><i>Ziggie's Den of Iniquity</i></strong></p>\n<p>Pickled <i>roof street drinking shabby</i> chic.</p></section>",
         "tags": [
 
         ]
@@ -104,34 +92,57 @@ Content-Length: 2024</pre>
     ],
     "readings": [
       {
-        "id": "http://example.org/entities/dca41824-59e0-4274-bf7b-d78c4136e3e6.json",
+        "id": "http://example.org/entities/9df98f67-f682-486c-bef9-5988e3d88f1b.json",
         "type": "reading",
-        "label": "Look Homeward, Angel",
-        "description": [
-
-        ],
+        "label": "<i>Tender Is the Night</i>",
+        "short_display": "<section><p><strong>Author</strong> Sarita Bailey DVM</p>\n<p><strong>Title</strong> <i>Tender Is the Night</i></p>\n<p><strong>Publication</strong> Firebrand Books.</p></section>",
         "tags": [
 
         ]
       },
       {
-        "id": "http://example.org/entities/641bc92e-6f95-4467-96f8-c56ed57a6904.json",
+        "id": "http://example.org/entities/a92657c3-eb75-44e1-8c66-1c794b53f91b.json",
         "type": "reading",
-        "label": "A Summer Bird-Cage",
-        "description": [
-
-        ],
+        "label": "<i>Recalled to Life</i>",
+        "short_display": "<section><p><strong>Author</strong> Lauran Hudson LLD</p>\n<p><strong>Title</strong> <i>Recalled to Life</i></p>\n<p><strong>Publication</strong> Berg Publishers.</p></section>",
         "tags": [
 
         ]
       },
       {
-        "id": "http://example.org/entities/3a2a647e-aab4-4043-a36a-53e8b2946914.json",
+        "id": "http://example.org/entities/01031123-96c4-484f-be84-361a30edd105.json",
         "type": "reading",
-        "label": "The Wives of Bath",
-        "description": [
+        "label": "All the King's Men",
+        "short_display": "<section><p><strong>Author</strong> Rev. Cherie Von</p>\n<p><strong>Title</strong> All the King's Men</p>\n<p><strong>Publication</strong> Libertas Academica.</p></section>",
+        "tags": [
 
-        ],
+        ]
+      }
+    ],
+    "translatings": [
+      {
+        "id": "http://example.org/entities/16c519cf-6da7-4f47-92a1-5a576fde9276.json",
+        "type": "translating",
+        "label": "The Wings of the Dove",
+        "short_display": "<section><p><strong>Author</strong> Marvin, <strong>Original Title</strong> The Wings of the Dove</p>\n<p><strong>Translated into</strong> Portuguese by Elvis</p>\n<p><strong>Translated title</strong> Vogon Constructor Fleet.</p></section>",
+        "tags": [
+
+        ]
+      },
+      {
+        "id": "http://example.org/entities/6c97f543-63d2-4fd2-8fbb-bd504a8d0dca.json",
+        "type": "translating",
+        "label": "<i>A Scanner Darkly</i>",
+        "short_display": "<section><p><strong>Author</strong> Genghis Khan, <strong>Original Title</strong> <i>A Scanner Darkly</i></p>\n<p><strong>Translated into</strong> Marathi by Slartibartfast</p>\n<p><strong>Translated title</strong> RW6.</p></section>",
+        "tags": [
+
+        ]
+      },
+      {
+        "id": "http://example.org/entities/9279b5fe-af05-411b-a408-fba7a52cdc0a.json",
+        "type": "translating",
+        "label": "Jacob Have I Loved",
+        "short_display": "<section><p><strong>Author</strong> Arthur Dent, <strong>Original Title</strong> Jacob Have I Loved</p>\n<p><strong>Translated into</strong> Marathi by Loonquawl and Phouchg</p>\n<p><strong>Translated title</strong> Bistromath.</p></section>",
         "tags": [
 
         ]
@@ -139,34 +150,19 @@ Content-Length: 2024</pre>
     ],
     "writings": [
       {
-        "id": "http://example.org/entities/3ad1b260-f41c-4fc3-b93f-2cea77a5131a.json",
+        "id": "http://example.org/entities/842e0137-c150-47fb-a410-bacefa7cfb2e.json",
         "type": "writing",
-        "label": "No Longer at Ease",
-        "description": [
-
-        ],
+        "label": "<i>The Wings of the Dove</i>",
+        "short_display": "<section><p><strong>Title</strong> <i>The Wings of the Dove</i></p>\n<p><strong>Proposal/Response</strong> if you’ve never been through a matter transference beam before you’ve probably lost some salt and protein. The beer you had should have cushioned your system a bit.</p>\n<p><strong>Translator</strong> Colin the Security Robot</p>\n<p><strong>Date</strong> 1929-10-15.</p></section>",
         "tags": [
 
         ]
       },
       {
-        "id": "http://example.org/entities/aefaa035-6225-48d0-b775-3090f8bbc681.json",
+        "id": "http://example.org/entities/4c9426b2-70f7-41a5-b3c4-eeb1efa8b1cf.json",
         "type": "writing",
-        "label": "The Needle's Eye",
-        "description": [
-
-        ],
-        "tags": [
-
-        ]
-      },
-      {
-        "id": "http://example.org/entities/6960cd82-b8e2-46e6-9773-5d2577940033.json",
-        "type": "writing",
-        "label": "<i>All the King's Men</i>",
-        "description": [
-
-        ],
+        "label": "<i>The Wealth of Nations</i>",
+        "short_display": "<section><p><strong>Title</strong> <i>The Wealth of Nations</i></p>\n<p><strong>Proposal/Response</strong> there’s an infinite number of monkeys outside who want to talk to us about this script for Hamlet they’ve worked out.</p>\n<p><strong>Translator</strong> Eccentrica Gallumbits</p>\n<p><strong>Date</strong> 1932-11-28.</p></section>",
         "tags": [
 
         ]

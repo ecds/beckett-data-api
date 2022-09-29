@@ -11,18 +11,8 @@
 | Name | Default | Description | Not Null |
 |------|---------|-------------|----------|
 | label | HTML String |  | true |
-| clean_label | String |  | true |
-| description | HTML String |  | true |
-| clean_description | String |  | true |
-| display_header | HTML String |  | true |
-| label | HTML String |  | false |
-| description | HTML String |  | false |
-| e_type | HTML String |  | false |
-| legacy_pk | HTML String |  | false |
-| authors | Array |  | false |
-| notes | HTML String |  | false |
-| publication_information | HTML String |  | false |
-| translators | HTML String |  | false |
+| short_display | HTML String |  | true |
+| full_display | HTML String |  | true |
 
 ### Request
 
@@ -36,7 +26,7 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /entities/80dfc7a9-17bb-4160-a343-29503d50845b</pre>
+<pre>GET /entities/2a8fa183-1919-438e-8b7a-6da0cd0ddfaa</pre>
 
 ### Response
 
@@ -49,12 +39,12 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;8c43ddd83ec6727535dd21d6ca88bf40&quot;
+ETag: W/&quot;a42c165f2241a107cf0319d596a56d2f&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 02350413-b8d6-4d68-81e3-edaf850b2cce
-X-Runtime: 0.998861
+X-Request-Id: f2473875-3553-4673-ba13-5ae6a0e98d53
+X-Runtime: 0.778531
 Vary: Origin
-Content-Length: 1703</pre>
+Content-Length: 1744</pre>
 
 #### Status
 
@@ -63,22 +53,20 @@ Content-Length: 1703</pre>
 #### Body
 
 <pre>{
-  "id": "http://example.org/entities/80dfc7a9-17bb-4160-a343-29503d50845b",
+  "id": "http://example.org/entities/2a8fa183-1919-438e-8b7a-6da0cd0ddfaa",
   "type": "publication",
-  "label": "Charles Scribner's Sons",
-  "clean_label": "Charles Scribner's Sons",
-  "description": "Brooklyn xoxo tote bag small batch.",
-  "clean_description": "Brooklyn xoxo tote bag small batch.",
-  "short_display": "<section><p><strong>Author</strong> Walter Sobchak</p>\n<p><strong>Title</strong> Charles Scribner's Sons</p>\n<p><strong>Translator</strong> Slartibartfast</p>\n<p><strong>Publication</strong> Poutine knausgaard leggings biodiesel iphone lo-fi.</p></section>",
-  "full_display": "<table>\n<tr>\n<th scope=\"row\">Author</th>\n<td>Walter Sobchak</td>\n</tr>\n<tr>\n<th scope=\"row\">Title</th>\n<td>Charles Scribner's Sons</td>\n</tr>\n<tr>\n<th scope=\"row\">Translator</th>\n<td>Slartibartfast</td>\n</tr>\n<tr>\n<th scope=\"row\">Publication</th>\n<td>Poutine knausgaard leggings biodiesel iphone lo-fi.</td>\n</tr>\n<tr>\n<th scope=\"row\">Notes</th>\n<td>I won't enjoy it.</td>\n</tr>\n</table>",
+  "label": "George Routledge & Sons",
+  "short_display": "<section><p><strong>Author</strong> Jackie Treehorn</p>\n<p><strong>Title</strong> George Routledge &amp; Sons</p>\n<p><strong>Translator</strong> Galaxia Woonbeam</p>\n<p><strong>Publication</strong> Chicharrones synth small batch letterpress goth vice.</p></section>",
+  "full_display": "<table>\n<tr>\n<th scope=\"row\">Author</th>\n<td>Jackie Treehorn</td>\n</tr>\n<tr>\n<th scope=\"row\">Title</th>\n<td>George Routledge &amp; Sons</td>\n</tr>\n<tr>\n<th scope=\"row\">Translator</th>\n<td>Galaxia Woonbeam</td>\n</tr>\n<tr>\n<th scope=\"row\">Publication</th>\n<td>Chicharrones synth small batch letterpress goth vice.</td>\n</tr>\n<tr>\n<th scope=\"row\">Notes</th>\n<td>I think you ought to know I'm feeling very depressed.</td>\n</tr>\n</table>",
+  "description": "Pbrb <i>carry sriracha bespoke</i> portland.",
   "e_type": "publication",
-  "legacy_pk": 90252,
+  "legacy_pk": 14534,
   "authors": [
-    "Walter Sobchak"
+    "Jackie Treehorn"
   ],
-  "notes": "I won't enjoy it.",
-  "publication_information": "Poutine knausgaard leggings biodiesel iphone lo-fi.",
+  "notes": "I think you ought to know I'm feeling very depressed.",
+  "publication_information": "Chicharrones synth small batch letterpress goth vice.",
   "translators": [
-    "Slartibartfast"
+    "Galaxia Woonbeam"
   ]
 }</pre>

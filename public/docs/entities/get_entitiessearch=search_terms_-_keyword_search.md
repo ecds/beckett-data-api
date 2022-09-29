@@ -30,11 +30,11 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /entities?search=banjo</pre>
+<pre>GET /entities?search=tell</pre>
 
 #### Query Parameters
 
-<pre>search: banjo</pre>
+<pre>search: tell</pre>
 
 ### Response
 
@@ -46,15 +46,15 @@ X-Content-Type-Options: nosniff
 X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
-Link: &lt;http://example.org/entities?page=1&amp;search=banjo&gt;; rel=&#39;self&#39;
-X-Total-Count: 1
+Link: &lt;http://example.org/entities?page=1&amp;search=tell&gt;; rel=&#39;self&#39;
+X-Total-Count: 0
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;72dfdcdb868f3971791a534cb0ee92b0&quot;
+ETag: W/&quot;5ad826b035fa9c811469a9bee490bca1&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: c0c06d15-f76c-4a51-b295-6b9254327624
-X-Runtime: 2.910418
+X-Request-Id: 5ac29eaa-f701-4ccd-be1b-77b96be9e954
+X-Runtime: 3.096004
 Vary: Origin
-Content-Length: 727</pre>
+Content-Length: 252</pre>
 
 #### Status
 
@@ -64,37 +64,25 @@ Content-Length: 727</pre>
 
 <pre>{
   "entities": [
-    {
-      "id": "http://example.org/entities/f0ba7bf8-aefe-4532-834e-4da1ce422e92",
-      "label": "Radio Broadcast, Phlogiston leggings street truffaut banjo quinoa skateboard.",
-      "type": "attendance",
-      "short_display": [
 
-      ],
-      "description": "Phlogiston leggings street truffaut banjo quinoa skateboard.",
-      "clean_label": "Radio Broadcast, Phlogiston leggings street truffaut banjo quinoa skateboard.",
-      "clean_description": "Phlogiston leggings street truffaut banjo quinoa skateboard."
-    }
   ],
   "aggs": {
     "e_type": {
+      "doc_count": 0,
       "doc_count_error_upper_bound": 0,
       "sum_other_doc_count": 0,
       "buckets": [
-        {
-          "key": "attendance",
-          "doc_count": 1
-        }
+
       ]
     }
   },
   "meta": {
     "page": 1,
     "per_page": 25,
-    "page_count": 1,
-    "total_count": 1,
+    "page_count": 0,
+    "total_count": 0,
     "links": {
-      "self": "http://example.org/entities?page=1&search=banjo"
+      "self": "http://example.org/entities?page=1&search=tell"
     }
   }
 }</pre>

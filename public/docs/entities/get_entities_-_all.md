@@ -42,15 +42,15 @@ X-Content-Type-Options: nosniff
 X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
-Link: &lt;http://example.org/entities?page=1&gt;; rel=&#39;self&#39;, &lt;http://example.org/entities?page=25&gt;; rel=&#39;last&#39;, &lt;http://example.org/entities?page=2&gt;; rel=&#39;next&#39;
-X-Total-Count: 625
+Link: &lt;http://example.org/entities?page=1&gt;; rel=&#39;self&#39;, &lt;http://example.org/entities?page=2&gt;; rel=&#39;last&#39;, &lt;http://example.org/entities?page=2&gt;; rel=&#39;next&#39;
+X-Total-Count: 29
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;89fe5bb96255bb39e878d85c34637c3e&quot;
+ETag: W/&quot;6eed73ba7047966ae5dd410cd8b46163&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 520ee871-2403-42c2-affd-44750e510083
-X-Runtime: 2.998511
+X-Request-Id: 422f597e-2364-41ca-8019-cec117a94676
+X-Runtime: 2.924082
 Vary: Origin
-Content-Length: 10166</pre>
+Content-Length: 19422</pre>
 
 #### Status
 
@@ -61,333 +61,280 @@ Content-Length: 10166</pre>
 <pre>{
   "entities": [
     {
-      "id": "http://example.org/entities/0063eab9-7fb8-4d51-a3be-329ec84d2332",
-      "label": "Mercury",
+      "id": "http://example.org/entities/01a7768f-e1f1-4b0a-b01b-a48df53501a3",
+      "label": "<i>The Last Temptation</i>",
+      "type": "reading",
+      "short_display": "<section><p><strong>Author</strong> Cedrick Harber</p>\n<p><strong>Title</strong> <i>The Last Temptation</i></p>\n<p><strong>Publication</strong> Newnes.</p></section>",
+      "description": "Ugh <i>glutenfree scenester fixie slowcarb</i> tattooed.",
+      "clean_label": "The Last Temptation",
+      "clean_description": "Ugh glutenfree scenester fixie slowcarb tattooed."
+    },
+    {
+      "id": "http://example.org/entities/045f5912-f187-492e-a620-e9f91fdd6b1f",
+      "label": "Bethselamin",
+      "type": "organization",
+      "short_display": "<section><p><strong>Bethselamin</strong></p>\n<p>Life? <i>Don't talk to me about</i> life.</p></section>",
+      "description": "Life? <i>Don't talk to me about</i> life.",
+      "clean_label": "Bethselamin",
+      "clean_description": "Life? Don't talk to me about life."
+    },
+    {
+      "id": "http://example.org/entities/0f9db80a-18cc-49ce-9ad5-0b5943c0e076",
+      "label": "Dangrabad Beta",
+      "type": "organization",
+      "short_display": "<section><p><strong>Dangrabad Beta</strong></p>\n<p>Pardon <i>me for breathing, which I never do anyway so I don't know why I bother to say it, Oh God, I'm so</i> depressed.</p></section>",
+      "description": "Pardon <i>me for breathing, which I never do anyway so I don't know why I bother to say it, Oh God, I'm so</i> depressed.",
+      "clean_label": "Dangrabad Beta",
+      "clean_description": "Pardon me for breathing, which I never do anyway so I don't know why I bother to say it, Oh God, I'm so depressed."
+    },
+    {
+      "id": "http://example.org/entities/1eabbc55-83f5-41f7-ad98-0dc09ad4510a",
+      "label": "Batz, Salvatore",
+      "type": "person",
+      "short_display": "<section><p><strong>Salvatore Batz, 1908-1984</strong></p>\n<p>I <i>wish you'd just tell me rather trying to engage my enthusiasm, because I haven't got</i> one.</p></section>",
+      "description": "I <i>wish you'd just tell me rather trying to engage my enthusiasm, because I haven't got</i> one.",
+      "clean_label": "Batz, Salvatore",
+      "clean_description": "I wish you'd just tell me rather trying to engage my enthusiasm, because I haven't got one."
+    },
+    {
+      "id": "http://example.org/entities/258399e7-4723-4984-b0a1-59f6d5f6cbc0",
+      "label": "Reading, Intelligentsia <i>pork belly viral cred blue bottle aesthetic</i> iphone.",
+      "type": "attendance",
+      "short_display": "<section><p><strong>Reading</strong>, Intelligentsia <i>pork belly viral cred blue bottle aesthetic</i> iphone.</p>\n<p><strong>Attended with</strong> Donny and Hactar</p>\n<p><strong>Place, Date</strong> East Ryan, 20 March 1953</p>\n<p><strong>Director</strong> Majikthise</p></section>",
+      "description": "Intelligentsia <i>pork belly viral cred blue bottle aesthetic</i> iphone.",
+      "clean_label": "Reading, Intelligentsia pork belly viral cred blue bottle aesthetic iphone.",
+      "clean_description": "Intelligentsia pork belly viral cred blue bottle aesthetic iphone."
+    },
+    {
+      "id": "http://example.org/entities/337946c4-08aa-41fa-9995-77c77aff99e4",
+      "label": "Shutter Island",
+      "type": "production",
+      "short_display": "<section><p><strong>Title</strong> Shutter Island</p>\n<p><strong>Proposal/Response</strong> I won't enjoy it. / Curiously enough, the only thing that went through the mind of the bowl of petunias as it fell was Oh no, not again.</p>\n<p><strong>Director</strong> Maude Lebowski <strong>Theatre, City</strong> RW6, West Jeromy</p>\n<p><strong>Date(s)</strong> 1932-10-04.</p></section>",
+      "description": "Art <i>party carry dreamcatcher hashtag umami</i> loko.",
+      "clean_label": "Shutter Island",
+      "clean_description": "Art party carry dreamcatcher hashtag umami loko."
+    },
+    {
+      "id": "http://example.org/entities/440440f5-b944-4043-ba34-072e553087ac",
+      "label": "Abernathy, Sharla",
+      "type": "person",
+      "short_display": "<section><p><strong>Sharla Abernathy, 1918-1983</strong></p>\n<p>Here <i>I am, brain the size of a planet, and they tell me to take you up to the bridge. Call that job satisfaction? 'Cos I</i> don't.</p></section>",
+      "description": "Here <i>I am, brain the size of a planet, and they tell me to take you up to the bridge. Call that job satisfaction? 'Cos I</i> don't.",
+      "clean_label": "Abernathy, Sharla",
+      "clean_description": "Here I am, brain the size of a planet, and they tell me to take you up to the bridge. Call that job satisfaction? 'Cos I don't."
+    },
+    {
+      "id": "http://example.org/entities/47db9fc0-95e7-4e98-9848-809e3da3ae9f",
+      "label": "<i>Bistro Illegal</i>",
+      "type": "place",
+      "short_display": "<section><p><strong><i>Bistro Illegal</i></strong></p>\n<p>Glutenfree cred health locavore mlkshk vinyl.</p></section>",
+      "description": "Glutenfree cred health locavore mlkshk vinyl.",
+      "clean_label": "Bistro Illegal",
+      "clean_description": "Glutenfree cred health locavore mlkshk vinyl."
+    },
+    {
+      "id": "http://example.org/entities/4bef59f7-e94b-4ca0-bd8c-1f3202452007",
+      "label": "<i>Atlantis</i>",
       "type": "public_event",
-      "short_display": [
-
-      ],
-      "description": "There's a brand new groove going 'round, in your funky town, and the kick drum is the fault.",
-      "clean_label": "Mercury",
+      "short_display": "<section><p><strong><i>Atlantis</i></strong></p>\n<p><strong>1937-08-03.</strong></p></section>",
+      "description": "We <i>gonna play in the sunshine, we're going to get over. I'm feeling kinda lucky tonight I'm gonna find my four leaf</i> clover.",
+      "clean_label": "Atlantis",
+      "clean_description": "We gonna play in the sunshine, we're going to get over. I'm feeling kinda lucky tonight I'm gonna find my four leaf clover."
+    },
+    {
+      "id": "http://example.org/entities/4f34fe33-e82b-4e41-ac0e-04b0a13e642f",
+      "label": "<i>An Acceptable Time</i>",
+      "type": "reading",
+      "short_display": "<section><p><strong>Author</strong> Trudi Franecki JD</p>\n<p><strong>Title</strong> <i>An Acceptable Time</i></p>\n<p><strong>Publication</strong> University of Nebraska Press.</p></section>",
+      "description": "Chia echo umami blog.",
+      "clean_label": "An Acceptable Time",
+      "clean_description": "Chia echo umami blog."
+    },
+    {
+      "id": "http://example.org/entities/50962309-1c7c-4b86-989b-5a8f14f849b6",
+      "label": "Kakrafoon Kappa",
+      "type": "place",
+      "short_display": "<section><p><strong>Kakrafoon Kappa</strong></p>\n<p>Cornhole <i>kitsch tote bag fanny pack retro before they sold out direct trade organic</i> health.</p></section>",
+      "description": "Cornhole <i>kitsch tote bag fanny pack retro before they sold out direct trade organic</i> health.",
+      "clean_label": "Kakrafoon Kappa",
+      "clean_description": "Cornhole kitsch tote bag fanny pack retro before they sold out direct trade organic health."
+    },
+    {
+      "id": "http://example.org/entities/737c8b07-d71f-469f-9d62-ef9492ecbb67",
+      "label": "The Last Enemy",
+      "type": "reading",
+      "short_display": "<section><p><strong>Author</strong> Evalyn McDermott</p>\n<p><strong>Title</strong> The Last Enemy</p>\n<p><strong>Publication</strong> Harvard University Press.</p></section>",
+      "description": "Occupy <i>skateboard goth popup selvage</i> churchkey.",
+      "clean_label": "The Last Enemy",
+      "clean_description": "Occupy skateboard goth popup selvage churchkey."
+    },
+    {
+      "id": "http://example.org/entities/78046f52-e0ba-4460-a19d-1ac8c5490f5d",
+      "label": "<i>Paths of Glory</i>",
+      "type": "production",
+      "short_display": "<section><p><strong>Title</strong> <i>Paths of Glory</i></p>\n<p><strong>Proposal/Response</strong> There's only one life-form as intelligent as me within thirty parsecs of here and that's me. / ...they discovered only a small asteroid inhabited by a solitary old man who claimed repeatedly that nothing was true, though he was later discovered to be lying.</p>\n<p><strong>Director</strong> The Dude <strong>Theatre, City</strong> Krikkit One, Walshbury</p>\n<p><strong>Date(s)</strong> 1963-12-03.</p></section>",
+      "description": "Scenester next level irony tryhard offal.",
+      "clean_label": "Paths of Glory",
+      "clean_description": "Scenester next level irony tryhard offal."
+    },
+    {
+      "id": "http://example.org/entities/788501bb-796f-4a87-b576-6c4d8e12a66d",
+      "label": "<i>Betelgeuse</i>",
+      "type": "place",
+      "short_display": "<section><p><strong><i>Betelgeuse</i></strong></p>\n<p>Bespoke <i>kitsch tofu lomo tumblr health</i> roof.</p></section>",
+      "description": "Bespoke <i>kitsch tofu lomo tumblr health</i> roof.",
+      "clean_label": "Betelgeuse",
+      "clean_description": "Bespoke kitsch tofu lomo tumblr health roof."
+    },
+    {
+      "id": "http://example.org/entities/7c20aae9-f23f-4bfa-8409-7b2bcc5f0819",
+      "label": "<i>Pink Cashmere</i>",
+      "type": "music",
+      "short_display": "<section><p><strong>Composer</strong> Arthur Dent</p>\n<p><strong>Title</strong> <i>Pink Cashmere</i></p>\n<p><strong>Description</strong> Viral cardigan cleanse jean shorts bespoke pug.</p></section>",
+      "description": "Viral cardigan cleanse jean shorts bespoke pug.",
+      "clean_label": "Pink Cashmere",
+      "clean_description": "Viral cardigan cleanse jean shorts bespoke pug."
+    },
+    {
+      "id": "http://example.org/entities/941dcaaa-a127-4d72-b0a5-f3c64ac2504a",
+      "label": "Challenger",
+      "type": "public_event",
+      "short_display": "<section><p><strong>Challenger</strong></p>\n<p><strong>1944-06-28.</strong></p></section>",
+      "description": "There's <i>a brand new groove going 'round, in your funky town, and the kick drum is the</i> fault.",
+      "clean_label": "Challenger",
       "clean_description": "There's a brand new groove going 'round, in your funky town, and the kick drum is the fault."
     },
     {
-      "id": "http://example.org/entities/011bc573-17dd-4016-aaf1-b2e08d0fae5a",
-      "label": "<i>To Your Scattered Bodies Go</i>",
-      "type": "translating",
-      "short_display": [
-
-      ],
-      "description": "Brunch phlogiston polaroid salvia.",
-      "clean_label": "To Your Scattered Bodies Go",
-      "clean_description": "Brunch phlogiston polaroid salvia."
+      "id": "http://example.org/entities/9dc1fa20-da4c-40ca-b520-184551d025cf",
+      "label": "Radio Broadcast, Beard <i>keffiyeh glutenfree listicle vice intelligentsia bitters farmtotable</i> venmo.",
+      "type": "attendance",
+      "short_display": "<section><p><strong>Radio Broadcast</strong>, Beard <i>keffiyeh glutenfree listicle vice intelligentsia bitters farmtotable</i> venmo.</p>\n<p><strong>Attended with</strong> Bunny Lebowski and Majikthise</p>\n<p><strong>Place, Date</strong> West Deloras, 11 February 1947</p>\n<p><strong>Director</strong> Elvis</p></section>",
+      "description": "Beard <i>keffiyeh glutenfree listicle vice intelligentsia bitters farmtotable</i> venmo.",
+      "clean_label": "Radio Broadcast, Beard keffiyeh glutenfree listicle vice intelligentsia bitters farmtotable venmo.",
+      "clean_description": "Beard keffiyeh glutenfree listicle vice intelligentsia bitters farmtotable venmo."
     },
     {
-      "id": "http://example.org/entities/01764e76-91ae-4898-b73d-ddfb04f99589",
-      "label": "Denmark",
-      "type": "place",
-      "short_display": [
-
-      ],
-      "description": "Ugh <i>waistcoat sriracha dreamcatcher kale chips trust fund chartreuse ramps</i> kinfolk.",
-      "clean_label": "Denmark",
-      "clean_description": "Ugh waistcoat sriracha dreamcatcher kale chips trust fund chartreuse ramps kinfolk."
-    },
-    {
-      "id": "http://example.org/entities/01cfcfb6-23e4-40a7-a539-a6ab92076c37",
-      "label": "<i>Orion</i>",
-      "type": "public_event",
-      "short_display": [
-
-      ],
-      "description": "Let's Groove, September, Earth, Wind and Fire, Hot Pants by James, Sly is going to take you higher.",
-      "clean_label": "Orion",
-      "clean_description": "Let's Groove, September, Earth, Wind and Fire, Hot Pants by James, Sly is going to take you higher."
-    },
-    {
-      "id": "http://example.org/entities/01df3cf9-555b-4661-9615-a18b8c59aad3",
-      "label": "<i>Apollo</i>",
-      "type": "public_event",
-      "short_display": [
-
-      ],
-      "description": "It was only last June when her old man ran away. She couldn't stop crying cause she knew he was gone to stay.",
-      "clean_label": "Apollo",
-      "clean_description": "It was only last June when her old man ran away. She couldn't stop crying cause she knew he was gone to stay."
-    },
-    {
-      "id": "http://example.org/entities/01fa447f-fe4c-4d85-9ab2-79416ba0931b",
-      "label": "Ibiza",
-      "type": "place",
-      "short_display": [
-
-      ],
-      "description": "Migas lumbersexual shoreditch roof scenester meditation.",
-      "clean_label": "Ibiza",
-      "clean_description": "Migas lumbersexual shoreditch roof scenester meditation."
-    },
-    {
-      "id": "http://example.org/entities/027b8ae6-36f0-4357-922b-131222b6e7b6",
-      "label": "<i>Liberty Fund</i>",
+      "id": "http://example.org/entities/a53f4046-c0aa-422c-a845-e5221b6909bc",
+      "label": "<i>Faber and Faber</i>",
       "type": "publication",
-      "short_display": [
-
-      ],
-      "description": "Readymade squid health meggings trust fund lofi williamsburg small batch chia.",
-      "clean_label": "Liberty Fund",
-      "clean_description": "Readymade squid health meggings trust fund lofi williamsburg small batch chia."
+      "short_display": "<section><p><strong>Author</strong> Jesus Quintana</p>\n<p><strong>Title</strong> <i>Faber and Faber</i></p>\n<p><strong>Translator</strong> Grunthos the Flatulent</p>\n<p><strong>Publication</strong> Quinoa schlitz slow-carb butcher knausgaard.</p></section>",
+      "description": "Meh keffiyeh portland kale chips readymade.",
+      "clean_label": "Faber and Faber",
+      "clean_description": "Meh keffiyeh portland kale chips readymade."
     },
     {
-      "id": "http://example.org/entities/0339d5d7-6117-4be5-a759-ef028b53dd71",
-      "label": "Schuster, Paula",
-      "type": "person",
-      "short_display": [
-
-      ],
-      "description": "I think you ought to know I'm feeling very depressed.",
-      "clean_label": "Schuster, Paula",
-      "clean_description": "I think you ought to know I'm feeling very depressed."
-    },
-    {
-      "id": "http://example.org/entities/0348ca32-67d8-4f0c-b4e4-c8058925fe70",
-      "label": "In a Glass Darkly",
-      "type": "reading",
-      "short_display": [
-
-      ],
-      "description": "Hammock <i>cronut swag park hashtag ethical</i> helvetica.",
-      "clean_label": "In a Glass Darkly",
-      "clean_description": "Hammock cronut swag park hashtag ethical helvetica."
-    },
-    {
-      "id": "http://example.org/entities/03504f7a-6711-458f-bac0-fdae54403414",
-      "label": "<i>Gemini</i>",
+      "id": "http://example.org/entities/ae337141-72d4-4471-9526-4e08011d59f1",
+      "label": "<i>Atlantis</i>",
       "type": "public_event",
-      "short_display": [
-
-      ],
-      "description": "Love come quick, love come in a hurry, there are thieves in the temple tonight.",
-      "clean_label": "Gemini",
-      "clean_description": "Love come quick, love come in a hurry, there are thieves in the temple tonight."
+      "short_display": "<section><p><strong><i>Atlantis</i></strong></p>\n<p><strong>1937-09-24.</strong></p></section>",
+      "description": "Are <i>your smiles, are your smiles for</i> me?",
+      "clean_label": "Atlantis",
+      "clean_description": "Are your smiles, are your smiles for me?"
     },
     {
-      "id": "http://example.org/entities/036549d1-1017-4303-a1b8-2d6a495de042",
-      "label": "Sometimes It Snows In April",
-      "type": "work_of_art",
-      "short_display": [
-
-      ],
-      "description": "Keytar farmtotable chillwave hammock bushwick kinfolk heirloom vinyl.",
-      "clean_label": "Sometimes It Snows In April",
-      "clean_description": "Keytar farmtotable chillwave hammock bushwick kinfolk heirloom vinyl."
+      "id": "http://example.org/entities/aee00129-fa4a-4400-ae36-5e873fc5280e",
+      "label": "I Know Why the Caged Bird Sings",
+      "type": "writing",
+      "short_display": "<section><p><strong>Title</strong> I Know Why the Caged Bird Sings</p>\n<p><strong>Proposal/Response</strong> He was staring at the instruments with the air of one who is trying to convert Fahrenheit to centigrade in his head while his house is burning down.</p>\n<p><strong>Translator</strong> Prostetnic Vogon Kwaltz</p>\n<p><strong>Date</strong> 1946-11-15.</p></section>",
+      "description": "Lumbersexual <i>mlkshk knausgaard pinterest kale chips banh mi</i> skateboard.",
+      "clean_label": "I Know Why the Caged Bird Sings",
+      "clean_description": "Lumbersexual mlkshk knausgaard pinterest kale chips banh mi skateboard."
     },
     {
-      "id": "http://example.org/entities/03a31a83-277b-4fe4-ad8a-30ce7df867c2",
-      "label": "<i>Horse and Groom</i>",
-      "type": "place",
-      "short_display": [
-
-      ],
-      "description": "Retro keytar raw denim aesthetic.",
-      "clean_label": "Horse and Groom",
-      "clean_description": "Retro keytar raw denim aesthetic."
-    },
-    {
-      "id": "http://example.org/entities/047e6296-8ad7-4ed5-bf9a-af731db10631",
-      "label": "Starfish And Coffee",
-      "type": "work_of_art",
-      "short_display": [
-
-      ],
-      "description": "Selfies <i>narwhal kogi five dollar toast twee</i> scenester.",
-      "clean_label": "Starfish And Coffee",
-      "clean_description": "Selfies narwhal kogi five dollar toast twee scenester."
-    },
-    {
-      "id": "http://example.org/entities/05464183-5ad8-4a8d-8b45-b09a8513f48a",
-      "label": "Radio Broadcast, Photo booth occupy farmtotable meggings neutra seitan ramps.",
-      "type": "attendance",
-      "short_display": [
-
-      ],
-      "description": "Photo booth occupy farmtotable meggings neutra seitan ramps.",
-      "clean_label": "Radio Broadcast, Photo booth occupy farmtotable meggings neutra seitan ramps.",
-      "clean_description": "Photo booth occupy farmtotable meggings neutra seitan ramps."
-    },
-    {
-      "id": "http://example.org/entities/0553913a-1857-47d3-b6ca-162da9fd2e1b",
-      "label": "Rehearsal, Everyday tote bag muggle magic pinterest retro paleo postironic tacos.",
-      "type": "attendance",
-      "short_display": [
-
-      ],
-      "description": "Everyday tote bag muggle magic pinterest retro paleo postironic tacos.",
-      "clean_label": "Rehearsal, Everyday tote bag muggle magic pinterest retro paleo postironic tacos.",
-      "clean_description": "Everyday tote bag muggle magic pinterest retro paleo postironic tacos."
-    },
-    {
-      "id": "http://example.org/entities/0576c697-83f4-4158-bcee-de81058636ce",
-      "label": "<i>Chambers Harrap</i>",
-      "type": "publication",
-      "short_display": [
-
-      ],
-      "description": "Tote <i>bag selfies cornhole muggle magic whatever churchkey vice</i> mixtape.",
-      "clean_label": "Chambers Harrap",
-      "clean_description": "Tote bag selfies cornhole muggle magic whatever churchkey vice mixtape."
-    },
-    {
-      "id": "http://example.org/entities/05889d77-6513-47fe-9076-4293a0e510c9",
-      "label": "Boston",
-      "type": "place",
-      "short_display": [
-
-      ],
-      "description": "Listicle crucifix deep v flannel 1 pbrb cleanse brooklyn venmo.",
-      "clean_label": "Boston",
-      "clean_description": "Listicle crucifix deep v flannel 1 pbrb cleanse brooklyn venmo."
-    },
-    {
-      "id": "http://example.org/entities/058b071b-7293-49ba-8aba-a06d7a47c0e5",
-      "label": "<i>Orion</i>",
-      "type": "public_event",
-      "short_display": [
-
-      ],
-      "description": "Woke up the next morning, Nikki wasn't there. I looked all over and all I found was a phone number on the stairs. It said thank you for a funky time, call me up whenever you wanna grind.",
-      "clean_label": "Orion",
-      "clean_description": "Woke up the next morning, Nikki wasn't there. I looked all over and all I found was a phone number on the stairs. It said thank you for a funky time, call me up whenever you wanna grind."
-    },
-    {
-      "id": "http://example.org/entities/0693faee-4a3a-4147-bf1d-ad8fef71f8a8",
-      "label": "Reading, Hammock <i>singleorigin coffee 1</i> cred.",
-      "type": "attendance",
-      "short_display": [
-
-      ],
-      "description": "Hammock <i>singleorigin coffee 1</i> cred.",
-      "clean_label": "Reading, Hammock singleorigin coffee 1 cred.",
-      "clean_description": "Hammock singleorigin coffee 1 cred."
-    },
-    {
-      "id": "http://example.org/entities/06ccd07a-d865-456c-8b93-4bcc8ea42014",
-      "label": "Blagulon Kappa",
+      "id": "http://example.org/entities/aef65119-c70c-4d60-93c2-a78737e9a6fb",
+      "label": "<i>Earth</i>",
       "type": "organization",
-      "short_display": [
-
-      ],
-      "description": "I think you ought to know I'm feeling very depressed.",
-      "clean_label": "Blagulon Kappa",
-      "clean_description": "I think you ought to know I'm feeling very depressed."
+      "short_display": "<section><p><strong><i>Earth</i></strong></p>\n<p>And then of course I've got this terrible pain in all the diodes down my left side.</p></section>",
+      "description": "And then of course I've got this terrible pain in all the diodes down my left side.",
+      "clean_label": "Earth",
+      "clean_description": "And then of course I've got this terrible pain in all the diodes down my left side."
     },
     {
-      "id": "http://example.org/entities/07700052-3bbf-45bd-bacb-d4a2abf2b153",
-      "label": "<i>London</i>",
-      "type": "place",
-      "short_display": [
-
-      ],
-      "description": "Hammock <i>meditation vhs fanny pack</i> tattooed.",
-      "clean_label": "London",
-      "clean_description": "Hammock meditation vhs fanny pack tattooed."
-    },
-    {
-      "id": "http://example.org/entities/07bb16e2-7083-4c4f-8021-dcd8135dcda4",
-      "label": "Computer Blue",
-      "type": "music",
-      "short_display": [
-
-      ],
-      "description": "Yolo pickled narwhal fingerstache mustache.",
-      "clean_label": "Computer Blue",
-      "clean_description": "Yolo pickled narwhal fingerstache mustache."
-    },
-    {
-      "id": "http://example.org/entities/07d66f4c-7449-48bc-9775-aea110102d58",
-      "label": "<i>Gemini</i>",
+      "id": "http://example.org/entities/ca06ed48-eb33-4620-b928-7e53515637cf",
+      "label": "<i>Challenger</i>",
       "type": "public_event",
-      "short_display": [
-
-      ],
-      "description": "Where <i>is my love life? Where can it be? There must be something wrong with the</i> machinery.",
-      "clean_label": "Gemini",
-      "clean_description": "Where is my love life? Where can it be? There must be something wrong with the machinery."
+      "short_display": "<section><p><strong><i>Challenger</i></strong></p>\n<p><strong>1944-09-01.</strong></p></section>",
+      "description": "We all have our problems. Some big, some are small. Soon all of our problems will be taken by the cross.",
+      "clean_label": "Challenger",
+      "clean_description": "We all have our problems. Some big, some are small. Soon all of our problems will be taken by the cross."
     },
     {
-      "id": "http://example.org/entities/0868c90c-9d3f-4882-ab7f-f4040b1d562d",
-      "label": "Ol' Skool Company",
-      "type": "music",
-      "short_display": [
-
-      ],
-      "description": "Blog <i>chia hella stumptown sartorial marfa</i> ramps.",
-      "clean_label": "Ol' Skool Company",
-      "clean_description": "Blog chia hella stumptown sartorial marfa ramps."
-    },
-    {
-      "id": "http://example.org/entities/08ae64bc-38a1-44da-b853-f4e0ccb70f6d",
-      "label": "Connelly, Sharika",
+      "id": "http://example.org/entities/d61b602e-9ecd-4249-a132-ff5b3ef9fcd6",
+      "label": "Greenfelder, Wilbert",
       "type": "person",
-      "short_display": [
-
-      ],
-      "description": "There's only one life-form as intelligent as me within thirty parsecs of here and that's me.",
-      "clean_label": "Connelly, Sharika",
-      "clean_description": "There's only one life-form as intelligent as me within thirty parsecs of here and that's me."
+      "short_display": "<section><p><strong>Wilbert Greenfelder, 1927-1984</strong></p>\n<p>Pardon <i>me for breathing, which I never do anyway so I don't know why I bother to say it, Oh God, I'm so</i> depressed.</p></section>",
+      "description": "Pardon <i>me for breathing, which I never do anyway so I don't know why I bother to say it, Oh God, I'm so</i> depressed.",
+      "clean_label": "Greenfelder, Wilbert",
+      "clean_description": "Pardon me for breathing, which I never do anyway so I don't know why I bother to say it, Oh God, I'm so depressed."
+    },
+    {
+      "id": "http://example.org/entities/decb547c-d9b8-456a-bae5-b5bf046a83c0",
+      "label": "<i>She's Always In My Hair</i>",
+      "type": "work_of_art",
+      "short_display": "<section><p><strong>Artist</strong> Reg Nullify</p>\n<p><strong>Title</strong> <i>She's Always In My Hair</i></p>\n<p><strong>Description</strong> Street <i>meggings next level trust fund vegan mixtape food truck</i> tofu.</p>\n<p><strong>Owner/location</strong> Heart of Gold</p></section>",
+      "description": "Street <i>meggings next level trust fund vegan mixtape food truck</i> tofu.",
+      "clean_label": "She's Always In My Hair",
+      "clean_description": "Street meggings next level trust fund vegan mixtape food truck tofu."
+    },
+    {
+      "id": "http://example.org/entities/e41a6eb4-0806-4a5d-86a7-0d7e014b8a35",
+      "label": "<i>Little Red Corvette</i>",
+      "type": "music",
+      "short_display": "<section><p><strong>Composer</strong> Garkbit</p>\n<p><strong>Title</strong> <i>Little Red Corvette</i></p>\n<p><strong>Description</strong> Intelligentsia <i>master quinoa fashion axe pitchfork ethical carry</i> vinegar.</p></section>",
+      "description": "Intelligentsia <i>master quinoa fashion axe pitchfork ethical carry</i> vinegar.",
+      "clean_label": "Little Red Corvette",
+      "clean_description": "Intelligentsia master quinoa fashion axe pitchfork ethical carry vinegar."
     }
   ],
   "aggs": {
     "e_type": {
+      "doc_count": 29,
       "doc_count_error_upper_bound": 0,
       "sum_other_doc_count": 0,
       "buckets": [
         {
-          "key": "place",
-          "doc_count": 133
-        },
-        {
-          "key": "person",
-          "doc_count": 87
-        },
-        {
-          "key": "production",
-          "doc_count": 47
-        },
-        {
-          "key": "music",
-          "doc_count": 46
+          "key": "organization",
+          "doc_count": 5
         },
         {
           "key": "public_event",
-          "doc_count": 44
+          "doc_count": 4
         },
         {
-          "key": "attendance",
-          "doc_count": 43
+          "key": "person",
+          "doc_count": 3
         },
         {
-          "key": "writing",
-          "doc_count": 41
+          "key": "place",
+          "doc_count": 3
         },
         {
-          "key": "publication",
-          "doc_count": 39
+          "key": "production",
+          "doc_count": 3
         },
         {
           "key": "reading",
-          "doc_count": 39
+          "doc_count": 3
         },
         {
-          "key": "organization",
-          "doc_count": 37
+          "key": "attendance",
+          "doc_count": 2
+        },
+        {
+          "key": "music",
+          "doc_count": 2
+        },
+        {
+          "key": "writing",
+          "doc_count": 2
+        },
+        {
+          "key": "publication",
+          "doc_count": 1
         },
         {
           "key": "work_of_art",
-          "doc_count": 36
-        },
-        {
-          "key": "translating",
-          "doc_count": 33
+          "doc_count": 1
         }
       ]
     }
@@ -395,11 +342,11 @@ Content-Length: 10166</pre>
   "meta": {
     "page": 1,
     "per_page": 25,
-    "page_count": 25,
-    "total_count": 625,
+    "page_count": 2,
+    "total_count": 29,
     "links": {
       "self": "http://example.org/entities?page=1",
-      "last": "http://example.org/entities?page=25",
+      "last": "http://example.org/entities?page=2",
       "next": "http://example.org/entities?page=2"
     }
   }
