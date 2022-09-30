@@ -1,24 +1,52 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## API Documentation
 
-Things you may want to cover:
+[Live Documentation](https://beckettapi.ecdsdev.org/docs/index.html)
 
-* Ruby version
+## Ruby version
 
-* System dependencies
+3.1.2
 
-* Configuration
+## System dependencies
 
-* Database creation
+* Elasticsearch
+* PostgreSQL
 
-* Database initialization
+## Database creation
 
-* How to run the test suite
+~~~bash
+rake db:create && rake db:migrate
+~~~
 
-* Services (job queues, cache servers, search engines, etc.)
+## Update Elasticsearch Indices
 
-* Deployment instructions
+~~~bash
+rake searchkick:reindex:all
+~~~
 
-* ...
+## Run the test suite
+
+~~~bash
+bundle exec rspec spec/
+~~~
+
+## Build Documentation
+
+~~~bash
+rake docs:generate
+~~~
+
+## Background Jobs
+
+Restart Active Jobs for indexing and Big Sam update.
+
+~~~bash
+sudo service sidekiq-1 restart && sudo service sidekiq-2 restart
+~~~
+
+## Deployment Instructions
+
+~~~bash
+bundle exec cap production deploy
+~~~
