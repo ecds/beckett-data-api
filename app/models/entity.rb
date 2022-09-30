@@ -175,6 +175,8 @@ class Entity < ApplicationRecord
   def search_data
     attributes = {}
     allowed_attributes.each {|attribute| attributes[attribute] = public_send(attribute) }
+    attributes[:alternate_spellings] = alternate_spellings.join(' ') if alternate_spellings?
+    attributes[:alternate_names] = alternate_names.join(' ') if alternate_names?
     {
       label:,
       clean_label:,

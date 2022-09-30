@@ -27,10 +27,14 @@ resource 'Entities' do
     parameter :type,
               "Limit responses by single type. Options are #{Entity.e_types.keys.to_sentence}.",
               { default: 'null' }
+    parameter :operator,
+              "By default, results match any words in the query. Use 'and' to match all words.",
+              { default: 'or' }
 
     before {
       Entity.e_types.keys[0..11].each do |type|
         create_list("#{type}_entity".to_sym, rand(3..5), :published)
+        Entity.all.each(&:save)
       end
     }
 
@@ -56,6 +60,15 @@ resource 'Entities' do
         expect(status).to eq(200)
       end
     end
+
+    get 'entities query using and operator' do
+      let(:search) { Entity.all.sample.clean_description.split.sample.downcase }
+      example_request 'GET /entities?search=:search_terms&operator=and - Keyword Search using and operator' do
+        explanation 'Returns a paginated list of entities from key word search.'
+        expect(status).to eq(200)
+      end
+    end
+
 
     get 'people by name' do
       let(:search) { Entity.person.sample.clean_label }

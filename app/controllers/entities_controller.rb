@@ -9,17 +9,18 @@ class EntitiesController < ApplicationController
   def index
     query = params[:search] || '*'
 
+    operator = params[:operator] || 'or'
+
     results = Entity.search(
       query,
       aggs: { e_type: {} },
       page: params[:page] || 1,
       per_page: params[:per_page] || 25,
       fields: @fields,
-      operator: 'or',
+      operator:,
       load: false,
       where: @where,
-      misspellings: { below: 5 },
-      match: :word_start
+      misspellings: { below: 5 }
     )
 
     @aggs = results.aggs
@@ -74,7 +75,7 @@ class EntitiesController < ApplicationController
                 params[:fields].sub! 'description', 'clean_description^5' unless params[:fields].include? 'clean_description'
                 params[:fields].split(',').map(&:strip).map(&:to_sym)
               else
-                ['clean_label^10', 'clean_description^5', :properties]
+                ['clean_label^10', 'clean_description^5', 'alternate_names^9', 'alternate_spellings^8']
               end
     # rubocop:enable Layout/LineLength
   end
