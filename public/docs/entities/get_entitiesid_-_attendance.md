@@ -26,7 +26,7 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /entities/ec65a565-3fb1-4904-b6a3-f07fc778fc80</pre>
+<pre>GET /entities/f7353d87-7d6f-472f-8085-c1537962da5e</pre>
 
 ### Response
 
@@ -39,12 +39,12 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;7c7f61d3c1fbb3f1292e3c8225f858ce&quot;
+ETag: W/&quot;47c932213abaac472f5cb2200cd596a0&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 5104bd66-3923-4598-8d51-6a32ba27b2cd
-X-Runtime: 0.926351
+X-Request-Id: 80acdfe1-db9c-4243-a593-99420a3e1f08
+X-Runtime: 0.943110
 Vary: Origin
-Content-Length: 2241</pre>
+Content-Length: 2448</pre>
 
 #### Status
 
@@ -52,28 +52,31 @@ Content-Length: 2241</pre>
 
 #### Body
 
-<pre>{
-  "id": "http://example.org/entities/ec65a565-3fb1-4904-b6a3-f07fc778fc80",
+~~~
+{
+  "id": "http://example.org/entities/f7353d87-7d6f-472f-8085-c1537962da5e",
   "type": "attendance",
-  "label": "Theatre, Occupy <i>pickled pabst narwhal swag sriracha</i> lumbersexual.",
-  "short_display": "<section><p><strong>Theatre</strong>, Occupy <i>pickled pabst narwhal swag sriracha</i> lumbersexual.</p>\n<p><strong>Attended with</strong> Donny and Majikthise</p>\n<p><strong>Place, Date</strong> Schambergerfort, 01 October 1957</p>\n<p><strong>Director</strong> Zarniwoop</p></section>",
-  "full_display": "<table>\n<tr>\n<th scope=\"row\">Description</th>\n<td>Occupy <i>pickled pabst narwhal swag sriracha</i> lumbersexual.</td>\n</tr>\n<tr>\n<th scope=\"row\">Alternate Name(s)</th>\n<td>Pandora Boxx</td>\n</tr>\n<tr>\n<th scope=\"row\">Director</th>\n<td>Zarniwoop</td>\n</tr>\n<tr>\n<th scope=\"row\">Performed by</th>\n<td>Random Dent</td>\n</tr>\n<tr>\n<th scope=\"row\">Attended with</th>\n<td>Donny and Majikthise</td>\n</tr>\n<tr>\n<th scope=\"row\">Place, Date</th>\n<td>Schambergerfort, 01 October 1957</td>\n</tr>\n<tr>\n<th scope=\"row\">Notes</th>\n<td>Only want to see you laughing in the purple rain.</td>\n</tr>\n</table>",
-  "description": "Occupy <i>pickled pabst narwhal swag sriracha</i> lumbersexual.",
+  "label": "Rehearsal, 8bit <i>raw denim drinking pinterest park postironic</i> vinyl.",
+  "short_display": "<section><p><strong>Rehearsal</strong>, 8bit <i>raw denim drinking pinterest park postironic</i> vinyl.</p>\n<p><strong>Attended with</strong> Jackie Treehorn and Fenchurch</p>\n<p><strong>Place, Date</strong> Pfannerstilltown, 13 April 1957</p>\n<p><strong>Director</strong> Emily Saunders</p></section>",
+  "full_display": "<table>\n<tr>\n<th scope=\"row\">Description</th>\n<td>8bit <i>raw denim drinking pinterest park postironic</i> vinyl.</td>\n</tr>\n<tr>\n<th scope=\"row\">Alternate Name(s)</th>\n<td>Raja</td>\n</tr>\n<tr>\n<th scope=\"row\">Director</th>\n<td>Emily Saunders</td>\n</tr>\n<tr>\n<th scope=\"row\">Performed by</th>\n<td>Prostetnic Vogon Kwaltz</td>\n</tr>\n<tr>\n<th scope=\"row\">Attended with</th>\n<td>Jackie Treehorn and Fenchurch</td>\n</tr>\n<tr>\n<th scope=\"row\">Place, Date</th>\n<td>Pfannerstilltown, 13 April 1957</td>\n</tr>\n<tr>\n<th scope=\"row\">Notes</th>\n<td>Paint a perfect picture, bring to life a vision in one's mind. The beautiful ones always smash the picture. Always. Everytime.</td>\n</tr>\n</table>",
+  "description": "8bit <i>raw denim drinking pinterest park postironic</i> vinyl.",
   "e_type": "attendance",
-  "legacy_pk": 33223,
+  "legacy_pk": 30216,
   "alternate_names": [
-    "Pandora Boxx"
+    "Raja"
   ],
   "alternate_spellings": null,
   "attended_with": [
-    "Donny",
-    "Majikthise"
+    "Jackie Treehorn",
+    "Fenchurch"
   ],
-  "director": "Zarniwoop",
-  "event_type": "theatre",
-  "notes": "Only want to see you laughing in the purple rain.",
+  "director": "Emily Saunders",
+  "event_type": "rehearsal",
+  "notes": "Paint a perfect picture, bring to life a vision in one's mind. The beautiful ones always smash the picture. Always. Everytime.",
   "performed_by": [
-    "Random Dent"
+    "Prostetnic Vogon Kwaltz"
   ],
-  "place_date": "Schambergerfort, 01 October 1957"
-}</pre>
+  "place_date": "Pfannerstilltown, 13 April 1957"
+}
+~~~
+

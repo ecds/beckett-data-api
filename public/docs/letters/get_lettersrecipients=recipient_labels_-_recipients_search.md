@@ -34,11 +34,11 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /letters?recipients=Kozey%2C+Livia%2CRoob%2C+Jenae</pre>
+<pre>GET /letters?recipients=Brown%2C+Alisia%2CEmard%2C+Coleman</pre>
 
 #### Query Parameters
 
-<pre>recipients: Kozey, Livia,Roob, Jenae</pre>
+<pre>recipients: Brown, Alisia,Emard, Coleman</pre>
 
 ### Response
 
@@ -50,15 +50,15 @@ X-Content-Type-Options: nosniff
 X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
-Link: &lt;http://example.org/letters?page=1&amp;recipients=Kozey%2C+Livia%2CRoob%2C+Jenae&gt;; rel=&#39;self&#39;
+Link: &lt;http://example.org/letters?page=1&amp;recipients=Brown%2C+Alisia%2CEmard%2C+Coleman&gt;; rel=&#39;self&#39;
 X-Total-Count: 0
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;9083532ea40803756b274be494113788&quot;
+ETag: W/&quot;7f4eb7503ab754e4c9349cafe2efae4d&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 8f19fb2c-f794-4360-8526-0f0b063eefc1
-X-Runtime: 2.863948
+X-Request-Id: 60e1c258-7a6b-4094-99fa-15e4098466b4
+X-Runtime: 3.148817
 Vary: Origin
-Content-Length: 552</pre>
+Content-Length: 556</pre>
 
 #### Status
 
@@ -66,7 +66,8 @@ Content-Length: 552</pre>
 
 #### Body
 
-<pre>{
+~~~
+{
   "letters": [
 
   ],
@@ -116,7 +117,9 @@ Content-Length: 552</pre>
     "page_count": 0,
     "total_count": 0,
     "links": {
-      "self": "http://example.org/letters?page=1&recipients=Kozey%2C+Livia%2CRoob%2C+Jenae"
+      "self": "http://example.org/letters?page=1&recipients=Brown%2C+Alisia%2CEmard%2C+Coleman"
     }
   }
-}</pre>
+}
+~~~
+

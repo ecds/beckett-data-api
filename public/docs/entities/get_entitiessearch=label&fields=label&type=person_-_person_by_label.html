@@ -168,17 +168,6 @@ table th, table td {
                   <span class="default">null</span>
                 </td>
               </tr>
-              <tr>
-                <td>
-                    <span class="name">label</span>
-                </td>
-                <td>
-                  <span class="description">Clean label (no HTML) of entity</span>
-                </td>
-                <td>
-                  <span class="default">null</span>
-                </td>
-              </tr>
             </tbody>
           </table>
 
@@ -193,10 +182,10 @@ Host: example.org
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET /entities?search=Reichert%2C+Rodney&amp;type=person</pre>
+          <pre class="request route highlight">GET /entities?search=Schmidt%2C+Ebonie&amp;type=person</pre>
 
             <h4>Query Parameters</h4>
-            <pre class="request query_parameters highlight">search: Reichert, Rodney
+            <pre class="request query_parameters highlight">search: Schmidt, Ebonie
 type: person</pre>
 
 
@@ -209,15 +198,15 @@ X-Content-Type-Options: nosniff
 X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
-Link: &lt;http://example.org/entities?page=1&amp;search=Reichert%2C+Rodney&amp;type=person&gt;; rel=&#39;self&#39;
+Link: &lt;http://example.org/entities?page=1&amp;search=Schmidt%2C+Ebonie&amp;type=person&gt;; rel=&#39;self&#39;
 X-Total-Count: 0
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;28cbc09a081e365a39275c208f56cab2&quot;
+ETag: W/&quot;4d350d64e794ff479546af7b725b72dd&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 655cb03d-e03a-4281-afad-69f18cb12954
-X-Runtime: 3.204075
+X-Request-Id: 9989f7ef-cf61-492d-a235-50cd7647f86c
+X-Runtime: 2.929061
 Vary: Origin
-Content-Length: 283</pre>
+Content-Length: 282</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
@@ -241,7 +230,7 @@ Content-Length: 283</pre>
     &quot;page_count&quot;: 0,
     &quot;total_count&quot;: 0,
     &quot;links&quot;: {
-      &quot;self&quot;: &quot;http://example.org/entities?page=1&amp;search=Reichert%2C+Rodney&amp;type=person&quot;
+      &quot;self&quot;: &quot;http://example.org/entities?page=1&amp;search=Schmidt%2C+Ebonie&amp;type=person&quot;
     }
   }
 }</pre>

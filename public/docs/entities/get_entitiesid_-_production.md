@@ -26,7 +26,7 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /entities/88b9d951-7502-4cc0-8f8b-883391156f0c</pre>
+<pre>GET /entities/e7a766b6-169d-4bbe-96fd-a6bc033c9157</pre>
 
 ### Response
 
@@ -39,12 +39,12 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;ff6cba51ed746b722ae9102f45d0b843&quot;
+ETag: W/&quot;0e69c86748741998fda1e03002b83343&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: b7969373-d4e0-464f-9787-2e5d81403841
-X-Runtime: 0.766482
+X-Request-Id: 830716fd-fca8-47ca-ac80-79c647492eb2
+X-Runtime: 0.731647
 Vary: Origin
-Content-Length: 3786</pre>
+Content-Length: 3425</pre>
 
 #### Status
 
@@ -52,32 +52,35 @@ Content-Length: 3786</pre>
 
 #### Body
 
-<pre>{
-  "id": "http://example.org/entities/88b9d951-7502-4cc0-8f8b-883391156f0c",
+~~~
+{
+  "id": "http://example.org/entities/e7a766b6-169d-4bbe-96fd-a6bc033c9157",
   "type": "production",
-  "label": "<i>Star Wars: Episode VIII – The Last Jedi</i>",
-  "short_display": "<section><p><strong>Title</strong> <i>Star Wars: Episode VIII – The Last Jedi</i></p>\n<p><strong>Proposal/Response</strong> Life? Don't talk to me about life. / ...they discovered only a small asteroid inhabited by a solitary old man who claimed repeatedly that nothing was true, though he was later discovered to be lying.</p>\n<p><strong>Director</strong> The Big Lebowski <strong>Theatre, City</strong> Krikkit One, Rolfsonberg</p>\n<p><strong>Date(s)</strong> 1963-10-19.</p></section>",
-  "full_display": "<table>\n<tr>\n<th scope=\"row\">Title</th>\n<td colspan=\"5\"><i>Star Wars: Episode VIII – The Last Jedi</i></td>\n</tr>\n<tr>\n<th scope=\"row\">Proposal</th>\n<td>Life? Don't talk to me about life.</td>\n<th scope=\"row\">Response</th>\n<td>...they discovered only a small asteroid inhabited by a solitary old man who claimed repeatedly that nothing was true, though he was later discovered to be lying.</td>\n<th scope=\"row\">Reason</th>\n<td>You were so hard to find, the beautiful ones, they hurt you every time.</td>\n</tr>\n<tr>\n<th scope=\"row\">Date(s)</th>\n<td colspan=\"5\">1963-10-19.</td>\n</tr>\n<tr>\n<th scope=\"row\">Director</th>\n<td colspan=\"5\">The Big Lebowski</td>\n</tr>\n<tr>\n<th scope=\"row\">Cast</th>\n<td colspan=\"5\">Zarquon and The Big Lebowski</td>\n</tr>\n<tr>\n<th scope=\"row\">Personnel</th>\n<td colspan=\"5\">Elvis</td>\n</tr>\n<tr>\n<th scope=\"row\">Theatre, City</th>\n<td colspan=\"5\">Krikkit One, Rolfsonberg</td>\n</tr>\n<tr>\n<th scope=\"row\">Notes</th>\n<td colspan=\"5\">Quinoa messenger bag 8-bit microdosing pabst freegan pitchfork.</td>\n</tr>\n<tr>\n<th scope=\"row\">See Also</th>\n<td colspan=\"5\"><ul><li><a href=\"http://weber-feeney.name/cleo_schulist\" target=\"_blank\" rel=\"noopener\">http://weber-feeney.name/cleo_schulist<span>(opens in new tab)</span></a></li></ul></td>\n</tr>\n</table>",
-  "description": "Wes <i>anderson listicle tilde muggle magic disrupt tofu pork</i> belly.",
+  "label": "<i>Die Hard</i>",
+  "short_display": "<section><p><strong>Title</strong> <i>Die Hard</i></p>\n<p><strong>Proposal/Response</strong> I wish you'd just tell me rather trying to engage my enthusiasm, because I haven't got one. / Whatever your tastes, Magrathea can cater for you. We are not proud.</p>\n<p><strong>Director</strong> The Dude <strong>Theatre, City</strong> Krikkit One, Toneyfurt</p>\n<p><strong>Date(s)</strong> 1969-05-06.</p></section>",
+  "full_display": "<table>\n<tr>\n<th scope=\"row\">Title</th>\n<td colspan=\"5\"><i>Die Hard</i></td>\n</tr>\n<tr>\n<th scope=\"row\">Proposal</th>\n<td>I wish you'd just tell me rather trying to engage my enthusiasm, because I haven't got one.</td>\n<th scope=\"row\">Response</th>\n<td>Whatever your tastes, Magrathea can cater for you. We are not proud.</td>\n<th scope=\"row\">Reason</th>\n<td>You're gonna have to fight your own damn war, cause we don't want to fight no more.</td>\n</tr>\n<tr>\n<th scope=\"row\">Date(s)</th>\n<td colspan=\"5\">1969-05-06.</td>\n</tr>\n<tr>\n<th scope=\"row\">Director</th>\n<td colspan=\"5\">The Dude</td>\n</tr>\n<tr>\n<th scope=\"row\">Cast</th>\n<td colspan=\"5\">Reg Nullify and Karl Hungus</td>\n</tr>\n<tr>\n<th scope=\"row\">Personnel</th>\n<td colspan=\"5\">Arthur Dent</td>\n</tr>\n<tr>\n<th scope=\"row\">Theatre, City</th>\n<td colspan=\"5\">Krikkit One, Toneyfurt</td>\n</tr>\n<tr>\n<th scope=\"row\">Notes</th>\n<td colspan=\"5\">Swag franzen tattooed tote bag.</td>\n</tr>\n<tr>\n<th scope=\"row\">See Also</th>\n<td colspan=\"5\"><ul><li><a href=\"http://medhurst.name/risa\" target=\"_blank\" rel=\"noopener\">http://medhurst.name/risa<span>(opens in new tab)</span></a></li></ul></td>\n</tr>\n</table>",
+  "description": "Everyday hashtag pitchfork mlkshk lomo.",
   "e_type": "production",
-  "legacy_pk": 3055,
+  "legacy_pk": 10716,
   "alternate_names": null,
   "cast": [
-    "Zarquon",
-    "The Big Lebowski"
+    "Reg Nullify",
+    "Karl Hungus"
   ],
-  "city": "Rolfsonberg",
-  "date_str": "1963-10-19.",
-  "director": "The Big Lebowski",
+  "city": "Toneyfurt",
+  "date_str": "1969-05-06.",
+  "director": "The Dude",
   "links": [
-    "http://weber-feeney.name/cleo_schulist"
+    "http://medhurst.name/risa"
   ],
-  "notes": "Quinoa messenger bag 8-bit microdosing pabst freegan pitchfork.",
+  "notes": "Swag franzen tattooed tote bag.",
   "personnel": [
-    "Elvis"
+    "Arthur Dent"
   ],
-  "proposal": "Life? Don't talk to me about life.",
-  "response": "...they discovered only a small asteroid inhabited by a solitary old man who claimed repeatedly that nothing was true, though he was later discovered to be lying.",
-  "reason": "You were so hard to find, the beautiful ones, they hurt you every time.",
+  "proposal": "I wish you'd just tell me rather trying to engage my enthusiasm, because I haven't got one.",
+  "response": "Whatever your tastes, Magrathea can cater for you. We are not proud.",
+  "reason": "You're gonna have to fight your own damn war, cause we don't want to fight no more.",
   "theater": "Krikkit One"
-}</pre>
+}
+~~~
+

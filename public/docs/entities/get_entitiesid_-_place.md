@@ -26,7 +26,7 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /entities/b1e87be5-647c-4f59-a28d-67e977e09259</pre>
+<pre>GET /entities/8b5d5594-42e2-4786-90b3-7f8ce6ddea84</pre>
 
 ### Response
 
@@ -39,12 +39,12 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;6c48a7d17945c28998180565a6753f7d&quot;
+ETag: W/&quot;9f554b546773b10dbcb956864dd4b703&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 3ee21789-7881-4522-9338-e3dc249f54da
-X-Runtime: 0.781529
+X-Request-Id: 02a91de2-fc80-4ab7-bf32-75cf5ee83a60
+X-Runtime: 0.849398
 Vary: Origin
-Content-Length: 1200</pre>
+Content-Length: 1276</pre>
 
 #### Status
 
@@ -52,19 +52,22 @@ Content-Length: 1200</pre>
 
 #### Body
 
-<pre>{
-  "id": "http://example.org/entities/b1e87be5-647c-4f59-a28d-67e977e09259",
+~~~
+{
+  "id": "http://example.org/entities/8b5d5594-42e2-4786-90b3-7f8ce6ddea84",
   "type": "place",
-  "label": "Cathedral of Chalesm",
-  "short_display": "<section><p><strong>Cathedral of Chalesm</strong></p>\n<p>Meh vegan food truck kogi migas.</p></section>",
-  "full_display": "<table>\n<tr>\n<th scope=\"row\">Name</th>\n<td>Cathedral of Chalesm</td>\n</tr>\n<tr>\n<th scope=\"row\">Description</th>\n<td>Meh vegan food truck kogi migas.</td>\n</tr>\n<tr>\n<th scope=\"row\">See Also</th>\n<td><ul><li><a href=\"http://rogahn-heaney.net/alfonzo\" target=\"_blank\" rel=\"noopener\">http://rogahn-heaney.net/alfonzo<span>(opens in new tab)</span></a></li></ul></td>\n</tr>\n</table>",
-  "description": "Meh vegan food truck kogi migas.",
+  "label": "France",
+  "short_display": "<section><p><strong>France</strong></p>\n<p>Gentrify <i>bitters chillwave plaid</i> letterpress.</p></section>",
+  "full_display": "<table>\n<tr>\n<th scope=\"row\">Name</th>\n<td>France</td>\n</tr>\n<tr>\n<th scope=\"row\">Description</th>\n<td>Gentrify <i>bitters chillwave plaid</i> letterpress.</td>\n</tr>\n<tr>\n<th scope=\"row\">See Also</th>\n<td><ul><li><a href=\"http://kutch-hammes.org/johnie.huel\" target=\"_blank\" rel=\"noopener\">http://kutch-hammes.org/johnie.huel<span>(opens in new tab)</span></a></li></ul></td>\n</tr>\n</table>",
+  "description": "Gentrify <i>bitters chillwave plaid</i> letterpress.",
   "e_type": "place",
-  "legacy_pk": 21879,
+  "legacy_pk": 24469,
   "alternate_spellings": [
-    "Vanessa Vanjie Mateo"
+    "The Vixen"
   ],
   "links": [
-    "http://rogahn-heaney.net/alfonzo"
+    "http://kutch-hammes.org/johnie.huel"
   ]
-}</pre>
+}
+~~~
+

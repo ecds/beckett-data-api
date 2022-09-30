@@ -168,17 +168,6 @@ table th, table td {
                   <span class="default">null</span>
                 </td>
               </tr>
-              <tr>
-                <td>
-                    <span class="name">label</span>
-                </td>
-                <td>
-                  <span class="description">Clean label (no HTML) of entity</span>
-                </td>
-                <td>
-                  <span class="default">null</span>
-                </td>
-              </tr>
             </tbody>
           </table>
 
@@ -209,118 +198,118 @@ X-Content-Type-Options: nosniff
 X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
-Link: &lt;http://example.org/entities?page=2&amp;per_page=5&gt;; rel=&#39;self&#39;, &lt;http://example.org/entities?page=1&amp;per_page=5&gt;; rel=&#39;first&#39;, &lt;http://example.org/entities?page=7&amp;per_page=5&gt;; rel=&#39;last&#39;, &lt;http://example.org/entities?page=3&amp;per_page=5&gt;; rel=&#39;next&#39;, &lt;http://example.org/entities?page=1&amp;per_page=5&gt;; rel=&#39;prev&#39;
-X-Total-Count: 34
+Link: &lt;http://example.org/entities?page=2&amp;per_page=5&gt;; rel=&#39;self&#39;, &lt;http://example.org/entities?page=1&amp;per_page=5&gt;; rel=&#39;first&#39;, &lt;http://example.org/entities?page=8&amp;per_page=5&gt;; rel=&#39;last&#39;, &lt;http://example.org/entities?page=3&amp;per_page=5&gt;; rel=&#39;next&#39;, &lt;http://example.org/entities?page=1&amp;per_page=5&gt;; rel=&#39;prev&#39;
+X-Total-Count: 38
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;dd8488218d2fdbad09998a563f2233de&quot;
+ETag: W/&quot;2b0c87bb124658337c7438c4e4d3fdd4&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 03ff6219-a3d3-4789-9651-2d8dd0bab723
-X-Runtime: 2.805692
+X-Request-Id: 9404a663-69dc-4a7f-bfeb-f23be26dbadd
+X-Runtime: 3.199950
 Vary: Origin
-Content-Length: 4889</pre>
+Content-Length: 4790</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
   &quot;entities&quot;: [
     {
-      &quot;id&quot;: &quot;http://example.org/entities/25615278-7519-4a79-abb1-cb27f4568f3b&quot;,
-      &quot;label&quot;: &quot;&lt;i&gt;The Big Bang Burger Bar&lt;/i&gt;&quot;,
+      &quot;id&quot;: &quot;http://example.org/entities/2890090c-b28d-44bf-b8e0-3a84c773d7c1&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;Nano&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;organization&quot;,
+      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;&lt;i&gt;Nano&lt;/i&gt;&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;You &lt;i&gt;think you&#39;ve got problems? What are you supposed to do if you are a manically depressed robot? No, don&#39;t try to answer that. I&#39;m fifty thousand times more intelligent than you and even I don&#39;t know the answer. It gives me a headache just trying to think down to your&lt;/i&gt; level.&lt;/p&gt;&lt;/section&gt;&quot;,
+      &quot;description&quot;: &quot;You &lt;i&gt;think you&#39;ve got problems? What are you supposed to do if you are a manically depressed robot? No, don&#39;t try to answer that. I&#39;m fifty thousand times more intelligent than you and even I don&#39;t know the answer. It gives me a headache just trying to think down to your&lt;/i&gt; level.&quot;,
+      &quot;clean_label&quot;: &quot;Nano&quot;,
+      &quot;clean_description&quot;: &quot;You think you&#39;ve got problems? What are you supposed to do if you are a manically depressed robot? No, don&#39;t try to answer that. I&#39;m fifty thousand times more intelligent than you and even I don&#39;t know the answer. It gives me a headache just trying to think down to your level.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/29a3748c-bd89-4d96-8e2b-3f7634bb7889&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;Columbia&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;public_event&quot;,
+      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;&lt;i&gt;Columbia&lt;/i&gt;&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;1947-11-11.&lt;/strong&gt;&lt;/p&gt;&lt;/section&gt;&quot;,
+      &quot;description&quot;: &quot;Until &lt;i&gt;the end of time, I&#39;ll be there for&lt;/i&gt; you.&quot;,
+      &quot;clean_label&quot;: &quot;Columbia&quot;,
+      &quot;clean_description&quot;: &quot;Until the end of time, I&#39;ll be there for you.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/2a2403dc-be35-4749-a9f6-a4f2da3800a8&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;Se7en&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;production&quot;,
+      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Title&lt;/strong&gt; &lt;i&gt;Se7en&lt;/i&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Proposal/Response&lt;/strong&gt; I won&#39;t enjoy it. / If they don’t keep exercising their lips, he thought, their brains start working.&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Director&lt;/strong&gt; Donny &lt;strong&gt;Theatre, City&lt;/strong&gt; RW6, Gleasonberg&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Date(s)&lt;/strong&gt; 1927-01-07.&lt;/p&gt;&lt;/section&gt;&quot;,
+      &quot;description&quot;: &quot;Banh mi asymmetrical gastropub deep v brooklyn.&quot;,
+      &quot;clean_label&quot;: &quot;Se7en&quot;,
+      &quot;clean_description&quot;: &quot;Banh mi asymmetrical gastropub deep v brooklyn.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/2b5ea73c-ccb1-4d85-be96-e848971c174a&quot;,
+      &quot;label&quot;: &quot;Little Hands Clapping&quot;,
+      &quot;type&quot;: &quot;reading&quot;,
+      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Author&lt;/strong&gt; Mervin Graham&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Title&lt;/strong&gt; Little Hands Clapping&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Publication&lt;/strong&gt; Pantheon Books at Random House.&lt;/p&gt;&lt;/section&gt;&quot;,
+      &quot;description&quot;: &quot;Retro &lt;i&gt;churchkey shabby chic chillwave&lt;/i&gt; sartorial.&quot;,
+      &quot;clean_label&quot;: &quot;Little Hands Clapping&quot;,
+      &quot;clean_description&quot;: &quot;Retro churchkey shabby chic chillwave sartorial.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/2cd185f1-5185-441e-aff5-bdd7ebeec1b8&quot;,
+      &quot;label&quot;: &quot;Islington&quot;,
       &quot;type&quot;: &quot;place&quot;,
-      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;&lt;i&gt;The Big Bang Burger Bar&lt;/i&gt;&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;Marfa pabst artisan aesthetic squid.&lt;/p&gt;&lt;/section&gt;&quot;,
-      &quot;description&quot;: &quot;Marfa pabst artisan aesthetic squid.&quot;,
-      &quot;clean_label&quot;: &quot;The Big Bang Burger Bar&quot;,
-      &quot;clean_description&quot;: &quot;Marfa pabst artisan aesthetic squid.&quot;
-    },
-    {
-      &quot;id&quot;: &quot;http://example.org/entities/2ed60d91-ac91-423e-adea-b635aa863cf1&quot;,
-      &quot;label&quot;: &quot;A Farewell to Arms&quot;,
-      &quot;type&quot;: &quot;writing&quot;,
-      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Title&lt;/strong&gt; A Farewell to Arms&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Proposal/Response&lt;/strong&gt; If they don’t keep exercising their lips, he thought, their brains start working.&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Translator&lt;/strong&gt; Lintilla&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Date&lt;/strong&gt; 1968-08-02.&lt;/p&gt;&lt;/section&gt;&quot;,
-      &quot;description&quot;: &quot;Retro &lt;i&gt;williamsburg 1 direct trade scenester hoodie yolo next level&lt;/i&gt; tacos.&quot;,
-      &quot;clean_label&quot;: &quot;A Farewell to Arms&quot;,
-      &quot;clean_description&quot;: &quot;Retro williamsburg 1 direct trade scenester hoodie yolo next level tacos.&quot;
-    },
-    {
-      &quot;id&quot;: &quot;http://example.org/entities/317744b6-575a-4c09-b58b-dd143fa49162&quot;,
-      &quot;label&quot;: &quot;Pacocha, Francesco&quot;,
-      &quot;type&quot;: &quot;person&quot;,
-      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Francesco Pacocha, 1911-1984&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;Here I am, brain the size of a planet, and they tell me to take you up to the bridge. Call that job satisfaction? &#39;Cos I don&#39;t.&lt;/p&gt;&lt;/section&gt;&quot;,
-      &quot;description&quot;: &quot;Here I am, brain the size of a planet, and they tell me to take you up to the bridge. Call that job satisfaction? &#39;Cos I don&#39;t.&quot;,
-      &quot;clean_label&quot;: &quot;Pacocha, Francesco&quot;,
-      &quot;clean_description&quot;: &quot;Here I am, brain the size of a planet, and they tell me to take you up to the bridge. Call that job satisfaction? &#39;Cos I don&#39;t.&quot;
-    },
-    {
-      &quot;id&quot;: &quot;http://example.org/entities/34c1cdf8-0d67-4142-aa3f-986c3db4f3e9&quot;,
-      &quot;label&quot;: &quot;&lt;i&gt;Baltimore&lt;/i&gt;&quot;,
-      &quot;type&quot;: &quot;work_of_art&quot;,
-      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Artist&lt;/strong&gt; Trillian&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Title&lt;/strong&gt; &lt;i&gt;Baltimore&lt;/i&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt; Keffiyeh synth cred lumbersexual pork belly hammock flannel dreamcatcher.&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Owner/location&lt;/strong&gt; Vogon Constructor Fleet&lt;/p&gt;&lt;/section&gt;&quot;,
-      &quot;description&quot;: &quot;Keffiyeh synth cred lumbersexual pork belly hammock flannel dreamcatcher.&quot;,
-      &quot;clean_label&quot;: &quot;Baltimore&quot;,
-      &quot;clean_description&quot;: &quot;Keffiyeh synth cred lumbersexual pork belly hammock flannel dreamcatcher.&quot;
-    },
-    {
-      &quot;id&quot;: &quot;http://example.org/entities/42e7a7cf-c57f-4827-93ab-ee7c6c6fe5f2&quot;,
-      &quot;label&quot;: &quot;Rehearsal, Biodiesel &lt;i&gt;distillery cliche bitters hella retro&lt;/i&gt; drinking.&quot;,
-      &quot;type&quot;: &quot;attendance&quot;,
-      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Rehearsal&lt;/strong&gt;, Biodiesel &lt;i&gt;distillery cliche bitters hella retro&lt;/i&gt; drinking.&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Attended with&lt;/strong&gt; Jackie Treehorn and Arthur Dent&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Place, Date&lt;/strong&gt; West Mitchel, 05 December 1969&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Director&lt;/strong&gt; Dan Streetmentioner&lt;/p&gt;&lt;/section&gt;&quot;,
-      &quot;description&quot;: &quot;Biodiesel &lt;i&gt;distillery cliche bitters hella retro&lt;/i&gt; drinking.&quot;,
-      &quot;clean_label&quot;: &quot;Rehearsal, Biodiesel distillery cliche bitters hella retro drinking.&quot;,
-      &quot;clean_description&quot;: &quot;Biodiesel distillery cliche bitters hella retro drinking.&quot;
+      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Islington&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;Tumblr &lt;i&gt;umami churchkey ennui salvia&lt;/i&gt; aesthetic.&lt;/p&gt;&lt;/section&gt;&quot;,
+      &quot;description&quot;: &quot;Tumblr &lt;i&gt;umami churchkey ennui salvia&lt;/i&gt; aesthetic.&quot;,
+      &quot;clean_label&quot;: &quot;Islington&quot;,
+      &quot;clean_description&quot;: &quot;Tumblr umami churchkey ennui salvia aesthetic.&quot;
     }
   ],
   &quot;aggs&quot;: {
     &quot;e_type&quot;: {
-      &quot;doc_count&quot;: 34,
+      &quot;doc_count&quot;: 38,
       &quot;doc_count_error_upper_bound&quot;: 0,
       &quot;sum_other_doc_count&quot;: 0,
       &quot;buckets&quot;: [
         {
-          &quot;key&quot;: &quot;reading&quot;,
+          &quot;key&quot;: &quot;person&quot;,
           &quot;doc_count&quot;: 5
         },
         {
-          &quot;key&quot;: &quot;person&quot;,
-          &quot;doc_count&quot;: 4
+          &quot;key&quot;: &quot;writing&quot;,
+          &quot;doc_count&quot;: 5
         },
         {
           &quot;key&quot;: &quot;place&quot;,
           &quot;doc_count&quot;: 4
         },
         {
-          &quot;key&quot;: &quot;production&quot;,
+          &quot;key&quot;: &quot;reading&quot;,
           &quot;doc_count&quot;: 4
         },
         {
-          &quot;key&quot;: &quot;work_of_art&quot;,
-          &quot;doc_count&quot;: 4
+          &quot;key&quot;: &quot;production&quot;,
+          &quot;doc_count&quot;: 3
+        },
+        {
+          &quot;key&quot;: &quot;public_event&quot;,
+          &quot;doc_count&quot;: 3
+        },
+        {
+          &quot;key&quot;: &quot;publication&quot;,
+          &quot;doc_count&quot;: 3
         },
         {
           &quot;key&quot;: &quot;translating&quot;,
           &quot;doc_count&quot;: 3
         },
         {
-          &quot;key&quot;: &quot;attendance&quot;,
-          &quot;doc_count&quot;: 2
+          &quot;key&quot;: &quot;work_of_art&quot;,
+          &quot;doc_count&quot;: 3
         },
         {
           &quot;key&quot;: &quot;music&quot;,
           &quot;doc_count&quot;: 2
         },
         {
-          &quot;key&quot;: &quot;publication&quot;,
-          &quot;doc_count&quot;: 2
-        },
-        {
-          &quot;key&quot;: &quot;writing&quot;,
-          &quot;doc_count&quot;: 2
-        },
-        {
           &quot;key&quot;: &quot;organization&quot;,
-          &quot;doc_count&quot;: 1
+          &quot;doc_count&quot;: 2
         },
         {
-          &quot;key&quot;: &quot;public_event&quot;,
+          &quot;key&quot;: &quot;attendance&quot;,
           &quot;doc_count&quot;: 1
         }
       ]
@@ -329,12 +318,12 @@ Content-Length: 4889</pre>
   &quot;meta&quot;: {
     &quot;page&quot;: 2,
     &quot;per_page&quot;: 5,
-    &quot;page_count&quot;: 7,
-    &quot;total_count&quot;: 34,
+    &quot;page_count&quot;: 8,
+    &quot;total_count&quot;: 38,
     &quot;links&quot;: {
       &quot;self&quot;: &quot;http://example.org/entities?page=2&amp;per_page=5&quot;,
       &quot;first&quot;: &quot;http://example.org/entities?page=1&amp;per_page=5&quot;,
-      &quot;last&quot;: &quot;http://example.org/entities?page=7&amp;per_page=5&quot;,
+      &quot;last&quot;: &quot;http://example.org/entities?page=8&amp;per_page=5&quot;,
       &quot;next&quot;: &quot;http://example.org/entities?page=3&amp;per_page=5&quot;,
       &quot;prev&quot;: &quot;http://example.org/entities?page=1&amp;per_page=5&quot;
     }

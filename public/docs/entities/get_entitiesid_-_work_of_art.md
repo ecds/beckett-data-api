@@ -26,7 +26,7 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /entities/455d30e1-5072-40a0-9923-358af3f8d1ad</pre>
+<pre>GET /entities/1f0d5aaa-7296-4517-bbf5-24661af392c4</pre>
 
 ### Response
 
@@ -39,12 +39,12 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;8eba566cbcad772e49d01a97cd4df463&quot;
+ETag: W/&quot;6a75e57540961403e71b8930512f12cf&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: eadaf7f2-628a-49b1-ae34-abca833e8c65
-X-Runtime: 0.774412
+X-Request-Id: 6a497bd1-4f54-4c04-ba11-b1d053a9c861
+X-Runtime: 0.775458
 Vary: Origin
-Content-Length: 2691</pre>
+Content-Length: 2662</pre>
 
 #### Status
 
@@ -52,24 +52,27 @@ Content-Length: 2691</pre>
 
 #### Body
 
-<pre>{
-  "id": "http://example.org/entities/455d30e1-5072-40a0-9923-358af3f8d1ad",
+~~~
+{
+  "id": "http://example.org/entities/1f0d5aaa-7296-4517-bbf5-24661af392c4",
   "type": "work_of_art",
-  "label": "<i>Automatic</i>",
-  "short_display": "<section><p><strong>Artist</strong> Fenchurch</p>\n<p><strong>Title</strong> <i>Automatic</i></p>\n<p><strong>Description</strong> Godard yuccie tattooed brooklyn biodiesel park listicle organic 1.</p>\n<p><strong>Owner/location</strong> RW6</p></section>",
-  "full_display": "<table>\n<tr>\n<th scope=\"row\">Artist</th>\n<td>Fenchurch</td>\n</tr>\n<tr>\n<th scope=\"row\">Artist Alternative Name(s)</th>\n<td>Sasha Velour</td>\n</tr>\n<tr>\n<th scope=\"row\">Title</th>\n<td><i>Automatic</i></td>\n</tr>\n<tr>\n<th scope=\"row\">Alternative Title(s)</th>\n<td>Joslyn Fox</td>\n</tr>\n<tr>\n<th scope=\"row\">Description</th>\n<td>Godard yuccie tattooed brooklyn biodiesel park listicle organic 1.</td>\n</tr>\n<tr>\n<th scope=\"row\">Ownership and Location</th>\n<td>RW6</td>\n</tr>\n<tr>\n<th scope=\"row\">Current Ownership and Location</th>\n<td>Bistromath</td>\n</tr>\n<tr>\n<th scope=\"row\">Notes</th>\n<td>And then of course I've got this terrible pain in all the diodes down my left side.</td>\n</tr>\n<tr>\n<th scope=\"row\">See Also</th>\n<td><ul><li><a href=\"http://pouros-bogan.net/janette.kulas\" target=\"_blank\" rel=\"noopener\">http://pouros-bogan.net/janette.kulas<span>(opens in new tab)</span></a></li></ul></td>\n</tr>\n</table>",
-  "description": "Godard yuccie tattooed brooklyn biodiesel park listicle organic 1.",
+  "label": "<i>Guitar</i>",
+  "short_display": "<section><p><strong>Artist</strong> Lunkwill and Fook</p>\n<p><strong>Title</strong> <i>Guitar</i></p>\n<p><strong>Description</strong> Tilde meh intelligentsia celiac.</p>\n<p><strong>Owner/location</strong> Bistromath</p></section>",
+  "full_display": "<table>\n<tr>\n<th scope=\"row\">Artist</th>\n<td>Lunkwill and Fook</td>\n</tr>\n<tr>\n<th scope=\"row\">Artist Alternative Name(s)</th>\n<td>Morgan McMichaels</td>\n</tr>\n<tr>\n<th scope=\"row\">Title</th>\n<td><i>Guitar</i></td>\n</tr>\n<tr>\n<th scope=\"row\">Alternative Title(s)</th>\n<td>Alexis Michelle</td>\n</tr>\n<tr>\n<th scope=\"row\">Description</th>\n<td>Tilde meh intelligentsia celiac.</td>\n</tr>\n<tr>\n<th scope=\"row\">Ownership and Location</th>\n<td>Bistromath</td>\n</tr>\n<tr>\n<th scope=\"row\">Current Ownership and Location</th>\n<td>Bistromath</td>\n</tr>\n<tr>\n<th scope=\"row\">Notes</th>\n<td>I wish you'd just tell me rather trying to engage my enthusiasm, because I haven't got one.</td>\n</tr>\n<tr>\n<th scope=\"row\">See Also</th>\n<td><ul><li><a href=\"http://nikolaus-wiza.co/vicente_treutel\" target=\"_blank\" rel=\"noopener\">http://nikolaus-wiza.co/vicente_treutel<span>(opens in new tab)</span></a></li></ul></td>\n</tr>\n</table>",
+  "description": "Tilde meh intelligentsia celiac.",
   "e_type": "work_of_art",
-  "legacy_pk": 43769,
+  "legacy_pk": 25947,
   "alternate_spellings": null,
-  "artist": "Fenchurch",
+  "artist": "Lunkwill and Fook",
   "artist_alternate_spellings": [
-    "Sasha Velour"
+    "Morgan McMichaels"
   ],
   "links": [
-    "http://pouros-bogan.net/janette.kulas"
+    "http://nikolaus-wiza.co/vicente_treutel"
   ],
-  "notes": "And then of course I've got this terrible pain in all the diodes down my left side.",
-  "owner_location": "RW6",
+  "notes": "I wish you'd just tell me rather trying to engage my enthusiasm, because I haven't got one.",
+  "owner_location": "Bistromath",
   "owner_location_current": "Bistromath"
-}</pre>
+}
+~~~
+

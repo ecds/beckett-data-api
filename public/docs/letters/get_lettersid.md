@@ -15,7 +15,7 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /letters/490b331b-bb0d-4256-8e9f-36ea86e3cfb0</pre>
+<pre>GET /letters/2af7e47b-1743-48f9-94e5-152d1547df6f</pre>
 
 ### Response
 
@@ -28,12 +28,12 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;501ebd040ebb4f4d2bf0f1f03891920b&quot;
+ETag: W/&quot;1769f81d6ba8a06b5ef04d8cce9c1778&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: b85bc0d5-77ce-430b-8c93-9bdcec75106d
-X-Runtime: 0.726727
+X-Request-Id: be3d8790-eab6-4d22-b5b6-4a4b5a24824b
+X-Runtime: 0.742180
 Vary: Origin
-Content-Length: 7005</pre>
+Content-Length: 6692</pre>
 
 #### Status
 
@@ -41,50 +41,62 @@ Content-Length: 7005</pre>
 
 #### Body
 
-<pre>{
-  "id": "http://example.org/letters/490b331b-bb0d-4256-8e9f-36ea86e3cfb0",
-  "date": "1965-07-12T00:00:00.000-04:00",
+~~~
+{
+  "id": "http://example.org/letters/2af7e47b-1743-48f9-94e5-152d1547df6f",
+  "date": "1977-10-24T00:00:00.000-04:00",
   "recipients": [
     {
-      "id": "http://example.org/entities/c371fd15-b1e2-481f-91e5-67f7405d7a47.json",
+      "id": "http://example.org/entities/68e723cf-b62e-4cf9-998d-e78d442f9d72.json",
       "type": "person",
-      "label": "Gutmann, Shirley",
-      "short_display": "<section><p><strong>Shirley Gutmann, 1908-1995</strong></p>\n<p>I wish you'd just tell me rather trying to engage my enthusiasm, because I haven't got one.</p></section>"
+      "label": "Reilly, Suzanne",
+      "short_display": "<section><p><strong>Suzanne Reilly, 1924-1974</strong></p>\n<p>There's <i>only one life-form as intelligent as me within thirty parsecs of here and that's</i> me.</p></section>"
     }
   ],
   "destinations": [
     {
-      "id": "http://example.org/entities/2a422f42-077e-4047-a89e-562098cd8a65.json",
+      "id": "http://example.org/entities/7e8a8b62-d8f7-4bf9-b574-885347eddaed.json",
       "type": "place",
-      "label": "<i>Cathedral of Chalesm</i>",
-      "short_display": "<section><p><strong><i>Cathedral of Chalesm</i></strong></p>\n<p>Pitchfork <i>cronut everyday tote bag listicle 1</i> chicharrones.</p></section>"
+      "label": "Highgate Cemetery",
+      "short_display": "<section><p><strong>Highgate Cemetery</strong></p>\n<p>Pourover <i>ethical locavore deep v muggle magic food</i> truck.</p></section>"
     }
   ],
   "mentions": {
-    "places": [
+    "people": [
       {
-        "id": "http://example.org/entities/bf596d52-df5e-4d78-939d-bea13078ba8f.json",
-        "type": "place",
-        "label": "Madagascar",
-        "short_display": "<section><p><strong>Madagascar</strong></p>\n<p>Beard sustainable dreamcatcher selfies helvetica 90s.</p></section>",
+        "id": "http://example.org/entities/581bcda2-d9ff-4646-811b-cc29cf613187.json",
+        "type": "person",
+        "label": "Feil, Delsie",
+        "short_display": "<section><p><strong>Delsie Feil, 1907-1997</strong></p>\n<p>Life? Don't talk to me about life.</p></section>",
+        "tags": [
+
+        ]
+      }
+    ],
+    "publications": [
+      {
+        "id": "http://example.org/entities/bf2bdb7c-fb93-450f-8a88-a8cc94b00207.json",
+        "type": "publication",
+        "label": "Blackstaff Press",
+        "short_display": "<section><p><strong>Author</strong> Brandt</p>\n<p><strong>Title</strong> Blackstaff Press</p>\n<p><strong>Translator</strong> Phouchg</p>\n<p><strong>Publication</strong> Cold-pressed migas sriracha carry mumblecore cleanse portland truffaut.</p></section>",
         "tags": [
 
         ]
       },
       {
-        "id": "http://example.org/entities/343accf7-6edf-4a31-89bc-edba5d074bb0.json",
-        "type": "place",
-        "label": "<i>Ziggie's Den of Iniquity</i>",
-        "short_display": "<section><p><strong><i>Ziggie's Den of Iniquity</i></strong></p>\n<p>Swag <i>tilde locavore loko semiotics disrupt chambray schlitz singleorigin</i> coffee.</p></section>",
+        "id": "http://example.org/entities/6080e64e-5cec-4ebd-a7c1-6f8183fb02db.json",
+        "type": "publication",
+        "label": "<i>J. M. Dent</i>",
+        "short_display": "<section><p><strong>Author</strong> Brandt</p>\n<p><strong>Title</strong> <i>J. M. Dent</i></p>\n<p><strong>Translator</strong> JinJenz</p>\n<p><strong>Publication</strong> Kombucha single-origin coffee try-hard mixtape keffiyeh meditation wes anderson banjo.</p></section>",
         "tags": [
 
         ]
       },
       {
-        "id": "http://example.org/entities/07d7c1ba-7321-4852-b604-f98d8364fa97.json",
-        "type": "place",
-        "label": "<i>Ziggie's Den of Iniquity</i>",
-        "short_display": "<section><p><strong><i>Ziggie's Den of Iniquity</i></strong></p>\n<p>Pickled <i>roof street drinking shabby</i> chic.</p></section>",
+        "id": "http://example.org/entities/ec35c1c4-38eb-4f89-bc7c-66108a181dcd.json",
+        "type": "publication",
+        "label": "Chatto and Windus",
+        "short_display": "<section><p><strong>Author</strong> Walter Sobchak</p>\n<p><strong>Title</strong> Chatto and Windus</p>\n<p><strong>Translator</strong> Slartibartfast</p>\n<p><strong>Publication</strong> Readymade craft beer yr raw denim.</p></section>",
         "tags": [
 
         ]
@@ -92,57 +104,28 @@ Content-Length: 7005</pre>
     ],
     "readings": [
       {
-        "id": "http://example.org/entities/9df98f67-f682-486c-bef9-5988e3d88f1b.json",
+        "id": "http://example.org/entities/168bb256-6191-4b6d-aa80-b4617136e98c.json",
         "type": "reading",
-        "label": "<i>Tender Is the Night</i>",
-        "short_display": "<section><p><strong>Author</strong> Sarita Bailey DVM</p>\n<p><strong>Title</strong> <i>Tender Is the Night</i></p>\n<p><strong>Publication</strong> Firebrand Books.</p></section>",
+        "label": "Great Work of Time",
+        "short_display": "<section><p><strong>Author</strong> Enrique Auer</p>\n<p><strong>Title</strong> Great Work of Time</p>\n<p><strong>Publication</strong> Leafwood Publishers.</p></section>",
         "tags": [
 
         ]
       },
       {
-        "id": "http://example.org/entities/a92657c3-eb75-44e1-8c66-1c794b53f91b.json",
+        "id": "http://example.org/entities/000d15a3-fdbe-49a5-8e71-700abebe5e29.json",
         "type": "reading",
-        "label": "<i>Recalled to Life</i>",
-        "short_display": "<section><p><strong>Author</strong> Lauran Hudson LLD</p>\n<p><strong>Title</strong> <i>Recalled to Life</i></p>\n<p><strong>Publication</strong> Berg Publishers.</p></section>",
+        "label": "<i>Fame Is the Spur</i>",
+        "short_display": "<section><p><strong>Author</strong> Daniella Reynolds</p>\n<p><strong>Title</strong> <i>Fame Is the Spur</i></p>\n<p><strong>Publication</strong> Manchester University Press.</p></section>",
         "tags": [
 
         ]
       },
       {
-        "id": "http://example.org/entities/01031123-96c4-484f-be84-361a30edd105.json",
+        "id": "http://example.org/entities/dad2a0d8-7f80-4c54-9e6c-7da7d2890017.json",
         "type": "reading",
-        "label": "All the King's Men",
-        "short_display": "<section><p><strong>Author</strong> Rev. Cherie Von</p>\n<p><strong>Title</strong> All the King's Men</p>\n<p><strong>Publication</strong> Libertas Academica.</p></section>",
-        "tags": [
-
-        ]
-      }
-    ],
-    "translatings": [
-      {
-        "id": "http://example.org/entities/16c519cf-6da7-4f47-92a1-5a576fde9276.json",
-        "type": "translating",
-        "label": "The Wings of the Dove",
-        "short_display": "<section><p><strong>Author</strong> Marvin, <strong>Original Title</strong> The Wings of the Dove</p>\n<p><strong>Translated into</strong> Portuguese by Elvis</p>\n<p><strong>Translated title</strong> Vogon Constructor Fleet.</p></section>",
-        "tags": [
-
-        ]
-      },
-      {
-        "id": "http://example.org/entities/6c97f543-63d2-4fd2-8fbb-bd504a8d0dca.json",
-        "type": "translating",
-        "label": "<i>A Scanner Darkly</i>",
-        "short_display": "<section><p><strong>Author</strong> Genghis Khan, <strong>Original Title</strong> <i>A Scanner Darkly</i></p>\n<p><strong>Translated into</strong> Marathi by Slartibartfast</p>\n<p><strong>Translated title</strong> RW6.</p></section>",
-        "tags": [
-
-        ]
-      },
-      {
-        "id": "http://example.org/entities/9279b5fe-af05-411b-a408-fba7a52cdc0a.json",
-        "type": "translating",
-        "label": "Jacob Have I Loved",
-        "short_display": "<section><p><strong>Author</strong> Arthur Dent, <strong>Original Title</strong> Jacob Have I Loved</p>\n<p><strong>Translated into</strong> Marathi by Loonquawl and Phouchg</p>\n<p><strong>Translated title</strong> Bistromath.</p></section>",
+        "label": "The Moving Toyshop",
+        "short_display": "<section><p><strong>Author</strong> Jacki Murphy</p>\n<p><strong>Title</strong> The Moving Toyshop</p>\n<p><strong>Publication</strong> Horizon Scientific Press.</p></section>",
         "tags": [
 
         ]
@@ -150,23 +133,34 @@ Content-Length: 7005</pre>
     ],
     "writings": [
       {
-        "id": "http://example.org/entities/842e0137-c150-47fb-a410-bacefa7cfb2e.json",
+        "id": "http://example.org/entities/8200a7ff-6431-4a9b-a131-90d5db457b8b.json",
         "type": "writing",
-        "label": "<i>The Wings of the Dove</i>",
-        "short_display": "<section><p><strong>Title</strong> <i>The Wings of the Dove</i></p>\n<p><strong>Proposal/Response</strong> if you’ve never been through a matter transference beam before you’ve probably lost some salt and protein. The beer you had should have cushioned your system a bit.</p>\n<p><strong>Translator</strong> Colin the Security Robot</p>\n<p><strong>Date</strong> 1929-10-15.</p></section>",
+        "label": "The Green Bay Tree",
+        "short_display": "<section><p><strong>Title</strong> The Green Bay Tree</p>\n<p><strong>Proposal/Response</strong> If they don’t keep exercising their lips, he thought, their brains start working.</p>\n<p><strong>Translator</strong> Random Dent</p>\n<p><strong>Date</strong> 1924-04-05.</p></section>",
         "tags": [
 
         ]
       },
       {
-        "id": "http://example.org/entities/4c9426b2-70f7-41a5-b3c4-eeb1efa8b1cf.json",
+        "id": "http://example.org/entities/88602b7b-c6cf-4b85-8ba1-b60e4587faf7.json",
         "type": "writing",
-        "label": "<i>The Wealth of Nations</i>",
-        "short_display": "<section><p><strong>Title</strong> <i>The Wealth of Nations</i></p>\n<p><strong>Proposal/Response</strong> there’s an infinite number of monkeys outside who want to talk to us about this script for Hamlet they’ve worked out.</p>\n<p><strong>Translator</strong> Eccentrica Gallumbits</p>\n<p><strong>Date</strong> 1932-11-28.</p></section>",
+        "label": "<i>A Many-Splendoured Thing</i>",
+        "short_display": "<section><p><strong>Title</strong> <i>A Many-Splendoured Thing</i></p>\n<p><strong>Proposal/Response</strong> If there's anything more important than my ego around, I want it caught and shot now.</p>\n<p><strong>Translator</strong> Rob McKenna</p>\n<p><strong>Date</strong> 1923-03-12.</p></section>",
+        "tags": [
+
+        ]
+      },
+      {
+        "id": "http://example.org/entities/e6b1e11e-163b-475f-8197-44e620212795.json",
+        "type": "writing",
+        "label": "<i>The Cricket on the Hearth</i>",
+        "short_display": "<section><p><strong>Title</strong> <i>The Cricket on the Hearth</i></p>\n<p><strong>Proposal/Response</strong> if you’ve never been through a matter transference beam before you’ve probably lost some salt and protein. The beer you had should have cushioned your system a bit.</p>\n<p><strong>Translator</strong> Zaphod Beeblebrox</p>\n<p><strong>Date</strong> 1944-12-02.</p></section>",
         "tags": [
 
         ]
       }
     ]
   }
-}</pre>
+}
+~~~
+

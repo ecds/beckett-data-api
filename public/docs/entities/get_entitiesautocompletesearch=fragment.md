@@ -28,11 +28,11 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /entities/autocomplete?search=as</pre>
+<pre>GET /entities/autocomplete?search=me</pre>
 
 #### Query Parameters
 
-<pre>search: as</pre>
+<pre>search: me</pre>
 
 ### Response
 
@@ -47,8 +47,8 @@ Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
 ETag: W/&quot;4f53cda18c2baa0c0354bb5f9a3ecbe5&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 6ea83670-e393-4ddf-b548-e86972af3cf3
-X-Runtime: 2.922754
+X-Request-Id: b60632d8-3203-4cd7-b813-a0442f268a00
+X-Runtime: 3.037199
 Vary: Origin
 Content-Length: 2</pre>
 
@@ -58,6 +58,9 @@ Content-Length: 2</pre>
 
 #### Body
 
-<pre>[
+~~~
+[
 
-]</pre>
+]
+~~~
+

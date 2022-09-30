@@ -14,7 +14,6 @@
 | per_page | Number of entities on a single response. | false | 25
 | search | Text to search. | false | *
 | type | Limit responses by single type. Options are attendance, music, organization, person, place, production, public_event, publication, reading, translating, work_of_art, writing, and generic. | false | null
-| label | Clean label (no HTML) of entity | false | null
 
 ### Request
 
@@ -28,11 +27,11 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /entities?search=Reichert%2C+Rodney&amp;type=person</pre>
+<pre>GET /entities?search=Schmidt%2C+Ebonie&amp;type=person</pre>
 
 #### Query Parameters
 
-<pre>search: Reichert, Rodney
+<pre>search: Schmidt, Ebonie
 type: person</pre>
 
 ### Response
@@ -45,15 +44,15 @@ X-Content-Type-Options: nosniff
 X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
-Link: &lt;http://example.org/entities?page=1&amp;search=Reichert%2C+Rodney&amp;type=person&gt;; rel=&#39;self&#39;
+Link: &lt;http://example.org/entities?page=1&amp;search=Schmidt%2C+Ebonie&amp;type=person&gt;; rel=&#39;self&#39;
 X-Total-Count: 0
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;28cbc09a081e365a39275c208f56cab2&quot;
+ETag: W/&quot;4d350d64e794ff479546af7b725b72dd&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 655cb03d-e03a-4281-afad-69f18cb12954
-X-Runtime: 3.204075
+X-Request-Id: 9989f7ef-cf61-492d-a235-50cd7647f86c
+X-Runtime: 2.929061
 Vary: Origin
-Content-Length: 283</pre>
+Content-Length: 282</pre>
 
 #### Status
 
@@ -61,7 +60,8 @@ Content-Length: 283</pre>
 
 #### Body
 
-<pre>{
+~~~
+{
   "entities": [
 
   ],
@@ -81,7 +81,9 @@ Content-Length: 283</pre>
     "page_count": 0,
     "total_count": 0,
     "links": {
-      "self": "http://example.org/entities?page=1&search=Reichert%2C+Rodney&type=person"
+      "self": "http://example.org/entities?page=1&search=Schmidt%2C+Ebonie&type=person"
     }
   }
-}</pre>
+}
+~~~
+

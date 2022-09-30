@@ -171,17 +171,6 @@ table th, table td {
                   <span class="default">null</span>
                 </td>
               </tr>
-              <tr>
-                <td>
-                    <span class="name">label</span>
-                </td>
-                <td>
-                  <span class="description">Clean label (no HTML) of entity</span>
-                </td>
-                <td>
-                  <span class="default">null</span>
-                </td>
-              </tr>
             </tbody>
           </table>
 
@@ -196,10 +185,10 @@ Host: example.org
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET /entities?search=tell</pre>
+          <pre class="request route highlight">GET /entities?search=batch</pre>
 
             <h4>Query Parameters</h4>
-            <pre class="request query_parameters highlight">search: tell</pre>
+            <pre class="request query_parameters highlight">search: batch</pre>
 
 
 
@@ -211,39 +200,50 @@ X-Content-Type-Options: nosniff
 X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
-Link: &lt;http://example.org/entities?page=1&amp;search=tell&gt;; rel=&#39;self&#39;
-X-Total-Count: 0
+Link: &lt;http://example.org/entities?page=1&amp;search=batch&gt;; rel=&#39;self&#39;
+X-Total-Count: 1
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;5ad826b035fa9c811469a9bee490bca1&quot;
+ETag: W/&quot;d3ba358cabb3081c230c85282dfca543&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 5ac29eaa-f701-4ccd-be1b-77b96be9e954
-X-Runtime: 3.096004
+X-Request-Id: 2c6395bf-5f1c-4dc6-b8be-7c733c36cefb
+X-Runtime: 3.164449
 Vary: Origin
-Content-Length: 252</pre>
+Content-Length: 1241</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
   &quot;entities&quot;: [
-
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/acfca76d-184f-43dc-8817-0684c40f8c1d&quot;,
+      &quot;label&quot;: &quot;Rehearsal, Flannel &lt;i&gt;yuccie butcher skateboard leggings&lt;/i&gt; stumptown.&quot;,
+      &quot;type&quot;: &quot;attendance&quot;,
+      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Rehearsal&lt;/strong&gt;, Flannel &lt;i&gt;yuccie butcher skateboard leggings&lt;/i&gt; stumptown.&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Attended with&lt;/strong&gt; Brandt and Rob McKenna&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Place, Date&lt;/strong&gt; Hectorport, 12 May 1932&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Director&lt;/strong&gt; Hillman Hunter&lt;/p&gt;&lt;/section&gt;&quot;,
+      &quot;description&quot;: &quot;Flannel &lt;i&gt;yuccie butcher skateboard leggings&lt;/i&gt; stumptown.&quot;,
+      &quot;clean_label&quot;: &quot;Rehearsal, Flannel yuccie butcher skateboard leggings stumptown.&quot;,
+      &quot;clean_description&quot;: &quot;Flannel yuccie butcher skateboard leggings stumptown.&quot;
+    }
   ],
   &quot;aggs&quot;: {
     &quot;e_type&quot;: {
-      &quot;doc_count&quot;: 0,
+      &quot;doc_count&quot;: 1,
       &quot;doc_count_error_upper_bound&quot;: 0,
       &quot;sum_other_doc_count&quot;: 0,
       &quot;buckets&quot;: [
-
+        {
+          &quot;key&quot;: &quot;attendance&quot;,
+          &quot;doc_count&quot;: 1
+        }
       ]
     }
   },
   &quot;meta&quot;: {
     &quot;page&quot;: 1,
     &quot;per_page&quot;: 25,
-    &quot;page_count&quot;: 0,
-    &quot;total_count&quot;: 0,
+    &quot;page_count&quot;: 1,
+    &quot;total_count&quot;: 1,
     &quot;links&quot;: {
-      &quot;self&quot;: &quot;http://example.org/entities?page=1&amp;search=tell&quot;
+      &quot;self&quot;: &quot;http://example.org/entities?page=1&amp;search=batch&quot;
     }
   }
 }</pre>

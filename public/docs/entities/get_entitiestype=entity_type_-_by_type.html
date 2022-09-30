@@ -171,17 +171,6 @@ table th, table td {
                   <span class="default">null</span>
                 </td>
               </tr>
-              <tr>
-                <td>
-                    <span class="name">label</span>
-                </td>
-                <td>
-                  <span class="description">Clean label (no HTML) of entity</span>
-                </td>
-                <td>
-                  <span class="default">null</span>
-                </td>
-              </tr>
             </tbody>
           </table>
 
@@ -212,27 +201,36 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Link: &lt;http://example.org/entities?page=1&amp;type=place&gt;; rel=&#39;self&#39;
-X-Total-Count: 1
+X-Total-Count: 2
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;96ca29f10f6ffb7c970c9f54de0080dd&quot;
+ETag: W/&quot;ddc8e5e73129bc7cf6a3eba8a70b2591&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: c49f57d1-538c-4f7f-87af-aa4b4f1af2d4
-X-Runtime: 2.416443
+X-Request-Id: efae6834-4cd7-4af9-ae8e-50c7d2048ea1
+X-Runtime: 3.191947
 Vary: Origin
-Content-Length: 1259</pre>
+Content-Length: 1820</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
   &quot;entities&quot;: [
     {
-      &quot;id&quot;: &quot;http://example.org/entities/b262a35e-4494-430f-96f3-4a2a90378a38&quot;,
-      &quot;label&quot;: &quot;&lt;i&gt;Islington&lt;/i&gt;&quot;,
+      &quot;id&quot;: &quot;http://example.org/entities/0f59cddc-dfba-40c0-8bf6-43e9d29f92d0&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;Belgium&lt;/i&gt;&quot;,
       &quot;type&quot;: &quot;place&quot;,
-      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;&lt;i&gt;Islington&lt;/i&gt;&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;Wes anderson disrupt bicycle rights green juice leggings 90s churchkey.&lt;/p&gt;&lt;/section&gt;&quot;,
-      &quot;description&quot;: &quot;Wes anderson disrupt bicycle rights green juice leggings 90s churchkey.&quot;,
-      &quot;clean_label&quot;: &quot;Islington&quot;,
-      &quot;clean_description&quot;: &quot;Wes anderson disrupt bicycle rights green juice leggings 90s churchkey.&quot;
+      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;&lt;i&gt;Belgium&lt;/i&gt;&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;Banh &lt;i&gt;mi austin viral churchkey five dollar toast tilde kickstarter&lt;/i&gt; thundercats.&lt;/p&gt;&lt;/section&gt;&quot;,
+      &quot;description&quot;: &quot;Banh &lt;i&gt;mi austin viral churchkey five dollar toast tilde kickstarter&lt;/i&gt; thundercats.&quot;,
+      &quot;clean_label&quot;: &quot;Belgium&quot;,
+      &quot;clean_description&quot;: &quot;Banh mi austin viral churchkey five dollar toast tilde kickstarter thundercats.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/f8794af2-9cf4-4b8f-beb8-e3c99396ea7b&quot;,
+      &quot;label&quot;: &quot;Megabrantis cluster&quot;,
+      &quot;type&quot;: &quot;place&quot;,
+      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Megabrantis cluster&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;Echo &lt;i&gt;pickled readymade craft&lt;/i&gt; beer.&lt;/p&gt;&lt;/section&gt;&quot;,
+      &quot;description&quot;: &quot;Echo &lt;i&gt;pickled readymade craft&lt;/i&gt; beer.&quot;,
+      &quot;clean_label&quot;: &quot;Megabrantis cluster&quot;,
+      &quot;clean_description&quot;: &quot;Echo pickled readymade craft beer.&quot;
     }
   ],
   &quot;aggs&quot;: {
@@ -242,23 +240,23 @@ Content-Length: 1259</pre>
       &quot;sum_other_doc_count&quot;: 0,
       &quot;buckets&quot;: [
         {
-          &quot;key&quot;: &quot;attendance&quot;,
-          &quot;doc_count&quot;: 3
-        },
-        {
-          &quot;key&quot;: &quot;person&quot;,
-          &quot;doc_count&quot;: 3
-        },
-        {
-          &quot;key&quot;: &quot;public_event&quot;,
-          &quot;doc_count&quot;: 3
+          &quot;key&quot;: &quot;production&quot;,
+          &quot;doc_count&quot;: 4
         },
         {
           &quot;key&quot;: &quot;publication&quot;,
+          &quot;doc_count&quot;: 4
+        },
+        {
+          &quot;key&quot;: &quot;organization&quot;,
           &quot;doc_count&quot;: 3
         },
         {
-          &quot;key&quot;: &quot;work_of_art&quot;,
+          &quot;key&quot;: &quot;reading&quot;,
+          &quot;doc_count&quot;: 3
+        },
+        {
+          &quot;key&quot;: &quot;translating&quot;,
           &quot;doc_count&quot;: 3
         },
         {
@@ -266,27 +264,23 @@ Content-Length: 1259</pre>
           &quot;doc_count&quot;: 2
         },
         {
-          &quot;key&quot;: &quot;organization&quot;,
-          &quot;doc_count&quot;: 2
-        },
-        {
-          &quot;key&quot;: &quot;production&quot;,
-          &quot;doc_count&quot;: 2
-        },
-        {
-          &quot;key&quot;: &quot;reading&quot;,
-          &quot;doc_count&quot;: 2
-        },
-        {
-          &quot;key&quot;: &quot;translating&quot;,
+          &quot;key&quot;: &quot;person&quot;,
           &quot;doc_count&quot;: 2
         },
         {
           &quot;key&quot;: &quot;place&quot;,
+          &quot;doc_count&quot;: 2
+        },
+        {
+          &quot;key&quot;: &quot;public_event&quot;,
+          &quot;doc_count&quot;: 2
+        },
+        {
+          &quot;key&quot;: &quot;attendance&quot;,
           &quot;doc_count&quot;: 1
         },
         {
-          &quot;key&quot;: &quot;writing&quot;,
+          &quot;key&quot;: &quot;work_of_art&quot;,
           &quot;doc_count&quot;: 1
         }
       ]
@@ -296,7 +290,7 @@ Content-Length: 1259</pre>
     &quot;page&quot;: 1,
     &quot;per_page&quot;: 25,
     &quot;page_count&quot;: 1,
-    &quot;total_count&quot;: 1,
+    &quot;total_count&quot;: 2,
     &quot;links&quot;: {
       &quot;self&quot;: &quot;http://example.org/entities?page=1&amp;type=place&quot;
     }

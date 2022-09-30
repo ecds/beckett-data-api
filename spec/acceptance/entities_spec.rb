@@ -27,7 +27,6 @@ resource 'Entities' do
     parameter :type,
               "Limit responses by single type. Options are #{Entity.e_types.keys.to_sentence}.",
               { default: 'null' }
-    parameter :label, 'Clean label (no HTML) of entity', { default: 'null' }
 
     before {
       Entity.e_types.keys[0..11].each do |type|

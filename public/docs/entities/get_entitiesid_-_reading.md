@@ -26,7 +26,7 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /entities/669c60a4-e908-40e5-b51f-151710da0493</pre>
+<pre>GET /entities/fd087b9c-3914-4b81-9264-ed50ee10601f</pre>
 
 ### Response
 
@@ -39,12 +39,12 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;db28f51d197ad3b1802ddecc85b89bd3&quot;
+ETag: W/&quot;2a79d21605d937b55f598a42d7853d47&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 621bde69-ffbf-4a9a-a569-ae348f07269b
-X-Runtime: 0.757063
+X-Request-Id: b1f03d71-2ab7-4df3-99a6-6b1b0132863c
+X-Runtime: 0.865513
 Vary: Origin
-Content-Length: 1853</pre>
+Content-Length: 1463</pre>
 
 #### Status
 
@@ -52,19 +52,22 @@ Content-Length: 1853</pre>
 
 #### Body
 
-<pre>{
-  "id": "http://example.org/entities/669c60a4-e908-40e5-b51f-151710da0493",
+~~~
+{
+  "id": "http://example.org/entities/fd087b9c-3914-4b81-9264-ed50ee10601f",
   "type": "reading",
-  "label": "A Scanner Darkly",
-  "short_display": "<section><p><strong>Author</strong> Gabriel Breitenberg</p>\n<p><strong>Title</strong> A Scanner Darkly</p>\n<p><strong>Publication</strong> Koren Publishers Jerusalem.</p></section>",
-  "full_display": "<table>\n<tr>\n<th scope=\"row\">Author</th>\n<td>Gabriel Breitenberg</td>\n</tr>\n<tr>\n<th scope=\"row\">Title</th>\n<td>A Scanner Darkly</td>\n</tr>\n<tr>\n<th scope=\"row\">Publication</th>\n<td>Koren Publishers Jerusalem.</td>\n</tr>\n<tr>\n<th scope=\"row\">Notes</th>\n<td>You think you've got problems? What are you supposed to do if you are a manically depressed robot? No, don't try to answer that. I'm fifty thousand times more intelligent than you and even I don't know the answer. It gives me a headache just trying to think down to your level.</td>\n</tr>\n</table>",
-  "description": "Meggings <i>vinyl normcore trust fund food</i> truck.",
+  "label": "The Other Side of Silence",
+  "short_display": "<section><p><strong>Author</strong> Chong Sipes Sr.</p>\n<p><strong>Title</strong> The Other Side of Silence</p>\n<p><strong>Publication</strong> Breslov Research Institute.</p></section>",
+  "full_display": "<table>\n<tr>\n<th scope=\"row\">Author</th>\n<td>Chong Sipes Sr.</td>\n</tr>\n<tr>\n<th scope=\"row\">Title</th>\n<td>The Other Side of Silence</td>\n</tr>\n<tr>\n<th scope=\"row\">Publication</th>\n<td>Breslov Research Institute.</td>\n</tr>\n<tr>\n<th scope=\"row\">Notes</th>\n<td>And then of course I've got this terrible pain in all the diodes down my left side.</td>\n</tr>\n</table>",
+  "description": "Locavore wes anderson banjo hashtag churchkey shoreditch.",
   "e_type": "reading",
-  "legacy_pk": 48789,
+  "legacy_pk": 26283,
   "authors": [
-    "Gabriel Breitenberg"
+    "Chong Sipes Sr."
   ],
-  "notes": "You think you've got problems? What are you supposed to do if you are a manically depressed robot? No, don't try to answer that. I'm fifty thousand times more intelligent than you and even I don't know the answer. It gives me a headache just trying to think down to your level.",
-  "publication_information": "Koren Publishers Jerusalem.",
-  "publication_format": "slow-carb"
-}</pre>
+  "notes": "And then of course I've got this terrible pain in all the diodes down my left side.",
+  "publication_information": "Breslov Research Institute.",
+  "publication_format": "cardigan"
+}
+~~~
+

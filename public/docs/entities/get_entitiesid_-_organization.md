@@ -26,7 +26,7 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /entities/b1c71cae-d4cd-4287-96b2-c98cc6b79364</pre>
+<pre>GET /entities/bd919b4b-990f-4530-a4e1-350e4cf537df</pre>
 
 ### Response
 
@@ -39,12 +39,12 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;50dd8ddc70e8c10e099dbe065d403e00&quot;
+ETag: W/&quot;758818cc7ac49a462d06881eccbf550e&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: c1348b3c-b3e4-45b0-827a-697c0679c16c
-X-Runtime: 0.885263
+X-Request-Id: ef0341e2-a8ee-4d9f-8fc4-16596ac8eaa2
+X-Runtime: 0.703580
 Vary: Origin
-Content-Length: 1648</pre>
+Content-Length: 1497</pre>
 
 #### Status
 
@@ -52,18 +52,21 @@ Content-Length: 1648</pre>
 
 #### Body
 
-<pre>{
-  "id": "http://example.org/entities/b1c71cae-d4cd-4287-96b2-c98cc6b79364",
+~~~
+{
+  "id": "http://example.org/entities/bd919b4b-990f-4530-a4e1-350e4cf537df",
   "type": "organization",
-  "label": "Frogstar World C",
-  "short_display": "<section><p><strong>Frogstar World C</strong></p>\n<p>I wish you'd just tell me rather trying to engage my enthusiasm, because I haven't got one.</p></section>",
-  "full_display": "<table>\n<tr>\n<th scope=\"row\">Name</th>\n<td>Frogstar World C</td>\n</tr>\n<tr>\n<th scope=\"row\">Description</th>\n<td>I wish you'd just tell me rather trying to engage my enthusiasm, because I haven't got one.</td>\n</tr>\n<tr>\n<th scope=\"row\">Alternate Name(s)</th>\n<td>Phi Phi O'Hara</td>\n</tr>\n<tr>\n<th scope=\"row\">Profile</th>\n<td>If they don’t keep exercising their lips, he thought, their brains start working.</td>\n</tr>\n<tr>\n<th scope=\"row\">Notes</th>\n<td>If it ain't Chuck D, or Jam Master Jay, know what? They're losin', cause we got a PhD in advanced body movin'.</td>\n</tr>\n</table>",
-  "description": "I wish you'd just tell me rather trying to engage my enthusiasm, because I haven't got one.",
+  "label": "<i>Viltvodle VI</i>",
+  "short_display": "<section><p><strong><i>Viltvodle VI</i></strong></p>\n<p>And then of course I've got this terrible pain in all the diodes down my left side.</p></section>",
+  "full_display": "<table>\n<tr>\n<th scope=\"row\">Name</th>\n<td><i>Viltvodle VI</i></td>\n</tr>\n<tr>\n<th scope=\"row\">Description</th>\n<td>And then of course I've got this terrible pain in all the diodes down my left side.</td>\n</tr>\n<tr>\n<th scope=\"row\">Alternate Name(s)</th>\n<td>Scarlet Envy</td>\n</tr>\n<tr>\n<th scope=\"row\">Profile</th>\n<td>Earth: Mostly Harmless</td>\n</tr>\n<tr>\n<th scope=\"row\">Notes</th>\n<td>Are your smiles, are your smiles for me?</td>\n</tr>\n</table>",
+  "description": "And then of course I've got this terrible pain in all the diodes down my left side.",
   "e_type": "organization",
-  "legacy_pk": 15724,
+  "legacy_pk": 47777,
   "alternate_names": [
-    "Phi Phi O'Hara"
+    "Scarlet Envy"
   ],
   "alternate_spellings": null,
-  "profile": "If they don’t keep exercising their lips, he thought, their brains start working."
-}</pre>
+  "profile": "Earth: Mostly Harmless"
+}
+~~~
+

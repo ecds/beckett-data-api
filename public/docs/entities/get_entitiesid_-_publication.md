@@ -26,7 +26,7 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /entities/2a8fa183-1919-438e-8b7a-6da0cd0ddfaa</pre>
+<pre>GET /entities/882183cc-d3a2-4432-a2e7-c93eb4e70eb5</pre>
 
 ### Response
 
@@ -39,12 +39,12 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;a42c165f2241a107cf0319d596a56d2f&quot;
+ETag: W/&quot;5b9acffc702c9e8e3415db297eac0bd2&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: f2473875-3553-4673-ba13-5ae6a0e98d53
-X-Runtime: 0.778531
+X-Request-Id: 94b8ccd0-6490-4c31-acd2-c21162791825
+X-Runtime: 0.736211
 Vary: Origin
-Content-Length: 1744</pre>
+Content-Length: 2406</pre>
 
 #### Status
 
@@ -52,21 +52,24 @@ Content-Length: 1744</pre>
 
 #### Body
 
-<pre>{
-  "id": "http://example.org/entities/2a8fa183-1919-438e-8b7a-6da0cd0ddfaa",
+~~~
+{
+  "id": "http://example.org/entities/882183cc-d3a2-4432-a2e7-c93eb4e70eb5",
   "type": "publication",
-  "label": "George Routledge & Sons",
-  "short_display": "<section><p><strong>Author</strong> Jackie Treehorn</p>\n<p><strong>Title</strong> George Routledge &amp; Sons</p>\n<p><strong>Translator</strong> Galaxia Woonbeam</p>\n<p><strong>Publication</strong> Chicharrones synth small batch letterpress goth vice.</p></section>",
-  "full_display": "<table>\n<tr>\n<th scope=\"row\">Author</th>\n<td>Jackie Treehorn</td>\n</tr>\n<tr>\n<th scope=\"row\">Title</th>\n<td>George Routledge &amp; Sons</td>\n</tr>\n<tr>\n<th scope=\"row\">Translator</th>\n<td>Galaxia Woonbeam</td>\n</tr>\n<tr>\n<th scope=\"row\">Publication</th>\n<td>Chicharrones synth small batch letterpress goth vice.</td>\n</tr>\n<tr>\n<th scope=\"row\">Notes</th>\n<td>I think you ought to know I'm feeling very depressed.</td>\n</tr>\n</table>",
-  "description": "Pbrb <i>carry sriracha bespoke</i> portland.",
+  "label": "<i>University of Minnesota Press</i>",
+  "short_display": "<section><p><strong>Author</strong> Maude Lebowski</p>\n<p><strong>Title</strong> <i>University of Minnesota Press</i></p>\n<p><strong>Translator</strong> Pizpot Gargravarr</p>\n<p><strong>Publication</strong> Jean shorts kale chips venmo messenger bag wayfarers meditation distillery knausgaard paleo.</p></section>",
+  "full_display": "<table>\n<tr>\n<th scope=\"row\">Author</th>\n<td>Maude Lebowski</td>\n</tr>\n<tr>\n<th scope=\"row\">Title</th>\n<td><i>University of Minnesota Press</i></td>\n</tr>\n<tr>\n<th scope=\"row\">Translator</th>\n<td>Pizpot Gargravarr</td>\n</tr>\n<tr>\n<th scope=\"row\">Publication</th>\n<td>Jean shorts kale chips venmo messenger bag wayfarers meditation distillery knausgaard paleo.</td>\n</tr>\n<tr>\n<th scope=\"row\">Notes</th>\n<td>You think you've got problems? What are you supposed to do if you are a manically depressed robot? No, don't try to answer that. I'm fifty thousand times more intelligent than you and even I don't know the answer. It gives me a headache just trying to think down to your level.</td>\n</tr>\n</table>",
+  "description": "Trust <i>fund sartorial cronut selvage butcher paleo</i> narwhal.",
   "e_type": "publication",
-  "legacy_pk": 14534,
+  "legacy_pk": 88038,
   "authors": [
-    "Jackie Treehorn"
+    "Maude Lebowski"
   ],
-  "notes": "I think you ought to know I'm feeling very depressed.",
-  "publication_information": "Chicharrones synth small batch letterpress goth vice.",
+  "notes": "You think you've got problems? What are you supposed to do if you are a manically depressed robot? No, don't try to answer that. I'm fifty thousand times more intelligent than you and even I don't know the answer. It gives me a headache just trying to think down to your level.",
+  "publication_information": "Jean shorts kale chips venmo messenger bag wayfarers meditation distillery knausgaard paleo.",
   "translators": [
-    "Galaxia Woonbeam"
+    "Pizpot Gargravarr"
   ]
-}</pre>
+}
+~~~
+
