@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Entities API</title>
+    <meta charset="utf-8">
+    <style>
+      
+body {
+  font-family: Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 18px;
+  color: #404040;
+}
+
+.container {
+  width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  zoom: 1;
+}
+
+pre {
+  background-color: #f5f5f5;
+  display: block;
+  padding: 8.5px;
+  margin: 0 0 18px;
+  line-height: 18px;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+td.required .name:after {
+  float: right;
+  content: "required";
+  font-weight: normal;
+  color: #F08080;
+}
+
+a{
+  color: #0069d6;
+  text-decoration: none;
+  line-height: inherit;
+  font-weight: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  color: #404040;
+}
+
+h1 {
+  margin-bottom: 18px;
+  font-size: 30px;
+  line-height: 36px;
+}
+h2 {
+  font-size: 24px;
+  line-height: 36px;
+}
+h3{
+  font-size: 18px;
+  line-height: 36px;
+}
+h4 {
+  font-size: 16px;
+  line-height: 36px;
+}
+
+table{
+  width: 100%;
+  margin-bottom: 18px;
+  padding: 0;
+  border-collapse: separate;
+  font-size: 13px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  border-spacing: 0;
+  border: 1px solid #ddd;
+}
+
+table th {
+  padding-top: 9px;
+  font-weight: bold;
+  vertical-align: middle;
+  border-bottom: 1px solid #ddd;
+}
+table th+th, table td+td {
+  border-left: 1px solid #ddd;
+}
+table th, table td {
+  padding: 10px 10px 9px;
+  line-height: 18px;
+  text-align: left;
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Entities API</h1>
+
+        <p class="explanation"></p>
+
+      <div class="article">
+        <h2>GET /entities?search=:search_terms&amp;operator=and - Keyword Search using and operator</h2>
+        <h3>GET /entities</h3>
+          <p class="explanation">
+            Returns a paginated list of entities from key word search.
+          </p>
+
+          <h3>Parameters</h3>
+          <table class="parameters table table-striped table-bordered table-condensed">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Default</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                    <span class="name">page</span>
+                </td>
+                <td>
+                  <span class="description">Current page of entities</span>
+                </td>
+                <td>
+                  <span class="default">1</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">per_page</span>
+                </td>
+                <td>
+                  <span class="description">Number of entities on a single response.</span>
+                </td>
+                <td>
+                  <span class="default">25</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">search</span>
+                </td>
+                <td>
+                  <span class="description">Text to search.</span>
+                </td>
+                <td>
+                  <span class="default">*</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">type</span>
+                </td>
+                <td>
+                  <span class="description">Limit responses by single type. Options are attendance, music, organization, person, place, production, public_event, publication, reading, translating, work_of_art, writing, and generic.</span>
+                </td>
+                <td>
+                  <span class="default">null</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">operator</span>
+                </td>
+                <td>
+                  <span class="description">By default, results match any words in the query. Use &#39;and&#39; to match all words.</span>
+                </td>
+                <td>
+                  <span class="default">or</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Accept: application/json
+Content-Type: application/json
+Host: example.org
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">GET /entities?search=next&amp;operator=and</pre>
+
+            <h4>Query Parameters</h4>
+            <pre class="request query_parameters highlight">search: next
+operator: and</pre>
+
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 0
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Permitted-Cross-Domain-Policies: none
+Referrer-Policy: strict-origin-when-cross-origin
+Link: &lt;http://example.org/entities?operator=and&amp;page=1&amp;search=next&gt;; rel=&#39;self&#39;
+X-Total-Count: 21
+Content-Type: application/json; charset=utf-8
+ETag: W/&quot;c53db1d323db95ae9db3c83f086ca4b4&quot;
+Cache-Control: max-age=0, private, must-revalidate
+X-Request-Id: cff09e6d-c05f-459a-970d-6481fdea0594
+X-Runtime: 3.373552
+Vary: Origin
+Content-Length: 17351</pre>
+            <h4>Status</h4>
+            <pre class="response status">200 OK</pre>
+              <h4>Body</h4>
+              <pre class="response body">{
+  &quot;entities&quot;: [
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/1120b538-29e4-4512-8144-ea90dd043887&quot;,
+      &quot;label&quot;: &quot;Reading, Celiac trust fund next level beard shoreditch cleanse lomo.&quot;,
+      &quot;type&quot;: &quot;attendance&quot;,
+      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Reading&lt;/strong&gt;, Celiac trust fund next level beard shoreditch cleanse lomo.&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Attended with&lt;/strong&gt; Donny and Garkbit&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Place, Date&lt;/strong&gt; North Cristobalhaven, 05 August 1926&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Director&lt;/strong&gt; Rob McKenna&lt;/p&gt;&lt;/section&gt;&quot;,
+      &quot;description&quot;: &quot;Celiac trust fund next level beard shoreditch cleanse lomo.&quot;,
+      &quot;clean_label&quot;: &quot;Reading, Celiac trust fund next level beard shoreditch cleanse lomo.&quot;,
+      &quot;clean_description&quot;: &quot;Celiac trust fund next level beard shoreditch cleanse lomo.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/b984268a-ea33-48c6-8004-3b34831d529f&quot;,
+      &quot;label&quot;: &quot;Theatre, Kinfolk &lt;i&gt;xoxo williamsburg next level truffaut tattooed raw&lt;/i&gt; denim.&quot;,
+      &quot;type&quot;: &quot;attendance&quot;,
+      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Theatre&lt;/strong&gt;, Kinfolk &lt;i&gt;xoxo williamsburg next level truffaut tattooed raw&lt;/i&gt; denim.&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Attended with&lt;/strong&gt; Donny and Garkbit&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Place, Date&lt;/strong&gt; West Glennie, 28 June 1926&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Director&lt;/strong&gt; Galaxia Woonbeam&lt;/p&gt;&lt;/section&gt;&quot;,
+      &quot;description&quot;: &quot;Kinfolk &lt;i&gt;xoxo williamsburg next level truffaut tattooed raw&lt;/i&gt; denim.&quot;,
+      &quot;clean_label&quot;: &quot;Theatre, Kinfolk xoxo williamsburg next level truffaut tattooed raw denim.&quot;,
+      &quot;clean_description&quot;: &quot;Kinfolk xoxo williamsburg next level truffaut tattooed raw denim.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/8aa2bb78-9e0b-47a6-bebe-3534c664a6fd&quot;,
+      &quot;label&quot;: &quot;Rehearsal, Plaid &lt;i&gt;thundercats tilde distillery wayfarers next level letterpress normcore&lt;/i&gt; vice.&quot;,
+      &quot;type&quot;: &quot;attendance&quot;,
+      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Rehearsal&lt;/strong&gt;, Plaid &lt;i&gt;thundercats tilde distillery wayfarers next level letterpress normcore&lt;/i&gt; vice.&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Attended with&lt;/strong&gt; Karl Hungus and Roosta&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Place, Date&lt;/strong&gt; Littelborough, 20 January 1951&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Director&lt;/strong&gt; Questular Rontok&lt;/p&gt;&lt;/section&gt;&quot;,
+      &quot;description&quot;: &quot;Plaid &lt;i&gt;thundercats tilde distillery wayfarers next level letterpress normcore&lt;/i&gt; vice.&quot;,
+      &quot;clean_label&quot;: &quot;Rehearsal, Plaid thundercats tilde distillery wayfarers next level letterpress normcore vice.&quot;,
+      &quot;clean_description&quot;: &quot;Plaid thundercats tilde distillery wayfarers next level letterpress normcore vice.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/a6eff0ba-8d30-4b9e-8401-b276bd89460a&quot;,
+      &quot;label&quot;: &quot;Money Don&#39;t Matter 2 Night&quot;,
+      &quot;type&quot;: &quot;work_of_art&quot;,
+      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Artist&lt;/strong&gt; Hactar&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Title&lt;/strong&gt; Money Don&#39;t Matter 2 Night&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt; Pickled &lt;i&gt;next level banjo&lt;/i&gt; authentic.&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Owner/location&lt;/strong&gt; Billion Year Bunker&lt;/p&gt;&lt;/section&gt;&quot;,
+      &quot;description&quot;: &quot;Pickled &lt;i&gt;next level banjo&lt;/i&gt; authentic.&quot;,
+      &quot;clean_label&quot;: &quot;Money Don&#39;t Matter 2 Night&quot;,
+      &quot;clean_description&quot;: &quot;Pickled next level banjo authentic.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/f86f376a-7e37-421a-85e7-b422cb51e111&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;The Big Bang Burger Bar&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;place&quot;,
+      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;&lt;i&gt;The Big Bang Burger Bar&lt;/i&gt;&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;Postironic &lt;i&gt;beard wayfarers next&lt;/i&gt; level.&lt;/p&gt;&lt;/section&gt;&quot;,
+      &quot;description&quot;: &quot;Postironic &lt;i&gt;beard wayfarers next&lt;/i&gt; level.&quot;,
+      &quot;clean_label&quot;: &quot;The Big Bang Burger Bar&quot;,
+      &quot;clean_description&quot;: &quot;Postironic beard wayfarers next level.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/3d2dd905-5bfc-4336-ac7d-d7ed9fe541ab&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;Take Me With U&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;work_of_art&quot;,
+      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Artist&lt;/strong&gt; Random Dent&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Title&lt;/strong&gt; &lt;i&gt;Take Me With U&lt;/i&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt; Forage aesthetic normcore next level pabst.&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Owner/location&lt;/strong&gt; Golgafrinchan Ark Fleet Ship B&lt;/p&gt;&lt;/section&gt;&quot;,
+      &quot;description&quot;: &quot;Forage aesthetic normcore next level pabst.&quot;,
+      &quot;clean_label&quot;: &quot;Take Me With U&quot;,
+      &quot;clean_description&quot;: &quot;Forage aesthetic normcore next level pabst.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/912719e4-e33e-49cd-91d1-072b7cedff97&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;Pleiades system&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;place&quot;,
+      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;&lt;i&gt;Pleiades system&lt;/i&gt;&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;Churchkey literally 8bit next level asymmetrical.&lt;/p&gt;&lt;/section&gt;&quot;,
+      &quot;description&quot;: &quot;Churchkey literally 8bit next level asymmetrical.&quot;,
+      &quot;clean_label&quot;: &quot;Pleiades system&quot;,
+      &quot;clean_description&quot;: &quot;Churchkey literally 8bit next level asymmetrical.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/08aa2546-f10f-47b5-a298-904519d8d5e4&quot;,
+      &quot;label&quot;: &quot;Barnard&#39;s Star&quot;,
+      &quot;type&quot;: &quot;place&quot;,
+      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Barnard&#39;s Star&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;Mumblecore &lt;i&gt;chartreuse hoodie twee next level&lt;/i&gt; cornhole.&lt;/p&gt;&lt;/section&gt;&quot;,
+      &quot;description&quot;: &quot;Mumblecore &lt;i&gt;chartreuse hoodie twee next level&lt;/i&gt; cornhole.&quot;,
+      &quot;clean_label&quot;: &quot;Barnard&#39;s Star&quot;,
+      &quot;clean_description&quot;: &quot;Mumblecore chartreuse hoodie twee next level cornhole.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/304b3bb9-188c-42f7-af9a-9d4afe0d8ecd&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;The Wizard of Oz&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;production&quot;,
+      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Title&lt;/strong&gt; &lt;i&gt;The Wizard of Oz&lt;/i&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Proposal/Response&lt;/strong&gt; Life? Don&#39;t talk to me about life. / Whatever your tastes, Magrathea can cater for you. We are not proud.&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Director&lt;/strong&gt; Maude Lebowski &lt;strong&gt;Theatre, City&lt;/strong&gt; Tanngrisnir, Lake Francene&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Date(s)&lt;/strong&gt; 1928-12-09.&lt;/p&gt;&lt;/section&gt;&quot;,
+      &quot;description&quot;: &quot;Pabst asymmetrical diy keytar next level yuccie.&quot;,
+      &quot;clean_label&quot;: &quot;The Wizard of Oz&quot;,
+      &quot;clean_description&quot;: &quot;Pabst asymmetrical diy keytar next level yuccie.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/998992a7-0feb-47e6-8621-8f530da1c3c8&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;Seventh Galaxy of Light and Ingenuity&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;place&quot;,
+      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;&lt;i&gt;Seventh Galaxy of Light and Ingenuity&lt;/i&gt;&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;Pabst &lt;i&gt;leggings chambray next level fanny&lt;/i&gt; pack.&lt;/p&gt;&lt;/section&gt;&quot;,
+      &quot;description&quot;: &quot;Pabst &lt;i&gt;leggings chambray next level fanny&lt;/i&gt; pack.&quot;,
+      &quot;clean_label&quot;: &quot;Seventh Galaxy of Light and Ingenuity&quot;,
+      &quot;clean_description&quot;: &quot;Pabst leggings chambray next level fanny pack.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/ce129115-a3a2-41fe-b8c8-a3c23bf32455&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;Lamuella&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;place&quot;,
+      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;&lt;i&gt;Lamuella&lt;/i&gt;&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;Narwhal &lt;i&gt;venmo bespoke next level locavore&lt;/i&gt; taxidermy.&lt;/p&gt;&lt;/section&gt;&quot;,
+      &quot;description&quot;: &quot;Narwhal &lt;i&gt;venmo bespoke next level locavore&lt;/i&gt; taxidermy.&quot;,
+      &quot;clean_label&quot;: &quot;Lamuella&quot;,
+      &quot;clean_description&quot;: &quot;Narwhal venmo bespoke next level locavore taxidermy.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/fa2d8b55-0673-4548-8419-cda09ce91cec&quot;,
+      &quot;label&quot;: &quot;That Good Night&quot;,
+      &quot;type&quot;: &quot;translating&quot;,
+      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Author&lt;/strong&gt; Galaxia Woonbeam, &lt;strong&gt;Original Title&lt;/strong&gt; That Good Night&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Translated into&lt;/strong&gt; Japanese by Roosta&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Translated title&lt;/strong&gt; Heart of Gold.&lt;/p&gt;&lt;/section&gt;&quot;,
+      &quot;description&quot;: &quot;Yuccie next level hoodie street tousled artisan.&quot;,
+      &quot;clean_label&quot;: &quot;That Good Night&quot;,
+      &quot;clean_description&quot;: &quot;Yuccie next level hoodie street tousled artisan.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/cbc37461-bbb1-43f1-852b-6cc8023a6b0d&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;Oglaroon&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;place&quot;,
+      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;&lt;i&gt;Oglaroon&lt;/i&gt;&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;Goth next level 1 humblebrag ugh photo booth.&lt;/p&gt;&lt;/section&gt;&quot;,
+      &quot;description&quot;: &quot;Goth next level 1 humblebrag ugh photo booth.&quot;,
+      &quot;clean_label&quot;: &quot;Oglaroon&quot;,
+      &quot;clean_description&quot;: &quot;Goth next level 1 humblebrag ugh photo booth.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/53044dc7-5179-4080-a18c-f80e4ac92332&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;Horse and Groom&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;place&quot;,
+      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;&lt;i&gt;Horse and Groom&lt;/i&gt;&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;Literally &lt;i&gt;pourover dreamcatcher kombucha polaroid singleorigin coffee next&lt;/i&gt; level.&lt;/p&gt;&lt;/section&gt;&quot;,
+      &quot;description&quot;: &quot;Literally &lt;i&gt;pourover dreamcatcher kombucha polaroid singleorigin coffee next&lt;/i&gt; level.&quot;,
+      &quot;clean_label&quot;: &quot;Horse and Groom&quot;,
+      &quot;clean_description&quot;: &quot;Literally pourover dreamcatcher kombucha polaroid singleorigin coffee next level.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/6c35cf1f-a50e-4719-b248-32e363e90a5e&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;I Wish U Heaven&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;music&quot;,
+      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Composer&lt;/strong&gt; Random Dent&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Title&lt;/strong&gt; &lt;i&gt;I Wish U Heaven&lt;/i&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt; Next level franzen echo normcore coldpressed etsy pickled leggings.&lt;/p&gt;&lt;/section&gt;&quot;,
+      &quot;description&quot;: &quot;Next level franzen echo normcore coldpressed etsy pickled leggings.&quot;,
+      &quot;clean_label&quot;: &quot;I Wish U Heaven&quot;,
+      &quot;clean_description&quot;: &quot;Next level franzen echo normcore coldpressed etsy pickled leggings.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/674b5ae1-d9cc-4009-87f8-c80103b9eb02&quot;,
+      &quot;label&quot;: &quot;Far From the Madding Crowd&quot;,
+      &quot;type&quot;: &quot;translating&quot;,
+      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Author&lt;/strong&gt; Charles Darwin, &lt;strong&gt;Original Title&lt;/strong&gt; Far From the Madding Crowd&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Translated into&lt;/strong&gt; Schweizerdeutsche by Yooden Vranx&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Translated title&lt;/strong&gt; Heart of Gold.&lt;/p&gt;&lt;/section&gt;&quot;,
+      &quot;description&quot;: &quot;Fanny &lt;i&gt;pack ethical selvage swag photo booth lomo next&lt;/i&gt; level.&quot;,
+      &quot;clean_label&quot;: &quot;Far From the Madding Crowd&quot;,
+      &quot;clean_description&quot;: &quot;Fanny pack ethical selvage swag photo booth lomo next level.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/3b0c8014-6d28-4d3c-87e9-cceef18e8554&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;Lock, Stock and Two Smoking Barrels&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;production&quot;,
+      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Title&lt;/strong&gt; &lt;i&gt;Lock, Stock and Two Smoking Barrels&lt;/i&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Proposal/Response&lt;/strong&gt; There&#39;s only one life-form as intelligent as me within thirty parsecs of here and that&#39;s me. / there’s an infinite number of monkeys outside who want to talk to us about this script for Hamlet they’ve worked out.&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Director&lt;/strong&gt; Brandt &lt;strong&gt;Theatre, City&lt;/strong&gt; Golgafrinchan Ark Fleet Ship B, South Brenton&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Date(s)&lt;/strong&gt; 1952-01-17.&lt;/p&gt;&lt;/section&gt;&quot;,
+      &quot;description&quot;: &quot;Chartreuse cred brooklyn kogi next level direct trade thundercats mixtape bushwick.&quot;,
+      &quot;clean_label&quot;: &quot;Lock, Stock and Two Smoking Barrels&quot;,
+      &quot;clean_description&quot;: &quot;Chartreuse cred brooklyn kogi next level direct trade thundercats mixtape bushwick.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/3543e467-8c3d-4ead-8095-9d2e6235297e&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;Blade Runner&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;production&quot;,
+      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Title&lt;/strong&gt; &lt;i&gt;Blade Runner&lt;/i&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Proposal/Response&lt;/strong&gt; Here I am, brain the size of a planet, and they tell me to take you up to the bridge. Call that job satisfaction? &#39;Cos I don&#39;t. / Earth: Mostly Harmless&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Director&lt;/strong&gt; Donny &lt;strong&gt;Theatre, City&lt;/strong&gt; Tanngrisnir, Port Sheba&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Date(s)&lt;/strong&gt; 1970-08-02.&lt;/p&gt;&lt;/section&gt;&quot;,
+      &quot;description&quot;: &quot;Pabst &lt;i&gt;jean shorts next level fanny pack readymade distillery goth salvia&lt;/i&gt; kinfolk.&quot;,
+      &quot;clean_label&quot;: &quot;Blade Runner&quot;,
+      &quot;clean_description&quot;: &quot;Pabst jean shorts next level fanny pack readymade distillery goth salvia kinfolk.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/8f6b587e-cb93-4393-bfd3-76c487698f84&quot;,
+      &quot;label&quot;: &quot;Far From the Madding Crowd&quot;,
+      &quot;type&quot;: &quot;writing&quot;,
+      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Title&lt;/strong&gt; Far From the Madding Crowd&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Proposal/Response&lt;/strong&gt; Will you open up the exit hatch, please, computer?&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Translator&lt;/strong&gt; Mr. Prosser&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Date&lt;/strong&gt; 1944-08-29.&lt;/p&gt;&lt;/section&gt;&quot;,
+      &quot;description&quot;: &quot;Photo booth you probably havent heard of them before they sold out next level.&quot;,
+      &quot;clean_label&quot;: &quot;Far From the Madding Crowd&quot;,
+      &quot;clean_description&quot;: &quot;Photo booth you probably havent heard of them before they sold out next level.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/ada287d7-95c5-4392-9694-f0b99c5267a7&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;Black Sweat&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;work_of_art&quot;,
+      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Artist&lt;/strong&gt; Hactar&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Title&lt;/strong&gt; &lt;i&gt;Black Sweat&lt;/i&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt; Listicle semiotics waistcoat yuccie forage lumbersexual kickstarter next level you probably havent heard of them.&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Owner/location&lt;/strong&gt; Billion Year Bunker&lt;/p&gt;&lt;/section&gt;&quot;,
+      &quot;description&quot;: &quot;Listicle semiotics waistcoat yuccie forage lumbersexual kickstarter next level you probably havent heard of them.&quot;,
+      &quot;clean_label&quot;: &quot;Black Sweat&quot;,
+      &quot;clean_description&quot;: &quot;Listicle semiotics waistcoat yuccie forage lumbersexual kickstarter next level you probably havent heard of them.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/bbc077e0-7e1c-43aa-a4c0-125199c07e8f&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;Columbia&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;public_event&quot;,
+      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;&lt;i&gt;Columbia&lt;/i&gt;&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;1929-08-09.&lt;/strong&gt;&lt;/p&gt;&lt;/section&gt;&quot;,
+      &quot;description&quot;: &quot;Woke up the next morning, Nikki wasn&#39;t there. I looked all over and all I found was a phone number on the stairs. It said thank you for a funky time, call me up whenever you wanna grind.&quot;,
+      &quot;clean_label&quot;: &quot;Columbia&quot;,
+      &quot;clean_description&quot;: &quot;Woke up the next morning, Nikki wasn&#39;t there. I looked all over and all I found was a phone number on the stairs. It said thank you for a funky time, call me up whenever you wanna grind.&quot;
+    }
+  ],
+  &quot;aggs&quot;: {
+    &quot;e_type&quot;: {
+      &quot;doc_count&quot;: 21,
+      &quot;doc_count_error_upper_bound&quot;: 0,
+      &quot;sum_other_doc_count&quot;: 0,
+      &quot;buckets&quot;: [
+        {
+          &quot;key&quot;: &quot;place&quot;,
+          &quot;doc_count&quot;: 7
+        },
+        {
+          &quot;key&quot;: &quot;attendance&quot;,
+          &quot;doc_count&quot;: 3
+        },
+        {
+          &quot;key&quot;: &quot;production&quot;,
+          &quot;doc_count&quot;: 3
+        },
+        {
+          &quot;key&quot;: &quot;work_of_art&quot;,
+          &quot;doc_count&quot;: 3
+        },
+        {
+          &quot;key&quot;: &quot;translating&quot;,
+          &quot;doc_count&quot;: 2
+        },
+        {
+          &quot;key&quot;: &quot;music&quot;,
+          &quot;doc_count&quot;: 1
+        },
+        {
+          &quot;key&quot;: &quot;public_event&quot;,
+          &quot;doc_count&quot;: 1
+        },
+        {
+          &quot;key&quot;: &quot;writing&quot;,
+          &quot;doc_count&quot;: 1
+        }
+      ]
+    }
+  },
+  &quot;meta&quot;: {
+    &quot;page&quot;: 1,
+    &quot;per_page&quot;: 25,
+    &quot;page_count&quot;: 1,
+    &quot;total_count&quot;: 21,
+    &quot;links&quot;: {
+      &quot;self&quot;: &quot;http://example.org/entities?operator=and&amp;page=1&amp;search=next&quot;
+    }
+  }
+}</pre>
+      </div>
+    </div>
+  </body>
+</html>

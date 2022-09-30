@@ -63,6 +63,7 @@ resource 'Entities' do
 
     get 'entities query using and operator' do
       let(:search) { Entity.all.sample.clean_description.split.sample.downcase }
+      let(:operator) { 'and' }
       example_request 'GET /entities?search=:search_terms&operator=and - Keyword Search using and operator' do
         explanation 'Returns a paginated list of entities from key word search.'
         expect(status).to eq(200)

@@ -26,7 +26,7 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /entities/1f0d5aaa-7296-4517-bbf5-24661af392c4</pre>
+<pre>GET /entities/65aedbf8-23b8-4299-a22c-c2a071b44945</pre>
 
 ### Response
 
@@ -39,12 +39,12 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;6a75e57540961403e71b8930512f12cf&quot;
+ETag: W/&quot;2e7077a26c1cc5ac160376d9f436e498&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 6a497bd1-4f54-4c04-ba11-b1d053a9c861
-X-Runtime: 0.775458
+X-Request-Id: 29d16970-3f54-4d2a-9fc1-56d8e2d2514c
+X-Runtime: 0.807785
 Vary: Origin
-Content-Length: 2662</pre>
+Content-Length: 2847</pre>
 
 #### Status
 
@@ -54,24 +54,24 @@ Content-Length: 2662</pre>
 
 ~~~
 {
-  "id": "http://example.org/entities/1f0d5aaa-7296-4517-bbf5-24661af392c4",
+  "id": "http://example.org/entities/65aedbf8-23b8-4299-a22c-c2a071b44945",
   "type": "work_of_art",
-  "label": "<i>Guitar</i>",
-  "short_display": "<section><p><strong>Artist</strong> Lunkwill and Fook</p>\n<p><strong>Title</strong> <i>Guitar</i></p>\n<p><strong>Description</strong> Tilde meh intelligentsia celiac.</p>\n<p><strong>Owner/location</strong> Bistromath</p></section>",
-  "full_display": "<table>\n<tr>\n<th scope=\"row\">Artist</th>\n<td>Lunkwill and Fook</td>\n</tr>\n<tr>\n<th scope=\"row\">Artist Alternative Name(s)</th>\n<td>Morgan McMichaels</td>\n</tr>\n<tr>\n<th scope=\"row\">Title</th>\n<td><i>Guitar</i></td>\n</tr>\n<tr>\n<th scope=\"row\">Alternative Title(s)</th>\n<td>Alexis Michelle</td>\n</tr>\n<tr>\n<th scope=\"row\">Description</th>\n<td>Tilde meh intelligentsia celiac.</td>\n</tr>\n<tr>\n<th scope=\"row\">Ownership and Location</th>\n<td>Bistromath</td>\n</tr>\n<tr>\n<th scope=\"row\">Current Ownership and Location</th>\n<td>Bistromath</td>\n</tr>\n<tr>\n<th scope=\"row\">Notes</th>\n<td>I wish you'd just tell me rather trying to engage my enthusiasm, because I haven't got one.</td>\n</tr>\n<tr>\n<th scope=\"row\">See Also</th>\n<td><ul><li><a href=\"http://nikolaus-wiza.co/vicente_treutel\" target=\"_blank\" rel=\"noopener\">http://nikolaus-wiza.co/vicente_treutel<span>(opens in new tab)</span></a></li></ul></td>\n</tr>\n</table>",
-  "description": "Tilde meh intelligentsia celiac.",
+  "label": "It's Gonna Be A Beautiful Night",
+  "short_display": "<section><p><strong>Artist</strong> Arthur Philip Deodat</p>\n<p><strong>Title</strong> It's Gonna Be A Beautiful Night</p>\n<p><strong>Description</strong> Chia <i>chicharrones flannel keytar sriracha microdosing readymade meh</i> paleo.</p>\n<p><strong>Owner/location</strong> Tanngrisnir</p></section>",
+  "full_display": "<table>\n<tr>\n<th scope=\"row\">Artist</th>\n<td>Arthur Philip Deodat</td>\n</tr>\n<tr>\n<th scope=\"row\">Artist Alternative Name(s)</th>\n<td>Jinkx Monsoon</td>\n</tr>\n<tr>\n<th scope=\"row\">Title</th>\n<td>It's Gonna Be A Beautiful Night</td>\n</tr>\n<tr>\n<th scope=\"row\">Alternative Title(s)</th>\n<td>Ivy Winters</td>\n</tr>\n<tr>\n<th scope=\"row\">Description</th>\n<td>Chia <i>chicharrones flannel keytar sriracha microdosing readymade meh</i> paleo.</td>\n</tr>\n<tr>\n<th scope=\"row\">Ownership and Location</th>\n<td>Tanngrisnir</td>\n</tr>\n<tr>\n<th scope=\"row\">Current Ownership and Location</th>\n<td>Bistromath</td>\n</tr>\n<tr>\n<th scope=\"row\">Notes</th>\n<td>There's only one life-form as intelligent as me within thirty parsecs of here and that's me.</td>\n</tr>\n<tr>\n<th scope=\"row\">See Also</th>\n<td><ul><li><a href=\"http://oconner-collins.net/ronald\" target=\"_blank\" rel=\"noopener\">http://oconner-collins.net/ronald<span>(opens in new tab)</span></a></li></ul></td>\n</tr>\n</table>",
+  "description": "Chia <i>chicharrones flannel keytar sriracha microdosing readymade meh</i> paleo.",
   "e_type": "work_of_art",
-  "legacy_pk": 25947,
+  "legacy_pk": 70207,
   "alternate_spellings": null,
-  "artist": "Lunkwill and Fook",
+  "artist": "Arthur Philip Deodat",
   "artist_alternate_spellings": [
-    "Morgan McMichaels"
+    "Jinkx Monsoon"
   ],
   "links": [
-    "http://nikolaus-wiza.co/vicente_treutel"
+    "http://oconner-collins.net/ronald"
   ],
-  "notes": "I wish you'd just tell me rather trying to engage my enthusiasm, because I haven't got one.",
-  "owner_location": "Bistromath",
+  "notes": "There's only one life-form as intelligent as me within thirty parsecs of here and that's me.",
+  "owner_location": "Tanngrisnir",
   "owner_location_current": "Bistromath"
 }
 ~~~

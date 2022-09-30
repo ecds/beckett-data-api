@@ -15,7 +15,7 @@ Cookie: </pre>
 
 #### Route
 
-<pre>DELETE /letters/27d2f686-9fa6-4b3e-a624-cafc1f5cc3e4</pre>
+<pre>DELETE /letters/964e01b6-0031-4a61-8f9f-bbe5a3b3c41d</pre>
 
 ### Response
 
@@ -29,8 +29,8 @@ X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json
 Cache-Control: no-cache
-X-Request-Id: 47ca0ab7-473c-4bc9-a515-0d22e73a094b
-X-Runtime: 0.429857
+X-Request-Id: 9484ec43-40e9-4a1c-bb17-73036493a0da
+X-Runtime: 0.401311
 Vary: Origin
 Content-Length: 0</pre>
 

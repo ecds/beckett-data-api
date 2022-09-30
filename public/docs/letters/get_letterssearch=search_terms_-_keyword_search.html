@@ -279,10 +279,10 @@ Host: example.org
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET /letters?search=shon</pre>
+          <pre class="request route highlight">GET /letters?search=ross</pre>
 
             <h4>Query Parameters</h4>
-            <pre class="request query_parameters highlight">search: shon</pre>
+            <pre class="request query_parameters highlight">search: ross</pre>
 
 
 
@@ -294,75 +294,85 @@ X-Content-Type-Options: nosniff
 X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
-Link: &lt;http://example.org/letters?page=1&amp;search=shon&gt;; rel=&#39;self&#39;
+Link: &lt;http://example.org/letters?page=1&amp;search=ross&gt;; rel=&#39;self&#39;
 X-Total-Count: 1
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;6fcd0718cf36272eb901322e34347fee&quot;
+ETag: W/&quot;391e9fb923934640c5532bac74c16780&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 3ad2073f-9ce1-43a3-a98b-866d8c6a2c3c
-X-Runtime: 2.861132
+X-Request-Id: c0f94c0e-b684-4692-a321-51b5aa30dd6e
+X-Runtime: 2.880190
 Vary: Origin
-Content-Length: 3856</pre>
+Content-Length: 4919</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
   &quot;letters&quot;: [
     {
-      &quot;id&quot;: &quot;http://example.org/letters/cc5bf1fb-5eaf-4985-8529-1cc83706566f&quot;,
-      &quot;date&quot;: &quot;1950-06-25T00:00:00.000-04:00&quot;,
-      &quot;label&quot;: &quot;25 June 1950 - Emmerich, Shon&quot;,
+      &quot;id&quot;: &quot;http://example.org/letters/4300bf6d-a809-4205-8716-6acf83f47247&quot;,
+      &quot;date&quot;: &quot;1950-07-16T00:00:00.000-04:00&quot;,
+      &quot;label&quot;: &quot;16 July 1950 - Powlowski, Ross&quot;,
       &quot;language&quot;: &quot;german&quot;,
-      &quot;volume&quot;: 2,
+      &quot;volume&quot;: 4,
       &quot;recipients&quot;: [
-        &quot;Emmerich, Shon&quot;
+        &quot;Powlowski, Ross&quot;
       ],
       &quot;destinations&quot;: [
-        &quot;&lt;i&gt;Sector ZZ9 Plural Z Alpha&lt;/i&gt;&quot;
+        &quot;Western Spiral Arm&quot;
       ],
       &quot;origins&quot;: null,
       &quot;mentions&quot;: {
-        &quot;attendances&quot;: [
+        &quot;music&quot;: [
           {
-            &quot;type&quot;: &quot;attendance&quot;,
-            &quot;id&quot;: &quot;http://example.org/entities/48f311c2-3788-4593-bd18-aee6d44ced4e&quot;,
-            &quot;display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Radio Broadcast&lt;/strong&gt;, Pabst &lt;i&gt;organic sartorial kickstarter 8bit heirloom cred normcore&lt;/i&gt; literally.&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Attended with&lt;/strong&gt; The Dude and Loonquawl and Phouchg&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Place, Date&lt;/strong&gt; Ferrymouth, 01 November 1960&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Director&lt;/strong&gt; Dan Streetmentioner&lt;/p&gt;&lt;/section&gt;&quot;
+            &quot;type&quot;: &quot;music&quot;,
+            &quot;id&quot;: &quot;http://example.org/entities/76d3160c-b3e0-4dd0-aae5-60841e7231af&quot;,
+            &quot;display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Composer&lt;/strong&gt; Bowerick Wowbagger&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Title&lt;/strong&gt; Screwdriver&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt; Vhs &lt;i&gt;mumblecore keytar art party pinterest ennui&lt;/i&gt; flannel.&lt;/p&gt;&lt;/section&gt;&quot;
+          },
+          {
+            &quot;type&quot;: &quot;music&quot;,
+            &quot;id&quot;: &quot;http://example.org/entities/e8d37e28-59ba-4e58-8974-a073976c7ba5&quot;,
+            &quot;display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Composer&lt;/strong&gt; Zaphod Beeblebrox&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Title&lt;/strong&gt; Darling Nikki&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt; Food &lt;i&gt;truck artisan meggings pork belly meh next level yr raw denim&lt;/i&gt; tacos.&lt;/p&gt;&lt;/section&gt;&quot;
           }
         ],
-        &quot;people&quot;: [
+        &quot;places&quot;: [
           {
-            &quot;type&quot;: &quot;person&quot;,
-            &quot;id&quot;: &quot;http://example.org/entities/f143381e-3917-414e-abaf-a3298862b589&quot;,
-            &quot;display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Mohammed Bergnaum, 1919-1986&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;And &lt;i&gt;then of course I&#39;ve got this terrible pain in all the diodes down my left&lt;/i&gt; side.&lt;/p&gt;&lt;/section&gt;&quot;
+            &quot;type&quot;: &quot;place&quot;,
+            &quot;id&quot;: &quot;http://example.org/entities/ab98f372-324f-4374-a271-2c4d02f3c4d7&quot;,
+            &quot;display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Kakrafoon Kappa&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;Food &lt;i&gt;truck migas keytar&lt;/i&gt; loko.&lt;/p&gt;&lt;/section&gt;&quot;
           },
           {
-            &quot;type&quot;: &quot;person&quot;,
-            &quot;id&quot;: &quot;http://example.org/entities/d1b96c69-54af-4d8b-bb77-bbb1dad3e16f&quot;,
-            &quot;display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Phillip Kuhn, 1922-1981&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;Pardon me for breathing, which I never do anyway so I don&#39;t know why I bother to say it, Oh God, I&#39;m so depressed.&lt;/p&gt;&lt;/section&gt;&quot;
+            &quot;type&quot;: &quot;place&quot;,
+            &quot;id&quot;: &quot;http://example.org/entities/7ebc062d-f337-477d-90dc-1f929d83aa93&quot;,
+            &quot;display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Stavromula Beta&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;Bitters venmo tryhard lomo vinegar green juice kickstarter selvage.&lt;/p&gt;&lt;/section&gt;&quot;
+          },
+          {
+            &quot;type&quot;: &quot;place&quot;,
+            &quot;id&quot;: &quot;http://example.org/entities/b83099bf-5d09-4e41-a5ef-f055ab0c83d8&quot;,
+            &quot;display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Café Lou&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;Skateboard 1 tilde cronut ennui brunch before they sold out.&lt;/p&gt;&lt;/section&gt;&quot;
           }
         ],
-        &quot;public_events&quot;: [
+        &quot;productions&quot;: [
           {
-            &quot;type&quot;: &quot;public_event&quot;,
-            &quot;id&quot;: &quot;http://example.org/entities/f8a6b546-c24c-4f1e-9a6b-247061c5fa01&quot;,
-            &quot;display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;&lt;i&gt;Apollo&lt;/i&gt;&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;1924-08-05.&lt;/strong&gt;&lt;/p&gt;&lt;/section&gt;&quot;
-          },
-          {
-            &quot;type&quot;: &quot;public_event&quot;,
-            &quot;id&quot;: &quot;http://example.org/entities/19b251e7-fdc5-49fd-9917-ce5d6b6b184c&quot;,
-            &quot;display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;&lt;i&gt;Apollo&lt;/i&gt;&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;1956-02-07.&lt;/strong&gt;&lt;/p&gt;&lt;/section&gt;&quot;
-          },
-          {
-            &quot;type&quot;: &quot;public_event&quot;,
-            &quot;id&quot;: &quot;http://example.org/entities/f5a32249-5b2a-49d6-89e6-b21a8f4f7448&quot;,
-            &quot;display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Mercury&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;1945-02-07.&lt;/strong&gt;&lt;/p&gt;&lt;/section&gt;&quot;
+            &quot;type&quot;: &quot;production&quot;,
+            &quot;id&quot;: &quot;http://example.org/entities/845234e7-aafc-4699-b764-2285f7e11a66&quot;,
+            &quot;display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Title&lt;/strong&gt; Eternal Sunshine of the Spotless Mind&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Proposal/Response&lt;/strong&gt; Life? Don&#39;t talk to me about life. / Parts of the inside of her head screamed at other parts of the inside of her head.&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Director&lt;/strong&gt; Donny &lt;strong&gt;Theatre, City&lt;/strong&gt; Krikkit One, Sonyamouth&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Date(s)&lt;/strong&gt; 1963-09-22.&lt;/p&gt;&lt;/section&gt;&quot;
           }
         ],
         &quot;readings&quot;: [
           {
             &quot;type&quot;: &quot;reading&quot;,
-            &quot;id&quot;: &quot;http://example.org/entities/ef3e0190-e681-466f-afd4-3cbaa8ddfd88&quot;,
-            &quot;display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Author&lt;/strong&gt; Ethan Koch I&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Title&lt;/strong&gt; The Moon by Night&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Publication&lt;/strong&gt; Carcanet Press.&lt;/p&gt;&lt;/section&gt;&quot;
+            &quot;id&quot;: &quot;http://example.org/entities/53411f39-c394-4f8c-a7f1-ad5b33239fbc&quot;,
+            &quot;display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Author&lt;/strong&gt; Zane Kshlerin&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Title&lt;/strong&gt; In a Dry Season&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Publication&lt;/strong&gt; Felony &amp;amp; Mayhem Press.&lt;/p&gt;&lt;/section&gt;&quot;
+          },
+          {
+            &quot;type&quot;: &quot;reading&quot;,
+            &quot;id&quot;: &quot;http://example.org/entities/8c7f7e4b-1c0b-4fb2-bef7-48b8c58aea38&quot;,
+            &quot;display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Author&lt;/strong&gt; Chantay Hickle&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Title&lt;/strong&gt; The Line of Beauty&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Publication&lt;/strong&gt; Schocken Books.&lt;/p&gt;&lt;/section&gt;&quot;
+          },
+          {
+            &quot;type&quot;: &quot;reading&quot;,
+            &quot;id&quot;: &quot;http://example.org/entities/336e5fab-5baf-4da8-98e2-bf4c00d1d68c&quot;,
+            &quot;display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Author&lt;/strong&gt; Bulah Anderson LLD&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Title&lt;/strong&gt; The House of Mirth&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Publication&lt;/strong&gt; Simon &amp;amp; Schuster.&lt;/p&gt;&lt;/section&gt;&quot;
           }
         ]
       }
@@ -377,7 +387,7 @@ Content-Length: 3856</pre>
       &quot;sum_other_doc_count&quot;: 0,
       &quot;buckets&quot;: [
         {
-          &quot;key&quot;: 2,
+          &quot;key&quot;: 4,
           &quot;doc_count&quot;: 1
         }
       ]
@@ -402,11 +412,11 @@ Content-Length: 3856</pre>
       &quot;sum_other_doc_count&quot;: 0,
       &quot;buckets&quot;: [
         {
-          &quot;key&quot;: &quot;North Raynor University&quot;,
+          &quot;key&quot;: &quot;South Carroll Academy&quot;,
           &quot;doc_count&quot;: 1
         },
         {
-          &quot;key&quot;: &quot;Western Bernhard Academy&quot;,
+          &quot;key&quot;: &quot;Western Corwin&quot;,
           &quot;doc_count&quot;: 1
         }
       ]
@@ -431,7 +441,7 @@ Content-Length: 3856</pre>
     &quot;page_count&quot;: 1,
     &quot;total_count&quot;: 1,
     &quot;links&quot;: {
-      &quot;self&quot;: &quot;http://example.org/letters?page=1&amp;search=shon&quot;
+      &quot;self&quot;: &quot;http://example.org/letters?page=1&amp;search=ross&quot;
     }
   }
 }</pre>

@@ -8,6 +8,7 @@
 * [GET /entities - All](entities/get_entities_-_all.md)
 * [GET /entities?type=:entity_type - By Type](entities/get_entitiestype=entity_type_-_by_type.md)
 * [GET /entities?search=:search_terms - Keyword Search](entities/get_entitiessearch=search_terms_-_keyword_search.md)
+* [GET /entities?search=:search_terms&amp;operator=and - Keyword Search using and operator](entities/get_entitiessearch=search_terms&amp;operator=and_-_keyword_search_using_and_operator.md)
 * [GET /entities?search=:label&amp;fields=label&amp;type=person - Person by Label](entities/get_entitiessearch=label&amp;fields=label&amp;type=person_-_person_by_label.md)
 * [GET /entites?per_page=:results_per_page&amp;page=:offset - Paginated results](entities/get_entitesper_page=results_per_page&amp;page=offset_-_paginated_results.md)
 * [GET /entities/:id](entities/get_entitiesid.md)

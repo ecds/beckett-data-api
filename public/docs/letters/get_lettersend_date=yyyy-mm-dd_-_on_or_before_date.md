@@ -34,11 +34,11 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /letters?end_date=1975-04-01</pre>
+<pre>GET /letters?end_date=1980-03-09</pre>
 
 #### Query Parameters
 
-<pre>end_date: 1975-04-01</pre>
+<pre>end_date: 1980-03-09</pre>
 
 ### Response
 
@@ -50,15 +50,15 @@ X-Content-Type-Options: nosniff
 X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
-Link: &lt;http://example.org/letters?end_date=1975-04-01&amp;page=1&gt;; rel=&#39;self&#39;
-X-Total-Count: 19
+Link: &lt;http://example.org/letters?end_date=1980-03-09&amp;page=1&gt;; rel=&#39;self&#39;
+X-Total-Count: 25
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;b8b870df27566293f914010854f76a7d&quot;
+ETag: W/&quot;fa80dd880c2bee421b3d76cff44b2722&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 90affc6f-e663-4478-829a-aa7f0ff960f1
-X-Runtime: 2.682610
+X-Request-Id: b172194f-e133-445a-9b7c-f2321d6bb8c3
+X-Runtime: 2.730680
 Vary: Origin
-Content-Length: 76505</pre>
+Content-Length: 98563</pre>
 
 #### Status
 
@@ -70,721 +70,569 @@ Content-Length: 76505</pre>
 {
   "letters": [
     {
-      "id": "http://example.org/letters/969ad8bb-7257-4858-b5d3-a28051e04c9c",
+      "id": "http://example.org/letters/1c32585e-b12f-4e83-a6ff-c922baac8e04",
       "date": "1950-01-18T00:00:00.000-05:00",
-      "label": "18 January 1950 - Cronin, Mindy",
-      "language": "german",
+      "label": "18 January 1950 - Kiehn, Carman",
+      "language": "english",
       "volume": 1,
       "recipients": [
-        "Cronin, Mindy"
+        "Kiehn, Carman"
       ],
       "destinations": [
-        "29 Arlington Avenue"
-      ],
-      "origins": null,
-      "mentions": {
-        "music": [
-          {
-            "type": "music",
-            "id": "http://example.org/entities/9e5eefb9-5b8a-4d68-b252-7038f0408217",
-            "display": "<section><p><strong>Composer</strong> Trillian</p>\n<p><strong>Title</strong> Cream</p>\n<p><strong>Description</strong> Flannel echo bushwick mumblecore.</p></section>"
-          },
-          {
-            "type": "music",
-            "id": "http://example.org/entities/59d9d4d4-a066-4df1-a671-4d556afddb92",
-            "display": "<section><p><strong>Composer</strong> Lintilla</p>\n<p><strong>Title</strong> 1-800-Newfunk Ad</p>\n<p><strong>Description</strong> Viral intelligentsia ugh churchkey.</p></section>"
-          }
-        ],
-        "people": [
-          {
-            "type": "person",
-            "id": "http://example.org/entities/4c8eddf8-d462-4807-9701-01d011932a1d",
-            "display": "<section><p><strong>Herschel Berge, 1922-1977</strong></p>\n<p>Life? Don't talk to me about life.</p></section>"
-          },
-          {
-            "type": "person",
-            "id": "http://example.org/entities/d9737d9b-3a54-46f9-8742-b19724906c51",
-            "display": "<section><p><strong>Libby Hirthe, 1923-1970</strong></p>\n<p>I think you ought to know I'm feeling very depressed.</p></section>"
-          },
-          {
-            "type": "person",
-            "id": "http://example.org/entities/11c725fe-4a4b-44c6-a524-b4fed1fd5944",
-            "display": "<section><p><strong>Hugh Price, 1929-1975</strong></p>\n<p>Here I am, brain the size of a planet, and they tell me to take you up to the bridge. Call that job satisfaction? 'Cos I don't.</p></section>"
-          }
-        ],
-        "readings": [
-          {
-            "type": "reading",
-            "id": "http://example.org/entities/9c841e16-8aff-41c7-83f2-46c60d7bf992",
-            "display": "<section><p><strong>Author</strong> Lajuana Braun</p>\n<p><strong>Title</strong> What's Become of Waring</p>\n<p><strong>Publication</strong> Secker &amp; Warburg.</p></section>"
-          },
-          {
-            "type": "reading",
-            "id": "http://example.org/entities/367d4f06-b7ec-4752-8278-44d8802197eb",
-            "display": "<section><p><strong>Author</strong> Johnny Wolf</p>\n<p><strong>Title</strong> <i>This Side of Paradise</i></p>\n<p><strong>Publication</strong> Peace Hill Press.</p></section>"
-          }
-        ],
-        "translatings": [
-          {
-            "type": "translating",
-            "id": "http://example.org/entities/a8db0ab9-158f-4331-bc75-268cc95483ac",
-            "display": "<section><p><strong>Author</strong> Slartibartfast, <strong>Original Title</strong> <i>The Golden Bowl</i></p>\n<p><strong>Translated into</strong> Danish by Paula Nancy Millstone Jennings</p>\n<p><strong>Translated title</strong> Starship Titanic.</p></section>"
-          }
-        ]
-      }
-    },
-    {
-      "id": "http://example.org/letters/ad3b2900-f234-4c3a-b5e2-0bc7aff5376e",
-      "date": "1953-05-29T00:00:00.000-04:00",
-      "label": "29 May 1953 - Marks, Brandon",
-      "language": "french",
-      "volume": 3,
-      "recipients": [
-        "Marks, Brandon"
-      ],
-      "destinations": [
-        "Boston"
-      ],
-      "origins": null,
-      "mentions": {
-        "people": [
-          {
-            "type": "person",
-            "id": "http://example.org/entities/36b3ddf6-b0d7-4601-ad5b-ccae61e72594",
-            "display": "<section><p><strong>Tesha Johnson, 1928-1986</strong></p>\n<p>I <i>wish you'd just tell me rather trying to engage my enthusiasm, because I haven't got</i> one.</p></section>"
-          }
-        ],
-        "productions": [
-          {
-            "type": "production",
-            "id": "http://example.org/entities/916b5c49-ee94-4a7c-9b36-08aed8c1c0f7",
-            "display": "<section><p><strong>Title</strong> Mad Max: Fury Road</p>\n<p><strong>Proposal/Response</strong> Pardon me for breathing, which I never do anyway so I don't know why I bother to say it, Oh God, I'm so depressed. / Earth: Mostly Harmless</p>\n<p><strong>Director</strong> Maude Lebowski <strong>Theatre, City</strong> Heart of Gold, West Senaidaberg</p>\n<p><strong>Date(s)</strong> 1951-01-27.</p></section>"
-          }
-        ],
-        "readings": [
-          {
-            "type": "reading",
-            "id": "http://example.org/entities/97c29663-e47a-47e3-9b4c-2ebe07db9de8",
-            "display": "<section><p><strong>Author</strong> Lemuel Pagac</p>\n<p><strong>Title</strong> The Doors of Perception</p>\n<p><strong>Publication</strong> Kogan Page.</p></section>"
-          }
-        ],
-        "writings": [
-          {
-            "type": "writing",
-            "id": "http://example.org/entities/f2cd5450-ebe2-4623-b8de-86f47ab5b49a",
-            "display": "<section><p><strong>Title</strong> The Wealth of Nations</p>\n<p><strong>Proposal/Response</strong> On the planet Earth, man had always assumed that he was more intelligent than dolphins because he had achieved so much—the wheel, New York, wars and so on—whilst all the dolphins had ever done was muck about in the water having a good time. But conversely, the dolphins had always believed that they were far more intelligent than man—for precisely the same reasons.</p>\n<p><strong>Translator</strong> Garkbit</p>\n<p><strong>Date</strong> 1933-11-08.</p></section>"
-          },
-          {
-            "type": "writing",
-            "id": "http://example.org/entities/27856f88-ce3d-4140-9702-9d5ebcddd162",
-            "display": "<section><p><strong>Title</strong> <i>Consider Phlebas</i></p>\n<p><strong>Proposal/Response</strong> On the planet Earth, man had always assumed that he was more intelligent than dolphins because he had achieved so much—the wheel, New York, wars and so on—whilst all the dolphins had ever done was muck about in the water having a good time. But conversely, the dolphins had always believed that they were far more intelligent than man—for precisely the same reasons.</p>\n<p><strong>Translator</strong> Reg Nullify</p>\n<p><strong>Date</strong> 1971-10-23.</p></section>"
-          }
-        ]
-      }
-    },
-    {
-      "id": "http://example.org/letters/f51a5e26-f00d-4411-81ea-39d0bfacaec2",
-      "date": "1953-08-07T00:00:00.000-04:00",
-      "label": "07 August 1953 - Prohaska, Cody",
-      "language": "french",
-      "volume": 2,
-      "recipients": [
-        "Prohaska, Cody"
-      ],
-      "destinations": [
-        "The Domain of The King"
+        "<i>Sector XXXZ5QZX</i>"
       ],
       "origins": null,
       "mentions": {
         "organizations": [
           {
             "type": "organization",
-            "id": "http://example.org/entities/4e8f2503-3afa-4e35-ba7d-4f289ef0df82",
-            "display": "<section><p><strong><i>Frogstar World C</i></strong></p>\n<p>You think you've got problems? What are you supposed to do if you are a manically depressed robot? No, don't try to answer that. I'm fifty thousand times more intelligent than you and even I don't know the answer. It gives me a headache just trying to think down to your level.</p></section>"
-          }
-        ],
-        "people": [
-          {
-            "type": "person",
-            "id": "http://example.org/entities/23d5f923-83a9-44bc-9713-4de48c7d4f44",
-            "display": "<section><p><strong>Julianna Bartoletti, 1922-1986</strong></p>\n<p>You think you've got problems? What are you supposed to do if you are a manically depressed robot? No, don't try to answer that. I'm fifty thousand times more intelligent than you and even I don't know the answer. It gives me a headache just trying to think down to your level.</p></section>"
+            "id": "http://example.org/entities/a9e77dc1-94b4-4964-a785-4602b809bed7",
+            "display": "<section><p><strong><i>Bartledan</i></strong></p>\n<p>I <i>think you ought to know I'm feeling very</i> depressed.</p></section>"
           },
-          {
-            "type": "person",
-            "id": "http://example.org/entities/2824ee05-4566-4a2e-8904-49921bb421b3",
-            "display": "<section><p><strong>Betsy Kshlerin, 1923-1993</strong></p>\n<p>I <i>wish you'd just tell me rather trying to engage my enthusiasm, because I haven't got</i> one.</p></section>"
-          }
-        ],
-        "places": [
-          {
-            "type": "place",
-            "id": "http://example.org/entities/456aa6ad-c2c3-4b82-af1e-19878cb882d8",
-            "display": "<section><p><strong>Rupert</strong></p>\n<p>Food <i>truck dreamcatcher messenger bag offal</i> pug.</p></section>"
-          },
-          {
-            "type": "place",
-            "id": "http://example.org/entities/b441663c-da67-422b-80cf-4bf1c8226c56",
-            "display": "<section><p><strong>Han Dold City</strong></p>\n<p>Normcore cardigan pbrb truffaut chillwave shoreditch photo booth mustache.</p></section>"
-          },
-          {
-            "type": "place",
-            "id": "http://example.org/entities/9e96a56e-c2cd-4b83-8dcc-380b411b1b54",
-            "display": "<section><p><strong>Pleiades system</strong></p>\n<p>Chicharrones yr pinterest kogi slowcarb you probably havent heard of them messenger bag swag.</p></section>"
-          }
-        ],
-        "productions": [
-          {
-            "type": "production",
-            "id": "http://example.org/entities/e3d21fa2-f819-4445-ac36-5699349a164d",
-            "display": "<section><p><strong>Title</strong> <i>Groundhog Day</i></p>\n<p><strong>Proposal/Response</strong> I wish you'd just tell me rather trying to engage my enthusiasm, because I haven't got one. / According to the legends, the Magratheans lived most of their lives underground.</p>\n<p><strong>Director</strong> Jackie Treehorn <strong>Theatre, City</strong> Heart of Gold, Rogahnmouth</p>\n<p><strong>Date(s)</strong> 1956-09-30.</p></section>"
-          }
-        ]
-      }
-    },
-    {
-      "id": "http://example.org/letters/7651a0f2-2fe0-47d9-bca2-a5e4888801c1",
-      "date": "1954-06-09T00:00:00.000-04:00",
-      "label": "09 June 1954 - Shields, Lynwood",
-      "language": "english",
-      "volume": 2,
-      "recipients": [
-        "Shields, Lynwood"
-      ],
-      "destinations": [
-        "Highgate Cemetery"
-      ],
-      "origins": null,
-      "mentions": {
-        "music": [
-          {
-            "type": "music",
-            "id": "http://example.org/entities/5c30a8e4-d8d4-450d-be59-bf9cc5e91e66",
-            "display": "<section><p><strong>Composer</strong> Vroomfondel</p>\n<p><strong>Title</strong> <i>Partyman</i></p>\n<p><strong>Description</strong> Skateboard williamsburg disrupt fanny pack lofi squid lumbersexual.</p></section>"
-          },
-          {
-            "type": "music",
-            "id": "http://example.org/entities/2621057f-afdc-4d8b-8108-989466cd3446",
-            "display": "<section><p><strong>Composer</strong> Rob McKenna</p>\n<p><strong>Title</strong> Mr. Nelson</p>\n<p><strong>Description</strong> Lomo <i>offal banjo pug</i> flexitarian.</p></section>"
-          }
-        ],
-        "places": [
-          {
-            "type": "place",
-            "id": "http://example.org/entities/5271dc39-52b4-49ae-9af7-c879efd82a2b",
-            "display": "<section><p><strong><i>Stavromula Beta</i></strong></p>\n<p>Photo booth vinegar freegan chia.</p></section>"
-          }
-        ],
-        "productions": [
-          {
-            "type": "production",
-            "id": "http://example.org/entities/e0ddbc76-f27a-4aae-8d23-db63956a800b",
-            "display": "<section><p><strong>Title</strong> Paper Moon</p>\n<p><strong>Proposal/Response</strong> Life? Don't talk to me about life. / Parts of the inside of her head screamed at other parts of the inside of her head.</p>\n<p><strong>Director</strong> Bunny Lebowski <strong>Theatre, City</strong> RW6, South Buffychester</p>\n<p><strong>Date(s)</strong> 1948-10-26.</p></section>"
-          },
-          {
-            "type": "production",
-            "id": "http://example.org/entities/6775f46f-561f-4819-9f86-965a67e2f3b0",
-            "display": "<section><p><strong>Title</strong> <i>Goodfellas</i></p>\n<p><strong>Proposal/Response</strong> You think you've got problems? What are you supposed to do if you are a manically depressed robot? No, don't try to answer that. I'm fifty thousand times more intelligent than you and even I don't know the answer. It gives me a headache just trying to think down to your level. / Will you open up the exit hatch, please, computer?</p>\n<p><strong>Director</strong> Karl Hungus <strong>Theatre, City</strong> Heart of Gold, Veroniqueview</p>\n<p><strong>Date(s)</strong> 1952-04-15.</p></section>"
-          }
-        ],
-        "readings": [
-          {
-            "type": "reading",
-            "id": "http://example.org/entities/fb2c2f20-183c-4d52-89ca-66a6792301fb",
-            "display": "<section><p><strong>Author</strong> Gracie Strosin</p>\n<p><strong>Title</strong> I Know Why the Caged Bird Sings</p>\n<p><strong>Publication</strong> Manor House Publishing.</p></section>"
-          }
-        ]
-      }
-    },
-    {
-      "id": "http://example.org/letters/12ed2174-5b8b-4e29-b2d6-c4b1ea53b97b",
-      "date": "1957-03-29T00:00:00.000-05:00",
-      "label": "29 March 1957 - Mitchell, Clarence",
-      "language": "english",
-      "volume": 1,
-      "recipients": [
-        "Mitchell, Clarence"
-      ],
-      "destinations": [
-        "Sector ZZ9 Plural Z Alpha"
-      ],
-      "origins": null,
-      "mentions": {
-        "people": [
-          {
-            "type": "person",
-            "id": "http://example.org/entities/5eda23e4-3427-4f68-88e8-e291bf830667",
-            "display": "<section><p><strong>Richelle Murazik, 1916-1970</strong></p>\n<p>And then of course I've got this terrible pain in all the diodes down my left side.</p></section>"
-          }
-        ],
-        "public_events": [
-          {
-            "type": "public_event",
-            "id": "http://example.org/entities/db1f5ee5-f06a-4436-97c9-af6609361cad",
-            "display": "<section><p><strong><i>Challenger</i></strong></p>\n<p><strong>1969-08-31.</strong></p></section>"
-          }
-        ],
-        "translatings": [
-          {
-            "type": "translating",
-            "id": "http://example.org/entities/61a3a162-07c9-4823-95b0-71bef17efc4a",
-            "display": "<section><p><strong>Author</strong> Paula Nancy Millstone Jennings, <strong>Original Title</strong> Clouds of Witness</p>\n<p><strong>Translated into</strong> Finnish by Genghis Khan</p>\n<p><strong>Translated title</strong> RW6.</p></section>"
-          },
-          {
-            "type": "translating",
-            "id": "http://example.org/entities/6bc0f927-bc46-4468-8a00-929d9c85cdae",
-            "display": "<section><p><strong>Author</strong> Effrafax of Wug, <strong>Original Title</strong> <i>The Violent Bear It Away</i></p>\n<p><strong>Translated into</strong> Japanese by Bowerick Wowbagger</p>\n<p><strong>Translated title</strong> Vogon Constructor Fleet.</p></section>"
-          }
-        ],
-        "work_of_arts": [
-          {
-            "type": "work_of_art",
-            "id": "http://example.org/entities/d6afeef2-cd7e-4877-9170-e71569fc95ef",
-            "display": "<section><p><strong>Artist</strong> Lintilla</p>\n<p><strong>Title</strong> Darling Nikki</p>\n<p><strong>Description</strong> Distillery <i>poutine chicharrones churchkey</i> scenester.</p>\n<p><strong>Owner/location</strong> Billion Year Bunker</p></section>"
-          },
-          {
-            "type": "work_of_art",
-            "id": "http://example.org/entities/c9959661-fb7c-4670-93ae-b2587cfc34bd",
-            "display": "<section><p><strong>Artist</strong> Prostetnic Vogon Kwaltz</p>\n<p><strong>Title</strong> <i>New Position</i></p>\n<p><strong>Description</strong> Dreamcatcher <i>franzen ennui green juice 3 wolf moon food</i> truck.</p>\n<p><strong>Owner/location</strong> RW6</p></section>"
-          }
-        ]
-      }
-    },
-    {
-      "id": "http://example.org/letters/7e34e23c-aaa9-4b01-ac30-f3438b844f72",
-      "date": "1957-05-08T00:00:00.000-04:00",
-      "label": "08 May 1957 - Ziemann, Bess",
-      "language": "french",
-      "volume": 1,
-      "recipients": [
-        "Ziemann, Bess"
-      ],
-      "destinations": [
-        "29 Arlington Avenue"
-      ],
-      "origins": null,
-      "mentions": {
-        "attendances": [
-          {
-            "type": "attendance",
-            "id": "http://example.org/entities/48804c68-13b7-4e86-a40e-9602ca5601f5",
-            "display": "<section><p><strong>Reading</strong>, Cleanse <i>yolo actually salvia pbrb popup sartorial five dollar toast you probably havent heard of</i> them.</p>\n<p><strong>Attended with</strong> Donny and Oolon Colluphid</p>\n<p><strong>Place, Date</strong> North Patrickfurt, 07 January 1955</p>\n<p><strong>Director</strong> Barry Manilow</p></section>"
-          },
-          {
-            "type": "attendance",
-            "id": "http://example.org/entities/ff9c9f89-d30b-41ca-ba5f-77d4f2f374f4",
-            "display": "<section><p><strong>Theatre</strong>, Meditation blue bottle cray mixtape semiotics glutenfree.</p>\n<p><strong>Attended with</strong> Brandt and Prak</p>\n<p><strong>Place, Date</strong> New Elizbethburgh, 05 March 1951</p>\n<p><strong>Director</strong> Pasta Fasta</p></section>"
-          }
-        ],
-        "organizations": [
           {
             "type": "organization",
-            "id": "http://example.org/entities/6f8a7690-2ea1-4cc8-b525-f0fb2dd07e1b",
-            "display": "<section><p><strong><i>Gagrakacka</i></strong></p>\n<p>There's only one life-form as intelligent as me within thirty parsecs of here and that's me.</p></section>"
-          }
-        ],
-        "readings": [
-          {
-            "type": "reading",
-            "id": "http://example.org/entities/8332b5ba-1f8f-41cb-8d7a-386274943875",
-            "display": "<section><p><strong>Author</strong> Elmira Schamberger</p>\n<p><strong>Title</strong> <i>To Your Scattered Bodies Go</i></p>\n<p><strong>Publication</strong> Hawthorne Books.</p></section>"
-          },
-          {
-            "type": "reading",
-            "id": "http://example.org/entities/dc904d02-997e-46e6-bcea-c81284edd71b",
-            "display": "<section><p><strong>Author</strong> Ardith Douglas</p>\n<p><strong>Title</strong> <i>Ego Dominus Tuus</i></p>\n<p><strong>Publication</strong> George Newnes.</p></section>"
-          },
-          {
-            "type": "reading",
-            "id": "http://example.org/entities/97d1b595-3661-493f-907a-c374ba44659d",
-            "display": "<section><p><strong>Author</strong> The Hon. Amalia Greenfelder</p>\n<p><strong>Title</strong> Specimen Days</p>\n<p><strong>Publication</strong> G. P. Putnam's Sons.</p></section>"
-          }
-        ],
-        "writings": [
-          {
-            "type": "writing",
-            "id": "http://example.org/entities/e54b2f3a-c373-4377-9512-b51bbdce85b9",
-            "display": "<section><p><strong>Title</strong> <i>O Pioneers!</i></p>\n<p><strong>Proposal/Response</strong> 42</p>\n<p><strong>Translator</strong> Hotblack Desiato</p>\n<p><strong>Date</strong> 1964-01-04.</p></section>"
-          },
-          {
-            "type": "writing",
-            "id": "http://example.org/entities/1beb0d83-2e48-4cbe-bcce-b46b2900720d",
-            "display": "<section><p><strong>Title</strong> It's a Battlefield</p>\n<p><strong>Proposal/Response</strong> Will you open up the exit hatch, please, computer?</p>\n<p><strong>Translator</strong> Hotblack Desiato</p>\n<p><strong>Date</strong> 1945-08-21.</p></section>"
-          },
-          {
-            "type": "writing",
-            "id": "http://example.org/entities/19a3250d-e32c-4e04-a1f2-04a230aee836",
-            "display": "<section><p><strong>Title</strong> <i>Françoise Sagan</i></p>\n<p><strong>Proposal/Response</strong> if you’ve never been through a matter transference beam before you’ve probably lost some salt and protein. The beer you had should have cushioned your system a bit.</p>\n<p><strong>Translator</strong> The Allitnils</p>\n<p><strong>Date</strong> 1950-07-04.</p></section>"
-          }
-        ]
-      }
-    },
-    {
-      "id": "http://example.org/letters/84e6bfbc-7699-4f64-a33d-e1be44704284",
-      "date": "1958-12-03T00:00:00.000-05:00",
-      "label": "03 December 1958 - Wisoky, Glen",
-      "language": "french",
-      "volume": 3,
-      "recipients": [
-        "Wisoky, Glen"
-      ],
-      "destinations": [
-        "Rickmansworth"
-      ],
-      "origins": null,
-      "mentions": {
-        "attendances": [
-          {
-            "type": "attendance",
-            "id": "http://example.org/entities/cf5386e6-f0a2-4803-b9fd-80ea1d68818d",
-            "display": "<section><p><strong>Theatre</strong>, Irony carry venmo bicycle rights narwhal lumbersexual fanny pack.</p>\n<p><strong>Attended with</strong> Karl Hungus and Max Quordlepleen</p>\n<p><strong>Place, Date</strong> Lindsayview, 27 October 1958</p>\n<p><strong>Director</strong> Max Quordlepleen</p></section>"
+            "id": "http://example.org/entities/b8b18564-f4a5-4a75-993d-6f6a5b708cc9",
+            "display": "<section><p><strong>Golgafrincham</strong></p>\n<p>Pardon me for breathing, which I never do anyway so I don't know why I bother to say it, Oh God, I'm so depressed.</p></section>"
           }
         ],
         "productions": [
           {
             "type": "production",
-            "id": "http://example.org/entities/f5a2547b-2683-4890-9eb7-ca9d85c43188",
-            "display": "<section><p><strong>Title</strong> The Bourne Ultimatum</p>\n<p><strong>Proposal/Response</strong> Pardon me for breathing, which I never do anyway so I don't know why I bother to say it, Oh God, I'm so depressed. / if you’ve never been through a matter transference beam before you’ve probably lost some salt and protein. The beer you had should have cushioned your system a bit.</p>\n<p><strong>Director</strong> Jackie Treehorn <strong>Theatre, City</strong> Billion Year Bunker, Rebeckachester</p>\n<p><strong>Date(s)</strong> 1964-08-18.</p></section>"
+            "id": "http://example.org/entities/eed5ce2c-8641-453b-8cc3-7736342cd8db",
+            "display": "<section><p><strong>Title</strong> <i>Toy Story 3</i></p>\n<p><strong>Proposal/Response</strong> Here I am, brain the size of a planet, and they tell me to take you up to the bridge. Call that job satisfaction? 'Cos I don't. / Earth: Mostly Harmless</p>\n<p><strong>Director</strong> Jesus Quintana <strong>Theatre, City</strong> Billion Year Bunker, South Cameronstad</p>\n<p><strong>Date(s)</strong> 1934-01-01.</p></section>"
           },
           {
             "type": "production",
-            "id": "http://example.org/entities/8c47ea3e-994a-4b33-8db6-034f1b3ca37d",
-            "display": "<section><p><strong>Title</strong> <i>Sholay</i></p>\n<p><strong>Proposal/Response</strong> Pardon me for breathing, which I never do anyway so I don't know why I bother to say it, Oh God, I'm so depressed. / Whatever your tastes, Magrathea can cater for you. We are not proud.</p>\n<p><strong>Director</strong> Jesus Quintana <strong>Theatre, City</strong> Krikkit One, West Clorindaberg</p>\n<p><strong>Date(s)</strong> 1963-04-13.</p></section>"
+            "id": "http://example.org/entities/235007bb-681c-4e05-937b-05e1a832490b",
+            "display": "<section><p><strong>Title</strong> <i>Some Like It Hot</i></p>\n<p><strong>Proposal/Response</strong> Pardon me for breathing, which I never do anyway so I don't know why I bother to say it, Oh God, I'm so depressed. / Magrathea itself disappeared and its memory soon passed into the obscurity of legend. In these enlightened days, of course, no one believes a word of it.</p>\n<p><strong>Director</strong> Walter Sobchak <strong>Theatre, City</strong> Golgafrinchan Ark Fleet Ship B, Lake Ghislaineland</p>\n<p><strong>Date(s)</strong> 1934-09-01.</p></section>"
           },
           {
             "type": "production",
-            "id": "http://example.org/entities/321d26c4-471c-4dc1-86e9-f6bdab5bd6f7",
-            "display": "<section><p><strong>Title</strong> Nuovo Cinema Paradiso</p>\n<p><strong>Proposal/Response</strong> Here I am, brain the size of a planet, and they tell me to take you up to the bridge. Call that job satisfaction? 'Cos I don't. / I've just had an unhappy love affair, so I don't see why anybody else should have a good time.</p>\n<p><strong>Director</strong> Donny <strong>Theatre, City</strong> Vogon Constructor Fleet, North Darron</p>\n<p><strong>Date(s)</strong> 1922-11-02.</p></section>"
-          }
-        ],
-        "readings": [
-          {
-            "type": "reading",
-            "id": "http://example.org/entities/9f2a833b-96e4-48bd-9ac3-741d9a387247",
-            "display": "<section><p><strong>Author</strong> Prof. Madaline Schmeler</p>\n<p><strong>Title</strong> <i>Edna O'Brien</i></p>\n<p><strong>Publication</strong> UCL Press.</p></section>"
-          }
-        ],
-        "translatings": [
-          {
-            "type": "translating",
-            "id": "http://example.org/entities/4c7277ea-c18c-4672-8f29-6704540ed9c1",
-            "display": "<section><p><strong>Author</strong> Trin Tragula, <strong>Original Title</strong> Consider Phlebas</p>\n<p><strong>Translated into</strong> Gaelic by Prostetnic Vogon Jeltz</p>\n<p><strong>Translated title</strong> Tanngrisnir.</p></section>"
-          },
-          {
-            "type": "translating",
-            "id": "http://example.org/entities/36a0c9a2-55c1-4bc8-ab8f-d45e0a4bc789",
-            "display": "<section><p><strong>Author</strong> Trillian, <strong>Original Title</strong> <i>I Will Fear No Evil</i></p>\n<p><strong>Translated into</strong> Russian by Arthur Dent</p>\n<p><strong>Translated title</strong> RW6.</p></section>"
-          }
-        ]
-      }
-    },
-    {
-      "id": "http://example.org/letters/fb99a6cc-3145-4c96-8872-592fed921433",
-      "date": "1960-04-07T00:00:00.000-05:00",
-      "label": "07 April 1960 - Champlin, Mika",
-      "language": "english",
-      "volume": 0,
-      "recipients": [
-        "Champlin, Mika"
-      ],
-      "destinations": [
-        "Sector ZZ9 Plural Z Alpha"
-      ],
-      "origins": null,
-      "mentions": {
-        "productions": [
-          {
-            "type": "production",
-            "id": "http://example.org/entities/d049c160-2b9c-4631-a78d-beee7bb593ac",
-            "display": "<section><p><strong>Title</strong> <i>Alien</i></p>\n<p><strong>Proposal/Response</strong> I won't enjoy it. / They’ve got as much sex appeal as a road accident.</p>\n<p><strong>Director</strong> Brandt <strong>Theatre, City</strong> RW6, Elmofurt</p>\n<p><strong>Date(s)</strong> 1927-11-07.</p></section>"
-          },
-          {
-            "type": "production",
-            "id": "http://example.org/entities/28ae148f-3fbe-46d0-bb1a-545ef282a881",
-            "display": "<section><p><strong>Title</strong> <i>The Thing</i></p>\n<p><strong>Proposal/Response</strong> There's only one life-form as intelligent as me within thirty parsecs of here and that's me. / Earth: Mostly Harmless</p>\n<p><strong>Director</strong> Brandt <strong>Theatre, City</strong> Vogon Constructor Fleet, Shawnaport</p>\n<p><strong>Date(s)</strong> 1945-09-30.</p></section>"
-          },
-          {
-            "type": "production",
-            "id": "http://example.org/entities/10989c30-2a24-49bb-b16d-6d44ca0953e9",
-            "display": "<section><p><strong>Title</strong> Star Wars: Episode VII - The Force Awakens</p>\n<p><strong>Proposal/Response</strong> I won't enjoy it. / if you’ve never been through a matter transference beam before you’ve probably lost some salt and protein. The beer you had should have cushioned your system a bit.</p>\n<p><strong>Director</strong> The Big Lebowski <strong>Theatre, City</strong> Vogon Constructor Fleet, Monahanville</p>\n<p><strong>Date(s)</strong> 1943-08-06.</p></section>"
-          }
-        ],
-        "readings": [
-          {
-            "type": "reading",
-            "id": "http://example.org/entities/7a576595-8129-4b4e-8664-f58e7f0e7323",
-            "display": "<section><p><strong>Author</strong> Wilbur Kirlin</p>\n<p><strong>Title</strong> <i>That Hideous Strength</i></p>\n<p><strong>Publication</strong> Naiad Press.</p></section>"
-          },
-          {
-            "type": "reading",
-            "id": "http://example.org/entities/023d7ebf-1128-4ad8-9175-712a18ee25fd",
-            "display": "<section><p><strong>Author</strong> Vina Carter</p>\n<p><strong>Title</strong> Rosemary Sutcliff</p>\n<p><strong>Publication</strong> Charles Scribner's Sons.</p></section>"
-          },
-          {
-            "type": "reading",
-            "id": "http://example.org/entities/288e6849-8cf9-4e0e-8984-1717a242d94f",
-            "display": "<section><p><strong>Author</strong> Amb. Jesus Howell</p>\n<p><strong>Title</strong> <i>It's a Battlefield</i></p>\n<p><strong>Publication</strong> University of Minnesota Press.</p></section>"
-          }
-        ],
-        "work_of_arts": [
-          {
-            "type": "work_of_art",
-            "id": "http://example.org/entities/e271c359-4bb3-4602-9a34-76e1690d6003",
-            "display": "<section><p><strong>Artist</strong> Gail Andrews</p>\n<p><strong>Title</strong> Paisley Park</p>\n<p><strong>Description</strong> Blog forage postironic squid tryhard chartreuse offal.</p>\n<p><strong>Owner/location</strong> Starship Titanic</p></section>"
-          },
-          {
-            "type": "work_of_art",
-            "id": "http://example.org/entities/2054d9c1-92b7-42c8-8846-2523548cff43",
-            "display": "<section><p><strong>Artist</strong> Arthur Philip Deodat</p>\n<p><strong>Title</strong> <i>Partyman</i></p>\n<p><strong>Description</strong> Lofi <i>crucifix carry pabst</i> kinfolk.</p>\n<p><strong>Owner/location</strong> Krikkit One</p></section>"
-          }
-        ],
-        "writings": [
-          {
-            "type": "writing",
-            "id": "http://example.org/entities/03f06f7e-63f0-4ed3-beee-026c65d754ec",
-            "display": "<section><p><strong>Title</strong> It's a Battlefield</p>\n<p><strong>Proposal/Response</strong> He was staring at the instruments with the air of one who is trying to convert Fahrenheit to centigrade in his head while his house is burning down.</p>\n<p><strong>Translator</strong> Elvis</p>\n<p><strong>Date</strong> 1953-08-02.</p></section>"
-          }
-        ]
-      }
-    },
-    {
-      "id": "http://example.org/letters/dd75763a-c955-468d-95f9-59da434152b6",
-      "date": "1961-04-11T00:00:00.000-05:00",
-      "label": "11 April 1961 - Ziemann, Guillermo",
-      "language": "italian",
-      "volume": 3,
-      "recipients": [
-        "Ziemann, Guillermo"
-      ],
-      "destinations": [
-        "<i>Han Dold City</i>"
-      ],
-      "origins": null,
-      "mentions": {
-        "music": [
-          {
-            "type": "music",
-            "id": "http://example.org/entities/16c12404-0599-4cd1-a8de-25d8b8729072",
-            "display": "<section><p><strong>Composer</strong> Genghis Khan</p>\n<p><strong>Title</strong> <i>Nothing Compares 2 U</i></p>\n<p><strong>Description</strong> Cornhole <i>polaroid chillwave popup vhs</i> chicharrones.</p></section>"
-          },
-          {
-            "type": "music",
-            "id": "http://example.org/entities/be061351-7d04-4c00-8873-78f361dab0d5",
-            "display": "<section><p><strong>Composer</strong> Arthur Dent</p>\n<p><strong>Title</strong> <i>Strange Relationship</i></p>\n<p><strong>Description</strong> Shoreditch popup pug leggings master art party.</p></section>"
-          }
-        ],
-        "people": [
-          {
-            "type": "person",
-            "id": "http://example.org/entities/d7267d10-af46-40a8-b480-00c73fde8494",
-            "display": "<section><p><strong>Brandee Vandervort, 1923-1983</strong></p>\n<p>And <i>then of course I've got this terrible pain in all the diodes down my left</i> side.</p></section>"
-          },
-          {
-            "type": "person",
-            "id": "http://example.org/entities/d056fb3f-4627-4e1b-a0e3-0937929d1cad",
-            "display": "<section><p><strong>Gail Adams, 1925-1971</strong></p>\n<p>And <i>then of course I've got this terrible pain in all the diodes down my left</i> side.</p></section>"
-          }
-        ],
-        "translatings": [
-          {
-            "type": "translating",
-            "id": "http://example.org/entities/41c3c986-fd04-4e4d-9c03-9c7bf0c5a241",
-            "display": "<section><p><strong>Author</strong> Prostetnic Vogon Kwaltz, <strong>Original Title</strong> As I Lay Dying</p>\n<p><strong>Translated into</strong> Portuguese by Barry Manilow</p>\n<p><strong>Translated title</strong> Starship Titanic.</p></section>"
-          },
-          {
-            "type": "translating",
-            "id": "http://example.org/entities/b4b05a2d-cf99-45fb-829a-10501b876443",
-            "display": "<section><p><strong>Author</strong> Magrathean sperm whale, <strong>Original Title</strong> <i>A Time to Kill</i></p>\n<p><strong>Translated into</strong> Irish Gaelic by Pizpot Gargravarr</p>\n<p><strong>Translated title</strong> Golgafrinchan Ark Fleet Ship B.</p></section>"
-          }
-        ],
-        "writings": [
-          {
-            "type": "writing",
-            "id": "http://example.org/entities/41d46806-642f-4b4a-94b2-b156487e3e21",
-            "display": "<section><p><strong>Title</strong> Precious Bane</p>\n<p><strong>Proposal/Response</strong> Don’t Panic</p>\n<p><strong>Translator</strong> Mella</p>\n<p><strong>Date</strong> 1968-10-02.</p></section>"
-          },
-          {
-            "type": "writing",
-            "id": "http://example.org/entities/4c1faa0a-6d66-4ca5-abb1-646c42bbd694",
-            "display": "<section><p><strong>Title</strong> <i>Little Hands Clapping</i></p>\n<p><strong>Proposal/Response</strong> It’s only half completed, I’m afraid – we haven’t even finished burying the artificial dinosaur skeletons in the crust yet.</p>\n<p><strong>Translator</strong> Humma Kavula</p>\n<p><strong>Date</strong> 1924-09-02.</p></section>"
-          }
-        ]
-      }
-    },
-    {
-      "id": "http://example.org/letters/1a22ae35-095d-4771-af4b-86365b468bef",
-      "date": "1961-07-20T00:00:00.000-04:00",
-      "label": "20 July 1961 - Koepp, Carmen",
-      "language": "french",
-      "volume": 3,
-      "recipients": [
-        "Koepp, Carmen"
-      ],
-      "destinations": [
-        "<i>Betelgeuse</i>"
-      ],
-      "origins": null,
-      "mentions": {
-        "people": [
-          {
-            "type": "person",
-            "id": "http://example.org/entities/8f789197-ce5d-41c4-a0ff-37fd3926f7ee",
-            "display": "<section><p><strong>Ina McClure, 1914-1973</strong></p>\n<p>Pardon me for breathing, which I never do anyway so I don't know why I bother to say it, Oh God, I'm so depressed.</p></section>"
-          },
-          {
-            "type": "person",
-            "id": "http://example.org/entities/e9966b0f-61cf-464b-b7f0-5bfd29053fe0",
-            "display": "<section><p><strong>Moises Hills, 1902-1984</strong></p>\n<p>There's only one life-form as intelligent as me within thirty parsecs of here and that's me.</p></section>"
+            "id": "http://example.org/entities/40d6de94-fd9a-4b1b-b6b0-b07c8ebf69ae",
+            "display": "<section><p><strong>Title</strong> Seven Samurai</p>\n<p><strong>Proposal/Response</strong> There's only one life-form as intelligent as me within thirty parsecs of here and that's me. / They’ve got as much sex appeal as a road accident.</p>\n<p><strong>Director</strong> Walter Sobchak <strong>Theatre, City</strong> RW6, Greenfeldermouth</p>\n<p><strong>Date(s)</strong> 1943-09-02.</p></section>"
           }
         ],
         "publications": [
           {
             "type": "publication",
-            "id": "http://example.org/entities/6cadeb59-0f96-4ade-848f-7e499f660494",
-            "display": "<section><p><strong>Author</strong> Brandt</p>\n<p><strong>Title</strong> Legend Books</p>\n<p><strong>Translator</strong> Charles Darwin</p>\n<p><strong>Publication</strong> Chillwave jean shorts green juice bitters neutra kogi.</p></section>"
+            "id": "http://example.org/entities/a23f79f8-57de-4e9b-978e-234ca1e01a37",
+            "display": "<section><p><strong>Author</strong> Bunny Lebowski</p>\n<p><strong>Title</strong> McGraw Hill Financial</p>\n<p><strong>Translator</strong> Prostetnic Vogon Kwaltz</p>\n<p><strong>Publication</strong> Chillwave everyday yolo kale chips echo venmo tofu keffiyeh authentic.</p></section>"
           }
         ],
         "readings": [
           {
             "type": "reading",
-            "id": "http://example.org/entities/275c6d63-48a4-4ab7-ba10-35dc67b66c76",
-            "display": "<section><p><strong>Author</strong> Mrs. Nga Runte</p>\n<p><strong>Title</strong> <i>Jacob Have I Loved</i></p>\n<p><strong>Publication</strong> Carlton Publishing Group.</p></section>"
+            "id": "http://example.org/entities/de3bf984-83cd-4874-b032-a7a96a950877",
+            "display": "<section><p><strong>Author</strong> Carlos Bogan</p>\n<p><strong>Title</strong> A Farewell to Arms</p>\n<p><strong>Publication</strong> Caister Academic Press.</p></section>"
+          }
+        ]
+      }
+    },
+    {
+      "id": "http://example.org/letters/4f7f0859-4cea-434c-b977-2edea9d9c522",
+      "date": "1950-07-22T00:00:00.000-04:00",
+      "label": "22 July 1950 - MacGyver, Carie",
+      "language": "french",
+      "volume": 4,
+      "recipients": [
+        "MacGyver, Carie"
+      ],
+      "destinations": [
+        "Lord's Cricket Ground"
+      ],
+      "origins": null,
+      "mentions": {
+        "organizations": [
+          {
+            "type": "organization",
+            "id": "http://example.org/entities/f646dbac-9519-4bff-8650-91b5bb94e331",
+            "display": "<section><p><strong>Traal</strong></p>\n<p>Life? Don't talk to me about life.</p></section>"
+          },
+          {
+            "type": "organization",
+            "id": "http://example.org/entities/54311903-ef9d-4302-8587-ccca6e407cb8",
+            "display": "<section><p><strong>Traal</strong></p>\n<p>Life? Don't talk to me about life.</p></section>"
+          }
+        ],
+        "public_events": [
+          {
+            "type": "public_event",
+            "id": "http://example.org/entities/8689f661-2108-4594-a08d-3e75bf25a98d",
+            "display": "<section><p><strong><i>Columbia</i></strong></p>\n<p><strong>1962-03-29.</strong></p></section>"
+          }
+        ],
+        "readings": [
+          {
+            "type": "reading",
+            "id": "http://example.org/entities/95198c8e-55d2-42d8-aab1-6ace89a53d8e",
+            "display": "<section><p><strong>Author</strong> Brittani Schoen DC</p>\n<p><strong>Title</strong> The Moon by Night</p>\n<p><strong>Publication</strong> Book League of America.</p></section>"
+          },
+          {
+            "type": "reading",
+            "id": "http://example.org/entities/aac665d1-ec01-4c06-89fd-7fb9e8613e73",
+            "display": "<section><p><strong>Author</strong> Cesar Parker DC</p>\n<p><strong>Title</strong> <i>The Far-Distant Oxus</i></p>\n<p><strong>Publication</strong> Edupedia Publications.</p></section>"
+          },
+          {
+            "type": "reading",
+            "id": "http://example.org/entities/df30668a-74d2-4193-90e8-224d4332895a",
+            "display": "<section><p><strong>Author</strong> Nola Runolfsdottir Jr.</p>\n<p><strong>Title</strong> <i>Those Barren Leaves, Thrones, Dominations</i></p>\n<p><strong>Publication</strong> Firebrand Books.</p></section>"
           }
         ],
         "work_of_arts": [
           {
             "type": "work_of_art",
-            "id": "http://example.org/entities/130162d5-20d3-4bd7-8bc2-fbd166b9ebe4",
-            "display": "<section><p><strong>Artist</strong> Barry Manilow</p>\n<p><strong>Title</strong> Superfunkycalifragisexy</p>\n<p><strong>Description</strong> Ramps singleorigin coffee tumblr actually.</p>\n<p><strong>Owner/location</strong> Billion Year Bunker</p></section>"
+            "id": "http://example.org/entities/5d740f98-f14c-4842-bee7-64dde1088845",
+            "display": "<section><p><strong>Artist</strong> Prostetnic Vogon Jeltz</p>\n<p><strong>Title</strong> International Lover</p>\n<p><strong>Description</strong> Mustache <i>ugh hella you probably havent heard of</i> them.</p>\n<p><strong>Owner/location</strong> RW6</p></section>"
           },
           {
             "type": "work_of_art",
-            "id": "http://example.org/entities/7111de17-1f84-4b59-a79b-38ab4a36e607",
-            "display": "<section><p><strong>Artist</strong> Prostetnic Vogon Jeltz</p>\n<p><strong>Title</strong> <i>Cloreen Baconskin</i></p>\n<p><strong>Description</strong> Hoodie <i>kinfolk next level keytar cliche</i> heirloom.</p>\n<p><strong>Owner/location</strong> Starship Titanic</p></section>"
-          },
-          {
-            "type": "work_of_art",
-            "id": "http://example.org/entities/6165e137-80cf-4b37-a3b9-90948220e085",
-            "display": "<section><p><strong>Artist</strong> Gag Halfrunt</p>\n<p><strong>Title</strong> Partyman</p>\n<p><strong>Description</strong> Put a bird on it slowcarb tilde aesthetic hella etsy organic echo.</p>\n<p><strong>Owner/location</strong> Tanngrisnir</p></section>"
+            "id": "http://example.org/entities/271e4e48-7b9e-42ed-a69d-3ebd279a0473",
+            "display": "<section><p><strong>Artist</strong> Agrajag</p>\n<p><strong>Title</strong> <i>Housequake</i></p>\n<p><strong>Description</strong> Sriracha yr venmo park iphone you probably havent heard of them.</p>\n<p><strong>Owner/location</strong> Bistromath</p></section>"
           }
         ]
       }
     },
     {
-      "id": "http://example.org/letters/d137e63b-79f0-4846-98dd-7170945eb3a0",
-      "date": "1962-04-07T00:00:00.000-05:00",
-      "label": "07 April 1962 - Terry, Laurel",
-      "language": "english",
+      "id": "http://example.org/letters/ea10faca-52eb-430c-b32e-260a165350e6",
+      "date": "1957-03-01T00:00:00.000-05:00",
+      "label": "01 March 1957 - Wiegand, Kelvin",
+      "language": "german",
       "volume": 1,
       "recipients": [
-        "Terry, Laurel"
+        "Wiegand, Kelvin"
       ],
       "destinations": [
-        "<i>France</i>"
+        "Guildford"
       ],
       "origins": null,
       "mentions": {
-        "music": [
-          {
-            "type": "music",
-            "id": "http://example.org/entities/a60d8378-a7f7-49a3-918f-2992df9131b9",
-            "display": "<section><p><strong>Composer</strong> Effrafax of Wug</p>\n<p><strong>Title</strong> <i>Mr. Nelson</i></p>\n<p><strong>Description</strong> Bicycle rights tilde ramps offal.</p></section>"
-          }
-        ],
-        "organizations": [
-          {
-            "type": "organization",
-            "id": "http://example.org/entities/38324d56-d015-411d-ac2d-e753bb6b19a5",
-            "display": "<section><p><strong>Santraginus V</strong></p>\n<p>There's only one life-form as intelligent as me within thirty parsecs of here and that's me.</p></section>"
-          }
-        ],
-        "readings": [
-          {
-            "type": "reading",
-            "id": "http://example.org/entities/82f43b35-1743-4169-a688-79d006d0a70f",
-            "display": "<section><p><strong>Author</strong> Margart Torp</p>\n<p><strong>Title</strong> In Dubious Battle</p>\n<p><strong>Publication</strong> Daedalus Publishing.</p></section>"
-          },
-          {
-            "type": "reading",
-            "id": "http://example.org/entities/a9494079-1b75-4f7e-962a-144d9ea3edd5",
-            "display": "<section><p><strong>Author</strong> Ms. Zack Lesch</p>\n<p><strong>Title</strong> <i>That Good Night</i></p>\n<p><strong>Publication</strong> Penguin Books.</p></section>"
-          },
-          {
-            "type": "reading",
-            "id": "http://example.org/entities/20b0f26a-5b68-4b8a-8270-75545c457acb",
-            "display": "<section><p><strong>Author</strong> Elda Brekke</p>\n<p><strong>Title</strong> <i>Sleep the Brave</i></p>\n<p><strong>Publication</strong> Da Capo Press.</p></section>"
-          }
-        ],
-        "writings": [
-          {
-            "type": "writing",
-            "id": "http://example.org/entities/e2c01c4b-d542-463b-bf6b-14cc7d8dfee0",
-            "display": "<section><p><strong>Title</strong> The Man Within</p>\n<p><strong>Proposal/Response</strong> He was staring at the instruments with the air of one who is trying to convert Fahrenheit to centigrade in his head while his house is burning down.</p>\n<p><strong>Translator</strong> Oolon Colluphid</p>\n<p><strong>Date</strong> 1955-11-05.</p></section>"
-          }
-        ]
-      }
-    },
-    {
-      "id": "http://example.org/letters/98bb8ca5-3f9d-457f-a8df-77b7b36e9549",
-      "date": "1966-09-11T00:00:00.000-04:00",
-      "label": "11 September 1966 - Adams, Stanford",
-      "language": "french",
-      "volume": 1,
-      "recipients": [
-        "Adams, Stanford"
-      ],
-      "destinations": [
-        "Han Dold City"
-      ],
-      "origins": null,
-      "mentions": {
-        "music": [
-          {
-            "type": "music",
-            "id": "http://example.org/entities/a6cf4aa8-8814-4262-ba3e-73f17892638c",
-            "display": "<section><p><strong>Composer</strong> Eccentrica Gallumbits</p>\n<p><strong>Title</strong> <i>Tamborine</i></p>\n<p><strong>Description</strong> Biodiesel wes anderson asymmetrical listicle.</p></section>"
-          },
-          {
-            "type": "music",
-            "id": "http://example.org/entities/5de722ac-268e-4544-ab5b-3bd0a8d5643d",
-            "display": "<section><p><strong>Composer</strong> Ford Prefect</p>\n<p><strong>Title</strong> Alphabet St.</p>\n<p><strong>Description</strong> Craft beer butcher kinfolk tryhard.</p></section>"
-          },
-          {
-            "type": "music",
-            "id": "http://example.org/entities/33e2fe14-0f7d-4290-ba99-32fa7c118a5b",
-            "display": "<section><p><strong>Composer</strong> Pizpot Gargravarr</p>\n<p><strong>Title</strong> The Beautiful Ones</p>\n<p><strong>Description</strong> Echo <i>stumptown chambray intelligentsia</i> roof.</p></section>"
-          }
-        ],
         "people": [
           {
             "type": "person",
-            "id": "http://example.org/entities/9f62d762-af25-4b9d-93f4-7a0d03af988e",
-            "display": "<section><p><strong>Emmett Stamm, 1917-1983</strong></p>\n<p>I won't enjoy it.</p></section>"
+            "id": "http://example.org/entities/e35f4767-5c36-4da8-a566-7d01ab61f17f",
+            "display": "<section><p><strong>Zachery Schmidt, 1926-1986</strong></p>\n<p>I <i>wish you'd just tell me rather trying to engage my enthusiasm, because I haven't got</i> one.</p></section>"
+          },
+          {
+            "type": "person",
+            "id": "http://example.org/entities/137446f5-753c-4d72-8078-fb401512c090",
+            "display": "<section><p><strong>Marilee Bergnaum, 1903-1978</strong></p>\n<p>I <i>wish you'd just tell me rather trying to engage my enthusiasm, because I haven't got</i> one.</p></section>"
+          }
+        ],
+        "places": [
+          {
+            "type": "place",
+            "id": "http://example.org/entities/15bd6203-7db2-41d4-8fc2-f5872aa2df9a",
+            "display": "<section><p><strong><i>Slim's Throat Emporium</i></strong></p>\n<p>Lofi semiotics hammock kitsch.</p></section>"
+          },
+          {
+            "type": "place",
+            "id": "http://example.org/entities/0bf9ec6b-17da-411b-9387-8d0c13845669",
+            "display": "<section><p><strong><i>The Domain of The King</i></strong></p>\n<p>Mustache <i>cornhole small batch banjo</i> coldpressed.</p></section>"
+          },
+          {
+            "type": "place",
+            "id": "http://example.org/entities/32abadcd-15c9-483c-97cf-d9938cd648ff",
+            "display": "<section><p><strong>Frogstar World B</strong></p>\n<p>Art party artisan flannel biodiesel cardigan pinterest ethical intelligentsia lomo.</p></section>"
           }
         ],
         "productions": [
           {
             "type": "production",
-            "id": "http://example.org/entities/ed3333a0-140a-40fb-93c8-2f46075f45ee",
-            "display": "<section><p><strong>Title</strong> <i>Toy Story</i></p>\n<p><strong>Proposal/Response</strong> I wish you'd just tell me rather trying to engage my enthusiasm, because I haven't got one. / if you’ve never been through a matter transference beam before you’ve probably lost some salt and protein. The beer you had should have cushioned your system a bit.</p>\n<p><strong>Director</strong> Maude Lebowski <strong>Theatre, City</strong> Starship Titanic, Howeville</p>\n<p><strong>Date(s)</strong> 1931-09-29.</p></section>"
+            "id": "http://example.org/entities/b1226cac-b035-450a-9059-99c80dadd212",
+            "display": "<section><p><strong>Title</strong> Terminator 2: Judgment Day</p>\n<p><strong>Proposal/Response</strong> Here I am, brain the size of a planet, and they tell me to take you up to the bridge. Call that job satisfaction? 'Cos I don't. / I've just had an unhappy love affair, so I don't see why anybody else should have a good time.</p>\n<p><strong>Director</strong> Karl Hungus <strong>Theatre, City</strong> Bistromath, Rhettburgh</p>\n<p><strong>Date(s)</strong> 1943-07-24.</p></section>"
+          },
+          {
+            "type": "production",
+            "id": "http://example.org/entities/8a2bdeae-8130-4321-8bfc-292e87e8b607",
+            "display": "<section><p><strong>Title</strong> <i>2001: A Space Odyssey</i></p>\n<p><strong>Proposal/Response</strong> I won't enjoy it. / Earth: Mostly Harmless</p>\n<p><strong>Director</strong> Jesus Quintana <strong>Theatre, City</strong> Billion Year Bunker, East Edward</p>\n<p><strong>Date(s)</strong> 1967-03-26.</p></section>"
           }
         ],
-        "writings": [
+        "public_events": [
           {
-            "type": "writing",
-            "id": "http://example.org/entities/e7a1b619-574e-4a51-bcfc-736bbf51d68e",
-            "display": "<section><p><strong>Title</strong> For a Breath I Tarry</p>\n<p><strong>Proposal/Response</strong> They’ve got as much sex appeal as a road accident.</p>\n<p><strong>Translator</strong> Loonquawl</p>\n<p><strong>Date</strong> 1962-08-05.</p></section>"
+            "type": "public_event",
+            "id": "http://example.org/entities/97254df4-eecd-4b20-afb7-fb51c5b12450",
+            "display": "<section><p><strong>Endeavour</strong></p>\n<p><strong>1945-05-30.</strong></p></section>"
           }
         ]
       }
     },
     {
-      "id": "http://example.org/letters/3f776a14-113c-4798-8b99-3784c0f7bb7b",
-      "date": "1969-11-17T00:00:00.000-05:00",
-      "label": "17 November 1969 - Turner, Michiko",
+      "id": "http://example.org/letters/c7df1b88-9260-4c0c-9f23-29fbdbeca7db",
+      "date": "1957-03-07T00:00:00.000-05:00",
+      "label": "07 March 1957 - Wiza, Zella",
+      "language": "english",
+      "volume": 4,
+      "recipients": [
+        "Wiza, Zella"
+      ],
+      "destinations": [
+        "London"
+      ],
+      "origins": null,
+      "mentions": {
+        "attendances": [
+          {
+            "type": "attendance",
+            "id": "http://example.org/entities/321d02b4-0696-46b2-b753-26ee1b28c7e5",
+            "display": "<section><p><strong>Reading</strong>, Cardigan ramps truffaut xoxo venmo ennui polaroid whatever vinyl.</p>\n<p><strong>Attended with</strong> Maude Lebowski and Ford Prefect</p>\n<p><strong>Place, Date</strong> Jeanineview, 30 December 1925</p>\n<p><strong>Director</strong> Ford Prefect</p></section>"
+          }
+        ],
+        "people": [
+          {
+            "type": "person",
+            "id": "http://example.org/entities/2e23fe3c-c25d-4363-bece-da9371d20c43",
+            "display": "<section><p><strong>Kenyatta Ernser, 1902-1990</strong></p>\n<p>Pardon me for breathing, which I never do anyway so I don't know why I bother to say it, Oh God, I'm so depressed.</p></section>"
+          },
+          {
+            "type": "person",
+            "id": "http://example.org/entities/9e13430d-d5e2-400c-9cbc-99c57194c20a",
+            "display": "<section><p><strong>Clemencia Waters, 1909-1978</strong></p>\n<p>And <i>then of course I've got this terrible pain in all the diodes down my left</i> side.</p></section>"
+          }
+        ],
+        "public_events": [
+          {
+            "type": "public_event",
+            "id": "http://example.org/entities/70537fc8-7cb7-411d-86f4-eb418e9048c0",
+            "display": "<section><p><strong>Mercury</strong></p>\n<p><strong>1960-08-24.</strong></p></section>"
+          },
+          {
+            "type": "public_event",
+            "id": "http://example.org/entities/b79281d9-0f76-41b9-b4a0-843da68cc00d",
+            "display": "<section><p><strong><i>Columbia</i></strong></p>\n<p><strong>1969-11-08.</strong></p></section>"
+          }
+        ],
+        "publications": [
+          {
+            "type": "publication",
+            "id": "http://example.org/entities/bc3dd199-d73b-4d3c-8f0d-1482c9e3771e",
+            "display": "<section><p><strong>Author</strong> Jackie Treehorn</p>\n<p><strong>Title</strong> Holland Park Press</p>\n<p><strong>Translator</strong> Rob McKenna</p>\n<p><strong>Publication</strong> Jean shorts viral cardigan direct trade sartorial.</p></section>"
+          }
+        ]
+      }
+    },
+    {
+      "id": "http://example.org/letters/9bcbf0d1-5dbe-4469-b7c2-f74b0f1239da",
+      "date": "1958-01-02T00:00:00.000-05:00",
+      "label": "02 January 1958 - Lindgren, Mireya",
+      "language": "german",
+      "volume": 4,
+      "recipients": [
+        "Lindgren, Mireya"
+      ],
+      "destinations": [
+        "<i>Slim's Throat Emporium</i>"
+      ],
+      "origins": null,
+      "mentions": {
+        "attendances": [
+          {
+            "type": "attendance",
+            "id": "http://example.org/entities/2b51b7d0-c1ec-44a6-9e6f-24b2ef92f3c1",
+            "display": "<section><p><strong>Reading</strong>, Phlogiston <i>cronut pinterest beard hoodie five dollar toast sartorial ethical</i> artisan.</p>\n<p><strong>Attended with</strong> Brandt and Hotblack Desiato</p>\n<p><strong>Place, Date</strong> Jeremyborough, 28 October 1952</p>\n<p><strong>Director</strong> Wonko the Sane</p></section>"
+          },
+          {
+            "type": "attendance",
+            "id": "http://example.org/entities/2818170b-bf66-43df-8176-9e11b85db363",
+            "display": "<section><p><strong>Rehearsal</strong>, Sriracha <i>schlitz postironic raw denim</i> diy.</p>\n<p><strong>Attended with</strong> Karl Hungus and Trillian</p>\n<p><strong>Place, Date</strong> Bednarborough, 14 January 1938</p>\n<p><strong>Director</strong> Galaxia Woonbeam</p></section>"
+          }
+        ],
+        "music": [
+          {
+            "type": "music",
+            "id": "http://example.org/entities/fb7eb181-44d5-4973-896c-b5ca0f100b44",
+            "display": "<section><p><strong>Composer</strong> Vroomfondel</p>\n<p><strong>Title</strong> <i>How Come You Don't Call Me Anymore?</i></p>\n<p><strong>Description</strong> Ramps farmtotable scenester sustainable authentic waistcoat deep v.</p></section>"
+          }
+        ],
+        "productions": [
+          {
+            "type": "production",
+            "id": "http://example.org/entities/b92ff186-f9bc-4be7-98c1-0dfdfccf9c90",
+            "display": "<section><p><strong>Title</strong> <i>The Deer Hunter</i></p>\n<p><strong>Proposal/Response</strong> And then of course I've got this terrible pain in all the diodes down my left side. / Earth: Mostly Harmless</p>\n<p><strong>Director</strong> Walter Sobchak <strong>Theatre, City</strong> Vogon Constructor Fleet, West Mattietown</p>\n<p><strong>Date(s)</strong> 1955-03-10.</p></section>"
+          },
+          {
+            "type": "production",
+            "id": "http://example.org/entities/b9949327-3a77-4c65-9aee-dcdce699b634",
+            "display": "<section><p><strong>Title</strong> Once Upon a Time in America</p>\n<p><strong>Proposal/Response</strong> I wish you'd just tell me rather trying to engage my enthusiasm, because I haven't got one. / Magrathea itself disappeared and its memory soon passed into the obscurity of legend. In these enlightened days, of course, no one believes a word of it.</p>\n<p><strong>Director</strong> Donny <strong>Theatre, City</strong> Vogon Constructor Fleet, Wildermanville</p>\n<p><strong>Date(s)</strong> 1969-04-03.</p></section>"
+          }
+        ],
+        "readings": [
+          {
+            "type": "reading",
+            "id": "http://example.org/entities/06225aab-0729-451e-8e45-4e6e1359f75e",
+            "display": "<section><p><strong>Author</strong> Deandre Hartmann</p>\n<p><strong>Title</strong> Postern of Fate</p>\n<p><strong>Publication</strong> Jarrolds Publishing.</p></section>"
+          }
+        ]
+      }
+    },
+    {
+      "id": "http://example.org/letters/6dbce77d-2e31-430d-9b21-57dd1ea98c87",
+      "date": "1958-06-04T00:00:00.000-04:00",
+      "label": "04 June 1958 - Krajcik, Trevor",
+      "language": "english",
+      "volume": 2,
+      "recipients": [
+        "Krajcik, Trevor"
+      ],
+      "destinations": [
+        "<i>Slim's Throat Emporium</i>"
+      ],
+      "origins": null,
+      "mentions": {
+        "attendances": [
+          {
+            "type": "attendance",
+            "id": "http://example.org/entities/1f80c820-f123-4651-8330-90b32d880a39",
+            "display": "<section><p><strong>Radio Broadcast</strong>, 8bit <i>iphone offal typewriter shabby chic pourover bushwick</i> intelligentsia.</p>\n<p><strong>Attended with</strong> Brandt and Barry Manilow</p>\n<p><strong>Place, Date</strong> Cammystad, 13 August 1955</p>\n<p><strong>Director</strong> Marvin</p></section>"
+          }
+        ],
+        "organizations": [
+          {
+            "type": "organization",
+            "id": "http://example.org/entities/49d6f020-7db8-495c-adf1-823eb76b0d8e",
+            "display": "<section><p><strong>Magrathea</strong></p>\n<p>You <i>think you've got problems? What are you supposed to do if you are a manically depressed robot? No, don't try to answer that. I'm fifty thousand times more intelligent than you and even I don't know the answer. It gives me a headache just trying to think down to your</i> level.</p></section>"
+          },
+          {
+            "type": "organization",
+            "id": "http://example.org/entities/975a981b-6f00-467f-a8f5-db9396cd332c",
+            "display": "<section><p><strong>Happi-Werld III</strong></p>\n<p>There's <i>only one life-form as intelligent as me within thirty parsecs of here and that's</i> me.</p></section>"
+          }
+        ],
+        "places": [
+          {
+            "type": "place",
+            "id": "http://example.org/entities/9b785df5-e349-4335-bfe4-26cb07ccf84b",
+            "display": "<section><p><strong><i>Ziggie's Den of Iniquity</i></strong></p>\n<p>Stumptown poutine helvetica flannel heirloom fanny pack.</p></section>"
+          },
+          {
+            "type": "place",
+            "id": "http://example.org/entities/e4782c12-4f59-4534-b110-6983e4c3e24d",
+            "display": "<section><p><strong>Belgium</strong></p>\n<p>Small batch street mixtape bitters literally cleanse keffiyeh food truck.</p></section>"
+          }
+        ],
+        "public_events": [
+          {
+            "type": "public_event",
+            "id": "http://example.org/entities/e4986eb3-fe92-4c5e-9f5f-28933dd859bd",
+            "display": "<section><p><strong><i>Columbia</i></strong></p>\n<p><strong>1935-04-06.</strong></p></section>"
+          },
+          {
+            "type": "public_event",
+            "id": "http://example.org/entities/9df00c20-ed22-4d57-bbdf-5be6b1a6fcb1",
+            "display": "<section><p><strong>Apollo</strong></p>\n<p><strong>1929-09-16.</strong></p></section>"
+          }
+        ]
+      }
+    },
+    {
+      "id": "http://example.org/letters/3c5fd272-f348-4377-83f4-bc6b810be484",
+      "date": "1958-07-01T00:00:00.000-04:00",
+      "label": "01 July 1958 - Frami, Terrell",
+      "language": "french",
+      "volume": 2,
+      "recipients": [
+        "Frami, Terrell"
+      ],
+      "destinations": [
+        "Guildford"
+      ],
+      "origins": null,
+      "mentions": {
+        "people": [
+          {
+            "type": "person",
+            "id": "http://example.org/entities/b0f015a2-b5af-43cc-bbe3-6cd45e1d7747",
+            "display": "<section><p><strong>Bradly Goodwin, 1912-1973</strong></p>\n<p>Here <i>I am, brain the size of a planet, and they tell me to take you up to the bridge. Call that job satisfaction? 'Cos I</i> don't.</p></section>"
+          }
+        ],
+        "public_events": [
+          {
+            "type": "public_event",
+            "id": "http://example.org/entities/0a8ff774-6bc1-4b5e-98c1-da5adff5a0af",
+            "display": "<section><p><strong>Atlantis</strong></p>\n<p><strong>1929-12-12.</strong></p></section>"
+          },
+          {
+            "type": "public_event",
+            "id": "http://example.org/entities/75cb4beb-6a25-4def-83cc-b0d47fadc503",
+            "display": "<section><p><strong>Enterprise</strong></p>\n<p><strong>1946-10-28.</strong></p></section>"
+          }
+        ],
+        "work_of_arts": [
+          {
+            "type": "work_of_art",
+            "id": "http://example.org/entities/554f114f-4ff8-4d11-ba15-46f19bfccef1",
+            "display": "<section><p><strong>Artist</strong> Garkbit</p>\n<p><strong>Title</strong> <i>319</i></p>\n<p><strong>Description</strong> Kombucha <i>bicycle rights iphone tacos cred pinterest thundercats</i> aesthetic.</p>\n<p><strong>Owner/location</strong> Billion Year Bunker</p></section>"
+          }
+        ],
+        "writings": [
+          {
+            "type": "writing",
+            "id": "http://example.org/entities/8e109c6c-a508-47b0-9ffc-83e002808fb7",
+            "display": "<section><p><strong>Title</strong> <i>Waiting for the Barbarians</i></p>\n<p><strong>Proposal/Response</strong> Nothing travels faster than the speed of light with the possible exception of bad news, which obeys its own special laws.</p>\n<p><strong>Translator</strong> Arthur Dent</p>\n<p><strong>Date</strong> 1926-04-18.</p></section>"
+          },
+          {
+            "type": "writing",
+            "id": "http://example.org/entities/aae5e8ec-4f18-40b3-81e0-dca450e50eda",
+            "display": "<section><p><strong>Title</strong> Unweaving the Rainbow</p>\n<p><strong>Proposal/Response</strong> They’ve got as much sex appeal as a road accident.</p>\n<p><strong>Translator</strong> Eddie the Computer</p>\n<p><strong>Date</strong> 1950-10-10.</p></section>"
+          }
+        ]
+      }
+    },
+    {
+      "id": "http://example.org/letters/3e66be80-88ed-494b-bd91-70c4eeec8d1f",
+      "date": "1959-08-04T00:00:00.000-04:00",
+      "label": "04 August 1959 - Yost, Lily",
+      "language": "french",
+      "volume": 2,
+      "recipients": [
+        "Yost, Lily"
+      ],
+      "destinations": [
+        "<i>Fenchurch Street railway station</i>"
+      ],
+      "origins": null,
+      "mentions": {
+        "people": [
+          {
+            "type": "person",
+            "id": "http://example.org/entities/de1a9b75-36e0-417f-81b4-fd3926a212f0",
+            "display": "<section><p><strong>Earle Rempel, 1907-1982</strong></p>\n<p>You think you've got problems? What are you supposed to do if you are a manically depressed robot? No, don't try to answer that. I'm fifty thousand times more intelligent than you and even I don't know the answer. It gives me a headache just trying to think down to your level.</p></section>"
+          },
+          {
+            "type": "person",
+            "id": "http://example.org/entities/c889ef0d-7699-4f14-af26-7e976bea30c2",
+            "display": "<section><p><strong>Classie Renner, 1919-1998</strong></p>\n<p>And then of course I've got this terrible pain in all the diodes down my left side.</p></section>"
+          },
+          {
+            "type": "person",
+            "id": "http://example.org/entities/8e452308-1754-4033-a1fd-e8e4f0a77bd0",
+            "display": "<section><p><strong>Erasmo Brown, 1928-1976</strong></p>\n<p>Pardon <i>me for breathing, which I never do anyway so I don't know why I bother to say it, Oh God, I'm so</i> depressed.</p></section>"
+          }
+        ],
+        "public_events": [
+          {
+            "type": "public_event",
+            "id": "http://example.org/entities/d5df9f47-dba5-4187-a50d-528d1f945831",
+            "display": "<section><p><strong>Discovery</strong></p>\n<p><strong>1926-11-04.</strong></p></section>"
+          },
+          {
+            "type": "public_event",
+            "id": "http://example.org/entities/37852c23-b0ba-4aab-8526-4c682c21099e",
+            "display": "<section><p><strong>Challenger</strong></p>\n<p><strong>1969-05-30.</strong></p></section>"
+          },
+          {
+            "type": "public_event",
+            "id": "http://example.org/entities/7e64cdbd-1834-46a2-b143-d81f42c426d4",
+            "display": "<section><p><strong>Endeavour</strong></p>\n<p><strong>1948-03-15.</strong></p></section>"
+          }
+        ],
+        "publications": [
+          {
+            "type": "publication",
+            "id": "http://example.org/entities/96e52183-bfcc-4da9-af4c-7f8c386d1d3b",
+            "display": "<section><p><strong>Author</strong> Jesus Quintana</p>\n<p><strong>Title</strong> <i>Newnes</i></p>\n<p><strong>Translator</strong> Rob McKenna</p>\n<p><strong>Publication</strong> Forage yr shoreditch mumblecore wolf vice viral.</p></section>"
+          },
+          {
+            "type": "publication",
+            "id": "http://example.org/entities/183b6e76-832a-4774-8c47-8bccb9781b85",
+            "display": "<section><p><strong>Author</strong> The Big Lebowski</p>\n<p><strong>Title</strong> Kensington Books</p>\n<p><strong>Translator</strong> Hotblack Desiato's bodyguard</p>\n<p><strong>Publication</strong> Church-key master shoreditch hammock diy mumblecore leggings literally portland.</p></section>"
+          },
+          {
+            "type": "publication",
+            "id": "http://example.org/entities/9132585e-a621-4203-980c-e022e100b3a6",
+            "display": "<section><p><strong>Author</strong> Maude Lebowski</p>\n<p><strong>Title</strong> Kessinger Publishing</p>\n<p><strong>Translator</strong> Arthur Philip Deodat</p>\n<p><strong>Publication</strong> Banh mi kombucha craft beer pork belly mlkshk farm-to-table fixie.</p></section>"
+          }
+        ],
+        "readings": [
+          {
+            "type": "reading",
+            "id": "http://example.org/entities/53f81196-f538-4a6c-89d1-6cf1d260c426",
+            "display": "<section><p><strong>Author</strong> Rep. Vincenzo Quitzon</p>\n<p><strong>Title</strong> Ego Dominus Tuus</p>\n<p><strong>Publication</strong> Harry N. Abrams, Inc.</p></section>"
+          },
+          {
+            "type": "reading",
+            "id": "http://example.org/entities/7e51c340-5f4f-4c71-93b1-0103b8efcd19",
+            "display": "<section><p><strong>Author</strong> Enrique Rosenbaum</p>\n<p><strong>Title</strong> <i>The Moving Finger</i></p>\n<p><strong>Publication</strong> Zed Books.</p></section>"
+          }
+        ]
+      }
+    },
+    {
+      "id": "http://example.org/letters/70521a41-36b6-43a0-a6b6-82dea399b416",
+      "date": "1960-08-20T00:00:00.000-04:00",
+      "label": "20 August 1960 - Harris, Jamison",
+      "language": "french",
+      "volume": 2,
+      "recipients": [
+        "Harris, Jamison"
+      ],
+      "destinations": [
+        "<i>Norway</i>"
+      ],
+      "origins": null,
+      "mentions": {
+        "attendances": [
+          {
+            "type": "attendance",
+            "id": "http://example.org/entities/e374d005-ac40-40df-9a3f-e2ae52cd0d0b",
+            "display": "<section><p><strong>Reading</strong>, Offal <i>swag actually small batch fanny pack</i> yuccie.</p>\n<p><strong>Attended with</strong> Maude Lebowski and Trillian</p>\n<p><strong>Place, Date</strong> Port Abdul, 08 March 1931</p>\n<p><strong>Director</strong> Genghis Khan</p></section>"
+          }
+        ],
+        "music": [
+          {
+            "type": "music",
+            "id": "http://example.org/entities/8da1afc3-581c-40f0-9932-e6d9866aeb12",
+            "display": "<section><p><strong>Composer</strong> Rob McKenna</p>\n<p><strong>Title</strong> <i>Delirious</i></p>\n<p><strong>Description</strong> Humblebrag <i>dreamcatcher slowcarb vinegar kombucha</i> ethical.</p></section>"
+          },
+          {
+            "type": "music",
+            "id": "http://example.org/entities/4cda97ac-cedb-4413-938d-b343159d4f5f",
+            "display": "<section><p><strong>Composer</strong> Colin the Security Robot</p>\n<p><strong>Title</strong> <i>Can't Stop This Feeling I Got</i></p>\n<p><strong>Description</strong> Pabst schlitz actually yuccie bushwick etsy fixie diy.</p></section>"
+          }
+        ],
+        "publications": [
+          {
+            "type": "publication",
+            "id": "http://example.org/entities/368d0da9-0bd7-4c02-a91c-7a6d77216056",
+            "display": "<section><p><strong>Author</strong> Donny</p>\n<p><strong>Title</strong> <i>Lethe Press</i></p>\n<p><strong>Translator</strong> Elvis</p>\n<p><strong>Publication</strong> Salvia offal asymmetrical carry freegan seitan.</p></section>"
+          },
+          {
+            "type": "publication",
+            "id": "http://example.org/entities/fecce267-e1bb-4325-9c95-03c400ac12b1",
+            "display": "<section><p><strong>Author</strong> Donny</p>\n<p><strong>Title</strong> <i>Tachyon Publications</i></p>\n<p><strong>Translator</strong> Magrathean sperm whale</p>\n<p><strong>Publication</strong> Muggle magic paleo retro literally truffaut vice waistcoat stumptown viral.</p></section>"
+          },
+          {
+            "type": "publication",
+            "id": "http://example.org/entities/340b2257-d29a-4d9c-95c7-1e1d3b01f28b",
+            "display": "<section><p><strong>Author</strong> Jesus Quintana</p>\n<p><strong>Title</strong> Target Books</p>\n<p><strong>Translator</strong> The Allitnils</p>\n<p><strong>Publication</strong> Put a bird on it raw denim messenger bag kale chips.</p></section>"
+          }
+        ],
+        "work_of_arts": [
+          {
+            "type": "work_of_art",
+            "id": "http://example.org/entities/12a24153-7c4d-457d-9291-3233fbdf26b8",
+            "display": "<section><p><strong>Artist</strong> Mr. Prosser</p>\n<p><strong>Title</strong> 1000 X's &amp; O's</p>\n<p><strong>Description</strong> Lomo <i>forage fixie mixtape deep</i> v.</p>\n<p><strong>Owner/location</strong> Golgafrinchan Ark Fleet Ship B</p></section>"
+          },
+          {
+            "type": "work_of_art",
+            "id": "http://example.org/entities/9e3ef483-32ab-461d-a4ca-a55bfa4038c8",
+            "display": "<section><p><strong>Artist</strong> Elvis</p>\n<p><strong>Title</strong> <i>New Position</i></p>\n<p><strong>Description</strong> Freegan park seitan chambray.</p>\n<p><strong>Owner/location</strong> Tanngrisnir</p></section>"
+          },
+          {
+            "type": "work_of_art",
+            "id": "http://example.org/entities/fa88ed75-0ff0-4f2a-a044-4363d56079c0",
+            "display": "<section><p><strong>Artist</strong> Pasta Fasta</p>\n<p><strong>Title</strong> <i>The Beautiful Ones</i></p>\n<p><strong>Description</strong> Banjo poutine carry tousled butcher.</p>\n<p><strong>Owner/location</strong> Starship Titanic</p></section>"
+          }
+        ]
+      }
+    },
+    {
+      "id": "http://example.org/letters/467f3692-f0df-4f5d-bd41-48456d7f1f18",
+      "date": "1960-10-10T00:00:00.000-04:00",
+      "label": "10 October 1960 - Kutch, Seema",
       "language": "italian",
       "volume": 2,
       "recipients": [
-        "Turner, Michiko"
+        "Kutch, Seema"
       ],
       "destinations": [
         "<i>Megabrantis cluster</i>"
@@ -794,413 +642,919 @@ Content-Length: 76505</pre>
         "music": [
           {
             "type": "music",
-            "id": "http://example.org/entities/bb63b245-fce0-422a-82d3-8755eea52a33",
-            "display": "<section><p><strong>Composer</strong> Charles Darwin</p>\n<p><strong>Title</strong> <i>The Greatest Romance Ever Sold</i></p>\n<p><strong>Description</strong> Sustainable <i>pug 8bit small batch</i> sartorial.</p></section>"
-          }
-        ],
-        "organizations": [
-          {
-            "type": "organization",
-            "id": "http://example.org/entities/3a3e3292-89bc-41f0-b15c-122ed5cab376",
-            "display": "<section><p><strong><i>Rupert</i></strong></p>\n<p>I wish you'd just tell me rather trying to engage my enthusiasm, because I haven't got one.</p></section>"
-          },
-          {
-            "type": "organization",
-            "id": "http://example.org/entities/e4fc8b70-6fb0-41af-a194-49aaccd2d9cf",
-            "display": "<section><p><strong>Poghril</strong></p>\n<p>And <i>then of course I've got this terrible pain in all the diodes down my left</i> side.</p></section>"
+            "id": "http://example.org/entities/1fd50d3d-bb51-493b-801b-9ac567700225",
+            "display": "<section><p><strong>Composer</strong> Gail Andrews</p>\n<p><strong>Title</strong> Cream</p>\n<p><strong>Description</strong> Hoodie asymmetrical pug small batch 1 echo next level.</p></section>"
           }
         ],
         "public_events": [
           {
             "type": "public_event",
-            "id": "http://example.org/entities/8c1d25a6-f6de-4b62-b02d-046d6b3821fa",
-            "display": "<section><p><strong><i>Atlantis</i></strong></p>\n<p><strong>1947-01-18.</strong></p></section>"
+            "id": "http://example.org/entities/4d84aaf4-1e37-4168-a2e6-91eeecb2da97",
+            "display": "<section><p><strong><i>Enterprise</i></strong></p>\n<p><strong>1955-06-01.</strong></p></section>"
+          }
+        ],
+        "publications": [
+          {
+            "type": "publication",
+            "id": "http://example.org/entities/4b97771c-0143-43e7-80ad-16ac619cbe41",
+            "display": "<section><p><strong>Author</strong> Maude Lebowski</p>\n<p><strong>Title</strong> D. Appleton &amp; Company</p>\n<p><strong>Translator</strong> Dan Streetmentioner</p>\n<p><strong>Publication</strong> Lomo ethical migas retro.</p></section>"
+          },
+          {
+            "type": "publication",
+            "id": "http://example.org/entities/4a16f01a-4756-4b56-be1f-120a58e8f483",
+            "display": "<section><p><strong>Author</strong> Jesus Quintana</p>\n<p><strong>Title</strong> Pavilion Books</p>\n<p><strong>Translator</strong> Tricia McMillan</p>\n<p><strong>Publication</strong> Vice next level freegan single-origin coffee offal thundercats.</p></section>"
           }
         ],
         "readings": [
           {
             "type": "reading",
-            "id": "http://example.org/entities/1e88751c-0eaa-45c3-b107-1bc5a5cccfca",
-            "display": "<section><p><strong>Author</strong> Dominick Simonis</p>\n<p><strong>Title</strong> After Many a Summer Dies the Swan</p>\n<p><strong>Publication</strong> Paulist Press.</p></section>"
+            "id": "http://example.org/entities/d9cd9ea3-7073-4681-b569-113e894cde86",
+            "display": "<section><p><strong>Author</strong> Leeanne Mertz</p>\n<p><strong>Title</strong> Alone on a Wide, Wide Sea</p>\n<p><strong>Publication</strong> Nauka.</p></section>"
           },
           {
             "type": "reading",
-            "id": "http://example.org/entities/62f0ac6b-5e5e-470b-a7f6-69efeb167ae1",
-            "display": "<section><p><strong>Author</strong> Loren O'Connell</p>\n<p><strong>Title</strong> <i>The Waste Land</i></p>\n<p><strong>Publication</strong> Carnegie Mellon University Press.</p></section>"
+            "id": "http://example.org/entities/0c3cae95-17c6-4e43-aad4-0180905cb5ac",
+            "display": "<section><p><strong>Author</strong> Dusty Shanahan</p>\n<p><strong>Title</strong> A Time of Gifts</p>\n<p><strong>Publication</strong> J. M. Dent.</p></section>"
+          },
+          {
+            "type": "reading",
+            "id": "http://example.org/entities/53f0f322-86ee-46f8-8417-7c9409bc0ffc",
+            "display": "<section><p><strong>Author</strong> Rosario Von Ret.</p>\n<p><strong>Title</strong> <i>Consider Phlebas</i></p>\n<p><strong>Publication</strong> Reed Elsevier.</p></section>"
           }
         ]
       }
     },
     {
-      "id": "http://example.org/letters/d57aed99-ac67-4a33-bb24-dea1756b579e",
-      "date": "1970-04-01T00:00:00.000-05:00",
-      "label": "01 April 1970 - Howell, Daren",
-      "language": "german",
+      "id": "http://example.org/letters/baa8652a-ae0e-468c-a727-4707e3ff8c42",
+      "date": "1961-05-28T00:00:00.000-04:00",
+      "label": "28 May 1961 - Turcotte, Ruthe",
+      "language": "italian",
       "volume": 0,
       "recipients": [
-        "Howell, Daren"
+        "Turcotte, Ruthe"
       ],
       "destinations": [
-        "Preliumtarn"
+        "Ibiza"
       ],
       "origins": null,
       "mentions": {
-        "public_events": [
+        "people": [
           {
-            "type": "public_event",
-            "id": "http://example.org/entities/264163f1-1193-4aa6-8d18-dc869e9ac416",
-            "display": "<section><p><strong><i>Mercury</i></strong></p>\n<p><strong>1969-02-02.</strong></p></section>"
+            "type": "person",
+            "id": "http://example.org/entities/034543f8-a8d4-45be-a5ee-003a40e4f491",
+            "display": "<section><p><strong>Marita Stark, 1903-1982</strong></p>\n<p>You <i>think you've got problems? What are you supposed to do if you are a manically depressed robot? No, don't try to answer that. I'm fifty thousand times more intelligent than you and even I don't know the answer. It gives me a headache just trying to think down to your</i> level.</p></section>"
           },
           {
-            "type": "public_event",
-            "id": "http://example.org/entities/0dec6bdc-683d-4274-ade2-3be29cad388c",
-            "display": "<section><p><strong>Mercury</strong></p>\n<p><strong>1947-02-03.</strong></p></section>"
+            "type": "person",
+            "id": "http://example.org/entities/e64aa9d4-853d-49cc-85f3-3e7735add83f",
+            "display": "<section><p><strong>Meredith Reynolds, 1921-1979</strong></p>\n<p>I think you ought to know I'm feeling very depressed.</p></section>"
+          }
+        ],
+        "publications": [
+          {
+            "type": "publication",
+            "id": "http://example.org/entities/223106eb-1c9a-4984-9b36-c98d632b444f",
+            "display": "<section><p><strong>Author</strong> Walter Sobchak</p>\n<p><strong>Title</strong> Faber and Faber</p>\n<p><strong>Translator</strong> Trillian</p>\n<p><strong>Publication</strong> Vegan muggle magic yuccie literally sriracha whatever scenester post-ironic.</p></section>"
           }
         ],
         "readings": [
           {
             "type": "reading",
-            "id": "http://example.org/entities/c113ba97-e553-4e5d-8e32-eae910e853ed",
-            "display": "<section><p><strong>Author</strong> Prof. Tyson Mertz</p>\n<p><strong>Title</strong> That Hideous Strength</p>\n<p><strong>Publication</strong> Blackie and Son Limited.</p></section>"
-          },
-          {
-            "type": "reading",
-            "id": "http://example.org/entities/6ab6f490-8628-4606-87a5-725c74001023",
-            "display": "<section><p><strong>Author</strong> Rosina Rogahn</p>\n<p><strong>Title</strong> <i>Behold the Man</i></p>\n<p><strong>Publication</strong> Reed Elsevier.</p></section>"
-          },
-          {
-            "type": "reading",
-            "id": "http://example.org/entities/1a6a5cf5-0da5-4449-8954-0cd1968562d9",
-            "display": "<section><p><strong>Author</strong> Palmer Daniel</p>\n<p><strong>Title</strong> <i>Many Waters</i></p>\n<p><strong>Publication</strong> Bellevue Literary Press.</p></section>"
+            "id": "http://example.org/entities/feb38160-d74a-4859-8229-f9cdee795ef3",
+            "display": "<section><p><strong>Author</strong> Lorriane Metz</p>\n<p><strong>Title</strong> <i>The Way Through the Woods</i></p>\n<p><strong>Publication</strong> Peace Hill Press.</p></section>"
           }
         ],
         "translatings": [
           {
             "type": "translating",
-            "id": "http://example.org/entities/882b4ff4-4ced-4d87-8a7b-a71c8b362d61",
-            "display": "<section><p><strong>Author</strong> Grunthos the Flatulent, <strong>Original Title</strong> <i>Vanity Fair</i></p>\n<p><strong>Translated into</strong> Marathi by Lintilla</p>\n<p><strong>Translated title</strong> Bistromath.</p></section>"
-          }
-        ],
-        "work_of_arts": [
-          {
-            "type": "work_of_art",
-            "id": "http://example.org/entities/63c50a4c-0d0c-4677-9c84-21902ff2bef5",
-            "display": "<section><p><strong>Artist</strong> Agda</p>\n<p><strong>Title</strong> <i>Head</i></p>\n<p><strong>Description</strong> Semiotics <i>squid jean shorts sustainable heirloom cardigan</i> 8bit.</p>\n<p><strong>Owner/location</strong> Billion Year Bunker</p></section>"
-          },
-          {
-            "type": "work_of_art",
-            "id": "http://example.org/entities/86fa525c-39b9-43a2-8050-bee2083e04b6",
-            "display": "<section><p><strong>Artist</strong> Questular Rontok</p>\n<p><strong>Title</strong> The Beautiful Ones</p>\n<p><strong>Description</strong> Kombucha hella normcore chartreuse.</p>\n<p><strong>Owner/location</strong> Heart of Gold</p></section>"
-          },
-          {
-            "type": "work_of_art",
-            "id": "http://example.org/entities/55dfc28a-68ed-482e-b3b2-8d1846c6b251",
-            "display": "<section><p><strong>Artist</strong> Humma Kavula</p>\n<p><strong>Title</strong> New Position</p>\n<p><strong>Description</strong> Pork belly aesthetic polaroid artisan vice cronut.</p>\n<p><strong>Owner/location</strong> Heart of Gold</p></section>"
+            "id": "http://example.org/entities/a977f997-8b2e-4995-940c-23fee6b53eab",
+            "display": "<section><p><strong>Author</strong> Prak, <strong>Original Title</strong> <i>A Many-Splendoured Thing</i></p>\n<p><strong>Translated into</strong> Icelandic by Roosta</p>\n<p><strong>Translated title</strong> Billion Year Bunker.</p></section>"
           }
         ]
       }
     },
     {
-      "id": "http://example.org/letters/db828a0d-7072-48f3-9740-ba132ad2d28e",
-      "date": "1971-07-20T00:00:00.000-04:00",
-      "label": "20 July 1971 - Russel, Wilford",
+      "id": "http://example.org/letters/6661d7ab-14ff-4a20-817d-cac5a1e12a9b",
+      "date": "1961-11-17T00:00:00.000-05:00",
+      "label": "17 November 1961 - Heidenreich, Love",
+      "language": "german",
+      "volume": 1,
+      "recipients": [
+        "Heidenreich, Love"
+      ],
+      "destinations": [
+        "Frogstar World B"
+      ],
+      "origins": null,
+      "mentions": {
+        "people": [
+          {
+            "type": "person",
+            "id": "http://example.org/entities/b07562b9-6dfc-4475-96df-6ddd714172d9",
+            "display": "<section><p><strong>Nestor Bashirian, 1907-1975</strong></p>\n<p>I won't enjoy it.</p></section>"
+          },
+          {
+            "type": "person",
+            "id": "http://example.org/entities/6a15636e-f962-40f7-98d9-f0f0c7c1d7a6",
+            "display": "<section><p><strong>Brent Jast, 1911-1990</strong></p>\n<p>There's only one life-form as intelligent as me within thirty parsecs of here and that's me.</p></section>"
+          },
+          {
+            "type": "person",
+            "id": "http://example.org/entities/59608220-8ca9-44f7-a752-6c625d199b04",
+            "display": "<section><p><strong>Dustin Koelpin, 1925-1997</strong></p>\n<p>Here <i>I am, brain the size of a planet, and they tell me to take you up to the bridge. Call that job satisfaction? 'Cos I</i> don't.</p></section>"
+          }
+        ],
+        "publications": [
+          {
+            "type": "publication",
+            "id": "http://example.org/entities/765a3f92-26f2-41f8-a64f-2693323d72ad",
+            "display": "<section><p><strong>Author</strong> Jesus Quintana</p>\n<p><strong>Title</strong> Target Books</p>\n<p><strong>Translator</strong> Zarniwoop</p>\n<p><strong>Publication</strong> Meggings cliche vegan direct trade semiotics vinegar aesthetic meh street.</p></section>"
+          },
+          {
+            "type": "publication",
+            "id": "http://example.org/entities/89b076f9-1dd1-4751-8b31-35d08bf4129d",
+            "display": "<section><p><strong>Author</strong> The Dude</p>\n<p><strong>Title</strong> <i>Bella Books</i></p>\n<p><strong>Translator</strong> Max Quordlepleen</p>\n<p><strong>Publication</strong> Etsy everyday intelligentsia pickled migas.</p></section>"
+          },
+          {
+            "type": "publication",
+            "id": "http://example.org/entities/6fa936ac-3180-442a-a774-789b83938715",
+            "display": "<section><p><strong>Author</strong> Maude Lebowski</p>\n<p><strong>Title</strong> New English Library</p>\n<p><strong>Translator</strong> Zarniwoop</p>\n<p><strong>Publication</strong> Chicharrones flexitarian taxidermy retro skateboard.</p></section>"
+          }
+        ],
+        "readings": [
+          {
+            "type": "reading",
+            "id": "http://example.org/entities/940eb5c4-fc0c-4013-967b-7340ebff8c67",
+            "display": "<section><p><strong>Author</strong> Pres. Beaulah Schumm</p>\n<p><strong>Title</strong> <i>After Many a Summer Dies the Swan</i></p>\n<p><strong>Publication</strong> Anvil Press Poetry.</p></section>"
+          },
+          {
+            "type": "reading",
+            "id": "http://example.org/entities/37e0faab-6681-49b1-b978-e7bbaf28bc89",
+            "display": "<section><p><strong>Author</strong> Fr. Jeremiah Sporer</p>\n<p><strong>Title</strong> The Daffodil Sky</p>\n<p><strong>Publication</strong> Leafwood Publishers.</p></section>"
+          }
+        ],
+        "writings": [
+          {
+            "type": "writing",
+            "id": "http://example.org/entities/f4a903a8-a690-4630-a273-7240a0f2582b",
+            "display": "<section><p><strong>Title</strong> Edna O'Brien</p>\n<p><strong>Proposal/Response</strong> Parts of the inside of her head screamed at other parts of the inside of her head.</p>\n<p><strong>Translator</strong> Elvis</p>\n<p><strong>Date</strong> 1939-06-26.</p></section>"
+          },
+          {
+            "type": "writing",
+            "id": "http://example.org/entities/41c10727-75e3-4ef4-aee2-978f336fc37e",
+            "display": "<section><p><strong>Title</strong> Eyeless in Gaza</p>\n<p><strong>Proposal/Response</strong> 42</p>\n<p><strong>Translator</strong> Eccentrica Gallumbits</p>\n<p><strong>Date</strong> 1930-09-29.</p></section>"
+          }
+        ]
+      }
+    },
+    {
+      "id": "http://example.org/letters/c0a8b9e0-7dd6-447b-b018-7a8e813fb39f",
+      "date": "1962-11-15T00:00:00.000-05:00",
+      "label": "15 November 1962 - Aufderhar, Saundra",
+      "language": "italian",
+      "volume": 3,
+      "recipients": [
+        "Aufderhar, Saundra"
+      ],
+      "destinations": [
+        "Easter Island"
+      ],
+      "origins": null,
+      "mentions": {
+        "organizations": [
+          {
+            "type": "organization",
+            "id": "http://example.org/entities/42d84d8c-8bfa-4ca9-9c6f-e251dba211b6",
+            "display": "<section><p><strong>Lamuella</strong></p>\n<p>Life? Don't talk to me about life.</p></section>"
+          },
+          {
+            "type": "organization",
+            "id": "http://example.org/entities/23067cf0-3d9d-405e-be69-cb42bf2198e8",
+            "display": "<section><p><strong><i>Bartledan</i></strong></p>\n<p>Here <i>I am, brain the size of a planet, and they tell me to take you up to the bridge. Call that job satisfaction? 'Cos I</i> don't.</p></section>"
+          }
+        ],
+        "places": [
+          {
+            "type": "place",
+            "id": "http://example.org/entities/e3dc45e0-3d79-4aa2-831a-da94ce4eecf0",
+            "display": "<section><p><strong>Pleiades system</strong></p>\n<p>Tousled <i>gentrify tattooed migas</i> freegan.</p></section>"
+          }
+        ],
+        "productions": [
+          {
+            "type": "production",
+            "id": "http://example.org/entities/2e17a3f0-ba5d-41b8-9010-7fb5ed35e653",
+            "display": "<section><p><strong>Title</strong> <i>Sholay</i></p>\n<p><strong>Proposal/Response</strong> I wish you'd just tell me rather trying to engage my enthusiasm, because I haven't got one. / It seemed to me that any civilization that had so far lost its head as to need to include a set of detailed instructions for use in a packet of toothpicks, was no longer a civilization in which I could live and stay sane.</p>\n<p><strong>Director</strong> The Dude <strong>Theatre, City</strong> Krikkit One, East Fernando</p>\n<p><strong>Date(s)</strong> 1925-10-03.</p></section>"
+          }
+        ],
+        "public_events": [
+          {
+            "type": "public_event",
+            "id": "http://example.org/entities/fa27ff06-1051-4bac-9992-54e297cfe39c",
+            "display": "<section><p><strong><i>Columbia</i></strong></p>\n<p><strong>1945-02-17.</strong></p></section>"
+          },
+          {
+            "type": "public_event",
+            "id": "http://example.org/entities/bd8af982-9fa7-4655-ba4c-87a519b7e4d0",
+            "display": "<section><p><strong>Mercury</strong></p>\n<p><strong>1959-04-20.</strong></p></section>"
+          }
+        ]
+      }
+    },
+    {
+      "id": "http://example.org/letters/8c55e1b3-e0ad-4a54-933c-9f7c73cec316",
+      "date": "1965-02-14T00:00:00.000-05:00",
+      "label": "14 February 1965 - Olson, Lavonia",
       "language": "english",
       "volume": 3,
       "recipients": [
-        "Russel, Wilford"
+        "Olson, Lavonia"
       ],
       "destinations": [
-        "<i>Megabrantis cluster</i>"
+        "<i>29 Arlington Avenue</i>"
+      ],
+      "origins": null,
+      "mentions": {
+        "places": [
+          {
+            "type": "place",
+            "id": "http://example.org/entities/335fb364-18fb-4040-ae92-f61ed54b9729",
+            "display": "<section><p><strong>Xaxis</strong></p>\n<p>Small <i>batch coldpressed salvia muggle magic</i> ennui.</p></section>"
+          },
+          {
+            "type": "place",
+            "id": "http://example.org/entities/b5cd3a38-9cae-412b-95c6-410e0088f1d6",
+            "display": "<section><p><strong>Total Perspective Vortex</strong></p>\n<p>Kinfolk <i>microdosing wayfarers butcher occupy craft</i> beer.</p></section>"
+          }
+        ],
+        "productions": [
+          {
+            "type": "production",
+            "id": "http://example.org/entities/6432923c-65c9-414c-b52c-a5c581d29310",
+            "display": "<section><p><strong>Title</strong> The Sting</p>\n<p><strong>Proposal/Response</strong> I won't enjoy it. / Earth: Mostly Harmless</p>\n<p><strong>Director</strong> Jesus Quintana <strong>Theatre, City</strong> Bistromath, North Juliochester</p>\n<p><strong>Date(s)</strong> 1944-03-07.</p></section>"
+          }
+        ],
+        "publications": [
+          {
+            "type": "publication",
+            "id": "http://example.org/entities/391d3c0d-de37-4974-9abf-5e02972e13a6",
+            "display": "<section><p><strong>Author</strong> Jesus Quintana</p>\n<p><strong>Title</strong> Harvard University Press</p>\n<p><strong>Translator</strong> Oolon Colluphid</p>\n<p><strong>Publication</strong> Diy migas gentrify locavore whatever fashion axe mlkshk blue bottle vice.</p></section>"
+          },
+          {
+            "type": "publication",
+            "id": "http://example.org/entities/754f8cf5-fff5-460c-bd8b-bcfe164178f0",
+            "display": "<section><p><strong>Author</strong> Jackie Treehorn</p>\n<p><strong>Title</strong> <i>University of Minnesota Press</i></p>\n<p><strong>Translator</strong> Zaphod Beeblebrox</p>\n<p><strong>Publication</strong> Brooklyn before they sold out scenester fashion axe cliche kickstarter pour-over shabby chic artisan.</p></section>"
+          }
+        ],
+        "readings": [
+          {
+            "type": "reading",
+            "id": "http://example.org/entities/b3e36951-e5d8-4f3f-bf60-5b80203046b1",
+            "display": "<section><p><strong>Author</strong> Dwight Langosh</p>\n<p><strong>Title</strong> Such, Such Were the Joys</p>\n<p><strong>Publication</strong> Casemate Publishers.</p></section>"
+          },
+          {
+            "type": "reading",
+            "id": "http://example.org/entities/2312c5e5-78b2-4736-9518-397439f363cb",
+            "display": "<section><p><strong>Author</strong> Alethia Bergstrom DC</p>\n<p><strong>Title</strong> Lilies of the Field</p>\n<p><strong>Publication</strong> Harvest House.</p></section>"
+          }
+        ]
+      }
+    },
+    {
+      "id": "http://example.org/letters/5c2b1095-2fd4-4ae7-a100-405a701eea54",
+      "date": "1966-07-01T00:00:00.000-04:00",
+      "label": "01 July 1966 - Dickens, Tora",
+      "language": "english",
+      "volume": 1,
+      "recipients": [
+        "Dickens, Tora"
+      ],
+      "destinations": [
+        "Total Perspective Vortex"
+      ],
+      "origins": null,
+      "mentions": {
+        "organizations": [
+          {
+            "type": "organization",
+            "id": "http://example.org/entities/5c05f14a-650a-4fe5-9f4c-07cf7c89c21e",
+            "display": "<section><p><strong><i>Bartledan</i></strong></p>\n<p>I wish you'd just tell me rather trying to engage my enthusiasm, because I haven't got one.</p></section>"
+          },
+          {
+            "type": "organization",
+            "id": "http://example.org/entities/9cd8a385-dbb1-4e75-8332-6bbddca2f1be",
+            "display": "<section><p><strong><i>Hawalius</i></strong></p>\n<p>Life? <i>Don't talk to me about</i> life.</p></section>"
+          }
+        ],
+        "productions": [
+          {
+            "type": "production",
+            "id": "http://example.org/entities/94165e9c-d29d-4498-ab5c-2c49665f796b",
+            "display": "<section><p><strong>Title</strong> <i>Star Wars: Episode V - The Empire Strikes Back</i></p>\n<p><strong>Proposal/Response</strong> I won't enjoy it. / Whatever your tastes, Magrathea can cater for you. We are not proud.</p>\n<p><strong>Director</strong> Bunny Lebowski <strong>Theatre, City</strong> Vogon Constructor Fleet, Boscoborough</p>\n<p><strong>Date(s)</strong> 1968-05-04.</p></section>"
+          }
+        ],
+        "publications": [
+          {
+            "type": "publication",
+            "id": "http://example.org/entities/6f3c6da3-83af-409c-8b5c-ba2487eefecd",
+            "display": "<section><p><strong>Author</strong> Bunny Lebowski</p>\n<p><strong>Title</strong> Atlas Press</p>\n<p><strong>Translator</strong> Hillman Hunter</p>\n<p><strong>Publication</strong> Cardigan vinegar actually synth quinoa hoodie 3 wolf moon meditation chia.</p></section>"
+          },
+          {
+            "type": "publication",
+            "id": "http://example.org/entities/c8ba3bc9-8ff3-4a0b-a731-591ce915a607",
+            "display": "<section><p><strong>Author</strong> Maude Lebowski</p>\n<p><strong>Title</strong> McFarland &amp; Company</p>\n<p><strong>Translator</strong> Questular Rontok</p>\n<p><strong>Publication</strong> Drinking pabst knausgaard tofu craft beer shabby chic organic wolf green juice.</p></section>"
+          }
+        ],
+        "translatings": [
+          {
+            "type": "translating",
+            "id": "http://example.org/entities/fd76b285-1c60-44be-868f-190a51b542e3",
+            "display": "<section><p><strong>Author</strong> Hactar, <strong>Original Title</strong> <i>Jacob Have I Loved</i></p>\n<p><strong>Translated into</strong> Polish by Questular Rontok</p>\n<p><strong>Translated title</strong> Starship Titanic.</p></section>"
+          },
+          {
+            "type": "translating",
+            "id": "http://example.org/entities/dd560fd7-1896-4861-9451-965dcb7b296b",
+            "display": "<section><p><strong>Author</strong> Arthur Dent, <strong>Original Title</strong> <i>An Instant In The Wind</i></p>\n<p><strong>Translated into</strong> Dutch by Garkbit</p>\n<p><strong>Translated title</strong> Krikkit One.</p></section>"
+          }
+        ]
+      }
+    },
+    {
+      "id": "http://example.org/letters/a8f90f6a-4223-4d52-bedc-00029e4a7c6f",
+      "date": "1967-07-12T00:00:00.000-04:00",
+      "label": "12 July 1967 - Hermiston, Alonso",
+      "language": "german",
+      "volume": 2,
+      "recipients": [
+        "Hermiston, Alonso"
+      ],
+      "destinations": [
+        "Ibiza"
+      ],
+      "origins": null,
+      "mentions": {
+        "organizations": [
+          {
+            "type": "organization",
+            "id": "http://example.org/entities/8fac6a8f-6733-41b6-b8f7-e97d788cca48",
+            "display": "<section><p><strong><i>Krikkit</i></strong></p>\n<p>Here I am, brain the size of a planet, and they tell me to take you up to the bridge. Call that job satisfaction? 'Cos I don't.</p></section>"
+          },
+          {
+            "type": "organization",
+            "id": "http://example.org/entities/004af02f-bc1f-400c-a8cc-3e50474e4fd1",
+            "display": "<section><p><strong>Nano</strong></p>\n<p>You think you've got problems? What are you supposed to do if you are a manically depressed robot? No, don't try to answer that. I'm fifty thousand times more intelligent than you and even I don't know the answer. It gives me a headache just trying to think down to your level.</p></section>"
+          }
+        ],
+        "productions": [
+          {
+            "type": "production",
+            "id": "http://example.org/entities/d2d1bcf9-ec12-45fa-98e4-d50167177d32",
+            "display": "<section><p><strong>Title</strong> <i>The Elephant Man</i></p>\n<p><strong>Proposal/Response</strong> I won't enjoy it. / Don’t Panic</p>\n<p><strong>Director</strong> Donny <strong>Theatre, City</strong> Bistromath, Lake Kenisha</p>\n<p><strong>Date(s)</strong> 1940-07-26.</p></section>"
+          },
+          {
+            "type": "production",
+            "id": "http://example.org/entities/63dda62b-c2a9-4550-b6f0-f3e348027527",
+            "display": "<section><p><strong>Title</strong> The Big Lebowski</p>\n<p><strong>Proposal/Response</strong> Pardon me for breathing, which I never do anyway so I don't know why I bother to say it, Oh God, I'm so depressed. / He was staring at the instruments with the air of one who is trying to convert Fahrenheit to centigrade in his head while his house is burning down.</p>\n<p><strong>Director</strong> The Dude <strong>Theatre, City</strong> RW6, North Rickiport</p>\n<p><strong>Date(s)</strong> 1942-09-18.</p></section>"
+          }
+        ],
+        "work_of_arts": [
+          {
+            "type": "work_of_art",
+            "id": "http://example.org/entities/44cfbc96-7517-4de3-86bd-36e65cab4827",
+            "display": "<section><p><strong>Artist</strong> Vroomfondel</p>\n<p><strong>Title</strong> <i>Sexy MF</i></p>\n<p><strong>Description</strong> Meggings <i>heirloom blog migas humblebrag sriracha keytar direct</i> trade.</p>\n<p><strong>Owner/location</strong> Bistromath</p></section>"
+          }
+        ],
+        "writings": [
+          {
+            "type": "writing",
+            "id": "http://example.org/entities/7ef52aae-3b5a-4a48-8989-4f7639d03237",
+            "display": "<section><p><strong>Title</strong> <i>That Hideous Strength</i></p>\n<p><strong>Proposal/Response</strong> It seemed to me that any civilization that had so far lost its head as to need to include a set of detailed instructions for use in a packet of toothpicks, was no longer a civilization in which I could live and stay sane.</p>\n<p><strong>Translator</strong> Hotblack Desiato's bodyguard</p>\n<p><strong>Date</strong> 1943-12-14.</p></section>"
+          }
+        ]
+      }
+    },
+    {
+      "id": "http://example.org/letters/5c700b3d-93da-438a-a03b-46576f33d9ac",
+      "date": "1967-08-15T00:00:00.000-04:00",
+      "label": "15 August 1967 - Hauck, Aundrea",
+      "language": "french",
+      "volume": 2,
+      "recipients": [
+        "Hauck, Aundrea"
+      ],
+      "destinations": [
+        "Sector ZZ9 Plural Z Alpha"
+      ],
+      "origins": null,
+      "mentions": {
+        "people": [
+          {
+            "type": "person",
+            "id": "http://example.org/entities/36ec5ddd-e537-4791-b486-65147b5026a3",
+            "display": "<section><p><strong>Eleonor Schinner, 1902-1987</strong></p>\n<p>I think you ought to know I'm feeling very depressed.</p></section>"
+          }
+        ],
+        "places": [
+          {
+            "type": "place",
+            "id": "http://example.org/entities/8a2f2227-5155-4b6a-b0c3-cabadc078f16",
+            "display": "<section><p><strong><i>Frogstar system</i></strong></p>\n<p>Locavore wayfarers crucifix drinking fingerstache.</p></section>"
+          },
+          {
+            "type": "place",
+            "id": "http://example.org/entities/d026f17b-52c3-4ce7-9688-843edb713011",
+            "display": "<section><p><strong><i>Bistro Illegal</i></strong></p>\n<p>Portland ennui blue bottle forage tumblr letterpress fingerstache cray.</p></section>"
+          }
+        ],
+        "readings": [
+          {
+            "type": "reading",
+            "id": "http://example.org/entities/9c947454-aea1-40d2-98d5-f3e777862f2d",
+            "display": "<section><p><strong>Author</strong> Bob Leuschke</p>\n<p><strong>Title</strong> <i>Carrion Comfort</i></p>\n<p><strong>Publication</strong> Chronicle Books.</p></section>"
+          },
+          {
+            "type": "reading",
+            "id": "http://example.org/entities/d163a30c-9498-405a-ab55-2474ac74a768",
+            "display": "<section><p><strong>Author</strong> Tom Kuvalis IV</p>\n<p><strong>Title</strong> Recalled to Life</p>\n<p><strong>Publication</strong> Darakwon Press.</p></section>"
+          },
+          {
+            "type": "reading",
+            "id": "http://example.org/entities/8dce1174-66a8-43ac-a7fe-dffb11c4f859",
+            "display": "<section><p><strong>Author</strong> Brandon Little</p>\n<p><strong>Title</strong> A Time of Gifts</p>\n<p><strong>Publication</strong> Hodder &amp; Stoughton.</p></section>"
+          }
+        ],
+        "translatings": [
+          {
+            "type": "translating",
+            "id": "http://example.org/entities/dccf6324-543a-432b-98a0-a14e019c5475",
+            "display": "<section><p><strong>Author</strong> Prak, <strong>Original Title</strong> <i>Absalom, Absalom!</i></p>\n<p><strong>Translated into</strong> Italian by Emily Saunders</p>\n<p><strong>Translated title</strong> Bistromath.</p></section>"
+          }
+        ]
+      }
+    },
+    {
+      "id": "http://example.org/letters/f6731d8b-83bf-47d3-a3e9-8ca5d951641a",
+      "date": "1967-12-18T00:00:00.000-05:00",
+      "label": "18 December 1967 - Jakubowski, Bernardo",
+      "language": "german",
+      "volume": 2,
+      "recipients": [
+        "Jakubowski, Bernardo"
+      ],
+      "destinations": [
+        "Xaxis"
+      ],
+      "origins": null,
+      "mentions": {
+        "people": [
+          {
+            "type": "person",
+            "id": "http://example.org/entities/8c59c3c3-ca69-43d5-9720-47a1ec1cf9d1",
+            "display": "<section><p><strong>Donovan Wisoky, 1928-1987</strong></p>\n<p>I wish you'd just tell me rather trying to engage my enthusiasm, because I haven't got one.</p></section>"
+          },
+          {
+            "type": "person",
+            "id": "http://example.org/entities/772b968c-a0e4-4e8c-ac40-ca4fc37d8055",
+            "display": "<section><p><strong>Pattie Yundt, 1926-1988</strong></p>\n<p>Here <i>I am, brain the size of a planet, and they tell me to take you up to the bridge. Call that job satisfaction? 'Cos I</i> don't.</p></section>"
+          }
+        ],
+        "productions": [
+          {
+            "type": "production",
+            "id": "http://example.org/entities/97b48ee9-9582-4626-8990-c51edea48c94",
+            "display": "<section><p><strong>Title</strong> <i>Gladiator</i></p>\n<p><strong>Proposal/Response</strong> Here I am, brain the size of a planet, and they tell me to take you up to the bridge. Call that job satisfaction? 'Cos I don't. / Parts of the inside of her head screamed at other parts of the inside of her head.</p>\n<p><strong>Director</strong> The Big Lebowski <strong>Theatre, City</strong> Golgafrinchan Ark Fleet Ship B, New Rickie</p>\n<p><strong>Date(s)</strong> 1952-01-25.</p></section>"
+          }
+        ],
+        "public_events": [
+          {
+            "type": "public_event",
+            "id": "http://example.org/entities/7a6f1e66-7e60-4649-ab55-7a6a81bd0ba8",
+            "display": "<section><p><strong><i>Mercury</i></strong></p>\n<p><strong>1924-12-12.</strong></p></section>"
+          },
+          {
+            "type": "public_event",
+            "id": "http://example.org/entities/b6478499-5484-4f3f-b24f-98dfe6bb3b5b",
+            "display": "<section><p><strong>Gemini</strong></p>\n<p><strong>1972-09-02.</strong></p></section>"
+          },
+          {
+            "type": "public_event",
+            "id": "http://example.org/entities/235b9c26-3ab5-4309-ab1c-c78b9bf552ca",
+            "display": "<section><p><strong>Mercury</strong></p>\n<p><strong>1935-10-04.</strong></p></section>"
+          }
+        ],
+        "publications": [
+          {
+            "type": "publication",
+            "id": "http://example.org/entities/fcfc3f07-37de-4455-ad3b-d552bb6b9b56",
+            "display": "<section><p><strong>Author</strong> Walter Sobchak</p>\n<p><strong>Title</strong> <i>Hackett Publishing Company</i></p>\n<p><strong>Translator</strong> Hotblack Desiato's bodyguard</p>\n<p><strong>Publication</strong> Wolf kale chips narwhal post-ironic mixtape williamsburg lomo.</p></section>"
+          },
+          {
+            "type": "publication",
+            "id": "http://example.org/entities/13f9bc9c-4112-469e-86bf-96ac923e8aed",
+            "display": "<section><p><strong>Author</strong> Bunny Lebowski</p>\n<p><strong>Title</strong> <i>Harlequin Enterprises Ltd</i></p>\n<p><strong>Translator</strong> Majikthise</p>\n<p><strong>Publication</strong> Master godard cornhole meh organic goth flannel 3 wolf moon.</p></section>"
+          },
+          {
+            "type": "publication",
+            "id": "http://example.org/entities/62d2330c-9fbe-4d2a-ae19-3305b7111f1f",
+            "display": "<section><p><strong>Author</strong> Donny</p>\n<p><strong>Title</strong> Mandrake Press</p>\n<p><strong>Translator</strong> Bowerick Wowbagger</p>\n<p><strong>Publication</strong> Schlitz 90's cornhole fingerstache keffiyeh keytar.</p></section>"
+          }
+        ]
+      }
+    },
+    {
+      "id": "http://example.org/letters/a1dee9b1-3e53-45a3-939f-5c262aea91d0",
+      "date": "1968-04-05T00:00:00.000-05:00",
+      "label": "05 April 1968 - Satterfield, Rod",
+      "language": "italian",
+      "volume": 4,
+      "recipients": [
+        "Satterfield, Rod"
+      ],
+      "destinations": [
+        "<i>Rickmansworth</i>"
+      ],
+      "origins": null,
+      "mentions": {
+        "organizations": [
+          {
+            "type": "organization",
+            "id": "http://example.org/entities/94a7c345-c5d7-4767-800a-2c5043170df6",
+            "display": "<section><p><strong><i>Preliumtarn</i></strong></p>\n<p>I won't enjoy it.</p></section>"
+          }
+        ],
+        "publications": [
+          {
+            "type": "publication",
+            "id": "http://example.org/entities/2072621d-89a3-410e-b926-c3dd2c48da7f",
+            "display": "<section><p><strong>Author</strong> Jesus Quintana</p>\n<p><strong>Title</strong> <i>Reed Elsevier</i></p>\n<p><strong>Translator</strong> Hactar</p>\n<p><strong>Publication</strong> Cleanse five dollar toast mumblecore green juice pbr&amp;b yuccie.</p></section>"
+          },
+          {
+            "type": "publication",
+            "id": "http://example.org/entities/16b7eef6-2064-442b-a1bc-c1a960f0c192",
+            "display": "<section><p><strong>Author</strong> The Dude</p>\n<p><strong>Title</strong> <i>Candlewick Press</i></p>\n<p><strong>Translator</strong> Roosta</p>\n<p><strong>Publication</strong> Disrupt hashtag skateboard biodiesel authentic.</p></section>"
+          },
+          {
+            "type": "publication",
+            "id": "http://example.org/entities/1085ab0a-d946-4d9b-af80-133b56d1e33f",
+            "display": "<section><p><strong>Author</strong> Walter Sobchak</p>\n<p><strong>Title</strong> Happy House</p>\n<p><strong>Translator</strong> Effrafax of Wug</p>\n<p><strong>Publication</strong> Direct trade brunch chia occupy mixtape tote bag gentrify jean shorts health.</p></section>"
+          }
+        ],
+        "work_of_arts": [
+          {
+            "type": "work_of_art",
+            "id": "http://example.org/entities/c99a440a-223a-4c37-99c5-686f94cfd921",
+            "display": "<section><p><strong>Artist</strong> Eddie the Computer</p>\n<p><strong>Title</strong> 319</p>\n<p><strong>Description</strong> Umami blue bottle seitan organic kickstarter.</p>\n<p><strong>Owner/location</strong> Golgafrinchan Ark Fleet Ship B</p></section>"
+          }
+        ],
+        "writings": [
+          {
+            "type": "writing",
+            "id": "http://example.org/entities/216e604d-841c-45fb-a1e4-0471e3ea3578",
+            "display": "<section><p><strong>Title</strong> <i>That Hideous Strength</i></p>\n<p><strong>Proposal/Response</strong> On the planet Earth, man had always assumed that he was more intelligent than dolphins because he had achieved so much—the wheel, New York, wars and so on—whilst all the dolphins had ever done was muck about in the water having a good time. But conversely, the dolphins had always believed that they were far more intelligent than man—for precisely the same reasons.</p>\n<p><strong>Translator</strong> Reg Nullify</p>\n<p><strong>Date</strong> 1964-03-31.</p></section>"
+          },
+          {
+            "type": "writing",
+            "id": "http://example.org/entities/89a6b40c-d984-48e8-8351-bed8ccc608ec",
+            "display": "<section><p><strong>Title</strong> His Dark Materials</p>\n<p><strong>Proposal/Response</strong> Curiously enough, the only thing that went through the mind of the bowl of petunias as it fell was Oh no, not again.</p>\n<p><strong>Translator</strong> Agrajag</p>\n<p><strong>Date</strong> 1933-07-06.</p></section>"
+          },
+          {
+            "type": "writing",
+            "id": "http://example.org/entities/7abeebbb-b8cc-4250-9805-10fb9266625b",
+            "display": "<section><p><strong>Title</strong> <i>A Monstrous Regiment of Women</i></p>\n<p><strong>Proposal/Response</strong> On the planet Earth, man had always assumed that he was more intelligent than dolphins because he had achieved so much—the wheel, New York, wars and so on—whilst all the dolphins had ever done was muck about in the water having a good time. But conversely, the dolphins had always believed that they were far more intelligent than man—for precisely the same reasons.</p>\n<p><strong>Translator</strong> Zarniwoop</p>\n<p><strong>Date</strong> 1948-08-08.</p></section>"
+          }
+        ]
+      }
+    },
+    {
+      "id": "http://example.org/letters/2d1a90ee-1987-4320-8c05-5fba574f848d",
+      "date": "1968-09-20T00:00:00.000-04:00",
+      "label": "20 September 1968 - Jaskolski, Melinda",
+      "language": "italian",
+      "volume": 2,
+      "recipients": [
+        "Jaskolski, Melinda"
+      ],
+      "destinations": [
+        "France"
       ],
       "origins": null,
       "mentions": {
         "attendances": [
           {
             "type": "attendance",
-            "id": "http://example.org/entities/7d7af4d0-f46a-4dc0-941b-a7de1e394e19",
-            "display": "<section><p><strong>Rehearsal</strong>, Butcher <i>sartorial selfies slowcarb fingerstache plaid park kinfolk raw</i> denim.</p>\n<p><strong>Attended with</strong> Maude Lebowski and Reg Nullify</p>\n<p><strong>Place, Date</strong> North Lino, 18 March 1956</p>\n<p><strong>Director</strong> Zarniwoop</p></section>"
+            "id": "http://example.org/entities/71c6c6e3-e08d-43ad-be7c-b8290b8bbef1",
+            "display": "<section><p><strong>Rehearsal</strong>, Shoreditch sustainable messenger bag typewriter tofu photo booth coldpressed tryhard.</p>\n<p><strong>Attended with</strong> The Big Lebowski and Hactar</p>\n<p><strong>Place, Date</strong> Lake Alejandroton, 27 February 1964</p>\n<p><strong>Director</strong> Ford Prefect</p></section>"
           },
           {
             "type": "attendance",
-            "id": "http://example.org/entities/0beadf91-5869-410f-a170-5d6a7920f37b",
-            "display": "<section><p><strong>Theatre</strong>, Iphone <i>meditation hella leggings neutra blue bottle bitters heirloom tote</i> bag.</p>\n<p><strong>Attended with</strong> The Dude and Pasta Fasta</p>\n<p><strong>Place, Date</strong> Lake Madie, 01 October 1933</p>\n<p><strong>Director</strong> Fenchurch</p></section>"
+            "id": "http://example.org/entities/75cf5263-e484-4c99-bfb7-60fa5debbf7b",
+            "display": "<section><p><strong>Radio Broadcast</strong>, Loko beard yr 3 wolf moon.</p>\n<p><strong>Attended with</strong> Jackie Treehorn and Colin the Security Robot</p>\n<p><strong>Place, Date</strong> East Sheldon, 18 March 1957</p>\n<p><strong>Director</strong> Lintilla</p></section>"
+          }
+        ],
+        "organizations": [
+          {
+            "type": "organization",
+            "id": "http://example.org/entities/afe5e458-2c34-4480-868f-6f94facda765",
+            "display": "<section><p><strong>Arkintoofle Minor</strong></p>\n<p>Pardon <i>me for breathing, which I never do anyway so I don't know why I bother to say it, Oh God, I'm so</i> depressed.</p></section>"
+          }
+        ],
+        "people": [
+          {
+            "type": "person",
+            "id": "http://example.org/entities/7bf6853e-9d0b-49f5-b989-e9b34fac624e",
+            "display": "<section><p><strong>Doyle Effertz, 1915-1993</strong></p>\n<p>Pardon <i>me for breathing, which I never do anyway so I don't know why I bother to say it, Oh God, I'm so</i> depressed.</p></section>"
           },
           {
-            "type": "attendance",
-            "id": "http://example.org/entities/930bae98-3ff1-407e-8b78-fcebce2fe7dd",
-            "display": "<section><p><strong>Radio Broadcast</strong>, Vhs <i>forage aesthetic sartorial</i> coldpressed.</p>\n<p><strong>Attended with</strong> Donny and Lintilla</p>\n<p><strong>Place, Date</strong> Valchester, 19 June 1944</p>\n<p><strong>Director</strong> Zaphod Beeblebrox</p></section>"
-          }
-        ],
-        "music": [
-          {
-            "type": "music",
-            "id": "http://example.org/entities/01c66756-54c2-42a7-846a-ec76c13e23e8",
-            "display": "<section><p><strong>Composer</strong> Random Dent</p>\n<p><strong>Title</strong> I Wanna Be Your Lover</p>\n<p><strong>Description</strong> Occupy keytar ethical normcore fashion axe letterpress.</p></section>"
-          }
-        ],
-        "translatings": [
-          {
-            "type": "translating",
-            "id": "http://example.org/entities/33186a04-e2b9-4e6a-9422-ce052deae2e2",
-            "display": "<section><p><strong>Author</strong> Zarquon, <strong>Original Title</strong> <i>The Glory and the Dream</i></p>\n<p><strong>Translated into</strong> Ukrainian by Slartibartfast</p>\n<p><strong>Translated title</strong> Bistromath.</p></section>"
-          }
-        ],
-        "writings": [
-          {
-            "type": "writing",
-            "id": "http://example.org/entities/ca6c995b-6d65-40b4-8cb2-896e12f9cfba",
-            "display": "<section><p><strong>Title</strong> <i>Dulce et Decorum Est</i></p>\n<p><strong>Proposal/Response</strong> Magrathea itself disappeared and its memory soon passed into the obscurity of legend. In these enlightened days, of course, no one believes a word of it.</p>\n<p><strong>Translator</strong> The Allitnils</p>\n<p><strong>Date</strong> 1965-10-18.</p></section>"
-          },
-          {
-            "type": "writing",
-            "id": "http://example.org/entities/51463eda-1765-4a44-babf-2fdd916b4bb7",
-            "display": "<section><p><strong>Title</strong> <i>Beneath the Bleeding</i></p>\n<p><strong>Proposal/Response</strong> if you’ve never been through a matter transference beam before you’ve probably lost some salt and protein. The beer you had should have cushioned your system a bit.</p>\n<p><strong>Translator</strong> Arthur Dent</p>\n<p><strong>Date</strong> 1931-01-20.</p></section>"
-          }
-        ]
-      }
-    },
-    {
-      "id": "http://example.org/letters/21de8aee-2dc4-4ac9-8fe9-218d2d894aa2",
-      "date": "1973-03-23T00:00:00.000-05:00",
-      "label": "23 March 1973 - Ebert, Felicia",
-      "language": "italian",
-      "volume": 3,
-      "recipients": [
-        "Ebert, Felicia"
-      ],
-      "destinations": [
-        "<i>Lord's Cricket Ground</i>"
-      ],
-      "origins": null,
-      "mentions": {
-        "publications": [
-          {
-            "type": "publication",
-            "id": "http://example.org/entities/7af5b169-e6c0-402d-977b-ecb87269efb9",
-            "display": "<section><p><strong>Author</strong> Karl Hungus</p>\n<p><strong>Title</strong> Manning Publications</p>\n<p><strong>Translator</strong> Prostetnic Vogon Jeltz</p>\n<p><strong>Publication</strong> You probably haven't heard of them truffaut blue bottle fingerstache kitsch authentic tacos.</p></section>"
-          },
-          {
-            "type": "publication",
-            "id": "http://example.org/entities/cd80c9ca-edc2-4981-9540-c8a7f2ecb798",
-            "display": "<section><p><strong>Author</strong> Brandt</p>\n<p><strong>Title</strong> Simon &amp; Schuster</p>\n<p><strong>Translator</strong> Frankie and Benjy</p>\n<p><strong>Publication</strong> Ennui scenester heirloom cronut.</p></section>"
-          }
-        ],
-        "readings": [
-          {
-            "type": "reading",
-            "id": "http://example.org/entities/1198f9c9-7f3b-4389-a7c8-f78ea9d267fc",
-            "display": "<section><p><strong>Author</strong> Tony Von</p>\n<p><strong>Title</strong> No Longer at Ease</p>\n<p><strong>Publication</strong> Shire Books.</p></section>"
+            "type": "person",
+            "id": "http://example.org/entities/18e42611-6e00-49cb-bc16-07d3e76dda34",
+            "display": "<section><p><strong>Dorothea Schowalter, 1922-1973</strong></p>\n<p>Life? Don't talk to me about life.</p></section>"
           }
         ],
         "work_of_arts": [
           {
             "type": "work_of_art",
-            "id": "http://example.org/entities/6c95bdbb-0f3e-4e65-b4f6-a84fb37c8297",
-            "display": "<section><p><strong>Artist</strong> Roosta</p>\n<p><strong>Title</strong> 200 Balloons</p>\n<p><strong>Description</strong> Seitan mustache heirloom cleanse swag skateboard loko biodiesel deep v.</p>\n<p><strong>Owner/location</strong> Heart of Gold</p></section>"
+            "id": "http://example.org/entities/7907fded-79b2-49bb-b7be-fb20a160083e",
+            "display": "<section><p><strong>Artist</strong> Tricia McMillan</p>\n<p><strong>Title</strong> Le Grind</p>\n<p><strong>Description</strong> Trust <i>fund postironic vegan meh loko tousled vinyl godard</i> echo.</p>\n<p><strong>Owner/location</strong> Tanngrisnir</p></section>"
           },
           {
             "type": "work_of_art",
-            "id": "http://example.org/entities/f2394960-8333-45e9-8401-0f8624ea2221",
-            "display": "<section><p><strong>Artist</strong> Mella</p>\n<p><strong>Title</strong> <i>I Feel For You</i></p>\n<p><strong>Description</strong> Actually <i>small batch literally echo photo booth listicle chicharrones</i> plaid.</p>\n<p><strong>Owner/location</strong> Starship Titanic</p></section>"
+            "id": "http://example.org/entities/9971efa2-e5bd-4253-8e3c-80cd7c798a1d",
+            "display": "<section><p><strong>Artist</strong> Prak</p>\n<p><strong>Title</strong> <i>Gold</i></p>\n<p><strong>Description</strong> Lumbersexual <i>fashion axe thundercats</i> kogi.</p>\n<p><strong>Owner/location</strong> Bistromath</p></section>"
           },
           {
             "type": "work_of_art",
-            "id": "http://example.org/entities/b2521fad-b278-44da-8ccf-684bd6a84b1d",
-            "display": "<section><p><strong>Artist</strong> Trillian</p>\n<p><strong>Title</strong> Still Waiting</p>\n<p><strong>Description</strong> Wayfarers <i>slowcarb next level selvage photo booth</i> biodiesel.</p>\n<p><strong>Owner/location</strong> Heart of Gold</p></section>"
-          }
-        ],
-        "writings": [
-          {
-            "type": "writing",
-            "id": "http://example.org/entities/de4b37be-f28b-45bd-9546-8207da042f45",
-            "display": "<section><p><strong>Title</strong> A Monstrous Regiment of Women</p>\n<p><strong>Proposal/Response</strong> there’s an infinite number of monkeys outside who want to talk to us about this script for Hamlet they’ve worked out.</p>\n<p><strong>Translator</strong> Charles Darwin</p>\n<p><strong>Date</strong> 1966-02-04.</p></section>"
+            "id": "http://example.org/entities/6c60c637-70e9-4b5d-95ba-8562410747fb",
+            "display": "<section><p><strong>Artist</strong> Random Dent</p>\n<p><strong>Title</strong> <i>Pink Cashmere</i></p>\n<p><strong>Description</strong> Forage <i>meh sriracha sustainable pitchfork knausgaard</i> 90s.</p>\n<p><strong>Owner/location</strong> RW6</p></section>"
           }
         ]
       }
     },
     {
-      "id": "http://example.org/letters/ffe1499e-34a2-478c-bb1f-d6a32c9afba2",
-      "date": "1974-09-20T00:00:00.000-04:00",
-      "label": "20 September 1974 - Carroll, Isobel",
+      "id": "http://example.org/letters/3a1dca24-1a3d-4535-a50d-02687f926a01",
+      "date": "1969-08-10T00:00:00.000-04:00",
+      "label": "10 August 1969 - Emmerich, Dane",
+      "language": "french",
+      "volume": 2,
+      "recipients": [
+        "Emmerich, Dane"
+      ],
+      "destinations": [
+        "Megabrantis cluster"
+      ],
+      "origins": null,
+      "mentions": {
+        "music": [
+          {
+            "type": "music",
+            "id": "http://example.org/entities/d515b972-21d9-4423-bffb-7384e260fa5c",
+            "display": "<section><p><strong>Composer</strong> Barry Manilow</p>\n<p><strong>Title</strong> <i>Housequake</i></p>\n<p><strong>Description</strong> Park cornhole trust fund muggle magic kombucha pork belly.</p></section>"
+          },
+          {
+            "type": "music",
+            "id": "http://example.org/entities/0d2941b2-f724-4125-a5d5-acacc314d3cf",
+            "display": "<section><p><strong>Composer</strong> Trin Tragula</p>\n<p><strong>Title</strong> Another Lonely Christmas</p>\n<p><strong>Description</strong> Truffaut <i>park umami kinfolk vhs vinyl organic pbrb</i> williamsburg.</p></section>"
+          },
+          {
+            "type": "music",
+            "id": "http://example.org/entities/4c067c9d-16af-4aac-acb1-e7a01ed4f288",
+            "display": "<section><p><strong>Composer</strong> Emily Saunders</p>\n<p><strong>Title</strong> <i>Strange Relationship</i></p>\n<p><strong>Description</strong> Leggings cred hashtag five dollar toast sartorial poutine carry.</p></section>"
+          }
+        ],
+        "organizations": [
+          {
+            "type": "organization",
+            "id": "http://example.org/entities/058be2ed-c161-4fd2-9402-75990a2e332c",
+            "display": "<section><p><strong><i>Kria</i></strong></p>\n<p>I wish you'd just tell me rather trying to engage my enthusiasm, because I haven't got one.</p></section>"
+          },
+          {
+            "type": "organization",
+            "id": "http://example.org/entities/8892695d-bab4-4d34-a8d6-3e791b55c4a2",
+            "display": "<section><p><strong><i>Sqornshellous Zeta</i></strong></p>\n<p>I wish you'd just tell me rather trying to engage my enthusiasm, because I haven't got one.</p></section>"
+          }
+        ],
+        "public_events": [
+          {
+            "type": "public_event",
+            "id": "http://example.org/entities/15fe055b-0b2d-4c7f-8eb6-07855ea1ed78",
+            "display": "<section><p><strong><i>Mercury</i></strong></p>\n<p><strong>1958-03-28.</strong></p></section>"
+          }
+        ],
+        "readings": [
+          {
+            "type": "reading",
+            "id": "http://example.org/entities/84b9a1bd-4464-427b-bf90-a4136f93cc16",
+            "display": "<section><p><strong>Author</strong> Laine Wyman</p>\n<p><strong>Title</strong> <i>From Here to Eternity</i></p>\n<p><strong>Publication</strong> Haynes Manuals.</p></section>"
+          }
+        ]
+      }
+    },
+    {
+      "id": "http://example.org/letters/ff194fe6-3b4a-4efd-8b65-9298049905d2",
+      "date": "1970-01-10T00:00:00.000-05:00",
+      "label": "10 January 1970 - Schowalter, Ned",
       "language": "italian",
       "volume": 3,
       "recipients": [
-        "Carroll, Isobel"
+        "Schowalter, Ned"
+      ],
+      "destinations": [
+        "London"
+      ],
+      "origins": null,
+      "mentions": {
+        "attendances": [
+          {
+            "type": "attendance",
+            "id": "http://example.org/entities/6f5d9ba6-6651-4621-b293-28e5230973ae",
+            "display": "<section><p><strong>Reading</strong>, Brunch <i>portland fanny pack godard mustache put a bird on it beard</i> venmo.</p>\n<p><strong>Attended with</strong> Donny and Magrathean sperm whale</p>\n<p><strong>Place, Date</strong> South Murrayfort, 29 February 1960</p>\n<p><strong>Director</strong> Loonquawl and Phouchg</p></section>"
+          },
+          {
+            "type": "attendance",
+            "id": "http://example.org/entities/731dc473-4d7e-42df-b58d-156daf0289de",
+            "display": "<section><p><strong>Rehearsal</strong>, Keffiyeh <i>offal brunch stumptown aesthetic seitan celiac tryhard</i> actually.</p>\n<p><strong>Attended with</strong> Bunny Lebowski and Prak</p>\n<p><strong>Place, Date</strong> Abelborough, 14 October 1961</p>\n<p><strong>Director</strong> Frankie and Benjy</p></section>"
+          }
+        ],
+        "publications": [
+          {
+            "type": "publication",
+            "id": "http://example.org/entities/d4175e60-1967-43d4-9d3c-9762723bf92d",
+            "display": "<section><p><strong>Author</strong> The Dude</p>\n<p><strong>Title</strong> <i>Schocken Books</i></p>\n<p><strong>Translator</strong> Genghis Khan</p>\n<p><strong>Publication</strong> Vice asymmetrical fanny pack vhs taxidermy mumblecore shoreditch.</p></section>"
+          },
+          {
+            "type": "publication",
+            "id": "http://example.org/entities/55588fe7-36e2-4235-8b99-8ff50373625d",
+            "display": "<section><p><strong>Author</strong> Bunny Lebowski</p>\n<p><strong>Title</strong> Ellora's Cave</p>\n<p><strong>Translator</strong> JinJenz</p>\n<p><strong>Publication</strong> Fingerstache tilde sustainable cray dreamcatcher cliche.</p></section>"
+          },
+          {
+            "type": "publication",
+            "id": "http://example.org/entities/629958a7-9c7d-4c40-8729-0019949541ef",
+            "display": "<section><p><strong>Author</strong> The Dude</p>\n<p><strong>Title</strong> <i>Verso Books</i></p>\n<p><strong>Translator</strong> Prostetnic Vogon Jeltz</p>\n<p><strong>Publication</strong> Vinegar scenester kombucha flannel freegan typewriter vegan.</p></section>"
+          }
+        ],
+        "work_of_arts": [
+          {
+            "type": "work_of_art",
+            "id": "http://example.org/entities/98349b8a-34d7-4597-a41b-59437ece7d18",
+            "display": "<section><p><strong>Artist</strong> Fenchurch</p>\n<p><strong>Title</strong> 3 Chains o' Gold</p>\n<p><strong>Description</strong> Ennui <i>brunch celiac meditation microdosing sriracha williamsburg</i> literally.</p>\n<p><strong>Owner/location</strong> Golgafrinchan Ark Fleet Ship B</p></section>"
+          }
+        ],
+        "writings": [
+          {
+            "type": "writing",
+            "id": "http://example.org/entities/221d4a6c-1bb3-4fc6-8caf-092ee449b4c6",
+            "display": "<section><p><strong>Title</strong> Eyeless in Gaza</p>\n<p><strong>Proposal/Response</strong> Magrathea itself disappeared and its memory soon passed into the obscurity of legend. In these enlightened days, of course, no one believes a word of it.</p>\n<p><strong>Translator</strong> Dan Streetmentioner</p>\n<p><strong>Date</strong> 1965-06-11.</p></section>"
+          },
+          {
+            "type": "writing",
+            "id": "http://example.org/entities/d177a81c-0584-45ff-8f3f-15148c1fc830",
+            "display": "<section><p><strong>Title</strong> <i>Precious Bane</i></p>\n<p><strong>Proposal/Response</strong> According to the legends, the Magratheans lived most of their lives underground.</p>\n<p><strong>Translator</strong> Humma Kavula</p>\n<p><strong>Date</strong> 1925-04-16.</p></section>"
+          }
+        ]
+      }
+    },
+    {
+      "id": "http://example.org/letters/4904806e-587f-4740-abb9-307ab8511127",
+      "date": "1971-11-27T00:00:00.000-05:00",
+      "label": "27 November 1971 - Gulgowski, Edgar",
+      "language": "french",
+      "volume": 2,
+      "recipients": [
+        "Gulgowski, Edgar"
       ],
       "destinations": [
         "Horsehead Nebula"
       ],
       "origins": null,
       "mentions": {
-        "organizations": [
+        "music": [
           {
-            "type": "organization",
-            "id": "http://example.org/entities/eac254d2-700e-4f4d-928f-82de2e747e5a",
-            "display": "<section><p><strong>Eroticon VI</strong></p>\n<p>And then of course I've got this terrible pain in all the diodes down my left side.</p></section>"
-          },
-          {
-            "type": "organization",
-            "id": "http://example.org/entities/9f3be574-ea9f-4bc0-b42a-69ac688241d8",
-            "display": "<section><p><strong><i>Eroticon VI</i></strong></p>\n<p>I won't enjoy it.</p></section>"
+            "type": "music",
+            "id": "http://example.org/entities/a1a08b62-1c7b-488e-9c4a-4ae7746e508e",
+            "display": "<section><p><strong>Composer</strong> Lintilla</p>\n<p><strong>Title</strong> <i>Baby I'm A Star</i></p>\n<p><strong>Description</strong> Mlkshk <i>vinegar chicharrones popup blog franzen</i> diy.</p></section>"
           }
         ],
-        "people": [
+        "productions": [
           {
-            "type": "person",
-            "id": "http://example.org/entities/f31fccff-47a8-4c02-aab8-f4772f1428a0",
-            "display": "<section><p><strong>Brittni Cartwright, 1906-1992</strong></p>\n<p>Life? Don't talk to me about life.</p></section>"
-          }
-        ],
-        "public_events": [
-          {
-            "type": "public_event",
-            "id": "http://example.org/entities/5478e790-1f70-4094-9e4e-5d44c166a700",
-            "display": "<section><p><strong><i>Discovery</i></strong></p>\n<p><strong>1968-01-02.</strong></p></section>"
+            "type": "production",
+            "id": "http://example.org/entities/99160849-552c-40e0-96de-9f3afb529b46",
+            "display": "<section><p><strong>Title</strong> <i>Heat</i></p>\n<p><strong>Proposal/Response</strong> I think you ought to know I'm feeling very depressed. / if you’ve never been through a matter transference beam before you’ve probably lost some salt and protein. The beer you had should have cushioned your system a bit.</p>\n<p><strong>Director</strong> Brandt <strong>Theatre, City</strong> Heart of Gold, Pfefferside</p>\n<p><strong>Date(s)</strong> 1970-12-06.</p></section>"
           }
         ],
         "readings": [
           {
             "type": "reading",
-            "id": "http://example.org/entities/8bf0b75c-6562-4283-b2d8-6c2e453edaec",
-            "display": "<section><p><strong>Author</strong> Stan Kassulke</p>\n<p><strong>Title</strong> The Wives of Bath</p>\n<p><strong>Publication</strong> St. Martin's Press.</p></section>"
+            "id": "http://example.org/entities/4ecd1082-f239-41d1-8bb9-2c29dcd028ad",
+            "display": "<section><p><strong>Author</strong> Alla Armstrong</p>\n<p><strong>Title</strong> <i>Quo Vadis</i></p>\n<p><strong>Publication</strong> Heyday Books.</p></section>"
           },
           {
             "type": "reading",
-            "id": "http://example.org/entities/aba91981-581f-4eb8-963e-1301e9a3c3aa",
-            "display": "<section><p><strong>Author</strong> Darell McDermott Ret.</p>\n<p><strong>Title</strong> Death Be Not Proud</p>\n<p><strong>Publication</strong> Dalkey Archive Press.</p></section>"
-          },
-          {
-            "type": "reading",
-            "id": "http://example.org/entities/8c4455ec-1ea3-4b85-b5a6-0561c7d3b079",
-            "display": "<section><p><strong>Author</strong> Tyrone Swaniawski</p>\n<p><strong>Title</strong> The Needle's Eye</p>\n<p><strong>Publication</strong> Atheneum Books.</p></section>"
-          }
-        ]
-      }
-    },
-    {
-      "id": "http://example.org/letters/f1be83cc-c539-4ffe-a341-204adc217678",
-      "date": "1975-02-21T00:00:00.000-05:00",
-      "label": "21 February 1975 - Torphy, Willie",
-      "language": "english",
-      "volume": 1,
-      "recipients": [
-        "Torphy, Willie"
-      ],
-      "destinations": [
-        "Sector XXXZ5QZX"
-      ],
-      "origins": null,
-      "mentions": {
-        "organizations": [
-          {
-            "type": "organization",
-            "id": "http://example.org/entities/007e2b6e-a49b-4aed-b10e-fc5b19e3b77e",
-            "display": "<section><p><strong>Arkintoofle Minor</strong></p>\n<p>There's <i>only one life-form as intelligent as me within thirty parsecs of here and that's</i> me.</p></section>"
-          },
-          {
-            "type": "organization",
-            "id": "http://example.org/entities/69aa0e6f-74a1-4507-8329-d7b339318164",
-            "display": "<section><p><strong><i>Frogstar World C</i></strong></p>\n<p>Pardon <i>me for breathing, which I never do anyway so I don't know why I bother to say it, Oh God, I'm so</i> depressed.</p></section>"
-          }
-        ],
-        "readings": [
-          {
-            "type": "reading",
-            "id": "http://example.org/entities/47fe32e3-d690-47dc-b1e8-02aa3d713325",
-            "display": "<section><p><strong>Author</strong> Ian Ward JD</p>\n<p><strong>Title</strong> <i>The Moving Toyshop</i></p>\n<p><strong>Publication</strong> D. Appleton &amp; Company.</p></section>"
+            "id": "http://example.org/entities/c7a8b4ee-5245-46d4-99a1-5b0888b03ac1",
+            "display": "<section><p><strong>Author</strong> Walton Ferry MD</p>\n<p><strong>Title</strong> <i>Dulce et Decorum Est</i></p>\n<p><strong>Publication</strong> McGraw-Hill Education.</p></section>"
           }
         ],
         "translatings": [
           {
             "type": "translating",
-            "id": "http://example.org/entities/5859785a-829f-431a-ad2f-010da2e3dfce",
-            "display": "<section><p><strong>Author</strong> Genghis Khan, <strong>Original Title</strong> A Catskill Eagle</p>\n<p><strong>Translated into</strong> Rumanian by Lunkwill and Fook</p>\n<p><strong>Translated title</strong> Tanngrisnir.</p></section>"
-          }
-        ],
-        "writings": [
+            "id": "http://example.org/entities/e5700465-d3e6-4f95-be8a-6e6efc2d1ac3",
+            "display": "<section><p><strong>Author</strong> Pizpot Gargravarr, <strong>Original Title</strong> <i>Consider Phlebas</i></p>\n<p><strong>Translated into</strong> Norwegian by Pizpot Gargravarr</p>\n<p><strong>Translated title</strong> Vogon Constructor Fleet.</p></section>"
+          },
           {
-            "type": "writing",
-            "id": "http://example.org/entities/ac3644eb-703d-488e-973c-204b918b441e",
-            "display": "<section><p><strong>Title</strong> <i>I Know Why the Caged Bird Sings</i></p>\n<p><strong>Proposal/Response</strong> Parts of the inside of her head screamed at other parts of the inside of her head.</p>\n<p><strong>Translator</strong> Fenchurch</p>\n<p><strong>Date</strong> 1960-01-23.</p></section>"
+            "type": "translating",
+            "id": "http://example.org/entities/a64877aa-b826-4a61-a08a-f1d44e963c18",
+            "display": "<section><p><strong>Author</strong> Genghis Khan, <strong>Original Title</strong> <i>The Other Side of Silence</i></p>\n<p><strong>Translated into</strong> Flemish by Eddie the Computer</p>\n<p><strong>Translated title</strong> Vogon Constructor Fleet.</p></section>"
           }
         ]
       }
     },
     {
-      "id": "http://example.org/letters/81461ff2-40bc-4e63-a214-146b63e9e9f8",
-      "date": "1975-04-01T00:00:00.000-04:00",
-      "label": "01 April 1975 - Kassulke, Jonie",
-      "language": "french",
-      "volume": 2,
+      "id": "http://example.org/letters/75737e20-d6ce-49a0-9d8d-3a912b9ea1fb",
+      "date": "1978-02-24T00:00:00.000-05:00",
+      "label": "24 February 1978 - Stark, Hal",
+      "language": "german",
+      "volume": 4,
       "recipients": [
-        "Kassulke, Jonie"
+        "Stark, Hal"
       ],
       "destinations": [
-        "<i>Madagascar</i>"
+        "<i>Frogstar system</i>"
       ],
       "origins": null,
       "mentions": {
+        "organizations": [
+          {
+            "type": "organization",
+            "id": "http://example.org/entities/3bb5f9bf-56a6-43c3-8d06-5612b89b7cab",
+            "display": "<section><p><strong>Viltvodle VI</strong></p>\n<p>Pardon <i>me for breathing, which I never do anyway so I don't know why I bother to say it, Oh God, I'm so</i> depressed.</p></section>"
+          }
+        ],
         "places": [
           {
             "type": "place",
-            "id": "http://example.org/entities/ca085e5d-d6c1-4adb-a39b-47ffc5300c17",
-            "display": "<section><p><strong><i>Total Perspective Vortex</i></strong></p>\n<p>Readymade <i>typewriter tacos occupy craft beer cornhole put a bird on</i> it.</p></section>"
-          },
+            "id": "http://example.org/entities/113d7949-578f-4108-9c11-0992f0a8ab2a",
+            "display": "<section><p><strong>Lamuella</strong></p>\n<p>Retro iphone swag portland muggle magic crucifix xoxo.</p></section>"
+          }
+        ],
+        "productions": [
           {
-            "type": "place",
-            "id": "http://example.org/entities/86384a75-f112-48fa-b2bf-1c47a656a852",
-            "display": "<section><p><strong>Croydon</strong></p>\n<p>Trust <i>fund tote bag sustainable wes anderson knausgaard carry pabst migas</i> flannel.</p></section>"
-          },
-          {
-            "type": "place",
-            "id": "http://example.org/entities/5fb75ccf-7fe7-4247-9df1-a13863a3b684",
-            "display": "<section><p><strong>Belgium</strong></p>\n<p>Cardigan vinyl tofu plaid.</p></section>"
+            "type": "production",
+            "id": "http://example.org/entities/47804a0c-8aa2-4516-9e24-7a1496278998",
+            "display": "<section><p><strong>Title</strong> <i>The Sting</i></p>\n<p><strong>Proposal/Response</strong> I wish you'd just tell me rather trying to engage my enthusiasm, because I haven't got one. / Evolution? they said to themselves, Who needs it?</p>\n<p><strong>Director</strong> The Big Lebowski <strong>Theatre, City</strong> RW6, Pacochaburgh</p>\n<p><strong>Date(s)</strong> 1961-05-27.</p></section>"
           }
         ],
         "public_events": [
           {
             "type": "public_event",
-            "id": "http://example.org/entities/21319f15-6add-48c5-9116-32ec62e47afa",
-            "display": "<section><p><strong>Orion</strong></p>\n<p><strong>1954-01-07.</strong></p></section>"
-          },
+            "id": "http://example.org/entities/5887d289-cec2-449d-86d0-890da5d33de3",
+            "display": "<section><p><strong>Challenger</strong></p>\n<p><strong>1965-02-22.</strong></p></section>"
+          }
+        ]
+      }
+    },
+    {
+      "id": "http://example.org/letters/32e9a61d-3773-44a7-8d31-4a5be096b4ef",
+      "date": "1980-03-09T00:00:00.000-05:00",
+      "label": "09 March 1980 - Bruen, Scotty",
+      "language": "german",
+      "volume": 0,
+      "recipients": [
+        "Bruen, Scotty"
+      ],
+      "destinations": [
+        "<i>Belgium</i>"
+      ],
+      "origins": null,
+      "mentions": {
+        "music": [
           {
-            "type": "public_event",
-            "id": "http://example.org/entities/4fbdc365-5831-49a6-b874-3a59640641ec",
-            "display": "<section><p><strong><i>Apollo</i></strong></p>\n<p><strong>1933-08-11.</strong></p></section>"
-          },
-          {
-            "type": "public_event",
-            "id": "http://example.org/entities/6bdd9ac6-67fd-4cad-bb0a-de9ca198a763",
-            "display": "<section><p><strong><i>Atlantis</i></strong></p>\n<p><strong>1923-07-25.</strong></p></section>"
+            "type": "music",
+            "id": "http://example.org/entities/3df1aea1-04ce-4a42-91a0-9ee0a2cb9188",
+            "display": "<section><p><strong>Composer</strong> Galaxia Woonbeam</p>\n<p><strong>Title</strong> I Wish U Heaven</p>\n<p><strong>Description</strong> Art <i>party tacos kickstarter stumptown drinking selvage</i> street.</p></section>"
           }
         ],
-        "readings": [
+        "organizations": [
           {
-            "type": "reading",
-            "id": "http://example.org/entities/b92f41af-ebc1-4d0f-ae74-d4f5837f0d81",
-            "display": "<section><p><strong>Author</strong> Jeanice Harris DVM</p>\n<p><strong>Title</strong> <i>Ah, Wilderness!</i></p>\n<p><strong>Publication</strong> Pantheon Books at Random House.</p></section>"
+            "type": "organization",
+            "id": "http://example.org/entities/513bd933-6de4-4cd2-812a-ceb8b5315614",
+            "display": "<section><p><strong>NowWhat</strong></p>\n<p>Life? Don't talk to me about life.</p></section>"
           },
           {
-            "type": "reading",
-            "id": "http://example.org/entities/4ad1c5ac-79a2-46eb-82ef-89ca2576e934",
-            "display": "<section><p><strong>Author</strong> Ms. Eldridge Towne</p>\n<p><strong>Title</strong> Antic Hay</p>\n<p><strong>Publication</strong> Addison-Wesley.</p></section>"
-          },
-          {
-            "type": "reading",
-            "id": "http://example.org/entities/390f5126-32ff-47db-8f28-c40dff659725",
-            "display": "<section><p><strong>Author</strong> Michell Langworth</p>\n<p><strong>Title</strong> <i>When the Green Woods Laugh</i></p>\n<p><strong>Publication</strong> Borgo Press.</p></section>"
+            "type": "organization",
+            "id": "http://example.org/entities/6316e317-5887-49d2-9dc6-7c7195a822a5",
+            "display": "<section><p><strong>Bartledan</strong></p>\n<p>I think you ought to know I'm feeling very depressed.</p></section>"
           }
         ],
         "translatings": [
           {
             "type": "translating",
-            "id": "http://example.org/entities/d07de1d1-5ae9-4141-b1f5-c4e9e3ea6105",
-            "display": "<section><p><strong>Author</strong> Vroomfondel, <strong>Original Title</strong> <i>Stranger in a Strange Land</i></p>\n<p><strong>Translated into</strong> Marathi by Galaxia Woonbeam</p>\n<p><strong>Translated title</strong> RW6.</p></section>"
-          },
+            "id": "http://example.org/entities/d6423b72-58c4-4db3-9963-facb9cf32e84",
+            "display": "<section><p><strong>Author</strong> Questular Rontok, <strong>Original Title</strong> A Handful of Dust</p>\n<p><strong>Translated into</strong> Icelandic by Random Dent</p>\n<p><strong>Translated title</strong> Tanngrisnir.</p></section>"
+          }
+        ],
+        "work_of_arts": [
           {
-            "type": "translating",
-            "id": "http://example.org/entities/10e87dbd-bc96-4bcd-aead-c678bd62952a",
-            "display": "<section><p><strong>Author</strong> Galaxia Woonbeam, <strong>Original Title</strong> Dulce et Decorum Est</p>\n<p><strong>Translated into</strong> Spanish by Mella</p>\n<p><strong>Translated title</strong> Tanngrisnir.</p></section>"
+            "type": "work_of_art",
+            "id": "http://example.org/entities/788a5e87-8f8b-47f8-8008-dd66a9a7e63f",
+            "display": "<section><p><strong>Artist</strong> Rob McKenna</p>\n<p><strong>Title</strong> <i>Cream</i></p>\n<p><strong>Description</strong> Fingerstache plaid messenger bag lofi.</p>\n<p><strong>Owner/location</strong> Starship Titanic</p></section>"
           }
         ]
       }
@@ -1208,21 +1562,25 @@ Content-Length: 76505</pre>
   ],
   "aggs": {
     "volume": {
-      "doc_count": 19,
+      "doc_count": 25,
       "doc_count_error_upper_bound": 0,
       "sum_other_doc_count": 0,
       "buckets": [
         {
-          "key": 3,
-          "doc_count": 7
+          "key": 2,
+          "doc_count": 11
+        },
+        {
+          "key": 4,
+          "doc_count": 5
         },
         {
           "key": 1,
-          "doc_count": 6
+          "doc_count": 4
         },
         {
-          "key": 2,
-          "doc_count": 4
+          "key": 3,
+          "doc_count": 3
         },
         {
           "key": 0,
@@ -1231,12 +1589,12 @@ Content-Length: 76505</pre>
       ]
     },
     "date": {
-      "doc_count": 19,
+      "doc_count": 25,
       "buckets": [
         {
           "key_as_string": "1950-01-01T00:00:00.000Z",
           "key": -631152000000,
-          "doc_count": 1
+          "doc_count": 2
         },
         {
           "key_as_string": "1951-01-01T00:00:00.000Z",
@@ -1251,12 +1609,12 @@ Content-Length: 76505</pre>
         {
           "key_as_string": "1953-01-01T00:00:00.000Z",
           "key": -536457600000,
-          "doc_count": 2
+          "doc_count": 0
         },
         {
           "key_as_string": "1954-01-01T00:00:00.000Z",
           "key": -504921600000,
-          "doc_count": 1
+          "doc_count": 0
         },
         {
           "key_as_string": "1955-01-01T00:00:00.000Z",
@@ -1276,17 +1634,17 @@ Content-Length: 76505</pre>
         {
           "key_as_string": "1958-01-01T00:00:00.000Z",
           "key": -378691200000,
-          "doc_count": 1
+          "doc_count": 3
         },
         {
           "key_as_string": "1959-01-01T00:00:00.000Z",
           "key": -347155200000,
-          "doc_count": 0
+          "doc_count": 1
         },
         {
           "key_as_string": "1960-01-01T00:00:00.000Z",
           "key": -315619200000,
-          "doc_count": 1
+          "doc_count": 2
         },
         {
           "key_as_string": "1961-01-01T00:00:00.000Z",
@@ -1311,7 +1669,7 @@ Content-Length: 76505</pre>
         {
           "key_as_string": "1965-01-01T00:00:00.000Z",
           "key": -157766400000,
-          "doc_count": 0
+          "doc_count": 1
         },
         {
           "key_as_string": "1966-01-01T00:00:00.000Z",
@@ -1321,12 +1679,12 @@ Content-Length: 76505</pre>
         {
           "key_as_string": "1967-01-01T00:00:00.000Z",
           "key": -94694400000,
-          "doc_count": 0
+          "doc_count": 3
         },
         {
           "key_as_string": "1968-01-01T00:00:00.000Z",
           "key": -63158400000,
-          "doc_count": 0
+          "doc_count": 2
         },
         {
           "key_as_string": "1969-01-01T00:00:00.000Z",
@@ -1351,45 +1709,70 @@ Content-Length: 76505</pre>
         {
           "key_as_string": "1973-01-01T00:00:00.000Z",
           "key": 94694400000,
-          "doc_count": 1
+          "doc_count": 0
         },
         {
           "key_as_string": "1974-01-01T00:00:00.000Z",
           "key": 126230400000,
-          "doc_count": 1
+          "doc_count": 0
         },
         {
           "key_as_string": "1975-01-01T00:00:00.000Z",
           "key": 157766400000,
-          "doc_count": 2
+          "doc_count": 0
+        },
+        {
+          "key_as_string": "1976-01-01T00:00:00.000Z",
+          "key": 189302400000,
+          "doc_count": 0
+        },
+        {
+          "key_as_string": "1977-01-01T00:00:00.000Z",
+          "key": 220924800000,
+          "doc_count": 0
+        },
+        {
+          "key_as_string": "1978-01-01T00:00:00.000Z",
+          "key": 252460800000,
+          "doc_count": 1
+        },
+        {
+          "key_as_string": "1979-01-01T00:00:00.000Z",
+          "key": 283996800000,
+          "doc_count": 0
+        },
+        {
+          "key_as_string": "1980-01-01T00:00:00.000Z",
+          "key": 315532800000,
+          "doc_count": 1
         }
       ]
     },
     "repositories": {
-      "doc_count": 19,
+      "doc_count": 25,
       "doc_count_error_upper_bound": 0,
       "sum_other_doc_count": 0,
       "buckets": [
         {
-          "key": "Western Iowa College",
-          "doc_count": 9
+          "key": "East Monahan",
+          "doc_count": 17
         },
         {
-          "key": "Kilback College",
-          "doc_count": 8
+          "key": "North Maggio University",
+          "doc_count": 11
         },
         {
-          "key": "West Kovacek University",
-          "doc_count": 8
+          "key": "The Hawaii Academy",
+          "doc_count": 11
         },
         {
-          "key": "Gorczany Academy",
+          "key": "Roberts Academy",
           "doc_count": 7
         }
       ]
     },
     "language": {
-      "doc_count": 19,
+      "doc_count": 25,
       "doc_count_error_upper_bound": 0,
       "sum_other_doc_count": 0,
       "buckets": [
@@ -1398,16 +1781,16 @@ Content-Length: 76505</pre>
           "doc_count": 7
         },
         {
-          "key": "english",
-          "doc_count": 6
+          "key": "german",
+          "doc_count": 7
         },
         {
           "key": "italian",
-          "doc_count": 4
+          "doc_count": 6
         },
         {
-          "key": "german",
-          "doc_count": 2
+          "key": "english",
+          "doc_count": 5
         }
       ]
     }
@@ -1416,9 +1799,9 @@ Content-Length: 76505</pre>
     "page": 1,
     "per_page": 25,
     "page_count": 1,
-    "total_count": 19,
+    "total_count": 25,
     "links": {
-      "self": "http://example.org/letters?end_date=1975-04-01&page=1"
+      "self": "http://example.org/letters?end_date=1980-03-09&page=1"
     }
   }
 }

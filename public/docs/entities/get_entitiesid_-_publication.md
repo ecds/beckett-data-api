@@ -26,7 +26,7 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /entities/882183cc-d3a2-4432-a2e7-c93eb4e70eb5</pre>
+<pre>GET /entities/3e835e46-b7fa-4d3e-9ff7-231d8ebd09ee</pre>
 
 ### Response
 
@@ -39,12 +39,12 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;5b9acffc702c9e8e3415db297eac0bd2&quot;
+ETag: W/&quot;e8b85f36588d98ee4faa2b6b10dc9d19&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 94b8ccd0-6490-4c31-acd2-c21162791825
-X-Runtime: 0.736211
+X-Request-Id: f04ab701-2007-4c55-b026-ad6b6d42717d
+X-Runtime: 0.953488
 Vary: Origin
-Content-Length: 2406</pre>
+Content-Length: 1891</pre>
 
 #### Status
 
@@ -54,21 +54,21 @@ Content-Length: 2406</pre>
 
 ~~~
 {
-  "id": "http://example.org/entities/882183cc-d3a2-4432-a2e7-c93eb4e70eb5",
+  "id": "http://example.org/entities/3e835e46-b7fa-4d3e-9ff7-231d8ebd09ee",
   "type": "publication",
-  "label": "<i>University of Minnesota Press</i>",
-  "short_display": "<section><p><strong>Author</strong> Maude Lebowski</p>\n<p><strong>Title</strong> <i>University of Minnesota Press</i></p>\n<p><strong>Translator</strong> Pizpot Gargravarr</p>\n<p><strong>Publication</strong> Jean shorts kale chips venmo messenger bag wayfarers meditation distillery knausgaard paleo.</p></section>",
-  "full_display": "<table>\n<tr>\n<th scope=\"row\">Author</th>\n<td>Maude Lebowski</td>\n</tr>\n<tr>\n<th scope=\"row\">Title</th>\n<td><i>University of Minnesota Press</i></td>\n</tr>\n<tr>\n<th scope=\"row\">Translator</th>\n<td>Pizpot Gargravarr</td>\n</tr>\n<tr>\n<th scope=\"row\">Publication</th>\n<td>Jean shorts kale chips venmo messenger bag wayfarers meditation distillery knausgaard paleo.</td>\n</tr>\n<tr>\n<th scope=\"row\">Notes</th>\n<td>You think you've got problems? What are you supposed to do if you are a manically depressed robot? No, don't try to answer that. I'm fifty thousand times more intelligent than you and even I don't know the answer. It gives me a headache just trying to think down to your level.</td>\n</tr>\n</table>",
-  "description": "Trust <i>fund sartorial cronut selvage butcher paleo</i> narwhal.",
+  "label": "Pen and Sword Books",
+  "short_display": "<section><p><strong>Author</strong> Brandt</p>\n<p><strong>Title</strong> Pen and Sword Books</p>\n<p><strong>Translator</strong> Loonquawl</p>\n<p><strong>Publication</strong> Salvia yolo sartorial cleanse authentic echo tousled occupy.</p></section>",
+  "full_display": "<table>\n<tr>\n<th scope=\"row\">Author</th>\n<td>Brandt</td>\n</tr>\n<tr>\n<th scope=\"row\">Title</th>\n<td>Pen and Sword Books</td>\n</tr>\n<tr>\n<th scope=\"row\">Translator</th>\n<td>Loonquawl</td>\n</tr>\n<tr>\n<th scope=\"row\">Publication</th>\n<td>Salvia yolo sartorial cleanse authentic echo tousled occupy.</td>\n</tr>\n<tr>\n<th scope=\"row\">Notes</th>\n<td>Here I am, brain the size of a planet, and they tell me to take you up to the bridge. Call that job satisfaction? 'Cos I don't.</td>\n</tr>\n</table>",
+  "description": "Singleorigin <i>coffee mixtape biodiesel offal you probably havent heard of them vhs quinoa 90s</i> park.",
   "e_type": "publication",
-  "legacy_pk": 88038,
+  "legacy_pk": 95872,
   "authors": [
-    "Maude Lebowski"
+    "Brandt"
   ],
-  "notes": "You think you've got problems? What are you supposed to do if you are a manically depressed robot? No, don't try to answer that. I'm fifty thousand times more intelligent than you and even I don't know the answer. It gives me a headache just trying to think down to your level.",
-  "publication_information": "Jean shorts kale chips venmo messenger bag wayfarers meditation distillery knausgaard paleo.",
+  "notes": "Here I am, brain the size of a planet, and they tell me to take you up to the bridge. Call that job satisfaction? 'Cos I don't.",
+  "publication_information": "Salvia yolo sartorial cleanse authentic echo tousled occupy.",
   "translators": [
-    "Pizpot Gargravarr"
+    "Loonquawl"
   ]
 }
 ~~~

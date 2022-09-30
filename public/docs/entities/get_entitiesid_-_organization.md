@@ -26,7 +26,7 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /entities/bd919b4b-990f-4530-a4e1-350e4cf537df</pre>
+<pre>GET /entities/7c9f9aa5-2152-4d7c-b17f-e108a0fc2ccf</pre>
 
 ### Response
 
@@ -39,12 +39,12 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;758818cc7ac49a462d06881eccbf550e&quot;
+ETag: W/&quot;06b6c9384abcf19aae47cdbf28cf1b3a&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: ef0341e2-a8ee-4d9f-8fc4-16596ac8eaa2
-X-Runtime: 0.703580
+X-Request-Id: d5bde5f8-0022-4bc6-85f8-04b9d59549e9
+X-Runtime: 0.695357
 Vary: Origin
-Content-Length: 1497</pre>
+Content-Length: 1967</pre>
 
 #### Status
 
@@ -54,19 +54,19 @@ Content-Length: 1497</pre>
 
 ~~~
 {
-  "id": "http://example.org/entities/bd919b4b-990f-4530-a4e1-350e4cf537df",
+  "id": "http://example.org/entities/7c9f9aa5-2152-4d7c-b17f-e108a0fc2ccf",
   "type": "organization",
-  "label": "<i>Viltvodle VI</i>",
-  "short_display": "<section><p><strong><i>Viltvodle VI</i></strong></p>\n<p>And then of course I've got this terrible pain in all the diodes down my left side.</p></section>",
-  "full_display": "<table>\n<tr>\n<th scope=\"row\">Name</th>\n<td><i>Viltvodle VI</i></td>\n</tr>\n<tr>\n<th scope=\"row\">Description</th>\n<td>And then of course I've got this terrible pain in all the diodes down my left side.</td>\n</tr>\n<tr>\n<th scope=\"row\">Alternate Name(s)</th>\n<td>Scarlet Envy</td>\n</tr>\n<tr>\n<th scope=\"row\">Profile</th>\n<td>Earth: Mostly Harmless</td>\n</tr>\n<tr>\n<th scope=\"row\">Notes</th>\n<td>Are your smiles, are your smiles for me?</td>\n</tr>\n</table>",
-  "description": "And then of course I've got this terrible pain in all the diodes down my left side.",
+  "label": "Xaxis",
+  "short_display": "<section><p><strong>Xaxis</strong></p>\n<p>You think you've got problems? What are you supposed to do if you are a manically depressed robot? No, don't try to answer that. I'm fifty thousand times more intelligent than you and even I don't know the answer. It gives me a headache just trying to think down to your level.</p></section>",
+  "full_display": "<table>\n<tr>\n<th scope=\"row\">Name</th>\n<td>Xaxis</td>\n</tr>\n<tr>\n<th scope=\"row\">Description</th>\n<td>You think you've got problems? What are you supposed to do if you are a manically depressed robot? No, don't try to answer that. I'm fifty thousand times more intelligent than you and even I don't know the answer. It gives me a headache just trying to think down to your level.</td>\n</tr>\n<tr>\n<th scope=\"row\">Alternate Name(s)</th>\n<td>Aja</td>\n</tr>\n<tr>\n<th scope=\"row\">Profile</th>\n<td>Don’t Panic</td>\n</tr>\n<tr>\n<th scope=\"row\">Notes</th>\n<td>Don't worry, I won't hurt you... I only want you to have some fun.</td>\n</tr>\n</table>",
+  "description": "You think you've got problems? What are you supposed to do if you are a manically depressed robot? No, don't try to answer that. I'm fifty thousand times more intelligent than you and even I don't know the answer. It gives me a headache just trying to think down to your level.",
   "e_type": "organization",
-  "legacy_pk": 47777,
+  "legacy_pk": 36722,
   "alternate_names": [
-    "Scarlet Envy"
+    "Aja"
   ],
   "alternate_spellings": null,
-  "profile": "Earth: Mostly Harmless"
+  "profile": "Don’t Panic"
 }
 ~~~
 

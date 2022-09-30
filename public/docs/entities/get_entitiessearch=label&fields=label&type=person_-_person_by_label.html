@@ -168,6 +168,17 @@ table th, table td {
                   <span class="default">null</span>
                 </td>
               </tr>
+              <tr>
+                <td>
+                    <span class="name">operator</span>
+                </td>
+                <td>
+                  <span class="description">By default, results match any words in the query. Use &#39;and&#39; to match all words.</span>
+                </td>
+                <td>
+                  <span class="default">or</span>
+                </td>
+              </tr>
             </tbody>
           </table>
 
@@ -182,10 +193,10 @@ Host: example.org
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET /entities?search=Schmidt%2C+Ebonie&amp;type=person</pre>
+          <pre class="request route highlight">GET /entities?search=Raynor%2C+Jame&amp;type=person</pre>
 
             <h4>Query Parameters</h4>
-            <pre class="request query_parameters highlight">search: Schmidt, Ebonie
+            <pre class="request query_parameters highlight">search: Raynor, Jame
 type: person</pre>
 
 
@@ -198,39 +209,79 @@ X-Content-Type-Options: nosniff
 X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
-Link: &lt;http://example.org/entities?page=1&amp;search=Schmidt%2C+Ebonie&amp;type=person&gt;; rel=&#39;self&#39;
-X-Total-Count: 0
+Link: &lt;http://example.org/entities?page=1&amp;search=Raynor%2C+Jame&amp;type=person&gt;; rel=&#39;self&#39;
+X-Total-Count: 2
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;4d350d64e794ff479546af7b725b72dd&quot;
+ETag: W/&quot;798f194c260fd94fd654123c70418e6c&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 9989f7ef-cf61-492d-a235-50cd7647f86c
-X-Runtime: 2.929061
+X-Request-Id: ca5a4665-a77c-47e2-a454-2a506b0dbc17
+X-Runtime: 2.972086
 Vary: Origin
-Content-Length: 282</pre>
+Content-Length: 1916</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
   &quot;entities&quot;: [
-
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/2a69f324-1dbf-46cb-aeb6-9681b6d3e4db&quot;,
+      &quot;label&quot;: &quot;Raynor, Jame&quot;,
+      &quot;type&quot;: &quot;person&quot;,
+      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Jame Raynor, 1905-1994&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;Pardon &lt;i&gt;me for breathing, which I never do anyway so I don&#39;t know why I bother to say it, Oh God, I&#39;m so&lt;/i&gt; depressed.&lt;/p&gt;&lt;/section&gt;&quot;,
+      &quot;description&quot;: &quot;Pardon &lt;i&gt;me for breathing, which I never do anyway so I don&#39;t know why I bother to say it, Oh God, I&#39;m so&lt;/i&gt; depressed.&quot;,
+      &quot;clean_label&quot;: &quot;Raynor, Jame&quot;,
+      &quot;clean_description&quot;: &quot;Pardon me for breathing, which I never do anyway so I don&#39;t know why I bother to say it, Oh God, I&#39;m so depressed.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/6b45fe2d-cc0c-41ea-8eba-9ae6f3aca723&quot;,
+      &quot;label&quot;: &quot;Robel, Bruce&quot;,
+      &quot;type&quot;: &quot;person&quot;,
+      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Bruce Robel, 1913-1983&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;I &lt;i&gt;wish you&#39;d just tell me rather trying to engage my enthusiasm, because I haven&#39;t got&lt;/i&gt; one.&lt;/p&gt;&lt;/section&gt;&quot;,
+      &quot;description&quot;: &quot;I &lt;i&gt;wish you&#39;d just tell me rather trying to engage my enthusiasm, because I haven&#39;t got&lt;/i&gt; one.&quot;,
+      &quot;clean_label&quot;: &quot;Robel, Bruce&quot;,
+      &quot;clean_description&quot;: &quot;I wish you&#39;d just tell me rather trying to engage my enthusiasm, because I haven&#39;t got one.&quot;
+    }
   ],
   &quot;aggs&quot;: {
     &quot;e_type&quot;: {
-      &quot;doc_count&quot;: 0,
+      &quot;doc_count&quot;: 9,
       &quot;doc_count_error_upper_bound&quot;: 0,
       &quot;sum_other_doc_count&quot;: 0,
       &quot;buckets&quot;: [
-
+        {
+          &quot;key&quot;: &quot;organization&quot;,
+          &quot;doc_count&quot;: 2
+        },
+        {
+          &quot;key&quot;: &quot;person&quot;,
+          &quot;doc_count&quot;: 2
+        },
+        {
+          &quot;key&quot;: &quot;public_event&quot;,
+          &quot;doc_count&quot;: 2
+        },
+        {
+          &quot;key&quot;: &quot;place&quot;,
+          &quot;doc_count&quot;: 1
+        },
+        {
+          &quot;key&quot;: &quot;production&quot;,
+          &quot;doc_count&quot;: 1
+        },
+        {
+          &quot;key&quot;: &quot;work_of_art&quot;,
+          &quot;doc_count&quot;: 1
+        }
       ]
     }
   },
   &quot;meta&quot;: {
     &quot;page&quot;: 1,
     &quot;per_page&quot;: 25,
-    &quot;page_count&quot;: 0,
-    &quot;total_count&quot;: 0,
+    &quot;page_count&quot;: 1,
+    &quot;total_count&quot;: 2,
     &quot;links&quot;: {
-      &quot;self&quot;: &quot;http://example.org/entities?page=1&amp;search=Schmidt%2C+Ebonie&amp;type=person&quot;
+      &quot;self&quot;: &quot;http://example.org/entities?page=1&amp;search=Raynor%2C+Jame&amp;type=person&quot;
     }
   }
 }</pre>

@@ -26,7 +26,7 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /entities/f7353d87-7d6f-472f-8085-c1537962da5e</pre>
+<pre>GET /entities/b2ed02a0-4844-4975-acdf-8e653709db4f</pre>
 
 ### Response
 
@@ -39,12 +39,12 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;47c932213abaac472f5cb2200cd596a0&quot;
+ETag: W/&quot;9bdda823e7d106d2d0b57cc1576caba7&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 80acdfe1-db9c-4243-a593-99420a3e1f08
-X-Runtime: 0.943110
+X-Request-Id: 183540da-6e14-44dd-9318-99cbf5b256aa
+X-Runtime: 0.966458
 Vary: Origin
-Content-Length: 2448</pre>
+Content-Length: 2276</pre>
 
 #### Status
 
@@ -54,29 +54,29 @@ Content-Length: 2448</pre>
 
 ~~~
 {
-  "id": "http://example.org/entities/f7353d87-7d6f-472f-8085-c1537962da5e",
+  "id": "http://example.org/entities/b2ed02a0-4844-4975-acdf-8e653709db4f",
   "type": "attendance",
-  "label": "Rehearsal, 8bit <i>raw denim drinking pinterest park postironic</i> vinyl.",
-  "short_display": "<section><p><strong>Rehearsal</strong>, 8bit <i>raw denim drinking pinterest park postironic</i> vinyl.</p>\n<p><strong>Attended with</strong> Jackie Treehorn and Fenchurch</p>\n<p><strong>Place, Date</strong> Pfannerstilltown, 13 April 1957</p>\n<p><strong>Director</strong> Emily Saunders</p></section>",
-  "full_display": "<table>\n<tr>\n<th scope=\"row\">Description</th>\n<td>8bit <i>raw denim drinking pinterest park postironic</i> vinyl.</td>\n</tr>\n<tr>\n<th scope=\"row\">Alternate Name(s)</th>\n<td>Raja</td>\n</tr>\n<tr>\n<th scope=\"row\">Director</th>\n<td>Emily Saunders</td>\n</tr>\n<tr>\n<th scope=\"row\">Performed by</th>\n<td>Prostetnic Vogon Kwaltz</td>\n</tr>\n<tr>\n<th scope=\"row\">Attended with</th>\n<td>Jackie Treehorn and Fenchurch</td>\n</tr>\n<tr>\n<th scope=\"row\">Place, Date</th>\n<td>Pfannerstilltown, 13 April 1957</td>\n</tr>\n<tr>\n<th scope=\"row\">Notes</th>\n<td>Paint a perfect picture, bring to life a vision in one's mind. The beautiful ones always smash the picture. Always. Everytime.</td>\n</tr>\n</table>",
-  "description": "8bit <i>raw denim drinking pinterest park postironic</i> vinyl.",
+  "label": "Rehearsal, Pitchfork postironic plaid quinoa normcore echo semiotics ethical cleanse.",
+  "short_display": "<section><p><strong>Rehearsal</strong>, Pitchfork postironic plaid quinoa normcore echo semiotics ethical cleanse.</p>\n<p><strong>Attended with</strong> The Dude and Hotblack Desiato</p>\n<p><strong>Place, Date</strong> Mattiebury, 10 February 1934</p>\n<p><strong>Director</strong> Trin Tragula</p></section>",
+  "full_display": "<table>\n<tr>\n<th scope=\"row\">Description</th>\n<td>Pitchfork postironic plaid quinoa normcore echo semiotics ethical cleanse.</td>\n</tr>\n<tr>\n<th scope=\"row\">Alternate Name(s)</th>\n<td>Mimi Imfurst</td>\n</tr>\n<tr>\n<th scope=\"row\">Director</th>\n<td>Trin Tragula</td>\n</tr>\n<tr>\n<th scope=\"row\">Performed by</th>\n<td>Loonquawl and Phouchg</td>\n</tr>\n<tr>\n<th scope=\"row\">Attended with</th>\n<td>The Dude and Hotblack Desiato</td>\n</tr>\n<tr>\n<th scope=\"row\">Place, Date</th>\n<td>Mattiebury, 10 February 1934</td>\n</tr>\n<tr>\n<th scope=\"row\">Notes</th>\n<td>How can you just leave me standing alone in a world so cold?</td>\n</tr>\n</table>",
+  "description": "Pitchfork postironic plaid quinoa normcore echo semiotics ethical cleanse.",
   "e_type": "attendance",
-  "legacy_pk": 30216,
+  "legacy_pk": 4044,
   "alternate_names": [
-    "Raja"
+    "Mimi Imfurst"
   ],
   "alternate_spellings": null,
   "attended_with": [
-    "Jackie Treehorn",
-    "Fenchurch"
+    "The Dude",
+    "Hotblack Desiato"
   ],
-  "director": "Emily Saunders",
+  "director": "Trin Tragula",
   "event_type": "rehearsal",
-  "notes": "Paint a perfect picture, bring to life a vision in one's mind. The beautiful ones always smash the picture. Always. Everytime.",
+  "notes": "How can you just leave me standing alone in a world so cold?",
   "performed_by": [
-    "Prostetnic Vogon Kwaltz"
+    "Loonquawl and Phouchg"
   ],
-  "place_date": "Pfannerstilltown, 13 April 1957"
+  "place_date": "Mattiebury, 10 February 1934"
 }
 ~~~
 

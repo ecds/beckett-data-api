@@ -26,7 +26,7 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /entities/79e72009-8e77-4425-b3bf-f9b9de7621fa</pre>
+<pre>GET /entities/da6aca17-ea7a-4745-aa26-52ab2d9f6e28</pre>
 
 ### Response
 
@@ -39,12 +39,12 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;5d5ae68715241b9700108cd2a25f46c2&quot;
+ETag: W/&quot;fc8971ebfeabce91bef1322998c4c851&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 3a5cbc21-ac33-47a2-828a-cb4e9815fb53
-X-Runtime: 0.902038
+X-Request-Id: eaa3a148-b56e-437a-8beb-6c543bf97bd7
+X-Runtime: 1.067745
 Vary: Origin
-Content-Length: 2156</pre>
+Content-Length: 2207</pre>
 
 #### Status
 
@@ -54,25 +54,25 @@ Content-Length: 2156</pre>
 
 ~~~
 {
-  "id": "http://example.org/entities/79e72009-8e77-4425-b3bf-f9b9de7621fa",
+  "id": "http://example.org/entities/da6aca17-ea7a-4745-aa26-52ab2d9f6e28",
   "type": "music",
-  "label": "Something in the Water (Does Not Compute)",
-  "short_display": "<section><p><strong>Composer</strong> Elvis</p>\n<p><strong>Title</strong> Something in the Water (Does Not Compute)</p>\n<p><strong>Description</strong> Truffaut chillwave master ugh carry offal helvetica humblebrag.</p></section>",
-  "full_display": "<table>\n<tr>\n<th scope=\"row\">Composer</th>\n<td>Elvis</td>\n</tr>\n<tr>\n<th scope=\"row\">Title</th>\n<td>Something in the Water (Does Not Compute)</td>\n</tr>\n<tr>\n<th scope=\"row\">Alternate Title(s)</th>\n<td>Miz Cracker</td>\n</tr>\n<tr>\n<th scope=\"row\">Description</th>\n<td>Truffaut chillwave master ugh carry offal helvetica humblebrag.</td>\n</tr>\n<tr>\n<th scope=\"row\">Performed by</th>\n<td>Karl Hungus</td>\n</tr>\n<tr>\n<th scope=\"row\">Notes</th>\n<td>My name is Prince, the one and only.</td>\n</tr>\n<tr>\n<th scope=\"row\">See Also</th>\n<td><ul><li><a href=\"http://nolan-feeney.org/ranee.fisher\" target=\"_blank\" rel=\"noopener\">http://nolan-feeney.org/ranee.fisher<span>(opens in new tab)</span></a></li></ul></td>\n</tr>\n</table>",
-  "description": "Truffaut chillwave master ugh carry offal helvetica humblebrag.",
+  "label": "Money Don't Matter 2 Night",
+  "short_display": "<section><p><strong>Composer</strong> Pizpot Gargravarr</p>\n<p><strong>Title</strong> Money Don't Matter 2 Night</p>\n<p><strong>Description</strong> Etsy <i>pork belly tilde</i> tryhard.</p></section>",
+  "full_display": "<table>\n<tr>\n<th scope=\"row\">Composer</th>\n<td>Pizpot Gargravarr</td>\n</tr>\n<tr>\n<th scope=\"row\">Title</th>\n<td>Money Don't Matter 2 Night</td>\n</tr>\n<tr>\n<th scope=\"row\">Alternate Title(s)</th>\n<td>Laganja Estranja</td>\n</tr>\n<tr>\n<th scope=\"row\">Description</th>\n<td>Etsy <i>pork belly tilde</i> tryhard.</td>\n</tr>\n<tr>\n<th scope=\"row\">Performed by</th>\n<td>The Big Lebowski</td>\n</tr>\n<tr>\n<th scope=\"row\">Notes</th>\n<td>It was 7:45 and we were all line, to greet the teacher Miss Cathleen.</td>\n</tr>\n<tr>\n<th scope=\"row\">See Also</th>\n<td><ul><li><a href=\"http://kuhlman.name/albert.hickle\" target=\"_blank\" rel=\"noopener\">http://kuhlman.name/albert.hickle<span>(opens in new tab)</span></a></li></ul></td>\n</tr>\n</table>",
+  "description": "Etsy <i>pork belly tilde</i> tryhard.",
   "e_type": "music",
-  "legacy_pk": 8352,
+  "legacy_pk": 90111,
   "alternate_names": [
-    "Miz Cracker"
+    "Laganja Estranja"
   ],
   "alternate_spellings": null,
-  "composer": "Elvis",
+  "composer": "Pizpot Gargravarr",
   "links": [
-    "http://nolan-feeney.org/ranee.fisher"
+    "http://kuhlman.name/albert.hickle"
   ],
-  "notes": "My name is Prince, the one and only.",
+  "notes": "It was 7:45 and we were all line, to greet the teacher Miss Cathleen.",
   "performed_by": [
-    "Karl Hungus"
+    "The Big Lebowski"
   ]
 }
 ~~~

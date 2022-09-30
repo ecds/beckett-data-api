@@ -15,7 +15,7 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /letters/2af7e47b-1743-48f9-94e5-152d1547df6f</pre>
+<pre>GET /letters/45a95151-b14c-4052-b9e6-682048474dcf</pre>
 
 ### Response
 
@@ -28,12 +28,12 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;1769f81d6ba8a06b5ef04d8cce9c1778&quot;
+ETag: W/&quot;f643bb075961e80b3d012152a816143d&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: be3d8790-eab6-4d22-b5b6-4a4b5a24824b
-X-Runtime: 0.742180
+X-Request-Id: fbc544ef-b4d1-4cf0-ab22-6829a2b48fea
+X-Runtime: 0.666538
 Vary: Origin
-Content-Length: 6692</pre>
+Content-Length: 6456</pre>
 
 #### Status
 
@@ -43,89 +43,89 @@ Content-Length: 6692</pre>
 
 ~~~
 {
-  "id": "http://example.org/letters/2af7e47b-1743-48f9-94e5-152d1547df6f",
-  "date": "1977-10-24T00:00:00.000-04:00",
+  "id": "http://example.org/letters/45a95151-b14c-4052-b9e6-682048474dcf",
+  "date": "1979-11-02T00:00:00.000-05:00",
   "recipients": [
     {
-      "id": "http://example.org/entities/68e723cf-b62e-4cf9-998d-e78d442f9d72.json",
+      "id": "http://example.org/entities/ab2c5cdd-add3-43c3-9014-cc092192655e.json",
       "type": "person",
-      "label": "Reilly, Suzanne",
-      "short_display": "<section><p><strong>Suzanne Reilly, 1924-1974</strong></p>\n<p>There's <i>only one life-form as intelligent as me within thirty parsecs of here and that's</i> me.</p></section>"
+      "label": "Hintz, Derrick",
+      "short_display": "<section><p><strong>Derrick Hintz, 1908-1986</strong></p>\n<p>And then of course I've got this terrible pain in all the diodes down my left side.</p></section>"
     }
   ],
   "destinations": [
     {
-      "id": "http://example.org/entities/7e8a8b62-d8f7-4bf9-b574-885347eddaed.json",
+      "id": "http://example.org/entities/4f2fd0fb-d0dd-4824-bc12-08fff8023dd4.json",
       "type": "place",
-      "label": "Highgate Cemetery",
-      "short_display": "<section><p><strong>Highgate Cemetery</strong></p>\n<p>Pourover <i>ethical locavore deep v muggle magic food</i> truck.</p></section>"
+      "label": "<i>France</i>",
+      "short_display": "<section><p><strong><i>France</i></strong></p>\n<p>Vhs <i>put a bird on it everyday blue bottle banh mi you probably havent heard of them tousled</i> freegan.</p></section>"
     }
   ],
   "mentions": {
-    "people": [
+    "attendances": [
       {
-        "id": "http://example.org/entities/581bcda2-d9ff-4646-811b-cc29cf613187.json",
-        "type": "person",
-        "label": "Feil, Delsie",
-        "short_display": "<section><p><strong>Delsie Feil, 1907-1997</strong></p>\n<p>Life? Don't talk to me about life.</p></section>",
+        "id": "http://example.org/entities/b95a9486-c36d-44e1-99be-258301f989b9.json",
+        "type": "attendance",
+        "label": "Reading, 90s carry five dollar toast etsy ugh.",
+        "short_display": "<section><p><strong>Reading</strong>, 90s carry five dollar toast etsy ugh.</p>\n<p><strong>Attended with</strong> The Big Lebowski and Reg Nullify</p>\n<p><strong>Place, Date</strong> North Camelliachester, 21 January 1957</p>\n<p><strong>Director</strong> Barry Manilow</p></section>",
+        "tags": [
+
+        ]
+      },
+      {
+        "id": "http://example.org/entities/5c53f3c9-2aea-4dcb-87c6-4a721b9477a3.json",
+        "type": "attendance",
+        "label": "Reading, Synth retro listicle knausgaard offal wes anderson farmtotable cronut meditation.",
+        "short_display": "<section><p><strong>Reading</strong>, Synth retro listicle knausgaard offal wes anderson farmtotable cronut meditation.</p>\n<p><strong>Attended with</strong> Maude Lebowski and Galaxia Woonbeam</p>\n<p><strong>Place, Date</strong> East Juleview, 11 January 1945</p>\n<p><strong>Director</strong> Colin the Security Robot</p></section>",
+        "tags": [
+
+        ]
+      },
+      {
+        "id": "http://example.org/entities/6d29e5dc-9ce8-4e84-b906-16e440cd7939.json",
+        "type": "attendance",
+        "label": "Rehearsal, Poutine 1 squid wolf mumblecore.",
+        "short_display": "<section><p><strong>Rehearsal</strong>, Poutine 1 squid wolf mumblecore.</p>\n<p><strong>Attended with</strong> Karl Hungus and Agda</p>\n<p><strong>Place, Date</strong> East Brandonhaven, 21 May 1944</p>\n<p><strong>Director</strong> Lunkwill and Fook</p></section>",
         "tags": [
 
         ]
       }
     ],
-    "publications": [
+    "music": [
       {
-        "id": "http://example.org/entities/bf2bdb7c-fb93-450f-8a88-a8cc94b00207.json",
-        "type": "publication",
-        "label": "Blackstaff Press",
-        "short_display": "<section><p><strong>Author</strong> Brandt</p>\n<p><strong>Title</strong> Blackstaff Press</p>\n<p><strong>Translator</strong> Phouchg</p>\n<p><strong>Publication</strong> Cold-pressed migas sriracha carry mumblecore cleanse portland truffaut.</p></section>",
+        "id": "http://example.org/entities/3c73bfd8-f203-4042-abaa-abf3966a06f0.json",
+        "type": "music",
+        "label": "<i>Baby I'm A Star</i>",
+        "short_display": "<section><p><strong>Composer</strong> Prostetnic Vogon Jeltz</p>\n<p><strong>Title</strong> <i>Baby I'm A Star</i></p>\n<p><strong>Description</strong> Austin tousled glutenfree tryhard.</p></section>",
         "tags": [
 
         ]
       },
       {
-        "id": "http://example.org/entities/6080e64e-5cec-4ebd-a7c1-6f8183fb02db.json",
-        "type": "publication",
-        "label": "<i>J. M. Dent</i>",
-        "short_display": "<section><p><strong>Author</strong> Brandt</p>\n<p><strong>Title</strong> <i>J. M. Dent</i></p>\n<p><strong>Translator</strong> JinJenz</p>\n<p><strong>Publication</strong> Kombucha single-origin coffee try-hard mixtape keffiyeh meditation wes anderson banjo.</p></section>",
+        "id": "http://example.org/entities/7063892b-40c5-4b0e-a2aa-f385e437c62e.json",
+        "type": "music",
+        "label": "International Lover",
+        "short_display": "<section><p><strong>Composer</strong> Max Quordlepleen</p>\n<p><strong>Title</strong> International Lover</p>\n<p><strong>Description</strong> Semiotics banjo umami 8bit austin.</p></section>",
         "tags": [
 
         ]
       },
       {
-        "id": "http://example.org/entities/ec35c1c4-38eb-4f89-bc7c-66108a181dcd.json",
-        "type": "publication",
-        "label": "Chatto and Windus",
-        "short_display": "<section><p><strong>Author</strong> Walter Sobchak</p>\n<p><strong>Title</strong> Chatto and Windus</p>\n<p><strong>Translator</strong> Slartibartfast</p>\n<p><strong>Publication</strong> Readymade craft beer yr raw denim.</p></section>",
+        "id": "http://example.org/entities/826538ed-2013-415e-980f-50e676961ca4.json",
+        "type": "music",
+        "label": "<i>Play In The Sunshine</i>",
+        "short_display": "<section><p><strong>Composer</strong> Max Quordlepleen</p>\n<p><strong>Title</strong> <i>Play In The Sunshine</i></p>\n<p><strong>Description</strong> Helvetica <i>poutine fingerstache keytar</i> pbrb.</p></section>",
         "tags": [
 
         ]
       }
     ],
-    "readings": [
+    "translatings": [
       {
-        "id": "http://example.org/entities/168bb256-6191-4b6d-aa80-b4617136e98c.json",
-        "type": "reading",
-        "label": "Great Work of Time",
-        "short_display": "<section><p><strong>Author</strong> Enrique Auer</p>\n<p><strong>Title</strong> Great Work of Time</p>\n<p><strong>Publication</strong> Leafwood Publishers.</p></section>",
-        "tags": [
-
-        ]
-      },
-      {
-        "id": "http://example.org/entities/000d15a3-fdbe-49a5-8e71-700abebe5e29.json",
-        "type": "reading",
-        "label": "<i>Fame Is the Spur</i>",
-        "short_display": "<section><p><strong>Author</strong> Daniella Reynolds</p>\n<p><strong>Title</strong> <i>Fame Is the Spur</i></p>\n<p><strong>Publication</strong> Manchester University Press.</p></section>",
-        "tags": [
-
-        ]
-      },
-      {
-        "id": "http://example.org/entities/dad2a0d8-7f80-4c54-9e6c-7da7d2890017.json",
-        "type": "reading",
-        "label": "The Moving Toyshop",
-        "short_display": "<section><p><strong>Author</strong> Jacki Murphy</p>\n<p><strong>Title</strong> The Moving Toyshop</p>\n<p><strong>Publication</strong> Horizon Scientific Press.</p></section>",
+        "id": "http://example.org/entities/f90113e4-2567-4a4e-b8ca-66a38e728b33.json",
+        "type": "translating",
+        "label": "Antic Hay",
+        "short_display": "<section><p><strong>Author</strong> Arthur Philip Deodat, <strong>Original Title</strong> Antic Hay</p>\n<p><strong>Translated into</strong> Swedish by Zarquon</p>\n<p><strong>Translated title</strong> Billion Year Bunker.</p></section>",
         "tags": [
 
         ]
@@ -133,28 +133,19 @@ Content-Length: 6692</pre>
     ],
     "writings": [
       {
-        "id": "http://example.org/entities/8200a7ff-6431-4a9b-a131-90d5db457b8b.json",
+        "id": "http://example.org/entities/d5fc02f2-4850-472f-b2dd-2f32a6332451.json",
         "type": "writing",
-        "label": "The Green Bay Tree",
-        "short_display": "<section><p><strong>Title</strong> The Green Bay Tree</p>\n<p><strong>Proposal/Response</strong> If they don’t keep exercising their lips, he thought, their brains start working.</p>\n<p><strong>Translator</strong> Random Dent</p>\n<p><strong>Date</strong> 1924-04-05.</p></section>",
+        "label": "<i>An Acceptable Time</i>",
+        "short_display": "<section><p><strong>Title</strong> <i>An Acceptable Time</i></p>\n<p><strong>Proposal/Response</strong> Evolution? they said to themselves, Who needs it?</p>\n<p><strong>Translator</strong> Prostetnic Vogon Jeltz</p>\n<p><strong>Date</strong> 1934-06-18.</p></section>",
         "tags": [
 
         ]
       },
       {
-        "id": "http://example.org/entities/88602b7b-c6cf-4b85-8ba1-b60e4587faf7.json",
+        "id": "http://example.org/entities/fb819fc8-c4ed-4b5a-ae18-790931f2f89f.json",
         "type": "writing",
-        "label": "<i>A Many-Splendoured Thing</i>",
-        "short_display": "<section><p><strong>Title</strong> <i>A Many-Splendoured Thing</i></p>\n<p><strong>Proposal/Response</strong> If there's anything more important than my ego around, I want it caught and shot now.</p>\n<p><strong>Translator</strong> Rob McKenna</p>\n<p><strong>Date</strong> 1923-03-12.</p></section>",
-        "tags": [
-
-        ]
-      },
-      {
-        "id": "http://example.org/entities/e6b1e11e-163b-475f-8197-44e620212795.json",
-        "type": "writing",
-        "label": "<i>The Cricket on the Hearth</i>",
-        "short_display": "<section><p><strong>Title</strong> <i>The Cricket on the Hearth</i></p>\n<p><strong>Proposal/Response</strong> if you’ve never been through a matter transference beam before you’ve probably lost some salt and protein. The beer you had should have cushioned your system a bit.</p>\n<p><strong>Translator</strong> Zaphod Beeblebrox</p>\n<p><strong>Date</strong> 1944-12-02.</p></section>",
+        "label": "Bury My Heart at Wounded Knee",
+        "short_display": "<section><p><strong>Title</strong> Bury My Heart at Wounded Knee</p>\n<p><strong>Proposal/Response</strong> Will you open up the exit hatch, please, computer?</p>\n<p><strong>Translator</strong> Zarniwoop</p>\n<p><strong>Date</strong> 1928-02-08.</p></section>",
         "tags": [
 
         ]

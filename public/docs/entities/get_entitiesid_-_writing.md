@@ -26,7 +26,7 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /entities/5845914d-778f-4048-b2b4-f14d03551264</pre>
+<pre>GET /entities/928d4b9c-51ee-43ad-b233-426d8480eae6</pre>
 
 ### Response
 
@@ -39,12 +39,12 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;c92abf520df7277e17a201401f06d450&quot;
+ETag: W/&quot;eb648ecae4874dfafe906edf41148284&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 560e3da1-372a-4364-a0a1-6fc537f7ee09
-X-Runtime: 1.123503
+X-Request-Id: beb96222-197c-44e3-bbad-bfff1d7d4517
+X-Runtime: 0.744839
 Vary: Origin
-Content-Length: 2107</pre>
+Content-Length: 2297</pre>
 
 #### Status
 
@@ -54,21 +54,21 @@ Content-Length: 2107</pre>
 
 ~~~
 {
-  "id": "http://example.org/entities/5845914d-778f-4048-b2b4-f14d03551264",
+  "id": "http://example.org/entities/928d4b9c-51ee-43ad-b233-426d8480eae6",
   "type": "writing",
-  "label": "Stranger in a Strange Land",
-  "short_display": "<section><p><strong>Title</strong> Stranger in a Strange Land</p>\n<p><strong>Proposal/Response</strong> Don’t Panic</p>\n<p><strong>Translator</strong> Hotblack Desiato's bodyguard</p>\n<p><strong>Date</strong> 1935-02-10.</p></section>",
-  "full_display": "<table>\n<tr>\n<th scope=\"row\">Title</th>\n<td>Stranger in a Strange Land</td>\n</tr>\n<tr>\n<th scope=\"row\">Proposal/Response</th>\n<td>Don’t Panic</td>\n</tr>\n<tr>\n<th scope=\"row\">Date</th>\n<td>1935-02-10.</td>\n</tr>\n<tr>\n<th scope=\"row\">Notes</th>\n<td>And then of course I've got this terrible pain in all the diodes down my left side.</td>\n</tr>\n<tr>\n<th scope=\"row\">Archival Information</th>\n<td>Hachette Book Group USA.</td>\n</tr>\n<tr>\n<th scope=\"row\">See Also</th>\n<td><ul><li><a href=\"http://terry.co/aurelio\" target=\"_blank\" rel=\"noopener\">http://terry.co/aurelio<span>(opens in new tab)</span></a></li></ul></td>\n</tr>\n</table>",
-  "description": "Cornhole <i>viral organic listicle yolo skateboard photo booth synth</i> flannel.",
+  "label": "The Doors of Perception",
+  "short_display": "<section><p><strong>Title</strong> The Doors of Perception</p>\n<p><strong>Proposal/Response</strong> I've just had an unhappy love affair, so I don't see why anybody else should have a good time.</p>\n<p><strong>Translator</strong> Frankie and Benjy</p>\n<p><strong>Date</strong> 1943-11-28.</p></section>",
+  "full_display": "<table>\n<tr>\n<th scope=\"row\">Title</th>\n<td>The Doors of Perception</td>\n</tr>\n<tr>\n<th scope=\"row\">Proposal/Response</th>\n<td>I've just had an unhappy love affair, so I don't see why anybody else should have a good time.</td>\n</tr>\n<tr>\n<th scope=\"row\">Date</th>\n<td>1943-11-28.</td>\n</tr>\n<tr>\n<th scope=\"row\">Notes</th>\n<td>I wish you'd just tell me rather trying to engage my enthusiasm, because I haven't got one.</td>\n</tr>\n<tr>\n<th scope=\"row\">Archival Information</th>\n<td>Lion Hudson.</td>\n</tr>\n<tr>\n<th scope=\"row\">See Also</th>\n<td><ul><li><a href=\"http://leannon-feil.co/maxie.lubowitz\" target=\"_blank\" rel=\"noopener\">http://leannon-feil.co/maxie.lubowitz<span>(opens in new tab)</span></a></li></ul></td>\n</tr>\n</table>",
+  "description": "Mlkshk xoxo pinterest blog brunch.",
   "e_type": "writing",
-  "legacy_pk": 98141,
-  "date_str": "1935-02-10.",
+  "legacy_pk": 44347,
+  "date_str": "1943-11-28.",
   "links": [
-    "http://terry.co/aurelio"
+    "http://leannon-feil.co/maxie.lubowitz"
   ],
-  "notes": "And then of course I've got this terrible pain in all the diodes down my left side.",
-  "proposal": "Don’t Panic",
-  "publication_information": "Hachette Book Group USA."
+  "notes": "I wish you'd just tell me rather trying to engage my enthusiasm, because I haven't got one.",
+  "proposal": "I've just had an unhappy love affair, so I don't see why anybody else should have a good time.",
+  "publication_information": "Lion Hudson."
 }
 ~~~
 

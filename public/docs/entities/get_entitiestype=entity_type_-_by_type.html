@@ -171,6 +171,17 @@ table th, table td {
                   <span class="default">null</span>
                 </td>
               </tr>
+              <tr>
+                <td>
+                    <span class="name">operator</span>
+                </td>
+                <td>
+                  <span class="description">By default, results match any words in the query. Use &#39;and&#39; to match all words.</span>
+                </td>
+                <td>
+                  <span class="default">or</span>
+                </td>
+              </tr>
             </tbody>
           </table>
 
@@ -185,10 +196,10 @@ Host: example.org
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET /entities?type=place</pre>
+          <pre class="request route highlight">GET /entities?type=public_event</pre>
 
             <h4>Query Parameters</h4>
-            <pre class="request query_parameters highlight">type: place</pre>
+            <pre class="request query_parameters highlight">type: public_event</pre>
 
 
 
@@ -200,88 +211,299 @@ X-Content-Type-Options: nosniff
 X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
-Link: &lt;http://example.org/entities?page=1&amp;type=place&gt;; rel=&#39;self&#39;
-X-Total-Count: 2
+Link: &lt;http://example.org/entities?page=1&amp;type=public_event&gt;; rel=&#39;self&#39;, &lt;http://example.org/entities?page=2&amp;type=public_event&gt;; rel=&#39;last&#39;, &lt;http://example.org/entities?page=2&amp;type=public_event&gt;; rel=&#39;next&#39;
+X-Total-Count: 44
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;ddc8e5e73129bc7cf6a3eba8a70b2591&quot;
+ETag: W/&quot;f1551d76c58743b82b85e2c5cbbe7488&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: efae6834-4cd7-4af9-ae8e-50c7d2048ea1
-X-Runtime: 3.191947
+X-Request-Id: 7dc220d2-88ce-43bb-948c-70956ff6c987
+X-Runtime: 3.193965
 Vary: Origin
-Content-Length: 1820</pre>
+Content-Length: 15656</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
   &quot;entities&quot;: [
     {
-      &quot;id&quot;: &quot;http://example.org/entities/0f59cddc-dfba-40c0-8bf6-43e9d29f92d0&quot;,
-      &quot;label&quot;: &quot;&lt;i&gt;Belgium&lt;/i&gt;&quot;,
-      &quot;type&quot;: &quot;place&quot;,
-      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;&lt;i&gt;Belgium&lt;/i&gt;&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;Banh &lt;i&gt;mi austin viral churchkey five dollar toast tilde kickstarter&lt;/i&gt; thundercats.&lt;/p&gt;&lt;/section&gt;&quot;,
-      &quot;description&quot;: &quot;Banh &lt;i&gt;mi austin viral churchkey five dollar toast tilde kickstarter&lt;/i&gt; thundercats.&quot;,
-      &quot;clean_label&quot;: &quot;Belgium&quot;,
-      &quot;clean_description&quot;: &quot;Banh mi austin viral churchkey five dollar toast tilde kickstarter thundercats.&quot;
+      &quot;id&quot;: &quot;http://example.org/entities/0e6b2e91-ef41-4bb3-883c-b52154e318c0&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;Gemini&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;public_event&quot;,
+      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;&lt;i&gt;Gemini&lt;/i&gt;&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;1970-03-11.&lt;/strong&gt;&lt;/p&gt;&lt;/section&gt;&quot;,
+      &quot;description&quot;: &quot;If I gave you diamonds and pearls, would you be a happy boy or a girl? If I could I would give you the world.&quot;,
+      &quot;clean_label&quot;: &quot;Gemini&quot;,
+      &quot;clean_description&quot;: &quot;If I gave you diamonds and pearls, would you be a happy boy or a girl? If I could I would give you the world.&quot;
     },
     {
-      &quot;id&quot;: &quot;http://example.org/entities/f8794af2-9cf4-4b8f-beb8-e3c99396ea7b&quot;,
-      &quot;label&quot;: &quot;Megabrantis cluster&quot;,
-      &quot;type&quot;: &quot;place&quot;,
-      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Megabrantis cluster&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;Echo &lt;i&gt;pickled readymade craft&lt;/i&gt; beer.&lt;/p&gt;&lt;/section&gt;&quot;,
-      &quot;description&quot;: &quot;Echo &lt;i&gt;pickled readymade craft&lt;/i&gt; beer.&quot;,
-      &quot;clean_label&quot;: &quot;Megabrantis cluster&quot;,
-      &quot;clean_description&quot;: &quot;Echo pickled readymade craft beer.&quot;
+      &quot;id&quot;: &quot;http://example.org/entities/10c6f45b-c978-4c90-ad75-82330776f95d&quot;,
+      &quot;label&quot;: &quot;Mercury&quot;,
+      &quot;type&quot;: &quot;public_event&quot;,
+      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Mercury&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;1966-12-21.&lt;/strong&gt;&lt;/p&gt;&lt;/section&gt;&quot;,
+      &quot;description&quot;: &quot;And they say I&#39;m so shy, yeah, but with you I just go wild!&quot;,
+      &quot;clean_label&quot;: &quot;Mercury&quot;,
+      &quot;clean_description&quot;: &quot;And they say I&#39;m so shy, yeah, but with you I just go wild!&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/1b620e5a-0807-47e8-9fdf-d2f697039777&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;Gemini&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;public_event&quot;,
+      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;&lt;i&gt;Gemini&lt;/i&gt;&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;1923-08-04.&lt;/strong&gt;&lt;/p&gt;&lt;/section&gt;&quot;,
+      &quot;description&quot;: &quot;You can relax now, the max is in control.&quot;,
+      &quot;clean_label&quot;: &quot;Gemini&quot;,
+      &quot;clean_description&quot;: &quot;You can relax now, the max is in control.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/21a22cdd-5ddb-4343-84da-a41c3f23f8aa&quot;,
+      &quot;label&quot;: &quot;Discovery&quot;,
+      &quot;type&quot;: &quot;public_event&quot;,
+      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Discovery&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;1960-05-19.&lt;/strong&gt;&lt;/p&gt;&lt;/section&gt;&quot;,
+      &quot;description&quot;: &quot;Love &lt;i&gt;come quick, love come in a hurry, there are thieves in the temple&lt;/i&gt; tonight.&quot;,
+      &quot;clean_label&quot;: &quot;Discovery&quot;,
+      &quot;clean_description&quot;: &quot;Love come quick, love come in a hurry, there are thieves in the temple tonight.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/2509d172-3371-4136-aee2-1f7d30ff8da2&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;Mercury&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;public_event&quot;,
+      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;&lt;i&gt;Mercury&lt;/i&gt;&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;1932-12-23.&lt;/strong&gt;&lt;/p&gt;&lt;/section&gt;&quot;,
+      &quot;description&quot;: &quot;If &lt;i&gt;a man is considered guilty for what goes on in his mind, then give me the electric chair for all my future&lt;/i&gt; crimes.&quot;,
+      &quot;clean_label&quot;: &quot;Mercury&quot;,
+      &quot;clean_description&quot;: &quot;If a man is considered guilty for what goes on in his mind, then give me the electric chair for all my future crimes.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/2719fe3f-a92a-40ff-ad68-8a0bb4591ca1&quot;,
+      &quot;label&quot;: &quot;Atlantis&quot;,
+      &quot;type&quot;: &quot;public_event&quot;,
+      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Atlantis&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;1924-11-08.&lt;/strong&gt;&lt;/p&gt;&lt;/section&gt;&quot;,
+      &quot;description&quot;: &quot;My &lt;i&gt;name is Prince, and I am funky. When it come to funk I am a&lt;/i&gt; junkie.&quot;,
+      &quot;clean_label&quot;: &quot;Atlantis&quot;,
+      &quot;clean_description&quot;: &quot;My name is Prince, and I am funky. When it come to funk I am a junkie.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/310acdd5-568c-4461-acab-7ffab6ee98ca&quot;,
+      &quot;label&quot;: &quot;Enterprise&quot;,
+      &quot;type&quot;: &quot;public_event&quot;,
+      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Enterprise&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;1962-05-09.&lt;/strong&gt;&lt;/p&gt;&lt;/section&gt;&quot;,
+      &quot;description&quot;: &quot;Come &lt;i&gt;on y&#39;all, we got to jam, before the police come. A groove this funky is on the&lt;/i&gt; run.&quot;,
+      &quot;clean_label&quot;: &quot;Enterprise&quot;,
+      &quot;clean_description&quot;: &quot;Come on y&#39;all, we got to jam, before the police come. A groove this funky is on the run.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/3cb5e95e-491a-4a25-87dc-e86df26856d2&quot;,
+      &quot;label&quot;: &quot;Discovery&quot;,
+      &quot;type&quot;: &quot;public_event&quot;,
+      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Discovery&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;1953-08-05.&lt;/strong&gt;&lt;/p&gt;&lt;/section&gt;&quot;,
+      &quot;description&quot;: &quot;And &lt;i&gt;they say I&#39;m so shy, yeah, but with you I just go&lt;/i&gt; wild!&quot;,
+      &quot;clean_label&quot;: &quot;Discovery&quot;,
+      &quot;clean_description&quot;: &quot;And they say I&#39;m so shy, yeah, but with you I just go wild!&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/3d2ba93c-ae9b-4f37-b9db-273cea203176&quot;,
+      &quot;label&quot;: &quot;Columbia&quot;,
+      &quot;type&quot;: &quot;public_event&quot;,
+      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Columbia&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;1949-09-04.&lt;/strong&gt;&lt;/p&gt;&lt;/section&gt;&quot;,
+      &quot;description&quot;: &quot;Do I believe in God? Do I believe in me? Some people wanna die so they can be free.&quot;,
+      &quot;clean_label&quot;: &quot;Columbia&quot;,
+      &quot;clean_description&quot;: &quot;Do I believe in God? Do I believe in me? Some people wanna die so they can be free.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/43faf31e-de20-4be8-90d5-68cce4ee0263&quot;,
+      &quot;label&quot;: &quot;Endeavour&quot;,
+      &quot;type&quot;: &quot;public_event&quot;,
+      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Endeavour&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;1929-02-12.&lt;/strong&gt;&lt;/p&gt;&lt;/section&gt;&quot;,
+      &quot;description&quot;: &quot;You can relax now, the max is in control.&quot;,
+      &quot;clean_label&quot;: &quot;Endeavour&quot;,
+      &quot;clean_description&quot;: &quot;You can relax now, the max is in control.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/449aa208-8ed4-4c47-9190-107f817ee821&quot;,
+      &quot;label&quot;: &quot;Challenger&quot;,
+      &quot;type&quot;: &quot;public_event&quot;,
+      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Challenger&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;1947-05-06.&lt;/strong&gt;&lt;/p&gt;&lt;/section&gt;&quot;,
+      &quot;description&quot;: &quot;Everybody wants to tell what&#39;s already been told, what&#39;s the use of money if you ain&#39;t gonna break the mold?&quot;,
+      &quot;clean_label&quot;: &quot;Challenger&quot;,
+      &quot;clean_description&quot;: &quot;Everybody wants to tell what&#39;s already been told, what&#39;s the use of money if you ain&#39;t gonna break the mold?&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/4503c4aa-95fc-4ee3-9a6a-5c8ce0d4fd3e&quot;,
+      &quot;label&quot;: &quot;Orion&quot;,
+      &quot;type&quot;: &quot;public_event&quot;,
+      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Orion&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;1937-10-14.&lt;/strong&gt;&lt;/p&gt;&lt;/section&gt;&quot;,
+      &quot;description&quot;: &quot;You &lt;i&gt;were so hard to find, the beautiful ones, they hurt you every&lt;/i&gt; time.&quot;,
+      &quot;clean_label&quot;: &quot;Orion&quot;,
+      &quot;clean_description&quot;: &quot;You were so hard to find, the beautiful ones, they hurt you every time.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/451c7d4f-0466-4138-9e2a-faeb3b005528&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;Atlantis&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;public_event&quot;,
+      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;&lt;i&gt;Atlantis&lt;/i&gt;&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;1953-07-03.&lt;/strong&gt;&lt;/p&gt;&lt;/section&gt;&quot;,
+      &quot;description&quot;: &quot;Paint a perfect picture, bring to life a vision in one&#39;s mind. The beautiful ones always smash the picture. Always. Everytime.&quot;,
+      &quot;clean_label&quot;: &quot;Atlantis&quot;,
+      &quot;clean_description&quot;: &quot;Paint a perfect picture, bring to life a vision in one&#39;s mind. The beautiful ones always smash the picture. Always. Everytime.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/5c48fea0-01a4-4e29-a915-655f397760d9&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;Endeavour&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;public_event&quot;,
+      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;&lt;i&gt;Endeavour&lt;/i&gt;&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;1924-01-08.&lt;/strong&gt;&lt;/p&gt;&lt;/section&gt;&quot;,
+      &quot;description&quot;: &quot;I&#39;m &lt;i&gt;not a woman, I&#39;m not a man, I am something that you&#39;ll never&lt;/i&gt; understand.&quot;,
+      &quot;clean_label&quot;: &quot;Endeavour&quot;,
+      &quot;clean_description&quot;: &quot;I&#39;m not a woman, I&#39;m not a man, I am something that you&#39;ll never understand.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/5c8ce4a5-4555-4ffc-ae4f-a0603662ce78&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;Orion&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;public_event&quot;,
+      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;&lt;i&gt;Orion&lt;/i&gt;&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;1937-01-25.&lt;/strong&gt;&lt;/p&gt;&lt;/section&gt;&quot;,
+      &quot;description&quot;: &quot;All &lt;i&gt;I want to see is the love in your&lt;/i&gt; eyes.&quot;,
+      &quot;clean_label&quot;: &quot;Orion&quot;,
+      &quot;clean_description&quot;: &quot;All I want to see is the love in your eyes.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/5f213131-c96d-415a-94a0-8a2c75e038b0&quot;,
+      &quot;label&quot;: &quot;Orion&quot;,
+      &quot;type&quot;: &quot;public_event&quot;,
+      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Orion&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;1954-02-16.&lt;/strong&gt;&lt;/p&gt;&lt;/section&gt;&quot;,
+      &quot;description&quot;: &quot;Woke up the next morning, Nikki wasn&#39;t there. I looked all over and all I found was a phone number on the stairs. It said thank you for a funky time, call me up whenever you wanna grind.&quot;,
+      &quot;clean_label&quot;: &quot;Orion&quot;,
+      &quot;clean_description&quot;: &quot;Woke up the next morning, Nikki wasn&#39;t there. I looked all over and all I found was a phone number on the stairs. It said thank you for a funky time, call me up whenever you wanna grind.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/61e221e4-6b45-48bc-9ba9-b083d4a9f880&quot;,
+      &quot;label&quot;: &quot;Orion&quot;,
+      &quot;type&quot;: &quot;public_event&quot;,
+      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Orion&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;1966-09-06.&lt;/strong&gt;&lt;/p&gt;&lt;/section&gt;&quot;,
+      &quot;description&quot;: &quot;There&#39;s a brand new groove going &#39;round, in your funky town, and the kick drum is the fault.&quot;,
+      &quot;clean_label&quot;: &quot;Orion&quot;,
+      &quot;clean_description&quot;: &quot;There&#39;s a brand new groove going &#39;round, in your funky town, and the kick drum is the fault.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/638631c0-c64b-49c3-9181-e45e08ec3f73&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;Apollo&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;public_event&quot;,
+      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;&lt;i&gt;Apollo&lt;/i&gt;&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;1927-08-13.&lt;/strong&gt;&lt;/p&gt;&lt;/section&gt;&quot;,
+      &quot;description&quot;: &quot;Paint &lt;i&gt;a perfect picture, bring to life a vision in one&#39;s mind. The beautiful ones always smash the picture. Always.&lt;/i&gt; Everytime.&quot;,
+      &quot;clean_label&quot;: &quot;Apollo&quot;,
+      &quot;clean_description&quot;: &quot;Paint a perfect picture, bring to life a vision in one&#39;s mind. The beautiful ones always smash the picture. Always. Everytime.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/75788535-58fa-44f8-a45c-37e2976d8f8d&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;Challenger&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;public_event&quot;,
+      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;&lt;i&gt;Challenger&lt;/i&gt;&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;1957-09-24.&lt;/strong&gt;&lt;/p&gt;&lt;/section&gt;&quot;,
+      &quot;description&quot;: &quot;People &lt;i&gt;call me rude, I wish we all were nude. I wish there was no black and white, I wish there were no&lt;/i&gt; rules.&quot;,
+      &quot;clean_label&quot;: &quot;Challenger&quot;,
+      &quot;clean_description&quot;: &quot;People call me rude, I wish we all were nude. I wish there was no black and white, I wish there were no rules.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/78f41d7d-850f-4443-a5e2-90a4950d2460&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;Endeavour&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;public_event&quot;,
+      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;&lt;i&gt;Endeavour&lt;/i&gt;&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;1934-08-22.&lt;/strong&gt;&lt;/p&gt;&lt;/section&gt;&quot;,
+      &quot;description&quot;: &quot;Rain is wet, and sugar is sweet. Clap your hands, and stomp your feet!&quot;,
+      &quot;clean_label&quot;: &quot;Endeavour&quot;,
+      &quot;clean_description&quot;: &quot;Rain is wet, and sugar is sweet. Clap your hands, and stomp your feet!&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/7c0e6e44-b7e7-484c-ba80-878d3aa9e65b&quot;,
+      &quot;label&quot;: &quot;Atlantis&quot;,
+      &quot;type&quot;: &quot;public_event&quot;,
+      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Atlantis&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;1947-08-26.&lt;/strong&gt;&lt;/p&gt;&lt;/section&gt;&quot;,
+      &quot;description&quot;: &quot;If I gave you diamonds and pearls, would you be a happy boy or a girl? If I could I would give you the world.&quot;,
+      &quot;clean_label&quot;: &quot;Atlantis&quot;,
+      &quot;clean_description&quot;: &quot;If I gave you diamonds and pearls, would you be a happy boy or a girl? If I could I would give you the world.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/7cf729f0-837f-4c64-84df-27b12b080802&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;Enterprise&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;public_event&quot;,
+      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;&lt;i&gt;Enterprise&lt;/i&gt;&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;1937-03-08.&lt;/strong&gt;&lt;/p&gt;&lt;/section&gt;&quot;,
+      &quot;description&quot;: &quot;You need another lover like you need a hole in your head.&quot;,
+      &quot;clean_label&quot;: &quot;Enterprise&quot;,
+      &quot;clean_description&quot;: &quot;You need another lover like you need a hole in your head.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/878234fd-1ecf-4320-90e4-e2f60c4fad94&quot;,
+      &quot;label&quot;: &quot;Endeavour&quot;,
+      &quot;type&quot;: &quot;public_event&quot;,
+      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Endeavour&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;1941-03-09.&lt;/strong&gt;&lt;/p&gt;&lt;/section&gt;&quot;,
+      &quot;description&quot;: &quot;Some say a man ain&#39;t happy unless a man truly dies.&quot;,
+      &quot;clean_label&quot;: &quot;Endeavour&quot;,
+      &quot;clean_description&quot;: &quot;Some say a man ain&#39;t happy unless a man truly dies.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/885ab745-f9ac-4e09-988d-82015af44edc&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;Challenger&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;public_event&quot;,
+      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;&lt;i&gt;Challenger&lt;/i&gt;&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;1943-07-09.&lt;/strong&gt;&lt;/p&gt;&lt;/section&gt;&quot;,
+      &quot;description&quot;: &quot;I &lt;i&gt;never meant to cause you any sorrow, I never meant to cause you any&lt;/i&gt; pain.&quot;,
+      &quot;clean_label&quot;: &quot;Challenger&quot;,
+      &quot;clean_description&quot;: &quot;I never meant to cause you any sorrow, I never meant to cause you any pain.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/898713f7-aa97-4ecc-8ab8-6160ae08cc44&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;Endeavour&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;public_event&quot;,
+      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;&lt;i&gt;Endeavour&lt;/i&gt;&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;1939-01-31.&lt;/strong&gt;&lt;/p&gt;&lt;/section&gt;&quot;,
+      &quot;description&quot;: &quot;Rain is wet, and sugar is sweet. Clap your hands, and stomp your feet!&quot;,
+      &quot;clean_label&quot;: &quot;Endeavour&quot;,
+      &quot;clean_description&quot;: &quot;Rain is wet, and sugar is sweet. Clap your hands, and stomp your feet!&quot;
     }
   ],
   &quot;aggs&quot;: {
     &quot;e_type&quot;: {
-      &quot;doc_count&quot;: 27,
+      &quot;doc_count&quot;: 633,
       &quot;doc_count_error_upper_bound&quot;: 0,
       &quot;sum_other_doc_count&quot;: 0,
       &quot;buckets&quot;: [
         {
-          &quot;key&quot;: &quot;production&quot;,
-          &quot;doc_count&quot;: 4
-        },
-        {
-          &quot;key&quot;: &quot;publication&quot;,
-          &quot;doc_count&quot;: 4
-        },
-        {
-          &quot;key&quot;: &quot;organization&quot;,
-          &quot;doc_count&quot;: 3
-        },
-        {
-          &quot;key&quot;: &quot;reading&quot;,
-          &quot;doc_count&quot;: 3
-        },
-        {
-          &quot;key&quot;: &quot;translating&quot;,
-          &quot;doc_count&quot;: 3
-        },
-        {
-          &quot;key&quot;: &quot;music&quot;,
-          &quot;doc_count&quot;: 2
+          &quot;key&quot;: &quot;place&quot;,
+          &quot;doc_count&quot;: 147
         },
         {
           &quot;key&quot;: &quot;person&quot;,
-          &quot;doc_count&quot;: 2
-        },
-        {
-          &quot;key&quot;: &quot;place&quot;,
-          &quot;doc_count&quot;: 2
-        },
-        {
-          &quot;key&quot;: &quot;public_event&quot;,
-          &quot;doc_count&quot;: 2
+          &quot;doc_count&quot;: 94
         },
         {
           &quot;key&quot;: &quot;attendance&quot;,
-          &quot;doc_count&quot;: 1
+          &quot;doc_count&quot;: 49
+        },
+        {
+          &quot;key&quot;: &quot;production&quot;,
+          &quot;doc_count&quot;: 49
+        },
+        {
+          &quot;key&quot;: &quot;music&quot;,
+          &quot;doc_count&quot;: 44
+        },
+        {
+          &quot;key&quot;: &quot;public_event&quot;,
+          &quot;doc_count&quot;: 44
+        },
+        {
+          &quot;key&quot;: &quot;translating&quot;,
+          &quot;doc_count&quot;: 40
+        },
+        {
+          &quot;key&quot;: &quot;organization&quot;,
+          &quot;doc_count&quot;: 37
+        },
+        {
+          &quot;key&quot;: &quot;reading&quot;,
+          &quot;doc_count&quot;: 37
         },
         {
           &quot;key&quot;: &quot;work_of_art&quot;,
-          &quot;doc_count&quot;: 1
+          &quot;doc_count&quot;: 35
+        },
+        {
+          &quot;key&quot;: &quot;publication&quot;,
+          &quot;doc_count&quot;: 31
+        },
+        {
+          &quot;key&quot;: &quot;writing&quot;,
+          &quot;doc_count&quot;: 26
         }
       ]
     }
@@ -289,10 +511,12 @@ Content-Length: 1820</pre>
   &quot;meta&quot;: {
     &quot;page&quot;: 1,
     &quot;per_page&quot;: 25,
-    &quot;page_count&quot;: 1,
-    &quot;total_count&quot;: 2,
+    &quot;page_count&quot;: 2,
+    &quot;total_count&quot;: 44,
     &quot;links&quot;: {
-      &quot;self&quot;: &quot;http://example.org/entities?page=1&amp;type=place&quot;
+      &quot;self&quot;: &quot;http://example.org/entities?page=1&amp;type=public_event&quot;,
+      &quot;last&quot;: &quot;http://example.org/entities?page=2&amp;type=public_event&quot;,
+      &quot;next&quot;: &quot;http://example.org/entities?page=2&amp;type=public_event&quot;
     }
   }
 }</pre>

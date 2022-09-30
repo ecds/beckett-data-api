@@ -26,7 +26,7 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /entities/e7a766b6-169d-4bbe-96fd-a6bc033c9157</pre>
+<pre>GET /entities/8a7d0bc9-1ba2-4a3e-8747-e570e2524ab8</pre>
 
 ### Response
 
@@ -39,12 +39,12 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;0e69c86748741998fda1e03002b83343&quot;
+ETag: W/&quot;280fef8bd64b754e7ab41adc83a95aba&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 830716fd-fca8-47ca-ac80-79c647492eb2
-X-Runtime: 0.731647
+X-Request-Id: af57a7fc-1504-4e74-beb6-374461cc9362
+X-Runtime: 1.259989
 Vary: Origin
-Content-Length: 3425</pre>
+Content-Length: 3648</pre>
 
 #### Status
 
@@ -54,33 +54,33 @@ Content-Length: 3425</pre>
 
 ~~~
 {
-  "id": "http://example.org/entities/e7a766b6-169d-4bbe-96fd-a6bc033c9157",
+  "id": "http://example.org/entities/8a7d0bc9-1ba2-4a3e-8747-e570e2524ab8",
   "type": "production",
-  "label": "<i>Die Hard</i>",
-  "short_display": "<section><p><strong>Title</strong> <i>Die Hard</i></p>\n<p><strong>Proposal/Response</strong> I wish you'd just tell me rather trying to engage my enthusiasm, because I haven't got one. / Whatever your tastes, Magrathea can cater for you. We are not proud.</p>\n<p><strong>Director</strong> The Dude <strong>Theatre, City</strong> Krikkit One, Toneyfurt</p>\n<p><strong>Date(s)</strong> 1969-05-06.</p></section>",
-  "full_display": "<table>\n<tr>\n<th scope=\"row\">Title</th>\n<td colspan=\"5\"><i>Die Hard</i></td>\n</tr>\n<tr>\n<th scope=\"row\">Proposal</th>\n<td>I wish you'd just tell me rather trying to engage my enthusiasm, because I haven't got one.</td>\n<th scope=\"row\">Response</th>\n<td>Whatever your tastes, Magrathea can cater for you. We are not proud.</td>\n<th scope=\"row\">Reason</th>\n<td>You're gonna have to fight your own damn war, cause we don't want to fight no more.</td>\n</tr>\n<tr>\n<th scope=\"row\">Date(s)</th>\n<td colspan=\"5\">1969-05-06.</td>\n</tr>\n<tr>\n<th scope=\"row\">Director</th>\n<td colspan=\"5\">The Dude</td>\n</tr>\n<tr>\n<th scope=\"row\">Cast</th>\n<td colspan=\"5\">Reg Nullify and Karl Hungus</td>\n</tr>\n<tr>\n<th scope=\"row\">Personnel</th>\n<td colspan=\"5\">Arthur Dent</td>\n</tr>\n<tr>\n<th scope=\"row\">Theatre, City</th>\n<td colspan=\"5\">Krikkit One, Toneyfurt</td>\n</tr>\n<tr>\n<th scope=\"row\">Notes</th>\n<td colspan=\"5\">Swag franzen tattooed tote bag.</td>\n</tr>\n<tr>\n<th scope=\"row\">See Also</th>\n<td colspan=\"5\"><ul><li><a href=\"http://medhurst.name/risa\" target=\"_blank\" rel=\"noopener\">http://medhurst.name/risa<span>(opens in new tab)</span></a></li></ul></td>\n</tr>\n</table>",
-  "description": "Everyday hashtag pitchfork mlkshk lomo.",
+  "label": "Pulp Fiction",
+  "short_display": "<section><p><strong>Title</strong> Pulp Fiction</p>\n<p><strong>Proposal/Response</strong> I wish you'd just tell me rather trying to engage my enthusiasm, because I haven't got one. / In the beginning, the Universe was created. This has made a lot of people very angry and been widely regarded as a bad move.</p>\n<p><strong>Director</strong> Karl Hungus <strong>Theatre, City</strong> Bistromath, Lockmanshire</p>\n<p><strong>Date(s)</strong> 1969-08-13.</p></section>",
+  "full_display": "<table>\n<tr>\n<th scope=\"row\">Title</th>\n<td colspan=\"5\">Pulp Fiction</td>\n</tr>\n<tr>\n<th scope=\"row\">Proposal</th>\n<td>I wish you'd just tell me rather trying to engage my enthusiasm, because I haven't got one.</td>\n<th scope=\"row\">Response</th>\n<td>In the beginning, the Universe was created. This has made a lot of people very angry and been widely regarded as a bad move.</td>\n<th scope=\"row\">Reason</th>\n<td>Let's go crazy, let's get nuts! Look for the purple bandana until they put us in the truck, let's go!</td>\n</tr>\n<tr>\n<th scope=\"row\">Date(s)</th>\n<td colspan=\"5\">1969-08-13.</td>\n</tr>\n<tr>\n<th scope=\"row\">Director</th>\n<td colspan=\"5\">Karl Hungus</td>\n</tr>\n<tr>\n<th scope=\"row\">Cast</th>\n<td colspan=\"5\">Agda and Donny</td>\n</tr>\n<tr>\n<th scope=\"row\">Personnel</th>\n<td colspan=\"5\">Ford Prefect</td>\n</tr>\n<tr>\n<th scope=\"row\">Theatre, City</th>\n<td colspan=\"5\">Bistromath, Lockmanshire</td>\n</tr>\n<tr>\n<th scope=\"row\">Notes</th>\n<td colspan=\"5\">Keytar cardigan loko yuccie butcher mixtape ugh salvia.</td>\n</tr>\n<tr>\n<th scope=\"row\">See Also</th>\n<td colspan=\"5\"><ul><li><a href=\"http://kling.net/timmy.terry\" target=\"_blank\" rel=\"noopener\">http://kling.net/timmy.terry<span>(opens in new tab)</span></a></li></ul></td>\n</tr>\n</table>",
+  "description": "Cronut goth bicycle rights diy thundercats distillery farmtotable carry celiac.",
   "e_type": "production",
-  "legacy_pk": 10716,
+  "legacy_pk": 27689,
   "alternate_names": null,
   "cast": [
-    "Reg Nullify",
-    "Karl Hungus"
+    "Agda",
+    "Donny"
   ],
-  "city": "Toneyfurt",
-  "date_str": "1969-05-06.",
-  "director": "The Dude",
+  "city": "Lockmanshire",
+  "date_str": "1969-08-13.",
+  "director": "Karl Hungus",
   "links": [
-    "http://medhurst.name/risa"
+    "http://kling.net/timmy.terry"
   ],
-  "notes": "Swag franzen tattooed tote bag.",
+  "notes": "Keytar cardigan loko yuccie butcher mixtape ugh salvia.",
   "personnel": [
-    "Arthur Dent"
+    "Ford Prefect"
   ],
   "proposal": "I wish you'd just tell me rather trying to engage my enthusiasm, because I haven't got one.",
-  "response": "Whatever your tastes, Magrathea can cater for you. We are not proud.",
-  "reason": "You're gonna have to fight your own damn war, cause we don't want to fight no more.",
-  "theater": "Krikkit One"
+  "response": "In the beginning, the Universe was created. This has made a lot of people very angry and been widely regarded as a bad move.",
+  "reason": "Let's go crazy, let's get nuts! Look for the purple bandana until they put us in the truck, let's go!",
+  "theater": "Bistromath"
 }
 ~~~
 
