@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Entities API</title>
+    <meta charset="utf-8">
+    <style>
+      
+body {
+  font-family: Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 18px;
+  color: #404040;
+}
+
+.container {
+  width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  zoom: 1;
+}
+
+pre {
+  background-color: #f5f5f5;
+  display: block;
+  padding: 8.5px;
+  margin: 0 0 18px;
+  line-height: 18px;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+td.required .name:after {
+  float: right;
+  content: "required";
+  font-weight: normal;
+  color: #F08080;
+}
+
+a{
+  color: #0069d6;
+  text-decoration: none;
+  line-height: inherit;
+  font-weight: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  color: #404040;
+}
+
+h1 {
+  margin-bottom: 18px;
+  font-size: 30px;
+  line-height: 36px;
+}
+h2 {
+  font-size: 24px;
+  line-height: 36px;
+}
+h3{
+  font-size: 18px;
+  line-height: 36px;
+}
+h4 {
+  font-size: 16px;
+  line-height: 36px;
+}
+
+table{
+  width: 100%;
+  margin-bottom: 18px;
+  padding: 0;
+  border-collapse: separate;
+  font-size: 13px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  border-spacing: 0;
+  border: 1px solid #ddd;
+}
+
+table th {
+  padding-top: 9px;
+  font-weight: bold;
+  vertical-align: middle;
+  border-bottom: 1px solid #ddd;
+}
+table th+th, table td+td {
+  border-left: 1px solid #ddd;
+}
+table th, table td {
+  padding: 10px 10px 9px;
+  line-height: 18px;
+  text-align: left;
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Entities API</h1>
+
+        <p class="explanation"></p>
+
+      <div class="article">
+        <h2>GET /entites?per_page=:results_per_page&amp;page=:offset - Paginated results</h2>
+        <h3>GET /entities</h3>
+
+          <h3>Parameters</h3>
+          <table class="parameters table table-striped table-bordered table-condensed">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Default</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                    <span class="name">page</span>
+                </td>
+                <td>
+                  <span class="description">Current page of entities</span>
+                </td>
+                <td>
+                  <span class="default">1</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">per_page</span>
+                </td>
+                <td>
+                  <span class="description">Number of entities on a single response.</span>
+                </td>
+                <td>
+                  <span class="default">25</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">search</span>
+                </td>
+                <td>
+                  <span class="description">Text to search.</span>
+                </td>
+                <td>
+                  <span class="default">*</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">type</span>
+                </td>
+                <td>
+                  <span class="description">Limit responses by single type. Options are attendance, music, organization, person, place, production, public_event, publication, reading, translating, work_of_art, writing, and generic.</span>
+                </td>
+                <td>
+                  <span class="default">null</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">operator</span>
+                </td>
+                <td>
+                  <span class="description">By default, results match any words in the query. Use &#39;and&#39; to match all words.</span>
+                </td>
+                <td>
+                  <span class="default">or</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Accept: application/json
+Content-Type: application/json
+Host: example.org
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">GET /entities?page=2&amp;per_page=5</pre>
+
+            <h4>Query Parameters</h4>
+            <pre class="request query_parameters highlight">page: 2
+per_page: 5</pre>
+
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 0
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Permitted-Cross-Domain-Policies: none
+Referrer-Policy: strict-origin-when-cross-origin
+Link: &lt;http://example.org/entities?page=2&amp;per_page=5&gt;; rel=&#39;self&#39;, &lt;http://example.org/entities?page=1&amp;per_page=5&gt;; rel=&#39;first&#39;, &lt;http://example.org/entities?page=108&amp;per_page=5&gt;; rel=&#39;last&#39;, &lt;http://example.org/entities?page=3&amp;per_page=5&gt;; rel=&#39;next&#39;, &lt;http://example.org/entities?page=1&amp;per_page=5&gt;; rel=&#39;prev&#39;
+X-Total-Count: 537
+Content-Type: application/json; charset=utf-8
+ETag: W/&quot;09c408d023de2a3ac91dd61b00c133a2&quot;
+Cache-Control: max-age=0, private, must-revalidate
+X-Request-Id: 8377b5b6-2bec-483c-a450-6c56f9226a39
+X-Runtime: 3.164167
+Vary: Origin
+Content-Length: 4207</pre>
+            <h4>Status</h4>
+            <pre class="response status">200 OK</pre>
+              <h4>Body</h4>
+              <pre class="response body">{
+  &quot;entities&quot;: [
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/0285dbd6-8b5a-466c-a4a9-d97b6b4f94a7&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;Lord&#39;s Cricket Ground&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;place&quot;,
+      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;&lt;i&gt;Lord&#39;s Cricket Ground&lt;/i&gt;&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;Coldpressed microdosing iphone you probably havent heard of them phlogiston mustache farmtotable kombucha banjo.&lt;/p&gt;&lt;/section&gt;&quot;,
+      &quot;description&quot;: &quot;Coldpressed microdosing iphone you probably havent heard of them phlogiston mustache farmtotable kombucha banjo.&quot;,
+      &quot;clean_label&quot;: &quot;Lord&#39;s Cricket Ground&quot;,
+      &quot;clean_description&quot;: &quot;Coldpressed microdosing iphone you probably havent heard of them phlogiston mustache farmtotable kombucha banjo.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/0286db6b-2c5f-4763-8784-f31dbd24a382&quot;,
+      &quot;label&quot;: &quot;The Violent Bear It Away&quot;,
+      &quot;type&quot;: &quot;reading&quot;,
+      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Author&lt;/strong&gt; Freddy Kiehn&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Title&lt;/strong&gt; The Violent Bear It Away&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Publication&lt;/strong&gt; Schocken Books.&lt;/p&gt;&lt;/section&gt;&quot;,
+      &quot;description&quot;: &quot;Gastropub slowcarb letterpress wolf selvage irony.&quot;,
+      &quot;clean_label&quot;: &quot;The Violent Bear It Away&quot;,
+      &quot;clean_description&quot;: &quot;Gastropub slowcarb letterpress wolf selvage irony.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/02f1c4bc-06af-49ec-b550-e400a26e9a70&quot;,
+      &quot;label&quot;: &quot;Easter Island&quot;,
+      &quot;type&quot;: &quot;place&quot;,
+      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Easter Island&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;Aesthetic &lt;i&gt;brooklyn migas direct trade waistcoat kickstarter stumptown&lt;/i&gt; fixie.&lt;/p&gt;&lt;/section&gt;&quot;,
+      &quot;description&quot;: &quot;Aesthetic &lt;i&gt;brooklyn migas direct trade waistcoat kickstarter stumptown&lt;/i&gt; fixie.&quot;,
+      &quot;clean_label&quot;: &quot;Easter Island&quot;,
+      &quot;clean_description&quot;: &quot;Aesthetic brooklyn migas direct trade waistcoat kickstarter stumptown fixie.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/030d3ed4-74f5-4e42-8675-4056e8d82d52&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;Belgium&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;place&quot;,
+      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;&lt;i&gt;Belgium&lt;/i&gt;&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;Meditation fanny pack trust fund glutenfree skateboard photo booth artisan xoxo.&lt;/p&gt;&lt;/section&gt;&quot;,
+      &quot;description&quot;: &quot;Meditation fanny pack trust fund glutenfree skateboard photo booth artisan xoxo.&quot;,
+      &quot;clean_label&quot;: &quot;Belgium&quot;,
+      &quot;clean_description&quot;: &quot;Meditation fanny pack trust fund glutenfree skateboard photo booth artisan xoxo.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/03182957-a67c-4ba7-8f4a-f08dee813912&quot;,
+      &quot;label&quot;: &quot;Jesting Pilate&quot;,
+      &quot;type&quot;: &quot;reading&quot;,
+      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Author&lt;/strong&gt; Manual Will&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Title&lt;/strong&gt; Jesting Pilate&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Publication&lt;/strong&gt; Matthias Media.&lt;/p&gt;&lt;/section&gt;&quot;,
+      &quot;description&quot;: &quot;Scenester everyday mixtape crucifix popup synth humblebrag 1 offal.&quot;,
+      &quot;clean_label&quot;: &quot;Jesting Pilate&quot;,
+      &quot;clean_description&quot;: &quot;Scenester everyday mixtape crucifix popup synth humblebrag 1 offal.&quot;
+    }
+  ],
+  &quot;aggs&quot;: {
+    &quot;e_type&quot;: {
+      &quot;doc_count&quot;: 537,
+      &quot;doc_count_error_upper_bound&quot;: 0,
+      &quot;sum_other_doc_count&quot;: 0,
+      &quot;buckets&quot;: [
+        {
+          &quot;key&quot;: &quot;place&quot;,
+          &quot;doc_count&quot;: 116
+        },
+        {
+          &quot;key&quot;: &quot;person&quot;,
+          &quot;doc_count&quot;: 82
+        },
+        {
+          &quot;key&quot;: &quot;work_of_art&quot;,
+          &quot;doc_count&quot;: 46
+        },
+        {
+          &quot;key&quot;: &quot;public_event&quot;,
+          &quot;doc_count&quot;: 45
+        },
+        {
+          &quot;key&quot;: &quot;production&quot;,
+          &quot;doc_count&quot;: 39
+        },
+        {
+          &quot;key&quot;: &quot;reading&quot;,
+          &quot;doc_count&quot;: 39
+        },
+        {
+          &quot;key&quot;: &quot;translating&quot;,
+          &quot;doc_count&quot;: 35
+        },
+        {
+          &quot;key&quot;: &quot;attendance&quot;,
+          &quot;doc_count&quot;: 34
+        },
+        {
+          &quot;key&quot;: &quot;music&quot;,
+          &quot;doc_count&quot;: 28
+        },
+        {
+          &quot;key&quot;: &quot;writing&quot;,
+          &quot;doc_count&quot;: 28
+        },
+        {
+          &quot;key&quot;: &quot;publication&quot;,
+          &quot;doc_count&quot;: 26
+        },
+        {
+          &quot;key&quot;: &quot;organization&quot;,
+          &quot;doc_count&quot;: 19
+        }
+      ]
+    }
+  },
+  &quot;meta&quot;: {
+    &quot;page&quot;: 2,
+    &quot;per_page&quot;: 5,
+    &quot;page_count&quot;: 108,
+    &quot;total_count&quot;: 537,
+    &quot;links&quot;: {
+      &quot;self&quot;: &quot;http://example.org/entities?page=2&amp;per_page=5&quot;,
+      &quot;first&quot;: &quot;http://example.org/entities?page=1&amp;per_page=5&quot;,
+      &quot;last&quot;: &quot;http://example.org/entities?page=108&amp;per_page=5&quot;,
+      &quot;next&quot;: &quot;http://example.org/entities?page=3&amp;per_page=5&quot;,
+      &quot;prev&quot;: &quot;http://example.org/entities?page=1&amp;per_page=5&quot;
+    }
+  }
+}</pre>
+      </div>
+    </div>
+  </body>
+</html>

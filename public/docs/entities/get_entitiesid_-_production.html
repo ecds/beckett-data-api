@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Entities API</title>
+    <meta charset="utf-8">
+    <style>
+      
+body {
+  font-family: Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 18px;
+  color: #404040;
+}
+
+.container {
+  width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  zoom: 1;
+}
+
+pre {
+  background-color: #f5f5f5;
+  display: block;
+  padding: 8.5px;
+  margin: 0 0 18px;
+  line-height: 18px;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+td.required .name:after {
+  float: right;
+  content: "required";
+  font-weight: normal;
+  color: #F08080;
+}
+
+a{
+  color: #0069d6;
+  text-decoration: none;
+  line-height: inherit;
+  font-weight: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  color: #404040;
+}
+
+h1 {
+  margin-bottom: 18px;
+  font-size: 30px;
+  line-height: 36px;
+}
+h2 {
+  font-size: 24px;
+  line-height: 36px;
+}
+h3{
+  font-size: 18px;
+  line-height: 36px;
+}
+h4 {
+  font-size: 16px;
+  line-height: 36px;
+}
+
+table{
+  width: 100%;
+  margin-bottom: 18px;
+  padding: 0;
+  border-collapse: separate;
+  font-size: 13px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  border-spacing: 0;
+  border: 1px solid #ddd;
+}
+
+table th {
+  padding-top: 9px;
+  font-weight: bold;
+  vertical-align: middle;
+  border-bottom: 1px solid #ddd;
+}
+table th+th, table td+td {
+  border-left: 1px solid #ddd;
+}
+table th, table td {
+  padding: 10px 10px 9px;
+  line-height: 18px;
+  text-align: left;
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Entities API</h1>
+
+        <p class="explanation"></p>
+
+      <div class="article">
+        <h2>GET /entities/:id - Production</h2>
+        <h3>GET /entities/:id</h3>
+
+
+          <h3>Response Fields</h3>
+          <table class="response-fields table table-striped table-bordered table-condensed">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Default</th>
+                <th>Description</th>
+                <th>Not Null</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                    <span class="name">label</span>
+                </td>
+                <td>
+                  <span class="description">HTML String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">true</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">short_display</span>
+                </td>
+                <td>
+                  <span class="description">HTML String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">true</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">full_display</span>
+                </td>
+                <td>
+                  <span class="description">HTML String</span>
+                </td>
+                <td>
+                  <span class="description"></span>
+                </td>
+                <td>
+                  <span class="description">true</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Accept: application/json
+Content-Type: application/json
+Host: example.org
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">GET /entities/8a7d0bc9-1ba2-4a3e-8747-e570e2524ab8</pre>
+
+
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 0
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Permitted-Cross-Domain-Policies: none
+Referrer-Policy: strict-origin-when-cross-origin
+Content-Type: application/json; charset=utf-8
+ETag: W/&quot;280fef8bd64b754e7ab41adc83a95aba&quot;
+Cache-Control: max-age=0, private, must-revalidate
+X-Request-Id: af57a7fc-1504-4e74-beb6-374461cc9362
+X-Runtime: 1.259989
+Vary: Origin
+Content-Length: 3648</pre>
+            <h4>Status</h4>
+            <pre class="response status">200 OK</pre>
+              <h4>Body</h4>
+              <pre class="response body">{
+  &quot;id&quot;: &quot;http://example.org/entities/8a7d0bc9-1ba2-4a3e-8747-e570e2524ab8&quot;,
+  &quot;type&quot;: &quot;production&quot;,
+  &quot;label&quot;: &quot;Pulp Fiction&quot;,
+  &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Title&lt;/strong&gt; Pulp Fiction&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Proposal/Response&lt;/strong&gt; I wish you&#39;d just tell me rather trying to engage my enthusiasm, because I haven&#39;t got one. / In the beginning, the Universe was created. This has made a lot of people very angry and been widely regarded as a bad move.&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Director&lt;/strong&gt; Karl Hungus &lt;strong&gt;Theatre, City&lt;/strong&gt; Bistromath, Lockmanshire&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Date(s)&lt;/strong&gt; 1969-08-13.&lt;/p&gt;&lt;/section&gt;&quot;,
+  &quot;full_display&quot;: &quot;&lt;table&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Title&lt;/th&gt;\n&lt;td colspan=\&quot;5\&quot;&gt;Pulp Fiction&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Proposal&lt;/th&gt;\n&lt;td&gt;I wish you&#39;d just tell me rather trying to engage my enthusiasm, because I haven&#39;t got one.&lt;/td&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Response&lt;/th&gt;\n&lt;td&gt;In the beginning, the Universe was created. This has made a lot of people very angry and been widely regarded as a bad move.&lt;/td&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Reason&lt;/th&gt;\n&lt;td&gt;Let&#39;s go crazy, let&#39;s get nuts! Look for the purple bandana until they put us in the truck, let&#39;s go!&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Date(s)&lt;/th&gt;\n&lt;td colspan=\&quot;5\&quot;&gt;1969-08-13.&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Director&lt;/th&gt;\n&lt;td colspan=\&quot;5\&quot;&gt;Karl Hungus&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Cast&lt;/th&gt;\n&lt;td colspan=\&quot;5\&quot;&gt;Agda and Donny&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Personnel&lt;/th&gt;\n&lt;td colspan=\&quot;5\&quot;&gt;Ford Prefect&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Theatre, City&lt;/th&gt;\n&lt;td colspan=\&quot;5\&quot;&gt;Bistromath, Lockmanshire&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Notes&lt;/th&gt;\n&lt;td colspan=\&quot;5\&quot;&gt;Keytar cardigan loko yuccie butcher mixtape ugh salvia.&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;See Also&lt;/th&gt;\n&lt;td colspan=\&quot;5\&quot;&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=\&quot;http://kling.net/timmy.terry\&quot; target=\&quot;_blank\&quot; rel=\&quot;noopener\&quot;&gt;http://kling.net/timmy.terry&lt;span&gt;(opens in new tab)&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;\n&lt;/tr&gt;\n&lt;/table&gt;&quot;,
+  &quot;description&quot;: &quot;Cronut goth bicycle rights diy thundercats distillery farmtotable carry celiac.&quot;,
+  &quot;e_type&quot;: &quot;production&quot;,
+  &quot;legacy_pk&quot;: 27689,
+  &quot;alternate_names&quot;: null,
+  &quot;cast&quot;: [
+    &quot;Agda&quot;,
+    &quot;Donny&quot;
+  ],
+  &quot;city&quot;: &quot;Lockmanshire&quot;,
+  &quot;date_str&quot;: &quot;1969-08-13.&quot;,
+  &quot;director&quot;: &quot;Karl Hungus&quot;,
+  &quot;links&quot;: [
+    &quot;http://kling.net/timmy.terry&quot;
+  ],
+  &quot;notes&quot;: &quot;Keytar cardigan loko yuccie butcher mixtape ugh salvia.&quot;,
+  &quot;personnel&quot;: [
+    &quot;Ford Prefect&quot;
+  ],
+  &quot;proposal&quot;: &quot;I wish you&#39;d just tell me rather trying to engage my enthusiasm, because I haven&#39;t got one.&quot;,
+  &quot;response&quot;: &quot;In the beginning, the Universe was created. This has made a lot of people very angry and been widely regarded as a bad move.&quot;,
+  &quot;reason&quot;: &quot;Let&#39;s go crazy, let&#39;s get nuts! Look for the purple bandana until they put us in the truck, let&#39;s go!&quot;,
+  &quot;theater&quot;: &quot;Bistromath&quot;
+}</pre>
+      </div>
+    </div>
+  </body>
+</html>

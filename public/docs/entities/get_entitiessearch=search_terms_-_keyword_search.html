@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Entities API</title>
+    <meta charset="utf-8">
+    <style>
+      
+body {
+  font-family: Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 18px;
+  color: #404040;
+}
+
+.container {
+  width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  zoom: 1;
+}
+
+pre {
+  background-color: #f5f5f5;
+  display: block;
+  padding: 8.5px;
+  margin: 0 0 18px;
+  line-height: 18px;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+td.required .name:after {
+  float: right;
+  content: "required";
+  font-weight: normal;
+  color: #F08080;
+}
+
+a{
+  color: #0069d6;
+  text-decoration: none;
+  line-height: inherit;
+  font-weight: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  color: #404040;
+}
+
+h1 {
+  margin-bottom: 18px;
+  font-size: 30px;
+  line-height: 36px;
+}
+h2 {
+  font-size: 24px;
+  line-height: 36px;
+}
+h3{
+  font-size: 18px;
+  line-height: 36px;
+}
+h4 {
+  font-size: 16px;
+  line-height: 36px;
+}
+
+table{
+  width: 100%;
+  margin-bottom: 18px;
+  padding: 0;
+  border-collapse: separate;
+  font-size: 13px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  border-spacing: 0;
+  border: 1px solid #ddd;
+}
+
+table th {
+  padding-top: 9px;
+  font-weight: bold;
+  vertical-align: middle;
+  border-bottom: 1px solid #ddd;
+}
+table th+th, table td+td {
+  border-left: 1px solid #ddd;
+}
+table th, table td {
+  padding: 10px 10px 9px;
+  line-height: 18px;
+  text-align: left;
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Entities API</h1>
+
+        <p class="explanation"></p>
+
+      <div class="article">
+        <h2>GET /entities?search=:search_terms - Keyword Search</h2>
+        <h3>GET /entities</h3>
+          <p class="explanation">
+            Returns a paginated list of entities from key word search.
+          </p>
+
+          <h3>Parameters</h3>
+          <table class="parameters table table-striped table-bordered table-condensed">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Default</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                    <span class="name">page</span>
+                </td>
+                <td>
+                  <span class="description">Current page of entities</span>
+                </td>
+                <td>
+                  <span class="default">1</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">per_page</span>
+                </td>
+                <td>
+                  <span class="description">Number of entities on a single response.</span>
+                </td>
+                <td>
+                  <span class="default">25</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">search</span>
+                </td>
+                <td>
+                  <span class="description">Text to search.</span>
+                </td>
+                <td>
+                  <span class="default">*</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">type</span>
+                </td>
+                <td>
+                  <span class="description">Limit responses by single type. Options are attendance, music, organization, person, place, production, public_event, publication, reading, translating, work_of_art, writing, and generic.</span>
+                </td>
+                <td>
+                  <span class="default">null</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">operator</span>
+                </td>
+                <td>
+                  <span class="description">By default, results match any words in the query. Use &#39;and&#39; to match all words.</span>
+                </td>
+                <td>
+                  <span class="default">or</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Accept: application/json
+Content-Type: application/json
+Host: example.org
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">GET /entities?search=park</pre>
+
+            <h4>Query Parameters</h4>
+            <pre class="request query_parameters highlight">search: park</pre>
+
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 0
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Permitted-Cross-Domain-Policies: none
+Referrer-Policy: strict-origin-when-cross-origin
+Link: &lt;http://example.org/entities?page=1&amp;search=park&gt;; rel=&#39;self&#39;
+X-Total-Count: 17
+Content-Type: application/json; charset=utf-8
+ETag: W/&quot;1ef1fbdb6de416065090eb39d7440234&quot;
+Cache-Control: max-age=0, private, must-revalidate
+X-Request-Id: 94889d30-18da-4cdc-82b9-7c381daaf99d
+X-Runtime: 3.177657
+Vary: Origin
+Content-Length: 13013</pre>
+            <h4>Status</h4>
+            <pre class="response status">200 OK</pre>
+              <h4>Body</h4>
+              <pre class="response body">{
+  &quot;entities&quot;: [
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/b7d10962-cf1a-44f9-9c04-e057c109d511&quot;,
+      &quot;label&quot;: &quot;Jurassic Park&quot;,
+      &quot;type&quot;: &quot;production&quot;,
+      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Title&lt;/strong&gt; Jurassic Park&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Proposal/Response&lt;/strong&gt; I won&#39;t enjoy it. / Magrathea itself disappeared and its memory soon passed into the obscurity of legend. In these enlightened days, of course, no one believes a word of it.&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Director&lt;/strong&gt; Karl Hungus &lt;strong&gt;Theatre, City&lt;/strong&gt; Golgafrinchan Ark Fleet Ship B, West Donnetta&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Date(s)&lt;/strong&gt; 1931-06-04.&lt;/p&gt;&lt;/section&gt;&quot;,
+      &quot;description&quot;: &quot;Occupy humblebrag trust fund crucifix.&quot;,
+      &quot;clean_label&quot;: &quot;Jurassic Park&quot;,
+      &quot;clean_description&quot;: &quot;Occupy humblebrag trust fund crucifix.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/6b87d06b-7f05-452e-8bb9-f68c0f59efb7&quot;,
+      &quot;label&quot;: &quot;Radio Broadcast, Kickstarter xoxo tilde helvetica austin 1 park roof.&quot;,
+      &quot;type&quot;: &quot;attendance&quot;,
+      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Radio Broadcast&lt;/strong&gt;, Kickstarter xoxo tilde helvetica austin 1 park roof.&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Attended with&lt;/strong&gt; Brandt and Lunkwill and Fook&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Place, Date&lt;/strong&gt; Boylestad, 20 August 1954&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Director&lt;/strong&gt; Frankie and Benjy&lt;/p&gt;&lt;/section&gt;&quot;,
+      &quot;description&quot;: &quot;Kickstarter xoxo tilde helvetica austin 1 park roof.&quot;,
+      &quot;clean_label&quot;: &quot;Radio Broadcast, Kickstarter xoxo tilde helvetica austin 1 park roof.&quot;,
+      &quot;clean_description&quot;: &quot;Kickstarter xoxo tilde helvetica austin 1 park roof.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/05e9e348-d9a9-41fb-aede-0de0a4675335&quot;,
+      &quot;label&quot;: &quot;London&quot;,
+      &quot;type&quot;: &quot;place&quot;,
+      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;London&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;Pinterest park bushwick yr.&lt;/p&gt;&lt;/section&gt;&quot;,
+      &quot;description&quot;: &quot;Pinterest park bushwick yr.&quot;,
+      &quot;clean_label&quot;: &quot;London&quot;,
+      &quot;clean_description&quot;: &quot;Pinterest park bushwick yr.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/3409ac55-435f-48e9-840f-0f0bf46eb1fc&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;Cathedral of Chalesm&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;place&quot;,
+      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;&lt;i&gt;Cathedral of Chalesm&lt;/i&gt;&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;Twee park master semiotics.&lt;/p&gt;&lt;/section&gt;&quot;,
+      &quot;description&quot;: &quot;Twee park master semiotics.&quot;,
+      &quot;clean_label&quot;: &quot;Cathedral of Chalesm&quot;,
+      &quot;clean_description&quot;: &quot;Twee park master semiotics.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/75474408-c304-4a2d-9051-2291824cec5f&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;Such, Such Were the Joys&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;translating&quot;,
+      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Author&lt;/strong&gt; Tricia McMillan, &lt;strong&gt;Original Title&lt;/strong&gt; &lt;i&gt;Such, Such Were the Joys&lt;/i&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Translated into&lt;/strong&gt; Ukrainian by Slartibartfast&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Translated title&lt;/strong&gt; Tanngrisnir.&lt;/p&gt;&lt;/section&gt;&quot;,
+      &quot;description&quot;: &quot;Brooklyn occupy tumblr park.&quot;,
+      &quot;clean_label&quot;: &quot;Such, Such Were the Joys&quot;,
+      &quot;clean_description&quot;: &quot;Brooklyn occupy tumblr park.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/dbe8cb90-8ffb-4625-8516-5d332e917ad5&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;Pop Life&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;work_of_art&quot;,
+      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Artist&lt;/strong&gt; Majikthise&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Title&lt;/strong&gt; &lt;i&gt;Pop Life&lt;/i&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt; Whatever truffaut park pug.&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Owner/location&lt;/strong&gt; Starship Titanic&lt;/p&gt;&lt;/section&gt;&quot;,
+      &quot;description&quot;: &quot;Whatever truffaut park pug.&quot;,
+      &quot;clean_label&quot;: &quot;Pop Life&quot;,
+      &quot;clean_description&quot;: &quot;Whatever truffaut park pug.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/067e1169-5ae9-4da6-8824-efc67af55b4c&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;Sector ZZ9 Plural Z Alpha&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;place&quot;,
+      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;&lt;i&gt;Sector ZZ9 Plural Z Alpha&lt;/i&gt;&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;Salvia tousled park mustache mlkshk.&lt;/p&gt;&lt;/section&gt;&quot;,
+      &quot;description&quot;: &quot;Salvia tousled park mustache mlkshk.&quot;,
+      &quot;clean_label&quot;: &quot;Sector ZZ9 Plural Z Alpha&quot;,
+      &quot;clean_description&quot;: &quot;Salvia tousled park mustache mlkshk.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/77d5add5-6b3b-4ab4-bd2a-28e05cd0f449&quot;,
+      &quot;label&quot;: &quot;Belgium&quot;,
+      &quot;type&quot;: &quot;place&quot;,
+      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Belgium&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;Ennui vice park synth listicle sriracha.&lt;/p&gt;&lt;/section&gt;&quot;,
+      &quot;description&quot;: &quot;Ennui vice park synth listicle sriracha.&quot;,
+      &quot;clean_label&quot;: &quot;Belgium&quot;,
+      &quot;clean_description&quot;: &quot;Ennui vice park synth listicle sriracha.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/e285f755-ff25-4f52-9cbb-390de3ef48c7&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;The Treasure of the Sierra Madre&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;production&quot;,
+      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Title&lt;/strong&gt; &lt;i&gt;The Treasure of the Sierra Madre&lt;/i&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Proposal/Response&lt;/strong&gt; Life? Don&#39;t talk to me about life. / In the beginning, the Universe was created. This has made a lot of people very angry and been widely regarded as a bad move.&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Director&lt;/strong&gt; Jesus Quintana &lt;strong&gt;Theatre, City&lt;/strong&gt; Krikkit One, West Lamont&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Date(s)&lt;/strong&gt; 1965-07-13.&lt;/p&gt;&lt;/section&gt;&quot;,
+      &quot;description&quot;: &quot;Park leggings tattooed trust fund ennui.&quot;,
+      &quot;clean_label&quot;: &quot;The Treasure of the Sierra Madre&quot;,
+      &quot;clean_description&quot;: &quot;Park leggings tattooed trust fund ennui.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/39533580-4e3b-4e88-83b8-a2445f21949b&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;Let&#39;s Go Crazy&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;music&quot;,
+      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Composer&lt;/strong&gt; Charles Darwin&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Title&lt;/strong&gt; &lt;i&gt;Let&#39;s Go Crazy&lt;/i&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt; Asymmetrical &lt;i&gt;kitsch park godard ugh pitchfork&lt;/i&gt; yr.&lt;/p&gt;&lt;/section&gt;&quot;,
+      &quot;description&quot;: &quot;Asymmetrical &lt;i&gt;kitsch park godard ugh pitchfork&lt;/i&gt; yr.&quot;,
+      &quot;clean_label&quot;: &quot;Let&#39;s Go Crazy&quot;,
+      &quot;clean_description&quot;: &quot;Asymmetrical kitsch park godard ugh pitchfork yr.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/031cc394-5edc-4354-8c8c-67026f81d08a&quot;,
+      &quot;label&quot;: &quot;That Hideous Strength&quot;,
+      &quot;type&quot;: &quot;reading&quot;,
+      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Author&lt;/strong&gt; Kati Dare Ret.&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Title&lt;/strong&gt; That Hideous Strength&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Publication&lt;/strong&gt; McClelland and Stewart.&lt;/p&gt;&lt;/section&gt;&quot;,
+      &quot;description&quot;: &quot;Bitters &lt;i&gt;readymade cliche fashion axe mlkshk taxidermy&lt;/i&gt; park.&quot;,
+      &quot;clean_label&quot;: &quot;That Hideous Strength&quot;,
+      &quot;clean_description&quot;: &quot;Bitters readymade cliche fashion axe mlkshk taxidermy park.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/291a0f17-36ae-41d3-b216-6ba1a137e5d2&quot;,
+      &quot;label&quot;: &quot;Baby I&#39;m A Star&quot;,
+      &quot;type&quot;: &quot;music&quot;,
+      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Composer&lt;/strong&gt; Eccentrica Gallumbits&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Title&lt;/strong&gt; Baby I&#39;m A Star&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt; Crucifix messenger bag quinoa muggle magic park listicle yuccie.&lt;/p&gt;&lt;/section&gt;&quot;,
+      &quot;description&quot;: &quot;Crucifix messenger bag quinoa muggle magic park listicle yuccie.&quot;,
+      &quot;clean_label&quot;: &quot;Baby I&#39;m A Star&quot;,
+      &quot;clean_description&quot;: &quot;Crucifix messenger bag quinoa muggle magic park listicle yuccie.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/2dc5ce13-10af-42e2-a15a-2e0e85e04228&quot;,
+      &quot;label&quot;: &quot;How to Train Your Dragon&quot;,
+      &quot;type&quot;: &quot;production&quot;,
+      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Title&lt;/strong&gt; How to Train Your Dragon&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Proposal/Response&lt;/strong&gt; Pardon me for breathing, which I never do anyway so I don&#39;t know why I bother to say it, Oh God, I&#39;m so depressed. / Parts of the inside of her head screamed at other parts of the inside of her head.&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Director&lt;/strong&gt; Donny &lt;strong&gt;Theatre, City&lt;/strong&gt; Billion Year Bunker, Funkborough&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Date(s)&lt;/strong&gt; 1939-05-30.&lt;/p&gt;&lt;/section&gt;&quot;,
+      &quot;description&quot;: &quot;Migas &lt;i&gt;park green juice kitsch 90s cred squid&lt;/i&gt; street.&quot;,
+      &quot;clean_label&quot;: &quot;How to Train Your Dragon&quot;,
+      &quot;clean_description&quot;: &quot;Migas park green juice kitsch 90s cred squid street.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/7ca1462b-ece2-4838-80ae-c4606eddea38&quot;,
+      &quot;label&quot;: &quot;Infinite Jest&quot;,
+      &quot;type&quot;: &quot;writing&quot;,
+      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Title&lt;/strong&gt; Infinite Jest&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Proposal/Response&lt;/strong&gt; I&#39;ve just had an unhappy love affair, so I don&#39;t see why anybody else should have a good time.&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Translator&lt;/strong&gt; JinJenz&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Date&lt;/strong&gt; 1924-10-01.&lt;/p&gt;&lt;/section&gt;&quot;,
+      &quot;description&quot;: &quot;Park &lt;i&gt;vinyl kitsch brunch pinterest swag keytar cleanse&lt;/i&gt; hella.&quot;,
+      &quot;clean_label&quot;: &quot;Infinite Jest&quot;,
+      &quot;clean_description&quot;: &quot;Park vinyl kitsch brunch pinterest swag keytar cleanse hella.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/e40801c7-914c-499d-8002-27b50261573f&quot;,
+      &quot;label&quot;: &quot;Ysllodins&quot;,
+      &quot;type&quot;: &quot;place&quot;,
+      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Ysllodins&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;Trust fund pickled fingerstache whatever meditation celiac park postironic listicle.&lt;/p&gt;&lt;/section&gt;&quot;,
+      &quot;description&quot;: &quot;Trust fund pickled fingerstache whatever meditation celiac park postironic listicle.&quot;,
+      &quot;clean_label&quot;: &quot;Ysllodins&quot;,
+      &quot;clean_description&quot;: &quot;Trust fund pickled fingerstache whatever meditation celiac park postironic listicle.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/dc7a87c2-d07a-4812-abd7-59b05a28afa0&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;Baltimore&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;work_of_art&quot;,
+      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Artist&lt;/strong&gt; Hotblack Desiato&#39;s bodyguard&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Title&lt;/strong&gt; &lt;i&gt;Baltimore&lt;/i&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt; Neutra butcher ramps tattooed you probably havent heard of them lofi park.&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Owner/location&lt;/strong&gt; Tanngrisnir&lt;/p&gt;&lt;/section&gt;&quot;,
+      &quot;description&quot;: &quot;Neutra butcher ramps tattooed you probably havent heard of them lofi park.&quot;,
+      &quot;clean_label&quot;: &quot;Baltimore&quot;,
+      &quot;clean_description&quot;: &quot;Neutra butcher ramps tattooed you probably havent heard of them lofi park.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/99463b1c-33f8-4761-8beb-3b3cc2067d33&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;Partyman&lt;/i&gt;&quot;,
+      &quot;type&quot;: &quot;work_of_art&quot;,
+      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Artist&lt;/strong&gt; Garkbit&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Title&lt;/strong&gt; &lt;i&gt;Partyman&lt;/i&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt; Keffiyeh ugh actually chillwave waistcoat park put a bird on it vinegar tofu.&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Owner/location&lt;/strong&gt; Golgafrinchan Ark Fleet Ship B&lt;/p&gt;&lt;/section&gt;&quot;,
+      &quot;description&quot;: &quot;Keffiyeh ugh actually chillwave waistcoat park put a bird on it vinegar tofu.&quot;,
+      &quot;clean_label&quot;: &quot;Partyman&quot;,
+      &quot;clean_description&quot;: &quot;Keffiyeh ugh actually chillwave waistcoat park put a bird on it vinegar tofu.&quot;
+    }
+  ],
+  &quot;aggs&quot;: {
+    &quot;e_type&quot;: {
+      &quot;doc_count&quot;: 17,
+      &quot;doc_count_error_upper_bound&quot;: 0,
+      &quot;sum_other_doc_count&quot;: 0,
+      &quot;buckets&quot;: [
+        {
+          &quot;key&quot;: &quot;place&quot;,
+          &quot;doc_count&quot;: 5
+        },
+        {
+          &quot;key&quot;: &quot;production&quot;,
+          &quot;doc_count&quot;: 3
+        },
+        {
+          &quot;key&quot;: &quot;work_of_art&quot;,
+          &quot;doc_count&quot;: 3
+        },
+        {
+          &quot;key&quot;: &quot;music&quot;,
+          &quot;doc_count&quot;: 2
+        },
+        {
+          &quot;key&quot;: &quot;attendance&quot;,
+          &quot;doc_count&quot;: 1
+        },
+        {
+          &quot;key&quot;: &quot;reading&quot;,
+          &quot;doc_count&quot;: 1
+        },
+        {
+          &quot;key&quot;: &quot;translating&quot;,
+          &quot;doc_count&quot;: 1
+        },
+        {
+          &quot;key&quot;: &quot;writing&quot;,
+          &quot;doc_count&quot;: 1
+        }
+      ]
+    }
+  },
+  &quot;meta&quot;: {
+    &quot;page&quot;: 1,
+    &quot;per_page&quot;: 25,
+    &quot;page_count&quot;: 1,
+    &quot;total_count&quot;: 17,
+    &quot;links&quot;: {
+      &quot;self&quot;: &quot;http://example.org/entities?page=1&amp;search=park&quot;
+    }
+  }
+}</pre>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Letters API</title>
+    <meta charset="utf-8">
+    <style>
+      
+body {
+  font-family: Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 18px;
+  color: #404040;
+}
+
+.container {
+  width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  zoom: 1;
+}
+
+pre {
+  background-color: #f5f5f5;
+  display: block;
+  padding: 8.5px;
+  margin: 0 0 18px;
+  line-height: 18px;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+td.required .name:after {
+  float: right;
+  content: "required";
+  font-weight: normal;
+  color: #F08080;
+}
+
+a{
+  color: #0069d6;
+  text-decoration: none;
+  line-height: inherit;
+  font-weight: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  color: #404040;
+}
+
+h1 {
+  margin-bottom: 18px;
+  font-size: 30px;
+  line-height: 36px;
+}
+h2 {
+  font-size: 24px;
+  line-height: 36px;
+}
+h3{
+  font-size: 18px;
+  line-height: 36px;
+}
+h4 {
+  font-size: 16px;
+  line-height: 36px;
+}
+
+table{
+  width: 100%;
+  margin-bottom: 18px;
+  padding: 0;
+  border-collapse: separate;
+  font-size: 13px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  border-spacing: 0;
+  border: 1px solid #ddd;
+}
+
+table th {
+  padding-top: 9px;
+  font-weight: bold;
+  vertical-align: middle;
+  border-bottom: 1px solid #ddd;
+}
+table th+th, table td+td {
+  border-left: 1px solid #ddd;
+}
+table th, table td {
+  padding: 10px 10px 9px;
+  line-height: 18px;
+  text-align: left;
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Letters API</h1>
+
+      <div class="article">
+        <h2>GET /letters/:id</h2>
+        <h3>GET /letters/:id</h3>
+
+
+
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Version: HTTP/1.0
+Accept: application/json
+Content-Type: application/json
+Host: example.org
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">GET /letters/45a95151-b14c-4052-b9e6-682048474dcf</pre>
+
+
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 0
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Permitted-Cross-Domain-Policies: none
+Referrer-Policy: strict-origin-when-cross-origin
+Content-Type: application/json; charset=utf-8
+ETag: W/&quot;f643bb075961e80b3d012152a816143d&quot;
+Cache-Control: max-age=0, private, must-revalidate
+X-Request-Id: fbc544ef-b4d1-4cf0-ab22-6829a2b48fea
+X-Runtime: 0.666538
+Vary: Origin
+Content-Length: 6456</pre>
+            <h4>Status</h4>
+            <pre class="response status">200 OK</pre>
+              <h4>Body</h4>
+              <pre class="response body">{
+  &quot;id&quot;: &quot;http://example.org/letters/45a95151-b14c-4052-b9e6-682048474dcf&quot;,
+  &quot;date&quot;: &quot;1979-11-02T00:00:00.000-05:00&quot;,
+  &quot;recipients&quot;: [
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/ab2c5cdd-add3-43c3-9014-cc092192655e.json&quot;,
+      &quot;type&quot;: &quot;person&quot;,
+      &quot;label&quot;: &quot;Hintz, Derrick&quot;,
+      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Derrick Hintz, 1908-1986&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;And then of course I&#39;ve got this terrible pain in all the diodes down my left side.&lt;/p&gt;&lt;/section&gt;&quot;
+    }
+  ],
+  &quot;destinations&quot;: [
+    {
+      &quot;id&quot;: &quot;http://example.org/entities/4f2fd0fb-d0dd-4824-bc12-08fff8023dd4.json&quot;,
+      &quot;type&quot;: &quot;place&quot;,
+      &quot;label&quot;: &quot;&lt;i&gt;France&lt;/i&gt;&quot;,
+      &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;&lt;i&gt;France&lt;/i&gt;&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;Vhs &lt;i&gt;put a bird on it everyday blue bottle banh mi you probably havent heard of them tousled&lt;/i&gt; freegan.&lt;/p&gt;&lt;/section&gt;&quot;
+    }
+  ],
+  &quot;mentions&quot;: {
+    &quot;attendances&quot;: [
+      {
+        &quot;id&quot;: &quot;http://example.org/entities/b95a9486-c36d-44e1-99be-258301f989b9.json&quot;,
+        &quot;type&quot;: &quot;attendance&quot;,
+        &quot;label&quot;: &quot;Reading, 90s carry five dollar toast etsy ugh.&quot;,
+        &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Reading&lt;/strong&gt;, 90s carry five dollar toast etsy ugh.&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Attended with&lt;/strong&gt; The Big Lebowski and Reg Nullify&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Place, Date&lt;/strong&gt; North Camelliachester, 21 January 1957&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Director&lt;/strong&gt; Barry Manilow&lt;/p&gt;&lt;/section&gt;&quot;,
+        &quot;tags&quot;: [
+
+        ]
+      },
+      {
+        &quot;id&quot;: &quot;http://example.org/entities/5c53f3c9-2aea-4dcb-87c6-4a721b9477a3.json&quot;,
+        &quot;type&quot;: &quot;attendance&quot;,
+        &quot;label&quot;: &quot;Reading, Synth retro listicle knausgaard offal wes anderson farmtotable cronut meditation.&quot;,
+        &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Reading&lt;/strong&gt;, Synth retro listicle knausgaard offal wes anderson farmtotable cronut meditation.&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Attended with&lt;/strong&gt; Maude Lebowski and Galaxia Woonbeam&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Place, Date&lt;/strong&gt; East Juleview, 11 January 1945&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Director&lt;/strong&gt; Colin the Security Robot&lt;/p&gt;&lt;/section&gt;&quot;,
+        &quot;tags&quot;: [
+
+        ]
+      },
+      {
+        &quot;id&quot;: &quot;http://example.org/entities/6d29e5dc-9ce8-4e84-b906-16e440cd7939.json&quot;,
+        &quot;type&quot;: &quot;attendance&quot;,
+        &quot;label&quot;: &quot;Rehearsal, Poutine 1 squid wolf mumblecore.&quot;,
+        &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Rehearsal&lt;/strong&gt;, Poutine 1 squid wolf mumblecore.&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Attended with&lt;/strong&gt; Karl Hungus and Agda&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Place, Date&lt;/strong&gt; East Brandonhaven, 21 May 1944&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Director&lt;/strong&gt; Lunkwill and Fook&lt;/p&gt;&lt;/section&gt;&quot;,
+        &quot;tags&quot;: [
+
+        ]
+      }
+    ],
+    &quot;music&quot;: [
+      {
+        &quot;id&quot;: &quot;http://example.org/entities/3c73bfd8-f203-4042-abaa-abf3966a06f0.json&quot;,
+        &quot;type&quot;: &quot;music&quot;,
+        &quot;label&quot;: &quot;&lt;i&gt;Baby I&#39;m A Star&lt;/i&gt;&quot;,
+        &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Composer&lt;/strong&gt; Prostetnic Vogon Jeltz&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Title&lt;/strong&gt; &lt;i&gt;Baby I&#39;m A Star&lt;/i&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt; Austin tousled glutenfree tryhard.&lt;/p&gt;&lt;/section&gt;&quot;,
+        &quot;tags&quot;: [
+
+        ]
+      },
+      {
+        &quot;id&quot;: &quot;http://example.org/entities/7063892b-40c5-4b0e-a2aa-f385e437c62e.json&quot;,
+        &quot;type&quot;: &quot;music&quot;,
+        &quot;label&quot;: &quot;International Lover&quot;,
+        &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Composer&lt;/strong&gt; Max Quordlepleen&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Title&lt;/strong&gt; International Lover&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt; Semiotics banjo umami 8bit austin.&lt;/p&gt;&lt;/section&gt;&quot;,
+        &quot;tags&quot;: [
+
+        ]
+      },
+      {
+        &quot;id&quot;: &quot;http://example.org/entities/826538ed-2013-415e-980f-50e676961ca4.json&quot;,
+        &quot;type&quot;: &quot;music&quot;,
+        &quot;label&quot;: &quot;&lt;i&gt;Play In The Sunshine&lt;/i&gt;&quot;,
+        &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Composer&lt;/strong&gt; Max Quordlepleen&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Title&lt;/strong&gt; &lt;i&gt;Play In The Sunshine&lt;/i&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt; Helvetica &lt;i&gt;poutine fingerstache keytar&lt;/i&gt; pbrb.&lt;/p&gt;&lt;/section&gt;&quot;,
+        &quot;tags&quot;: [
+
+        ]
+      }
+    ],
+    &quot;translatings&quot;: [
+      {
+        &quot;id&quot;: &quot;http://example.org/entities/f90113e4-2567-4a4e-b8ca-66a38e728b33.json&quot;,
+        &quot;type&quot;: &quot;translating&quot;,
+        &quot;label&quot;: &quot;Antic Hay&quot;,
+        &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Author&lt;/strong&gt; Arthur Philip Deodat, &lt;strong&gt;Original Title&lt;/strong&gt; Antic Hay&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Translated into&lt;/strong&gt; Swedish by Zarquon&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Translated title&lt;/strong&gt; Billion Year Bunker.&lt;/p&gt;&lt;/section&gt;&quot;,
+        &quot;tags&quot;: [
+
+        ]
+      }
+    ],
+    &quot;writings&quot;: [
+      {
+        &quot;id&quot;: &quot;http://example.org/entities/d5fc02f2-4850-472f-b2dd-2f32a6332451.json&quot;,
+        &quot;type&quot;: &quot;writing&quot;,
+        &quot;label&quot;: &quot;&lt;i&gt;An Acceptable Time&lt;/i&gt;&quot;,
+        &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Title&lt;/strong&gt; &lt;i&gt;An Acceptable Time&lt;/i&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Proposal/Response&lt;/strong&gt; Evolution? they said to themselves, Who needs it?&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Translator&lt;/strong&gt; Prostetnic Vogon Jeltz&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Date&lt;/strong&gt; 1934-06-18.&lt;/p&gt;&lt;/section&gt;&quot;,
+        &quot;tags&quot;: [
+
+        ]
+      },
+      {
+        &quot;id&quot;: &quot;http://example.org/entities/fb819fc8-c4ed-4b5a-ae18-790931f2f89f.json&quot;,
+        &quot;type&quot;: &quot;writing&quot;,
+        &quot;label&quot;: &quot;Bury My Heart at Wounded Knee&quot;,
+        &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Title&lt;/strong&gt; Bury My Heart at Wounded Knee&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Proposal/Response&lt;/strong&gt; Will you open up the exit hatch, please, computer?&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Translator&lt;/strong&gt; Zarniwoop&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Date&lt;/strong&gt; 1928-02-08.&lt;/p&gt;&lt;/section&gt;&quot;,
+        &quot;tags&quot;: [
+
+        ]
+      }
+    ]
+  }
+}</pre>
+      </div>
+    </div>
+  </body>
+</html>
