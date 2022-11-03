@@ -198,21 +198,14 @@ class LoadBigSamJob < ApplicationJob
       end
 
       if row[:volumeinfo]
+        letter.volume = 0
+        letter.volume = 1 if row[:volumeinfo].include?(1929-1949)
+        letter.volume = 2 if row[:volumeinfo].include?(1941-1956)
+        letter.volume = 3 if row[:volumeinfo].include?(1957-1965)
+        letter.volume = 4 if row[:volumeinfo].include?(1929-1949)
         parts = row[:volumeinfo].split(',')
         if parts.length == 3
           letter.volume_pages = parts[2].strip
-          letter.volume = case parts[0].strip
-                          when '1929-1940'
-                            1
-                          when '1941-1956'
-                            2
-                          when '1957-1965'
-                            3
-                          when '1966-1989'
-                            4
-                          else
-                            0
-                          end
         end
       end
 
