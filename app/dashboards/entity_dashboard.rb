@@ -171,6 +171,7 @@ class EntityDashboard < Administrate::BaseDashboard
     date
     date_str
     director
+    e_type
     event_type
     first_name
     last_name

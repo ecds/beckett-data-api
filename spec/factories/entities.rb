@@ -13,6 +13,10 @@ FactoryBot.define do
       letters { [create(:published_letter)] }
     end
 
+    trait :unpublished do
+      letters { [create(:unpublished_letter)]}
+    end
+
     after :create do |entity|
       control = ['Reynoldstown', 'Grant Park']
 

@@ -11,7 +11,7 @@ class EntitiesController < ApplicationController
 
     operator = params[:operator] || 'or'
 
-    results = Entity.search(
+    results = PublishedEntity.search(
       query,
       aggs: { e_type: {} },
       page: params[:page] || 1,
@@ -55,6 +55,7 @@ class EntitiesController < ApplicationController
 
   def reindex
     Entity.reindex if ENV['RAILS_ENV'] == 'test'
+    PublishedEntity.reindex if ENV['RAILS_ENV'] == 'test'
   rescue Searchkick::Error
   end
 
@@ -89,7 +90,8 @@ class EntitiesController < ApplicationController
         short_display: entity.short_display,
         description: entity.description,
         clean_label: entity.clean_label,
-        clean_description: entity.clean_description
+        clean_description: entity.clean_description,
+        published: entity.published
       }
     end
   end

@@ -87,7 +87,7 @@ class Letter < ApplicationRecord
       repositories: repositories.map(&:label),
       language:,
       published: repositories.any?(&:published),
-      volume:
+      volume: volume.to_s
     }
   end
 

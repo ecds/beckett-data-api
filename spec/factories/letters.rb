@@ -43,6 +43,10 @@ FactoryBot.define do
       end
     end
 
+    factory :unpublished_letter do
+      repositories { create_list(:repository, 1, published: false) }
+    end
+
     factory :new_letter do
       date { Faker::Date.between(from: '1966-01-01', to: '1988-12-31') }
       repositories { create_list(:repository, 1, published: true) }
