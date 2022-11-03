@@ -97,3 +97,5 @@ gem 'capistrano-bundler', '~> 2.1'
 gem 'active_record_doctor', '~> 1.10'
 
 gem 'sidekiq', '~> 6.5'
+
+gem "uuid", "~> 2.3"

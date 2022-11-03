@@ -238,6 +238,8 @@ GEM
     loofah (2.18.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
+    macaddr (1.7.2)
+      systemu (~> 2.6.5)
     mail (2.7.1)
       mini_mime (>= 0.1.1)
     marcel (1.0.2)
@@ -423,6 +425,7 @@ GEM
       net-ssh (>= 2.8.0)
     strscan (3.0.3)
     sync (0.5.0)
+    systemu (2.6.5)
     term-ansicolor (1.7.1)
       tins (~> 1.0)
     thor (1.2.1)
@@ -437,6 +440,8 @@ GEM
       concurrent-ruby (~> 1.0)
     uber (0.1.0)
     unicode-display_width (2.2.0)
+    uuid (2.3.9)
+      macaddr (~> 1.0)
     webrick (1.7.0)
     websocket-driver (0.7.5)
       websocket-extensions (>= 0.1.0)
@@ -489,6 +494,7 @@ DEPENDENCIES
   simplecov-lcov
   trix-rails
   tzinfo-data
+  uuid (~> 2.3)
 
 RUBY VERSION
    ruby 3.1.2p20
