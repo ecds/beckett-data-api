@@ -38,33 +38,42 @@
 
 json.set! 'id', "#{request.protocol}#{request.host_with_port}#{letter.url_path}"
 json.set! 'date', letter.date
+json.set! 'label', letter.label
+json.set! 'addressed_from', letter.addressed_from
+json.set! 'addressed_to', letter.addressed_to
+json.set! 'envelope', letter.envelope
+json.set! 'physical_description', letter.physical_desc
+json.set! 'postmark', letter.postmark
+json.set! 'recipient', letter.recipients.map(&:label).join(', ')
+json.set! 'repository', letter.repositories.map(&:label).join(', ')
+json.set! 'place_written', letter.origins.map(&:label).join(', ')
 # json.set! '@type', letter.schema_type
 
-json.recipients do
-  letter.recipients.each do |recipient|
-    json.child! do
-      json.partial! 'entities/entity', entity: recipient, request:
-    end
-  end
-end
+# json.recipients do
+#   letter.recipients.each do |recipient|
+#     json.child! do
+#       json.partial! 'entities/entity', entity: recipient, request:
+#     end
+#   end
+# end
 
-json.destinations do
-  letter.destinations.each do |destination|
-    json.child! do
-      json.partial! 'entities/entity', entity: destination, request:
-    end
-  end
-end
+# json.destinations do
+#   letter.destinations.each do |destination|
+#     json.child! do
+#       json.partial! 'entities/entity', entity: destination, request:
+#     end
+#   end
+# end
 
-# TODO: Ask Ben how he wants mention serialized.
-json.mentions do
-  Entity.e_types.each_key do |type|
-    next if letter.mentions.public_send(type).empty?
+# # TODO: Ask Ben how he wants mention serialized.
+# json.mentions do
+#   Entity.e_types.each_key do |type|
+#     next if letter.mentions.public_send(type).empty?
 
-    json.set! type.pluralize do
-      json.array!(letter.mentions.public_send(type)) do |mention|
-        json.partial! 'mentions/mention', mention:, request:
-      end
-    end
-  end
-end
+#     json.set! type.pluralize do
+#       json.array!(letter.mentions.public_send(type)) do |mention|
+#         json.partial! 'mentions/mention', mention:, request:
+#       end
+#     end
+#   end
+# end

@@ -15,7 +15,6 @@ module Admin
     # end
 
     def index
-      Rails.logger.debug params
       # scoped_resource = Entity.music
       # super
       authorize_resource(resource_class)
@@ -50,10 +49,10 @@ module Admin
     #   @dashboard ||= dashboard_class.new
     # end
 
-    def create
-      params[:entity][:properties] = JSON.parse(params[:entity][:properties]).with_indifferent_access
-      super
-    end
+    # def create
+    #   params[:entity][:properties] = JSON.parse(params[:entity][:properties]).with_indifferent_access
+    #   super
+    # end
 
     # Override this method to specify custom lookup behavior.
     # This will be used to set the resource for the `show`, `edit`, and `update`
