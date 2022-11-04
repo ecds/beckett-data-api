@@ -48,6 +48,10 @@ class Merge
                 Entity.public_send(merge[:type]).find_by(legacy_pk: merge[:keep])
               end
 
+      next if @keep.nil?
+
+      next if @discard.nil?
+
       merge_entity
     end
   end
