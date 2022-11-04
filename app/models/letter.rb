@@ -91,6 +91,7 @@ class Letter < ApplicationRecord
     }
   end
 
+  # TODO: What to do about bad dates?
   def should_index?
     return if date.nil?
 

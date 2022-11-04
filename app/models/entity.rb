@@ -7,9 +7,7 @@ class Entity < ApplicationRecord
   include Searchable
   include EntityCommon
 
-  self.implicit_order_column = 'label'
-
-  before_save :add_full_stops, :remove_div, :concat_label, :to_plain_text, :check_published
+  before_save :check_published, :add_full_stops, :remove_div, :concat_label, :to_plain_text
 
   has_many :mentions, dependent: :destroy
   has_many :letters, -> { order('letters.date') }, through: :mentions, source: :letter
@@ -38,6 +36,8 @@ class Entity < ApplicationRecord
     )
   }
 
+  scope :published, -> { where(published: true) }
+
   def search_data
     attributes = {}
     allowed_attributes.each {|attribute| attributes[attribute] = public_send(attribute) }
@@ -56,7 +56,41 @@ class Entity < ApplicationRecord
     }.merge(attributes)
   end
 
+  def all_letters
+    letters +
+    letters_sent_to +
+    letters_sent +
+    letters_sent_from +
+    letters_received
+  end
+
+  def published_letters
+    letters.published +
+    letters_sent_to.published +
+    letters_sent.published +
+    letters_sent_from.published +
+    letters_received.published
+  end
+
+  # TODO: What to do about bad dates?
+  def published_letters_hash
+    published_letters.reject {|l| l.date.nil? }.uniq.sort_by(&:date).map {|letter|
+      {
+        id: letter.id,
+        date: letter.date.strftime('%d %B %Y'),
+        recipients: letter.recipients.map do |recipient|
+          {
+            id: recipient.id,
+            name: recipient.label
+          }
+        end
+      }
+    }
+  end
+
   private
+
+  # rubocop:disable Metrics/PerceivedComplexity, Metrics/CyclomaticComplexity
 
   def concat_label
     case e_type
@@ -81,7 +115,7 @@ class Entity < ApplicationRecord
     end
   end
 
-  # rubocop:enable Metrics/PerceivedComplexity, Metrics/MethodLength, Metrics/AbcSize, Metrics/CyclomaticComplexity, Layout/LineLength
+  # rubocop:enable Metrics/PerceivedComplexity, Metrics/CyclomaticComplexity
 
   def remove_div
     allowed_attributes.each do |attribute|

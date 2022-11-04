@@ -12,11 +12,63 @@
 #   "url": "https://beckett.emory.edu/resource/a9935672-b5bf-11ec-b909-0242ac120002"
 # }
 
-json.set! 'id', "#{request.protocol}#{request.host_with_port}#{entity.url_path}"
+json.set! 'id', entity.id
 json.set! 'type', entity.e_type
 json.set! 'label', entity.label
 json.set! 'short_display', entity.short_display
 json.set! 'full_display', entity.full_display
+
 entity.allowed_attributes.each do |attribute|
   json.set! attribute, entity.public_send(attribute)
 end
+
+json.letters do
+  json.mentioned_in do
+    entity.letters.published.each do |letter|
+      json.child! do
+        json.set! 'id', letter.id
+        json.set! 'label', letter.label
+      end
+    end
+  end
+
+  json.recived do
+    entity.letters_received.published.each do |letter|
+      json.child! do
+        json.set! 'id', letter.id
+        json.set! 'label', letter.label
+      end
+    end
+  end
+
+  json.sent do
+    entity.letters_sent.published.each do |letter|
+      json.child! do
+        json.set! 'id', letter.id
+        json.set! 'label', letter.label
+      end
+    end
+  end
+
+  json.sent_to do
+    entity.letters_sent_to.published.each do |letter|
+      json.child! do
+        json.set! 'id', letter.id
+        json.set! 'label', letter.label
+      end
+    end
+  end
+
+  json.sent_from do
+    entity.letters_sent_from.published.each do |letter|
+      json.child! do
+        json.set! 'id', letter.id
+        json.set! 'label', letter.label
+      end
+    end
+  end
+end
+
+# json.letters do
+#   json.merge! entity.published_letters_hash
+# end

@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+# rubocop:disable Metrics/ModuleLength, Metrics/BlockLength, Metrics/PerceivedComplexity, Metrics/MethodLength, Metrics/AbcSize, Metrics/CyclomaticComplexity, Layout/LineLength
+
 # Common stuff for indexing
 module EntityCommon
   extend ActiveSupport::Concern
@@ -106,38 +108,6 @@ module EntityCommon
       description
     end
 
-    def all_letters
-      letters +
-      letters_sent_to +
-      letters_sent +
-      letters_sent_from +
-      letters_received
-    end
-
-    def published_letters
-      letters.published +
-      letters_sent_to.published +
-      letters_sent.published +
-      letters_sent_from.published +
-      letters_received.published
-    end
-
-    def published_letters_hash
-      published_letters.uniq.sort_by(&:date).map {|letter|
-        {
-          id: letter.id,
-          date: letter.date,
-          recipients: letter.recipients.map do |recipient|
-            {
-              id: recipient.id,
-              name: recipient.label
-            }
-          end
-        }
-      }
-    end
-
-    # rubocop:disable Metrics/PerceivedComplexity, Metrics/MethodLength, Metrics/AbcSize, Metrics/CyclomaticComplexity, Layout/LineLength
     def short_display
       lines = []
       case e_type
@@ -441,3 +411,5 @@ module EntityCommon
     end
   end
 end
+
+# rubocop:enable Metrics/ModuleLength, Metrics/BlockLength, Metrics/PerceivedComplexity, Metrics/MethodLength, Metrics/AbcSize, Metrics/CyclomaticComplexity, Layout/LineLength

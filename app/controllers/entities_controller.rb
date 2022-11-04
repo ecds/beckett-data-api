@@ -60,7 +60,9 @@ class EntitiesController < ApplicationController
   end
 
   def set_entity
-    @entity = Entity.find(params[:id])
+    entity = Entity.find(params[:id])
+    entity.save if ENV['RAILS_ENV'] == 'test'
+    @entity = entity
   end
 
   def set_filters
