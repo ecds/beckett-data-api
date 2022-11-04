@@ -6,7 +6,7 @@ lock '~> 3.17.1'
 set :application, 'beckett-data-api'
 set :repo_url, 'git@github.com:ecds/beckett-data-api.git'
 
-append :linked_files, 'config/master.key', 'credentials.json', 'token.yaml'
+append :linked_files, 'config/master.key', 'credentials.json', 'token.yaml', 'config/initializers/elasticsearch.rb'
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
