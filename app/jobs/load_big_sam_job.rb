@@ -26,7 +26,6 @@ class LoadBigSamJob < ApplicationJob
   end
 
   def load_letters(rows)
-
     rows.each do |row|
       letter = get_letter(row)
 
@@ -199,14 +198,12 @@ class LoadBigSamJob < ApplicationJob
 
       if row[:volumeinfo]
         letter.volume = 0
-        letter.volume = 1 if row[:volumeinfo].include?(1929-1949)
-        letter.volume = 2 if row[:volumeinfo].include?(1941-1956)
-        letter.volume = 3 if row[:volumeinfo].include?(1957-1965)
-        letter.volume = 4 if row[:volumeinfo].include?(1929-1949)
+        letter.volume = 1 if row[:volumeinfo].include?('1929-1940')
+        letter.volume = 2 if row[:volumeinfo].include?('1941-1956')
+        letter.volume = 3 if row[:volumeinfo].include?('1957-1965')
+        letter.volume = 4 if row[:volumeinfo].include?('1966-1989')
         parts = row[:volumeinfo].split(',')
-        if parts.length == 3
-          letter.volume_pages = parts[2].strip
-        end
+        letter.volume_pages = parts[2].strip if parts.length == 3
       end
 
       letter.letter_publisher = LetterPublisher.find_or_create_by(label: row[:placeprevpubl]) if row[:placeprevpubl]
@@ -240,7 +237,7 @@ class LoadBigSamJob < ApplicationJob
   def get_letter(row)
     if row[:exclude] == 'y'
       letter = Letter.find_by(legacy_pk: row[:id])
-      letter.delete unless letter.nil?
+      letter&.delete
       return nil
     end
 
