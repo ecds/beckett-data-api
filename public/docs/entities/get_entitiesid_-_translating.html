@@ -115,61 +115,6 @@ table th, table td {
         <h3>GET /entities/:id</h3>
 
 
-          <h3>Response Fields</h3>
-          <table class="response-fields table table-striped table-bordered table-condensed">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Default</th>
-                <th>Description</th>
-                <th>Not Null</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                    <span class="name">label</span>
-                </td>
-                <td>
-                  <span class="description">HTML String</span>
-                </td>
-                <td>
-                  <span class="description"></span>
-                </td>
-                <td>
-                  <span class="description">true</span>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                    <span class="name">short_display</span>
-                </td>
-                <td>
-                  <span class="description">HTML String</span>
-                </td>
-                <td>
-                  <span class="description"></span>
-                </td>
-                <td>
-                  <span class="description">true</span>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                    <span class="name">full_display</span>
-                </td>
-                <td>
-                  <span class="description">HTML String</span>
-                </td>
-                <td>
-                  <span class="description"></span>
-                </td>
-                <td>
-                  <span class="description">true</span>
-                </td>
-              </tr>
-            </tbody>
-          </table>
 
           <h3>Request</h3>
 
@@ -181,7 +126,7 @@ Host: example.org
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET /entities/e0fb1d10-b9ed-402f-94cb-45c29a6a5603</pre>
+          <pre class="request route highlight">GET /entities/0f05b41b-08a2-4ad3-8443-9d658e7d4ed2</pre>
 
 
 
@@ -195,33 +140,65 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;42b5afb229784569ae99be5b7bb14868&quot;
+ETag: W/&quot;d3331e83132274504e16c319f7375182&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: c078a5a9-f64d-49c2-9353-8b93c682975c
-X-Runtime: 0.869816
+X-Request-Id: f2121702-3915-4d1e-95cf-8d68e0f81bbe
+X-Runtime: 1.440679
 Vary: Origin
-Content-Length: 1878</pre>
+Content-Length: 2410</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
-  &quot;id&quot;: &quot;http://example.org/entities/e0fb1d10-b9ed-402f-94cb-45c29a6a5603&quot;,
+  &quot;id&quot;: &quot;0f05b41b-08a2-4ad3-8443-9d658e7d4ed2&quot;,
   &quot;type&quot;: &quot;translating&quot;,
-  &quot;label&quot;: &quot;&lt;i&gt;The Torment of Others&lt;/i&gt;&quot;,
-  &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Author&lt;/strong&gt; Fenchurch, &lt;strong&gt;Original Title&lt;/strong&gt; &lt;i&gt;The Torment of Others&lt;/i&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Translated into&lt;/strong&gt; Serbo Croatian by Lunkwill and Fook&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Translated title&lt;/strong&gt; Heart of Gold.&lt;/p&gt;&lt;/section&gt;&quot;,
-  &quot;full_display&quot;: &quot;&lt;table&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Original Title&lt;/th&gt;\n&lt;td&gt;&lt;i&gt;The Torment of Others&lt;/i&gt;&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Author&lt;/th&gt;\n&lt;td&gt;Fenchurch&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Translated into&lt;/th&gt;\n&lt;td&gt;Serbo Croatian by Lunkwill and Fook&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Translated Title&lt;/th&gt;\n&lt;td&gt;Heart of Gold.&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Publication/Production&lt;/th&gt;\n&lt;td&gt;Here I am, brain the size of a planet, and they tell me to take you up to the bridge. Call that job satisfaction? &#39;Cos I don&#39;t.&lt;/td&gt;\n&lt;/tr&gt;\n&lt;/table&gt;&quot;,
-  &quot;description&quot;: &quot;Ennui semiotics cliche intelligentsia.&quot;,
+  &quot;label&quot;: &quot;&lt;i&gt;Quo Vadis&lt;/i&gt;&quot;,
+  &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Author&lt;/strong&gt; Random Dent, &lt;strong&gt;Original Title&lt;/strong&gt; &lt;i&gt;Quo Vadis&lt;/i&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Translated into&lt;/strong&gt; Gaelic by Loonquawl and Phouchg&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Translated title&lt;/strong&gt; Golgafrinchan Ark Fleet Ship B.&lt;/p&gt;&lt;/section&gt;&quot;,
+  &quot;full_display&quot;: &quot;&lt;table&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Original Title&lt;/th&gt;\n&lt;td&gt;&lt;i&gt;Quo Vadis&lt;/i&gt;&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Author&lt;/th&gt;\n&lt;td&gt;Random Dent&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Translated into&lt;/th&gt;\n&lt;td&gt;Gaelic by Loonquawl and Phouchg&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Translated Title&lt;/th&gt;\n&lt;td&gt;Golgafrinchan Ark Fleet Ship B.&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Publication/Production&lt;/th&gt;\n&lt;td&gt;Pardon me for breathing, which I never do anyway so I don&#39;t know why I bother to say it, Oh God, I&#39;m so depressed.&lt;/td&gt;\n&lt;/tr&gt;\n&lt;/table&gt;&quot;,
+  &quot;description&quot;: &quot;Disrupt &lt;i&gt;godard mlkshk helvetica&lt;/i&gt; kickstarter.&quot;,
   &quot;e_type&quot;: &quot;translating&quot;,
-  &quot;legacy_pk&quot;: 69817,
+  &quot;legacy_pk&quot;: 52663,
   &quot;authors&quot;: [
-    &quot;Fenchurch&quot;
+    &quot;Random Dent&quot;
   ],
-  &quot;notes&quot;: &quot;Here I am, brain the size of a planet, and they tell me to take you up to the bridge. Call that job satisfaction? &#39;Cos I don&#39;t.&quot;,
-  &quot;translated_into&quot;: &quot;serbo_croatian&quot;,
-  &quot;translated_title&quot;: &quot;Heart of Gold.&quot;,
+  &quot;notes&quot;: &quot;Pardon me for breathing, which I never do anyway so I don&#39;t know why I bother to say it, Oh God, I&#39;m so depressed.&quot;,
+  &quot;translated_into&quot;: &quot;gaelic&quot;,
+  &quot;translated_title&quot;: &quot;Golgafrinchan Ark Fleet Ship B.&quot;,
   &quot;translators&quot;: [
-    &quot;Lunkwill and Fook&quot;
-  ]
+    &quot;Loonquawl and Phouchg&quot;
+  ],
+  &quot;letters&quot;: {
+    &quot;mentioned_in&quot;: [
+      {
+        &quot;id&quot;: &quot;983c87a6-3777-4eb0-8b79-6fdcf4a3aa9b&quot;,
+        &quot;label&quot;: &quot;25 July 1986 - Fritsch, Jennie&quot;
+      }
+    ],
+    &quot;recived&quot;: [
+      {
+        &quot;id&quot;: &quot;c8646cca-cdc1-45e3-9aab-63f155e68dd7&quot;,
+        &quot;label&quot;: &quot;05 July 1985 - &lt;i&gt;Quo Vadis&lt;/i&gt;, Wolf, Fabian&quot;
+      }
+    ],
+    &quot;sent&quot;: [
+      {
+        &quot;id&quot;: &quot;d4850ab6-8471-4667-8346-288591e64690&quot;,
+        &quot;label&quot;: &quot;11 November 1978 - Kihn, Fermin&quot;
+      }
+    ],
+    &quot;sent_to&quot;: [
+      {
+        &quot;id&quot;: &quot;c4818d75-f3b5-4f5b-bdca-e2fc1b8b9949&quot;,
+        &quot;label&quot;: &quot;11 January 1982 - Boyle, Trenton&quot;
+      }
+    ],
+    &quot;sent_from&quot;: [
+      {
+        &quot;id&quot;: &quot;2b4540f3-9f34-4aad-9563-7248731b973d&quot;,
+        &quot;label&quot;: &quot;01 June 1975 - Hilll, Pat&quot;
+      }
+    ]
+  }
 }</pre>
       </div>
     </div>

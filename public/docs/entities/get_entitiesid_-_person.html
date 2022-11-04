@@ -115,61 +115,6 @@ table th, table td {
         <h3>GET /entities/:id</h3>
 
 
-          <h3>Response Fields</h3>
-          <table class="response-fields table table-striped table-bordered table-condensed">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Default</th>
-                <th>Description</th>
-                <th>Not Null</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                    <span class="name">label</span>
-                </td>
-                <td>
-                  <span class="description">HTML String</span>
-                </td>
-                <td>
-                  <span class="description"></span>
-                </td>
-                <td>
-                  <span class="description">true</span>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                    <span class="name">short_display</span>
-                </td>
-                <td>
-                  <span class="description">HTML String</span>
-                </td>
-                <td>
-                  <span class="description"></span>
-                </td>
-                <td>
-                  <span class="description">true</span>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                    <span class="name">full_display</span>
-                </td>
-                <td>
-                  <span class="description">HTML String</span>
-                </td>
-                <td>
-                  <span class="description"></span>
-                </td>
-                <td>
-                  <span class="description">true</span>
-                </td>
-              </tr>
-            </tbody>
-          </table>
 
           <h3>Request</h3>
 
@@ -181,7 +126,7 @@ Host: example.org
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET /entities/49c1c842-bd06-49a4-800a-346df676f8e5</pre>
+          <pre class="request route highlight">GET /entities/2b8569ba-7489-40d5-9908-f759c23701d2</pre>
 
 
 
@@ -195,37 +140,69 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;44402741d32dbd8eb9aa578de05677de&quot;
+ETag: W/&quot;642eeb24e1893d41894e874461feef55&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: f52ef10e-d319-4f2f-b274-aebccfc6cd6d
-X-Runtime: 1.149192
+X-Request-Id: 85e31ad5-5347-4aec-8b5d-a75a5d9440b9
+X-Runtime: 1.397508
 Vary: Origin
-Content-Length: 1820</pre>
+Content-Length: 3609</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
-  &quot;id&quot;: &quot;http://example.org/entities/49c1c842-bd06-49a4-800a-346df676f8e5&quot;,
+  &quot;id&quot;: &quot;2b8569ba-7489-40d5-9908-f759c23701d2&quot;,
   &quot;type&quot;: &quot;person&quot;,
-  &quot;label&quot;: &quot;Schmitt, Alfonso&quot;,
-  &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Alfonso Schmitt, 1910-1984&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;I &lt;i&gt;think you ought to know I&#39;m feeling very&lt;/i&gt; depressed.&lt;/p&gt;&lt;/section&gt;&quot;,
-  &quot;full_display&quot;: &quot;&lt;table&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Name&lt;/th&gt;\n&lt;td&gt;Alfonso Schmitt&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Alternative Name(s)&lt;/th&gt;\n&lt;td&gt;Bianca Del Rio&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Life Dates&lt;/th&gt;\n&lt;td&gt;1910-1984&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Description&lt;/th&gt;\n&lt;td&gt;I &lt;i&gt;think you ought to know I&#39;m feeling very&lt;/i&gt; depressed.&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Profile&lt;/th&gt;\n&lt;td&gt;42&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;See Also&lt;/th&gt;\n&lt;td&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=\&quot;http://ledner.biz/lindy\&quot; target=\&quot;_blank\&quot; rel=\&quot;noopener\&quot;&gt;http://ledner.biz/lindy&lt;span&gt;(opens in new tab)&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;\n&lt;/tr&gt;\n&lt;/table&gt;&quot;,
-  &quot;description&quot;: &quot;I &lt;i&gt;think you ought to know I&#39;m feeling very&lt;/i&gt; depressed.&quot;,
+  &quot;label&quot;: &quot;Beer, Bo&quot;,
+  &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Bo Beer, 1912-1988&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;You think you&#39;ve got problems? What are you supposed to do if you are a manically depressed robot? No, don&#39;t try to answer that. I&#39;m fifty thousand times more intelligent than you and even I don&#39;t know the answer. It gives me a headache just trying to think down to your level.&lt;/p&gt;&lt;/section&gt;&quot;,
+  &quot;full_display&quot;: &quot;&lt;table&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Name&lt;/th&gt;\n&lt;td&gt;Bo Beer&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Alternative Name(s)&lt;/th&gt;\n&lt;td&gt;Coco Montrese&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Life Dates&lt;/th&gt;\n&lt;td&gt;1912-1988&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Description&lt;/th&gt;\n&lt;td&gt;You think you&#39;ve got problems? What are you supposed to do if you are a manically depressed robot? No, don&#39;t try to answer that. I&#39;m fifty thousand times more intelligent than you and even I don&#39;t know the answer. It gives me a headache just trying to think down to your level.&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Profile&lt;/th&gt;\n&lt;td&gt;On the planet Earth, man had always assumed that he was more intelligent than dolphins because he had achieved so much—the wheel, New York, wars and so on—whilst all the dolphins had ever done was muck about in the water having a good time. But conversely, the dolphins had always believed that they were far more intelligent than man—for precisely the same reasons.&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;See Also&lt;/th&gt;\n&lt;td&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=\&quot;http://hermann.biz/larry\&quot; target=\&quot;_blank\&quot; rel=\&quot;noopener\&quot;&gt;http://hermann.biz/larry&lt;span&gt;(opens in new tab)&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;\n&lt;/tr&gt;\n&lt;/table&gt;&quot;,
+  &quot;description&quot;: &quot;You think you&#39;ve got problems? What are you supposed to do if you are a manically depressed robot? No, don&#39;t try to answer that. I&#39;m fifty thousand times more intelligent than you and even I don&#39;t know the answer. It gives me a headache just trying to think down to your level.&quot;,
   &quot;e_type&quot;: &quot;person&quot;,
-  &quot;legacy_pk&quot;: 38224,
+  &quot;legacy_pk&quot;: 976,
   &quot;alternate_names&quot;: [
-    &quot;Bianca Del Rio&quot;
+    &quot;Coco Montrese&quot;
   ],
   &quot;alternate_spellings&quot;: [
-    &quot;Monet X Change&quot;
+    &quot;Chi Chi DeVayne&quot;
   ],
-  &quot;first_name&quot;: &quot;Alfonso&quot;,
-  &quot;last_name&quot;: &quot;Schmitt&quot;,
-  &quot;life_dates&quot;: &quot;1910-1984&quot;,
+  &quot;first_name&quot;: &quot;Bo&quot;,
+  &quot;last_name&quot;: &quot;Beer&quot;,
+  &quot;life_dates&quot;: &quot;1912-1988&quot;,
   &quot;links&quot;: [
-    &quot;http://ledner.biz/lindy&quot;
+    &quot;http://hermann.biz/larry&quot;
   ],
-  &quot;profile&quot;: &quot;42&quot;
+  &quot;profile&quot;: &quot;On the planet Earth, man had always assumed that he was more intelligent than dolphins because he had achieved so much—the wheel, New York, wars and so on—whilst all the dolphins had ever done was muck about in the water having a good time. But conversely, the dolphins had always believed that they were far more intelligent than man—for precisely the same reasons.&quot;,
+  &quot;letters&quot;: {
+    &quot;mentioned_in&quot;: [
+      {
+        &quot;id&quot;: &quot;7c800afc-2fbe-434b-bed4-190943cd3202&quot;,
+        &quot;label&quot;: &quot;20 March 1984 - Thiel, Kraig&quot;
+      }
+    ],
+    &quot;recived&quot;: [
+      {
+        &quot;id&quot;: &quot;e23a1bfa-3989-4f1e-b646-60e571fdb631&quot;,
+        &quot;label&quot;: &quot;26 January 1976 - Beer, Bo, Zemlak, Dennis&quot;
+      }
+    ],
+    &quot;sent&quot;: [
+      {
+        &quot;id&quot;: &quot;ac69c570-0e33-4c95-ae9f-51f395b2a034&quot;,
+        &quot;label&quot;: &quot;17 July 1963 - Conroy, Moises&quot;
+      }
+    ],
+    &quot;sent_to&quot;: [
+      {
+        &quot;id&quot;: &quot;cc966399-1512-41ea-ba0a-8447e6dbd891&quot;,
+        &quot;label&quot;: &quot;10 March 1952 - Fay, Joesph&quot;
+      }
+    ],
+    &quot;sent_from&quot;: [
+      {
+        &quot;id&quot;: &quot;dd2eadaf-aeb2-42d3-b247-b0ab7d12e21b&quot;,
+        &quot;label&quot;: &quot;16 January 1951 - Bednar, Jessi&quot;
+      }
+    ]
+  }
 }</pre>
       </div>
     </div>

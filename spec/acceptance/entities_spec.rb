@@ -20,90 +20,37 @@ resource 'Entities' do
   header 'Content-Type', 'application/json'
   explanation ''
 
-  route '/entities{page,per_page}', 'Entities Collection' do
-    parameter :page, 'Current page of entities', { type: 'String', default: '1' }
-    parameter :per_page, 'Number of entities on a single response.', { default: '25' }
-    parameter :search, 'Text to search.', { default: '*' }
-    parameter :type,
-              "Limit responses by single type. Options are #{Entity.e_types.keys.to_sentence}.",
-              { default: 'null' }
-    parameter :operator,
-              "By default, results match any words in the query. Use 'and' to match all words.",
-              { default: 'or' }
-
-    before {
-      Entity.e_types.keys[0..11].each do |type|
-        create_list("#{type}_entity".to_sym, rand(3..5), :published)
-        Entity.all.each(&:save)
-      end
-    }
-
-    get 'All entities' do
-      example_request 'GET /entities - All' do
-        explanation 'Returns a paginated list of all entities.'
-        expect(status).to eq(200)
-      end
-    end
-
-    get 'entities by type' do
-      let(:type) { Entity.e_types.keys[0..11].sample }
-      example_request 'GET /entities?type=:entity_type - By Type' do
-        explanation "Returns a paginated list of entities by type. Valid types are #{Entity.e_types.keys.to_sentence}."
-        expect(status).to eq(200)
-      end
-    end
-
-    get 'entities query' do
-      let(:search) { Entity.all.sample.clean_description.split.sample.downcase }
-      example_request 'GET /entities?search=:search_terms - Keyword Search' do
-        explanation 'Returns a paginated list of entities from key word search.'
-        expect(status).to eq(200)
-      end
-    end
-
-    get 'entities query using and operator' do
-      let(:search) { Entity.all.sample.clean_description.split.sample.downcase }
-      let(:operator) { 'and' }
-      example_request 'GET /entities?search=:search_terms&operator=and - Keyword Search using and operator' do
-        explanation 'Returns a paginated list of entities from key word search.'
-        expect(status).to eq(200)
-      end
-    end
-
-
-    get 'people by name' do
-      let(:search) { Entity.person.sample.clean_label }
-      let(:fields) { %i[label] }
-      let(:type) { 'person' }
-      example_request 'GET /entities?search=:label&fields=label&type=person - Person by Label' do
-        expect(status).to eq(200)
-      end
-    end
-
-    get 'paginated results' do
-      let(:per_page) { 5 }
-      let(:page) { 2 }
-      example_request 'GET /entites?per_page=:results_per_page&page=:offset - Paginated results' do
-        expect(status).to eq(200)
-      end
-    end
-  end
+  # route '/entities{page,per_page}', 'Entities Collection' do
+  #   parameter :page, 'Current page of entities', { type: 'String', default: '1' }
+  #   parameter :per_page, 'Number of entities on a single response.', { default: '25' }
+  #   parameter :search, 'Text to search.', { default: '*' }
+  #   parameter :type,
+  #             "Limit responses by single type. Options are #{Entity.e_types.keys.to_sentence}.",
+  #             { default: 'null' }
+  #   parameter :operator,
+  #             "By default, results match any words in the query. Use 'and' to match all words.",
+  #             { default: 'or' }
+  # end
 
   route '/entities/:id', 'Single Entity' do
-    get 'Specific entity' do
-      let(:id) { create(:person_entity, :published).id }
-      example_request 'GET /entities/:id' do
-        expect(status).to eq(200)
-      end
-    end
-
     Entity.e_types.keys[0..11].each do |type|
-      get "#{type} Entity" do
-        let(:id) { create("#{type}_entity".to_sym, :published).id }
+      next if type == 'generic'
 
-        response_field :label, '', { default: 'HTML String', not_null: true }
-        response_field :short_display, '', { default: 'HTML String', not_null: true }
-        response_field :full_display, '', { default: 'HTML String', not_null: true }
+      get "#{type} Entity" do
+        let(:id) {
+          create(
+            "#{type}_entity".to_sym,
+            :published,
+            letters_received: create_list(:published_letter, 1),
+            letters_sent_to: create_list(:published_letter, 1),
+            letters_sent: create_list(:published_letter, 1),
+            letters_sent_from: create_list(:published_letter, 1)
+          ).id
+        }
+
+        # response_field :label, '', { default: 'HTML String', not_null: true }
+        # response_field :short_display, '', { default: 'HTML String', not_null: true }
+        # response_field :full_display, '', { default: 'HTML String', not_null: true }
         # response_field :clean_label, '', { default: 'String', not_null: true }
         # response_field :description, '', { default: 'HTML String', not_null: true }
         # response_field :clean_description, '', { default: 'String', not_null: true }
@@ -137,7 +84,7 @@ resource 'Entities' do
   # Requests on a single entity.
   route '/entities/:id', 'Single Entity' do
     put 'Update a specific entity' do
-      let(:id) { create(:place_entity).id }
+      let(:id) { create(:place_entity, :published).id }
 
       example_request 'PUT /entities/:id' do
         expect(status).to eq(501)

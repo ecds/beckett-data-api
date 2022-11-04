@@ -5,15 +5,6 @@
 ## GET /entities/:id - Publication
 
 ### GET /entities/:id
-
-### Response Fields
-
-| Name | Default | Description | Not Null |
-|------|---------|-------------|----------|
-| label | HTML String |  | true |
-| short_display | HTML String |  | true |
-| full_display | HTML String |  | true |
-
 ### Request
 
 #### Headers
@@ -26,7 +17,7 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /entities/3e835e46-b7fa-4d3e-9ff7-231d8ebd09ee</pre>
+<pre>GET /entities/7768d45e-0afa-4d16-8433-d98f362855b1</pre>
 
 ### Response
 
@@ -39,12 +30,12 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;e8b85f36588d98ee4faa2b6b10dc9d19&quot;
+ETag: W/&quot;ab496a539a1cb983a9b2c26e6f6975c9&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: f04ab701-2007-4c55-b026-ad6b6d42717d
-X-Runtime: 0.953488
+X-Request-Id: 82ff8663-9b27-4625-b2aa-8e82fc2b340c
+X-Runtime: 1.518446
 Vary: Origin
-Content-Length: 1891</pre>
+Content-Length: 2246</pre>
 
 #### Status
 
@@ -54,22 +45,54 @@ Content-Length: 1891</pre>
 
 ~~~
 {
-  "id": "http://example.org/entities/3e835e46-b7fa-4d3e-9ff7-231d8ebd09ee",
+  "id": "7768d45e-0afa-4d16-8433-d98f362855b1",
   "type": "publication",
-  "label": "Pen and Sword Books",
-  "short_display": "<section><p><strong>Author</strong> Brandt</p>\n<p><strong>Title</strong> Pen and Sword Books</p>\n<p><strong>Translator</strong> Loonquawl</p>\n<p><strong>Publication</strong> Salvia yolo sartorial cleanse authentic echo tousled occupy.</p></section>",
-  "full_display": "<table>\n<tr>\n<th scope=\"row\">Author</th>\n<td>Brandt</td>\n</tr>\n<tr>\n<th scope=\"row\">Title</th>\n<td>Pen and Sword Books</td>\n</tr>\n<tr>\n<th scope=\"row\">Translator</th>\n<td>Loonquawl</td>\n</tr>\n<tr>\n<th scope=\"row\">Publication</th>\n<td>Salvia yolo sartorial cleanse authentic echo tousled occupy.</td>\n</tr>\n<tr>\n<th scope=\"row\">Notes</th>\n<td>Here I am, brain the size of a planet, and they tell me to take you up to the bridge. Call that job satisfaction? 'Cos I don't.</td>\n</tr>\n</table>",
-  "description": "Singleorigin <i>coffee mixtape biodiesel offal you probably havent heard of them vhs quinoa 90s</i> park.",
+  "label": "Eerdmans Publishing",
+  "short_display": "<section><p><strong>Author</strong> Brandt</p>\n<p><strong>Title</strong> Eerdmans Publishing</p>\n<p><strong>Translator</strong> Marvin</p>\n<p><strong>Publication</strong> Neutra fanny pack chia chambray try-hard williamsburg flexitarian ennui.</p></section>",
+  "full_display": "<table>\n<tr>\n<th scope=\"row\">Author</th>\n<td>Brandt</td>\n</tr>\n<tr>\n<th scope=\"row\">Title</th>\n<td>Eerdmans Publishing</td>\n</tr>\n<tr>\n<th scope=\"row\">Translator</th>\n<td>Marvin</td>\n</tr>\n<tr>\n<th scope=\"row\">Publication</th>\n<td>Neutra fanny pack chia chambray try-hard williamsburg flexitarian ennui.</td>\n</tr>\n<tr>\n<th scope=\"row\">Notes</th>\n<td>I think you ought to know I'm feeling very depressed.</td>\n</tr>\n</table>",
+  "description": "Mixtape <i>semiotics art party vegan twee truffaut 1 irony deep</i> v.",
   "e_type": "publication",
-  "legacy_pk": 95872,
+  "legacy_pk": 81660,
   "authors": [
     "Brandt"
   ],
-  "notes": "Here I am, brain the size of a planet, and they tell me to take you up to the bridge. Call that job satisfaction? 'Cos I don't.",
-  "publication_information": "Salvia yolo sartorial cleanse authentic echo tousled occupy.",
+  "notes": "I think you ought to know I'm feeling very depressed.",
+  "publication_information": "Neutra fanny pack chia chambray try-hard williamsburg flexitarian ennui.",
   "translators": [
-    "Loonquawl"
-  ]
+    "Marvin"
+  ],
+  "letters": {
+    "mentioned_in": [
+      {
+        "id": "06183e22-8f04-4adb-aec3-c586b955c850",
+        "label": "28 June 1952 - Sanford, Wilford"
+      }
+    ],
+    "recived": [
+      {
+        "id": "d9ca0607-cb47-4f6e-a8e1-dc291c257c8a",
+        "label": "15 April 1950 - Eerdmans Publishing, Ondricka, Raleigh"
+      }
+    ],
+    "sent": [
+      {
+        "id": "cffd7ec9-2f9d-4962-9182-dcd8afcdfbfe",
+        "label": "23 November 1980 - Grimes, Su"
+      }
+    ],
+    "sent_to": [
+      {
+        "id": "f163b9e9-5811-47a6-be5b-03a02915dc56",
+        "label": "26 January 1987 - Legros, Carmen"
+      }
+    ],
+    "sent_from": [
+      {
+        "id": "2685a416-a393-499c-b736-a67fca3071d8",
+        "label": "09 January 1966 - Leffler, Emery"
+      }
+    ]
+  }
 }
 ~~~
 

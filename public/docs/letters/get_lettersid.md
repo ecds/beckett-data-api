@@ -15,7 +15,7 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /letters/45a95151-b14c-4052-b9e6-682048474dcf</pre>
+<pre>GET /letters/68625658-ff6b-4584-8989-540783680da0</pre>
 
 ### Response
 
@@ -28,12 +28,12 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;f643bb075961e80b3d012152a816143d&quot;
+ETag: W/&quot;064de2ffee5c165062cf75e30439324d&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: fbc544ef-b4d1-4cf0-ab22-6829a2b48fea
-X-Runtime: 0.666538
+X-Request-Id: 7ea46c7c-8c74-4202-961f-6d100a1b281d
+X-Runtime: 0.606681
 Vary: Origin
-Content-Length: 6456</pre>
+Content-Length: 6109</pre>
 
 #### Status
 
@@ -43,89 +43,82 @@ Content-Length: 6456</pre>
 
 ~~~
 {
-  "id": "http://example.org/letters/45a95151-b14c-4052-b9e6-682048474dcf",
-  "date": "1979-11-02T00:00:00.000-05:00",
+  "metadata": {
+    "id": "http://example.org/letters/68625658-ff6b-4584-8989-540783680da0",
+    "date": "1988-02-07T00:00:00.000Z",
+    "label": "07 February 1988 - Hermiston, Bryan",
+    "addressed_from": "922 Herzog Falls, East Tobyberg, NH 59784-8771",
+    "addressed_to": "Apt. 456 65146 Almeta Ranch, West Joannchester, ND 91289",
+    "envelope": "E",
+    "physical_description": "Autem molestiae rerum. Vel quis sed. Veritatis et fugit.",
+    "postmark": "1972-06-08, Grantton",
+    "recipient": "Hermiston, Bryan",
+    "repository": "Eastern Gutmann Academy",
+    "place_written": "<i>Western Spiral Arm</i>"
+  },
   "recipients": [
     {
-      "id": "http://example.org/entities/ab2c5cdd-add3-43c3-9014-cc092192655e.json",
+      "id": "http://example.org/entities/7573a89b-d5e1-4981-8acf-15cf6d36bab8.json",
       "type": "person",
-      "label": "Hintz, Derrick",
-      "short_display": "<section><p><strong>Derrick Hintz, 1908-1986</strong></p>\n<p>And then of course I've got this terrible pain in all the diodes down my left side.</p></section>"
+      "label": "Hermiston, Bryan",
+      "short_display": "<section><p><strong>Bryan Hermiston, 1925-1984</strong></p>\n<p>Here I am, brain the size of a planet, and they tell me to take you up to the bridge. Call that job satisfaction? 'Cos I don't.</p></section>"
     }
   ],
   "destinations": [
     {
-      "id": "http://example.org/entities/4f2fd0fb-d0dd-4824-bc12-08fff8023dd4.json",
+      "id": "http://example.org/entities/7f4d764d-6a4a-4b2b-bf20-b885aae552bd.json",
       "type": "place",
-      "label": "<i>France</i>",
-      "short_display": "<section><p><strong><i>France</i></strong></p>\n<p>Vhs <i>put a bird on it everyday blue bottle banh mi you probably havent heard of them tousled</i> freegan.</p></section>"
+      "label": "<i>Norway</i>",
+      "short_display": "<section><p><strong><i>Norway</i></strong></p>\n<p>Pinterest <i>park scenester shabby chic tote bag</i> ennui.</p></section>"
     }
   ],
   "mentions": {
-    "attendances": [
+    "organizations": [
       {
-        "id": "http://example.org/entities/b95a9486-c36d-44e1-99be-258301f989b9.json",
-        "type": "attendance",
-        "label": "Reading, 90s carry five dollar toast etsy ugh.",
-        "short_display": "<section><p><strong>Reading</strong>, 90s carry five dollar toast etsy ugh.</p>\n<p><strong>Attended with</strong> The Big Lebowski and Reg Nullify</p>\n<p><strong>Place, Date</strong> North Camelliachester, 21 January 1957</p>\n<p><strong>Director</strong> Barry Manilow</p></section>",
+        "id": "http://example.org/entities/8b3dffd6-71a8-426e-8949-a93a173d7b68.json",
+        "type": "organization",
+        "label": "Frogstar World A",
+        "short_display": "<section><p><strong>Frogstar World A</strong></p>\n<p>Here I am, brain the size of a planet, and they tell me to take you up to the bridge. Call that job satisfaction? 'Cos I don't.</p></section>",
         "tags": [
 
         ]
       },
       {
-        "id": "http://example.org/entities/5c53f3c9-2aea-4dcb-87c6-4a721b9477a3.json",
-        "type": "attendance",
-        "label": "Reading, Synth retro listicle knausgaard offal wes anderson farmtotable cronut meditation.",
-        "short_display": "<section><p><strong>Reading</strong>, Synth retro listicle knausgaard offal wes anderson farmtotable cronut meditation.</p>\n<p><strong>Attended with</strong> Maude Lebowski and Galaxia Woonbeam</p>\n<p><strong>Place, Date</strong> East Juleview, 11 January 1945</p>\n<p><strong>Director</strong> Colin the Security Robot</p></section>",
-        "tags": [
-
-        ]
-      },
-      {
-        "id": "http://example.org/entities/6d29e5dc-9ce8-4e84-b906-16e440cd7939.json",
-        "type": "attendance",
-        "label": "Rehearsal, Poutine 1 squid wolf mumblecore.",
-        "short_display": "<section><p><strong>Rehearsal</strong>, Poutine 1 squid wolf mumblecore.</p>\n<p><strong>Attended with</strong> Karl Hungus and Agda</p>\n<p><strong>Place, Date</strong> East Brandonhaven, 21 May 1944</p>\n<p><strong>Director</strong> Lunkwill and Fook</p></section>",
+        "id": "http://example.org/entities/a345ab06-fb8e-4ddd-b5ff-6eb0f2d5ed8a.json",
+        "type": "organization",
+        "label": "<i>Dangrabad Beta</i>",
+        "short_display": "<section><p><strong><i>Dangrabad Beta</i></strong></p>\n<p>Life? <i>Don't talk to me about</i> life.</p></section>",
         "tags": [
 
         ]
       }
     ],
-    "music": [
+    "people": [
       {
-        "id": "http://example.org/entities/3c73bfd8-f203-4042-abaa-abf3966a06f0.json",
-        "type": "music",
-        "label": "<i>Baby I'm A Star</i>",
-        "short_display": "<section><p><strong>Composer</strong> Prostetnic Vogon Jeltz</p>\n<p><strong>Title</strong> <i>Baby I'm A Star</i></p>\n<p><strong>Description</strong> Austin tousled glutenfree tryhard.</p></section>",
-        "tags": [
-
-        ]
-      },
-      {
-        "id": "http://example.org/entities/7063892b-40c5-4b0e-a2aa-f385e437c62e.json",
-        "type": "music",
-        "label": "International Lover",
-        "short_display": "<section><p><strong>Composer</strong> Max Quordlepleen</p>\n<p><strong>Title</strong> International Lover</p>\n<p><strong>Description</strong> Semiotics banjo umami 8bit austin.</p></section>",
-        "tags": [
-
-        ]
-      },
-      {
-        "id": "http://example.org/entities/826538ed-2013-415e-980f-50e676961ca4.json",
-        "type": "music",
-        "label": "<i>Play In The Sunshine</i>",
-        "short_display": "<section><p><strong>Composer</strong> Max Quordlepleen</p>\n<p><strong>Title</strong> <i>Play In The Sunshine</i></p>\n<p><strong>Description</strong> Helvetica <i>poutine fingerstache keytar</i> pbrb.</p></section>",
+        "id": "http://example.org/entities/ef641560-fe7f-4b32-93e9-47ad5f96f272.json",
+        "type": "person",
+        "label": "Torp, Leif",
+        "short_display": "<section><p><strong>Leif Torp, 1904-1981</strong></p>\n<p>And <i>then of course I've got this terrible pain in all the diodes down my left</i> side.</p></section>",
         "tags": [
 
         ]
       }
     ],
-    "translatings": [
+    "work_of_arts": [
       {
-        "id": "http://example.org/entities/f90113e4-2567-4a4e-b8ca-66a38e728b33.json",
-        "type": "translating",
-        "label": "Antic Hay",
-        "short_display": "<section><p><strong>Author</strong> Arthur Philip Deodat, <strong>Original Title</strong> Antic Hay</p>\n<p><strong>Translated into</strong> Swedish by Zarquon</p>\n<p><strong>Translated title</strong> Billion Year Bunker.</p></section>",
+        "id": "http://example.org/entities/195a8438-92e3-4dd6-890c-145583683498.json",
+        "type": "work_of_art",
+        "label": "1-800-Newfunk Ad",
+        "short_display": "<section><p><strong>Artist</strong> Magrathean sperm whale</p>\n<p><strong>Title</strong> 1-800-Newfunk Ad</p>\n<p><strong>Description</strong> Bushwick <i>plaid lumbersexual seitan scenester beard actually listicle</i> kinfolk.</p>\n<p><strong>Owner/location</strong> Vogon Constructor Fleet</p></section>",
+        "tags": [
+
+        ]
+      },
+      {
+        "id": "http://example.org/entities/488623fa-bde7-4ffc-941e-c52cff27d2ea.json",
+        "type": "work_of_art",
+        "label": "Cindy C.",
+        "short_display": "<section><p><strong>Artist</strong> Zarquon</p>\n<p><strong>Title</strong> Cindy C.</p>\n<p><strong>Description</strong> Artisan singleorigin coffee cronut lumbersexual diy.</p>\n<p><strong>Owner/location</strong> Bistromath</p></section>",
         "tags": [
 
         ]
@@ -133,19 +126,28 @@ Content-Length: 6456</pre>
     ],
     "writings": [
       {
-        "id": "http://example.org/entities/d5fc02f2-4850-472f-b2dd-2f32a6332451.json",
+        "id": "http://example.org/entities/099f44ad-b905-4233-93f7-9bc3bc02376d.json",
         "type": "writing",
-        "label": "<i>An Acceptable Time</i>",
-        "short_display": "<section><p><strong>Title</strong> <i>An Acceptable Time</i></p>\n<p><strong>Proposal/Response</strong> Evolution? they said to themselves, Who needs it?</p>\n<p><strong>Translator</strong> Prostetnic Vogon Jeltz</p>\n<p><strong>Date</strong> 1934-06-18.</p></section>",
+        "label": "<i>Stranger in a Strange Land</i>",
+        "short_display": "<section><p><strong>Title</strong> <i>Stranger in a Strange Land</i></p>\n<p><strong>Proposal/Response</strong> ...they discovered only a small asteroid inhabited by a solitary old man who claimed repeatedly that nothing was true, though he was later discovered to be lying.</p>\n<p><strong>Translator</strong> Reg Nullify</p>\n<p><strong>Date</strong> 1939-08-30.</p></section>",
         "tags": [
 
         ]
       },
       {
-        "id": "http://example.org/entities/fb819fc8-c4ed-4b5a-ae18-790931f2f89f.json",
+        "id": "http://example.org/entities/66825684-ab9e-4445-bef6-319e43396878.json",
         "type": "writing",
-        "label": "Bury My Heart at Wounded Knee",
-        "short_display": "<section><p><strong>Title</strong> Bury My Heart at Wounded Knee</p>\n<p><strong>Proposal/Response</strong> Will you open up the exit hatch, please, computer?</p>\n<p><strong>Translator</strong> Zarniwoop</p>\n<p><strong>Date</strong> 1928-02-08.</p></section>",
+        "label": "The Daffodil Sky",
+        "short_display": "<section><p><strong>Title</strong> The Daffodil Sky</p>\n<p><strong>Proposal/Response</strong> According to the legends, the Magratheans lived most of their lives underground.</p>\n<p><strong>Translator</strong> Tricia McMillan</p>\n<p><strong>Date</strong> 1961-07-17.</p></section>",
+        "tags": [
+
+        ]
+      },
+      {
+        "id": "http://example.org/entities/78a05829-8adf-4e2b-9425-53e314960635.json",
+        "type": "writing",
+        "label": "<i>Some Buried Caesar</i>",
+        "short_display": "<section><p><strong>Title</strong> <i>Some Buried Caesar</i></p>\n<p><strong>Proposal/Response</strong> He was staring at the instruments with the air of one who is trying to convert Fahrenheit to centigrade in his head while his house is burning down.</p>\n<p><strong>Translator</strong> Frankie and Benjy</p>\n<p><strong>Date</strong> 1967-09-25.</p></section>",
         "tags": [
 
         ]

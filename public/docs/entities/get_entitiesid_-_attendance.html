@@ -115,61 +115,6 @@ table th, table td {
         <h3>GET /entities/:id</h3>
 
 
-          <h3>Response Fields</h3>
-          <table class="response-fields table table-striped table-bordered table-condensed">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Default</th>
-                <th>Description</th>
-                <th>Not Null</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                    <span class="name">label</span>
-                </td>
-                <td>
-                  <span class="description">HTML String</span>
-                </td>
-                <td>
-                  <span class="description"></span>
-                </td>
-                <td>
-                  <span class="description">true</span>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                    <span class="name">short_display</span>
-                </td>
-                <td>
-                  <span class="description">HTML String</span>
-                </td>
-                <td>
-                  <span class="description"></span>
-                </td>
-                <td>
-                  <span class="description">true</span>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                    <span class="name">full_display</span>
-                </td>
-                <td>
-                  <span class="description">HTML String</span>
-                </td>
-                <td>
-                  <span class="description"></span>
-                </td>
-                <td>
-                  <span class="description">true</span>
-                </td>
-              </tr>
-            </tbody>
-          </table>
 
           <h3>Request</h3>
 
@@ -181,7 +126,7 @@ Host: example.org
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET /entities/b2ed02a0-4844-4975-acdf-8e653709db4f</pre>
+          <pre class="request route highlight">GET /entities/89f54e1b-9f60-40e9-8c4a-1fc172f7880b</pre>
 
 
 
@@ -195,39 +140,71 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;9bdda823e7d106d2d0b57cc1576caba7&quot;
+ETag: W/&quot;b323a4ab1cadd3edb94e82b5485dda21&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 183540da-6e14-44dd-9318-99cbf5b256aa
-X-Runtime: 0.966458
+X-Request-Id: b3beb413-e101-4414-9ccc-9d46fb492590
+X-Runtime: 2.054733
 Vary: Origin
-Content-Length: 2276</pre>
+Content-Length: 2768</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
-  &quot;id&quot;: &quot;http://example.org/entities/b2ed02a0-4844-4975-acdf-8e653709db4f&quot;,
+  &quot;id&quot;: &quot;89f54e1b-9f60-40e9-8c4a-1fc172f7880b&quot;,
   &quot;type&quot;: &quot;attendance&quot;,
-  &quot;label&quot;: &quot;Rehearsal, Pitchfork postironic plaid quinoa normcore echo semiotics ethical cleanse.&quot;,
-  &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Rehearsal&lt;/strong&gt;, Pitchfork postironic plaid quinoa normcore echo semiotics ethical cleanse.&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Attended with&lt;/strong&gt; The Dude and Hotblack Desiato&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Place, Date&lt;/strong&gt; Mattiebury, 10 February 1934&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Director&lt;/strong&gt; Trin Tragula&lt;/p&gt;&lt;/section&gt;&quot;,
-  &quot;full_display&quot;: &quot;&lt;table&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Description&lt;/th&gt;\n&lt;td&gt;Pitchfork postironic plaid quinoa normcore echo semiotics ethical cleanse.&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Alternate Name(s)&lt;/th&gt;\n&lt;td&gt;Mimi Imfurst&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Director&lt;/th&gt;\n&lt;td&gt;Trin Tragula&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Performed by&lt;/th&gt;\n&lt;td&gt;Loonquawl and Phouchg&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Attended with&lt;/th&gt;\n&lt;td&gt;The Dude and Hotblack Desiato&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Place, Date&lt;/th&gt;\n&lt;td&gt;Mattiebury, 10 February 1934&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Notes&lt;/th&gt;\n&lt;td&gt;How can you just leave me standing alone in a world so cold?&lt;/td&gt;\n&lt;/tr&gt;\n&lt;/table&gt;&quot;,
-  &quot;description&quot;: &quot;Pitchfork postironic plaid quinoa normcore echo semiotics ethical cleanse.&quot;,
+  &quot;label&quot;: &quot;Reading, Health &lt;i&gt;listicle bespoke migas&lt;/i&gt; sustainable.&quot;,
+  &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Reading&lt;/strong&gt;, Health &lt;i&gt;listicle bespoke migas&lt;/i&gt; sustainable.&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Attended with&lt;/strong&gt; The Dude and Questular Rontok&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Place, Date&lt;/strong&gt; Mrazshire, 13 May 1957&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Director&lt;/strong&gt; Galaxia Woonbeam&lt;/p&gt;&lt;/section&gt;&quot;,
+  &quot;full_display&quot;: &quot;&lt;table&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Description&lt;/th&gt;\n&lt;td&gt;Health &lt;i&gt;listicle bespoke migas&lt;/i&gt; sustainable.&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Alternate Name(s)&lt;/th&gt;\n&lt;td&gt;Shea Coulee&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Director&lt;/th&gt;\n&lt;td&gt;Galaxia Woonbeam&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Performed by&lt;/th&gt;\n&lt;td&gt;Galaxia Woonbeam&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Attended with&lt;/th&gt;\n&lt;td&gt;The Dude and Questular Rontok&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Place, Date&lt;/th&gt;\n&lt;td&gt;Mrazshire, 13 May 1957&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Notes&lt;/th&gt;\n&lt;td&gt;You didn&#39;t have the decency to change the sheets.&lt;/td&gt;\n&lt;/tr&gt;\n&lt;/table&gt;&quot;,
+  &quot;description&quot;: &quot;Health &lt;i&gt;listicle bespoke migas&lt;/i&gt; sustainable.&quot;,
   &quot;e_type&quot;: &quot;attendance&quot;,
-  &quot;legacy_pk&quot;: 4044,
+  &quot;legacy_pk&quot;: 8905,
   &quot;alternate_names&quot;: [
-    &quot;Mimi Imfurst&quot;
+    &quot;Shea Coulee&quot;
   ],
   &quot;alternate_spellings&quot;: null,
   &quot;attended_with&quot;: [
     &quot;The Dude&quot;,
-    &quot;Hotblack Desiato&quot;
+    &quot;Questular Rontok&quot;
   ],
-  &quot;director&quot;: &quot;Trin Tragula&quot;,
-  &quot;event_type&quot;: &quot;rehearsal&quot;,
-  &quot;notes&quot;: &quot;How can you just leave me standing alone in a world so cold?&quot;,
+  &quot;director&quot;: &quot;Galaxia Woonbeam&quot;,
+  &quot;event_type&quot;: &quot;_reading&quot;,
+  &quot;notes&quot;: &quot;You didn&#39;t have the decency to change the sheets.&quot;,
   &quot;performed_by&quot;: [
-    &quot;Loonquawl and Phouchg&quot;
+    &quot;Galaxia Woonbeam&quot;
   ],
-  &quot;place_date&quot;: &quot;Mattiebury, 10 February 1934&quot;
+  &quot;place_date&quot;: &quot;Mrazshire, 13 May 1957&quot;,
+  &quot;letters&quot;: {
+    &quot;mentioned_in&quot;: [
+      {
+        &quot;id&quot;: &quot;3ed8e22e-b275-420a-b223-6471b37d5f59&quot;,
+        &quot;label&quot;: &quot;11 June 1983 - Ryan, Mindi&quot;
+      }
+    ],
+    &quot;recived&quot;: [
+      {
+        &quot;id&quot;: &quot;58ff9d1b-ecc8-4760-abc6-64d877ee939d&quot;,
+        &quot;label&quot;: &quot;12 January 1951 - Dooley, Isaura, Reading, Health &lt;i&gt;listicle bespoke migas&lt;/i&gt; sustainable.&quot;
+      }
+    ],
+    &quot;sent&quot;: [
+      {
+        &quot;id&quot;: &quot;25bd13e1-7581-42c0-8ddd-7b354066ec63&quot;,
+        &quot;label&quot;: &quot;11 August 1970 - Watsica, Deandre&quot;
+      }
+    ],
+    &quot;sent_to&quot;: [
+      {
+        &quot;id&quot;: &quot;75ab0dcb-8296-4b9e-9756-50675682d812&quot;,
+        &quot;label&quot;: &quot;17 December 1985 - Hoeger, Don&quot;
+      }
+    ],
+    &quot;sent_from&quot;: [
+      {
+        &quot;id&quot;: &quot;c2711cc7-256e-44ea-9933-00298bfbb3fa&quot;,
+        &quot;label&quot;: &quot;22 July 1964 - Koss, Su&quot;
+      }
+    ]
+  }
 }</pre>
       </div>
     </div>

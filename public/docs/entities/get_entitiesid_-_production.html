@@ -115,61 +115,6 @@ table th, table td {
         <h3>GET /entities/:id</h3>
 
 
-          <h3>Response Fields</h3>
-          <table class="response-fields table table-striped table-bordered table-condensed">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Default</th>
-                <th>Description</th>
-                <th>Not Null</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                    <span class="name">label</span>
-                </td>
-                <td>
-                  <span class="description">HTML String</span>
-                </td>
-                <td>
-                  <span class="description"></span>
-                </td>
-                <td>
-                  <span class="description">true</span>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                    <span class="name">short_display</span>
-                </td>
-                <td>
-                  <span class="description">HTML String</span>
-                </td>
-                <td>
-                  <span class="description"></span>
-                </td>
-                <td>
-                  <span class="description">true</span>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                    <span class="name">full_display</span>
-                </td>
-                <td>
-                  <span class="description">HTML String</span>
-                </td>
-                <td>
-                  <span class="description"></span>
-                </td>
-                <td>
-                  <span class="description">true</span>
-                </td>
-              </tr>
-            </tbody>
-          </table>
 
           <h3>Request</h3>
 
@@ -181,7 +126,7 @@ Host: example.org
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET /entities/8a7d0bc9-1ba2-4a3e-8747-e570e2524ab8</pre>
+          <pre class="request route highlight">GET /entities/0c62e0d9-b608-46b3-b8b0-e9f33ab740c8</pre>
 
 
 
@@ -195,43 +140,75 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;280fef8bd64b754e7ab41adc83a95aba&quot;
+ETag: W/&quot;e65f616199cff1afb700815757ef7cbe&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: af57a7fc-1504-4e74-beb6-374461cc9362
-X-Runtime: 1.259989
+X-Request-Id: fa2bdd6f-2a13-407c-adde-7d3a5a641992
+X-Runtime: 1.535897
 Vary: Origin
-Content-Length: 3648</pre>
+Content-Length: 4030</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
-  &quot;id&quot;: &quot;http://example.org/entities/8a7d0bc9-1ba2-4a3e-8747-e570e2524ab8&quot;,
+  &quot;id&quot;: &quot;0c62e0d9-b608-46b3-b8b0-e9f33ab740c8&quot;,
   &quot;type&quot;: &quot;production&quot;,
-  &quot;label&quot;: &quot;Pulp Fiction&quot;,
-  &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Title&lt;/strong&gt; Pulp Fiction&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Proposal/Response&lt;/strong&gt; I wish you&#39;d just tell me rather trying to engage my enthusiasm, because I haven&#39;t got one. / In the beginning, the Universe was created. This has made a lot of people very angry and been widely regarded as a bad move.&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Director&lt;/strong&gt; Karl Hungus &lt;strong&gt;Theatre, City&lt;/strong&gt; Bistromath, Lockmanshire&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Date(s)&lt;/strong&gt; 1969-08-13.&lt;/p&gt;&lt;/section&gt;&quot;,
-  &quot;full_display&quot;: &quot;&lt;table&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Title&lt;/th&gt;\n&lt;td colspan=\&quot;5\&quot;&gt;Pulp Fiction&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Proposal&lt;/th&gt;\n&lt;td&gt;I wish you&#39;d just tell me rather trying to engage my enthusiasm, because I haven&#39;t got one.&lt;/td&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Response&lt;/th&gt;\n&lt;td&gt;In the beginning, the Universe was created. This has made a lot of people very angry and been widely regarded as a bad move.&lt;/td&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Reason&lt;/th&gt;\n&lt;td&gt;Let&#39;s go crazy, let&#39;s get nuts! Look for the purple bandana until they put us in the truck, let&#39;s go!&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Date(s)&lt;/th&gt;\n&lt;td colspan=\&quot;5\&quot;&gt;1969-08-13.&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Director&lt;/th&gt;\n&lt;td colspan=\&quot;5\&quot;&gt;Karl Hungus&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Cast&lt;/th&gt;\n&lt;td colspan=\&quot;5\&quot;&gt;Agda and Donny&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Personnel&lt;/th&gt;\n&lt;td colspan=\&quot;5\&quot;&gt;Ford Prefect&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Theatre, City&lt;/th&gt;\n&lt;td colspan=\&quot;5\&quot;&gt;Bistromath, Lockmanshire&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Notes&lt;/th&gt;\n&lt;td colspan=\&quot;5\&quot;&gt;Keytar cardigan loko yuccie butcher mixtape ugh salvia.&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;See Also&lt;/th&gt;\n&lt;td colspan=\&quot;5\&quot;&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=\&quot;http://kling.net/timmy.terry\&quot; target=\&quot;_blank\&quot; rel=\&quot;noopener\&quot;&gt;http://kling.net/timmy.terry&lt;span&gt;(opens in new tab)&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;\n&lt;/tr&gt;\n&lt;/table&gt;&quot;,
-  &quot;description&quot;: &quot;Cronut goth bicycle rights diy thundercats distillery farmtotable carry celiac.&quot;,
+  &quot;label&quot;: &quot;Intouchables&quot;,
+  &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Title&lt;/strong&gt; Intouchables&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Proposal/Response&lt;/strong&gt; I think you ought to know I&#39;m feeling very depressed. / there’s an infinite number of monkeys outside who want to talk to us about this script for Hamlet they’ve worked out.&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Director&lt;/strong&gt; Bunny Lebowski &lt;strong&gt;Theatre, City&lt;/strong&gt; Billion Year Bunker, Gloverville&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Date(s)&lt;/strong&gt; 1970-09-09.&lt;/p&gt;&lt;/section&gt;&quot;,
+  &quot;full_display&quot;: &quot;&lt;table&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Title&lt;/th&gt;\n&lt;td colspan=\&quot;5\&quot;&gt;Intouchables&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Proposal&lt;/th&gt;\n&lt;td&gt;I think you ought to know I&#39;m feeling very depressed.&lt;/td&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Response&lt;/th&gt;\n&lt;td&gt;there’s an infinite number of monkeys outside who want to talk to us about this script for Hamlet they’ve worked out.&lt;/td&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Reason&lt;/th&gt;\n&lt;td&gt;Is that your boyfriend? Ha, I don&#39;t care.&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Date(s)&lt;/th&gt;\n&lt;td colspan=\&quot;5\&quot;&gt;1970-09-09.&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Director&lt;/th&gt;\n&lt;td colspan=\&quot;5\&quot;&gt;Bunny Lebowski&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Cast&lt;/th&gt;\n&lt;td colspan=\&quot;5\&quot;&gt;Bowerick Wowbagger and The Big Lebowski&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Personnel&lt;/th&gt;\n&lt;td colspan=\&quot;5\&quot;&gt;Charles Darwin&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Theatre, City&lt;/th&gt;\n&lt;td colspan=\&quot;5\&quot;&gt;Billion Year Bunker, Gloverville&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Notes&lt;/th&gt;\n&lt;td colspan=\&quot;5\&quot;&gt;Portland pinterest sriracha schlitz ugh ennui jean shorts.&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;See Also&lt;/th&gt;\n&lt;td colspan=\&quot;5\&quot;&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=\&quot;http://botsford-hermann.name/wes_dicki\&quot; target=\&quot;_blank\&quot; rel=\&quot;noopener\&quot;&gt;http://botsford-hermann.name/wes_dicki&lt;span&gt;(opens in new tab)&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;\n&lt;/tr&gt;\n&lt;/table&gt;&quot;,
+  &quot;description&quot;: &quot;Brunch &lt;i&gt;90s narwhal fashion axe vice&lt;/i&gt; keffiyeh.&quot;,
   &quot;e_type&quot;: &quot;production&quot;,
-  &quot;legacy_pk&quot;: 27689,
+  &quot;legacy_pk&quot;: 42364,
   &quot;alternate_names&quot;: null,
   &quot;cast&quot;: [
-    &quot;Agda&quot;,
-    &quot;Donny&quot;
+    &quot;Bowerick Wowbagger&quot;,
+    &quot;The Big Lebowski&quot;
   ],
-  &quot;city&quot;: &quot;Lockmanshire&quot;,
-  &quot;date_str&quot;: &quot;1969-08-13.&quot;,
-  &quot;director&quot;: &quot;Karl Hungus&quot;,
+  &quot;city&quot;: &quot;Gloverville&quot;,
+  &quot;date_str&quot;: &quot;1970-09-09.&quot;,
+  &quot;director&quot;: &quot;Bunny Lebowski&quot;,
   &quot;links&quot;: [
-    &quot;http://kling.net/timmy.terry&quot;
+    &quot;http://botsford-hermann.name/wes_dicki&quot;
   ],
-  &quot;notes&quot;: &quot;Keytar cardigan loko yuccie butcher mixtape ugh salvia.&quot;,
+  &quot;notes&quot;: &quot;Portland pinterest sriracha schlitz ugh ennui jean shorts.&quot;,
   &quot;personnel&quot;: [
-    &quot;Ford Prefect&quot;
+    &quot;Charles Darwin&quot;
   ],
-  &quot;proposal&quot;: &quot;I wish you&#39;d just tell me rather trying to engage my enthusiasm, because I haven&#39;t got one.&quot;,
-  &quot;response&quot;: &quot;In the beginning, the Universe was created. This has made a lot of people very angry and been widely regarded as a bad move.&quot;,
-  &quot;reason&quot;: &quot;Let&#39;s go crazy, let&#39;s get nuts! Look for the purple bandana until they put us in the truck, let&#39;s go!&quot;,
-  &quot;theater&quot;: &quot;Bistromath&quot;
+  &quot;proposal&quot;: &quot;I think you ought to know I&#39;m feeling very depressed.&quot;,
+  &quot;response&quot;: &quot;there’s an infinite number of monkeys outside who want to talk to us about this script for Hamlet they’ve worked out.&quot;,
+  &quot;reason&quot;: &quot;Is that your boyfriend? Ha, I don&#39;t care.&quot;,
+  &quot;theater&quot;: &quot;Billion Year Bunker&quot;,
+  &quot;letters&quot;: {
+    &quot;mentioned_in&quot;: [
+      {
+        &quot;id&quot;: &quot;0a325f95-6a27-4c11-9e59-6cb6bb0b89f2&quot;,
+        &quot;label&quot;: &quot;27 March 1978 - Wuckert, Emmitt&quot;
+      }
+    ],
+    &quot;recived&quot;: [
+      {
+        &quot;id&quot;: &quot;6575e360-7c3e-4c68-bdb8-d327fea22d40&quot;,
+        &quot;label&quot;: &quot;30 June 1954 - Intouchables, Bechtelar, Molly&quot;
+      }
+    ],
+    &quot;sent&quot;: [
+      {
+        &quot;id&quot;: &quot;1a1a3cf1-fdec-41dc-852b-a71daad0bb79&quot;,
+        &quot;label&quot;: &quot;23 September 1953 - Pagac, Francina&quot;
+      }
+    ],
+    &quot;sent_to&quot;: [
+      {
+        &quot;id&quot;: &quot;bceb5460-1bd6-4d6c-a6c0-17bc9cd113f0&quot;,
+        &quot;label&quot;: &quot;20 January 1977 - Huel, Terrence&quot;
+      }
+    ],
+    &quot;sent_from&quot;: [
+      {
+        &quot;id&quot;: &quot;55fac12f-d48e-47c7-924a-688ae1961f03&quot;,
+        &quot;label&quot;: &quot;01 August 1982 - Windler, Maynard&quot;
+      }
+    ]
+  }
 }</pre>
       </div>
     </div>

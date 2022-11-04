@@ -115,61 +115,6 @@ table th, table td {
         <h3>GET /entities/:id</h3>
 
 
-          <h3>Response Fields</h3>
-          <table class="response-fields table table-striped table-bordered table-condensed">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Default</th>
-                <th>Description</th>
-                <th>Not Null</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                    <span class="name">label</span>
-                </td>
-                <td>
-                  <span class="description">HTML String</span>
-                </td>
-                <td>
-                  <span class="description"></span>
-                </td>
-                <td>
-                  <span class="description">true</span>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                    <span class="name">short_display</span>
-                </td>
-                <td>
-                  <span class="description">HTML String</span>
-                </td>
-                <td>
-                  <span class="description"></span>
-                </td>
-                <td>
-                  <span class="description">true</span>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                    <span class="name">full_display</span>
-                </td>
-                <td>
-                  <span class="description">HTML String</span>
-                </td>
-                <td>
-                  <span class="description"></span>
-                </td>
-                <td>
-                  <span class="description">true</span>
-                </td>
-              </tr>
-            </tbody>
-          </table>
 
           <h3>Request</h3>
 
@@ -181,7 +126,7 @@ Host: example.org
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET /entities/65aedbf8-23b8-4299-a22c-c2a071b44945</pre>
+          <pre class="request route highlight">GET /entities/3f22156f-e109-4849-9f3d-e4e50f9efb67</pre>
 
 
 
@@ -195,35 +140,67 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;2e7077a26c1cc5ac160376d9f436e498&quot;
+ETag: W/&quot;56214f576503289c54660a509e137215&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 29d16970-3f54-4d2a-9fc1-56d8e2d2514c
-X-Runtime: 0.807785
+X-Request-Id: 09d0148e-4c8f-4f3b-9295-51d6ab7f72cb
+X-Runtime: 1.569693
 Vary: Origin
-Content-Length: 2847</pre>
+Content-Length: 3614</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
-  &quot;id&quot;: &quot;http://example.org/entities/65aedbf8-23b8-4299-a22c-c2a071b44945&quot;,
+  &quot;id&quot;: &quot;3f22156f-e109-4849-9f3d-e4e50f9efb67&quot;,
   &quot;type&quot;: &quot;work_of_art&quot;,
-  &quot;label&quot;: &quot;It&#39;s Gonna Be A Beautiful Night&quot;,
-  &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Artist&lt;/strong&gt; Arthur Philip Deodat&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Title&lt;/strong&gt; It&#39;s Gonna Be A Beautiful Night&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt; Chia &lt;i&gt;chicharrones flannel keytar sriracha microdosing readymade meh&lt;/i&gt; paleo.&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Owner/location&lt;/strong&gt; Tanngrisnir&lt;/p&gt;&lt;/section&gt;&quot;,
-  &quot;full_display&quot;: &quot;&lt;table&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Artist&lt;/th&gt;\n&lt;td&gt;Arthur Philip Deodat&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Artist Alternative Name(s)&lt;/th&gt;\n&lt;td&gt;Jinkx Monsoon&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Title&lt;/th&gt;\n&lt;td&gt;It&#39;s Gonna Be A Beautiful Night&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Alternative Title(s)&lt;/th&gt;\n&lt;td&gt;Ivy Winters&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Description&lt;/th&gt;\n&lt;td&gt;Chia &lt;i&gt;chicharrones flannel keytar sriracha microdosing readymade meh&lt;/i&gt; paleo.&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Ownership and Location&lt;/th&gt;\n&lt;td&gt;Tanngrisnir&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Current Ownership and Location&lt;/th&gt;\n&lt;td&gt;Bistromath&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Notes&lt;/th&gt;\n&lt;td&gt;There&#39;s only one life-form as intelligent as me within thirty parsecs of here and that&#39;s me.&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;See Also&lt;/th&gt;\n&lt;td&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=\&quot;http://oconner-collins.net/ronald\&quot; target=\&quot;_blank\&quot; rel=\&quot;noopener\&quot;&gt;http://oconner-collins.net/ronald&lt;span&gt;(opens in new tab)&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;\n&lt;/tr&gt;\n&lt;/table&gt;&quot;,
-  &quot;description&quot;: &quot;Chia &lt;i&gt;chicharrones flannel keytar sriracha microdosing readymade meh&lt;/i&gt; paleo.&quot;,
+  &quot;label&quot;: &quot;Joy In Repetition&quot;,
+  &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Artist&lt;/strong&gt; Phouchg&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Title&lt;/strong&gt; Joy In Repetition&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt; Tumblr &lt;i&gt;taxidermy crucifix pabst shabby chic viral swag listicle next&lt;/i&gt; level.&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Owner/location&lt;/strong&gt; Bistromath&lt;/p&gt;&lt;/section&gt;&quot;,
+  &quot;full_display&quot;: &quot;&lt;table&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Artist&lt;/th&gt;\n&lt;td&gt;Phouchg&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Artist Alternative Name(s)&lt;/th&gt;\n&lt;td&gt;Eureka&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Title&lt;/th&gt;\n&lt;td&gt;Joy In Repetition&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Alternative Title(s)&lt;/th&gt;\n&lt;td&gt;Ivy Winters&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Description&lt;/th&gt;\n&lt;td&gt;Tumblr &lt;i&gt;taxidermy crucifix pabst shabby chic viral swag listicle next&lt;/i&gt; level.&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Ownership and Location&lt;/th&gt;\n&lt;td&gt;Bistromath&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Current Ownership and Location&lt;/th&gt;\n&lt;td&gt;Tanngrisnir&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Notes&lt;/th&gt;\n&lt;td&gt;You think you&#39;ve got problems? What are you supposed to do if you are a manically depressed robot? No, don&#39;t try to answer that. I&#39;m fifty thousand times more intelligent than you and even I don&#39;t know the answer. It gives me a headache just trying to think down to your level.&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;See Also&lt;/th&gt;\n&lt;td&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=\&quot;http://spinka.org/barrett\&quot; target=\&quot;_blank\&quot; rel=\&quot;noopener\&quot;&gt;http://spinka.org/barrett&lt;span&gt;(opens in new tab)&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;\n&lt;/tr&gt;\n&lt;/table&gt;&quot;,
+  &quot;description&quot;: &quot;Tumblr &lt;i&gt;taxidermy crucifix pabst shabby chic viral swag listicle next&lt;/i&gt; level.&quot;,
   &quot;e_type&quot;: &quot;work_of_art&quot;,
-  &quot;legacy_pk&quot;: 70207,
+  &quot;legacy_pk&quot;: 24089,
   &quot;alternate_spellings&quot;: null,
-  &quot;artist&quot;: &quot;Arthur Philip Deodat&quot;,
+  &quot;artist&quot;: &quot;Phouchg&quot;,
   &quot;artist_alternate_spellings&quot;: [
-    &quot;Jinkx Monsoon&quot;
+    &quot;Eureka&quot;
   ],
   &quot;links&quot;: [
-    &quot;http://oconner-collins.net/ronald&quot;
+    &quot;http://spinka.org/barrett&quot;
   ],
-  &quot;notes&quot;: &quot;There&#39;s only one life-form as intelligent as me within thirty parsecs of here and that&#39;s me.&quot;,
-  &quot;owner_location&quot;: &quot;Tanngrisnir&quot;,
-  &quot;owner_location_current&quot;: &quot;Bistromath&quot;
+  &quot;notes&quot;: &quot;You think you&#39;ve got problems? What are you supposed to do if you are a manically depressed robot? No, don&#39;t try to answer that. I&#39;m fifty thousand times more intelligent than you and even I don&#39;t know the answer. It gives me a headache just trying to think down to your level.&quot;,
+  &quot;owner_location&quot;: &quot;Bistromath&quot;,
+  &quot;owner_location_current&quot;: &quot;Tanngrisnir&quot;,
+  &quot;letters&quot;: {
+    &quot;mentioned_in&quot;: [
+      {
+        &quot;id&quot;: &quot;6da0d07a-a07d-4ecc-af9e-8edaf87c7ea8&quot;,
+        &quot;label&quot;: &quot;05 October 1986 - McCullough, Carlton&quot;
+      }
+    ],
+    &quot;recived&quot;: [
+      {
+        &quot;id&quot;: &quot;a2f4b39b-43b4-40a7-a248-03175ed5e032&quot;,
+        &quot;label&quot;: &quot;14 February 1971 - Joy In Repetition, Heaney, Naida&quot;
+      }
+    ],
+    &quot;sent&quot;: [
+      {
+        &quot;id&quot;: &quot;9fb7f43d-c5ec-4a7f-9611-73a70531d67f&quot;,
+        &quot;label&quot;: &quot;04 January 1951 - Feeney, Ervin&quot;
+      }
+    ],
+    &quot;sent_to&quot;: [
+      {
+        &quot;id&quot;: &quot;58ea9339-f51d-49e6-958e-4dcd6099e3a2&quot;,
+        &quot;label&quot;: &quot;05 December 1963 - Feeney, Pedro&quot;
+      }
+    ],
+    &quot;sent_from&quot;: [
+      {
+        &quot;id&quot;: &quot;d75cbb7c-c010-4bc9-a2ef-230bac23958b&quot;,
+        &quot;label&quot;: &quot;15 December 1968 - Green, Chet&quot;
+      }
+    ]
+  }
 }</pre>
       </div>
     </div>

@@ -34,96 +34,96 @@ resource 'Letters' do
               'Comma sperated list of volumes. Options are 0, 1, 2, 3, and 4. Zero means no volume.',
               { default: 'null' }
 
-    before {
-      create_list(:repository, 4, published: true)
-      create_list(:published_letter_existing_repos, 30)
-      Letter.published.order(:date).limit(25).sample(6).each do |letter|
-        letter.mentions.shuffle[0..(letter.mentions.count / 3)].each do |mention|
-          mention.tag_list.add Faker::Movies::HitchhikersGuideToTheGalaxy.planet
-          mention.save
-        end
-      end
-    }
+  #   before {
+  #     create_list(:repository, 4, published: true)
+  #     create_list(:published_letter_existing_repos, 30)
+  #     Letter.published.order(:date).limit(25).sample(6).each do |letter|
+  #       letter.mentions.shuffle[0..(letter.mentions.count / 3)].each do |mention|
+  #         mention.tag_list.add Faker::Movies::HitchhikersGuideToTheGalaxy.planet
+  #         mention.save
+  #       end
+  #     end
+  #   }
 
-    get 'All letters' do
-      example_request 'GET /letters - All' do
-        expect(status).to eq(200)
-      end
-    end
+  #   get 'All letters' do
+  #     example_request 'GET /letters - All' do
+  #       expect(status).to eq(200)
+  #     end
+  #   end
 
-    get 'letters query' do
-      let(:search) { LetterRecipient.all.sample.entity.label.split[-1].downcase }
-      example_request 'GET /letters?search=:search_terms - Keyword search' do
-        expect(status).to eq(200)
-      end
-    end
+  #   get 'letters query' do
+  #     let(:search) { LetterRecipient.all.sample.entity.label.split[-1].downcase }
+  #     example_request 'GET /letters?search=:search_terms - Keyword search' do
+  #       expect(status).to eq(200)
+  #     end
+  #   end
 
-    get 'letters by recipients' do
-      let(:recipients) { [LetterRecipient.first.entity.label, LetterRecipient.last.entity.label].join(',') }
-      example_request 'GET /letters?recipients=:recipient_labels - Recipients search' do
-        expect(status).to eq(200)
-      end
-    end
+  #   get 'letters by recipients' do
+  #     let(:recipients) { [LetterRecipient.first.entity.label, LetterRecipient.last.entity.label].join(',') }
+  #     example_request 'GET /letters?recipients=:recipient_labels - Recipients search' do
+  #       expect(status).to eq(200)
+  #     end
+  #   end
 
-    get 'letters by repository' do
-      let(:repositories) { Repository.all.sample.label }
-      example_request 'GET /letters?repositories=:repository_labels - Repository Search' do
-        expect(status).to eq(200)
-      end
-    end
+  #   get 'letters by repository' do
+  #     let(:repositories) { Repository.all.sample.label }
+  #     example_request 'GET /letters?repositories=:repository_labels - Repository Search' do
+  #       expect(status).to eq(200)
+  #     end
+  #   end
 
-    get 'letters from start date' do
-      let(:dates) { Letter.all.map(&:date) }
-      let(:start_date) { dates[dates.count / 3].strftime('%Y-%m-%d') }
-      example_request 'GET /letters?start_date=:YYYY-MM-DD - On or After Date' do
-        expect(status).to eq(200)
-      end
-    end
+  #   get 'letters from start date' do
+  #     let(:dates) { Letter.all.map(&:date) }
+  #     let(:start_date) { dates[dates.count / 3].strftime('%Y-%m-%d') }
+  #     example_request 'GET /letters?start_date=:YYYY-MM-DD - On or After Date' do
+  #       expect(status).to eq(200)
+  #     end
+  #   end
 
-    get 'letters before end date' do
-      let(:dates) { Letter.all.map(&:date) }
-      let(:end_date) { dates[(dates.count / 2) + 3].strftime('%Y-%m-%d') }
-      example_request 'GET /letters?end_date=:YYYY-MM-DD - On or Before Date' do
-        expect(status).to eq(200)
-      end
-    end
+  #   get 'letters before end date' do
+  #     let(:dates) { Letter.all.map(&:date) }
+  #     let(:end_date) { dates[(dates.count / 2) + 3].strftime('%Y-%m-%d') }
+  #     example_request 'GET /letters?end_date=:YYYY-MM-DD - On or Before Date' do
+  #       expect(status).to eq(200)
+  #     end
+  #   end
 
-    get 'letters betwen start and end dates' do
-      let(:dates) { Letter.all.map(&:date) }
-      let(:start_date) { dates[dates.count / 3].strftime('%Y-%m-%d') }
-      let(:end_date) { dates[(dates.count / 2) + 3].strftime('%Y-%m-%d') }
-      example_request 'GET /letters?start_date=:YYYY-MM-DD&end_date=:YYYY-MM-DD - On or Between Dates' do
-        expect(status).to eq(200)
-      end
-    end
+  #   get 'letters betwen start and end dates' do
+  #     let(:dates) { Letter.all.map(&:date) }
+  #     let(:start_date) { dates[dates.count / 3].strftime('%Y-%m-%d') }
+  #     let(:end_date) { dates[(dates.count / 2) + 3].strftime('%Y-%m-%d') }
+  #     example_request 'GET /letters?start_date=:YYYY-MM-DD&end_date=:YYYY-MM-DD - On or Between Dates' do
+  #       expect(status).to eq(200)
+  #     end
+  #   end
 
-    # get 'letters by volume' do
-    #   example_request 'Volume facet' do
-    #     expect(status).to eq(200)
-    #   end
-    # end
+  #   # get 'letters by volume' do
+  #   #   example_request 'Volume facet' do
+  #   #     expect(status).to eq(200)
+  #   #   end
+  #   # end
 
-    get 'letters by language' do
-      let(:languages) { 'German, italian' }
-      example_request 'GET /letters?languages=:list_of_languages' do
-        expect(status).to eq(200)
-      end
-    end
+  #   get 'letters by language' do
+  #     let(:languages) { 'German, italian' }
+  #     example_request 'GET /letters?languages=:list_of_languages' do
+  #       expect(status).to eq(200)
+  #     end
+  #   end
 
-    get 'letters by volume' do
-      let(:volumes) { '1, 3' }
-      example_request 'GET /letters?volumes=:list_of_volumes' do
-        expect(status).to eq(200)
-      end
-    end
+  #   get 'letters by volume' do
+  #     let(:volumes) { '1, 3' }
+  #     example_request 'GET /letters?volumes=:list_of_volumes' do
+  #       expect(status).to eq(200)
+  #     end
+  #   end
 
-    get 'Paginated letters' do
-      let(:page) { 2 }
-      let(:per_page) { 10 }
-      example_request 'GET /letters?per_page=:results_per_page&page=:offset - Paginated results' do
-        expect(status).to eq(200)
-      end
-    end
+  #   get 'Paginated letters' do
+  #     let(:page) { 2 }
+  #     let(:per_page) { 10 }
+  #     example_request 'GET /letters?per_page=:results_per_page&page=:offset - Paginated results' do
+  #       expect(status).to eq(200)
+  #     end
+  #   end
   end
 
   route '/letters/:id', 'Single Letter' do

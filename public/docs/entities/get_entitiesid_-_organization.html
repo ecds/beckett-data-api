@@ -115,61 +115,6 @@ table th, table td {
         <h3>GET /entities/:id</h3>
 
 
-          <h3>Response Fields</h3>
-          <table class="response-fields table table-striped table-bordered table-condensed">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Default</th>
-                <th>Description</th>
-                <th>Not Null</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                    <span class="name">label</span>
-                </td>
-                <td>
-                  <span class="description">HTML String</span>
-                </td>
-                <td>
-                  <span class="description"></span>
-                </td>
-                <td>
-                  <span class="description">true</span>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                    <span class="name">short_display</span>
-                </td>
-                <td>
-                  <span class="description">HTML String</span>
-                </td>
-                <td>
-                  <span class="description"></span>
-                </td>
-                <td>
-                  <span class="description">true</span>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                    <span class="name">full_display</span>
-                </td>
-                <td>
-                  <span class="description">HTML String</span>
-                </td>
-                <td>
-                  <span class="description"></span>
-                </td>
-                <td>
-                  <span class="description">true</span>
-                </td>
-              </tr>
-            </tbody>
-          </table>
 
           <h3>Request</h3>
 
@@ -181,7 +126,7 @@ Host: example.org
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET /entities/7c9f9aa5-2152-4d7c-b17f-e108a0fc2ccf</pre>
+          <pre class="request route highlight">GET /entities/e12e48ab-2066-473f-91c8-44a61d44a7f5</pre>
 
 
 
@@ -195,29 +140,61 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;06b6c9384abcf19aae47cdbf28cf1b3a&quot;
+ETag: W/&quot;3b45a5c8fd395d43a2cbf85bf10952d4&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: d5bde5f8-0022-4bc6-85f8-04b9d59549e9
-X-Runtime: 0.695357
+X-Request-Id: bac20d36-049d-47d6-8df1-a9204573de78
+X-Runtime: 1.556938
 Vary: Origin
-Content-Length: 1967</pre>
+Content-Length: 2113</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
-  &quot;id&quot;: &quot;http://example.org/entities/7c9f9aa5-2152-4d7c-b17f-e108a0fc2ccf&quot;,
+  &quot;id&quot;: &quot;e12e48ab-2066-473f-91c8-44a61d44a7f5&quot;,
   &quot;type&quot;: &quot;organization&quot;,
-  &quot;label&quot;: &quot;Xaxis&quot;,
-  &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;Xaxis&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;You think you&#39;ve got problems? What are you supposed to do if you are a manically depressed robot? No, don&#39;t try to answer that. I&#39;m fifty thousand times more intelligent than you and even I don&#39;t know the answer. It gives me a headache just trying to think down to your level.&lt;/p&gt;&lt;/section&gt;&quot;,
-  &quot;full_display&quot;: &quot;&lt;table&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Name&lt;/th&gt;\n&lt;td&gt;Xaxis&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Description&lt;/th&gt;\n&lt;td&gt;You think you&#39;ve got problems? What are you supposed to do if you are a manically depressed robot? No, don&#39;t try to answer that. I&#39;m fifty thousand times more intelligent than you and even I don&#39;t know the answer. It gives me a headache just trying to think down to your level.&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Alternate Name(s)&lt;/th&gt;\n&lt;td&gt;Aja&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Profile&lt;/th&gt;\n&lt;td&gt;Don’t Panic&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Notes&lt;/th&gt;\n&lt;td&gt;Don&#39;t worry, I won&#39;t hurt you... I only want you to have some fun.&lt;/td&gt;\n&lt;/tr&gt;\n&lt;/table&gt;&quot;,
-  &quot;description&quot;: &quot;You think you&#39;ve got problems? What are you supposed to do if you are a manically depressed robot? No, don&#39;t try to answer that. I&#39;m fifty thousand times more intelligent than you and even I don&#39;t know the answer. It gives me a headache just trying to think down to your level.&quot;,
+  &quot;label&quot;: &quot;&lt;i&gt;Nano&lt;/i&gt;&quot;,
+  &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;&lt;i&gt;Nano&lt;/i&gt;&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;I &lt;i&gt;think you ought to know I&#39;m feeling very&lt;/i&gt; depressed.&lt;/p&gt;&lt;/section&gt;&quot;,
+  &quot;full_display&quot;: &quot;&lt;table&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Name&lt;/th&gt;\n&lt;td&gt;&lt;i&gt;Nano&lt;/i&gt;&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Description&lt;/th&gt;\n&lt;td&gt;I &lt;i&gt;think you ought to know I&#39;m feeling very&lt;/i&gt; depressed.&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Alternate Name(s)&lt;/th&gt;\n&lt;td&gt;BenDeLaCreme&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Profile&lt;/th&gt;\n&lt;td&gt;I&#39;ve just had an unhappy love affair, so I don&#39;t see why anybody else should have a good time.&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Notes&lt;/th&gt;\n&lt;td&gt;Shut up already, damn!&lt;/td&gt;\n&lt;/tr&gt;\n&lt;/table&gt;&quot;,
+  &quot;description&quot;: &quot;I &lt;i&gt;think you ought to know I&#39;m feeling very&lt;/i&gt; depressed.&quot;,
   &quot;e_type&quot;: &quot;organization&quot;,
-  &quot;legacy_pk&quot;: 36722,
+  &quot;legacy_pk&quot;: 80089,
   &quot;alternate_names&quot;: [
-    &quot;Aja&quot;
+    &quot;BenDeLaCreme&quot;
   ],
   &quot;alternate_spellings&quot;: null,
-  &quot;profile&quot;: &quot;Don’t Panic&quot;
+  &quot;profile&quot;: &quot;I&#39;ve just had an unhappy love affair, so I don&#39;t see why anybody else should have a good time.&quot;,
+  &quot;letters&quot;: {
+    &quot;mentioned_in&quot;: [
+      {
+        &quot;id&quot;: &quot;4887a131-e406-4a7d-acd2-fd02e4b33691&quot;,
+        &quot;label&quot;: &quot;24 October 1959 - Rogahn, Sherly&quot;
+      }
+    ],
+    &quot;recived&quot;: [
+      {
+        &quot;id&quot;: &quot;9d18ee80-d48d-4747-8bfd-b49e4c5cba08&quot;,
+        &quot;label&quot;: &quot;16 September 1974 - Olson, Lela, &lt;i&gt;Nano&lt;/i&gt;&quot;
+      }
+    ],
+    &quot;sent&quot;: [
+      {
+        &quot;id&quot;: &quot;731e3f8e-9052-448e-b9f4-b219c54470fd&quot;,
+        &quot;label&quot;: &quot;14 February 1984 - Welch, Daryl&quot;
+      }
+    ],
+    &quot;sent_to&quot;: [
+      {
+        &quot;id&quot;: &quot;91e55339-22c4-4df3-95dc-040b402f0292&quot;,
+        &quot;label&quot;: &quot;07 October 1961 - Hauck, Dennis&quot;
+      }
+    ],
+    &quot;sent_from&quot;: [
+      {
+        &quot;id&quot;: &quot;0a9f10ce-56c7-4b03-83bb-2b3fcc171e56&quot;,
+        &quot;label&quot;: &quot;14 May 1982 - Anderson, Terrance&quot;
+      }
+    ]
+  }
 }</pre>
       </div>
     </div>

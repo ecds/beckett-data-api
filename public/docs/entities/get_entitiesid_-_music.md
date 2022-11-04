@@ -5,15 +5,6 @@
 ## GET /entities/:id - Music
 
 ### GET /entities/:id
-
-### Response Fields
-
-| Name | Default | Description | Not Null |
-|------|---------|-------------|----------|
-| label | HTML String |  | true |
-| short_display | HTML String |  | true |
-| full_display | HTML String |  | true |
-
 ### Request
 
 #### Headers
@@ -26,7 +17,7 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /entities/da6aca17-ea7a-4745-aa26-52ab2d9f6e28</pre>
+<pre>GET /entities/62067765-9b52-449a-8638-475fd7aab2de</pre>
 
 ### Response
 
@@ -39,12 +30,12 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;fc8971ebfeabce91bef1322998c4c851&quot;
+ETag: W/&quot;27e276c3bb105f160b4e54d8bc4d0b00&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: eaa3a148-b56e-437a-8beb-6c543bf97bd7
-X-Runtime: 1.067745
+X-Request-Id: fab4f1f7-6927-4666-aa5f-7e92c77426d6
+X-Runtime: 1.740627
 Vary: Origin
-Content-Length: 2207</pre>
+Content-Length: 2710</pre>
 
 #### Status
 
@@ -54,26 +45,58 @@ Content-Length: 2207</pre>
 
 ~~~
 {
-  "id": "http://example.org/entities/da6aca17-ea7a-4745-aa26-52ab2d9f6e28",
+  "id": "62067765-9b52-449a-8638-475fd7aab2de",
   "type": "music",
-  "label": "Money Don't Matter 2 Night",
-  "short_display": "<section><p><strong>Composer</strong> Pizpot Gargravarr</p>\n<p><strong>Title</strong> Money Don't Matter 2 Night</p>\n<p><strong>Description</strong> Etsy <i>pork belly tilde</i> tryhard.</p></section>",
-  "full_display": "<table>\n<tr>\n<th scope=\"row\">Composer</th>\n<td>Pizpot Gargravarr</td>\n</tr>\n<tr>\n<th scope=\"row\">Title</th>\n<td>Money Don't Matter 2 Night</td>\n</tr>\n<tr>\n<th scope=\"row\">Alternate Title(s)</th>\n<td>Laganja Estranja</td>\n</tr>\n<tr>\n<th scope=\"row\">Description</th>\n<td>Etsy <i>pork belly tilde</i> tryhard.</td>\n</tr>\n<tr>\n<th scope=\"row\">Performed by</th>\n<td>The Big Lebowski</td>\n</tr>\n<tr>\n<th scope=\"row\">Notes</th>\n<td>It was 7:45 and we were all line, to greet the teacher Miss Cathleen.</td>\n</tr>\n<tr>\n<th scope=\"row\">See Also</th>\n<td><ul><li><a href=\"http://kuhlman.name/albert.hickle\" target=\"_blank\" rel=\"noopener\">http://kuhlman.name/albert.hickle<span>(opens in new tab)</span></a></li></ul></td>\n</tr>\n</table>",
-  "description": "Etsy <i>pork belly tilde</i> tryhard.",
+  "label": "Crimson and Clover",
+  "short_display": "<section><p><strong>Composer</strong> Garkbit</p>\n<p><strong>Title</strong> Crimson and Clover</p>\n<p><strong>Description</strong> Meggings <i>shoreditch fanny pack whatever tacos cronut irony neutra</i> brooklyn.</p></section>",
+  "full_display": "<table>\n<tr>\n<th scope=\"row\">Composer</th>\n<td>Garkbit</td>\n</tr>\n<tr>\n<th scope=\"row\">Title</th>\n<td>Crimson and Clover</td>\n</tr>\n<tr>\n<th scope=\"row\">Alternate Title(s)</th>\n<td>Carmen Carrera</td>\n</tr>\n<tr>\n<th scope=\"row\">Description</th>\n<td>Meggings <i>shoreditch fanny pack whatever tacos cronut irony neutra</i> brooklyn.</td>\n</tr>\n<tr>\n<th scope=\"row\">Performed by</th>\n<td>Brandt</td>\n</tr>\n<tr>\n<th scope=\"row\">Notes</th>\n<td>I'm hot and I don't care who knows it, I got a job to do.</td>\n</tr>\n<tr>\n<th scope=\"row\">See Also</th>\n<td><ul><li><a href=\"http://denesik.io/floyd\" target=\"_blank\" rel=\"noopener\">http://denesik.io/floyd<span>(opens in new tab)</span></a></li></ul></td>\n</tr>\n</table>",
+  "description": "Meggings <i>shoreditch fanny pack whatever tacos cronut irony neutra</i> brooklyn.",
   "e_type": "music",
-  "legacy_pk": 90111,
+  "legacy_pk": 50176,
   "alternate_names": [
-    "Laganja Estranja"
+    "Carmen Carrera"
   ],
   "alternate_spellings": null,
-  "composer": "Pizpot Gargravarr",
+  "composer": "Garkbit",
   "links": [
-    "http://kuhlman.name/albert.hickle"
+    "http://denesik.io/floyd"
   ],
-  "notes": "It was 7:45 and we were all line, to greet the teacher Miss Cathleen.",
+  "notes": "I'm hot and I don't care who knows it, I got a job to do.",
   "performed_by": [
-    "The Big Lebowski"
-  ]
+    "Brandt"
+  ],
+  "letters": {
+    "mentioned_in": [
+      {
+        "id": "357eaece-dc29-4e82-b65a-7e03a006e1a7",
+        "label": "14 June 1950 - Towne, Jeramy"
+      }
+    ],
+    "recived": [
+      {
+        "id": "a28bd102-e79d-4270-83b1-100b75140d46",
+        "label": "22 July 1954 - Crimson and Clover, Harber, Pearl"
+      }
+    ],
+    "sent": [
+      {
+        "id": "41f5f994-d25e-4351-b7d8-1185d1e116db",
+        "label": "30 June 1959 - Dare, Lynwood"
+      }
+    ],
+    "sent_to": [
+      {
+        "id": "fb4dd828-4b6f-4116-a45f-3a021343f77d",
+        "label": "24 October 1969 - Larkin, Marissa"
+      }
+    ],
+    "sent_from": [
+      {
+        "id": "7c117d0d-51d3-482f-ac9b-bc909e8019f9",
+        "label": "08 November 1965 - Moen, Dulce"
+      }
+    ]
+  }
 }
 ~~~
 

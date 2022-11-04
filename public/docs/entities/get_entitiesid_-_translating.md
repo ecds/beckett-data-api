@@ -5,15 +5,6 @@
 ## GET /entities/:id - Translating
 
 ### GET /entities/:id
-
-### Response Fields
-
-| Name | Default | Description | Not Null |
-|------|---------|-------------|----------|
-| label | HTML String |  | true |
-| short_display | HTML String |  | true |
-| full_display | HTML String |  | true |
-
 ### Request
 
 #### Headers
@@ -26,7 +17,7 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /entities/e0fb1d10-b9ed-402f-94cb-45c29a6a5603</pre>
+<pre>GET /entities/0f05b41b-08a2-4ad3-8443-9d658e7d4ed2</pre>
 
 ### Response
 
@@ -39,12 +30,12 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;42b5afb229784569ae99be5b7bb14868&quot;
+ETag: W/&quot;d3331e83132274504e16c319f7375182&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: c078a5a9-f64d-49c2-9353-8b93c682975c
-X-Runtime: 0.869816
+X-Request-Id: f2121702-3915-4d1e-95cf-8d68e0f81bbe
+X-Runtime: 1.440679
 Vary: Origin
-Content-Length: 1878</pre>
+Content-Length: 2410</pre>
 
 #### Status
 
@@ -54,23 +45,55 @@ Content-Length: 1878</pre>
 
 ~~~
 {
-  "id": "http://example.org/entities/e0fb1d10-b9ed-402f-94cb-45c29a6a5603",
+  "id": "0f05b41b-08a2-4ad3-8443-9d658e7d4ed2",
   "type": "translating",
-  "label": "<i>The Torment of Others</i>",
-  "short_display": "<section><p><strong>Author</strong> Fenchurch, <strong>Original Title</strong> <i>The Torment of Others</i></p>\n<p><strong>Translated into</strong> Serbo Croatian by Lunkwill and Fook</p>\n<p><strong>Translated title</strong> Heart of Gold.</p></section>",
-  "full_display": "<table>\n<tr>\n<th scope=\"row\">Original Title</th>\n<td><i>The Torment of Others</i></td>\n</tr>\n<tr>\n<th scope=\"row\">Author</th>\n<td>Fenchurch</td>\n</tr>\n<tr>\n<th scope=\"row\">Translated into</th>\n<td>Serbo Croatian by Lunkwill and Fook</td>\n</tr>\n<tr>\n<th scope=\"row\">Translated Title</th>\n<td>Heart of Gold.</td>\n</tr>\n<tr>\n<th scope=\"row\">Publication/Production</th>\n<td>Here I am, brain the size of a planet, and they tell me to take you up to the bridge. Call that job satisfaction? 'Cos I don't.</td>\n</tr>\n</table>",
-  "description": "Ennui semiotics cliche intelligentsia.",
+  "label": "<i>Quo Vadis</i>",
+  "short_display": "<section><p><strong>Author</strong> Random Dent, <strong>Original Title</strong> <i>Quo Vadis</i></p>\n<p><strong>Translated into</strong> Gaelic by Loonquawl and Phouchg</p>\n<p><strong>Translated title</strong> Golgafrinchan Ark Fleet Ship B.</p></section>",
+  "full_display": "<table>\n<tr>\n<th scope=\"row\">Original Title</th>\n<td><i>Quo Vadis</i></td>\n</tr>\n<tr>\n<th scope=\"row\">Author</th>\n<td>Random Dent</td>\n</tr>\n<tr>\n<th scope=\"row\">Translated into</th>\n<td>Gaelic by Loonquawl and Phouchg</td>\n</tr>\n<tr>\n<th scope=\"row\">Translated Title</th>\n<td>Golgafrinchan Ark Fleet Ship B.</td>\n</tr>\n<tr>\n<th scope=\"row\">Publication/Production</th>\n<td>Pardon me for breathing, which I never do anyway so I don't know why I bother to say it, Oh God, I'm so depressed.</td>\n</tr>\n</table>",
+  "description": "Disrupt <i>godard mlkshk helvetica</i> kickstarter.",
   "e_type": "translating",
-  "legacy_pk": 69817,
+  "legacy_pk": 52663,
   "authors": [
-    "Fenchurch"
+    "Random Dent"
   ],
-  "notes": "Here I am, brain the size of a planet, and they tell me to take you up to the bridge. Call that job satisfaction? 'Cos I don't.",
-  "translated_into": "serbo_croatian",
-  "translated_title": "Heart of Gold.",
+  "notes": "Pardon me for breathing, which I never do anyway so I don't know why I bother to say it, Oh God, I'm so depressed.",
+  "translated_into": "gaelic",
+  "translated_title": "Golgafrinchan Ark Fleet Ship B.",
   "translators": [
-    "Lunkwill and Fook"
-  ]
+    "Loonquawl and Phouchg"
+  ],
+  "letters": {
+    "mentioned_in": [
+      {
+        "id": "983c87a6-3777-4eb0-8b79-6fdcf4a3aa9b",
+        "label": "25 July 1986 - Fritsch, Jennie"
+      }
+    ],
+    "recived": [
+      {
+        "id": "c8646cca-cdc1-45e3-9aab-63f155e68dd7",
+        "label": "05 July 1985 - <i>Quo Vadis</i>, Wolf, Fabian"
+      }
+    ],
+    "sent": [
+      {
+        "id": "d4850ab6-8471-4667-8346-288591e64690",
+        "label": "11 November 1978 - Kihn, Fermin"
+      }
+    ],
+    "sent_to": [
+      {
+        "id": "c4818d75-f3b5-4f5b-bdca-e2fc1b8b9949",
+        "label": "11 January 1982 - Boyle, Trenton"
+      }
+    ],
+    "sent_from": [
+      {
+        "id": "2b4540f3-9f34-4aad-9563-7248731b973d",
+        "label": "01 June 1975 - Hilll, Pat"
+      }
+    ]
+  }
 }
 ~~~
 

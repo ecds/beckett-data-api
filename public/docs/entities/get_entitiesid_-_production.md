@@ -5,15 +5,6 @@
 ## GET /entities/:id - Production
 
 ### GET /entities/:id
-
-### Response Fields
-
-| Name | Default | Description | Not Null |
-|------|---------|-------------|----------|
-| label | HTML String |  | true |
-| short_display | HTML String |  | true |
-| full_display | HTML String |  | true |
-
 ### Request
 
 #### Headers
@@ -26,7 +17,7 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /entities/8a7d0bc9-1ba2-4a3e-8747-e570e2524ab8</pre>
+<pre>GET /entities/0c62e0d9-b608-46b3-b8b0-e9f33ab740c8</pre>
 
 ### Response
 
@@ -39,12 +30,12 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;280fef8bd64b754e7ab41adc83a95aba&quot;
+ETag: W/&quot;e65f616199cff1afb700815757ef7cbe&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: af57a7fc-1504-4e74-beb6-374461cc9362
-X-Runtime: 1.259989
+X-Request-Id: fa2bdd6f-2a13-407c-adde-7d3a5a641992
+X-Runtime: 1.535897
 Vary: Origin
-Content-Length: 3648</pre>
+Content-Length: 4030</pre>
 
 #### Status
 
@@ -54,33 +45,65 @@ Content-Length: 3648</pre>
 
 ~~~
 {
-  "id": "http://example.org/entities/8a7d0bc9-1ba2-4a3e-8747-e570e2524ab8",
+  "id": "0c62e0d9-b608-46b3-b8b0-e9f33ab740c8",
   "type": "production",
-  "label": "Pulp Fiction",
-  "short_display": "<section><p><strong>Title</strong> Pulp Fiction</p>\n<p><strong>Proposal/Response</strong> I wish you'd just tell me rather trying to engage my enthusiasm, because I haven't got one. / In the beginning, the Universe was created. This has made a lot of people very angry and been widely regarded as a bad move.</p>\n<p><strong>Director</strong> Karl Hungus <strong>Theatre, City</strong> Bistromath, Lockmanshire</p>\n<p><strong>Date(s)</strong> 1969-08-13.</p></section>",
-  "full_display": "<table>\n<tr>\n<th scope=\"row\">Title</th>\n<td colspan=\"5\">Pulp Fiction</td>\n</tr>\n<tr>\n<th scope=\"row\">Proposal</th>\n<td>I wish you'd just tell me rather trying to engage my enthusiasm, because I haven't got one.</td>\n<th scope=\"row\">Response</th>\n<td>In the beginning, the Universe was created. This has made a lot of people very angry and been widely regarded as a bad move.</td>\n<th scope=\"row\">Reason</th>\n<td>Let's go crazy, let's get nuts! Look for the purple bandana until they put us in the truck, let's go!</td>\n</tr>\n<tr>\n<th scope=\"row\">Date(s)</th>\n<td colspan=\"5\">1969-08-13.</td>\n</tr>\n<tr>\n<th scope=\"row\">Director</th>\n<td colspan=\"5\">Karl Hungus</td>\n</tr>\n<tr>\n<th scope=\"row\">Cast</th>\n<td colspan=\"5\">Agda and Donny</td>\n</tr>\n<tr>\n<th scope=\"row\">Personnel</th>\n<td colspan=\"5\">Ford Prefect</td>\n</tr>\n<tr>\n<th scope=\"row\">Theatre, City</th>\n<td colspan=\"5\">Bistromath, Lockmanshire</td>\n</tr>\n<tr>\n<th scope=\"row\">Notes</th>\n<td colspan=\"5\">Keytar cardigan loko yuccie butcher mixtape ugh salvia.</td>\n</tr>\n<tr>\n<th scope=\"row\">See Also</th>\n<td colspan=\"5\"><ul><li><a href=\"http://kling.net/timmy.terry\" target=\"_blank\" rel=\"noopener\">http://kling.net/timmy.terry<span>(opens in new tab)</span></a></li></ul></td>\n</tr>\n</table>",
-  "description": "Cronut goth bicycle rights diy thundercats distillery farmtotable carry celiac.",
+  "label": "Intouchables",
+  "short_display": "<section><p><strong>Title</strong> Intouchables</p>\n<p><strong>Proposal/Response</strong> I think you ought to know I'm feeling very depressed. / there’s an infinite number of monkeys outside who want to talk to us about this script for Hamlet they’ve worked out.</p>\n<p><strong>Director</strong> Bunny Lebowski <strong>Theatre, City</strong> Billion Year Bunker, Gloverville</p>\n<p><strong>Date(s)</strong> 1970-09-09.</p></section>",
+  "full_display": "<table>\n<tr>\n<th scope=\"row\">Title</th>\n<td colspan=\"5\">Intouchables</td>\n</tr>\n<tr>\n<th scope=\"row\">Proposal</th>\n<td>I think you ought to know I'm feeling very depressed.</td>\n<th scope=\"row\">Response</th>\n<td>there’s an infinite number of monkeys outside who want to talk to us about this script for Hamlet they’ve worked out.</td>\n<th scope=\"row\">Reason</th>\n<td>Is that your boyfriend? Ha, I don't care.</td>\n</tr>\n<tr>\n<th scope=\"row\">Date(s)</th>\n<td colspan=\"5\">1970-09-09.</td>\n</tr>\n<tr>\n<th scope=\"row\">Director</th>\n<td colspan=\"5\">Bunny Lebowski</td>\n</tr>\n<tr>\n<th scope=\"row\">Cast</th>\n<td colspan=\"5\">Bowerick Wowbagger and The Big Lebowski</td>\n</tr>\n<tr>\n<th scope=\"row\">Personnel</th>\n<td colspan=\"5\">Charles Darwin</td>\n</tr>\n<tr>\n<th scope=\"row\">Theatre, City</th>\n<td colspan=\"5\">Billion Year Bunker, Gloverville</td>\n</tr>\n<tr>\n<th scope=\"row\">Notes</th>\n<td colspan=\"5\">Portland pinterest sriracha schlitz ugh ennui jean shorts.</td>\n</tr>\n<tr>\n<th scope=\"row\">See Also</th>\n<td colspan=\"5\"><ul><li><a href=\"http://botsford-hermann.name/wes_dicki\" target=\"_blank\" rel=\"noopener\">http://botsford-hermann.name/wes_dicki<span>(opens in new tab)</span></a></li></ul></td>\n</tr>\n</table>",
+  "description": "Brunch <i>90s narwhal fashion axe vice</i> keffiyeh.",
   "e_type": "production",
-  "legacy_pk": 27689,
+  "legacy_pk": 42364,
   "alternate_names": null,
   "cast": [
-    "Agda",
-    "Donny"
+    "Bowerick Wowbagger",
+    "The Big Lebowski"
   ],
-  "city": "Lockmanshire",
-  "date_str": "1969-08-13.",
-  "director": "Karl Hungus",
+  "city": "Gloverville",
+  "date_str": "1970-09-09.",
+  "director": "Bunny Lebowski",
   "links": [
-    "http://kling.net/timmy.terry"
+    "http://botsford-hermann.name/wes_dicki"
   ],
-  "notes": "Keytar cardigan loko yuccie butcher mixtape ugh salvia.",
+  "notes": "Portland pinterest sriracha schlitz ugh ennui jean shorts.",
   "personnel": [
-    "Ford Prefect"
+    "Charles Darwin"
   ],
-  "proposal": "I wish you'd just tell me rather trying to engage my enthusiasm, because I haven't got one.",
-  "response": "In the beginning, the Universe was created. This has made a lot of people very angry and been widely regarded as a bad move.",
-  "reason": "Let's go crazy, let's get nuts! Look for the purple bandana until they put us in the truck, let's go!",
-  "theater": "Bistromath"
+  "proposal": "I think you ought to know I'm feeling very depressed.",
+  "response": "there’s an infinite number of monkeys outside who want to talk to us about this script for Hamlet they’ve worked out.",
+  "reason": "Is that your boyfriend? Ha, I don't care.",
+  "theater": "Billion Year Bunker",
+  "letters": {
+    "mentioned_in": [
+      {
+        "id": "0a325f95-6a27-4c11-9e59-6cb6bb0b89f2",
+        "label": "27 March 1978 - Wuckert, Emmitt"
+      }
+    ],
+    "recived": [
+      {
+        "id": "6575e360-7c3e-4c68-bdb8-d327fea22d40",
+        "label": "30 June 1954 - Intouchables, Bechtelar, Molly"
+      }
+    ],
+    "sent": [
+      {
+        "id": "1a1a3cf1-fdec-41dc-852b-a71daad0bb79",
+        "label": "23 September 1953 - Pagac, Francina"
+      }
+    ],
+    "sent_to": [
+      {
+        "id": "bceb5460-1bd6-4d6c-a6c0-17bc9cd113f0",
+        "label": "20 January 1977 - Huel, Terrence"
+      }
+    ],
+    "sent_from": [
+      {
+        "id": "55fac12f-d48e-47c7-924a-688ae1961f03",
+        "label": "01 August 1982 - Windler, Maynard"
+      }
+    ]
+  }
 }
 ~~~
 

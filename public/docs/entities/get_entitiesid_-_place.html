@@ -115,61 +115,6 @@ table th, table td {
         <h3>GET /entities/:id</h3>
 
 
-          <h3>Response Fields</h3>
-          <table class="response-fields table table-striped table-bordered table-condensed">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Default</th>
-                <th>Description</th>
-                <th>Not Null</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                    <span class="name">label</span>
-                </td>
-                <td>
-                  <span class="description">HTML String</span>
-                </td>
-                <td>
-                  <span class="description"></span>
-                </td>
-                <td>
-                  <span class="description">true</span>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                    <span class="name">short_display</span>
-                </td>
-                <td>
-                  <span class="description">HTML String</span>
-                </td>
-                <td>
-                  <span class="description"></span>
-                </td>
-                <td>
-                  <span class="description">true</span>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                    <span class="name">full_display</span>
-                </td>
-                <td>
-                  <span class="description">HTML String</span>
-                </td>
-                <td>
-                  <span class="description"></span>
-                </td>
-                <td>
-                  <span class="description">true</span>
-                </td>
-              </tr>
-            </tbody>
-          </table>
 
           <h3>Request</h3>
 
@@ -181,7 +126,7 @@ Host: example.org
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET /entities/99964ccc-a5c6-4d94-a4bf-8640bf1476f9</pre>
+          <pre class="request route highlight">GET /entities/dedf6579-e880-4ad7-b5f5-0a279c3dcaae</pre>
 
 
 
@@ -195,30 +140,62 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;355f8bf9199cb861f5146c4a523657cb&quot;
+ETag: W/&quot;ed2d321f71720edfad1d7e581cc7f7dc&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 8824c106-a101-485f-9208-c1f8fc6dd9d3
-X-Runtime: 1.034688
+X-Request-Id: ac0a5ce3-f82f-4f7b-bb29-62d258b180e6
+X-Runtime: 1.438376
 Vary: Origin
-Content-Length: 1296</pre>
+Content-Length: 1911</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
-  &quot;id&quot;: &quot;http://example.org/entities/99964ccc-a5c6-4d94-a4bf-8640bf1476f9&quot;,
+  &quot;id&quot;: &quot;dedf6579-e880-4ad7-b5f5-0a279c3dcaae&quot;,
   &quot;type&quot;: &quot;place&quot;,
-  &quot;label&quot;: &quot;&lt;i&gt;Croydon&lt;/i&gt;&quot;,
-  &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;&lt;i&gt;Croydon&lt;/i&gt;&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;Trust &lt;i&gt;fund pbrb vice&lt;/i&gt; 90s.&lt;/p&gt;&lt;/section&gt;&quot;,
-  &quot;full_display&quot;: &quot;&lt;table&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Name&lt;/th&gt;\n&lt;td&gt;&lt;i&gt;Croydon&lt;/i&gt;&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Description&lt;/th&gt;\n&lt;td&gt;Trust &lt;i&gt;fund pbrb vice&lt;/i&gt; 90s.&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;See Also&lt;/th&gt;\n&lt;td&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=\&quot;http://hahn-shanahan.org/virgilio\&quot; target=\&quot;_blank\&quot; rel=\&quot;noopener\&quot;&gt;http://hahn-shanahan.org/virgilio&lt;span&gt;(opens in new tab)&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;\n&lt;/tr&gt;\n&lt;/table&gt;&quot;,
-  &quot;description&quot;: &quot;Trust &lt;i&gt;fund pbrb vice&lt;/i&gt; 90s.&quot;,
+  &quot;label&quot;: &quot;&lt;i&gt;Pleiades system&lt;/i&gt;&quot;,
+  &quot;short_display&quot;: &quot;&lt;section&gt;&lt;p&gt;&lt;strong&gt;&lt;i&gt;Pleiades system&lt;/i&gt;&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;Synth hashtag flannel leggings thundercats fingerstache glutenfree.&lt;/p&gt;&lt;/section&gt;&quot;,
+  &quot;full_display&quot;: &quot;&lt;table&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Name&lt;/th&gt;\n&lt;td&gt;&lt;i&gt;Pleiades system&lt;/i&gt;&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;Description&lt;/th&gt;\n&lt;td&gt;Synth hashtag flannel leggings thundercats fingerstache glutenfree.&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;th scope=\&quot;row\&quot;&gt;See Also&lt;/th&gt;\n&lt;td&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=\&quot;http://upton-pouros.name/ronna.cummerata\&quot; target=\&quot;_blank\&quot; rel=\&quot;noopener\&quot;&gt;http://upton-pouros.name/ronna.cummerata&lt;span&gt;(opens in new tab)&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;\n&lt;/tr&gt;\n&lt;/table&gt;&quot;,
+  &quot;description&quot;: &quot;Synth hashtag flannel leggings thundercats fingerstache glutenfree.&quot;,
   &quot;e_type&quot;: &quot;place&quot;,
-  &quot;legacy_pk&quot;: 31597,
+  &quot;legacy_pk&quot;: 95755,
   &quot;alternate_spellings&quot;: [
-    &quot;Farrah Moan&quot;
+    &quot;Tatianna&quot;
   ],
   &quot;links&quot;: [
-    &quot;http://hahn-shanahan.org/virgilio&quot;
-  ]
+    &quot;http://upton-pouros.name/ronna.cummerata&quot;
+  ],
+  &quot;letters&quot;: {
+    &quot;mentioned_in&quot;: [
+      {
+        &quot;id&quot;: &quot;d7ad3cab-a8b8-4409-966d-5cdd322a679f&quot;,
+        &quot;label&quot;: &quot;26 March 1965 - Zboncak, Hoyt&quot;
+      }
+    ],
+    &quot;recived&quot;: [
+      {
+        &quot;id&quot;: &quot;177d4dd7-a780-4316-92a7-3042523e2b5b&quot;,
+        &quot;label&quot;: &quot;10 July 1987 - Collins, Ara, &lt;i&gt;Pleiades system&lt;/i&gt;&quot;
+      }
+    ],
+    &quot;sent&quot;: [
+      {
+        &quot;id&quot;: &quot;849eb92c-f8c1-429c-a1e0-73c484ed0eb7&quot;,
+        &quot;label&quot;: &quot;14 October 1986 - Carroll, Alfonzo&quot;
+      }
+    ],
+    &quot;sent_to&quot;: [
+      {
+        &quot;id&quot;: &quot;977faaef-9b4a-46b9-ac4c-a53b9a0b4028&quot;,
+        &quot;label&quot;: &quot;23 October 1955 - Smitham, Eilene&quot;
+      }
+    ],
+    &quot;sent_from&quot;: [
+      {
+        &quot;id&quot;: &quot;43b195f0-a3bc-4742-932b-cda118dae198&quot;,
+        &quot;label&quot;: &quot;17 June 1978 - Zieme, Steven&quot;
+      }
+    ]
+  }
 }</pre>
       </div>
     </div>

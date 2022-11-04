@@ -5,15 +5,6 @@
 ## GET /entities/:id - Place
 
 ### GET /entities/:id
-
-### Response Fields
-
-| Name | Default | Description | Not Null |
-|------|---------|-------------|----------|
-| label | HTML String |  | true |
-| short_display | HTML String |  | true |
-| full_display | HTML String |  | true |
-
 ### Request
 
 #### Headers
@@ -26,7 +17,7 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /entities/99964ccc-a5c6-4d94-a4bf-8640bf1476f9</pre>
+<pre>GET /entities/dedf6579-e880-4ad7-b5f5-0a279c3dcaae</pre>
 
 ### Response
 
@@ -39,12 +30,12 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;355f8bf9199cb861f5146c4a523657cb&quot;
+ETag: W/&quot;ed2d321f71720edfad1d7e581cc7f7dc&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 8824c106-a101-485f-9208-c1f8fc6dd9d3
-X-Runtime: 1.034688
+X-Request-Id: ac0a5ce3-f82f-4f7b-bb29-62d258b180e6
+X-Runtime: 1.438376
 Vary: Origin
-Content-Length: 1296</pre>
+Content-Length: 1911</pre>
 
 #### Status
 
@@ -54,20 +45,52 @@ Content-Length: 1296</pre>
 
 ~~~
 {
-  "id": "http://example.org/entities/99964ccc-a5c6-4d94-a4bf-8640bf1476f9",
+  "id": "dedf6579-e880-4ad7-b5f5-0a279c3dcaae",
   "type": "place",
-  "label": "<i>Croydon</i>",
-  "short_display": "<section><p><strong><i>Croydon</i></strong></p>\n<p>Trust <i>fund pbrb vice</i> 90s.</p></section>",
-  "full_display": "<table>\n<tr>\n<th scope=\"row\">Name</th>\n<td><i>Croydon</i></td>\n</tr>\n<tr>\n<th scope=\"row\">Description</th>\n<td>Trust <i>fund pbrb vice</i> 90s.</td>\n</tr>\n<tr>\n<th scope=\"row\">See Also</th>\n<td><ul><li><a href=\"http://hahn-shanahan.org/virgilio\" target=\"_blank\" rel=\"noopener\">http://hahn-shanahan.org/virgilio<span>(opens in new tab)</span></a></li></ul></td>\n</tr>\n</table>",
-  "description": "Trust <i>fund pbrb vice</i> 90s.",
+  "label": "<i>Pleiades system</i>",
+  "short_display": "<section><p><strong><i>Pleiades system</i></strong></p>\n<p>Synth hashtag flannel leggings thundercats fingerstache glutenfree.</p></section>",
+  "full_display": "<table>\n<tr>\n<th scope=\"row\">Name</th>\n<td><i>Pleiades system</i></td>\n</tr>\n<tr>\n<th scope=\"row\">Description</th>\n<td>Synth hashtag flannel leggings thundercats fingerstache glutenfree.</td>\n</tr>\n<tr>\n<th scope=\"row\">See Also</th>\n<td><ul><li><a href=\"http://upton-pouros.name/ronna.cummerata\" target=\"_blank\" rel=\"noopener\">http://upton-pouros.name/ronna.cummerata<span>(opens in new tab)</span></a></li></ul></td>\n</tr>\n</table>",
+  "description": "Synth hashtag flannel leggings thundercats fingerstache glutenfree.",
   "e_type": "place",
-  "legacy_pk": 31597,
+  "legacy_pk": 95755,
   "alternate_spellings": [
-    "Farrah Moan"
+    "Tatianna"
   ],
   "links": [
-    "http://hahn-shanahan.org/virgilio"
-  ]
+    "http://upton-pouros.name/ronna.cummerata"
+  ],
+  "letters": {
+    "mentioned_in": [
+      {
+        "id": "d7ad3cab-a8b8-4409-966d-5cdd322a679f",
+        "label": "26 March 1965 - Zboncak, Hoyt"
+      }
+    ],
+    "recived": [
+      {
+        "id": "177d4dd7-a780-4316-92a7-3042523e2b5b",
+        "label": "10 July 1987 - Collins, Ara, <i>Pleiades system</i>"
+      }
+    ],
+    "sent": [
+      {
+        "id": "849eb92c-f8c1-429c-a1e0-73c484ed0eb7",
+        "label": "14 October 1986 - Carroll, Alfonzo"
+      }
+    ],
+    "sent_to": [
+      {
+        "id": "977faaef-9b4a-46b9-ac4c-a53b9a0b4028",
+        "label": "23 October 1955 - Smitham, Eilene"
+      }
+    ],
+    "sent_from": [
+      {
+        "id": "43b195f0-a3bc-4742-932b-cda118dae198",
+        "label": "17 June 1978 - Zieme, Steven"
+      }
+    ]
+  }
 }
 ~~~
 
