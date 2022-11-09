@@ -31,14 +31,14 @@ end
 #   @entity.letters.sent
 # when 'origin'
 #   @entity.letters.sent_from
-# when 'recivied'
+# when 'received'
 #   @entity.letters_received
 # end
 
 json.letters do
   url_base = "#{request.protocol}#{request.host_with_port}/entities/#{@entity.id}/letters?relation="
   json.mention "#{url_base}mention" if @entity.letters.present?
-  json.recived "#{url_base}recived" if @entity.letters_received.present?
+  json.received "#{url_base}received" if @entity.letters_received.present?
   json.sent "#{url_base}sent" if @entity.letters_sent.present?
   json.destination "#{url_base}destination" if @entity.letters_sent_to.present?
   json.origin "#{url_base}origin" if @entity.letters_sent_from.present?

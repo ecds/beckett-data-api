@@ -105,7 +105,7 @@ resource 'Entities' do
   end
 
   route 'entities/:id/letters', 'GET /entities/:id/letters?relation=' do
-    %w[mention destination sent origin recivied].each do |relation|
+    %w[mention destination sent origin received].each do |relation|
       parameter :relation, 'relation'
 
       get "Letters - #{relation}" do

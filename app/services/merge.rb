@@ -61,7 +61,7 @@ class Merge
     merge_sent_to if @discard.letters_sent_to.present?
     merge_sent if @discard.letters_sent.present?
     merge_sent_from if @discard.letters_sent_from.present?
-    merge_recived if @discard.letters_received.present?
+    merge_received if @discard.letters_received.present?
     @discard.destroy
   end
 
@@ -95,7 +95,7 @@ class Merge
     @keep.letters_sent_from << @discard.letters_sent_from
   end
 
-  def merge_recived
+  def merge_received
     @keep.letters_received << @discard.letters_received
   end
 

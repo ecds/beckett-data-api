@@ -123,7 +123,7 @@ class EntitiesController < ApplicationController
       @entity.letters_sent.published.map(&:date).compact.minmax
     when 'origin'
       @entity.letters_sent_from.published.map(&:date).compact.minmax
-    when 'recivied'
+    when 'received'
       @entity.letters_received.published.map(&:date).compact.minmax
     end
   end
@@ -138,7 +138,7 @@ class EntitiesController < ApplicationController
       @entity.letters_sent.published.between(@start_date, @end_date).page(@page).per(@per_page)
     when 'origin'
       @entity.letters_sent_from.published.between(@start_date, @end_date).page(@page).per(@per_page)
-    when 'recivied'
+    when 'received'
       @entity.letters_received.published.between(@start_date, @end_date).page(@page).per(@per_page)
     end
   end
