@@ -41,7 +41,7 @@ class LoadBigSamJob < ApplicationJob
         physical_notes: row[:physdes_notes],
         repository_info: row[:repository_information],
         postcard_image: row[:postcard_image],
-        leaves: row[:leves].to_i,
+        leaves: row[:leaves].to_i,
         sides: row[:sides],
         postmark: row[:postmark_actual],
         notes: row[:dditional],
