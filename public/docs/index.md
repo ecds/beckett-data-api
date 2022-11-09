@@ -21,6 +21,13 @@
 * [PUT /entities/:id](entities/put_entitiesid.md)
 * [DELETE /entities/:id](entities/delete_entitiesid.md)
 * [GET /entities/autocomplete?search=:fragment](entities/get_entitiesautocompletesearch=fragment.md)
+* [GET /entities/:id/letters?relation=mention](entities/get_entitiesidlettersrelation=mention.md)
+* [GET /entities/:id/letters?relation=desination](entities/get_entitiesidlettersrelation=desination.md)
+* [GET /entities/:id/letters?relation=sent](entities/get_entitiesidlettersrelation=sent.md)
+* [GET /entities/:id/letters?relation=origin](entities/get_entitiesidlettersrelation=origin.md)
+* [GET /entities/:id/letters?relation=recivied](entities/get_entitiesidlettersrelation=recivied.md)
+* [GET /entities/:id/letters?relation=:relation&amp;page=:page&amp;per_page=:per_page](entities/get_entitiesidlettersrelation=relation&amp;page=page&amp;per_page=per_page.md)
+* [GET /entities/:id/letters?relation=:relation&amp;start_date=:start_date&amp;end_date=:end_date](entities/get_entitiesidlettersrelation=relation&amp;start_date=start_date&amp;end_date=end_date.md)
 
 ## Letters
 

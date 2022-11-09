@@ -17,7 +17,7 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /entities/dedf6579-e880-4ad7-b5f5-0a279c3dcaae</pre>
+<pre>GET /entities/5b5555ec-ebd4-47e7-aa89-03bebb706309</pre>
 
 ### Response
 
@@ -30,12 +30,12 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;ed2d321f71720edfad1d7e581cc7f7dc&quot;
+ETag: W/&quot;86de98ad78ffc78aca04ec1c1e637d5b&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: ac0a5ce3-f82f-4f7b-bb29-62d258b180e6
-X-Runtime: 1.438376
+X-Request-Id: dfd033d7-bba5-4c76-9f15-2ca427b49ddc
+X-Runtime: 1.565674
 Vary: Origin
-Content-Length: 1911</pre>
+Content-Length: 1839</pre>
 
 #### Status
 
@@ -45,51 +45,26 @@ Content-Length: 1911</pre>
 
 ~~~
 {
-  "id": "dedf6579-e880-4ad7-b5f5-0a279c3dcaae",
+  "id": "5b5555ec-ebd4-47e7-aa89-03bebb706309",
   "type": "place",
-  "label": "<i>Pleiades system</i>",
-  "short_display": "<section><p><strong><i>Pleiades system</i></strong></p>\n<p>Synth hashtag flannel leggings thundercats fingerstache glutenfree.</p></section>",
-  "full_display": "<table>\n<tr>\n<th scope=\"row\">Name</th>\n<td><i>Pleiades system</i></td>\n</tr>\n<tr>\n<th scope=\"row\">Description</th>\n<td>Synth hashtag flannel leggings thundercats fingerstache glutenfree.</td>\n</tr>\n<tr>\n<th scope=\"row\">See Also</th>\n<td><ul><li><a href=\"http://upton-pouros.name/ronna.cummerata\" target=\"_blank\" rel=\"noopener\">http://upton-pouros.name/ronna.cummerata<span>(opens in new tab)</span></a></li></ul></td>\n</tr>\n</table>",
-  "description": "Synth hashtag flannel leggings thundercats fingerstache glutenfree.",
+  "label": "<i>Sector XXXZ5QZX</i>",
+  "short_display": "<section><p><strong><i>Sector XXXZ5QZX</i></strong></p>\n<p>Mumblecore mlkshk chicharrones street skateboard small batch echo.</p></section>",
+  "full_display": "<table>\n<tr>\n<th scope=\"row\">Name</th>\n<td><i>Sector XXXZ5QZX</i></td>\n</tr>\n<tr>\n<th scope=\"row\">Description</th>\n<td>Mumblecore mlkshk chicharrones street skateboard small batch echo.</td>\n</tr>\n<tr>\n<th scope=\"row\">See Also</th>\n<td><ul><li><a href=\"http://metz.io/leda_muller\" target=\"_blank\" rel=\"noopener\">http://metz.io/leda_muller<span>(opens in new tab)</span></a></li></ul></td>\n</tr>\n</table>",
+  "description": "Mumblecore mlkshk chicharrones street skateboard small batch echo.",
   "e_type": "place",
-  "legacy_pk": 95755,
+  "legacy_pk": 94877,
   "alternate_spellings": [
-    "Tatianna"
+    "Brook Lynn Hytes"
   ],
   "links": [
-    "http://upton-pouros.name/ronna.cummerata"
+    "http://metz.io/leda_muller"
   ],
   "letters": {
-    "mentioned_in": [
-      {
-        "id": "d7ad3cab-a8b8-4409-966d-5cdd322a679f",
-        "label": "26 March 1965 - Zboncak, Hoyt"
-      }
-    ],
-    "recived": [
-      {
-        "id": "177d4dd7-a780-4316-92a7-3042523e2b5b",
-        "label": "10 July 1987 - Collins, Ara, <i>Pleiades system</i>"
-      }
-    ],
-    "sent": [
-      {
-        "id": "849eb92c-f8c1-429c-a1e0-73c484ed0eb7",
-        "label": "14 October 1986 - Carroll, Alfonzo"
-      }
-    ],
-    "sent_to": [
-      {
-        "id": "977faaef-9b4a-46b9-ac4c-a53b9a0b4028",
-        "label": "23 October 1955 - Smitham, Eilene"
-      }
-    ],
-    "sent_from": [
-      {
-        "id": "43b195f0-a3bc-4742-932b-cda118dae198",
-        "label": "17 June 1978 - Zieme, Steven"
-      }
-    ]
+    "mention": "http://example.org/entities/5b5555ec-ebd4-47e7-aa89-03bebb706309/letters?relation=mention",
+    "recived": "http://example.org/entities/5b5555ec-ebd4-47e7-aa89-03bebb706309/letters?relation=recived",
+    "sent": "http://example.org/entities/5b5555ec-ebd4-47e7-aa89-03bebb706309/letters?relation=sent",
+    "desination": "http://example.org/entities/5b5555ec-ebd4-47e7-aa89-03bebb706309/letters?relation=destination",
+    "origin": "http://example.org/entities/5b5555ec-ebd4-47e7-aa89-03bebb706309/letters?relation=origin"
   }
 }
 ~~~

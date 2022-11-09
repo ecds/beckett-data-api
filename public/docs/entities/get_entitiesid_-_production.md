@@ -17,7 +17,7 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /entities/0c62e0d9-b608-46b3-b8b0-e9f33ab740c8</pre>
+<pre>GET /entities/d6e66b42-1ba6-488a-9ceb-5afd85763cd3</pre>
 
 ### Response
 
@@ -30,12 +30,12 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;e65f616199cff1afb700815757ef7cbe&quot;
+ETag: W/&quot;a746a7b5ffbc015dc7c961e103d52e6a&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: fa2bdd6f-2a13-407c-adde-7d3a5a641992
-X-Runtime: 1.535897
+X-Request-Id: e814bbdf-5f27-401c-9387-0f140322c113
+X-Runtime: 1.641579
 Vary: Origin
-Content-Length: 4030</pre>
+Content-Length: 4238</pre>
 
 #### Status
 
@@ -45,64 +45,39 @@ Content-Length: 4030</pre>
 
 ~~~
 {
-  "id": "0c62e0d9-b608-46b3-b8b0-e9f33ab740c8",
+  "id": "d6e66b42-1ba6-488a-9ceb-5afd85763cd3",
   "type": "production",
-  "label": "Intouchables",
-  "short_display": "<section><p><strong>Title</strong> Intouchables</p>\n<p><strong>Proposal/Response</strong> I think you ought to know I'm feeling very depressed. / there’s an infinite number of monkeys outside who want to talk to us about this script for Hamlet they’ve worked out.</p>\n<p><strong>Director</strong> Bunny Lebowski <strong>Theatre, City</strong> Billion Year Bunker, Gloverville</p>\n<p><strong>Date(s)</strong> 1970-09-09.</p></section>",
-  "full_display": "<table>\n<tr>\n<th scope=\"row\">Title</th>\n<td colspan=\"5\">Intouchables</td>\n</tr>\n<tr>\n<th scope=\"row\">Proposal</th>\n<td>I think you ought to know I'm feeling very depressed.</td>\n<th scope=\"row\">Response</th>\n<td>there’s an infinite number of monkeys outside who want to talk to us about this script for Hamlet they’ve worked out.</td>\n<th scope=\"row\">Reason</th>\n<td>Is that your boyfriend? Ha, I don't care.</td>\n</tr>\n<tr>\n<th scope=\"row\">Date(s)</th>\n<td colspan=\"5\">1970-09-09.</td>\n</tr>\n<tr>\n<th scope=\"row\">Director</th>\n<td colspan=\"5\">Bunny Lebowski</td>\n</tr>\n<tr>\n<th scope=\"row\">Cast</th>\n<td colspan=\"5\">Bowerick Wowbagger and The Big Lebowski</td>\n</tr>\n<tr>\n<th scope=\"row\">Personnel</th>\n<td colspan=\"5\">Charles Darwin</td>\n</tr>\n<tr>\n<th scope=\"row\">Theatre, City</th>\n<td colspan=\"5\">Billion Year Bunker, Gloverville</td>\n</tr>\n<tr>\n<th scope=\"row\">Notes</th>\n<td colspan=\"5\">Portland pinterest sriracha schlitz ugh ennui jean shorts.</td>\n</tr>\n<tr>\n<th scope=\"row\">See Also</th>\n<td colspan=\"5\"><ul><li><a href=\"http://botsford-hermann.name/wes_dicki\" target=\"_blank\" rel=\"noopener\">http://botsford-hermann.name/wes_dicki<span>(opens in new tab)</span></a></li></ul></td>\n</tr>\n</table>",
-  "description": "Brunch <i>90s narwhal fashion axe vice</i> keffiyeh.",
+  "label": "<i>Dog Day Afternoon</i>",
+  "short_display": "<section><p><strong>Title</strong> <i>Dog Day Afternoon</i></p>\n<p><strong>Proposal/Response</strong> I think you ought to know I'm feeling very depressed. / if you’ve never been through a matter transference beam before you’ve probably lost some salt and protein. The beer you had should have cushioned your system a bit.</p>\n<p><strong>Director</strong> The Big Lebowski <strong>Theatre, City</strong> Krikkit One, Durganland</p>\n<p><strong>Date(s)</strong> 1931-06-02.</p></section>",
+  "full_display": "<table>\n<tr>\n<th scope=\"row\">Title</th>\n<td colspan=\"5\"><i>Dog Day Afternoon</i></td>\n</tr>\n<tr>\n<th scope=\"row\">Proposal</th>\n<td>I think you ought to know I'm feeling very depressed.</td>\n<th scope=\"row\">Response</th>\n<td>if you’ve never been through a matter transference beam before you’ve probably lost some salt and protein. The beer you had should have cushioned your system a bit.</td>\n<th scope=\"row\">Reason</th>\n<td>I'm hot and I don't care who knows it, I got a job to do.</td>\n</tr>\n<tr>\n<th scope=\"row\">Date(s)</th>\n<td colspan=\"5\">1931-06-02.</td>\n</tr>\n<tr>\n<th scope=\"row\">Director</th>\n<td colspan=\"5\">The Big Lebowski</td>\n</tr>\n<tr>\n<th scope=\"row\">Cast</th>\n<td colspan=\"5\">Trillian and Bunny Lebowski</td>\n</tr>\n<tr>\n<th scope=\"row\">Personnel</th>\n<td colspan=\"5\">Hotblack Desiato's bodyguard</td>\n</tr>\n<tr>\n<th scope=\"row\">Theatre, City</th>\n<td colspan=\"5\">Krikkit One, Durganland</td>\n</tr>\n<tr>\n<th scope=\"row\">Notes</th>\n<td colspan=\"5\">Seitan goth iphone quinoa readymade pork belly.</td>\n</tr>\n<tr>\n<th scope=\"row\">See Also</th>\n<td colspan=\"5\"><ul><li><a href=\"http://conroy.biz/clarence.runolfsson\" target=\"_blank\" rel=\"noopener\">http://conroy.biz/clarence.runolfsson<span>(opens in new tab)</span></a></li></ul></td>\n</tr>\n</table>",
+  "description": "Yolo <i>tryhard biodiesel synth muggle</i> magic.",
   "e_type": "production",
-  "legacy_pk": 42364,
+  "legacy_pk": 35282,
   "alternate_names": null,
   "cast": [
-    "Bowerick Wowbagger",
-    "The Big Lebowski"
+    "Trillian",
+    "Bunny Lebowski"
   ],
-  "city": "Gloverville",
-  "date_str": "1970-09-09.",
-  "director": "Bunny Lebowski",
+  "city": "Durganland",
+  "date_str": "1931-06-02.",
+  "director": "The Big Lebowski",
   "links": [
-    "http://botsford-hermann.name/wes_dicki"
+    "http://conroy.biz/clarence.runolfsson"
   ],
-  "notes": "Portland pinterest sriracha schlitz ugh ennui jean shorts.",
+  "notes": "Seitan goth iphone quinoa readymade pork belly.",
   "personnel": [
-    "Charles Darwin"
+    "Hotblack Desiato's bodyguard"
   ],
   "proposal": "I think you ought to know I'm feeling very depressed.",
-  "response": "there’s an infinite number of monkeys outside who want to talk to us about this script for Hamlet they’ve worked out.",
-  "reason": "Is that your boyfriend? Ha, I don't care.",
-  "theater": "Billion Year Bunker",
+  "response": "if you’ve never been through a matter transference beam before you’ve probably lost some salt and protein. The beer you had should have cushioned your system a bit.",
+  "reason": "I'm hot and I don't care who knows it, I got a job to do.",
+  "theater": "Krikkit One",
   "letters": {
-    "mentioned_in": [
-      {
-        "id": "0a325f95-6a27-4c11-9e59-6cb6bb0b89f2",
-        "label": "27 March 1978 - Wuckert, Emmitt"
-      }
-    ],
-    "recived": [
-      {
-        "id": "6575e360-7c3e-4c68-bdb8-d327fea22d40",
-        "label": "30 June 1954 - Intouchables, Bechtelar, Molly"
-      }
-    ],
-    "sent": [
-      {
-        "id": "1a1a3cf1-fdec-41dc-852b-a71daad0bb79",
-        "label": "23 September 1953 - Pagac, Francina"
-      }
-    ],
-    "sent_to": [
-      {
-        "id": "bceb5460-1bd6-4d6c-a6c0-17bc9cd113f0",
-        "label": "20 January 1977 - Huel, Terrence"
-      }
-    ],
-    "sent_from": [
-      {
-        "id": "55fac12f-d48e-47c7-924a-688ae1961f03",
-        "label": "01 August 1982 - Windler, Maynard"
-      }
-    ]
+    "mention": "http://example.org/entities/d6e66b42-1ba6-488a-9ceb-5afd85763cd3/letters?relation=mention",
+    "recived": "http://example.org/entities/d6e66b42-1ba6-488a-9ceb-5afd85763cd3/letters?relation=recived",
+    "sent": "http://example.org/entities/d6e66b42-1ba6-488a-9ceb-5afd85763cd3/letters?relation=sent",
+    "desination": "http://example.org/entities/d6e66b42-1ba6-488a-9ceb-5afd85763cd3/letters?relation=destination",
+    "origin": "http://example.org/entities/d6e66b42-1ba6-488a-9ceb-5afd85763cd3/letters?relation=origin"
   }
 }
 ~~~

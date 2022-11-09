@@ -17,7 +17,7 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /entities/0b5f1100-4f0f-448a-92fc-08fa14fe70ae</pre>
+<pre>GET /entities/59833fb4-d94f-4160-b75b-674b04e0e338</pre>
 
 ### Response
 
@@ -30,12 +30,12 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;be29bfee832811183a730361ff4b6b3d&quot;
+ETag: W/&quot;d87edfd6e94a13e92d41228c09802432&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: e8a120d4-7dcb-4064-a58c-0b1a780f57f1
-X-Runtime: 1.575554
+X-Request-Id: 15eb0fad-3b5f-46b4-bbf9-9e9cb9741e1b
+X-Runtime: 1.552593
 Vary: Origin
-Content-Length: 2102</pre>
+Content-Length: 2282</pre>
 
 #### Status
 
@@ -45,51 +45,26 @@ Content-Length: 2102</pre>
 
 ~~~
 {
-  "id": "0b5f1100-4f0f-448a-92fc-08fa14fe70ae",
+  "id": "59833fb4-d94f-4160-b75b-674b04e0e338",
   "type": "reading",
-  "label": "<i>Fair Stood the Wind for France</i>",
-  "short_display": "<section><p><strong>Author</strong> Brandon Kassulke</p>\n<p><strong>Title</strong> <i>Fair Stood the Wind for France</i></p>\n<p><strong>Publication</strong> Harvard University Press.</p></section>",
-  "full_display": "<table>\n<tr>\n<th scope=\"row\">Author</th>\n<td>Brandon Kassulke</td>\n</tr>\n<tr>\n<th scope=\"row\">Title</th>\n<td><i>Fair Stood the Wind for France</i></td>\n</tr>\n<tr>\n<th scope=\"row\">Publication</th>\n<td>Harvard University Press.</td>\n</tr>\n<tr>\n<th scope=\"row\">Notes</th>\n<td>There's only one life-form as intelligent as me within thirty parsecs of here and that's me.</td>\n</tr>\n</table>",
-  "description": "Banjo letterpress leggings bespoke.",
+  "label": "This Side of Paradise",
+  "short_display": "<section><p><strong>Author</strong> Miss Pasquale Miller</p>\n<p><strong>Title</strong> This Side of Paradise</p>\n<p><strong>Publication</strong> Leaf Books.</p></section>",
+  "full_display": "<table>\n<tr>\n<th scope=\"row\">Author</th>\n<td>Miss Pasquale Miller</td>\n</tr>\n<tr>\n<th scope=\"row\">Title</th>\n<td>This Side of Paradise</td>\n</tr>\n<tr>\n<th scope=\"row\">Publication</th>\n<td>Leaf Books.</td>\n</tr>\n<tr>\n<th scope=\"row\">Notes</th>\n<td>You think you've got problems? What are you supposed to do if you are a manically depressed robot? No, don't try to answer that. I'm fifty thousand times more intelligent than you and even I don't know the answer. It gives me a headache just trying to think down to your level.</td>\n</tr>\n</table>",
+  "description": "Keytar mumblecore sriracha ugh selfies.",
   "e_type": "reading",
-  "legacy_pk": 21668,
+  "legacy_pk": 49570,
   "authors": [
-    "Brandon Kassulke"
+    "Miss Pasquale Miller"
   ],
-  "notes": "There's only one life-form as intelligent as me within thirty parsecs of here and that's me.",
-  "publication_information": "Harvard University Press.",
-  "publication_format": "gastropub",
+  "notes": "You think you've got problems? What are you supposed to do if you are a manically depressed robot? No, don't try to answer that. I'm fifty thousand times more intelligent than you and even I don't know the answer. It gives me a headache just trying to think down to your level.",
+  "publication_information": "Leaf Books.",
+  "publication_format": "sartorial",
   "letters": {
-    "mentioned_in": [
-      {
-        "id": "2aecfe73-e01f-4b8b-9227-89c40bbe1abc",
-        "label": "24 June 1975 - Connelly, Chana"
-      }
-    ],
-    "recived": [
-      {
-        "id": "7b2bfec0-ed1c-468b-bbda-750acca36f96",
-        "label": "03 March 1959 - <i>Fair Stood the Wind for France</i>, Wuckert, Noe"
-      }
-    ],
-    "sent": [
-      {
-        "id": "b4bdd58d-21e2-4c26-9bde-8af97ef6f965",
-        "label": "31 January 1961 - Monahan, Dona"
-      }
-    ],
-    "sent_to": [
-      {
-        "id": "d2dc19e6-ce31-47c1-9a6c-5fbb460b5f6a",
-        "label": "18 July 1964 - Rogahn, Cedrick"
-      }
-    ],
-    "sent_from": [
-      {
-        "id": "44f70e5e-5659-4b50-9e62-e0404239fc41",
-        "label": "26 December 1971 - Reynolds, Broderick"
-      }
-    ]
+    "mention": "http://example.org/entities/59833fb4-d94f-4160-b75b-674b04e0e338/letters?relation=mention",
+    "recived": "http://example.org/entities/59833fb4-d94f-4160-b75b-674b04e0e338/letters?relation=recived",
+    "sent": "http://example.org/entities/59833fb4-d94f-4160-b75b-674b04e0e338/letters?relation=sent",
+    "desination": "http://example.org/entities/59833fb4-d94f-4160-b75b-674b04e0e338/letters?relation=destination",
+    "origin": "http://example.org/entities/59833fb4-d94f-4160-b75b-674b04e0e338/letters?relation=origin"
   }
 }
 ~~~

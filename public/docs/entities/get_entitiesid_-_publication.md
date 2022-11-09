@@ -17,7 +17,7 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /entities/7768d45e-0afa-4d16-8433-d98f362855b1</pre>
+<pre>GET /entities/9c079a80-a08c-4a49-8888-9342f1355353</pre>
 
 ### Response
 
@@ -30,12 +30,12 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;ab496a539a1cb983a9b2c26e6f6975c9&quot;
+ETag: W/&quot;b86ef4c966000e1f76502f900e2ff191&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 82ff8663-9b27-4625-b2aa-8e82fc2b340c
-X-Runtime: 1.518446
+X-Request-Id: ddb36932-988f-442f-a641-c586440de593
+X-Runtime: 1.482554
 Vary: Origin
-Content-Length: 2246</pre>
+Content-Length: 2766</pre>
 
 #### Status
 
@@ -45,53 +45,28 @@ Content-Length: 2246</pre>
 
 ~~~
 {
-  "id": "7768d45e-0afa-4d16-8433-d98f362855b1",
+  "id": "9c079a80-a08c-4a49-8888-9342f1355353",
   "type": "publication",
-  "label": "Eerdmans Publishing",
-  "short_display": "<section><p><strong>Author</strong> Brandt</p>\n<p><strong>Title</strong> Eerdmans Publishing</p>\n<p><strong>Translator</strong> Marvin</p>\n<p><strong>Publication</strong> Neutra fanny pack chia chambray try-hard williamsburg flexitarian ennui.</p></section>",
-  "full_display": "<table>\n<tr>\n<th scope=\"row\">Author</th>\n<td>Brandt</td>\n</tr>\n<tr>\n<th scope=\"row\">Title</th>\n<td>Eerdmans Publishing</td>\n</tr>\n<tr>\n<th scope=\"row\">Translator</th>\n<td>Marvin</td>\n</tr>\n<tr>\n<th scope=\"row\">Publication</th>\n<td>Neutra fanny pack chia chambray try-hard williamsburg flexitarian ennui.</td>\n</tr>\n<tr>\n<th scope=\"row\">Notes</th>\n<td>I think you ought to know I'm feeling very depressed.</td>\n</tr>\n</table>",
-  "description": "Mixtape <i>semiotics art party vegan twee truffaut 1 irony deep</i> v.",
+  "label": "<i>J. M. Dent</i>",
+  "short_display": "<section><p><strong>Author</strong> The Big Lebowski</p>\n<p><strong>Title</strong> <i>J. M. Dent</i></p>\n<p><strong>Translator</strong> Prostetnic Vogon Kwaltz</p>\n<p><strong>Publication</strong> Park master jean shorts scenester bicycle rights biodiesel.</p></section>",
+  "full_display": "<table>\n<tr>\n<th scope=\"row\">Author</th>\n<td>The Big Lebowski</td>\n</tr>\n<tr>\n<th scope=\"row\">Title</th>\n<td><i>J. M. Dent</i></td>\n</tr>\n<tr>\n<th scope=\"row\">Translator</th>\n<td>Prostetnic Vogon Kwaltz</td>\n</tr>\n<tr>\n<th scope=\"row\">Publication</th>\n<td>Park master jean shorts scenester bicycle rights biodiesel.</td>\n</tr>\n<tr>\n<th scope=\"row\">Notes</th>\n<td>You think you've got problems? What are you supposed to do if you are a manically depressed robot? No, don't try to answer that. I'm fifty thousand times more intelligent than you and even I don't know the answer. It gives me a headache just trying to think down to your level.</td>\n</tr>\n</table>",
+  "description": "Chambray <i>organic 3 wolf moon vegan biodiesel</i> farmtotable.",
   "e_type": "publication",
-  "legacy_pk": 81660,
+  "legacy_pk": 55902,
   "authors": [
-    "Brandt"
+    "The Big Lebowski"
   ],
-  "notes": "I think you ought to know I'm feeling very depressed.",
-  "publication_information": "Neutra fanny pack chia chambray try-hard williamsburg flexitarian ennui.",
+  "notes": "You think you've got problems? What are you supposed to do if you are a manically depressed robot? No, don't try to answer that. I'm fifty thousand times more intelligent than you and even I don't know the answer. It gives me a headache just trying to think down to your level.",
+  "publication_information": "Park master jean shorts scenester bicycle rights biodiesel.",
   "translators": [
-    "Marvin"
+    "Prostetnic Vogon Kwaltz"
   ],
   "letters": {
-    "mentioned_in": [
-      {
-        "id": "06183e22-8f04-4adb-aec3-c586b955c850",
-        "label": "28 June 1952 - Sanford, Wilford"
-      }
-    ],
-    "recived": [
-      {
-        "id": "d9ca0607-cb47-4f6e-a8e1-dc291c257c8a",
-        "label": "15 April 1950 - Eerdmans Publishing, Ondricka, Raleigh"
-      }
-    ],
-    "sent": [
-      {
-        "id": "cffd7ec9-2f9d-4962-9182-dcd8afcdfbfe",
-        "label": "23 November 1980 - Grimes, Su"
-      }
-    ],
-    "sent_to": [
-      {
-        "id": "f163b9e9-5811-47a6-be5b-03a02915dc56",
-        "label": "26 January 1987 - Legros, Carmen"
-      }
-    ],
-    "sent_from": [
-      {
-        "id": "2685a416-a393-499c-b736-a67fca3071d8",
-        "label": "09 January 1966 - Leffler, Emery"
-      }
-    ]
+    "mention": "http://example.org/entities/9c079a80-a08c-4a49-8888-9342f1355353/letters?relation=mention",
+    "recived": "http://example.org/entities/9c079a80-a08c-4a49-8888-9342f1355353/letters?relation=recived",
+    "sent": "http://example.org/entities/9c079a80-a08c-4a49-8888-9342f1355353/letters?relation=sent",
+    "desination": "http://example.org/entities/9c079a80-a08c-4a49-8888-9342f1355353/letters?relation=destination",
+    "origin": "http://example.org/entities/9c079a80-a08c-4a49-8888-9342f1355353/letters?relation=origin"
   }
 }
 ~~~

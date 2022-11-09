@@ -111,12 +111,8 @@ table th, table td {
         <p class="explanation"></p>
 
       <div class="article">
-        <h2>GET /entities/autocomplete?search=:fragment</h2>
-        <h3>GET /entities/autocomplete</h3>
-          <p class="explanation">
-            Returns a list of no more than ten entity lables that start with the search parameter.
-                    a type parameter can also be passed to limit the results by types. Results might include HTML.
-          </p>
+        <h2>GET /entities/:id/letters?relation=sent</h2>
+        <h3>GET entities/:id/letters</h3>
 
           <h3>Parameters</h3>
           <table class="parameters table table-striped table-bordered table-condensed">
@@ -130,24 +126,57 @@ table th, table td {
             <tbody>
               <tr>
                 <td>
-                    <span class="name">search</span>
+                    <span class="name">relation</span>
                 </td>
                 <td>
-                  <span class="description">Text to search.</span>
+                  <span class="description">relation</span>
                 </td>
                 <td>
-                  <span class="default">*</span>
+                  <span class="default"></span>
                 </td>
               </tr>
               <tr>
                 <td>
-                    <span class="name">type</span>
+                    <span class="name">relation</span>
                 </td>
                 <td>
-                  <span class="description">Limit responses by single type. Options are attendance, music, organization, person, place, production, public_event, publication, reading, translating, work_of_art, writing, generic.</span>
+                  <span class="description">relation</span>
                 </td>
                 <td>
-                  <span class="default">null</span>
+                  <span class="default"></span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">relation</span>
+                </td>
+                <td>
+                  <span class="description">relation</span>
+                </td>
+                <td>
+                  <span class="default"></span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">relation</span>
+                </td>
+                <td>
+                  <span class="description">relation</span>
+                </td>
+                <td>
+                  <span class="default"></span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">relation</span>
+                </td>
+                <td>
+                  <span class="description">relation</span>
+                </td>
+                <td>
+                  <span class="default"></span>
                 </td>
               </tr>
             </tbody>
@@ -164,10 +193,10 @@ Host: example.org
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET /entities/autocomplete?search=do</pre>
+          <pre class="request route highlight">GET entities/22835e32-aec4-4f16-990c-33359c1d1442/letters?relation=sent</pre>
 
             <h4>Query Parameters</h4>
-            <pre class="request query_parameters highlight">search: do</pre>
+            <pre class="request query_parameters highlight">relation: sent</pre>
 
 
 
@@ -180,18 +209,50 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;4f53cda18c2baa0c0354bb5f9a3ecbe5&quot;
+ETag: W/&quot;bf368044bb30425e4fef68e1f9a8b214&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 000fb2f4-c539-4457-9a89-d04c4a68ff24
-X-Runtime: 4.060463
+X-Request-Id: da001a8a-96df-4d37-8cf2-33d1327d42d2
+X-Runtime: 2.012829
 Vary: Origin
-Content-Length: 2</pre>
+Content-Length: 802</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
-              <pre class="response body">[
-
-]</pre>
+              <pre class="response body">{
+  &quot;min_date&quot;: &quot;1956-02-03&quot;,
+  &quot;max_date&quot;: &quot;1975-04-26&quot;,
+  &quot;total_pages&quot;: 1,
+  &quot;letters&quot;: [
+    {
+      &quot;id&quot;: &quot;7298d33a-24bb-45f6-a457-a219da5ccead&quot;,
+      &quot;label&quot;: &quot;03 February 1956 - Stehr, Cathryn&quot;,
+      &quot;recipient&quot;: &quot;Stehr, Cathryn&quot;,
+      &quot;repository&quot;: &quot;Western Turner Academy&quot;,
+      &quot;date&quot;: &quot;03 February 1956&quot;
+    },
+    {
+      &quot;id&quot;: &quot;0bd2af71-0c06-4d1f-a96f-c751d2d798b0&quot;,
+      &quot;label&quot;: &quot;24 August 1964 - Schmitt, Forest&quot;,
+      &quot;recipient&quot;: &quot;Schmitt, Forest&quot;,
+      &quot;repository&quot;: &quot;The Schiller College&quot;,
+      &quot;date&quot;: &quot;24 August 1964&quot;
+    },
+    {
+      &quot;id&quot;: &quot;9d8f5733-f737-4465-ac80-f50447dd4724&quot;,
+      &quot;label&quot;: &quot;24 June 1967 - Roberts, Wesley&quot;,
+      &quot;recipient&quot;: &quot;Roberts, Wesley&quot;,
+      &quot;repository&quot;: &quot;Western Boehm Institute&quot;,
+      &quot;date&quot;: &quot;24 June 1967&quot;
+    },
+    {
+      &quot;id&quot;: &quot;40fa9ac6-81ec-4c24-a5f5-40f55209ee0c&quot;,
+      &quot;label&quot;: &quot;26 April 1975 - Ankunding, Georgann&quot;,
+      &quot;recipient&quot;: &quot;Ankunding, Georgann&quot;,
+      &quot;repository&quot;: &quot;Gutkowski University&quot;,
+      &quot;date&quot;: &quot;26 April 1975&quot;
+    }
+  ]
+}</pre>
       </div>
     </div>
   </body>

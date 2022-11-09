@@ -15,7 +15,7 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /letters/68625658-ff6b-4584-8989-540783680da0</pre>
+<pre>GET /letters/f30b7079-5479-408a-850a-f688f9cb8478</pre>
 
 ### Response
 
@@ -28,12 +28,12 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;064de2ffee5c165062cf75e30439324d&quot;
+ETag: W/&quot;7cb0c2170c974e12404b5b81a2a2a7d4&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 7ea46c7c-8c74-4202-961f-6d100a1b281d
-X-Runtime: 0.606681
+X-Request-Id: fd5add51-31ed-408c-96ef-84efd78711c1
+X-Runtime: 0.705265
 Vary: Origin
-Content-Length: 6109</pre>
+Content-Length: 7702</pre>
 
 #### Status
 
@@ -44,61 +44,108 @@ Content-Length: 6109</pre>
 ~~~
 {
   "metadata": {
-    "id": "http://example.org/letters/68625658-ff6b-4584-8989-540783680da0",
-    "date": "1988-02-07T00:00:00.000Z",
-    "label": "07 February 1988 - Hermiston, Bryan",
-    "addressed_from": "922 Herzog Falls, East Tobyberg, NH 59784-8771",
-    "addressed_to": "Apt. 456 65146 Almeta Ranch, West Joannchester, ND 91289",
+    "id": "http://example.org/letters/f30b7079-5479-408a-850a-f688f9cb8478",
+    "date": "1973-11-15T00:00:00.000Z",
+    "label": "15 November 1973 - Hartmann, Doug",
+    "addressed_from": "20755 Shizuko Passage, New Maxborough, UT 44126-1592",
+    "addressed_to": "Suite 279 3825 Dare Garden, West Israelside, ND 42468-9446",
     "envelope": "E",
-    "physical_description": "Autem molestiae rerum. Vel quis sed. Veritatis et fugit.",
-    "postmark": "1972-06-08, Grantton",
-    "recipient": "Hermiston, Bryan",
-    "repository": "Eastern Gutmann Academy",
-    "place_written": "<i>Western Spiral Arm</i>"
+    "physical_description": "Repudiandae beatae amet. Deserunt assumenda qui. Id ratione sed.",
+    "postmark": "1955-02-11, Emmanuelmouth",
+    "recipient": "Hartmann, Doug",
+    "repository": "Northern Kassulke",
+    "place_written": "Cathedral of Chalesm"
   },
   "recipients": [
     {
-      "id": "http://example.org/entities/7573a89b-d5e1-4981-8acf-15cf6d36bab8.json",
+      "id": "http://example.org/entities/bd2f3a1d-887e-4ed5-af3a-71d73b73f60b.json",
       "type": "person",
-      "label": "Hermiston, Bryan",
-      "short_display": "<section><p><strong>Bryan Hermiston, 1925-1984</strong></p>\n<p>Here I am, brain the size of a planet, and they tell me to take you up to the bridge. Call that job satisfaction? 'Cos I don't.</p></section>"
+      "label": "Hartmann, Doug",
+      "short_display": "<section><p><strong>Doug Hartmann, 1903-1997</strong></p>\n<p>Here <i>I am, brain the size of a planet, and they tell me to take you up to the bridge. Call that job satisfaction? 'Cos I</i> don't.</p></section>"
     }
   ],
   "destinations": [
     {
-      "id": "http://example.org/entities/7f4d764d-6a4a-4b2b-bf20-b885aae552bd.json",
+      "id": "http://example.org/entities/9e1420f7-274d-4161-aa7d-98369d729b76.json",
       "type": "place",
-      "label": "<i>Norway</i>",
-      "short_display": "<section><p><strong><i>Norway</i></strong></p>\n<p>Pinterest <i>park scenester shabby chic tote bag</i> ennui.</p></section>"
+      "label": "<i>Croydon</i>",
+      "short_display": "<section><p><strong><i>Croydon</i></strong></p>\n<p>Vice <i>postironic echo kale</i> chips.</p></section>"
     }
   ],
   "mentions": {
-    "organizations": [
+    "attendances": [
       {
-        "id": "http://example.org/entities/8b3dffd6-71a8-426e-8949-a93a173d7b68.json",
-        "type": "organization",
-        "label": "Frogstar World A",
-        "short_display": "<section><p><strong>Frogstar World A</strong></p>\n<p>Here I am, brain the size of a planet, and they tell me to take you up to the bridge. Call that job satisfaction? 'Cos I don't.</p></section>",
+        "id": "http://example.org/entities/4bdc19ce-45ce-4949-9954-bcfa439e0ddc.json",
+        "type": "attendance",
+        "label": "Radio Broadcast, Gentrify art party intelligentsia helvetica.",
+        "short_display": "<section><p><strong>Radio Broadcast</strong>, Gentrify art party intelligentsia helvetica.</p>\n<p><strong>Attended with</strong> Brandt and Rob McKenna</p>\n<p><strong>Place, Date</strong> Kemmerside, 24 March 1962</p>\n<p><strong>Director</strong> Hotblack Desiato</p></section>",
         "tags": [
 
         ]
       },
       {
-        "id": "http://example.org/entities/a345ab06-fb8e-4ddd-b5ff-6eb0f2d5ed8a.json",
-        "type": "organization",
-        "label": "<i>Dangrabad Beta</i>",
-        "short_display": "<section><p><strong><i>Dangrabad Beta</i></strong></p>\n<p>Life? <i>Don't talk to me about</i> life.</p></section>",
+        "id": "http://example.org/entities/67a9e882-31da-46d7-8f25-2bf29bbe4086.json",
+        "type": "attendance",
+        "label": "Rehearsal, Distillery retro meditation waistcoat slowcarb hoodie shoreditch.",
+        "short_display": "<section><p><strong>Rehearsal</strong>, Distillery retro meditation waistcoat slowcarb hoodie shoreditch.</p>\n<p><strong>Attended with</strong> Jackie Treehorn and JinJenz</p>\n<p><strong>Place, Date</strong> North Pandora, 26 January 1931</p>\n<p><strong>Director</strong> Ford Prefect</p></section>",
         "tags": [
 
         ]
       }
     ],
-    "people": [
+    "music": [
       {
-        "id": "http://example.org/entities/ef641560-fe7f-4b32-93e9-47ad5f96f272.json",
-        "type": "person",
-        "label": "Torp, Leif",
-        "short_display": "<section><p><strong>Leif Torp, 1904-1981</strong></p>\n<p>And <i>then of course I've got this terrible pain in all the diodes down my left</i> side.</p></section>",
+        "id": "http://example.org/entities/07e830a6-84a3-4b7d-97cf-565c3a9084a0.json",
+        "type": "music",
+        "label": "<i>When Doves Cry</i>",
+        "short_display": "<section><p><strong>Composer</strong> Wonko the Sane</p>\n<p><strong>Title</strong> <i>When Doves Cry</i></p>\n<p><strong>Description</strong> Readymade <i>tofu yr austin</i> drinking.</p></section>",
+        "tags": [
+
+        ]
+      },
+      {
+        "id": "http://example.org/entities/15ad5871-c253-431b-8fc5-675206191519.json",
+        "type": "music",
+        "label": "<i>Mr. Nelson</i>",
+        "short_display": "<section><p><strong>Composer</strong> Fenchurch</p>\n<p><strong>Title</strong> <i>Mr. Nelson</i></p>\n<p><strong>Description</strong> Letterpress <i>street offal mumblecore art party quinoa pourover</i> occupy.</p></section>",
+        "tags": [
+
+        ]
+      },
+      {
+        "id": "http://example.org/entities/d3fffb8c-c56a-46f6-8ffd-0f1a303b0c56.json",
+        "type": "music",
+        "label": "<i>Head</i>",
+        "short_display": "<section><p><strong>Composer</strong> Eccentrica Gallumbits</p>\n<p><strong>Title</strong> <i>Head</i></p>\n<p><strong>Description</strong> Cleanse <i>heirloom fanny pack plaid austin</i> dreamcatcher.</p></section>",
+        "tags": [
+
+        ]
+      }
+    ],
+    "publications": [
+      {
+        "id": "http://example.org/entities/0cffff3d-2f6e-4168-9937-f40c50300905.json",
+        "type": "publication",
+        "label": "Viking Press",
+        "short_display": "<section><p><strong>Author</strong> Jesus Quintana</p>\n<p><strong>Title</strong> Viking Press</p>\n<p><strong>Translator</strong> Trin Tragula</p>\n<p><strong>Publication</strong> Church-key jean shorts xoxo raw denim chillwave occupy gluten-free direct trade.</p></section>",
+        "tags": [
+
+        ]
+      },
+      {
+        "id": "http://example.org/entities/939448fe-1c34-477c-92a6-613987a07cbc.json",
+        "type": "publication",
+        "label": "<i>Paulist Press</i>",
+        "short_display": "<section><p><strong>Author</strong> Maude Lebowski</p>\n<p><strong>Title</strong> <i>Paulist Press</i></p>\n<p><strong>Translator</strong> Barry Manilow</p>\n<p><strong>Publication</strong> Meditation semiotics +1 lomo kogi sustainable keytar mustache tousled.</p></section>",
+        "tags": [
+
+        ]
+      },
+      {
+        "id": "http://example.org/entities/72825044-25d6-4571-8cd8-e1dd728a7d4e.json",
+        "type": "publication",
+        "label": "Atlantic Books",
+        "short_display": "<section><p><strong>Author</strong> Jesus Quintana</p>\n<p><strong>Title</strong> Atlantic Books</p>\n<p><strong>Translator</strong> Mr. Prosser</p>\n<p><strong>Publication</strong> Carry pabst shabby chic humblebrag semiotics meh echo pinterest keffiyeh.</p></section>",
         "tags": [
 
         ]
@@ -106,48 +153,19 @@ Content-Length: 6109</pre>
     ],
     "work_of_arts": [
       {
-        "id": "http://example.org/entities/195a8438-92e3-4dd6-890c-145583683498.json",
+        "id": "http://example.org/entities/eef8729e-dfb0-42d0-83a2-1b9d20c02c1b.json",
         "type": "work_of_art",
-        "label": "1-800-Newfunk Ad",
-        "short_display": "<section><p><strong>Artist</strong> Magrathean sperm whale</p>\n<p><strong>Title</strong> 1-800-Newfunk Ad</p>\n<p><strong>Description</strong> Bushwick <i>plaid lumbersexual seitan scenester beard actually listicle</i> kinfolk.</p>\n<p><strong>Owner/location</strong> Vogon Constructor Fleet</p></section>",
+        "label": "<i>Pretzel Body Logic</i>",
+        "short_display": "<section><p><strong>Artist</strong> Frankie and Benjy</p>\n<p><strong>Title</strong> <i>Pretzel Body Logic</i></p>\n<p><strong>Description</strong> Squid tattooed heirloom poutine.</p>\n<p><strong>Owner/location</strong> Starship Titanic</p></section>",
         "tags": [
 
         ]
       },
       {
-        "id": "http://example.org/entities/488623fa-bde7-4ffc-941e-c52cff27d2ea.json",
+        "id": "http://example.org/entities/dbe55a7d-7d84-45dc-a52a-a832f1a04bf7.json",
         "type": "work_of_art",
-        "label": "Cindy C.",
-        "short_display": "<section><p><strong>Artist</strong> Zarquon</p>\n<p><strong>Title</strong> Cindy C.</p>\n<p><strong>Description</strong> Artisan singleorigin coffee cronut lumbersexual diy.</p>\n<p><strong>Owner/location</strong> Bistromath</p></section>",
-        "tags": [
-
-        ]
-      }
-    ],
-    "writings": [
-      {
-        "id": "http://example.org/entities/099f44ad-b905-4233-93f7-9bc3bc02376d.json",
-        "type": "writing",
-        "label": "<i>Stranger in a Strange Land</i>",
-        "short_display": "<section><p><strong>Title</strong> <i>Stranger in a Strange Land</i></p>\n<p><strong>Proposal/Response</strong> ...they discovered only a small asteroid inhabited by a solitary old man who claimed repeatedly that nothing was true, though he was later discovered to be lying.</p>\n<p><strong>Translator</strong> Reg Nullify</p>\n<p><strong>Date</strong> 1939-08-30.</p></section>",
-        "tags": [
-
-        ]
-      },
-      {
-        "id": "http://example.org/entities/66825684-ab9e-4445-bef6-319e43396878.json",
-        "type": "writing",
-        "label": "The Daffodil Sky",
-        "short_display": "<section><p><strong>Title</strong> The Daffodil Sky</p>\n<p><strong>Proposal/Response</strong> According to the legends, the Magratheans lived most of their lives underground.</p>\n<p><strong>Translator</strong> Tricia McMillan</p>\n<p><strong>Date</strong> 1961-07-17.</p></section>",
-        "tags": [
-
-        ]
-      },
-      {
-        "id": "http://example.org/entities/78a05829-8adf-4e2b-9425-53e314960635.json",
-        "type": "writing",
-        "label": "<i>Some Buried Caesar</i>",
-        "short_display": "<section><p><strong>Title</strong> <i>Some Buried Caesar</i></p>\n<p><strong>Proposal/Response</strong> He was staring at the instruments with the air of one who is trying to convert Fahrenheit to centigrade in his head while his house is burning down.</p>\n<p><strong>Translator</strong> Frankie and Benjy</p>\n<p><strong>Date</strong> 1967-09-25.</p></section>",
+        "label": "<i>My Name Is Prince</i>",
+        "short_display": "<section><p><strong>Artist</strong> Hillman Hunter</p>\n<p><strong>Title</strong> <i>My Name Is Prince</i></p>\n<p><strong>Description</strong> Shabby chic master bushwick loko lumbersexual cornhole diy stumptown.</p>\n<p><strong>Owner/location</strong> Heart of Gold</p></section>",
         "tags": [
 
         ]

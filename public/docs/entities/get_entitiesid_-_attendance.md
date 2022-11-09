@@ -17,7 +17,7 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /entities/89f54e1b-9f60-40e9-8c4a-1fc172f7880b</pre>
+<pre>GET /entities/124c0bcf-6ff5-4f4b-a90b-f3922c2d65bd</pre>
 
 ### Response
 
@@ -30,12 +30,12 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;b323a4ab1cadd3edb94e82b5485dda21&quot;
+ETag: W/&quot;68278e2b13a4208ae29d957705fd2856&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: b3beb413-e101-4414-9ccc-9d46fb492590
-X-Runtime: 2.054733
+X-Request-Id: c0237199-803f-4368-858b-943e71b2198c
+X-Runtime: 1.574004
 Vary: Origin
-Content-Length: 2768</pre>
+Content-Length: 2805</pre>
 
 #### Status
 
@@ -45,60 +45,35 @@ Content-Length: 2768</pre>
 
 ~~~
 {
-  "id": "89f54e1b-9f60-40e9-8c4a-1fc172f7880b",
+  "id": "124c0bcf-6ff5-4f4b-a90b-f3922c2d65bd",
   "type": "attendance",
-  "label": "Reading, Health <i>listicle bespoke migas</i> sustainable.",
-  "short_display": "<section><p><strong>Reading</strong>, Health <i>listicle bespoke migas</i> sustainable.</p>\n<p><strong>Attended with</strong> The Dude and Questular Rontok</p>\n<p><strong>Place, Date</strong> Mrazshire, 13 May 1957</p>\n<p><strong>Director</strong> Galaxia Woonbeam</p></section>",
-  "full_display": "<table>\n<tr>\n<th scope=\"row\">Description</th>\n<td>Health <i>listicle bespoke migas</i> sustainable.</td>\n</tr>\n<tr>\n<th scope=\"row\">Alternate Name(s)</th>\n<td>Shea Coulee</td>\n</tr>\n<tr>\n<th scope=\"row\">Director</th>\n<td>Galaxia Woonbeam</td>\n</tr>\n<tr>\n<th scope=\"row\">Performed by</th>\n<td>Galaxia Woonbeam</td>\n</tr>\n<tr>\n<th scope=\"row\">Attended with</th>\n<td>The Dude and Questular Rontok</td>\n</tr>\n<tr>\n<th scope=\"row\">Place, Date</th>\n<td>Mrazshire, 13 May 1957</td>\n</tr>\n<tr>\n<th scope=\"row\">Notes</th>\n<td>You didn't have the decency to change the sheets.</td>\n</tr>\n</table>",
-  "description": "Health <i>listicle bespoke migas</i> sustainable.",
+  "label": "Radio Broadcast, Franzen <i>wes anderson actually poutine</i> cleanse.",
+  "short_display": "<section><p><strong>Radio Broadcast</strong>, Franzen <i>wes anderson actually poutine</i> cleanse.</p>\n<p><strong>Attended with</strong> Bunny Lebowski and Arthur Dent</p>\n<p><strong>Place, Date</strong> Esperanzatown, 12 March 1932</p>\n<p><strong>Director</strong> Colin the Security Robot</p></section>",
+  "full_display": "<table>\n<tr>\n<th scope=\"row\">Description</th>\n<td>Franzen <i>wes anderson actually poutine</i> cleanse.</td>\n</tr>\n<tr>\n<th scope=\"row\">Alternate Name(s)</th>\n<td>Ra'jah O'Hara</td>\n</tr>\n<tr>\n<th scope=\"row\">Director</th>\n<td>Colin the Security Robot</td>\n</tr>\n<tr>\n<th scope=\"row\">Performed by</th>\n<td>Arthur Dent</td>\n</tr>\n<tr>\n<th scope=\"row\">Attended with</th>\n<td>Bunny Lebowski and Arthur Dent</td>\n</tr>\n<tr>\n<th scope=\"row\">Place, Date</th>\n<td>Esperanzatown, 12 March 1932</td>\n</tr>\n<tr>\n<th scope=\"row\">Notes</th>\n<td>How can you just leave me standing alone in a world so cold?</td>\n</tr>\n</table>",
+  "description": "Franzen <i>wes anderson actually poutine</i> cleanse.",
   "e_type": "attendance",
-  "legacy_pk": 8905,
+  "legacy_pk": 95093,
   "alternate_names": [
-    "Shea Coulee"
+    "Ra'jah O'Hara"
   ],
   "alternate_spellings": null,
   "attended_with": [
-    "The Dude",
-    "Questular Rontok"
+    "Bunny Lebowski",
+    "Arthur Dent"
   ],
-  "director": "Galaxia Woonbeam",
-  "event_type": "_reading",
-  "notes": "You didn't have the decency to change the sheets.",
+  "director": "Colin the Security Robot",
+  "event_type": "radio_broadcast",
+  "notes": "How can you just leave me standing alone in a world so cold?",
   "performed_by": [
-    "Galaxia Woonbeam"
+    "Arthur Dent"
   ],
-  "place_date": "Mrazshire, 13 May 1957",
+  "place_date": "Esperanzatown, 12 March 1932",
   "letters": {
-    "mentioned_in": [
-      {
-        "id": "3ed8e22e-b275-420a-b223-6471b37d5f59",
-        "label": "11 June 1983 - Ryan, Mindi"
-      }
-    ],
-    "recived": [
-      {
-        "id": "58ff9d1b-ecc8-4760-abc6-64d877ee939d",
-        "label": "12 January 1951 - Dooley, Isaura, Reading, Health <i>listicle bespoke migas</i> sustainable."
-      }
-    ],
-    "sent": [
-      {
-        "id": "25bd13e1-7581-42c0-8ddd-7b354066ec63",
-        "label": "11 August 1970 - Watsica, Deandre"
-      }
-    ],
-    "sent_to": [
-      {
-        "id": "75ab0dcb-8296-4b9e-9756-50675682d812",
-        "label": "17 December 1985 - Hoeger, Don"
-      }
-    ],
-    "sent_from": [
-      {
-        "id": "c2711cc7-256e-44ea-9933-00298bfbb3fa",
-        "label": "22 July 1964 - Koss, Su"
-      }
-    ]
+    "mention": "http://example.org/entities/124c0bcf-6ff5-4f4b-a90b-f3922c2d65bd/letters?relation=mention",
+    "recived": "http://example.org/entities/124c0bcf-6ff5-4f4b-a90b-f3922c2d65bd/letters?relation=recived",
+    "sent": "http://example.org/entities/124c0bcf-6ff5-4f4b-a90b-f3922c2d65bd/letters?relation=sent",
+    "desination": "http://example.org/entities/124c0bcf-6ff5-4f4b-a90b-f3922c2d65bd/letters?relation=destination",
+    "origin": "http://example.org/entities/124c0bcf-6ff5-4f4b-a90b-f3922c2d65bd/letters?relation=origin"
   }
 }
 ~~~

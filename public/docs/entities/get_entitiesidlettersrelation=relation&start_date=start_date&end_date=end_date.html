@@ -111,12 +111,8 @@ table th, table td {
         <p class="explanation"></p>
 
       <div class="article">
-        <h2>GET /entities/autocomplete?search=:fragment</h2>
-        <h3>GET /entities/autocomplete</h3>
-          <p class="explanation">
-            Returns a list of no more than ten entity lables that start with the search parameter.
-                    a type parameter can also be passed to limit the results by types. Results might include HTML.
-          </p>
+        <h2>GET /entities/:id/letters?relation=:relation&amp;start_date=:start_date&amp;end_date=:end_date</h2>
+        <h3>GET entities/:id/letters</h3>
 
           <h3>Parameters</h3>
           <table class="parameters table table-striped table-bordered table-condensed">
@@ -130,24 +126,57 @@ table th, table td {
             <tbody>
               <tr>
                 <td>
-                    <span class="name">search</span>
+                    <span class="name">relation</span>
                 </td>
                 <td>
-                  <span class="description">Text to search.</span>
+                  <span class="description">relation</span>
                 </td>
                 <td>
-                  <span class="default">*</span>
+                  <span class="default"></span>
                 </td>
               </tr>
               <tr>
                 <td>
-                    <span class="name">type</span>
+                    <span class="name">page</span>
                 </td>
                 <td>
-                  <span class="description">Limit responses by single type. Options are attendance, music, organization, person, place, production, public_event, publication, reading, translating, work_of_art, writing, generic.</span>
+                  <span class="description">Page of results.</span>
                 </td>
                 <td>
-                  <span class="default">null</span>
+                  <span class="default"></span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">per_page</span>
+                </td>
+                <td>
+                  <span class="description">Number of records per response.</span>
+                </td>
+                <td>
+                  <span class="default"></span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">start_date</span>
+                </td>
+                <td>
+                  <span class="description">Date filter start.</span>
+                </td>
+                <td>
+                  <span class="default"></span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">end_date</span>
+                </td>
+                <td>
+                  <span class="description">Date filter end.</span>
+                </td>
+                <td>
+                  <span class="default"></span>
                 </td>
               </tr>
             </tbody>
@@ -164,10 +193,12 @@ Host: example.org
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET /entities/autocomplete?search=do</pre>
+          <pre class="request route highlight">GET entities/6450aced-eb63-4e82-bc39-386d3ccb58e2/letters?relation=mention&amp;start_date=1963-01-01&amp;end_date=1964-12-30</pre>
 
             <h4>Query Parameters</h4>
-            <pre class="request query_parameters highlight">search: do</pre>
+            <pre class="request query_parameters highlight">relation: mention
+start_date: 1963-01-01
+end_date: 1964-12-30</pre>
 
 
 
@@ -180,18 +211,43 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;4f53cda18c2baa0c0354bb5f9a3ecbe5&quot;
+ETag: W/&quot;ed00d33ad1d2787111a8379421a70ac9&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 000fb2f4-c539-4457-9a89-d04c4a68ff24
-X-Runtime: 4.060463
+X-Request-Id: 10ea1423-0916-4dd9-96cf-d7fe6ce146e0
+X-Runtime: 1.649424
 Vary: Origin
-Content-Length: 2</pre>
+Content-Length: 616</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
-              <pre class="response body">[
-
-]</pre>
+              <pre class="response body">{
+  &quot;min_date&quot;: &quot;1962-02-15&quot;,
+  &quot;max_date&quot;: &quot;1965-10-01&quot;,
+  &quot;total_pages&quot;: 1,
+  &quot;letters&quot;: [
+    {
+      &quot;id&quot;: &quot;25555e00-7cb0-4a58-b7df-39c9cf8179e9&quot;,
+      &quot;label&quot;: &quot;13 February 1963 - Batz, Lavonda&quot;,
+      &quot;recipient&quot;: &quot;Batz, Lavonda&quot;,
+      &quot;repository&quot;: &quot;East Nebraska Institute&quot;,
+      &quot;date&quot;: &quot;13 February 1963&quot;
+    },
+    {
+      &quot;id&quot;: &quot;bc1637de-27a4-49a2-9585-b89207f134d0&quot;,
+      &quot;label&quot;: &quot;30 June 1963 - Flatley, Roberto&quot;,
+      &quot;recipient&quot;: &quot;Flatley, Roberto&quot;,
+      &quot;repository&quot;: &quot;East Washington University&quot;,
+      &quot;date&quot;: &quot;30 June 1963&quot;
+    },
+    {
+      &quot;id&quot;: &quot;576106ea-09b1-4054-a480-4bc0f2c45a67&quot;,
+      &quot;label&quot;: &quot;02 August 1964 - Leuschke, Judy&quot;,
+      &quot;recipient&quot;: &quot;Leuschke, Judy&quot;,
+      &quot;repository&quot;: &quot;The Zieme Academy&quot;,
+      &quot;date&quot;: &quot;02 August 1964&quot;
+    }
+  ]
+}</pre>
       </div>
     </div>
   </body>

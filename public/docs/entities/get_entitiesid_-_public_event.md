@@ -17,7 +17,7 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /entities/9657a63f-d7f6-4bf7-94fd-6bae3c0873ea</pre>
+<pre>GET /entities/4a3a13cc-3f07-4e2e-9b31-090e90b1e408</pre>
 
 ### Response
 
@@ -30,12 +30,12 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;4f015d1fc9dcf90cbdcae0f50dd81e92&quot;
+ETag: W/&quot;fcc63486bc7981a8d5f70775b097ce11&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 99af1304-d7ce-4be5-829d-023fc5b26f8c
-X-Runtime: 1.576206
+X-Request-Id: 45a84db5-b01b-432e-a0b6-17b7d3de5ccf
+X-Runtime: 1.701394
 Vary: Origin
-Content-Length: 1911</pre>
+Content-Length: 1795</pre>
 
 #### Status
 
@@ -45,46 +45,21 @@ Content-Length: 1911</pre>
 
 ~~~
 {
-  "id": "9657a63f-d7f6-4bf7-94fd-6bae3c0873ea",
+  "id": "4a3a13cc-3f07-4e2e-9b31-090e90b1e408",
   "type": "public_event",
   "label": "<i>Mercury</i>",
-  "short_display": "<section><p><strong><i>Mercury</i></strong></p>\n<p><strong>1963-05-23.</strong></p></section>",
-  "full_display": "<table>\n<tr>\n<th scope=\"row\">Description</th>\n<td>All seven and we watch them fall. They stand in the way of love and we will smoke them all with an intellect, and a savoir faire.</td>\n</tr>\n<tr>\n<th scope=\"row\">Date</th>\n<td>1963-05-23.</td>\n</tr>\n<tr>\n<th scope=\"row\">See Also</th>\n<td><ul><li><a href=\"http://ratke-schultz.name/stefania\" target=\"_blank\" rel=\"noopener\">http://ratke-schultz.name/stefania<span>(opens in new tab)</span></a></li></ul></td>\n</tr>\n</table>",
-  "description": "All seven and we watch them fall. They stand in the way of love and we will smoke them all with an intellect, and a savoir faire.",
+  "short_display": "<section><p><strong><i>Mercury</i></strong></p>\n<p><strong>1941-04-04.</strong></p></section>",
+  "full_display": "<table>\n<tr>\n<th scope=\"row\">Description</th>\n<td>I <i>never meant to cause you any sorrow, I never meant to cause you any</i> pain.</td>\n</tr>\n<tr>\n<th scope=\"row\">Date</th>\n<td>1941-04-04.</td>\n</tr>\n<tr>\n<th scope=\"row\">See Also</th>\n<td><ul><li><a href=\"http://rohan.com/diann\" target=\"_blank\" rel=\"noopener\">http://rohan.com/diann<span>(opens in new tab)</span></a></li></ul></td>\n</tr>\n</table>",
+  "description": "I <i>never meant to cause you any sorrow, I never meant to cause you any</i> pain.",
   "e_type": "public_event",
-  "legacy_pk": 57135,
-  "date_str": "1963-05-23.",
+  "legacy_pk": 78867,
+  "date_str": "1941-04-04.",
   "letters": {
-    "mentioned_in": [
-      {
-        "id": "6701375a-fd64-438a-a81a-a4f3677d425e",
-        "label": "19 November 1968 - Zboncak, Kenny"
-      }
-    ],
-    "recived": [
-      {
-        "id": "97749f2e-1181-4e6d-8b48-8b3d6dea8894",
-        "label": "29 October 1980 - Nienow, Tanner, <i>Mercury</i>"
-      }
-    ],
-    "sent": [
-      {
-        "id": "5aafbb01-d2e2-41fb-815c-7ecc41e0ee13",
-        "label": "14 February 1981 - Ryan, Anderson"
-      }
-    ],
-    "sent_to": [
-      {
-        "id": "80fbd241-21d5-40a8-971b-47baed527079",
-        "label": "13 October 1954 - Tremblay, Mitchell"
-      }
-    ],
-    "sent_from": [
-      {
-        "id": "7a79b097-c604-477c-a02e-f1161f3fc538",
-        "label": "03 April 1967 - O'Kon, Jutta"
-      }
-    ]
+    "mention": "http://example.org/entities/4a3a13cc-3f07-4e2e-9b31-090e90b1e408/letters?relation=mention",
+    "recived": "http://example.org/entities/4a3a13cc-3f07-4e2e-9b31-090e90b1e408/letters?relation=recived",
+    "sent": "http://example.org/entities/4a3a13cc-3f07-4e2e-9b31-090e90b1e408/letters?relation=sent",
+    "desination": "http://example.org/entities/4a3a13cc-3f07-4e2e-9b31-090e90b1e408/letters?relation=destination",
+    "origin": "http://example.org/entities/4a3a13cc-3f07-4e2e-9b31-090e90b1e408/letters?relation=origin"
   }
 }
 ~~~

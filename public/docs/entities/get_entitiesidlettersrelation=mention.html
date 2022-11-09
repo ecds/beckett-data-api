@@ -111,12 +111,8 @@ table th, table td {
         <p class="explanation"></p>
 
       <div class="article">
-        <h2>GET /entities/autocomplete?search=:fragment</h2>
-        <h3>GET /entities/autocomplete</h3>
-          <p class="explanation">
-            Returns a list of no more than ten entity lables that start with the search parameter.
-                    a type parameter can also be passed to limit the results by types. Results might include HTML.
-          </p>
+        <h2>GET /entities/:id/letters?relation=mention</h2>
+        <h3>GET entities/:id/letters</h3>
 
           <h3>Parameters</h3>
           <table class="parameters table table-striped table-bordered table-condensed">
@@ -130,24 +126,57 @@ table th, table td {
             <tbody>
               <tr>
                 <td>
-                    <span class="name">search</span>
+                    <span class="name">relation</span>
                 </td>
                 <td>
-                  <span class="description">Text to search.</span>
+                  <span class="description">relation</span>
                 </td>
                 <td>
-                  <span class="default">*</span>
+                  <span class="default"></span>
                 </td>
               </tr>
               <tr>
                 <td>
-                    <span class="name">type</span>
+                    <span class="name">relation</span>
                 </td>
                 <td>
-                  <span class="description">Limit responses by single type. Options are attendance, music, organization, person, place, production, public_event, publication, reading, translating, work_of_art, writing, generic.</span>
+                  <span class="description">relation</span>
                 </td>
                 <td>
-                  <span class="default">null</span>
+                  <span class="default"></span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">relation</span>
+                </td>
+                <td>
+                  <span class="description">relation</span>
+                </td>
+                <td>
+                  <span class="default"></span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">relation</span>
+                </td>
+                <td>
+                  <span class="description">relation</span>
+                </td>
+                <td>
+                  <span class="default"></span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">relation</span>
+                </td>
+                <td>
+                  <span class="description">relation</span>
+                </td>
+                <td>
+                  <span class="default"></span>
                 </td>
               </tr>
             </tbody>
@@ -164,10 +193,10 @@ Host: example.org
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET /entities/autocomplete?search=do</pre>
+          <pre class="request route highlight">GET entities/129d5ee2-ddcb-4aed-9570-e939a44c9854/letters?relation=mention</pre>
 
             <h4>Query Parameters</h4>
-            <pre class="request query_parameters highlight">search: do</pre>
+            <pre class="request query_parameters highlight">relation: mention</pre>
 
 
 
@@ -180,18 +209,43 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;4f53cda18c2baa0c0354bb5f9a3ecbe5&quot;
+ETag: W/&quot;313e09f1bcf11584d96b3e346a400c33&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 000fb2f4-c539-4457-9a89-d04c4a68ff24
-X-Runtime: 4.060463
+X-Request-Id: 748b508d-9901-4527-bb33-4ca5f1a2fbc4
+X-Runtime: 1.896511
 Vary: Origin
-Content-Length: 2</pre>
+Content-Length: 609</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
-              <pre class="response body">[
-
-]</pre>
+              <pre class="response body">{
+  &quot;min_date&quot;: &quot;1981-07-11&quot;,
+  &quot;max_date&quot;: &quot;1988-12-22&quot;,
+  &quot;total_pages&quot;: 1,
+  &quot;letters&quot;: [
+    {
+      &quot;id&quot;: &quot;be7ef08e-ca4b-46a8-a9b5-57db01f4e914&quot;,
+      &quot;label&quot;: &quot;11 July 1981 - Roob, Romeo&quot;,
+      &quot;recipient&quot;: &quot;Roob, Romeo&quot;,
+      &quot;repository&quot;: &quot;Southern New Jersey University&quot;,
+      &quot;date&quot;: &quot;11 July 1981&quot;
+    },
+    {
+      &quot;id&quot;: &quot;4a01fbaf-0646-4b50-8f01-5a2a02e24e05&quot;,
+      &quot;label&quot;: &quot;11 November 1983 - Feil, Filiberto&quot;,
+      &quot;recipient&quot;: &quot;Feil, Filiberto&quot;,
+      &quot;repository&quot;: &quot;East Corwin College&quot;,
+      &quot;date&quot;: &quot;11 November 1983&quot;
+    },
+    {
+      &quot;id&quot;: &quot;5c9d7e48-c3a4-46e7-b9e5-76fc15b2488c&quot;,
+      &quot;label&quot;: &quot;22 December 1988 - Haley, Bryce&quot;,
+      &quot;recipient&quot;: &quot;Haley, Bryce&quot;,
+      &quot;repository&quot;: &quot;Schinner College&quot;,
+      &quot;date&quot;: &quot;22 December 1988&quot;
+    }
+  ]
+}</pre>
       </div>
     </div>
   </body>

@@ -17,7 +17,7 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /entities/e12e48ab-2066-473f-91c8-44a61d44a7f5</pre>
+<pre>GET /entities/f7dc2815-f02b-4916-a254-2c357c9db4e8</pre>
 
 ### Response
 
@@ -30,12 +30,12 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;3b45a5c8fd395d43a2cbf85bf10952d4&quot;
+ETag: W/&quot;d2a3ab7cf668ce190cd933c2263cad6f&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: bac20d36-049d-47d6-8df1-a9204573de78
-X-Runtime: 1.556938
+X-Request-Id: 4f50500a-53e3-4b78-a391-71a0e62ff3db
+X-Runtime: 1.484181
 Vary: Origin
-Content-Length: 2113</pre>
+Content-Length: 1943</pre>
 
 #### Status
 
@@ -45,50 +45,25 @@ Content-Length: 2113</pre>
 
 ~~~
 {
-  "id": "e12e48ab-2066-473f-91c8-44a61d44a7f5",
+  "id": "f7dc2815-f02b-4916-a254-2c357c9db4e8",
   "type": "organization",
-  "label": "<i>Nano</i>",
-  "short_display": "<section><p><strong><i>Nano</i></strong></p>\n<p>I <i>think you ought to know I'm feeling very</i> depressed.</p></section>",
-  "full_display": "<table>\n<tr>\n<th scope=\"row\">Name</th>\n<td><i>Nano</i></td>\n</tr>\n<tr>\n<th scope=\"row\">Description</th>\n<td>I <i>think you ought to know I'm feeling very</i> depressed.</td>\n</tr>\n<tr>\n<th scope=\"row\">Alternate Name(s)</th>\n<td>BenDeLaCreme</td>\n</tr>\n<tr>\n<th scope=\"row\">Profile</th>\n<td>I've just had an unhappy love affair, so I don't see why anybody else should have a good time.</td>\n</tr>\n<tr>\n<th scope=\"row\">Notes</th>\n<td>Shut up already, damn!</td>\n</tr>\n</table>",
-  "description": "I <i>think you ought to know I'm feeling very</i> depressed.",
+  "label": "Broop Kidron 13",
+  "short_display": "<section><p><strong>Broop Kidron 13</strong></p>\n<p>Life? Don't talk to me about life.</p></section>",
+  "full_display": "<table>\n<tr>\n<th scope=\"row\">Name</th>\n<td>Broop Kidron 13</td>\n</tr>\n<tr>\n<th scope=\"row\">Description</th>\n<td>Life? Don't talk to me about life.</td>\n</tr>\n<tr>\n<th scope=\"row\">Alternate Name(s)</th>\n<td>Shangela Wadley</td>\n</tr>\n<tr>\n<th scope=\"row\">Profile</th>\n<td>Whatever your tastes, Magrathea can cater for you. We are not proud.</td>\n</tr>\n<tr>\n<th scope=\"row\">Notes</th>\n<td>Everybody wants to find Graffiti Bridge, something to believe in, a reason to believe that there's a heaven above.</td>\n</tr>\n</table>",
+  "description": "Life? Don't talk to me about life.",
   "e_type": "organization",
-  "legacy_pk": 80089,
+  "legacy_pk": 62444,
   "alternate_names": [
-    "BenDeLaCreme"
+    "Shangela Wadley"
   ],
   "alternate_spellings": null,
-  "profile": "I've just had an unhappy love affair, so I don't see why anybody else should have a good time.",
+  "profile": "Whatever your tastes, Magrathea can cater for you. We are not proud.",
   "letters": {
-    "mentioned_in": [
-      {
-        "id": "4887a131-e406-4a7d-acd2-fd02e4b33691",
-        "label": "24 October 1959 - Rogahn, Sherly"
-      }
-    ],
-    "recived": [
-      {
-        "id": "9d18ee80-d48d-4747-8bfd-b49e4c5cba08",
-        "label": "16 September 1974 - Olson, Lela, <i>Nano</i>"
-      }
-    ],
-    "sent": [
-      {
-        "id": "731e3f8e-9052-448e-b9f4-b219c54470fd",
-        "label": "14 February 1984 - Welch, Daryl"
-      }
-    ],
-    "sent_to": [
-      {
-        "id": "91e55339-22c4-4df3-95dc-040b402f0292",
-        "label": "07 October 1961 - Hauck, Dennis"
-      }
-    ],
-    "sent_from": [
-      {
-        "id": "0a9f10ce-56c7-4b03-83bb-2b3fcc171e56",
-        "label": "14 May 1982 - Anderson, Terrance"
-      }
-    ]
+    "mention": "http://example.org/entities/f7dc2815-f02b-4916-a254-2c357c9db4e8/letters?relation=mention",
+    "recived": "http://example.org/entities/f7dc2815-f02b-4916-a254-2c357c9db4e8/letters?relation=recived",
+    "sent": "http://example.org/entities/f7dc2815-f02b-4916-a254-2c357c9db4e8/letters?relation=sent",
+    "desination": "http://example.org/entities/f7dc2815-f02b-4916-a254-2c357c9db4e8/letters?relation=destination",
+    "origin": "http://example.org/entities/f7dc2815-f02b-4916-a254-2c357c9db4e8/letters?relation=origin"
   }
 }
 ~~~

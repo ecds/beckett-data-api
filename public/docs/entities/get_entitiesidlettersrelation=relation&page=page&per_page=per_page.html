@@ -111,12 +111,8 @@ table th, table td {
         <p class="explanation"></p>
 
       <div class="article">
-        <h2>GET /entities/autocomplete?search=:fragment</h2>
-        <h3>GET /entities/autocomplete</h3>
-          <p class="explanation">
-            Returns a list of no more than ten entity lables that start with the search parameter.
-                    a type parameter can also be passed to limit the results by types. Results might include HTML.
-          </p>
+        <h2>GET /entities/:id/letters?relation=:relation&amp;page=:page&amp;per_page=:per_page</h2>
+        <h3>GET entities/:id/letters</h3>
 
           <h3>Parameters</h3>
           <table class="parameters table table-striped table-bordered table-condensed">
@@ -130,24 +126,35 @@ table th, table td {
             <tbody>
               <tr>
                 <td>
-                    <span class="name">search</span>
+                    <span class="name">relation</span>
                 </td>
                 <td>
-                  <span class="description">Text to search.</span>
+                  <span class="description">relation</span>
                 </td>
                 <td>
-                  <span class="default">*</span>
+                  <span class="default"></span>
                 </td>
               </tr>
               <tr>
                 <td>
-                    <span class="name">type</span>
+                    <span class="name">page</span>
                 </td>
                 <td>
-                  <span class="description">Limit responses by single type. Options are attendance, music, organization, person, place, production, public_event, publication, reading, translating, work_of_art, writing, generic.</span>
+                  <span class="description">Page of results.</span>
                 </td>
                 <td>
-                  <span class="default">null</span>
+                  <span class="default"></span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">per_page</span>
+                </td>
+                <td>
+                  <span class="description">Number of records per response.</span>
+                </td>
+                <td>
+                  <span class="default"></span>
                 </td>
               </tr>
             </tbody>
@@ -164,10 +171,12 @@ Host: example.org
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET /entities/autocomplete?search=do</pre>
+          <pre class="request route highlight">GET entities/bf8cc4d8-2355-452c-a777-3c3fc4570457/letters?relation=mention&amp;page=2&amp;per_page=2</pre>
 
             <h4>Query Parameters</h4>
-            <pre class="request query_parameters highlight">search: do</pre>
+            <pre class="request query_parameters highlight">relation: mention
+page: 2
+per_page: 2</pre>
 
 
 
@@ -180,18 +189,36 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;4f53cda18c2baa0c0354bb5f9a3ecbe5&quot;
+ETag: W/&quot;76a0a8eb1c24773be85eac5f5efbf435&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 000fb2f4-c539-4457-9a89-d04c4a68ff24
-X-Runtime: 4.060463
+X-Request-Id: 55faec25-3caa-4fa9-ad31-0a98f1b0ce05
+X-Runtime: 2.040433
 Vary: Origin
-Content-Length: 2</pre>
+Content-Length: 425</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
-              <pre class="response body">[
-
-]</pre>
+              <pre class="response body">{
+  &quot;min_date&quot;: &quot;1950-04-18&quot;,
+  &quot;max_date&quot;: &quot;1986-01-25&quot;,
+  &quot;total_pages&quot;: 5,
+  &quot;letters&quot;: [
+    {
+      &quot;id&quot;: &quot;0a4a1671-859e-43da-943f-16b1dbebc1b9&quot;,
+      &quot;label&quot;: &quot;11 November 1954 - Braun, Monte&quot;,
+      &quot;recipient&quot;: &quot;Braun, Monte&quot;,
+      &quot;repository&quot;: &quot;Rolfson Academy&quot;,
+      &quot;date&quot;: &quot;11 November 1954&quot;
+    },
+    {
+      &quot;id&quot;: &quot;025bcb67-e6e8-48c0-9c73-ff53a6d1dd02&quot;,
+      &quot;label&quot;: &quot;27 December 1954 - Bode, Otto&quot;,
+      &quot;recipient&quot;: &quot;Bode, Otto&quot;,
+      &quot;repository&quot;: &quot;South Schaden Institute&quot;,
+      &quot;date&quot;: &quot;27 December 1954&quot;
+    }
+  ]
+}</pre>
       </div>
     </div>
   </body>
