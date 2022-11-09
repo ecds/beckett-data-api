@@ -25,7 +25,7 @@ end
 # case params[:letters]
 # when 'mentions'
 #   @entity.letters
-# when 'desination'
+# when 'destination'
 #   @entity.letters_sent_to
 # when 'sent'
 #   @entity.letters.sent
@@ -38,10 +38,10 @@ end
 json.letters do
   url_base = "#{request.protocol}#{request.host_with_port}/entities/#{@entity.id}/letters?relation="
   json.mention "#{url_base}mention" if @entity.letters.present?
-  json.recived "#{url_base}recived" if @entity.letters.present?
-  json.sent "#{url_base}sent" if @entity.letters.present?
-  json.desination "#{url_base}destination" if @entity.letters.present?
-  json.origin "#{url_base}origin" if @entity.letters.present?
+  json.recived "#{url_base}recived" if @entity.letters_received.present?
+  json.sent "#{url_base}sent" if @entity.letters_sent.present?
+  json.destination "#{url_base}destination" if @entity.letters_sent_to.present?
+  json.origin "#{url_base}origin" if @entity.letters_sent_from.present?
 end
 
 # json.letters do

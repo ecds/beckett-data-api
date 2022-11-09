@@ -117,7 +117,7 @@ class EntitiesController < ApplicationController
     case relation
     when 'mention'
       @entity.letters.published.map(&:date).compact.minmax
-    when 'desination'
+    when 'destination'
       @entity.letters_sent_to.published.map(&:date).compact.minmax
     when 'sent'
       @entity.letters_sent.published.map(&:date).compact.minmax
@@ -132,7 +132,7 @@ class EntitiesController < ApplicationController
     case relation
     when 'mention'
       @entity.letters.published.between(@start_date, @end_date).page(@page).per(@per_page)
-    when 'desination'
+    when 'destination'
       @entity.letters_sent_to.published.between(@start_date, @end_date).page(@page).per(@per_page)
     when 'sent'
       @entity.letters_sent.published.between(@start_date, @end_date).page(@page).per(@per_page)

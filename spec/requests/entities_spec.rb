@@ -102,7 +102,7 @@ RSpec.describe '/entities', type: :request do
       10.times { create(:published_letter, date: Faker::Date.in_date_period(year: rand(1972..1975))) }
       entity = create(:place_entity, letters_sent_to: Letter.all)
       expect(entity.letters_sent_to.count).to eq(10)
-      get "/entities/#{entity.id}/letters?relation=desination&end_date=1974-06-01"
+      get "/entities/#{entity.id}/letters?relation=destination&end_date=1974-06-01"
       expect(json[:letters].map {|letter| Date.parse(letter[:date]) }.min).to be >= DateTime.new(1972, 1, 1)
       expect(json[:letters].map {|letter| Date.parse(letter[:date]) }.min).to be <= DateTime.new(1974, 6, 1)
       expect(json[:letters].count).to be < entity.letters_sent_to.count
