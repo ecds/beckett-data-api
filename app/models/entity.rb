@@ -8,6 +8,7 @@ class Entity < ApplicationRecord
   include EntityCommon
 
   before_save :check_published, :add_full_stops, :remove_div, :concat_label, :to_plain_text
+  after_save :reindex_published
 
   has_many :mentions, dependent: :destroy
   has_many :letters, -> { order('letters.date') }, through: :mentions, source: :letter
@@ -174,5 +175,11 @@ class Entity < ApplicationRecord
 
   def check_published
     self.published = published_letters_hash.present?
+  end
+
+  def reindex_published
+    return unless published
+
+    PublishedEntity.find(id).reindex
   end
 end

@@ -22,51 +22,26 @@ entity.allowed_attributes.each do |attribute|
   json.set! attribute, entity.public_send(attribute)
 end
 
+# case params[:letters]
+# when 'mentions'
+#   @entity.letters
+# when 'desination'
+#   @entity.letters_sent_to
+# when 'sent'
+#   @entity.letters.sent
+# when 'origin'
+#   @entity.letters.sent_from
+# when 'recivied'
+#   @entity.letters_received
+# end
+
 json.letters do
-  json.mentioned_in do
-    entity.letters.published.each do |letter|
-      json.child! do
-        json.set! 'id', letter.id
-        json.set! 'label', letter.label
-      end
-    end
-  end
-
-  json.recived do
-    entity.letters_received.published.each do |letter|
-      json.child! do
-        json.set! 'id', letter.id
-        json.set! 'label', letter.label
-      end
-    end
-  end
-
-  json.sent do
-    entity.letters_sent.published.each do |letter|
-      json.child! do
-        json.set! 'id', letter.id
-        json.set! 'label', letter.label
-      end
-    end
-  end
-
-  json.sent_to do
-    entity.letters_sent_to.published.each do |letter|
-      json.child! do
-        json.set! 'id', letter.id
-        json.set! 'label', letter.label
-      end
-    end
-  end
-
-  json.sent_from do
-    entity.letters_sent_from.published.each do |letter|
-      json.child! do
-        json.set! 'id', letter.id
-        json.set! 'label', letter.label
-      end
-    end
-  end
+  url_base = "#{request.protocol}#{request.host_with_port}/entities/#{@entity.id}/letters?relation="
+  json.mention "#{url_base}mention" if @entity.letters.present?
+  json.recived "#{url_base}recived" if @entity.letters.present?
+  json.sent "#{url_base}sent" if @entity.letters.present?
+  json.desination "#{url_base}destination" if @entity.letters.present?
+  json.origin "#{url_base}origin" if @entity.letters.present?
 end
 
 # json.letters do

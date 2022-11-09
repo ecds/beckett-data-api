@@ -20,17 +20,17 @@ resource 'Entities' do
   header 'Content-Type', 'application/json'
   explanation ''
 
-  # route '/entities{page,per_page}', 'Entities Collection' do
-  #   parameter :page, 'Current page of entities', { type: 'String', default: '1' }
-  #   parameter :per_page, 'Number of entities on a single response.', { default: '25' }
-  #   parameter :search, 'Text to search.', { default: '*' }
-  #   parameter :type,
-  #             "Limit responses by single type. Options are #{Entity.e_types.keys.to_sentence}.",
-  #             { default: 'null' }
-  #   parameter :operator,
-  #             "By default, results match any words in the query. Use 'and' to match all words.",
-  #             { default: 'or' }
-  # end
+  route '/entities{page,per_page}', 'Entities Collection' do
+    parameter :page, 'Current page of entities', { type: 'String', default: '1' }
+    parameter :per_page, 'Number of entities on a single response.', { default: '25' }
+    parameter :search, 'Text to search.', { default: '*' }
+    parameter :type,
+              "Limit responses by single type. Options are #{Entity.e_types.keys.to_sentence}.",
+              { default: 'null' }
+    parameter :operator,
+              "By default, results match any words in the query. Use 'and' to match all words.",
+              { default: 'or' }
+  end
 
   route '/entities/:id', 'Single Entity' do
     Entity.e_types.keys[0..11].each do |type|
@@ -47,21 +47,6 @@ resource 'Entities' do
             letters_sent_from: create_list(:published_letter, 1)
           ).id
         }
-
-        # response_field :label, '', { default: 'HTML String', not_null: true }
-        # response_field :short_display, '', { default: 'HTML String', not_null: true }
-        # response_field :full_display, '', { default: 'HTML String', not_null: true }
-        # response_field :clean_label, '', { default: 'String', not_null: true }
-        # response_field :description, '', { default: 'HTML String', not_null: true }
-        # response_field :clean_description, '', { default: 'String', not_null: true }
-        # response_field :display_header, '', { default: 'HTML String', not_null: true }
-        # response_field :clean_description, 'Same as description with HTML removed.'
-
-        # Entity.new(e_type: type).allowed_attributes.each do |attribute|
-        #   default = list_attributes.include?(attribute) ? 'Array' : 'HTML String'
-
-        #   response_field attribute.to_sym, '', { default:, not_null: false }
-        # end
 
         example_request "GET /entities/:id - #{type.titleize}" do
           expect(status).to eq(200)
@@ -114,6 +99,81 @@ resource 'Entities' do
       example_request 'GET /entities/autocomplete?search=:fragment' do
         explanation 'Returns a list of no more than ten entity lables that start with the search parameter.
                     a type parameter can also be passed to limit the results by types. Results might include HTML.'
+        expect(status).to eq(200)
+      end
+    end
+  end
+
+  route 'entities/:id/letters', 'GET /entities/:id/letters?relation=' do
+    %w[mention desination sent origin recivied].each do |relation|
+      parameter :relation, 'relation'
+
+      get "Letters - #{relation}" do
+        let(:relation) { relation }
+        let(:id) {
+          create(
+            "#{Entity.e_types.keys[0..11].sample}_entity".to_sym,
+            :published,
+            letters: create_list(:published_letter, rand(1..4)),
+            letters_received: create_list(:published_letter, rand(1..4)),
+            letters_sent_to: create_list(:published_letter, rand(1..4)),
+            letters_sent: create_list(:published_letter, rand(1..4)),
+            letters_sent_from: create_list(:published_letter, rand(1..4))
+          ).id
+        }
+
+        example_request "GET /entities/:id/letters?relation=#{relation}" do
+          expect(status).to eq(200)
+        end
+      end
+    end
+  end
+
+  route 'entities/:id/letters', 'GET /entities/:id/letters?relation=mention&page=2&per_page=2' do
+    parameter :relation, 'relation'
+    parameter :page, 'Page of results.'
+    parameter :per_page, 'Number of records per response.'
+
+    get 'Paginated Letters' do
+      let(:relation) { 'mention' }
+      let(:page) { 2 }
+      let(:per_page) { 2 }
+      let(:id) {
+        create(
+          :person_entity,
+          :published,
+          letters: create_list(:published_letter, 10)
+        ).id
+      }
+
+      example_request 'GET /entities/:id/letters?relation=:relation&page=:page&per_page=:per_page' do
+        expect(status).to eq(200)
+      end
+    end
+  end
+
+  route 'entities/:id/letters', 'GET /entities/:id/letters?relation=mention&start_date=1963-01-01&end_date=1965-12-30' do
+    # rubocop:disable RSpec/FactoryBot/CreateList
+    # Each letter needs to have a random year. Using `create_list` will result is all letters having
+    # the same random year.
+    before {
+      10.times { create(:published_letter, date: Faker::Date.in_date_period(year: rand(1962..1965))) }
+    }
+    # rubocop:enable RSpec/FactoryBot/CreateList
+
+    parameter :relation, 'relation'
+    parameter :page, 'Page of results.'
+    parameter :per_page, 'Number of records per response.'
+    parameter :start_date, 'Date filter start.'
+    parameter :end_date, 'Date filter end.'
+
+    get 'Letters Filtered by date' do
+      let(:relation) { 'mention' }
+      let(:start_date) { '1963-01-01' }
+      let(:end_date) { '1964-12-30' }
+      let(:id) { create(:person_entity, :published, letters: Letter.all).id }
+
+      example_request 'GET /entities/:id/letters?relation=:relation&start_date=:start_date&end_date=:end_date' do
         expect(status).to eq(200)
       end
     end

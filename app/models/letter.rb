@@ -3,7 +3,7 @@
 class Letter < ApplicationRecord
   include Searchable
 
-  # serialize :mentions_hash, HashWithIndifferentAccess
+  before_save :check_published
 
   has_many :mentions, dependent: :destroy
   has_many :entities, -> { distinct }, through: :mentions
@@ -35,15 +35,21 @@ class Letter < ApplicationRecord
 
   enum :language, { english: 0, french: 1, german: 2, italian: 3 }
 
-  scope :published, lambda {
-    includes(:repositories)
-      .references(:repositories)
-      .where(
-        repositories: {
-          published: true
-        }
-      )
-      # .where('letters.date BETWEEN ? AND ?', DateTime.new(1957), DateTime.new(1965, 12).at_end_of_month)
+  # scope :published, lambda {
+  #   includes(:repositories)
+  #     .references(:repositories)
+  #     .where(
+  #       repositories: {
+  #         published: true
+  #       }
+  #     )
+  #     # .where('letters.date BETWEEN ? AND ?', DateTime.new(1957), DateTime.new(1965, 12).at_end_of_month)
+  # }
+
+  scope :published, -> { where(published: true) }
+
+  scope :between, lambda { |start_date, _end_date|
+    where('date >= ? AND date <= ?', start_date, end_date)
   }
 
   scope :between, lambda {|min, max|
@@ -86,7 +92,7 @@ class Letter < ApplicationRecord
       destinations_clean: destinations.map(&:clean_label),
       repositories: repositories.map(&:label),
       language:,
-      published: repositories.any?(&:published),
+      published:,
       volume: volume.to_s
     }
   end
@@ -95,7 +101,13 @@ class Letter < ApplicationRecord
   def should_index?
     return if date.nil?
 
-    repositories.any?(&:published)
+    published
     # date.between? DateTime.new(1957), DateTime.new(1965, 12).at_end_of_month and repositories.any?(&:published)
+  end
+
+  private
+
+  def check_published
+    self.published = repositories.any?(&:published)
   end
 end

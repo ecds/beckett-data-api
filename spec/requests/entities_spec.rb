@@ -83,6 +83,54 @@ RSpec.describe '/entities', type: :request do
     end
   end
 
+  describe 'GET /entities/:id/letters' do
+    it 'returns letters for an entity with start_date param' do
+      # rubocop:disable RSpec/FactoryBot/CreateList
+      # Each letter needs to have a random year. Using `create_list` will result is all letters having
+      # the same random year.
+      10.times { create(:published_letter, date: Faker::Date.in_date_period(year: rand(1962..1965))) }
+
+      entity = create(:person_entity, letters: Letter.all)
+      expect(entity.letters.count).to eq(10)
+      get "/entities/#{entity.id}/letters?relation=mention&start_date=1963-01-01"
+      expect(json[:letters].map {|letter| Date.parse(letter[:date]) }.min).to be >= DateTime.new(1963, 1, 1)
+      expect(json[:letters].map {|letter| Date.parse(letter[:date]) }.min).to be <= DateTime.new(1965, 12, 30)
+      expect(json[:letters].count).to be < entity.letters.count
+    end
+
+    it 'returns letters for an entity with end_date param' do
+      10.times { create(:published_letter, date: Faker::Date.in_date_period(year: rand(1972..1975))) }
+      entity = create(:place_entity, letters_sent_to: Letter.all)
+      expect(entity.letters_sent_to.count).to eq(10)
+      get "/entities/#{entity.id}/letters?relation=desination&end_date=1974-06-01"
+      expect(json[:letters].map {|letter| Date.parse(letter[:date]) }.min).to be >= DateTime.new(1972, 1, 1)
+      expect(json[:letters].map {|letter| Date.parse(letter[:date]) }.min).to be <= DateTime.new(1974, 6, 1)
+      expect(json[:letters].count).to be < entity.letters_sent_to.count
+    end
+
+    it 'returns letters for an entity with start_date and end_date params' do
+      10.times { create(:published_letter, date: Faker::Date.in_date_period(year: rand(1971..1975))) }
+      entity = create(:person_entity, letters_sent: Letter.all)
+      expect(entity.letters_sent.count).to eq(10)
+      get "/entities/#{entity.id}/letters?relation=sent&start_date=1972-01-01&end_date=1974-06-01"
+      expect(json[:letters].map {|letter| Date.parse(letter[:date]) }.min).to be >= DateTime.new(1972, 1, 1)
+      expect(json[:letters].map {|letter| Date.parse(letter[:date]) }.min).to be <= DateTime.new(1974, 6, 1)
+      expect(json[:letters].count).to be < entity.letters_sent.count
+    end
+    # rubocop:enable RSpec/FactoryBot/CreateList
+
+    it 'returns paginated letters for an entity' do
+      create_list(:published_letter, 10)
+      entity = create(:place_entity, letters_sent_from: Letter.all)
+      expect(entity.letters_sent_from.count).to eq(10)
+      get "/entities/#{entity.id}/letters?relation=origin&per_page=4&page=2"
+      expect(json[:total_pages]).to eq(3)
+      expect(json[:letters].count).to eq(4)
+      expect(json[:min_date]).to eq(entity.letters_sent_from.published.map(&:date).min.strftime('%Y-%m-%d'))
+      expect(json[:max_date]).to eq(entity.letters_sent_from.published.map(&:date).max.strftime('%Y-%m-%d'))
+    end
+  end
+
   describe 'POST /create' do
     context 'with valid parameters' do
       it 'creates a new Entity' do

@@ -22,6 +22,7 @@ Rails.application.routes.draw do
 
   get '/entities/autocomplete', to: 'entities#autocomplete', defaults: { format: :json }
   get '/entities/list', to: 'entities#list', defaults: { format: :json }
+  get '/entities/:id/letters', to: 'entities#letters', defaults: { format: :json }
   resources :entities, defaults: { format: :json }
   resources :repositories
   resources :letters, defaults: { format: :json }
