@@ -58,7 +58,7 @@ jobs:
         uses: ruby/setup-ruby@v1
 
       - name: Setup cache key and directory for gems cache
-        uses: actions/cache@v1
+        uses: actions/cache@v3
         with:
           path: vendor/bundle
           key: ${{ runner.os }}-gem-use-ruby-${{ hashFiles('**/Gemfile.lock') }}
@@ -74,6 +74,7 @@ jobs:
           bundle install --jobs 4 --retry 3
 
       - name: Test with RSpec
+        id: rspec
         env:
           RAILS_ENV: test
           DB_USERNAME: user
@@ -81,7 +82,16 @@ jobs:
           DB_PASSWORD: password
           DB_NAME: beckett_test
         run: |
-          echo $
           bundle exec rake db:create
           bundle exec rake db:migrate
           bundle exec rspec spec/
+
+      - name: Deploy
+        env:
+          SSH_KEY: ${{secrets.SSH_KEY}}
+        if: steps.rspec.outcome == 'success'
+        run: |
+          mkdir ~/.ssh
+          echo "$SSH_KEY" >> ~/.ssh/id_rsa
+          chmod 400 ~/.ssh/id_rsa
+          bundle exec cap production deploy
