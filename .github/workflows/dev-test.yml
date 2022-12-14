@@ -25,6 +25,7 @@ jobs:
           --health-retries 10
         ports:
           - 9200:9200
+
       postgres:
         image: postgres:10
         env:
@@ -38,6 +39,16 @@ jobs:
           --health-retries 5
         ports:
           - 5432:5432
+
+      redis:
+        image: redis
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          6379:6379
 
     steps:
       - name: Checkout repository
