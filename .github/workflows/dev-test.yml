@@ -46,6 +46,12 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
 
+      - name: Setup cache key and directory for gems cache
+        uses: actions/cache@v1
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-gem-use-ruby-${{ hashFiles('**/Gemfile.lock') }}
+
       - name: Install system requirements
         run: |
           sudo apt update
@@ -59,7 +65,12 @@ jobs:
       - name: Test with RSpec
         env:
           RAILS_ENV: test
+          DB_USERNAME: user
+          DB_HOSTNAME: localhost
+          DB_PASSWORD: password
+          DB_NAME: beckett_test
         run: |
+          echo $
           bundle exec rake db:create
           bundle exec rake db:migrate
           bundle exec rspec spec/
