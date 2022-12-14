@@ -8,8 +8,6 @@ on:
 jobs:
   test:
     runs-on: ubuntu-18.04
-    env:
-      RAILS_ENV: test
 
     services:
       elasticsearch:
@@ -42,13 +40,26 @@ jobs:
           - 5432:5432
 
     steps:
-      - uses: actions/checkout@v3
-      - uses: ruby/setup-ruby@v1
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-      - run: sudo apt update
-      - run: sudo apt install -y postgresql-client
-      # - run: gem install bundler
-      - run: bundle install
-      - run: bundle exec rake db:create
-      - run: bundle exec rake db:migrate
-      - run: bundle exec rspec spec/
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+
+      - name: Install system requirements
+        run: |
+          sudo apt update
+          sudo apt install -y postgresql-client
+
+      - name: Bundle Install
+        run: |
+          bundle config path vendor/bundle
+          bundle install --jobs 4 --retry 3
+
+      - name: Test with RSpec
+        env:
+          RAILS_ENV: test
+        run: |
+          bundle exec rake db:create
+          bundle exec rake db:migrate
+          bundle exec rspec spec/
