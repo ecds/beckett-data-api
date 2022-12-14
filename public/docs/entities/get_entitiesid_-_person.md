@@ -17,7 +17,7 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /entities/accbce93-ea13-4d97-9249-ca46d269a524</pre>
+<pre>GET /entities/682c34d7-e654-49d4-b50c-ac20921b99d0</pre>
 
 ### Response
 
@@ -30,12 +30,12 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;f3802a311156d9610ba8bee527cf3a47&quot;
+ETag: W/&quot;9006d6cd89e0fc96aace1d18a856a336&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 58498f35-1231-4bd6-a9f1-634e2d2d6002
-X-Runtime: 1.585177
+X-Request-Id: a31cc55a-c03e-4fcf-b6c4-5347f6d9339a
+X-Runtime: 1.712924
 Vary: Origin
-Content-Length: 2632</pre>
+Content-Length: 2762</pre>
 
 #### Status
 
@@ -45,33 +45,33 @@ Content-Length: 2632</pre>
 
 ~~~
 {
-  "id": "accbce93-ea13-4d97-9249-ca46d269a524",
+  "id": "682c34d7-e654-49d4-b50c-ac20921b99d0",
   "type": "person",
-  "label": "Leannon, Clint",
-  "short_display": "<section><p><strong>Clint Leannon, 1903-1975</strong></p>\n<p>And then of course I've got this terrible pain in all the diodes down my left side.</p></section>",
-  "full_display": "<table>\n<tr>\n<th scope=\"row\">Name</th>\n<td>Clint Leannon</td>\n</tr>\n<tr>\n<th scope=\"row\">Alternative Name(s)</th>\n<td>Phi Phi O'Hara</td>\n</tr>\n<tr>\n<th scope=\"row\">Life Dates</th>\n<td>1903-1975</td>\n</tr>\n<tr>\n<th scope=\"row\">Description</th>\n<td>And then of course I've got this terrible pain in all the diodes down my left side.</td>\n</tr>\n<tr>\n<th scope=\"row\">Profile</th>\n<td>It’s only half completed, I’m afraid – we haven’t even finished burying the artificial dinosaur skeletons in the crust yet.</td>\n</tr>\n<tr>\n<th scope=\"row\">See Also</th>\n<td><ul><li><a href=\"http://feeney-fahey.name/gonzalo_halvorson\" target=\"_blank\" rel=\"noopener\">http://feeney-fahey.name/gonzalo_halvorson<span>(opens in new tab)</span></a></li></ul></td>\n</tr>\n</table>",
-  "description": "And then of course I've got this terrible pain in all the diodes down my left side.",
+  "label": "Renner, Vern",
+  "short_display": "<section><p><strong>Vern Renner, 1919-1990</strong></p>\n<p>I <i>think you ought to know I'm feeling very</i> depressed.</p></section>",
+  "full_display": "<table>\n<tr>\n<th scope=\"row\">Name</th>\n<td>Vern Renner</td>\n</tr>\n<tr>\n<th scope=\"row\">Alternative Name(s)</th>\n<td>Sasha Velour</td>\n</tr>\n<tr>\n<th scope=\"row\">Life Dates</th>\n<td>1919-1990</td>\n</tr>\n<tr>\n<th scope=\"row\">Description</th>\n<td>I <i>think you ought to know I'm feeling very</i> depressed.</td>\n</tr>\n<tr>\n<th scope=\"row\">Profile</th>\n<td>It seemed to me that any civilization that had so far lost its head as to need to include a set of detailed instructions for use in a packet of toothpicks, was no longer a civilization in which I could live and stay sane.</td>\n</tr>\n<tr>\n<th scope=\"row\">See Also</th>\n<td><ul><li><a href=\"http://rice-pollich.io/chanel.spinka\" target=\"_blank\" rel=\"noopener\">http://rice-pollich.io/chanel.spinka<span>(opens in new tab)</span></a></li></ul></td>\n</tr>\n</table>",
+  "description": "I <i>think you ought to know I'm feeling very</i> depressed.",
   "e_type": "person",
-  "legacy_pk": 41244,
+  "legacy_pk": 24125,
   "alternate_names": [
-    "Phi Phi O'Hara"
+    "Sasha Velour"
   ],
   "alternate_spellings": [
-    "Kennedy Davenport"
+    "Aja"
   ],
-  "first_name": "Clint",
-  "last_name": "Leannon",
-  "life_dates": "1903-1975",
+  "first_name": "Vern",
+  "last_name": "Renner",
+  "life_dates": "1919-1990",
   "links": [
-    "http://feeney-fahey.name/gonzalo_halvorson"
+    "http://rice-pollich.io/chanel.spinka"
   ],
-  "profile": "It’s only half completed, I’m afraid – we haven’t even finished burying the artificial dinosaur skeletons in the crust yet.",
+  "profile": "It seemed to me that any civilization that had so far lost its head as to need to include a set of detailed instructions for use in a packet of toothpicks, was no longer a civilization in which I could live and stay sane.",
   "letters": {
-    "mention": "http://example.org/entities/accbce93-ea13-4d97-9249-ca46d269a524/letters?relation=mention",
-    "recived": "http://example.org/entities/accbce93-ea13-4d97-9249-ca46d269a524/letters?relation=recived",
-    "sent": "http://example.org/entities/accbce93-ea13-4d97-9249-ca46d269a524/letters?relation=sent",
-    "desination": "http://example.org/entities/accbce93-ea13-4d97-9249-ca46d269a524/letters?relation=destination",
-    "origin": "http://example.org/entities/accbce93-ea13-4d97-9249-ca46d269a524/letters?relation=origin"
+    "mention": "http://example.org/entities/682c34d7-e654-49d4-b50c-ac20921b99d0/letters?relation=mention",
+    "received": "http://example.org/entities/682c34d7-e654-49d4-b50c-ac20921b99d0/letters?relation=received",
+    "sent": "http://example.org/entities/682c34d7-e654-49d4-b50c-ac20921b99d0/letters?relation=sent",
+    "destination": "http://example.org/entities/682c34d7-e654-49d4-b50c-ac20921b99d0/letters?relation=destination",
+    "origin": "http://example.org/entities/682c34d7-e654-49d4-b50c-ac20921b99d0/letters?relation=origin"
   }
 }
 ~~~

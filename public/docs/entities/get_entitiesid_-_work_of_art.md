@@ -17,7 +17,7 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /entities/68f43ac6-0302-4731-8eb2-c64f504cd0b4</pre>
+<pre>GET /entities/9042289b-d343-4767-a5a5-b7f525c1c1f8</pre>
 
 ### Response
 
@@ -30,12 +30,12 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;c8adb359080b4303da6b42f29f692a0f&quot;
+ETag: W/&quot;6f08d81ec879955ff26bc3e835b66796&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 6aa65e41-ddc7-4482-a53d-2aa59eef422a
-X-Runtime: 1.724448
+X-Request-Id: 623df551-2e69-4c41-a1cb-e6b857abb757
+X-Runtime: 1.519603
 Vary: Origin
-Content-Length: 3678</pre>
+Content-Length: 3325</pre>
 
 #### Status
 
@@ -45,31 +45,31 @@ Content-Length: 3678</pre>
 
 ~~~
 {
-  "id": "68f43ac6-0302-4731-8eb2-c64f504cd0b4",
+  "id": "9042289b-d343-4767-a5a5-b7f525c1c1f8",
   "type": "work_of_art",
-  "label": "<i>Guitar</i>",
-  "short_display": "<section><p><strong>Artist</strong> Hactar</p>\n<p><strong>Title</strong> <i>Guitar</i></p>\n<p><strong>Description</strong> Banh <i>mi thundercats shabby chic kogi knausgaard</i> listicle.</p>\n<p><strong>Owner/location</strong> Golgafrinchan Ark Fleet Ship B</p></section>",
-  "full_display": "<table>\n<tr>\n<th scope=\"row\">Artist</th>\n<td>Hactar</td>\n</tr>\n<tr>\n<th scope=\"row\">Artist Alternative Name(s)</th>\n<td>Miss Fame</td>\n</tr>\n<tr>\n<th scope=\"row\">Title</th>\n<td><i>Guitar</i></td>\n</tr>\n<tr>\n<th scope=\"row\">Alternative Title(s)</th>\n<td>Phi Phi O'Hara</td>\n</tr>\n<tr>\n<th scope=\"row\">Description</th>\n<td>Banh <i>mi thundercats shabby chic kogi knausgaard</i> listicle.</td>\n</tr>\n<tr>\n<th scope=\"row\">Ownership and Location</th>\n<td>Golgafrinchan Ark Fleet Ship B</td>\n</tr>\n<tr>\n<th scope=\"row\">Current Ownership and Location</th>\n<td>Bistromath</td>\n</tr>\n<tr>\n<th scope=\"row\">Notes</th>\n<td>You think you've got problems? What are you supposed to do if you are a manically depressed robot? No, don't try to answer that. I'm fifty thousand times more intelligent than you and even I don't know the answer. It gives me a headache just trying to think down to your level.</td>\n</tr>\n<tr>\n<th scope=\"row\">See Also</th>\n<td><ul><li><a href=\"http://batz-smith.com/edwin.nienow\" target=\"_blank\" rel=\"noopener\">http://batz-smith.com/edwin.nienow<span>(opens in new tab)</span></a></li></ul></td>\n</tr>\n</table>",
-  "description": "Banh <i>mi thundercats shabby chic kogi knausgaard</i> listicle.",
+  "label": "<i>I Wanna Be Your Lover</i>",
+  "short_display": "<section><p><strong>Artist</strong> Elvis</p>\n<p><strong>Title</strong> <i>I Wanna Be Your Lover</i></p>\n<p><strong>Description</strong> Drinking letterpress twee postironic cleanse fashion axe pitchfork distillery.</p>\n<p><strong>Owner/location</strong> Golgafrinchan Ark Fleet Ship B</p></section>",
+  "full_display": "<table>\n<tr>\n<th scope=\"row\">Artist</th>\n<td>Elvis</td>\n</tr>\n<tr>\n<th scope=\"row\">Artist Alternative Name(s)</th>\n<td>Alyssa Edwards</td>\n</tr>\n<tr>\n<th scope=\"row\">Title</th>\n<td><i>I Wanna Be Your Lover</i></td>\n</tr>\n<tr>\n<th scope=\"row\">Alternative Title(s)</th>\n<td>Valentina</td>\n</tr>\n<tr>\n<th scope=\"row\">Description</th>\n<td>Drinking letterpress twee postironic cleanse fashion axe pitchfork distillery.</td>\n</tr>\n<tr>\n<th scope=\"row\">Ownership and Location</th>\n<td>Golgafrinchan Ark Fleet Ship B</td>\n</tr>\n<tr>\n<th scope=\"row\">Current Ownership and Location</th>\n<td>Bistromath</td>\n</tr>\n<tr>\n<th scope=\"row\">Notes</th>\n<td>There's only one life-form as intelligent as me within thirty parsecs of here and that's me.</td>\n</tr>\n<tr>\n<th scope=\"row\">See Also</th>\n<td><ul><li><a href=\"http://watsica.org/shawn_yost\" target=\"_blank\" rel=\"noopener\">http://watsica.org/shawn_yost<span>(opens in new tab)</span></a></li></ul></td>\n</tr>\n</table>",
+  "description": "Drinking letterpress twee postironic cleanse fashion axe pitchfork distillery.",
   "e_type": "work_of_art",
-  "legacy_pk": 69693,
+  "legacy_pk": 29515,
   "alternate_spellings": null,
-  "artist": "Hactar",
+  "artist": "Elvis",
   "artist_alternate_spellings": [
-    "Miss Fame"
+    "Alyssa Edwards"
   ],
   "links": [
-    "http://batz-smith.com/edwin.nienow"
+    "http://watsica.org/shawn_yost"
   ],
-  "notes": "You think you've got problems? What are you supposed to do if you are a manically depressed robot? No, don't try to answer that. I'm fifty thousand times more intelligent than you and even I don't know the answer. It gives me a headache just trying to think down to your level.",
+  "notes": "There's only one life-form as intelligent as me within thirty parsecs of here and that's me.",
   "owner_location": "Golgafrinchan Ark Fleet Ship B",
   "owner_location_current": "Bistromath",
   "letters": {
-    "mention": "http://example.org/entities/68f43ac6-0302-4731-8eb2-c64f504cd0b4/letters?relation=mention",
-    "recived": "http://example.org/entities/68f43ac6-0302-4731-8eb2-c64f504cd0b4/letters?relation=recived",
-    "sent": "http://example.org/entities/68f43ac6-0302-4731-8eb2-c64f504cd0b4/letters?relation=sent",
-    "desination": "http://example.org/entities/68f43ac6-0302-4731-8eb2-c64f504cd0b4/letters?relation=destination",
-    "origin": "http://example.org/entities/68f43ac6-0302-4731-8eb2-c64f504cd0b4/letters?relation=origin"
+    "mention": "http://example.org/entities/9042289b-d343-4767-a5a5-b7f525c1c1f8/letters?relation=mention",
+    "received": "http://example.org/entities/9042289b-d343-4767-a5a5-b7f525c1c1f8/letters?relation=received",
+    "sent": "http://example.org/entities/9042289b-d343-4767-a5a5-b7f525c1c1f8/letters?relation=sent",
+    "destination": "http://example.org/entities/9042289b-d343-4767-a5a5-b7f525c1c1f8/letters?relation=destination",
+    "origin": "http://example.org/entities/9042289b-d343-4767-a5a5-b7f525c1c1f8/letters?relation=origin"
   }
 }
 ~~~

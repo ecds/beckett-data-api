@@ -17,7 +17,7 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /entities/c3565700-7fcb-4a5b-94e0-017d9504a478</pre>
+<pre>GET /entities/6348286a-2043-4c39-923e-1b61a8da8307</pre>
 
 ### Response
 
@@ -30,12 +30,12 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;aa39721eb09d53e1ba857a183146a05a&quot;
+ETag: W/&quot;8e00a570f04560afd7a6a119570797be&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 57f7dd4d-9e5c-443a-bb3e-ef33cc78b8fc
-X-Runtime: 1.679751
+X-Request-Id: 4480c279-a5fa-484c-9276-520ac5d33180
+X-Runtime: 1.562940
 Vary: Origin
-Content-Length: 2046</pre>
+Content-Length: 2334</pre>
 
 #### Status
 
@@ -45,29 +45,29 @@ Content-Length: 2046</pre>
 
 ~~~
 {
-  "id": "c3565700-7fcb-4a5b-94e0-017d9504a478",
+  "id": "6348286a-2043-4c39-923e-1b61a8da8307",
   "type": "translating",
-  "label": "Vile Bodies",
-  "short_display": "<section><p><strong>Author</strong> Genghis Khan, <strong>Original Title</strong> Vile Bodies</p>\n<p><strong>Translated into</strong> Hebrew by Hactar</p>\n<p><strong>Translated title</strong> Billion Year Bunker.</p></section>",
-  "full_display": "<table>\n<tr>\n<th scope=\"row\">Original Title</th>\n<td>Vile Bodies</td>\n</tr>\n<tr>\n<th scope=\"row\">Author</th>\n<td>Genghis Khan</td>\n</tr>\n<tr>\n<th scope=\"row\">Translated into</th>\n<td>Hebrew by Hactar</td>\n</tr>\n<tr>\n<th scope=\"row\">Translated Title</th>\n<td>Billion Year Bunker.</td>\n</tr>\n<tr>\n<th scope=\"row\">Publication/Production</th>\n<td>I won't enjoy it.</td>\n</tr>\n</table>",
-  "description": "Pug <i>schlitz typewriter ethical pickled</i> disrupt.",
+  "label": "<i>To Your Scattered Bodies Go</i>",
+  "short_display": "<section><p><strong>Author</strong> Zaphod Beeblebrox, <strong>Original Title</strong> <i>To Your Scattered Bodies Go</i></p>\n<p><strong>Translated into</strong> German by Prostetnic Vogon Jeltz</p>\n<p><strong>Translated title</strong> Vogon Constructor Fleet.</p></section>",
+  "full_display": "<table>\n<tr>\n<th scope=\"row\">Original Title</th>\n<td><i>To Your Scattered Bodies Go</i></td>\n</tr>\n<tr>\n<th scope=\"row\">Author</th>\n<td>Zaphod Beeblebrox</td>\n</tr>\n<tr>\n<th scope=\"row\">Translated into</th>\n<td>German by Prostetnic Vogon Jeltz</td>\n</tr>\n<tr>\n<th scope=\"row\">Translated Title</th>\n<td>Vogon Constructor Fleet.</td>\n</tr>\n<tr>\n<th scope=\"row\">Publication/Production</th>\n<td>I think you ought to know I'm feeling very depressed.</td>\n</tr>\n</table>",
+  "description": "Food truck yolo fingerstache drinking skateboard muggle magic pug diy chicharrones.",
   "e_type": "translating",
-  "legacy_pk": 35443,
+  "legacy_pk": 26478,
   "authors": [
-    "Genghis Khan"
+    "Zaphod Beeblebrox"
   ],
-  "notes": "I won't enjoy it.",
-  "translated_into": "hebrew",
-  "translated_title": "Billion Year Bunker.",
+  "notes": "I think you ought to know I'm feeling very depressed.",
+  "translated_into": "german",
+  "translated_title": "Vogon Constructor Fleet.",
   "translators": [
-    "Hactar"
+    "Prostetnic Vogon Jeltz"
   ],
   "letters": {
-    "mention": "http://example.org/entities/c3565700-7fcb-4a5b-94e0-017d9504a478/letters?relation=mention",
-    "recived": "http://example.org/entities/c3565700-7fcb-4a5b-94e0-017d9504a478/letters?relation=recived",
-    "sent": "http://example.org/entities/c3565700-7fcb-4a5b-94e0-017d9504a478/letters?relation=sent",
-    "desination": "http://example.org/entities/c3565700-7fcb-4a5b-94e0-017d9504a478/letters?relation=destination",
-    "origin": "http://example.org/entities/c3565700-7fcb-4a5b-94e0-017d9504a478/letters?relation=origin"
+    "mention": "http://example.org/entities/6348286a-2043-4c39-923e-1b61a8da8307/letters?relation=mention",
+    "received": "http://example.org/entities/6348286a-2043-4c39-923e-1b61a8da8307/letters?relation=received",
+    "sent": "http://example.org/entities/6348286a-2043-4c39-923e-1b61a8da8307/letters?relation=sent",
+    "destination": "http://example.org/entities/6348286a-2043-4c39-923e-1b61a8da8307/letters?relation=destination",
+    "origin": "http://example.org/entities/6348286a-2043-4c39-923e-1b61a8da8307/letters?relation=origin"
   }
 }
 ~~~

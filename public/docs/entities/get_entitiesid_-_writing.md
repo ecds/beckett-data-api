@@ -17,7 +17,7 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /entities/3f4003ac-f231-4edb-b05f-5503b35e6d30</pre>
+<pre>GET /entities/2eeb8fe2-c1f3-450f-b257-a5a5aae3cf76</pre>
 
 ### Response
 
@@ -30,12 +30,12 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;03f7cdbe18bfe02f9a0c961f752c4699&quot;
+ETag: W/&quot;8aaa3b681c63f6d0300edbeaa68cefca&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: ea53dc19-8163-4a41-8929-f09634c8a556
-X-Runtime: 2.127563
+X-Request-Id: dd54adbe-1759-46e5-a9db-927da5cfa1de
+X-Runtime: 1.668343
 Vary: Origin
-Content-Length: 2876</pre>
+Content-Length: 2815</pre>
 
 #### Status
 
@@ -45,27 +45,27 @@ Content-Length: 2876</pre>
 
 ~~~
 {
-  "id": "3f4003ac-f231-4edb-b05f-5503b35e6d30",
+  "id": "2eeb8fe2-c1f3-450f-b257-a5a5aae3cf76",
   "type": "writing",
-  "label": "<i>Françoise Sagan</i>",
-  "short_display": "<section><p><strong>Title</strong> <i>Françoise Sagan</i></p>\n<p><strong>Proposal/Response</strong> Nothing travels faster than the speed of light with the possible exception of bad news, which obeys its own special laws.</p>\n<p><strong>Translator</strong> Slartibartfast</p>\n<p><strong>Date</strong> 1934-07-28.</p></section>",
-  "full_display": "<table>\n<tr>\n<th scope=\"row\">Title</th>\n<td><i>Françoise Sagan</i></td>\n</tr>\n<tr>\n<th scope=\"row\">Proposal/Response</th>\n<td>Nothing travels faster than the speed of light with the possible exception of bad news, which obeys its own special laws.</td>\n</tr>\n<tr>\n<th scope=\"row\">Date</th>\n<td>1934-07-28.</td>\n</tr>\n<tr>\n<th scope=\"row\">Notes</th>\n<td>Life? Don't talk to me about life.</td>\n</tr>\n<tr>\n<th scope=\"row\">Archival Information</th>\n<td>Shambhala Publications.</td>\n</tr>\n<tr>\n<th scope=\"row\">See Also</th>\n<td><ul><li><a href=\"http://heaney-carroll.org/cathi_dickinson\" target=\"_blank\" rel=\"noopener\">http://heaney-carroll.org/cathi_dickinson<span>(opens in new tab)</span></a></li></ul></td>\n</tr>\n</table>",
-  "description": "Aesthetic lomo yolo tattooed ennui brunch thundercats butcher.",
+  "label": "Behold the Man",
+  "short_display": "<section><p><strong>Title</strong> Behold the Man</p>\n<p><strong>Proposal/Response</strong> Whatever your tastes, Magrathea can cater for you. We are not proud.</p>\n<p><strong>Translator</strong> Oolon Colluphid</p>\n<p><strong>Date</strong> 1952-11-27.</p></section>",
+  "full_display": "<table>\n<tr>\n<th scope=\"row\">Title</th>\n<td>Behold the Man</td>\n</tr>\n<tr>\n<th scope=\"row\">Proposal/Response</th>\n<td>Whatever your tastes, Magrathea can cater for you. We are not proud.</td>\n</tr>\n<tr>\n<th scope=\"row\">Date</th>\n<td>1952-11-27.</td>\n</tr>\n<tr>\n<th scope=\"row\">Notes</th>\n<td>Here I am, brain the size of a planet, and they tell me to take you up to the bridge. Call that job satisfaction? 'Cos I don't.</td>\n</tr>\n<tr>\n<th scope=\"row\">Archival Information</th>\n<td>Medknow Publications.</td>\n</tr>\n<tr>\n<th scope=\"row\">See Also</th>\n<td><ul><li><a href=\"http://simonis-wisozk.name/azalee.dibbert\" target=\"_blank\" rel=\"noopener\">http://simonis-wisozk.name/azalee.dibbert<span>(opens in new tab)</span></a></li></ul></td>\n</tr>\n</table>",
+  "description": "Shoreditch humblebrag typewriter bushwick bespoke vegan ramps.",
   "e_type": "writing",
-  "legacy_pk": 48425,
-  "date_str": "1934-07-28.",
+  "legacy_pk": 9865,
+  "date_str": "1952-11-27.",
   "links": [
-    "http://heaney-carroll.org/cathi_dickinson"
+    "http://simonis-wisozk.name/azalee.dibbert"
   ],
-  "notes": "Life? Don't talk to me about life.",
-  "proposal": "Nothing travels faster than the speed of light with the possible exception of bad news, which obeys its own special laws.",
-  "publication_information": "Shambhala Publications.",
+  "notes": "Here I am, brain the size of a planet, and they tell me to take you up to the bridge. Call that job satisfaction? 'Cos I don't.",
+  "proposal": "Whatever your tastes, Magrathea can cater for you. We are not proud.",
+  "publication_information": "Medknow Publications.",
   "letters": {
-    "mention": "http://example.org/entities/3f4003ac-f231-4edb-b05f-5503b35e6d30/letters?relation=mention",
-    "recived": "http://example.org/entities/3f4003ac-f231-4edb-b05f-5503b35e6d30/letters?relation=recived",
-    "sent": "http://example.org/entities/3f4003ac-f231-4edb-b05f-5503b35e6d30/letters?relation=sent",
-    "desination": "http://example.org/entities/3f4003ac-f231-4edb-b05f-5503b35e6d30/letters?relation=destination",
-    "origin": "http://example.org/entities/3f4003ac-f231-4edb-b05f-5503b35e6d30/letters?relation=origin"
+    "mention": "http://example.org/entities/2eeb8fe2-c1f3-450f-b257-a5a5aae3cf76/letters?relation=mention",
+    "received": "http://example.org/entities/2eeb8fe2-c1f3-450f-b257-a5a5aae3cf76/letters?relation=received",
+    "sent": "http://example.org/entities/2eeb8fe2-c1f3-450f-b257-a5a5aae3cf76/letters?relation=sent",
+    "destination": "http://example.org/entities/2eeb8fe2-c1f3-450f-b257-a5a5aae3cf76/letters?relation=destination",
+    "origin": "http://example.org/entities/2eeb8fe2-c1f3-450f-b257-a5a5aae3cf76/letters?relation=origin"
   }
 }
 ~~~

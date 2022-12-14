@@ -2,7 +2,7 @@
 
 
 
-## GET /entities/:id/letters?relation=origin
+## GET /entities/:id/letters?relation=received
 
 ### GET entities/:id/letters
 
@@ -28,11 +28,11 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET entities/588defda-5cf8-4b29-9f1a-e1143fc8b1d1/letters?relation=origin</pre>
+<pre>GET entities/e2adc524-34dc-4e0f-bd7b-f9b85a69ae81/letters?relation=received</pre>
 
 #### Query Parameters
 
-<pre>relation: origin</pre>
+<pre>relation: received</pre>
 
 ### Response
 
@@ -45,12 +45,12 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;13ade926d11f2e795be1eb94c02d9287&quot;
+ETag: W/&quot;17adcf50b84150aee2030dbbcfe1939b&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 1639c6e8-e57d-47aa-a942-d8bda77d16fd
-X-Runtime: 1.879596
+X-Request-Id: ba9de95c-6a79-4519-b8e9-ce5279f65a48
+X-Runtime: 2.049738
 Vary: Origin
-Content-Length: 431</pre>
+Content-Length: 509</pre>
 
 #### Status
 
@@ -60,23 +60,23 @@ Content-Length: 431</pre>
 
 ~~~
 {
-  "min_date": "1955-06-09",
-  "max_date": "1982-12-04",
+  "min_date": "1953-11-17",
+  "max_date": "1967-06-15",
   "total_pages": 1,
   "letters": [
     {
-      "id": "2170b8ab-13e1-4ebc-b7cf-b4689e4e3f06",
-      "label": "09 June 1955 - Schuster, Thersa",
-      "recipient": "Schuster, Thersa",
-      "repository": "Southern Wolff",
-      "date": "09 June 1955"
+      "id": "e776c71a-07b0-4bb4-945a-8efd370da2e8",
+      "label": "17 November 1953 - Hirthe, Kyung, Jerde, Josephina",
+      "recipient": "Hirthe, Kyung and Jerde, Josephina",
+      "repository": "Eastern Ohio Academy",
+      "date": "17 November 1953"
     },
     {
-      "id": "1284b14b-bf7d-4f5c-aa5e-c0ae9d903d0a",
-      "label": "04 December 1982 - McKenzie, Keren",
-      "recipient": "McKenzie, Keren",
-      "repository": "Wilkinson University",
-      "date": "04 December 1982"
+      "id": "5119d732-ef27-4143-81ba-1e9c3645b98e",
+      "label": "15 June 1967 - Boyle, Darrin, Jerde, Josephina",
+      "recipient": "Boyle, Darrin and Jerde, Josephina",
+      "repository": "Western Runte University",
+      "date": "15 June 1967"
     }
   ]
 }

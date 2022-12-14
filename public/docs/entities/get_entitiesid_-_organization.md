@@ -17,7 +17,7 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /entities/f7dc2815-f02b-4916-a254-2c357c9db4e8</pre>
+<pre>GET /entities/83c80759-2f73-4885-ae60-98180e964cce</pre>
 
 ### Response
 
@@ -30,12 +30,12 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;d2a3ab7cf668ce190cd933c2263cad6f&quot;
+ETag: W/&quot;249a83d66fa85bc5410655cc5a64cf32&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 4f50500a-53e3-4b78-a391-71a0e62ff3db
-X-Runtime: 1.484181
+X-Request-Id: d56e32b4-b868-434f-bba0-72486398aac8
+X-Runtime: 1.564266
 Vary: Origin
-Content-Length: 1943</pre>
+Content-Length: 2236</pre>
 
 #### Status
 
@@ -45,25 +45,25 @@ Content-Length: 1943</pre>
 
 ~~~
 {
-  "id": "f7dc2815-f02b-4916-a254-2c357c9db4e8",
+  "id": "83c80759-2f73-4885-ae60-98180e964cce",
   "type": "organization",
-  "label": "Broop Kidron 13",
-  "short_display": "<section><p><strong>Broop Kidron 13</strong></p>\n<p>Life? Don't talk to me about life.</p></section>",
-  "full_display": "<table>\n<tr>\n<th scope=\"row\">Name</th>\n<td>Broop Kidron 13</td>\n</tr>\n<tr>\n<th scope=\"row\">Description</th>\n<td>Life? Don't talk to me about life.</td>\n</tr>\n<tr>\n<th scope=\"row\">Alternate Name(s)</th>\n<td>Shangela Wadley</td>\n</tr>\n<tr>\n<th scope=\"row\">Profile</th>\n<td>Whatever your tastes, Magrathea can cater for you. We are not proud.</td>\n</tr>\n<tr>\n<th scope=\"row\">Notes</th>\n<td>Everybody wants to find Graffiti Bridge, something to believe in, a reason to believe that there's a heaven above.</td>\n</tr>\n</table>",
-  "description": "Life? Don't talk to me about life.",
+  "label": "<i>Broop Kidron 13</i>",
+  "short_display": "<section><p><strong><i>Broop Kidron 13</i></strong></p>\n<p>There's only one life-form as intelligent as me within thirty parsecs of here and that's me.</p></section>",
+  "full_display": "<table>\n<tr>\n<th scope=\"row\">Name</th>\n<td><i>Broop Kidron 13</i></td>\n</tr>\n<tr>\n<th scope=\"row\">Description</th>\n<td>There's only one life-form as intelligent as me within thirty parsecs of here and that's me.</td>\n</tr>\n<tr>\n<th scope=\"row\">Alternate Name(s)</th>\n<td>Aja</td>\n</tr>\n<tr>\n<th scope=\"row\">Profile</th>\n<td>If there's anything more important than my ego around, I want it caught and shot now.</td>\n</tr>\n<tr>\n<th scope=\"row\">Notes</th>\n<td>We've been together for quite some time, I'd think by now you'd know, it would take forever to get you off my mind if ever you decide to go.</td>\n</tr>\n</table>",
+  "description": "There's only one life-form as intelligent as me within thirty parsecs of here and that's me.",
   "e_type": "organization",
-  "legacy_pk": 62444,
+  "legacy_pk": 2475,
   "alternate_names": [
-    "Shangela Wadley"
+    "Aja"
   ],
   "alternate_spellings": null,
-  "profile": "Whatever your tastes, Magrathea can cater for you. We are not proud.",
+  "profile": "If there's anything more important than my ego around, I want it caught and shot now.",
   "letters": {
-    "mention": "http://example.org/entities/f7dc2815-f02b-4916-a254-2c357c9db4e8/letters?relation=mention",
-    "recived": "http://example.org/entities/f7dc2815-f02b-4916-a254-2c357c9db4e8/letters?relation=recived",
-    "sent": "http://example.org/entities/f7dc2815-f02b-4916-a254-2c357c9db4e8/letters?relation=sent",
-    "desination": "http://example.org/entities/f7dc2815-f02b-4916-a254-2c357c9db4e8/letters?relation=destination",
-    "origin": "http://example.org/entities/f7dc2815-f02b-4916-a254-2c357c9db4e8/letters?relation=origin"
+    "mention": "http://example.org/entities/83c80759-2f73-4885-ae60-98180e964cce/letters?relation=mention",
+    "received": "http://example.org/entities/83c80759-2f73-4885-ae60-98180e964cce/letters?relation=received",
+    "sent": "http://example.org/entities/83c80759-2f73-4885-ae60-98180e964cce/letters?relation=sent",
+    "destination": "http://example.org/entities/83c80759-2f73-4885-ae60-98180e964cce/letters?relation=destination",
+    "origin": "http://example.org/entities/83c80759-2f73-4885-ae60-98180e964cce/letters?relation=origin"
   }
 }
 ~~~

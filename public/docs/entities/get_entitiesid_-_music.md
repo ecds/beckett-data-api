@@ -17,7 +17,7 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /entities/f04f5939-6c01-494a-95d3-6229ecde48da</pre>
+<pre>GET /entities/39a1b35c-6259-44c4-9e09-210264688b68</pre>
 
 ### Response
 
@@ -30,12 +30,12 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;fec453eb2f939cd17945385300df1c79&quot;
+ETag: W/&quot;114d7daf23da15b98e612f7521c581df&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 31ad7a00-bc4f-44e0-9351-df17050493bd
-X-Runtime: 1.553493
+X-Request-Id: 319dad5f-00c5-4d79-810f-526640bd88a6
+X-Runtime: 1.635657
 Vary: Origin
-Content-Length: 2654</pre>
+Content-Length: 2733</pre>
 
 #### Status
 
@@ -45,32 +45,32 @@ Content-Length: 2654</pre>
 
 ~~~
 {
-  "id": "f04f5939-6c01-494a-95d3-6229ecde48da",
+  "id": "39a1b35c-6259-44c4-9e09-210264688b68",
   "type": "music",
-  "label": "The Most Beautiful Girl In The World",
-  "short_display": "<section><p><strong>Composer</strong> Fenchurch</p>\n<p><strong>Title</strong> The Most Beautiful Girl In The World</p>\n<p><strong>Description</strong> Art party freegan before they sold out xoxo whatever ennui offal.</p></section>",
-  "full_display": "<table>\n<tr>\n<th scope=\"row\">Composer</th>\n<td>Fenchurch</td>\n</tr>\n<tr>\n<th scope=\"row\">Title</th>\n<td>The Most Beautiful Girl In The World</td>\n</tr>\n<tr>\n<th scope=\"row\">Alternate Title(s)</th>\n<td>Trinity Taylor</td>\n</tr>\n<tr>\n<th scope=\"row\">Description</th>\n<td>Art party freegan before they sold out xoxo whatever ennui offal.</td>\n</tr>\n<tr>\n<th scope=\"row\">Performed by</th>\n<td>The Dude</td>\n</tr>\n<tr>\n<th scope=\"row\">Notes</th>\n<td>If I was your girlfriend, would you let me dress you?</td>\n</tr>\n<tr>\n<th scope=\"row\">See Also</th>\n<td><ul><li><a href=\"http://hirthe.io/courtney\" target=\"_blank\" rel=\"noopener\">http://hirthe.io/courtney<span>(opens in new tab)</span></a></li></ul></td>\n</tr>\n</table>",
-  "description": "Art party freegan before they sold out xoxo whatever ennui offal.",
+  "label": "<i>Head</i>",
+  "short_display": "<section><p><strong>Composer</strong> Colin the Security Robot</p>\n<p><strong>Title</strong> <i>Head</i></p>\n<p><strong>Description</strong> Listicle <i>kogi cred semiotics vhs phlogiston cray fashion axe</i> brunch.</p></section>",
+  "full_display": "<table>\n<tr>\n<th scope=\"row\">Composer</th>\n<td>Colin the Security Robot</td>\n</tr>\n<tr>\n<th scope=\"row\">Title</th>\n<td><i>Head</i></td>\n</tr>\n<tr>\n<th scope=\"row\">Alternate Title(s)</th>\n<td>Darienne Lake</td>\n</tr>\n<tr>\n<th scope=\"row\">Description</th>\n<td>Listicle <i>kogi cred semiotics vhs phlogiston cray fashion axe</i> brunch.</td>\n</tr>\n<tr>\n<th scope=\"row\">Performed by</th>\n<td>The Dude</td>\n</tr>\n<tr>\n<th scope=\"row\">Notes</th>\n<td>You ask me if I love you, it's automatic.</td>\n</tr>\n<tr>\n<th scope=\"row\">See Also</th>\n<td><ul><li><a href=\"http://schoen.io/ty\" target=\"_blank\" rel=\"noopener\">http://schoen.io/ty<span>(opens in new tab)</span></a></li></ul></td>\n</tr>\n</table>",
+  "description": "Listicle <i>kogi cred semiotics vhs phlogiston cray fashion axe</i> brunch.",
   "e_type": "music",
-  "legacy_pk": 73481,
+  "legacy_pk": 52007,
   "alternate_names": [
-    "Trinity Taylor"
+    "Darienne Lake"
   ],
   "alternate_spellings": null,
-  "composer": "Fenchurch",
+  "composer": "Colin the Security Robot",
   "links": [
-    "http://hirthe.io/courtney"
+    "http://schoen.io/ty"
   ],
-  "notes": "If I was your girlfriend, would you let me dress you?",
+  "notes": "You ask me if I love you, it's automatic.",
   "performed_by": [
     "The Dude"
   ],
   "letters": {
-    "mention": "http://example.org/entities/f04f5939-6c01-494a-95d3-6229ecde48da/letters?relation=mention",
-    "recived": "http://example.org/entities/f04f5939-6c01-494a-95d3-6229ecde48da/letters?relation=recived",
-    "sent": "http://example.org/entities/f04f5939-6c01-494a-95d3-6229ecde48da/letters?relation=sent",
-    "desination": "http://example.org/entities/f04f5939-6c01-494a-95d3-6229ecde48da/letters?relation=destination",
-    "origin": "http://example.org/entities/f04f5939-6c01-494a-95d3-6229ecde48da/letters?relation=origin"
+    "mention": "http://example.org/entities/39a1b35c-6259-44c4-9e09-210264688b68/letters?relation=mention",
+    "received": "http://example.org/entities/39a1b35c-6259-44c4-9e09-210264688b68/letters?relation=received",
+    "sent": "http://example.org/entities/39a1b35c-6259-44c4-9e09-210264688b68/letters?relation=sent",
+    "destination": "http://example.org/entities/39a1b35c-6259-44c4-9e09-210264688b68/letters?relation=destination",
+    "origin": "http://example.org/entities/39a1b35c-6259-44c4-9e09-210264688b68/letters?relation=origin"
   }
 }
 ~~~

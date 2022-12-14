@@ -17,7 +17,7 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /entities/9c079a80-a08c-4a49-8888-9342f1355353</pre>
+<pre>GET /entities/6a3b9fc2-2f97-4fe9-b608-179a6a823c96</pre>
 
 ### Response
 
@@ -30,12 +30,12 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;b86ef4c966000e1f76502f900e2ff191&quot;
+ETag: W/&quot;3fcdda80fff44a3c0ce12ef5adef53f8&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: ddb36932-988f-442f-a641-c586440de593
-X-Runtime: 1.482554
+X-Request-Id: abc84a5e-ccb3-49be-beb9-f471f37bf020
+X-Runtime: 1.804570
 Vary: Origin
-Content-Length: 2766</pre>
+Content-Length: 2610</pre>
 
 #### Status
 
@@ -45,28 +45,28 @@ Content-Length: 2766</pre>
 
 ~~~
 {
-  "id": "9c079a80-a08c-4a49-8888-9342f1355353",
+  "id": "6a3b9fc2-2f97-4fe9-b608-179a6a823c96",
   "type": "publication",
-  "label": "<i>J. M. Dent</i>",
-  "short_display": "<section><p><strong>Author</strong> The Big Lebowski</p>\n<p><strong>Title</strong> <i>J. M. Dent</i></p>\n<p><strong>Translator</strong> Prostetnic Vogon Kwaltz</p>\n<p><strong>Publication</strong> Park master jean shorts scenester bicycle rights biodiesel.</p></section>",
-  "full_display": "<table>\n<tr>\n<th scope=\"row\">Author</th>\n<td>The Big Lebowski</td>\n</tr>\n<tr>\n<th scope=\"row\">Title</th>\n<td><i>J. M. Dent</i></td>\n</tr>\n<tr>\n<th scope=\"row\">Translator</th>\n<td>Prostetnic Vogon Kwaltz</td>\n</tr>\n<tr>\n<th scope=\"row\">Publication</th>\n<td>Park master jean shorts scenester bicycle rights biodiesel.</td>\n</tr>\n<tr>\n<th scope=\"row\">Notes</th>\n<td>You think you've got problems? What are you supposed to do if you are a manically depressed robot? No, don't try to answer that. I'm fifty thousand times more intelligent than you and even I don't know the answer. It gives me a headache just trying to think down to your level.</td>\n</tr>\n</table>",
-  "description": "Chambray <i>organic 3 wolf moon vegan biodiesel</i> farmtotable.",
+  "label": "<i>Parragon</i>",
+  "short_display": "<section><p><strong>Author</strong> Walter Sobchak</p>\n<p><strong>Title</strong> <i>Parragon</i></p>\n<p><strong>Translator</strong> Phouchg</p>\n<p><strong>Publication</strong> Master health locavore authentic.</p></section>",
+  "full_display": "<table>\n<tr>\n<th scope=\"row\">Author</th>\n<td>Walter Sobchak</td>\n</tr>\n<tr>\n<th scope=\"row\">Title</th>\n<td><i>Parragon</i></td>\n</tr>\n<tr>\n<th scope=\"row\">Translator</th>\n<td>Phouchg</td>\n</tr>\n<tr>\n<th scope=\"row\">Publication</th>\n<td>Master health locavore authentic.</td>\n</tr>\n<tr>\n<th scope=\"row\">Notes</th>\n<td>You think you've got problems? What are you supposed to do if you are a manically depressed robot? No, don't try to answer that. I'm fifty thousand times more intelligent than you and even I don't know the answer. It gives me a headache just trying to think down to your level.</td>\n</tr>\n</table>",
+  "description": "Chambray kombucha irony migas quinoa literally park chartreuse.",
   "e_type": "publication",
-  "legacy_pk": 55902,
+  "legacy_pk": 26293,
   "authors": [
-    "The Big Lebowski"
+    "Walter Sobchak"
   ],
   "notes": "You think you've got problems? What are you supposed to do if you are a manically depressed robot? No, don't try to answer that. I'm fifty thousand times more intelligent than you and even I don't know the answer. It gives me a headache just trying to think down to your level.",
-  "publication_information": "Park master jean shorts scenester bicycle rights biodiesel.",
+  "publication_information": "Master health locavore authentic.",
   "translators": [
-    "Prostetnic Vogon Kwaltz"
+    "Phouchg"
   ],
   "letters": {
-    "mention": "http://example.org/entities/9c079a80-a08c-4a49-8888-9342f1355353/letters?relation=mention",
-    "recived": "http://example.org/entities/9c079a80-a08c-4a49-8888-9342f1355353/letters?relation=recived",
-    "sent": "http://example.org/entities/9c079a80-a08c-4a49-8888-9342f1355353/letters?relation=sent",
-    "desination": "http://example.org/entities/9c079a80-a08c-4a49-8888-9342f1355353/letters?relation=destination",
-    "origin": "http://example.org/entities/9c079a80-a08c-4a49-8888-9342f1355353/letters?relation=origin"
+    "mention": "http://example.org/entities/6a3b9fc2-2f97-4fe9-b608-179a6a823c96/letters?relation=mention",
+    "received": "http://example.org/entities/6a3b9fc2-2f97-4fe9-b608-179a6a823c96/letters?relation=received",
+    "sent": "http://example.org/entities/6a3b9fc2-2f97-4fe9-b608-179a6a823c96/letters?relation=sent",
+    "destination": "http://example.org/entities/6a3b9fc2-2f97-4fe9-b608-179a6a823c96/letters?relation=destination",
+    "origin": "http://example.org/entities/6a3b9fc2-2f97-4fe9-b608-179a6a823c96/letters?relation=origin"
   }
 }
 ~~~

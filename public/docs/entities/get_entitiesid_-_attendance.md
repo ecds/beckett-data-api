@@ -17,7 +17,7 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /entities/124c0bcf-6ff5-4f4b-a90b-f3922c2d65bd</pre>
+<pre>GET /entities/e7a8b2f1-09b2-4666-9bb2-2b610ad89809</pre>
 
 ### Response
 
@@ -30,12 +30,12 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;68278e2b13a4208ae29d957705fd2856&quot;
+ETag: W/&quot;b1e6a32075b6d0b4d046bcd456114afb&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: c0237199-803f-4368-858b-943e71b2198c
-X-Runtime: 1.574004
+X-Request-Id: 8c29a16a-25e5-4458-8b73-95f965eae60d
+X-Runtime: 1.712077
 Vary: Origin
-Content-Length: 2805</pre>
+Content-Length: 2943</pre>
 
 #### Status
 
@@ -45,35 +45,35 @@ Content-Length: 2805</pre>
 
 ~~~
 {
-  "id": "124c0bcf-6ff5-4f4b-a90b-f3922c2d65bd",
+  "id": "e7a8b2f1-09b2-4666-9bb2-2b610ad89809",
   "type": "attendance",
-  "label": "Radio Broadcast, Franzen <i>wes anderson actually poutine</i> cleanse.",
-  "short_display": "<section><p><strong>Radio Broadcast</strong>, Franzen <i>wes anderson actually poutine</i> cleanse.</p>\n<p><strong>Attended with</strong> Bunny Lebowski and Arthur Dent</p>\n<p><strong>Place, Date</strong> Esperanzatown, 12 March 1932</p>\n<p><strong>Director</strong> Colin the Security Robot</p></section>",
-  "full_display": "<table>\n<tr>\n<th scope=\"row\">Description</th>\n<td>Franzen <i>wes anderson actually poutine</i> cleanse.</td>\n</tr>\n<tr>\n<th scope=\"row\">Alternate Name(s)</th>\n<td>Ra'jah O'Hara</td>\n</tr>\n<tr>\n<th scope=\"row\">Director</th>\n<td>Colin the Security Robot</td>\n</tr>\n<tr>\n<th scope=\"row\">Performed by</th>\n<td>Arthur Dent</td>\n</tr>\n<tr>\n<th scope=\"row\">Attended with</th>\n<td>Bunny Lebowski and Arthur Dent</td>\n</tr>\n<tr>\n<th scope=\"row\">Place, Date</th>\n<td>Esperanzatown, 12 March 1932</td>\n</tr>\n<tr>\n<th scope=\"row\">Notes</th>\n<td>How can you just leave me standing alone in a world so cold?</td>\n</tr>\n</table>",
-  "description": "Franzen <i>wes anderson actually poutine</i> cleanse.",
+  "label": "Reading, Food truck bicycle rights humblebrag microdosing vice hashtag next level ennui skateboard.",
+  "short_display": "<section><p><strong>Reading</strong>, Food truck bicycle rights humblebrag microdosing vice hashtag next level ennui skateboard.</p>\n<p><strong>Attended with</strong> The Big Lebowski and Roosta</p>\n<p><strong>Place, Date</strong> South Hangville, 21 January 1972</p>\n<p><strong>Director</strong> Eccentrica Gallumbits</p></section>",
+  "full_display": "<table>\n<tr>\n<th scope=\"row\">Description</th>\n<td>Food truck bicycle rights humblebrag microdosing vice hashtag next level ennui skateboard.</td>\n</tr>\n<tr>\n<th scope=\"row\">Alternate Name(s)</th>\n<td>Kennedy Davenport</td>\n</tr>\n<tr>\n<th scope=\"row\">Director</th>\n<td>Eccentrica Gallumbits</td>\n</tr>\n<tr>\n<th scope=\"row\">Performed by</th>\n<td>Pasta Fasta</td>\n</tr>\n<tr>\n<th scope=\"row\">Attended with</th>\n<td>The Big Lebowski and Roosta</td>\n</tr>\n<tr>\n<th scope=\"row\">Place, Date</th>\n<td>South Hangville, 21 January 1972</td>\n</tr>\n<tr>\n<th scope=\"row\">Notes</th>\n<td>We all have our problems. Some big, some are small. Soon all of our problems will be taken by the cross.</td>\n</tr>\n</table>",
+  "description": "Food truck bicycle rights humblebrag microdosing vice hashtag next level ennui skateboard.",
   "e_type": "attendance",
-  "legacy_pk": 95093,
+  "legacy_pk": 17675,
   "alternate_names": [
-    "Ra'jah O'Hara"
+    "Kennedy Davenport"
   ],
   "alternate_spellings": null,
   "attended_with": [
-    "Bunny Lebowski",
-    "Arthur Dent"
+    "The Big Lebowski",
+    "Roosta"
   ],
-  "director": "Colin the Security Robot",
-  "event_type": "radio_broadcast",
-  "notes": "How can you just leave me standing alone in a world so cold?",
+  "director": "Eccentrica Gallumbits",
+  "event_type": "_reading",
+  "notes": "We all have our problems. Some big, some are small. Soon all of our problems will be taken by the cross.",
   "performed_by": [
-    "Arthur Dent"
+    "Pasta Fasta"
   ],
-  "place_date": "Esperanzatown, 12 March 1932",
+  "place_date": "South Hangville, 21 January 1972",
   "letters": {
-    "mention": "http://example.org/entities/124c0bcf-6ff5-4f4b-a90b-f3922c2d65bd/letters?relation=mention",
-    "recived": "http://example.org/entities/124c0bcf-6ff5-4f4b-a90b-f3922c2d65bd/letters?relation=recived",
-    "sent": "http://example.org/entities/124c0bcf-6ff5-4f4b-a90b-f3922c2d65bd/letters?relation=sent",
-    "desination": "http://example.org/entities/124c0bcf-6ff5-4f4b-a90b-f3922c2d65bd/letters?relation=destination",
-    "origin": "http://example.org/entities/124c0bcf-6ff5-4f4b-a90b-f3922c2d65bd/letters?relation=origin"
+    "mention": "http://example.org/entities/e7a8b2f1-09b2-4666-9bb2-2b610ad89809/letters?relation=mention",
+    "received": "http://example.org/entities/e7a8b2f1-09b2-4666-9bb2-2b610ad89809/letters?relation=received",
+    "sent": "http://example.org/entities/e7a8b2f1-09b2-4666-9bb2-2b610ad89809/letters?relation=sent",
+    "destination": "http://example.org/entities/e7a8b2f1-09b2-4666-9bb2-2b610ad89809/letters?relation=destination",
+    "origin": "http://example.org/entities/e7a8b2f1-09b2-4666-9bb2-2b610ad89809/letters?relation=origin"
   }
 }
 ~~~

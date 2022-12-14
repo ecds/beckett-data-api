@@ -17,7 +17,7 @@ Cookie: </pre>
 
 #### Route
 
-<pre>GET /entities/d6e66b42-1ba6-488a-9ceb-5afd85763cd3</pre>
+<pre>GET /entities/1d75c060-a443-42e1-a276-9c262dbd42ab</pre>
 
 ### Response
 
@@ -30,12 +30,12 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;a746a7b5ffbc015dc7c961e103d52e6a&quot;
+ETag: W/&quot;58bee2ed8fbfcc1e67e6049c3a105584&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: e814bbdf-5f27-401c-9387-0f140322c113
-X-Runtime: 1.641579
+X-Request-Id: 9b6406c3-5f71-4099-aa5c-fca11fcec35f
+X-Runtime: 1.759005
 Vary: Origin
-Content-Length: 4238</pre>
+Content-Length: 4198</pre>
 
 #### Status
 
@@ -45,39 +45,39 @@ Content-Length: 4238</pre>
 
 ~~~
 {
-  "id": "d6e66b42-1ba6-488a-9ceb-5afd85763cd3",
+  "id": "1d75c060-a443-42e1-a276-9c262dbd42ab",
   "type": "production",
-  "label": "<i>Dog Day Afternoon</i>",
-  "short_display": "<section><p><strong>Title</strong> <i>Dog Day Afternoon</i></p>\n<p><strong>Proposal/Response</strong> I think you ought to know I'm feeling very depressed. / if you’ve never been through a matter transference beam before you’ve probably lost some salt and protein. The beer you had should have cushioned your system a bit.</p>\n<p><strong>Director</strong> The Big Lebowski <strong>Theatre, City</strong> Krikkit One, Durganland</p>\n<p><strong>Date(s)</strong> 1931-06-02.</p></section>",
-  "full_display": "<table>\n<tr>\n<th scope=\"row\">Title</th>\n<td colspan=\"5\"><i>Dog Day Afternoon</i></td>\n</tr>\n<tr>\n<th scope=\"row\">Proposal</th>\n<td>I think you ought to know I'm feeling very depressed.</td>\n<th scope=\"row\">Response</th>\n<td>if you’ve never been through a matter transference beam before you’ve probably lost some salt and protein. The beer you had should have cushioned your system a bit.</td>\n<th scope=\"row\">Reason</th>\n<td>I'm hot and I don't care who knows it, I got a job to do.</td>\n</tr>\n<tr>\n<th scope=\"row\">Date(s)</th>\n<td colspan=\"5\">1931-06-02.</td>\n</tr>\n<tr>\n<th scope=\"row\">Director</th>\n<td colspan=\"5\">The Big Lebowski</td>\n</tr>\n<tr>\n<th scope=\"row\">Cast</th>\n<td colspan=\"5\">Trillian and Bunny Lebowski</td>\n</tr>\n<tr>\n<th scope=\"row\">Personnel</th>\n<td colspan=\"5\">Hotblack Desiato's bodyguard</td>\n</tr>\n<tr>\n<th scope=\"row\">Theatre, City</th>\n<td colspan=\"5\">Krikkit One, Durganland</td>\n</tr>\n<tr>\n<th scope=\"row\">Notes</th>\n<td colspan=\"5\">Seitan goth iphone quinoa readymade pork belly.</td>\n</tr>\n<tr>\n<th scope=\"row\">See Also</th>\n<td colspan=\"5\"><ul><li><a href=\"http://conroy.biz/clarence.runolfsson\" target=\"_blank\" rel=\"noopener\">http://conroy.biz/clarence.runolfsson<span>(opens in new tab)</span></a></li></ul></td>\n</tr>\n</table>",
-  "description": "Yolo <i>tryhard biodiesel synth muggle</i> magic.",
+  "label": "<i>The Lives of Others</i>",
+  "short_display": "<section><p><strong>Title</strong> <i>The Lives of Others</i></p>\n<p><strong>Proposal/Response</strong> There's only one life-form as intelligent as me within thirty parsecs of here and that's me. / It’s only half completed, I’m afraid – we haven’t even finished burying the artificial dinosaur skeletons in the crust yet.</p>\n<p><strong>Director</strong> Brandt <strong>Theatre, City</strong> Tanngrisnir, East Ashlie</p>\n<p><strong>Date(s)</strong> 1958-03-26.</p></section>",
+  "full_display": "<table>\n<tr>\n<th scope=\"row\">Title</th>\n<td colspan=\"5\"><i>The Lives of Others</i></td>\n</tr>\n<tr>\n<th scope=\"row\">Proposal</th>\n<td>There's only one life-form as intelligent as me within thirty parsecs of here and that's me.</td>\n<th scope=\"row\">Response</th>\n<td>It’s only half completed, I’m afraid – we haven’t even finished burying the artificial dinosaur skeletons in the crust yet.</td>\n<th scope=\"row\">Reason</th>\n<td>I'm hot and I don't care who knows it, I got a job to do.</td>\n</tr>\n<tr>\n<th scope=\"row\">Date(s)</th>\n<td colspan=\"5\">1958-03-26.</td>\n</tr>\n<tr>\n<th scope=\"row\">Director</th>\n<td colspan=\"5\">Brandt</td>\n</tr>\n<tr>\n<th scope=\"row\">Cast</th>\n<td colspan=\"5\">Max Quordlepleen and Bunny Lebowski</td>\n</tr>\n<tr>\n<th scope=\"row\">Personnel</th>\n<td colspan=\"5\">Prostetnic Vogon Jeltz</td>\n</tr>\n<tr>\n<th scope=\"row\">Theatre, City</th>\n<td colspan=\"5\">Tanngrisnir, East Ashlie</td>\n</tr>\n<tr>\n<th scope=\"row\">Notes</th>\n<td colspan=\"5\">Cleanse tousled 90's heirloom brooklyn celiac kale chips tacos.</td>\n</tr>\n<tr>\n<th scope=\"row\">See Also</th>\n<td colspan=\"5\"><ul><li><a href=\"http://howe.org/randy.dach\" target=\"_blank\" rel=\"noopener\">http://howe.org/randy.dach<span>(opens in new tab)</span></a></li></ul></td>\n</tr>\n</table>",
+  "description": "Actually locavore salvia loko ethical.",
   "e_type": "production",
-  "legacy_pk": 35282,
+  "legacy_pk": 68678,
   "alternate_names": null,
   "cast": [
-    "Trillian",
+    "Max Quordlepleen",
     "Bunny Lebowski"
   ],
-  "city": "Durganland",
-  "date_str": "1931-06-02.",
-  "director": "The Big Lebowski",
+  "city": "East Ashlie",
+  "date_str": "1958-03-26.",
+  "director": "Brandt",
   "links": [
-    "http://conroy.biz/clarence.runolfsson"
+    "http://howe.org/randy.dach"
   ],
-  "notes": "Seitan goth iphone quinoa readymade pork belly.",
+  "notes": "Cleanse tousled 90's heirloom brooklyn celiac kale chips tacos.",
   "personnel": [
-    "Hotblack Desiato's bodyguard"
+    "Prostetnic Vogon Jeltz"
   ],
-  "proposal": "I think you ought to know I'm feeling very depressed.",
-  "response": "if you’ve never been through a matter transference beam before you’ve probably lost some salt and protein. The beer you had should have cushioned your system a bit.",
+  "proposal": "There's only one life-form as intelligent as me within thirty parsecs of here and that's me.",
+  "response": "It’s only half completed, I’m afraid – we haven’t even finished burying the artificial dinosaur skeletons in the crust yet.",
   "reason": "I'm hot and I don't care who knows it, I got a job to do.",
-  "theater": "Krikkit One",
+  "theater": "Tanngrisnir",
   "letters": {
-    "mention": "http://example.org/entities/d6e66b42-1ba6-488a-9ceb-5afd85763cd3/letters?relation=mention",
-    "recived": "http://example.org/entities/d6e66b42-1ba6-488a-9ceb-5afd85763cd3/letters?relation=recived",
-    "sent": "http://example.org/entities/d6e66b42-1ba6-488a-9ceb-5afd85763cd3/letters?relation=sent",
-    "desination": "http://example.org/entities/d6e66b42-1ba6-488a-9ceb-5afd85763cd3/letters?relation=destination",
-    "origin": "http://example.org/entities/d6e66b42-1ba6-488a-9ceb-5afd85763cd3/letters?relation=origin"
+    "mention": "http://example.org/entities/1d75c060-a443-42e1-a276-9c262dbd42ab/letters?relation=mention",
+    "received": "http://example.org/entities/1d75c060-a443-42e1-a276-9c262dbd42ab/letters?relation=received",
+    "sent": "http://example.org/entities/1d75c060-a443-42e1-a276-9c262dbd42ab/letters?relation=sent",
+    "destination": "http://example.org/entities/1d75c060-a443-42e1-a276-9c262dbd42ab/letters?relation=destination",
+    "origin": "http://example.org/entities/1d75c060-a443-42e1-a276-9c262dbd42ab/letters?relation=origin"
   }
 }
 ~~~
