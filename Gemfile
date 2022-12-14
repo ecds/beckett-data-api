@@ -48,12 +48,14 @@ gem 'trix-rails', require: 'trix'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
+  gem 'bcrypt_pbkdf', '>= 1.0', '< 2.0'
   gem 'capistrano', '~> 3.10', require: false
   gem 'capistrano-passenger', '~> 0.2.1', require: false
   gem 'capistrano-rails', '~> 1.6', require: false
   gem 'capistrano-rbenv', '~> 2.2', require: false
   gem 'coveralls_reborn', '~> 0.24.0', require: false
   gem 'debug', platforms: %i[mri mingw x64_mingw]
+  gem 'ed25519', '>= 1.2', '< 2.0'
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'rspec-rails'
