@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_08_203150) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_12_134727) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
@@ -185,6 +185,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_08_203150) do
     t.uuid "repository_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "placement", default: 1
+    t.string "format"
+    t.uuid "collection_id"
+    t.index ["collection_id"], name: "index_letter_repositories_on_collection_id"
     t.index ["letter_id"], name: "index_letter_repositories_on_letter_id"
     t.index ["repository_id"], name: "index_letter_repositories_on_repository_id"
   end
@@ -299,6 +303,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_08_203150) do
   add_foreign_key "letter_origins", "letters"
   add_foreign_key "letter_recipients", "entities"
   add_foreign_key "letter_recipients", "letters"
+  add_foreign_key "letter_repositories", "collections"
   add_foreign_key "letter_repositories", "letters"
   add_foreign_key "letter_repositories", "repositories"
   add_foreign_key "letter_senders", "entities"

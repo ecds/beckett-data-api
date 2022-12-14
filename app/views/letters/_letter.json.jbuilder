@@ -41,14 +41,45 @@ json.metadata do
   json.set! 'label', letter.label
   json.set! 'addressed_from', letter.addressed_from
   json.set! 'addressed_to', letter.addressed_to
-  json.set! 'envelope', letter.envelope
-  json.set! 'physical_description', letter.physical_desc
+  json.set! 'envelope', letter.envelope == 't' ? 'Yes' : 'No'
   json.set! 'postmark', letter.postmark
-  json.set! 'recipient', letter.recipients.map(&:label).join(', ')
-  json.set! 'repository', letter.repositories.map(&:label).join(', ')
-  json.set! 'place_written', letter.origins.map(&:label).join(', ')
+  json.set! 'physical_description_als', [
+    letter.typed ? 'T' : 'A',
+    letter.physical_desc,
+    letter.signed ? 'S' : 'I'
+  ].compact.join(' ')
+  json.set! 'physical_description_details', [letter.physical_detail, letter.physical_notes].compact.join(', ')
+  json.set! 'postcard_image', letter.postcard_image
+  json.set! 'leaves_and_sides', [letter.leaves, letter.sides].join(', ')
+  json.set! 'recipient', letter.recipient_list
 end
-# json.set! '@type', letter.schema_type
+
+json.repositories do
+  if letter.first_repository&.repository&.published
+    json.set! 'repository', letter.first_repository.repository&.label
+    json.set! 'format', letter.first_repository.repository.label
+    json.set! 'collection', letter.letter_repositories.premiere&.first&.collection&.label
+    json.set! 'repository_information', letter.repository_info
+  end
+  if letter.second_repository&.repository&.published
+    second_repo = [
+      letter.second_repository.repository.label,
+      letter.second_repository.format,
+      letter.second_repository.collection.label
+    ]
+    json.set! 'second_repository', second_repo.compact.join(', ')
+  end
+  if letter.third_repository&.repository&.published
+    third_repo = [
+      letter.third_repository.repository.label,
+      letter.third_repository.format,
+      letter.third_repository.collection.label
+    ]
+    json.set! 'third_repository', third_repo.compact.join(', ')
+  end
+end
+
+json.set! 'publication_information', letter.publication_information if letter.publication_information.present?
 
 json.recipients do
   letter.recipients.each do |recipient|

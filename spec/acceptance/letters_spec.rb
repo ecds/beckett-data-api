@@ -127,8 +127,15 @@ resource 'Letters' do
   end
 
   route '/letters/:id', 'Single Letter' do
+    before {
+      premiere = create(:letter_repository)
+      @letter = premiere.letter
+      create(:letter_repository, letter: @letter, repository: create(:published_repository), placement: 'deuxieme')
+      create(:letter_repository, letter: @letter, repository: create(:published_repository), placement: 'troisieme')
+    }
+
+    let(:id) { @letter.id }
     get 'Specific letter' do
-      let(:id) { create(:published_letter).id }
       example_request 'GET /letters/:id' do
         expect(status).to eq(200)
       end

@@ -5,6 +5,7 @@
 require 'roo'
 
 class LoadBigSamJob < ApplicationJob
+  include ActionView::Helpers::SanitizeHelper
   queue_as :default
 
   def perform(*_args)
@@ -148,24 +149,28 @@ class LoadBigSamJob < ApplicationJob
       end
 
       if row[:first_repository]
-        repo = Repository.find_or_create_by(label: row[:first_repository])
-        repo.format = row[:first_format]
-        repo.american = row[:euro_or_am].downcase == 'american' if row[:euro_or_am]
-        repo.published = row[:first_public].downcase == 'public' if row[:first_public]
+        repository = Repository.find_or_create_by(label: row[:first_repository])
+        repository.format = row[:first_format]
+        repository.american = row[:euro_or_am].downcase == 'american' if row[:euro_or_am]
+        repository.published = row[:first_public].downcase == 'public' if row[:first_public]
+        collection = nil
         begin
           if row[:first_collection]
             collection = Collection.find_or_create_by(label: row[:first_collection])
-            collection.url = row[:collection_url] if row[:collection_url]
-            collection.save
+            collection.update(url: row[:collection_url])
+            # collection.save
 
-            repo.collections << collection unless repo.collections.include?(collection)
+            repository.collections << collection unless repository.collections.include?(collection)
 
             letter.collections << collection unless letter.collections.include?(collection)
 
           end
-          repo.save
+          repository.save
 
-          letter.repositories << repo unless letter.repositories.include?(repo)
+          letter_repository = LetterRepository.find_or_create_by(letter:, repository:)
+          letter_repository.update(collection, placement: 'premiere', format: row[:first_format])
+
+          # letter.repositories << repo unless letter.repositories.include?(repo)
         rescue ActiveRecord::RecordInvalid,
                Elasticsearch::Transport::Transport::Errors::BadRequest,
                Elasticsearch::Transport::Transport::Errors::NotFound
@@ -174,21 +179,50 @@ class LoadBigSamJob < ApplicationJob
       end
 
       if row[:second_repository]
-        repo = Repository.find_or_create_by(label: row[:second_repository])
-        repo.format = row[:second_format]
-        repo.published = row[:second_public].downcase == 'public' if row[:second_public]
+        repository = Repository.find_or_create_by(label: row[:second_repository])
+        repository.format = row[:second_format]
+        repository.published = row[:second_public].downcase == 'public' if row[:second_public]
+        collection = nil
         begin
           if row[:second_collection]
             collection = Collection.find_or_create_by(label: row[:second_collection])
 
-            repo.collections << collection unless repo.collections.include?(collection)
+            repository.collections << collection unless repository.collections.include?(collection)
 
             letter.collections << collection unless letter.collections.include?(collection)
           end
 
-          repo.save
+          repository.save
 
-          letter.repositories << repo unless letter.repositories.include?(repo)
+          letter_repository = LetterRepository.find_or_create_by(letter:, repository:)
+          letter_repository.update(collection, placement: 'deuxieme', format: row[:second_format])
+          # letter.repositories << repo unless letter.repositories.include?(repo)
+        rescue ActiveRecord::RecordInvalid,
+               Elasticsearch::Transport::Transport::Errors::BadRequest,
+               Elasticsearch::Transport::Transport::Errors::NotFound
+          # It happens
+        end
+      end
+
+      if row[:third_repository]
+        repository = Repository.find_or_create_by(label: row[:third_repository])
+        repository.format = row[:third_format]
+        repository.published = row[:third_public].downcase == 'public' if row[:third_public]
+        collection = nil
+        begin
+          if row[:second_collection]
+            collection = Collection.find_or_create_by(label: row[:second_collection])
+
+            repository.collections << collection unless repository.collections.include?(collection)
+
+            letter.collections << collection unless letter.collections.include?(collection)
+          end
+
+          repository.save
+
+          letter_repository = LetterRepository.find_or_create_by(letter:, repository:)
+          letter_repository.update(collection, placement: 'troisieme', format: row[:third_format])
+          # letter.repositories << repo unless letter.repositories.include?(repo)
         rescue ActiveRecord::RecordInvalid,
                Elasticsearch::Transport::Transport::Errors::BadRequest,
                Elasticsearch::Transport::Transport::Errors::NotFound
@@ -203,7 +237,7 @@ class LoadBigSamJob < ApplicationJob
         letter.volume = 3 if row[:volumeinfo].include?('1957-1965')
         letter.volume = 4 if row[:volumeinfo].include?('1966-1989')
         parts = row[:volumeinfo].split(',')
-        letter.volume_pages = parts[2].strip if parts.length == 3
+        letter.volume_pages = strip_tags(parts[2].strip) if parts.length == 3
       end
 
       letter.letter_publisher = LetterPublisher.find_or_create_by(label: row[:placeprevpubl]) if row[:placeprevpubl]
@@ -246,6 +280,7 @@ class LoadBigSamJob < ApplicationJob
 
   def get_entity(label: nil, type: nil, return_nil: false)
     label = label.strip.gsub(/[\[!@%&?"\]]/, '').titleize
+    label = mac?(label)
     entity = Entity.public_send(type)
                    .where(label:)
                    .or(
@@ -279,6 +314,40 @@ class LoadBigSamJob < ApplicationJob
 
     row
   end
+
+  def mac?(label)
+    parts = label.split
+
+    return label if parts.count < 3
+
+    if parts.any? {|p| p == 'Mc' }
+      mc = parts.find_index('Mc')
+      last = parts.delete_at(mc + 1)
+      parts.delete_at(mc)
+      parts.insert(mc, "Mc#{last}")
+    end
+
+    if parts.any? {|p| p == 'Mac' }
+      mac = parts.find_index('Mac')
+      last = parts.delete_at(mac + 1)
+      parts.delete_at(mac)
+      parts.insert(mac, "Mac#{last}")
+    end
+
+    return parts.join(' ')
+  end
 end
 
 # rubocop:enable Metrics/BlockLength, Metrics/PerceivedComplexity, Metrics/MethodLength, Metrics/AbcSize, Metrics/CyclomaticComplexity
+# to_merge = []
+# generics.each do |g|
+#   name = mac?(g.label).split
+#   e = Entity.find_by(first_name: name[0], last_name: name[1])
+#   next if e.nil?
+#   # to_merge.push({ keep: e.id, discard: g.id })
+#   puts e.id
+# end; nil
+
+# to_merge.each do |e|
+#   Entity.find(e[:keep]).all_letters.each {|l| l.save }
+# end

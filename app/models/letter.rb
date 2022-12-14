@@ -48,7 +48,7 @@ class Letter < ApplicationRecord
 
   scope :published, -> { where(published: true) }
 
-  scope :between, lambda { |start_date, _end_date|
+  scope :between, lambda {|start_date, _end_date|
     where('date >= ? AND date <= ?', start_date, end_date)
   }
 
@@ -77,6 +77,26 @@ class Letter < ApplicationRecord
     end
 
     m_hash
+  end
+
+  def recipient_list
+    recipients.map {|r| r.person? ? "#{r.first_name} #{r.last_name}" : r.label }.join(', ')
+  end
+
+  def first_repository
+    letter_repositories.premiere.first
+  end
+
+  def second_repository
+    letter_repositories.deuxieme.first
+  end
+
+  def third_repository
+    letter_repositories.troisieme.first
+  end
+
+  def publication_information
+    [volume_title, volume_pages].compact.join(': ')
   end
 
   def search_data
@@ -109,5 +129,19 @@ class Letter < ApplicationRecord
 
   def check_published
     self.published = repositories.any?(&:published)
+  end
+
+  def volume_title
+    years = case volume
+            when 1
+              '1929-1940'
+            when 2
+              '1941-1956'
+            when 3
+              '1957-1965'
+            when 4
+              '1966-1989'
+            end
+    return "The Letters of Samuel Beckett, #{years}" if years
   end
 end

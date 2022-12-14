@@ -26,7 +26,8 @@ FactoryBot.define do
     # letter_file { create(:letter_file) }
     letter_owner { create(:letter_owner) }
     letter_publisher { create(:letter_publisher) }
-    volume { rand(0..4) }
+    volume { rand(1..4) }
+    volume_pages { nil }
 
     after :create do |letter|
       Entity.e_types.keys[0..11].sample(4).each {|type|

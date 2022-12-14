@@ -97,6 +97,8 @@ module EntityCommon
     }
 
     def clean_label
+      return strip_tags "#{first_name} #{last_name}" if person?
+
       strip_tags label
     rescue NoMethodError
       label

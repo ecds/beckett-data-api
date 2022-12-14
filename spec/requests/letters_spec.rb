@@ -134,6 +134,27 @@ RSpec.describe '/letters', type: :request do
       get letter_url(letter), as: :json
       expect(response).to be_successful
     end
+
+    it 'contains all three repositories' do
+      premiere = create(:letter_repository)
+      letter = premiere.letter
+      create(:letter_repository, letter:, repository: create(:published_repository), placement: 'deuxieme')
+      create(:letter_repository, letter:, repository: create(:published_repository), placement: 'troisieme')
+      get letter_url(letter), as: :json
+      expectd_keys = %w[repository format collection repository_information second_repository third_repository]
+      expect(json[:repositories].keys).to eq(expectd_keys)
+      expect(response).to be_successful
+    end
+
+    it 'does not contain non-public repository' do
+      premiere = create(:letter_repository)
+      letter = premiere.letter
+      create(:letter_repository, letter:, repository: create(:repository, published: false), placement: 'deuxieme')
+      get letter_url(letter), as: :json
+      expectd_keys = %w[repository format collection repository_information]
+      expect(json[:repositories].keys).to eq(expectd_keys)
+      expect(response).to be_successful
+    end
   end
 
   describe 'POST /create' do
