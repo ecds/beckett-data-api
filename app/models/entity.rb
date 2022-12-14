@@ -8,6 +8,7 @@ class Entity < ApplicationRecord
   include EntityCommon
 
   before_save :check_published, :add_full_stops, :remove_div, :concat_label, :to_plain_text
+  after_destroy :remove_published
   after_save :reindex_published
 
   has_many :mentions, dependent: :destroy
@@ -144,6 +145,8 @@ class Entity < ApplicationRecord
 
       next if self[field].nil?
 
+      next if self[field].blank?
+
       next unless missing_full_stop?(self[field])
 
       self[field] = "#{self[field]}."
@@ -181,5 +184,11 @@ class Entity < ApplicationRecord
     return unless published
 
     PublishedEntity.find(id).reindex
+  end
+
+  def remove_published
+    return unless published
+
+    PublishedEntity.searchkick_index.remove(id)
   end
 end
