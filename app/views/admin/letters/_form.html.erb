@@ -51,11 +51,10 @@ and renders all form fields for a resource's editable attributes.
 }
 
 .tooltip-container {
-  width: 425px;
+  min-width: 425px;
   min-height: 200px;
   height: auto;
   padding: 15px;
-  font-size: 25px;
   background: white;
   box-shadow: 0 30px 90px -20px rgba(0,0,0,0.3);
   position: absolute;
@@ -171,7 +170,7 @@ and renders all form fields for a resource's editable attributes.
           .then((response) => {
             response.json()
               .then((data) => {
-                tooltipContainer.innerHTML = data.short_display;
+                tooltipContainer.innerHTML = data.full_display;
             });
         })
         .catch(() => {
