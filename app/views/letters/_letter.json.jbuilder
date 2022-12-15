@@ -57,7 +57,7 @@ end
 json.repositories do
   if letter.first_repository&.repository&.published
     json.set! 'repository', letter.first_repository.repository&.label
-    json.set! 'format', letter.first_repository.repository.label
+    json.set! 'format', letter.first_repository.repository&.format
     json.set! 'collection', letter.letter_repositories.premiere&.first&.collection&.label
     json.set! 'repository_information', letter.repository_info
   end

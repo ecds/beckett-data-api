@@ -96,7 +96,7 @@ class Letter < ApplicationRecord
   end
 
   def publication_information
-    [volume_title, volume_pages].compact.join(': ')
+    ["<cite>#{volume_title}</cite>", volume_pages].compact.join(': ')
   end
 
   def search_data
