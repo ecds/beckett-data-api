@@ -34,7 +34,6 @@ class RepositoryDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
     label
-    letter_repositories
     letters
     id
     published
