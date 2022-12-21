@@ -52,17 +52,13 @@ class EntitiesController < ApplicationController
   end
 
   def letters
+    @relation = params[:relation]
     @page = params[:page] || 1
     @per_page = params[:per_page] || 10
-    @min_date, @max_date = min_max_dates(params[:relation])
+    @min_date, @max_date = min_max_dates
     @start_date = params[:start_date] || @min_date
     @end_date = params[:end_date] || @max_date
-
-    @letters = requested_letters(params[:relation])
-
-    # @min_date = @letters.map(&:date).compact.min
-    # @max_date = @letters.map(&:date).compact.max
-
+    @letters = requested_letters
     render
   end
 
@@ -113,8 +109,8 @@ class EntitiesController < ApplicationController
     end
   end
 
-  def min_max_dates(relation)
-    case relation
+  def min_max_dates
+    case @relation
     when 'mention'
       @entity.letters.published.map(&:date).compact.minmax
     when 'destination'
@@ -128,8 +124,8 @@ class EntitiesController < ApplicationController
     end
   end
 
-  def requested_letters(relation)
-    case relation
+  def requested_letters
+    case @relation
     when 'mention'
       @entity.letters.published.between(@start_date, @end_date).page(@page).per(@per_page)
     when 'destination'

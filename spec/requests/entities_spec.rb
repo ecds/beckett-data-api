@@ -91,11 +91,16 @@ RSpec.describe '/entities', type: :request do
       10.times { create(:published_letter, date: Faker::Date.in_date_period(year: rand(1962..1965))) }
 
       entity = create(:person_entity, letters: Letter.all)
+      entity.mentions.each do |mention|
+        rand(0..3).times { mention.tag_list.add(Faker::Hipster.word) }
+        mention.save
+      end
       expect(entity.letters.count).to eq(10)
       get "/entities/#{entity.id}/letters?relation=mention&start_date=1963-01-01"
       expect(json[:letters].map {|letter| Date.parse(letter[:date]) }.min).to be >= DateTime.new(1963, 1, 1)
       expect(json[:letters].map {|letter| Date.parse(letter[:date]) }.min).to be <= DateTime.new(1965, 12, 30)
       expect(json[:letters].count).to be < entity.letters.count
+      expect(json[:letters].map(&:keys).flatten.uniq).to include('tags')
     end
 
     it 'returns letters for an entity with end_date param' do

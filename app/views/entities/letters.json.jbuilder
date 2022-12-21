@@ -12,6 +12,9 @@ json.letters do
       json.set! 'recipient', letter.recipients.map(&:label).to_sentence
       json.set! 'repository', letter.repositories.map(&:label).to_sentence
       json.set! 'date', letter.date&.strftime('%d %B %Y')
+      next unless @relation == 'mention'
+
+      json.set! 'tags', Mention.find_by(letter:, entity: @entity).tag_list
     end
   end
 end

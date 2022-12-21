@@ -31,7 +31,9 @@ class Letter < ApplicationRecord
   belongs_to :letter_owner, optional: true
   belongs_to :letter_publisher, optional: true
 
-  # attr_readonly :content
+  attr_accessor :tags
+
+  attr_readonly :content
 
   enum :language, { english: 0, french: 1, german: 2, italian: 3 }
 
@@ -96,7 +98,9 @@ class Letter < ApplicationRecord
   end
 
   def publication_information
-    ["<cite>#{volume_title}</cite>", volume_pages].compact.join(': ')
+    return ["<cite>#{volume_title}</cite>", volume_pages].compact.join(': ') if volume_title.present?
+
+    nil
   end
 
   def search_data
