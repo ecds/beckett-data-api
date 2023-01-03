@@ -9,7 +9,7 @@ class LettersController < ApplicationController
   def index
     query = params[:search] || '*'
 
-    results = Letter.search(
+    results = PublishedLetter.search(
       query,
       aggs: facets,
       page: params[:page] || 1,
@@ -123,6 +123,7 @@ class LettersController < ApplicationController
 
   def reindex
     Letter.reindex if ENV['RAILS_ENV'] == 'test'
+    PublishedLetter.reindex if ENV['RAILS_ENV'] == 'test'
   end
 
   # Only allow a list of trusted parameters through.

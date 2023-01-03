@@ -9,6 +9,6 @@ class Repository < ApplicationRecord
   has_many :letters, through: :letter_repositories
 
   scope :published, lambda {
-    where(public: true)
+    where(published: true)
   }
 end

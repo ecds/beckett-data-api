@@ -2,8 +2,11 @@
 
 class Letter < ApplicationRecord
   include Searchable
+  include LetterCommon
 
   before_save :check_published
+  before_destroy :remove_published
+  after_save :reindex_published
 
   has_many :mentions, dependent: :destroy
   has_many :entities, -> { distinct }, through: :mentions
@@ -31,78 +34,6 @@ class Letter < ApplicationRecord
   belongs_to :letter_owner, optional: true
   belongs_to :letter_publisher, optional: true
 
-  attr_accessor :tags
-
-  attr_readonly :content
-
-  enum :language, { english: 0, french: 1, german: 2, italian: 3 }
-
-  # scope :published, lambda {
-  #   includes(:repositories)
-  #     .references(:repositories)
-  #     .where(
-  #       repositories: {
-  #         published: true
-  #       }
-  #     )
-  #     # .where('letters.date BETWEEN ? AND ?', DateTime.new(1957), DateTime.new(1965, 12).at_end_of_month)
-  # }
-
-  scope :published, -> { where(published: true) }
-
-  scope :between, lambda {|start_date, _end_date|
-    where('date >= ? AND date <= ?', start_date, end_date)
-  }
-
-  scope :between, lambda {|min, max|
-    where('letters.date >= ? AND letters.date <= ?', min, max)
-  }
-
-  def label
-    return "#{date.strftime('%d %B %Y')} - #{recipients.map(&:label).join(', ')}" if date
-
-    recipients.map(&:label).join(', ')
-  end
-
-  def mentions_hash
-    m_hash = {}
-    Entity.e_types.each_key do |type|
-      next if mentions.public_send(type).empty?
-
-      m_hash[type.pluralize.to_sym] = mentions.public_send(type).map do |mention|
-        {
-          type:,
-          id: mention.entity.url_path,
-          display: mention.entity.short_display
-        }
-      end
-    end
-
-    m_hash
-  end
-
-  def recipient_list
-    recipients.map {|r| r.person? ? "#{r.first_name} #{r.last_name}" : r.label }.join(', ')
-  end
-
-  def first_repository
-    letter_repositories.premiere.first
-  end
-
-  def second_repository
-    letter_repositories.deuxieme.first
-  end
-
-  def third_repository
-    letter_repositories.troisieme.first
-  end
-
-  def publication_information
-    return ["<cite>#{volume_title}</cite>", volume_pages].compact.join(': ') if volume_title.present?
-
-    nil
-  end
-
   def search_data
     {
       id_path: url_path,
@@ -121,31 +52,24 @@ class Letter < ApplicationRecord
     }
   end
 
-  # TODO: What to do about bad dates?
-  def should_index?
-    return if date.nil?
-
-    published
-    # date.between? DateTime.new(1957), DateTime.new(1965, 12).at_end_of_month and repositories.any?(&:published)
-  end
-
   private
 
   def check_published
     self.published = repositories.any?(&:published)
   end
 
-  def volume_title
-    years = case volume
-            when 1
-              '1929-1940'
-            when 2
-              '1941-1956'
-            when 3
-              '1957-1965'
-            when 4
-              '1966-1989'
-            end
-    return "The Letters of Samuel Beckett, #{years}" if years
+  def reindex_published
+    return unless published
+
+    PublishedLetter.find(id).reindex
+  end
+
+  def remove_published
+    return unless published
+
+    PublishedLetter.searchkick_index.remove(id)
+  rescue NoMethodError
+    # This happens during model specs when it skips the indexing
+    nil
   end
 end
