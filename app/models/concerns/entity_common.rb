@@ -117,70 +117,70 @@ module EntityCommon
         if event_type && description
           lines.push("<strong>#{event_type.titleize}</strong>, #{description}")
         else
-          lines.push("<strong>#{event_type.titleize}</strong>") unless event_type.nil?
-          lines.push(description) unless description.nil?
+          lines.push("<strong>#{event_type.titleize}</strong>") unless event_type.blank?
+          lines.push(description) unless description.blank?
         end
-        lines.push("<strong>Attended with</strong> #{attended_with.to_sentence}") unless attended_with.nil?
-        lines.push("<strong>Place, Date</strong> #{place_date}") unless place_date.nil?
-        lines.push("<strong>Director</strong> #{director}") unless director.nil?
+        lines.push("<strong>Attended with</strong> #{attended_with.to_sentence}") unless attended_with.blank?
+        lines.push("<strong>Place, Date</strong> #{place_date}") unless place_date.blank?
+        lines.push("<strong>Director</strong> #{director}") unless director.blank?
       when 'music'
-        lines.push("<strong>Composer</strong> #{composer}") unless composer.nil?
+        lines.push("<strong>Composer</strong> #{composer}") unless composer.blank?
         lines.push("<strong>Title</strong> #{label}")
-        lines.push("<strong>Description</strong> #{description}") unless description.nil?
+        lines.push("<strong>Description</strong> #{description}") unless description.blank?
       when 'organization', 'place'
         lines.push("<strong>#{label}</strong>")
-        lines.push(description) unless description.nil?
+        lines.push(description) unless description.blank?
       when 'person'
         lines.push("<strong>#{[person_name, life_dates].compact.join(', ')}</strong>")
-        lines.push(description) unless description.nil?
+        lines.push(description) unless description.blank?
       when 'production'
         lines.push("<strong>Title</strong> #{label}")
         if proposal && response
-          lines.push("<strong>Proposal/Response</strong> #{proposal} / #{response}") unless proposal.nil?
+          lines.push("<strong>Proposal/Response</strong> #{proposal} / #{response}") unless proposal.blank?
         else
-          lines.push("<strong>Proposal</strong> #{proposal}") unless proposal.nil?
+          lines.push("<strong>Proposal</strong> #{proposal}") unless proposal.blank?
         end
         if director && theater && city
           lines.push("<strong>Director</strong> #{director} <strong>Theatre, City</strong> #{theater}, #{city}")
         else
-          lines.push("<strong>Director</strong> #{director}") unless director.nil?
-          lines.push("<strong>Theatre, City</strong> #{[theater, city].join(', ')}") unless theater.nil?
+          lines.push("<strong>Director</strong> #{director}") unless director.blank?
+          lines.push("<strong>Theatre, City</strong> #{[theater, city].join(', ')}") unless theater.blank?
         end
-        lines.push("<strong>Date(s)</strong> #{date_str}") unless date_str.nil?
+        lines.push("<strong>Date(s)</strong> #{date_str}") unless date_str.blank?
       when 'publication'
-        lines.push("<strong>Author</strong> #{authors.to_sentence}") unless authors.nil?
+        lines.push("<strong>Author</strong> #{authors.to_sentence}") unless authors.blank?
         lines.push("<strong>Title</strong> #{label}")
-        lines.push("<strong>Translator</strong> #{translators.to_sentence}") unless translators.nil?
-        lines.push("<strong>Publication</strong> #{publication_information}") unless publication_information.nil?
+        lines.push("<strong>Translator</strong> #{translators.to_sentence}") unless translators.blank?
+        lines.push("<strong>Publication</strong> #{publication_information}") unless publication_information.blank?
       when 'public_event'
         lines.push("<strong>#{label}</strong>")
-        lines.push("<strong>#{date_str}</strong>") unless date_str.nil?
+        lines.push("<strong>#{date_str}</strong>") unless date_str.blank?
       when 'reading'
-        lines.push("<strong>Author</strong> #{authors.to_sentence}") unless authors.nil?
+        lines.push("<strong>Author</strong> #{authors.to_sentence}") unless authors.blank?
         lines.push("<strong>Title</strong> #{label}")
-        lines.push("<strong>Publication</strong> #{publication_information}") unless publication_information.nil?
+        lines.push("<strong>Publication</strong> #{publication_information}") unless publication_information.blank?
       when 'translating'
         if authors
-          lines.push("<strong>Author</strong> #{authors.to_sentence}, <strong>Original Title</strong> #{label}") unless authors.nil?
+          lines.push("<strong>Author</strong> #{authors.to_sentence}, <strong>Original Title</strong> #{label}") unless authors.blank?
         else
           lines.push("<strong>Original Title</strong> #{label}")
         end
         if translated_into && translators
-          lines.push("<strong>Translated into</strong> #{translated_into.titleize} by #{translators.to_sentence}") unless translated_into.nil?
+          lines.push("<strong>Translated into</strong> #{translated_into.titleize} by #{translators.to_sentence}") unless translated_into.blank?
         else
-          lines.push("<strong>Translated into</strong> #{translated_into.titleize}") unless translated_into.nil?
+          lines.push("<strong>Translated into</strong> #{translated_into.titleize}") unless translated_into.blank?
         end
-        lines.push("<strong>Translated title</strong> #{translated_title}") unless translated_title.nil?
+        lines.push("<strong>Translated title</strong> #{translated_title}") unless translated_title.blank?
       when 'work_of_art'
-        lines.push("<strong>Artist</strong> #{artist}") unless artist.nil?
+        lines.push("<strong>Artist</strong> #{artist}") unless artist.blank?
         lines.push("<strong>Title</strong> #{label}")
-        lines.push("<strong>Description</strong> #{description}") unless description.nil?
-        lines.push("<strong>Owner/location</strong> #{owner_location}") unless owner_location.nil?
+        lines.push("<strong>Description</strong> #{description}") unless description.blank?
+        lines.push("<strong>Owner/location</strong> #{owner_location}") unless owner_location.blank?
       when 'writing'
         lines.push("<strong>Title</strong> #{label}")
         lines.push("<strong>Proposal/Response</strong> #{proposal}") if proposal
-        lines.push("<strong>Translator</strong> #{translators.to_sentence}") unless translators.nil?
-        lines.push("<strong>Date</strong> #{date_str}") unless date_str.nil?
+        lines.push("<strong>Translator</strong> #{translators.to_sentence}") unless translators.blank?
+        lines.push("<strong>Date</strong> #{date_str}") unless date_str.blank?
       end
 
       paragraphs = lines.map {|line| "<p>#{line}</p>" }.flatten.join.strip
@@ -191,97 +191,97 @@ module EntityCommon
       rows = []
       case e_type
       when 'attendance'
-        rows.push("<th scope='row'>Description</th><td>#{description}</td>") unless description.nil?
-        rows.push("<th scope='row'>Alternate Name(s)</th><td>#{alternate_names.join(', ')}</td>") unless alternate_names.nil?
-        rows.push("<th scope='row'>Director</th><td>#{director}</td>") unless director.nil?
-        rows.push("<th scope='row'>Performed by</th><td>#{performed_by.to_sentence}</td>") unless performed_by.nil?
-        rows.push("<th scope='row'>Attended with</th><td>#{attended_with.to_sentence}</td>") unless attended_with.nil?
-        rows.push("<th scope='row'>Place, Date</th><td>#{place_date}</td>") unless place_date.nil?
-        rows.push("<th scope='row'>Notes</th><td>#{notes}</td>") unless notes.nil?
+        rows.push("<th scope='row'>Description</th><td>#{description}</td>") unless description.blank?
+        rows.push("<th scope='row'>Alternate Name(s)</th><td>#{alternate_names.join(', ')}</td>") unless alternate_names.blank?
+        rows.push("<th scope='row'>Director</th><td>#{director}</td>") unless director.blank?
+        rows.push("<th scope='row'>Performed by</th><td>#{performed_by.to_sentence}</td>") unless performed_by.blank?
+        rows.push("<th scope='row'>Attended with</th><td>#{attended_with.to_sentence}</td>") unless attended_with.blank?
+        rows.push("<th scope='row'>Place, Date</th><td>#{place_date}</td>") unless place_date.blank?
+        rows.push("<th scope='row'>Notes</th><td>#{notes}</td>") unless notes.blank?
       when 'music'
-        rows.push("<th scope='row'>Composer</th><td>#{composer}</td>") unless composer.nil?
+        rows.push("<th scope='row'>Composer</th><td>#{composer}</td>") unless composer.blank?
         rows.push("<th scope='row'>Title</th><td>#{label}</td>")
-        rows.push("<th scope='row'>Alternate Title(s)</th><td>#{alternate_names.join(', ')}</td>") unless alternate_names.nil?
-        rows.push("<th scope='row'>Description</th><td>#{description}</td>") unless description.nil?
-        rows.push("<th scope='row'>Performed by</th><td>#{performed_by.to_sentence}</td>") unless performed_by.nil?
-        rows.push("<th scope='row'>Notes</th><td>#{notes}</td>") unless notes.nil?
-        rows.push("<th scope='row'>See Also</th><td>#{link_list}</td>") unless links.nil?
+        rows.push("<th scope='row'>Alternate Title(s)</th><td>#{alternate_names.join(', ')}</td>") unless alternate_names.blank?
+        rows.push("<th scope='row'>Description</th><td>#{description}</td>") unless description.blank?
+        rows.push("<th scope='row'>Performed by</th><td>#{performed_by.to_sentence}</td>") unless performed_by.blank?
+        rows.push("<th scope='row'>Notes</th><td>#{notes}</td>") unless notes.blank?
+        rows.push("<th scope='row'>See Also</th><td>#{link_list}</td>") unless links.blank?
       when 'organization'
         rows.push("<th scope='row'>Name</th><td>#{label}</td>")
-        rows.push("<th scope='row'>Description</th><td>#{description}</td>") unless description.nil?
-        rows.push("<th scope='row'>Alternate Name(s)</th><td>#{alternate_names.join(', ')}</td>") unless alternate_names.nil?
-        rows.push("<th scope='row'>Profile</th><td>#{profile}</td>") unless profile.nil?
-        rows.push("<th scope='row'>Notes</th><td>#{notes}</td>") unless notes.nil?
+        rows.push("<th scope='row'>Description</th><td>#{description}</td>") unless description.blank?
+        rows.push("<th scope='row'>Alternate Name(s)</th><td>#{alternate_names.join(', ')}</td>") unless alternate_names.blank?
+        rows.push("<th scope='row'>Profile</th><td>#{profile}</td>") unless profile.blank?
+        rows.push("<th scope='row'>Notes</th><td>#{notes}</td>") unless notes.blank?
       when 'person'
         rows.push("<th scope='row'>Name</th><td>#{person_name}</td>")
-        rows.push("<th scope='row'>Alternative Name(s)</th><td>#{alternate_names.join(', ')}</td>") unless alternate_names.nil?
-        rows.push("<th scope='row'>Life Dates</th><td>#{life_dates}</td>") unless life_dates.nil?
-        rows.push("<th scope='row'>Description</th><td>#{description}</td>") unless description.nil?
-        rows.push("<th scope='row'>Profile</th><td>#{profile}</td>") unless profile.nil?
-        rows.push("<th scope='row'>See Also</th><td>#{link_list}</td>") unless links.nil?
+        rows.push("<th scope='row'>Alternative Name(s)</th><td>#{alternate_names.join(', ')}</td>") unless alternate_names.blank?
+        rows.push("<th scope='row'>Life Dates</th><td>#{life_dates}</td>") unless life_dates.blank?
+        rows.push("<th scope='row'>Description</th><td>#{description}</td>") unless description.blank?
+        rows.push("<th scope='row'>Profile</th><td>#{profile}</td>") unless profile.blank?
+        rows.push("<th scope='row'>See Also</th><td>#{link_list}</td>") unless links.blank?
       when 'place'
         rows.push("<th scope='row'>Name</th><td>#{label}</td>")
-        rows.push("<th scope='row'>Description</th><td>#{description}</td>") unless description.nil?
-        rows.push("<th scope='row'>See Also</th><td>#{link_list}</td>") unless links.nil?
+        rows.push("<th scope='row'>Description</th><td>#{description}</td>") unless description.blank?
+        rows.push("<th scope='row'>See Also</th><td>#{link_list}</td>") unless links.blank?
       when 'production'
         rows.push("<th scope='row'>Title</th><td colspan=5>#{label}</td>")
-        unless proposal.nil?
+        unless proposal.blank?
           cells = []
           cells.push("<th scope='row'>Proposal</th><td>#{proposal}</td>")
-          cells.push("<th scope='row'>Response</th><td>#{response}</td>") unless response.nil?
-          cells.push("<th scope='row'>Reason</th><td>#{reason}</td>") unless reason.nil?
+          cells.push("<th scope='row'>Response</th><td>#{response}</td>") unless response.blank?
+          cells.push("<th scope='row'>Reason</th><td>#{reason}</td>") unless reason.blank?
           rows.push(cells.join)
         end
-        rows.push("<th scope='row'>Date(s)</th><td colspan=5>#{date_str}</td>") unless date_str.nil?
-        rows.push("<th scope='row'>Director</th><td colspan=5>#{director}</td>") unless director.nil?
-        rows.push("<th scope='row'>Cast</th><td colspan=5>#{cast.to_sentence}</td>") unless cast.nil?
-        rows.push("<th scope='row'>Personnel</th><td colspan=5>#{personnel.to_sentence}</td>") unless personnel.nil?
-        rows.push("<th scope='row'>Theatre, City</th><td colspan=5>#{theater}, #{city}</td>") unless theater.nil?
-        rows.push("<th scope='row'>Notes</th><td colspan=5>#{notes}</td>") unless notes.nil?
-        rows.push("<th scope='row'>See Also</th><td colspan=5>#{link_list}</td>") unless links.nil?
+        rows.push("<th scope='row'>Date(s)</th><td colspan=5>#{date_str}</td>") unless date_str.blank?
+        rows.push("<th scope='row'>Director</th><td colspan=5>#{director}</td>") unless director.blank?
+        rows.push("<th scope='row'>Cast</th><td colspan=5>#{cast.to_sentence}</td>") unless cast.blank?
+        rows.push("<th scope='row'>Personnel</th><td colspan=5>#{personnel.to_sentence}</td>") unless personnel.blank?
+        rows.push("<th scope='row'>Theatre, City</th><td colspan=5>#{theater}, #{city}</td>") unless theater.blank?
+        rows.push("<th scope='row'>Notes</th><td colspan=5>#{notes}</td>") unless notes.blank?
+        rows.push("<th scope='row'>See Also</th><td colspan=5>#{link_list}</td>") unless links.blank?
       when 'publication'
-        rows.push("<th scope='row'>Author</th><td>#{authors.join(', ')}</td>") unless authors.nil?
+        rows.push("<th scope='row'>Author</th><td>#{authors.join(', ')}</td>") unless authors.blank?
         rows.push("<th scope='row'>Title</th><td>#{label}</td>")
-        rows.push("<th scope='row'>Translator</th><td>#{translators.join(', ')}</td>") unless translators.nil?
-        rows.push("<th scope='row'>Publication</th><td>#{publication_information}</td>") unless publication_information.nil?
-        rows.push("<th scope='row'>Notes</th><td>#{notes}</td>") unless notes.nil?
+        rows.push("<th scope='row'>Translator</th><td>#{translators.join(', ')}</td>") unless translators.blank?
+        rows.push("<th scope='row'>Publication</th><td>#{publication_information}</td>") unless publication_information.blank?
+        rows.push("<th scope='row'>Notes</th><td>#{notes}</td>") unless notes.blank?
       when 'public_event'
-        rows.push("<th scope='row'>Description</th><td>#{description}</td>") unless description.nil?
-        rows.push("<th scope='row'>Date</th><td>#{date_str}</td>") unless date_str.nil?
-        rows.push("<th scope='row'>See Also</th><td>#{link_list}</td>") unless links.nil?
+        rows.push("<th scope='row'>Description</th><td>#{description}</td>") unless description.blank?
+        rows.push("<th scope='row'>Date</th><td>#{date_str}</td>") unless date_str.blank?
+        rows.push("<th scope='row'>See Also</th><td>#{link_list}</td>") unless links.blank?
       when 'reading'
-        rows.push("<th scope='row'>Author</th><td>#{authors.join(', ')}</td>") unless authors.nil?
+        rows.push("<th scope='row'>Author</th><td>#{authors.join(', ')}</td>") unless authors.blank?
         rows.push("<th scope='row'>Title</th><td>#{label}</td>")
-        rows.push("<th scope='row'>Publication</th><td>#{publication_information}</td>") unless publication_information.nil?
-        rows.push("<th scope='row'>Notes</th><td>#{notes}</td>") unless notes.nil?
+        rows.push("<th scope='row'>Publication</th><td>#{publication_information}</td>") unless publication_information.blank?
+        rows.push("<th scope='row'>Notes</th><td>#{notes}</td>") unless notes.blank?
       when 'translating'
         rows.push("<th scope='row'>Original Title</th><td>#{label}</td>")
-        rows.push("<th scope='row'>Author</th><td>#{authors.join(', ')}</td>") unless authors.nil?
+        rows.push("<th scope='row'>Author</th><td>#{authors.join(', ')}</td>") unless authors.blank?
         if translated_into && translators
-          rows.push("<th scope='row'>Translated into</th><td>#{translated_into.titleize} by #{translators.join(', ')}</td>") unless translated_into.nil?
+          rows.push("<th scope='row'>Translated into</th><td>#{translated_into.titleize} by #{translators.join(', ')}</td>") unless translated_into.blank?
         else
-          rows.push("<th scope='row'>Translated into</th><td>#{translated_into.titleize}</td>") unless translated_into.nil?
-          rows.push("<th scope='row'>Translator</th><td>#{translators.join(', ')}</td>") unless translators.nil?
+          rows.push("<th scope='row'>Translated into</th><td>#{translated_into.titleize}</td>") unless translated_into.blank?
+          rows.push("<th scope='row'>Translator</th><td>#{translators.join(', ')}</td>") unless translators.blank?
         end
-        rows.push("<th scope='row'>Translated Title</th><td>#{translated_title}</td>") unless translated_title.nil?
-        rows.push("<th scope='row'>Publication/Production</th><td>#{notes}</td>") unless notes.nil?
+        rows.push("<th scope='row'>Translated Title</th><td>#{translated_title}</td>") unless translated_title.blank?
+        rows.push("<th scope='row'>Publication/Production</th><td>#{notes}</td>") unless notes.blank?
       when 'work_of_art'
-        rows.push("<th scope='row'>Artist</th><td>#{artist}</td>") unless artist.nil?
-        rows.push("<th scope='row'>Artist Alternative Name(s)</th><td>#{artist_alternate_spellings.join(', ')}</td>") unless artist_alternate_spellings.nil?
+        rows.push("<th scope='row'>Artist</th><td>#{artist}</td>") unless artist.blank?
+        rows.push("<th scope='row'>Artist Alternative Name(s)</th><td>#{artist_alternate_spellings.join(', ')}</td>") unless artist_alternate_spellings.blank?
         rows.push("<th scope='row'>Title</th><td>#{label}</td>")
-        rows.push("<th scope='row'>Alternative Title(s)</th><td>#{alternate_names.join(', ')}</td>") unless alternate_names.nil?
-        rows.push("<th scope='row'>Description</th><td>#{description}</td>") unless description.nil?
-        rows.push("<th scope='row'>Ownership and Location</th><td>#{owner_location}</td>") unless owner_location.nil?
-        rows.push("<th scope='row'>Current Ownership and Location</th><td>#{owner_location_current}</td>") unless owner_location_current.nil?
-        rows.push("<th scope='row'>Notes</th><td>#{notes}</td>") unless notes.nil?
-        rows.push("<th scope='row'>See Also</th><td>#{link_list}</td>") unless links.nil?
+        rows.push("<th scope='row'>Alternative Title(s)</th><td>#{alternate_names.join(', ')}</td>") unless alternate_names.blank?
+        rows.push("<th scope='row'>Description</th><td>#{description}</td>") unless description.blank?
+        rows.push("<th scope='row'>Ownership and Location</th><td>#{owner_location}</td>") unless owner_location.blank?
+        rows.push("<th scope='row'>Current Ownership and Location</th><td>#{owner_location_current}</td>") unless owner_location_current.blank?
+        rows.push("<th scope='row'>Notes</th><td>#{notes}</td>") unless notes.blank?
+        rows.push("<th scope='row'>See Also</th><td>#{link_list}</td>") unless links.blank?
       when 'writing'
         rows.push("<th scope='row'>Title</th><td colsapn=3>#{label}</td>")
-        rows.push("<th scope='row'>Proposal/Response</th><td>#{proposal}</td>") unless proposal.nil?
-        rows.push("<th scope='row'>Date</th><td colsapn=3>#{date_str}</td>") unless date_str.nil?
-        rows.push("<th scope='row'>Notes</th><td colsapn=3>#{notes}</td>") unless notes.nil?
-        rows.push("<th scope='row'>Archival Information</th><td colsapn=3>#{publication_information}</td>") unless publication_information.nil?
-        rows.push("<th scope='row'>See Also</th><td colsapn=3>#{link_list}</td>") unless links.nil?
+        rows.push("<th scope='row'>Proposal/Response</th><td>#{proposal}</td>") unless proposal.blank?
+        rows.push("<th scope='row'>Date</th><td colsapn=3>#{date_str}</td>") unless date_str.blank?
+        rows.push("<th scope='row'>Notes</th><td colsapn=3>#{notes}</td>") unless notes.blank?
+        rows.push("<th scope='row'>Archival Information</th><td colsapn=3>#{publication_information}</td>") unless publication_information.blank?
+        rows.push("<th scope='row'>See Also</th><td colsapn=3>#{link_list}</td>") unless links.blank?
       end
 
       table_rows = rows.map {|row| "<tr>#{row}</tr>" }.flatten.join.strip
