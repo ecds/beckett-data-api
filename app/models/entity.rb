@@ -7,7 +7,7 @@ class Entity < ApplicationRecord
   include Searchable
   include EntityCommon
 
-  before_save :check_published, :add_full_stops, :remove_div, :concat_label, :to_plain_text
+  before_save :check_published, :remove_blank_values, :add_full_stops, :remove_div, :concat_label, :to_plain_text
   after_destroy :remove_published
   after_save :reindex_published
 
@@ -178,6 +178,18 @@ class Entity < ApplicationRecord
 
   def check_published
     self.published = published_letters_hash.present?
+  end
+
+  def remove_blank_values
+    allowed_attributes.each do |attribute|
+      next if self[attribute].is_a? FalseClass
+
+      if self[attribute].is_a? Array
+        self[attribute].compact_blank!
+      elsif self[attribute].blank?
+        self[attribute] = nil
+      end
+    end
   end
 
   def reindex_published
