@@ -202,5 +202,6 @@ class Entity < ApplicationRecord
     return unless published
 
     PublishedEntity.searchkick_index.remove(id)
+  rescue NoMethodError
   end
 end
