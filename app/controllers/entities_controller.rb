@@ -58,7 +58,11 @@ class EntitiesController < ApplicationController
     @min_date, @max_date = min_max_dates
     @start_date = params[:start_date] || @min_date
     @end_date = params[:end_date] || @max_date
-    @letters = requested_letters
+    @letters = if params[:start_date].nil? && params[:end_date].nil?
+                 requested_letters
+               else
+                 requested_letters_by_date
+               end
     render
   end
 
@@ -127,11 +131,26 @@ class EntitiesController < ApplicationController
   def requested_letters
     case @relation
     when 'mention'
+      @entity.letters.published.page(@page).per(@per_page)
+    when 'destination'
+      @entity.letters_sent_to.published.page(@page).per(@per_page)
+    when 'sent'
+      @entity.letters_sent.published.or(date: nil).page(@page).per(@per_page)
+    when 'origin'
+      @entity.letters_sent_from.published.page(@page).per(@per_page)
+    when 'received'
+      @entity.letters_received.published.page(@page).per(@per_page)
+    end
+  end
+
+  def requested_letters_by_date
+    case @relation
+    when 'mention'
       @entity.letters.published.between(@start_date, @end_date).page(@page).per(@per_page)
     when 'destination'
       @entity.letters_sent_to.published.between(@start_date, @end_date).page(@page).per(@per_page)
     when 'sent'
-      @entity.letters_sent.published.between(@start_date, @end_date).page(@page).per(@per_page)
+      @entity.letters_sent.published.between(@start_date, @end_date).or(date: nil).page(@page).per(@per_page)
     when 'origin'
       @entity.letters_sent_from.published.between(@start_date, @end_date).page(@page).per(@per_page)
     when 'received'

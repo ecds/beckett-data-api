@@ -47,6 +47,7 @@ class EntityDashboard < Administrate::BaseDashboard
     last_name: RichTextField.with_options(searchable: true),
     life_dates: RichTextField,
     links: Field::List,
+    images: Field::List,
     notes: RichTextField,
     owner_location: RichTextField,
     owner_location_current: RichTextField,
@@ -150,6 +151,7 @@ class EntityDashboard < Administrate::BaseDashboard
     is_public
     created_at
     updated_at
+    images
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -159,6 +161,7 @@ class EntityDashboard < Administrate::BaseDashboard
     label
     description
     profile
+    images
     alternate_names
     alternate_spellings
     artist
