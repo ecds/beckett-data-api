@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-json.set! 'min_date', @min_date.strftime('%Y-%m-%d')
-json.set! 'max_date', @max_date.strftime('%Y-%m-%d')
+json.set! 'min_date', @min_date&.strftime('%Y-%m-%d')
+json.set! 'max_date', @max_date&.strftime('%Y-%m-%d')
 json.set! 'total_pages', @letters.total_pages
 
 json.letters do

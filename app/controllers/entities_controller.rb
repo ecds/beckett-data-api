@@ -135,7 +135,7 @@ class EntitiesController < ApplicationController
     when 'destination'
       @entity.letters_sent_to.published.page(@page).per(@per_page)
     when 'sent'
-      @entity.letters_sent.published.or(date: nil).page(@page).per(@per_page)
+      @entity.letters_sent.published.page(@page).per(@per_page)
     when 'origin'
       @entity.letters_sent_from.published.page(@page).per(@per_page)
     when 'received'
@@ -150,7 +150,7 @@ class EntitiesController < ApplicationController
     when 'destination'
       @entity.letters_sent_to.published.between(@start_date, @end_date).page(@page).per(@per_page)
     when 'sent'
-      @entity.letters_sent.published.between(@start_date, @end_date).or(date: nil).page(@page).per(@per_page)
+      @entity.letters_sent.published.between(@start_date, @end_date).page(@page).per(@per_page)
     when 'origin'
       @entity.letters_sent_from.published.between(@start_date, @end_date).page(@page).per(@per_page)
     when 'received'
