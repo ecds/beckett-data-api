@@ -84,6 +84,7 @@ RSpec.configure do |config|
     Letter.reindex
     Repository.reindex
     PublishedLetter.reindex
+    PublishedEntity.reindex
 
     Searchkick.disable_callbacks
   end

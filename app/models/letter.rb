@@ -59,11 +59,17 @@ class Letter < ApplicationRecord
   end
 
   def reindex_published
-    return unless published
+    if published
+      published_letter = PublishedLetter.find(id)
+      published_letter&.reindex
+      PublishedLetter.reindex if ENV['RAILS_ENV'] == 'test'
+    else
+      remove_published
+    end
 
-    PublishedLetter.find(id).reindex
   end
 
+  # Called after destory or when letter might have been unpublished
   def remove_published
     return unless published
 

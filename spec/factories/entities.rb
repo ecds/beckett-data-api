@@ -14,7 +14,7 @@ FactoryBot.define do
     end
 
     trait :unpublished do
-      letters { [create(:unpublished_letter)]}
+      letters { [create(:unpublished_letter)] }
     end
 
     after :create do |entity|

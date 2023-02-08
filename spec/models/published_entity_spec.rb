@@ -11,4 +11,26 @@ RSpec.describe PublishedEntity, type: :model do
     expect(described_class.all.map(&:published)).to all(be true)
     expect(described_class.count).to be < Entity.count
   end
+
+  it 'updates index when entity is published' do
+    entity = create(:entity, :unpublished)
+    expect(described_class.search('*', where: { label: entity.label })).to be_empty
+    entity.letters.first.repositories.first.update(published: true)
+    entity.letters.first.save
+    entity.save!
+    entity.reload
+    expect(entity.published).to be true
+    expect(described_class.search('*', where: { label: entity.label }).first.id).to eq(entity.id)
+  end
+
+  it 'updates index when entity is unpublished' do
+    entity = create(:entity, :published)
+    expect(described_class.search('*', where: { label: entity.label }).first.id).to eq(entity.id)
+    entity.letters.first.repositories.first.update(published: false)
+    entity.letters.first.save
+    entity.save!
+    entity.reload
+    expect(entity.published).to be false
+    expect(described_class.search('*', where: { label: entity.label })).to be_empty
+  end
 end

@@ -9,7 +9,7 @@ class Entity < ApplicationRecord
 
   before_save :check_published, :remove_blank_values, :add_full_stops, :remove_div, :concat_label, :to_plain_text
   after_destroy :remove_published
-  after_save :reindex_published
+  after_commit :reindex_published
 
   has_many :mentions, dependent: :destroy
   has_many :letters, -> { order('letters.date') }, through: :mentions, source: :letter
@@ -25,6 +25,8 @@ class Entity < ApplicationRecord
 
   has_many :letter_recipients, dependent: :destroy
   has_many :letters_received, -> { order('letters.date') }, through: :letter_recipients, source: :letter
+
+  has_many :media, dependent: :destroy
 
   scope :deletable, lambda {
     where(
@@ -193,14 +195,17 @@ class Entity < ApplicationRecord
   end
 
   def reindex_published
-    return unless published
-
-    PublishedEntity.find(id).reindex
+    if published
+      published_entity = PublishedEntity.find(id)
+      published_entity&.reindex
+      PublishedEntity.reindex if ENV['RAILS_ENV'] == 'test'
+    else
+      remove_published
+    end
   end
 
+  # Called after destory or when entity might have been unpublished
   def remove_published
-    return unless published
-
     PublishedEntity.searchkick_index.remove(id)
   rescue NoMethodError
   end
