@@ -168,7 +168,7 @@ class LoadBigSamJob < ApplicationJob
           repository.save
 
           letter_repository = LetterRepository.find_or_create_by(letter:, repository:)
-          letter_repository.update(collection, placement: 'premiere', format: row[:first_format])
+          letter_repository.update(collection:, placement: 'premiere', format: row[:first_format])
 
           # letter.repositories << repo unless letter.repositories.include?(repo)
         rescue ActiveRecord::RecordInvalid,
@@ -195,7 +195,7 @@ class LoadBigSamJob < ApplicationJob
           repository.save
 
           letter_repository = LetterRepository.find_or_create_by(letter:, repository:)
-          letter_repository.update(collection, placement: 'deuxieme', format: row[:second_format])
+          letter_repository.update(collection:, placement: 'deuxieme', format: row[:second_format])
           # letter.repositories << repo unless letter.repositories.include?(repo)
         rescue ActiveRecord::RecordInvalid,
                Elasticsearch::Transport::Transport::Errors::BadRequest,
@@ -221,7 +221,7 @@ class LoadBigSamJob < ApplicationJob
           repository.save
 
           letter_repository = LetterRepository.find_or_create_by(letter:, repository:)
-          letter_repository.update(collection, placement: 'troisieme', format: row[:third_format])
+          letter_repository.update(collection:, placement: 'troisieme', format: row[:third_format])
           # letter.repositories << repo unless letter.repositories.include?(repo)
         rescue ActiveRecord::RecordInvalid,
                Elasticsearch::Transport::Transport::Errors::BadRequest,
@@ -271,7 +271,7 @@ class LoadBigSamJob < ApplicationJob
   def get_letter(row)
     if row[:exclude] == 'y'
       letter = Letter.find_by(legacy_pk: row[:id])
-      letter&.delete
+      letter&.destroy
       return nil
     end
 

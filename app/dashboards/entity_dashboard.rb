@@ -47,7 +47,7 @@ class EntityDashboard < Administrate::BaseDashboard
     last_name: RichTextField.with_options(searchable: true),
     life_dates: RichTextField,
     links: Field::List,
-    images: Field::List,
+    images: Field::HasMany,
     notes: RichTextField,
     owner_location: RichTextField,
     owner_location_current: RichTextField,
