@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_01_141016) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_03_161915) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
@@ -104,7 +104,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_01_141016) do
     t.text "description_plain"
     t.text "lists_plain"
     t.boolean "published"
-    t.text "images", array: true
+    t.integer "year"
     t.index ["event_type_id"], name: "index_entities_on_event_type_id"
   end
 
@@ -239,6 +239,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_01_141016) do
     t.index ["letter_owner_id"], name: "index_letters_on_letter_owner_id"
     t.index ["letter_publisher_id"], name: "index_letters_on_letter_publisher_id"
     t.index ["published"], name: "index_letters_on_published"
+  end
+
+  create_table "media", force: :cascade do |t|
+    t.string "link"
+    t.string "alt_text"
+    t.string "attribution"
+    t.string "caption"
+    t.uuid "entity_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["entity_id"], name: "index_media_on_entity_id"
   end
 
   create_table "mentions", force: :cascade do |t|

@@ -317,7 +317,6 @@ module EntityCommon
           alternate_names
           alternate_spellings
           first_name
-          images
           last_name
           life_dates
           links
@@ -411,6 +410,13 @@ module EntityCommon
 
     def person_name
       "#{first_name} #{last_name}".strip
+    end
+
+    def find_year
+      # year = place_date&.match(/\d{4}/) if attendance?
+      # year = date_str&.match(/\d{4}/)
+      # year
+      # year = nil if year&.zero?
     end
   end
 end
