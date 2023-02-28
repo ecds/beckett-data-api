@@ -121,7 +121,7 @@ module EntityCommon
           lines.push(description) if description.present?
         end
         lines.push("<strong>Attended with</strong> #{attended_with.to_sentence}") if attended_with.present?
-        lines.push("<strong>Place, Date</strong> #{place_date}") if place_date.present?
+        lines.push("<strong>Place, Date</strong> #{place} #{years.compact.join(', ')}") if place.present?
         lines.push("<strong>Director</strong> #{director}") if director.present?
       when 'music'
         lines.push("<strong>Composer</strong> #{composer}") if composer.present?
@@ -196,7 +196,7 @@ module EntityCommon
         rows.push("<th scope='row'>Director</th><td>#{director}</td>") if director.present?
         rows.push("<th scope='row'>Performed by</th><td>#{performed_by.to_sentence}</td>") if performed_by.present?
         rows.push("<th scope='row'>Attended with</th><td>#{attended_with.to_sentence}</td>") if attended_with.present?
-        rows.push("<th scope='row'>Place, Date</th><td>#{place_date}</td>") if place_date.present?
+        rows.push("<th scope='row'>Place, Date</th><td>#{place} #{years.compact.join(', ')}</td>") if place.present?
         rows.push("<th scope='row'>Notes</th><td>#{notes}</td>") if notes.present?
       when 'music'
         rows.push("<th scope='row'>Composer</th><td>#{composer}</td>") if composer.present?
@@ -298,7 +298,8 @@ module EntityCommon
           event_type
           notes
           performed_by
-          place_date
+          place
+          years
         ],
         music: %i[
           alternate_names
@@ -377,6 +378,7 @@ module EntityCommon
           notes
           proposal
           publication_information
+          years
         ],
         generic: attributes.keys.map(&:to_sym)
       }
@@ -413,7 +415,7 @@ module EntityCommon
     end
 
     def find_year
-      # year = place_date&.match(/\d{4}/) if attendance?
+      # year = place&.match(/\d{4}/) if attendance?
       # year = date_str&.match(/\d{4}/)
       # year
       # year = nil if year&.zero?

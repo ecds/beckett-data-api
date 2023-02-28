@@ -53,7 +53,7 @@ class EntityDashboard < Administrate::BaseDashboard
     owner_location_current: RichTextField,
     performed_by: Field::List,
     personnel: Field::List,
-    place_date: RichTextField,
+    place: RichTextField,
     profile: RichTextField,
     proposal: RichTextField,
     publication_format: RichTextField,
@@ -81,7 +81,8 @@ class EntityDashboard < Administrate::BaseDashboard
     updated_at: Field::DateTime,
     label_plain: Field::Text.with_options(searchable: true),
     description_plain: Field::Text.with_options(searchable: true),
-    lists_plain: Field::Text.with_options(searchable: true)
+    lists_plain: Field::Text.with_options(searchable: true),
+    years: Field::List
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -116,7 +117,7 @@ class EntityDashboard < Administrate::BaseDashboard
     alternate_names
     city
     theater
-    place_date
+    place
     date
     date_str
     proposal
@@ -152,6 +153,7 @@ class EntityDashboard < Administrate::BaseDashboard
     created_at
     updated_at
     images
+    years
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -185,7 +187,7 @@ class EntityDashboard < Administrate::BaseDashboard
     owner_location_current
     performed_by
     personnel
-    place_date
+    place
     proposal
     publication_format
     publication_information
@@ -195,6 +197,7 @@ class EntityDashboard < Administrate::BaseDashboard
     translated_into
     translated_title
     translators
+    years
   ].freeze
 
   # COLLECTION_FILTERS

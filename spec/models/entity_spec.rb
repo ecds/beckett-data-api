@@ -173,7 +173,8 @@ RSpec.describe Entity, type: :model do
       expect(doc.xpath('//strong').count).to eq(4)
       expect(sanitize(doc.xpath('//p')[0].text)).to eq("#{entity.event_type.titleize}, #{sanitize(strip_tags(entity.description))}")
       expect(sanitize(doc.xpath('//p')[1].text)).to include(sanitize(strip_tags(entity.attended_with.to_sentence)))
-      expect(sanitize(doc.xpath('//p')[2].text)).to include(sanitize(strip_tags(entity.place_date)))
+      expect(sanitize(doc.xpath('//p')[2].text)).to include(sanitize(strip_tags(entity.place)))
+      expect(sanitize(doc.xpath('//p')[2].text)).to include(entity.years.first.to_s)
       expect(sanitize(doc.xpath('//p')[3].text)).to include(sanitize(strip_tags(entity.director)))
       expect(sanitize(doc.xpath('//strong')[0].text)).to eq(entity.event_type.titleize)
       expect(sanitize(doc.xpath('//strong')[1].text)).to eq('Attended with')
@@ -542,7 +543,7 @@ RSpec.describe Entity, type: :model do
       expect(sanitize(doc.xpath('//td')[2].text)).to eq(sanitize(strip_tags(entity.director)))
       expect(sanitize(doc.xpath('//td')[3].text)).to eq(sanitize(strip_tags(entity.performed_by.to_sentence)))
       expect(sanitize(doc.xpath('//td')[4].text)).to eq(sanitize(strip_tags(entity.attended_with.to_sentence)))
-      expect(sanitize(doc.xpath('//td')[5].text)).to eq(sanitize(strip_tags(entity.place_date)))
+      expect(sanitize(doc.xpath('//td')[5].text)).to eq(sanitize(strip_tags("#{entity.place} #{entity.years.first}")))
       expect(sanitize(doc.xpath('//td')[6].text)).to eq(sanitize(strip_tags(entity.notes)))
     end
 

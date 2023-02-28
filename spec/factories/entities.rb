@@ -49,8 +49,9 @@ FactoryBot.define do
       director { Faker::Movies::HitchhikersGuideToTheGalaxy.character }
       event_type { rand(0..3) }
       performed_by { [Faker::Movies::HitchhikersGuideToTheGalaxy.character] }
-      place_date { "#{Faker::Address.city}, #{Faker::Date.between(from: 100.years.ago, to: 50.years.ago).strftime('%d %B %Y')}" }
+      place { Faker::Address.city }
       notes { Faker::Music::Prince.lyric }
+      years { [Faker::Date.between(from: 100.years.ago, to: 50.years.ago).strftime('%Y')] }
     end
 
     factory :music_entity do

@@ -32,6 +32,11 @@ class EntitiesController < ApplicationController
     render
   end
 
+  def show
+    @entity = Entity.published.find(params[:id])
+    render
+  end
+
   # GET /entities/autocomplete?search=*
   def autocomplete
     query = strip_tags params[:searcn]
