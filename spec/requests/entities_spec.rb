@@ -81,6 +81,20 @@ RSpec.describe '/entities', type: :request do
       get entity_url(entity), as: :json
       expect(response).to be_successful
     end
+
+    it 'renders unpublished when requested from beckettapi' do
+      entity = create(:entity)
+      expect(entity.published).to be(false)
+      get '/entities', params: { id: entity.id }, headers: { HTTP_REFERER: 'beckettapi.ecdsdev.org' }
+      expect(response).to be_successful
+    end
+
+    it 'return 404 when unpublished and not requested from beckettapi' do
+      entity = create(:entity)
+      expect(entity.published).to be(false)
+      get entity_url(entity)
+      expect(response.status).to eq 404
+    end
   end
 
   describe 'GET /entities/:id/letters' do

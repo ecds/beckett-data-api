@@ -33,7 +33,11 @@ class EntitiesController < ApplicationController
   end
 
   def show
-    @entity = Entity.published.find(params[:id])
+    @entity = if request.host.include?('beckettapi')
+                Entity.find(params[:id])
+              else
+                Entity.published.find(params[:id])
+              end
     render
   end
 

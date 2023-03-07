@@ -3,6 +3,8 @@
 class ApplicationController < ActionController::API
   include ActionView::Helpers::SanitizeHelper
 
+  rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
+
   class_attribute :pagination_links, default: {}
 
   # GET /:id
@@ -23,6 +25,10 @@ class ApplicationController < ActionController::API
   # DELETE /
   def destroy
     head :not_implemented
+  end
+
+  def render_not_found
+    render json: { error: 'not found' }, status: :not_found
   end
 
   private
