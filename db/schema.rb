@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_28_175442) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_07_180919) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
@@ -105,6 +105,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_28_175442) do
     t.text "lists_plain"
     t.boolean "published"
     t.integer "years", array: true
+    t.string "directors", array: true
+    t.string "event_types", array: true
     t.index ["event_type_id"], name: "index_entities_on_event_type_id"
   end
 

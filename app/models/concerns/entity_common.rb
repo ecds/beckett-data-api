@@ -114,15 +114,15 @@ module EntityCommon
       lines = []
       case e_type
       when 'attendance'
-        if event_type && description
-          lines.push("<strong>#{event_type.titleize}</strong>, #{description}")
+        if event_types && description
+          lines.push("<strong>#{event_types.map(&:titleize).join(',')}</strong>, #{description}")
         else
-          lines.push("<strong>#{event_type.titleize}</strong>") if event_type.present?
+          lines.push("<strong>#{event_types.map(&:titleize).join(',')}</strong>") if event_types.present?
           lines.push(description) if description.present?
         end
         lines.push("<strong>Attended with</strong> #{attended_with.to_sentence}") if attended_with.present?
         lines.push("<strong>Place, Date</strong> #{place} #{years.compact.join(', ')}") if place.present?
-        lines.push("<strong>Director</strong> #{director}") if director.present?
+        lines.push("<strong>Director(s)</strong> #{directors.to_sentence}") if directors.present?
       when 'music'
         lines.push("<strong>Composer</strong> #{composer}") if composer.present?
         lines.push("<strong>Title</strong> #{label}")
@@ -140,10 +140,10 @@ module EntityCommon
         else
           lines.push("<strong>Proposal</strong> #{proposal}") if proposal.present?
         end
-        if director && theater && city
-          lines.push("<strong>Director</strong> #{director} <strong>Theatre, City</strong> #{theater}, #{city}")
+        if directors && theater && city
+          lines.push("<strong>Director(s)</strong> #{directors.to_sentence} <strong>Theatre, City</strong> #{theater}, #{city}")
         else
-          lines.push("<strong>Director</strong> #{director}") if director.present?
+          lines.push("<strong>Director(s)</strong> #{directors.to_sentence}") if directors.present?
           lines.push("<strong>Theatre, City</strong> #{[theater, city].join(', ')}") if theater.present?
         end
         lines.push("<strong>Date(s)</strong> #{date_str}") if date_str.present?
@@ -193,7 +193,7 @@ module EntityCommon
       when 'attendance'
         rows.push("<th scope='row'>Description</th><td>#{description}</td>") if description.present?
         rows.push("<th scope='row'>Alternate Name(s)</th><td>#{alternate_names.join(', ')}</td>") if alternate_names.present?
-        rows.push("<th scope='row'>Director</th><td>#{director}</td>") if director.present?
+        rows.push("<th scope='row'>Director(s)</th><td>#{directors.to_sentence}</td>") if directors.present?
         rows.push("<th scope='row'>Performed by</th><td>#{performed_by.to_sentence}</td>") if performed_by.present?
         rows.push("<th scope='row'>Attended with</th><td>#{attended_with.to_sentence}</td>") if attended_with.present?
         rows.push("<th scope='row'>Place, Date</th><td>#{place} #{years.compact.join(', ')}</td>") if place.present?
@@ -233,7 +233,7 @@ module EntityCommon
           rows.push(cells.join)
         end
         rows.push("<th scope='row'>Date(s)</th><td colspan=5>#{date_str}</td>") if date_str.present?
-        rows.push("<th scope='row'>Director</th><td colspan=5>#{director}</td>") if director.present?
+        rows.push("<th scope='row'>Director(s)</th><td colspan=5>#{directors.to_sentence}</td>") if directors.present?
         rows.push("<th scope='row'>Cast</th><td colspan=5>#{cast.to_sentence}</td>") if cast.present?
         rows.push("<th scope='row'>Personnel</th><td colspan=5>#{personnel.to_sentence}</td>") if personnel.present?
         rows.push("<th scope='row'>Theatre, City</th><td colspan=5>#{theater}, #{city}</td>") if theater.present?
@@ -294,7 +294,7 @@ module EntityCommon
           alternate_names
           alternate_spellings
           attended_with
-          director
+          directors
           event_type
           notes
           performed_by
@@ -332,7 +332,7 @@ module EntityCommon
           cast
           city
           date_str
-          director
+          directors
           links
           notes
           personnel

@@ -99,10 +99,10 @@ class Entity < ApplicationRecord
   def concat_label
     case e_type
     when 'attendance'
-      self.label = if event_type && description
-                     "#{event_type.titleize}, #{description}"
+      self.label = if event_types && description
+                     "#{event_types.map(&:titleize).join(',')}, #{description}"
                    else
-                     "#{event_type&.titleize} #{description}".strip
+                     "#{event_types&.map(&:titleize)&.join(',')} #{description}".strip
                    end
     when 'person'
       if label && (last_name.nil? && first_name.nil?)

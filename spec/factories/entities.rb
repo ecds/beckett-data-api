@@ -46,8 +46,8 @@ FactoryBot.define do
           Faker::Movies::HitchhikersGuideToTheGalaxy.character
         ]
       }
-      director { Faker::Movies::HitchhikersGuideToTheGalaxy.character }
-      event_type { rand(0..3) }
+      directors { [Faker::Movies::HitchhikersGuideToTheGalaxy.character] }
+      event_types { [Faker::TvShows::RuPaul.queen] }
       performed_by { [Faker::Movies::HitchhikersGuideToTheGalaxy.character] }
       place { Faker::Address.city }
       notes { Faker::Music::Prince.lyric }
@@ -99,7 +99,7 @@ FactoryBot.define do
       cast { [Faker::Movies::HitchhikersGuideToTheGalaxy.character, Faker::Movies::Lebowski.character] }
       city { Faker::Address.city }
       date_str { Faker::Date.between(from: 100.years.ago, to: 50.years.ago).to_s }
-      director { Faker::Movies::Lebowski.character }
+      directors { [Faker::Movies::Lebowski.character] }
       links { [Faker::Internet.url] }
       notes { Faker::Hipster.sentence }
       personnel { [Faker::Movies::HitchhikersGuideToTheGalaxy.character] }

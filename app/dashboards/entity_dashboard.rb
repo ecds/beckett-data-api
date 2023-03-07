@@ -35,7 +35,7 @@ class EntityDashboard < Administrate::BaseDashboard
     date: Field::Date,
     date_str: RichTextField,
     description: RichTextField,
-    director: RichTextField,
+    directors: Field::List,
     event_type: Field::Select.with_options(
       searchable: true,
       collection: lambda {|field|
@@ -110,7 +110,7 @@ class EntityDashboard < Administrate::BaseDashboard
     profile
     authors
     composer
-    director
+    directors
     artist
     artist_alternate_spellings
     alternate_names
@@ -172,7 +172,7 @@ class EntityDashboard < Administrate::BaseDashboard
     composer
     date
     date_str
-    director
+    directors
     e_type
     event_type
     first_name

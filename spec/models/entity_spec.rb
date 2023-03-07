@@ -97,19 +97,19 @@ RSpec.describe Entity, type: :model do
       expect(person.life_dates).to be_nil
     end
 
-    it 'labels attendance with event_type and description' do
+    it 'labels attendance with event_types and description' do
       attendance = create(:attendance_entity)
-      expect(attendance.label).to eq("#{attendance.event_type.titleize}, #{attendance.description}")
+      expect(attendance.label).to eq("#{attendance.event_types.map(&:titleize).join(',')}, #{attendance.description}")
     end
 
-    it 'labels attendance with only event_type when no description' do
+    it 'labels attendance with only event_types when no description' do
       attendance = create(:attendance_entity)
       attendance.update(description: nil)
-      expect(attendance.label).to eq(attendance.event_type.titleize)
+      expect(attendance.label).to eq(attendance.event_types.map(&:titleize).join(','))
     end
 
     it 'labels attendance with only description when no event_type' do
-      attendance = create(:attendance_entity, event_type: nil)
+      attendance = create(:attendance_entity, event_types: nil)
       expect(attendance.label).to eq(attendance.description)
     end
   end
@@ -171,15 +171,15 @@ RSpec.describe Entity, type: :model do
       doc = Nokogiri::HTML5 entity.short_display
       expect(doc.xpath('//p').count).to eq(4)
       expect(doc.xpath('//strong').count).to eq(4)
-      expect(sanitize(doc.xpath('//p')[0].text)).to eq("#{entity.event_type.titleize}, #{sanitize(strip_tags(entity.description))}")
+      expect(sanitize(doc.xpath('//p')[0].text)).to eq("#{entity.event_types.map(&:titleize).join(',')}, #{sanitize(strip_tags(entity.description))}")
       expect(sanitize(doc.xpath('//p')[1].text)).to include(sanitize(strip_tags(entity.attended_with.to_sentence)))
       expect(sanitize(doc.xpath('//p')[2].text)).to include(sanitize(strip_tags(entity.place)))
       expect(sanitize(doc.xpath('//p')[2].text)).to include(entity.years.first.to_s)
-      expect(sanitize(doc.xpath('//p')[3].text)).to include(sanitize(strip_tags(entity.director)))
-      expect(sanitize(doc.xpath('//strong')[0].text)).to eq(entity.event_type.titleize)
+      expect(sanitize(doc.xpath('//p')[3].text)).to include(sanitize(strip_tags(entity.directors.first)))
+      expect(sanitize(doc.xpath('//strong')[0].text)).to eq(entity.event_types.map(&:titleize).join(','))
       expect(sanitize(doc.xpath('//strong')[1].text)).to eq('Attended with')
       expect(sanitize(doc.xpath('//strong')[2].text)).to eq('Place, Date')
-      expect(sanitize(doc.xpath('//strong')[3].text)).to eq('Director')
+      expect(sanitize(doc.xpath('//strong')[3].text)).to eq('Director(s)')
     end
 
     it 'has short display - music' do
@@ -234,13 +234,13 @@ RSpec.describe Entity, type: :model do
       expect(sanitize(doc.xpath('//p')[1].text)).to include(sanitize(strip_tags(entity.proposal)))
       expect(sanitize(doc.xpath('//p')[1].text)).to include(sanitize(strip_tags(entity.response)))
       expect(sanitize(doc.xpath('//p')[1].text)).to include(' / ')
-      expect(sanitize(doc.xpath('//p')[2].text)).to include(sanitize(strip_tags(entity.director)))
+      expect(sanitize(doc.xpath('//p')[2].text)).to include(sanitize(strip_tags(entity.directors.first)))
       expect(sanitize(doc.xpath('//p')[2].text)).to include(sanitize(strip_tags(entity.theater)))
       expect(sanitize(doc.xpath('//p')[2].text)).to include(sanitize(strip_tags(entity.city)))
       expect(sanitize(doc.xpath('//p')[3].text)).to include(entity.date_str)
       expect(sanitize(doc.xpath('//strong')[0].text)).to eq('Title')
       expect(sanitize(doc.xpath('//strong')[1].text)).to eq('Proposal/Response')
-      expect(sanitize(doc.xpath('//strong')[2].text)).to eq('Director')
+      expect(sanitize(doc.xpath('//strong')[2].text)).to eq('Director(s)')
       expect(sanitize(doc.xpath('//strong')[3].text)).to eq('Theatre, City')
       expect(sanitize(doc.xpath('//strong')[4].text)).to eq('Date(s)')
     end
@@ -343,8 +343,8 @@ RSpec.describe Entity, type: :model do
       expect(sanitize(doc.xpath('//strong')[0].text)).to eq("#{sanitize(strip_tags(entity.first_name))} #{sanitize(strip_tags(entity.last_name))}")
     end
 
-    it 'does not show response or director/theater/city - production' do
-      entity = create(:production_entity, director: nil, response: nil)
+    it 'does not show response or directors/theater/city - production' do
+      entity = create(:production_entity, directors: nil, response: nil)
       doc = Nokogiri::HTML5 entity.short_display
       expect(doc.xpath('//p').count).to eq(4)
       expect(doc.xpath('//strong').count).to eq(4)
@@ -378,14 +378,14 @@ RSpec.describe Entity, type: :model do
     it 'has minimal short display - attendance' do
       entity = described_class.create(
         e_type: 'attendance',
-        event_type: rand(0..3),
+        event_types: [Faker::TvShows::RuPaul.queen],
         description: Faker::Hipster.sentence.gsub!(/[^0-9A-Za-z\s]/, '')
       )
       doc = Nokogiri::HTML5 entity.short_display
       expect(doc.xpath('//p').count).to eq(1)
       expect(doc.xpath('//strong').count).to eq(1)
-      expect(sanitize(doc.xpath('//p')[0].text)).to eq("#{entity.event_type.titleize}, #{sanitize(strip_tags(entity.description))}")
-      expect(sanitize(doc.xpath('//strong')[0].text)).to eq(entity.event_type.titleize)
+      expect(sanitize(doc.xpath('//p')[0].text)).to eq("#{entity.event_types.map(&:titleize).join(',')}, #{sanitize(strip_tags(entity.description))}")
+      expect(sanitize(doc.xpath('//strong')[0].text)).to eq(entity.event_types.map(&:titleize).join(','))
     end
 
     it 'has minimal short display - music' do
@@ -531,7 +531,7 @@ RSpec.describe Entity, type: :model do
       rows = [
         'Description',
         'Alternate Name(s)',
-        'Director',
+        'Director(s)',
         'Performed by',
         'Attended with',
         'Place, Date',
@@ -540,7 +540,7 @@ RSpec.describe Entity, type: :model do
       expect(doc.xpath('//th').map(&:text)).to eq(rows)
       expect(sanitize(doc.xpath('//td')[0].text)).to eq(sanitize(strip_tags(entity.description)))
       expect(sanitize(doc.xpath('//td')[1].text)).to eq(entity.alternate_names.join(', '))
-      expect(sanitize(doc.xpath('//td')[2].text)).to eq(sanitize(strip_tags(entity.director)))
+      expect(sanitize(doc.xpath('//td')[2].text)).to eq(sanitize(strip_tags(entity.directors.first)))
       expect(sanitize(doc.xpath('//td')[3].text)).to eq(sanitize(strip_tags(entity.performed_by.to_sentence)))
       expect(sanitize(doc.xpath('//td')[4].text)).to eq(sanitize(strip_tags(entity.attended_with.to_sentence)))
       expect(sanitize(doc.xpath('//td')[5].text)).to eq(sanitize(strip_tags("#{entity.place} #{entity.years.first}")))
@@ -649,7 +649,7 @@ RSpec.describe Entity, type: :model do
         'Response',
         'Reason',
         'Date(s)',
-        'Director',
+        'Director(s)',
         'Cast',
         'Personnel',
         'Theatre, City',
@@ -662,7 +662,7 @@ RSpec.describe Entity, type: :model do
       expect(doc.xpath('//table//tbody//tr[2]//td[2]').text).to eq(entity.response)
       expect(doc.xpath('//table//tbody//tr[2]//td[3]').text).to eq(entity.reason)
       expect(sanitize(doc.xpath('//td')[4].text)).to eq(sanitize(strip_tags(entity.date_str)))
-      expect(sanitize(doc.xpath('//td')[5].text)).to eq(sanitize(strip_tags(entity.director)))
+      expect(sanitize(doc.xpath('//td')[5].text)).to eq(sanitize(strip_tags(entity.directors.first)))
       expect(sanitize(doc.xpath('//td')[6].text)).to eq(sanitize(strip_tags(entity.cast.to_sentence)))
       expect(sanitize(doc.xpath('//td')[7].text)).to eq(sanitize(strip_tags(entity.personnel.to_sentence)))
       expect(sanitize(doc.xpath('//td')[8].text)).to include(sanitize(strip_tags(entity.theater)))
@@ -816,7 +816,7 @@ RSpec.describe Entity, type: :model do
         'Title',
         'Proposal',
         'Date(s)',
-        'Director',
+        'Director(s)',
         'Cast',
         'Personnel',
         'Theatre, City',
@@ -827,7 +827,7 @@ RSpec.describe Entity, type: :model do
       expect(sanitize(doc.xpath('//td')[0].text)).to eq(sanitize(strip_tags(entity.label)))
       expect(sanitize(doc.xpath('//td')[1].text)).to eq(entity.proposal)
       expect(sanitize(doc.xpath('//td')[2].text)).to eq(sanitize(strip_tags(entity.date_str)))
-      expect(sanitize(doc.xpath('//td')[3].text)).to eq(sanitize(strip_tags(entity.director)))
+      expect(sanitize(doc.xpath('//td')[3].text)).to eq(sanitize(strip_tags(entity.directors.first)))
       expect(sanitize(doc.xpath('//td')[4].text)).to eq(sanitize(strip_tags(entity.cast.to_sentence)))
       expect(sanitize(doc.xpath('//td')[5].text)).to eq(sanitize(strip_tags(entity.personnel.to_sentence)))
       expect(sanitize(doc.xpath('//td')[6].text)).to include(sanitize(strip_tags(entity.theater)))
