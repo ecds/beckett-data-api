@@ -291,6 +291,7 @@ class LoadBigSamJob < ApplicationJob
     if type == 'person' && entity.nil?
       names = Namae.parse label
       if names&.first&.given && names&.first&.family
+        names.first.family = "van #{names.first.family}" if names.first.particle == 'van'
         entity = Entity.find_by(first_name: names.first.given, last_name: names.first.family)
       end
     end
