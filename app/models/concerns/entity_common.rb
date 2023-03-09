@@ -124,7 +124,7 @@ module EntityCommon
         lines.push("<strong>Place, Date</strong> #{place} #{years.compact.join(', ')}") if place.present?
         lines.push("<strong>Director(s)</strong> #{directors.to_sentence}") if directors.present?
       when 'music'
-        lines.push("<strong>Composer</strong> #{composer}") if composer.present?
+        lines.push("<strong>Composer(s)</strong> #{composers.to_sentence}") if composers.present?
         lines.push("<strong>Title</strong> #{label}")
         lines.push("<strong>Description</strong> #{description}") if description.present?
       when 'organization', 'place'
@@ -172,7 +172,7 @@ module EntityCommon
         end
         lines.push("<strong>Translated title</strong> #{translated_title}") if translated_title.present?
       when 'work_of_art'
-        lines.push("<strong>Artist</strong> #{artist}") if artist.present?
+        lines.push("<strong>Artist(s)</strong> #{artists.to_sentence}") if artists.present?
         lines.push("<strong>Title</strong> #{label}")
         lines.push("<strong>Description</strong> #{description}") if description.present?
         lines.push("<strong>Owner/location</strong> #{owner_location}") if owner_location.present?
@@ -199,7 +199,7 @@ module EntityCommon
         rows.push("<th scope='row'>Place, Date</th><td>#{place} #{years.compact.join(', ')}</td>") if place.present?
         rows.push("<th scope='row'>Notes</th><td>#{notes}</td>") if notes.present?
       when 'music'
-        rows.push("<th scope='row'>Composer</th><td>#{composer}</td>") if composer.present?
+        rows.push("<th scope='row'>Composer(s)</th><td>#{composers.to_sentence}</td>") if composers.present?
         rows.push("<th scope='row'>Title</th><td>#{label}</td>")
         rows.push("<th scope='row'>Alternate Title(s)</th><td>#{alternate_names.join(', ')}</td>") if alternate_names.present?
         rows.push("<th scope='row'>Description</th><td>#{description}</td>") if description.present?
@@ -266,7 +266,7 @@ module EntityCommon
         rows.push("<th scope='row'>Translated Title</th><td>#{translated_title}</td>") if translated_title.present?
         rows.push("<th scope='row'>Publication/Production</th><td>#{notes}</td>") if notes.present?
       when 'work_of_art'
-        rows.push("<th scope='row'>Artist</th><td>#{artist}</td>") if artist.present?
+        rows.push("<th scope='row'>Artist(s)</th><td>#{artists.to_sentence}</td>") if artists.present?
         rows.push("<th scope='row'>Artist Alternative Name(s)</th><td>#{artist_alternate_spellings.join(', ')}</td>") if artist_alternate_spellings.present?
         rows.push("<th scope='row'>Title</th><td>#{label}</td>")
         rows.push("<th scope='row'>Alternative Title(s)</th><td>#{alternate_names.join(', ')}</td>") if alternate_names.present?
@@ -304,7 +304,7 @@ module EntityCommon
         music: %i[
           alternate_names
           alternate_spellings
-          composer
+          composers
           links
           notes
           performed_by
@@ -365,7 +365,7 @@ module EntityCommon
         ],
         work_of_art: %i[
           alternate_spellings
-          artist
+          artists
           artist_alternate_spellings
           links
           notes

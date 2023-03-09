@@ -58,7 +58,7 @@ FactoryBot.define do
       e_type { 1 }
       label { Faker::Music::Prince.song }
       alternate_names { [Faker::TvShows::RuPaul.queen] }
-      composer { Faker::Movies::HitchhikersGuideToTheGalaxy.character }
+      composers { [Faker::Movies::HitchhikersGuideToTheGalaxy.character] }
       notes { Faker::Music::Prince.lyric }
       performed_by { [Faker::Movies::Lebowski.character] }
       links { [Faker::Internet.url] }
@@ -149,7 +149,7 @@ FactoryBot.define do
       e_type { 10 }
       label { Faker::Music::Prince.song }
       alternate_names { [Faker::TvShows::RuPaul.queen] }
-      artist { Faker::Movies::HitchhikersGuideToTheGalaxy.character }
+      artists { [Faker::Movies::HitchhikersGuideToTheGalaxy.character] }
       artist_alternate_spellings { [Faker::TvShows::RuPaul.queen] }
       notes { Faker::Movies::HitchhikersGuideToTheGalaxy.marvin_quote }
       owner_location { Faker::Movies::HitchhikersGuideToTheGalaxy.starship }

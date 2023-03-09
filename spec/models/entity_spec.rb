@@ -187,10 +187,10 @@ RSpec.describe Entity, type: :model do
       doc = Nokogiri::HTML5 entity.short_display
       expect(doc.xpath('//p').count).to eq(3)
       expect(doc.xpath('//strong').count).to eq(3)
-      expect(sanitize(doc.xpath('//p')[0].text)).to include(sanitize(strip_tags(entity.composer)))
+      expect(sanitize(doc.xpath('//p')[0].text)).to include(sanitize(strip_tags(entity.composers.first)))
       expect(sanitize(doc.xpath('//p')[1].text)).to include(sanitize(strip_tags(entity.label)))
       expect(sanitize(doc.xpath('//p')[2].text)).to include(sanitize(strip_tags(entity.description)))
-      expect(sanitize(doc.xpath('//strong')[0].text)).to eq('Composer')
+      expect(sanitize(doc.xpath('//strong')[0].text)).to eq('Composer(s)')
       expect(sanitize(doc.xpath('//strong')[1].text)).to eq('Title')
       expect(sanitize(doc.xpath('//strong')[2].text)).to eq('Description')
     end
@@ -306,11 +306,11 @@ RSpec.describe Entity, type: :model do
       doc = Nokogiri::HTML5 entity.short_display
       expect(doc.xpath('//p').count).to eq(4)
       expect(doc.xpath('//strong').count).to eq(4)
-      expect(sanitize(doc.xpath('//p')[0].text)).to include(sanitize(strip_tags(entity.artist)))
+      expect(sanitize(doc.xpath('//p')[0].text)).to include(sanitize(strip_tags(entity.artists.first)))
       expect(sanitize(doc.xpath('//p')[1].text)).to include(sanitize(strip_tags(entity.label)))
       expect(sanitize(doc.xpath('//p')[2].text)).to include(sanitize(strip_tags(entity.description)))
       expect(sanitize(doc.xpath('//p')[3].text)).to include(sanitize(strip_tags(entity.owner_location)))
-      expect(sanitize(doc.xpath('//strong')[0].text)).to eq('Artist')
+      expect(sanitize(doc.xpath('//strong')[0].text)).to eq('Artist(s)')
       expect(sanitize(doc.xpath('//strong')[1].text)).to eq('Title')
       expect(sanitize(doc.xpath('//strong')[2].text)).to eq('Description')
       expect(sanitize(doc.xpath('//strong')[3].text)).to eq('Owner/location')
@@ -554,7 +554,7 @@ RSpec.describe Entity, type: :model do
       expect(doc.xpath('//td').count).to eq(7)
       expect(doc.xpath('//a').count).to eq(entity.links.count)
       rows = [
-        'Composer',
+        'Composer(s)',
         'Title',
         'Alternate Title(s)',
         'Description',
@@ -563,7 +563,7 @@ RSpec.describe Entity, type: :model do
         'See Also'
       ]
       expect(doc.xpath('//th').map(&:text)).to eq(rows)
-      expect(sanitize(doc.xpath('//td')[0].text)).to eq(sanitize(strip_tags(entity.composer)))
+      expect(sanitize(doc.xpath('//td')[0].text)).to eq(sanitize(strip_tags(entity.composers.first)))
       expect(sanitize(doc.xpath('//td')[1].text)).to eq(sanitize(strip_tags(entity.label)))
       expect(sanitize(doc.xpath('//td')[2].text)).to eq(entity.alternate_names.join(', '))
       expect(sanitize(doc.xpath('//td')[3].text)).to eq(sanitize(strip_tags(entity.description)))
@@ -757,7 +757,7 @@ RSpec.describe Entity, type: :model do
       expect(doc.xpath('//th').count).to eq(9)
       expect(doc.xpath('//td').count).to eq(9)
       rows = [
-        'Artist',
+        'Artist(s)',
         'Artist Alternative Name(s)',
         'Title',
         'Alternative Title(s)',
@@ -768,7 +768,7 @@ RSpec.describe Entity, type: :model do
         'See Also'
       ]
       expect(doc.xpath('//th').map(&:text)).to eq(rows)
-      expect(sanitize(doc.xpath('//td')[0].text)).to eq(sanitize(strip_tags(entity.artist)))
+      expect(sanitize(doc.xpath('//td')[0].text)).to eq(sanitize(strip_tags(entity.artists.first)))
       expect(sanitize(doc.xpath('//td')[1].text)).to eq(entity.artist_alternate_spellings.join(', '))
       expect(sanitize(doc.xpath('//td')[2].text)).to eq(sanitize(strip_tags(entity.label)))
       expect(sanitize(doc.xpath('//td')[3].text)).to eq(sanitize(strip_tags(entity.alternate_names.join(', '))))

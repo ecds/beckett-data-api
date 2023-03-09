@@ -25,13 +25,13 @@ class EntityDashboard < Administrate::BaseDashboard
     legacy_pk: Field::Number.with_options(searchable: true),
     alternate_names: Field::List,
     alternate_spellings: Field::List,
-    artist: RichTextField,
+    artists: Field::List,
     artist_alternate_spellings: Field::List,
     attended_with: Field::List,
     authors: Field::List,
     cast: Field::List,
     city: RichTextField,
-    composer: RichTextField,
+    composers: Field::List,
     date: Field::Date,
     date_str: RichTextField,
     description: RichTextField,
@@ -109,9 +109,9 @@ class EntityDashboard < Administrate::BaseDashboard
     description
     profile
     authors
-    composer
+    composers
     directors
-    artist
+    artists
     artist_alternate_spellings
     alternate_names
     city
@@ -163,13 +163,13 @@ class EntityDashboard < Administrate::BaseDashboard
     profile
     alternate_names
     alternate_spellings
-    artist
+    artists
     artist_alternate_spellings
     attended_with
     authors
     cast
     city
-    composer
+    composers
     date
     date_str
     directors
