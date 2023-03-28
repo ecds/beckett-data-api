@@ -30,7 +30,8 @@ class EntityDashboard < Administrate::BaseDashboard
     attended_with: Field::List,
     authors: Field::List,
     cast: Field::List,
-    city: RichTextField,
+    cities: Field::List,
+    countries: Field::List,
     composers: Field::List,
     date: Field::Date,
     date_str: RichTextField,
@@ -114,7 +115,7 @@ class EntityDashboard < Administrate::BaseDashboard
     artists
     artist_alternate_spellings
     alternate_names
-    city
+    cities
     theater
     place
     date
@@ -168,7 +169,8 @@ class EntityDashboard < Administrate::BaseDashboard
     attended_with
     authors
     cast
-    city
+    cities
+    countries
     composers
     date
     date_str

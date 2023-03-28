@@ -97,7 +97,7 @@ FactoryBot.define do
       label { Faker::Movie.title }
       alternate_spellings { [Faker::TvShows::RuPaul.queen] }
       cast { [Faker::Movies::HitchhikersGuideToTheGalaxy.character, Faker::Movies::Lebowski.character] }
-      city { Faker::Address.city }
+      cities { [Faker::Address.city] }
       date_str { Faker::Date.between(from: 100.years.ago, to: 50.years.ago).to_s }
       directors { [Faker::Movies::Lebowski.character] }
       links { [Faker::Internet.url] }
@@ -155,6 +155,7 @@ FactoryBot.define do
       owner_location { Faker::Movies::HitchhikersGuideToTheGalaxy.starship }
       owner_location_current { Faker::Movies::HitchhikersGuideToTheGalaxy.starship }
       links { [Faker::Internet.url] }
+      countries { [Faker::Address.country] }
     end
 
     factory :writing_entity do

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_09_153047) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_28_135117) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
@@ -66,7 +66,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_09_153047) do
     t.text "attended_with", array: true
     t.text "authors", array: true
     t.text "cast", array: true
-    t.string "city"
+    t.string "cities", array: true
     t.string "composer"
     t.date "date"
     t.text "description"
@@ -109,6 +109,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_09_153047) do
     t.string "event_types", array: true
     t.text "composers", array: true
     t.text "artists", array: true
+    t.string "countries", array: true
     t.index ["event_type_id"], name: "index_entities_on_event_type_id"
   end
 
