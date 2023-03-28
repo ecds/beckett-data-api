@@ -29,6 +29,6 @@ class PublishedEntity < ApplicationRecord
   end
 
   def should_index?
-    published && !generic?
+    published && !generic? && label.present?
   end
 end
