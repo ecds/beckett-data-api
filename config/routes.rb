@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     # resources :letter_recipients
     # resources :letter_repositories
     # resources :letter_senders
-    # resources :mentions, only: %i[index show new create edit update destroy]
+    resources :mentions, only: %i[index show new create edit update destroy]
     resources :repositories, only: %i[index show new create edit update destroy]
     # get 'entities_by_type/:type', to: 'entity_types#index'
     put 'letters/mentions/:id', to: 'letters#update_mentions'

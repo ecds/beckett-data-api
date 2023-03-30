@@ -6,6 +6,8 @@
 module EntityCommon
   extend ActiveSupport::Concern
 
+  include ActiveSupport::Inflector
+
   included do
     enum e_type: {
       attendance: 0,
@@ -97,9 +99,9 @@ module EntityCommon
     }
 
     def clean_label
-      return strip_tags "#{first_name} #{last_name}" if person?
+      return "#{first_name} #{last_name}".gsub(/[^a-z0-9\s]/i, '').strip if person?
 
-      strip_tags label
+      strip_tags(transliterate.label.gsub(/[^a-z0-9\s]/i, '')).strip
     rescue NoMethodError
       label
     end
@@ -141,10 +143,10 @@ module EntityCommon
           lines.push("<strong>Proposal</strong> #{proposal}") if proposal.present?
         end
         if directors && theater && cities
-          lines.push("<strong>Director(s)</strong> #{directors.to_sentence} <strong>Theatre, City</strong> #{theater}, #{cities.to_sentence}")
+          lines.push("<strong>Director(s)</strong> #{directors.to_sentence} <strong>Theatre, City</strong> #{theater}, #{cities&.to_sentence}")
         else
           lines.push("<strong>Director(s)</strong> #{directors.to_sentence}") if directors.present?
-          lines.push("<strong>Theatre, City</strong> #{[theater, cities.to_sentence].join(', ')}") if theater.present?
+          lines.push("<strong>Theatre, City</strong> #{[theater, cities&.to_sentence].join(', ')}") if theater.present?
         end
         lines.push("<strong>Date(s)</strong> #{date_str}") if date_str.present?
       when 'publication'
@@ -236,7 +238,7 @@ module EntityCommon
         rows.push("<th scope='row'>Director(s)</th><td colspan=5>#{directors.to_sentence}</td>") if directors.present?
         rows.push("<th scope='row'>Cast</th><td colspan=5>#{cast.to_sentence}</td>") if cast.present?
         rows.push("<th scope='row'>Personnel</th><td colspan=5>#{personnel.to_sentence}</td>") if personnel.present?
-        rows.push("<th scope='row'>Theatre, City</th><td colspan=5>#{theater}, #{cities.to_sentence}</td>") if theater.present?
+        rows.push("<th scope='row'>Theatre, City</th><td colspan=5>#{theater}, #{cities&.to_sentence}</td>") if theater.present?
         rows.push("<th scope='row'>Notes</th><td colspan=5>#{notes}</td>") if notes.present?
         rows.push("<th scope='row'>See Also</th><td colspan=5>#{link_list}</td>") if links.present?
       when 'publication'

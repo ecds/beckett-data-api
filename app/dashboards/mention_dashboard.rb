@@ -26,6 +26,7 @@ class MentionDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = %i[
     entity
     letter
+    tags
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -33,6 +34,7 @@ class MentionDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = %i[
     entity
     letter
+    tags
   ].freeze
 
   # FORM_ATTRIBUTES

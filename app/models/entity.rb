@@ -3,7 +3,6 @@
 require 'action_view'
 
 class Entity < ApplicationRecord
-  include ActionView::Helpers::SanitizeHelper
   include Searchable
   include EntityCommon
 
