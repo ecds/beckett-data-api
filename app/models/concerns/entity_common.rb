@@ -102,14 +102,19 @@ module EntityCommon
 
     def clean_label
       label_copy = if person?
-                     "#{first_name} #{last_name}".gsub(/[^a-z0-9\s]/i, '').strip
+                     transliterate("#{first_name} #{last_name}".gsub(/[^a-z0-9\s]/i, '')).strip
                    else
-                     label
+                    transliterate(label)
                    end
 
       words = strip_tags(label_copy).split
       words.delete_if {|word| LanguageUtils::ARTICLES.include?(word.downcase) }
-      transliterate(words.join(' ')).gsub(/[^a-z0-9\s]/i, '').strip
+      words.map {|word| word.gsub!(/[^a-z0-9\s]/i, '') }
+      # We have to scrub articles twice because some articles contain special chars
+      # Some labels have articles precided by a special char. See the Entity model
+      # model spec's "when messy label gets cleaned" context.
+      words.delete_if {|word| LanguageUtils::ARTICLES.include?(word.downcase) }
+      words.join(' ').strip
     rescue NoMethodError
       label
     end

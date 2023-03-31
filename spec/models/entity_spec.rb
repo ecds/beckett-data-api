@@ -1082,6 +1082,11 @@ RSpec.describe Entity, type: :model do
       entity = create(:place_entity, label: "Italian articles have special chars like dell' or l' ")
       expect(entity.clean_label).to eq('Italian articles have special chars like or')
     end
+
+    it 'removes articles that do not have special characters but appear with special characters' do
+      entity = create(:place_entity, label: "\"A Travelling Doctor's Shop\"")
+      expect(entity.clean_label).to eq('Travelling Doctors Shop')
+    end
   end
 end
 # rubocop:enable Layout/LineLength
