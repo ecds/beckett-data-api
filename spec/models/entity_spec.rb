@@ -1050,6 +1050,38 @@ RSpec.describe Entity, type: :model do
       expect(sanitize(doc.xpath('//td')[0].text)).to eq(sanitize(strip_tags(entity.label)))
     end
   end
-end
 
+  context 'when messy label gets cleaned' do
+    it 'removes html tags' do
+      place = Faker::Movies::HitchhikersGuideToTheGalaxy.location
+      entity = create(:place_entity, label: "<i>#{place}</i>")
+      expect(entity.clean_label).to eq(place)
+    end
+
+    it 'removes non-alphanumeric characters' do
+      entity = create(:place_entity, label: '\'.... blah ! ##')
+      expect(entity.clean_label).to eq('blah')
+    end
+
+    it 'trasliterates diacritics' do
+      entity = create(:place_entity, label: 'Hôtel')
+      expect(entity.clean_label).to eq('Hotel')
+    end
+
+    it 'removes articles' do
+      entity = create(:place_entity, label: 'An entity with the articles')
+      expect(entity.clean_label).to eq('entity with articles')
+    end
+
+    it 'removes articles regardless of case' do
+      entity = create(:place_entity, label: 'EiN Kartoffeln Kochen')
+      expect(entity.clean_label).to eq('Kartoffeln Kochen')
+    end
+
+    it 'removes articles with special characters' do
+      entity = create(:place_entity, label: "Italian articles have special chars like dell' or l' ")
+      expect(entity.clean_label).to eq('Italian articles have special chars like or')
+    end
+  end
+end
 # rubocop:enable Layout/LineLength

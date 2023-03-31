@@ -3,6 +3,8 @@
 # rubocop:disable Metrics/ModuleLength, Metrics/BlockLength, Metrics/PerceivedComplexity, Metrics/MethodLength, Metrics/AbcSize, Metrics/CyclomaticComplexity, Layout/LineLength
 
 # Common stuff for indexing
+require 'language_utils'
+
 module EntityCommon
   extend ActiveSupport::Concern
 
@@ -99,9 +101,15 @@ module EntityCommon
     }
 
     def clean_label
-      return "#{first_name} #{last_name}".gsub(/[^a-z0-9\s]/i, '').strip if person?
+      label_copy = if person?
+                     "#{first_name} #{last_name}".gsub(/[^a-z0-9\s]/i, '').strip
+                   else
+                     label
+                   end
 
-      strip_tags(transliterate.label.gsub(/[^a-z0-9\s]/i, '')).strip
+      words = strip_tags(label_copy).split
+      words.delete_if {|word| LanguageUtils::ARTICLES.include?(word.downcase) }
+      transliterate(words.join(' ')).gsub(/[^a-z0-9\s]/i, '').strip
     rescue NoMethodError
       label
     end
