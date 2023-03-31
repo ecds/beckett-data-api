@@ -15,6 +15,17 @@ It displays a header, and renders the `_form` partial to do the heavy lifting.
 [1]: http://www.rubydoc.info/gems/administrate/Administrate/Page/Form
 %>
 
+<style>
+  pre {
+    white-space: pre-wrap;
+    width: 75%;
+    margin: auto;
+    border-style: solid;
+    padding: 2rem;
+    border-color: lightgray;
+  }
+</style>
+
 <% content_for(:title) { t("administrate.actions.edit_resource", name: page.page_title) } %>
 
 <header class="main-content__header" role="banner">
@@ -33,4 +44,10 @@ It displays a header, and renders the `_form` partial to do the heavy lifting.
 
 <section class="main-content__body">
   <%= render "form", page: page %>
+</section>
+
+<section>
+  <pre>
+    <%= page.resource.letter.content %>
+  </pre>
 </section>
