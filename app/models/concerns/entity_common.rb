@@ -155,11 +155,11 @@ module EntityCommon
         else
           lines.push("<strong>Proposal</strong> #{proposal}") if proposal.present?
         end
-        if directors && theater && cities
-          lines.push("<strong>Director(s)</strong> #{directors.to_sentence} <strong>Theatre, City</strong> #{theater}, #{cities&.to_sentence}")
+        if directors && theater && places
+          lines.push("<strong>Director(s)</strong> #{directors.to_sentence} <strong>Theatre, City</strong> #{theater}, #{places&.to_sentence}")
         else
           lines.push("<strong>Director(s)</strong> #{directors.to_sentence}") if directors.present?
-          lines.push("<strong>Theatre, City</strong> #{[theater, cities&.to_sentence].join(', ')}") if theater.present?
+          lines.push("<strong>Theatre, City</strong> #{[theater, places&.to_sentence].join(', ')}") if theater.present?
         end
         lines.push("<strong>Date(s)</strong> #{date_str}") if date_str.present?
       when 'publication'
@@ -251,7 +251,7 @@ module EntityCommon
         rows.push("<th scope='row'>Director(s)</th><td colspan=5>#{directors.to_sentence}</td>") if directors.present?
         rows.push("<th scope='row'>Cast</th><td colspan=5>#{cast.to_sentence}</td>") if cast.present?
         rows.push("<th scope='row'>Personnel</th><td colspan=5>#{personnel.to_sentence}</td>") if personnel.present?
-        rows.push("<th scope='row'>Theatre, City</th><td colspan=5>#{theater}, #{cities&.to_sentence}</td>") if theater.present?
+        rows.push("<th scope='row'>Theatre, City</th><td colspan=5>#{theater}, #{places&.to_sentence}</td>") if theater.present?
         rows.push("<th scope='row'>Notes</th><td colspan=5>#{notes}</td>") if notes.present?
         rows.push("<th scope='row'>See Also</th><td colspan=5>#{link_list}</td>") if links.present?
       when 'publication'
@@ -345,7 +345,7 @@ module EntityCommon
         production: %i[
           alternate_names
           cast
-          cities
+          places
           date_str
           directors
           links

@@ -97,7 +97,7 @@ FactoryBot.define do
       label { Faker::Movie.title }
       alternate_spellings { [Faker::TvShows::RuPaul.queen] }
       cast { [Faker::Movies::HitchhikersGuideToTheGalaxy.character, Faker::Movies::Lebowski.character] }
-      cities { [Faker::Address.city] }
+      places { [Faker::Address.city] }
       date_str { Faker::Date.between(from: 100.years.ago, to: 50.years.ago).to_s }
       directors { [Faker::Movies::Lebowski.character] }
       links { [Faker::Internet.url] }

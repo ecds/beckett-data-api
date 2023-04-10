@@ -205,7 +205,7 @@ class Entity < ApplicationRecord
 
   # Called after destory or when entity might have been unpublished
   def remove_published
-    PublishedEntity.searchkick_index.remove(id)
+    PublishedEntity.searchkick_index.remove(self)
   rescue NoMethodError
   end
 end
