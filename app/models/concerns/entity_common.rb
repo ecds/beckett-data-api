@@ -60,7 +60,7 @@ module EntityCommon
       tennis_radion: 29,
       rugby_television: 30,
       television: 31,
-      footbal: 32,
+      football: 32,
       rugby: 33,
       cricket_match: 34
     }
@@ -104,7 +104,7 @@ module EntityCommon
       label_copy = if person?
                      transliterate("#{first_name} #{last_name}".gsub(/[^a-z0-9\s]/i, '')).strip
                    else
-                    transliterate(label)
+                     transliterate(label)
                    end
 
       words = strip_tags(label_copy).split
@@ -355,6 +355,7 @@ module EntityCommon
           response
           reason
           theater
+          years
         ],
         public_event: %i[
           date_str
