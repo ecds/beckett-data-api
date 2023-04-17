@@ -9,5 +9,13 @@ namespace :update_records do
       entity.save
     rescue
     end
+
+    Entity.where(published: false).each do |entity|
+      PublishedEntity.searchkick_index.remove(entity)
+    end
+
+    Letter.where(published: false).each do |letter|
+      PublishedLetter.searchkick_index.remove(letter)
+    end
   end
 end

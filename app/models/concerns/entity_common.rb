@@ -136,7 +136,7 @@ module EntityCommon
           lines.push(description) if description.present?
         end
         lines.push("<strong>Attended with</strong> #{attended_with.to_sentence}") if attended_with.present?
-        lines.push("<strong>Place, Date</strong> #{place} #{years.compact.join(', ')}") if place.present?
+        lines.push("<strong>Place, Date</strong> #{place} #{years&.compact&.join(', ')}") if place.present?
         lines.push("<strong>Director(s)</strong> #{directors.to_sentence}") if directors.present?
       when 'music'
         lines.push("<strong>Composer(s)</strong> #{composers.to_sentence}") if composers.present?
@@ -211,7 +211,7 @@ module EntityCommon
         rows.push("<th scope='row'>Director(s)</th><td>#{directors.to_sentence}</td>") if directors.present?
         rows.push("<th scope='row'>Performed by</th><td>#{performed_by.to_sentence}</td>") if performed_by.present?
         rows.push("<th scope='row'>Attended with</th><td>#{attended_with.to_sentence}</td>") if attended_with.present?
-        rows.push("<th scope='row'>Place, Date</th><td>#{place} #{years.compact.join(', ')}</td>") if place.present?
+        rows.push("<th scope='row'>Place, Date</th><td>#{place} #{years&.compact&.join(', ')}</td>") if place.present?
         rows.push("<th scope='row'>Notes</th><td>#{notes}</td>") if notes.present?
       when 'music'
         rows.push("<th scope='row'>Composer(s)</th><td>#{composers.to_sentence}</td>") if composers.present?
@@ -232,7 +232,7 @@ module EntityCommon
         rows.push("<th scope='row'>Alternative Name(s)</th><td>#{alternate_names.join(', ')}</td>") if alternate_names.present?
         rows.push("<th scope='row'>Life Dates</th><td>#{life_dates}</td>") if life_dates.present?
         rows.push("<th scope='row'>Description</th><td>#{description}</td>") if description.present?
-        rows.push("<th scope='row'>Profile</th><td>#{profile}</td>") if profile.present?
+        rows.push("<th scope='row'>Profile</th><td><details><summary role='button'>Read more</summary>#{profile}</details></td>") if profile.present?
         rows.push("<th scope='row'>See Also</th><td>#{link_list}</td>") if links.present?
       when 'place'
         rows.push("<th scope='row'>Name</th><td>#{label}</td>")
