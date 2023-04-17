@@ -82,7 +82,8 @@ class EntityDashboard < Administrate::BaseDashboard
     label_plain: Field::Text.with_options(searchable: true),
     description_plain: Field::Text.with_options(searchable: true),
     lists_plain: Field::Text.with_options(searchable: true),
-    years: Field::List
+    years: Field::List,
+    media: Field::HasMany
   }.freeze
 
   # COLLECTION_ATTRIBUTES
