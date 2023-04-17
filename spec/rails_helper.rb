@@ -43,6 +43,8 @@ end
 
 Dir[Rails.root.join('spec/support/**/*.rb')].each {|f| require f }
 
+ENV['RAILS_HOST'] = 'example.com'
+
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
