@@ -2,7 +2,7 @@
 
 require 'administrate/base_dashboard'
 
-class LetterPublisherDashboard < Administrate::BaseDashboard
+class FaqDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -10,9 +10,10 @@ class LetterPublisherDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    letters: Field::HasMany,
     id: Field::String,
-    label: Field::String,
+    position: Field::Number,
+    question: RichTextField.with_options(searchable: true),
+    answer: RichTextField.with_options(searchable: true),
     created_at: Field::DateTime,
     updated_at: Field::DateTime
   }.freeze
@@ -23,28 +24,25 @@ class LetterPublisherDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
-    letters
-    id
-    label
-    created_at
+    position
+    question
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
-    letters
-    id
-    label
-    created_at
-    updated_at
+    position
+    question
+    answer
   ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-    letters
-    label
+    position
+    question
+    answer
   ].freeze
 
   # COLLECTION_FILTERS
@@ -59,10 +57,10 @@ class LetterPublisherDashboard < Administrate::BaseDashboard
   #   }.freeze
   COLLECTION_FILTERS = {}.freeze
 
-  # Overwrite this method to customize how letter publishers are displayed
+  # Overwrite this method to customize how faqs are displayed
   # across all pages of the admin dashboard.
   #
-  def display_resource(letter_publisher)
-    letter_publisher.label
+  def display_resource(faq)
+    "Faq ##{faq.question}"
   end
 end

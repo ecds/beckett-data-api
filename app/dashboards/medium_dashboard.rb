@@ -1,4 +1,6 @@
-require "administrate/base_dashboard"
+# frozen_string_literal: true
+
+require 'administrate/base_dashboard'
 
 class MediumDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES

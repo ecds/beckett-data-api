@@ -152,8 +152,8 @@ module EntityCommon
         lines.push("<strong>Title</strong> #{label}")
         if proposal && response
           lines.push("<strong>Proposal/Response</strong> #{proposal} / #{response}") if proposal.present?
-        else
-          lines.push("<strong>Proposal</strong> #{proposal}") if proposal.present?
+        elsif proposal.present?
+          lines.push("<strong>Proposal</strong> #{proposal}")
         end
         if directors && theater && places
           lines.push("<strong>Director(s)</strong> #{directors.to_sentence} <strong>Theatre, City</strong> #{theater}, #{places&.to_sentence}")
@@ -182,8 +182,8 @@ module EntityCommon
         end
         if translated_into && translators
           lines.push("<strong>Translated into</strong> #{translated_into.titleize} by #{translators.to_sentence}") if translated_into.present?
-        else
-          lines.push("<strong>Translated into</strong> #{translated_into.titleize}") if translated_into.present?
+        elsif translated_into.present?
+          lines.push("<strong>Translated into</strong> #{translated_into.titleize}")
         end
         lines.push("<strong>Translated title</strong> #{translated_title}") if translated_title.present?
       when 'work_of_art'

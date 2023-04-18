@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :medium do
     alt_text { Faker::Movies::Lebowski.quote }

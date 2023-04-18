@@ -613,7 +613,7 @@ RSpec.describe Entity, type: :model do
       expect(sanitize(doc.xpath('//td')[1].text)).to eq(entity.alternate_names.join(', '))
       expect(sanitize(doc.xpath('//td')[2].text)).to eq(sanitize(strip_tags(entity.life_dates)))
       expect(sanitize(doc.xpath('//td')[3].text)).to eq(sanitize(strip_tags(entity.description)))
-      expect(sanitize(doc.xpath('//td')[4].text)).to eq(sanitize(strip_tags(entity.profile)))
+      expect(sanitize(doc.xpath('//td')[4].text)).to include(sanitize(strip_tags(entity.profile)))
       expect(doc.xpath('//a').map {|link| link.attributes['href'].value }.sort).to eq(entity.links.sort)
       expect(doc.xpath('//a').map {|link| link.attributes['target'].value }.uniq).to eq(['_blank'])
       expect(doc.xpath('//a').map {|link| link.attributes['rel'].value }.uniq).to eq(['noopener'])

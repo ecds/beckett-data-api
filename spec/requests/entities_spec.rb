@@ -166,7 +166,7 @@ RSpec.describe '/entities', type: :request do
     context 'with valid parameters' do
       it 'updates the requested entity' do
         entity = create(:entity)
-        patch letter_url(entity),
+        patch entity_url(entity),
               params: { entity: {} }, headers: valid_headers, as: :json
         expect(response).to have_http_status(:not_implemented)
       end
@@ -177,7 +177,7 @@ RSpec.describe '/entities', type: :request do
     it 'destroys the requested entity' do
       entity = create(:entity)
       expect {
-        delete letter_url(entity), headers: valid_headers, as: :json
+        delete entity_url(entity), headers: valid_headers, as: :json
       }.not_to change(Entity, :count)
       expect(response).to have_http_status(:not_implemented)
     end

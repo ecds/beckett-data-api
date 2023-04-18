@@ -66,7 +66,6 @@ class Letter < ApplicationRecord
     else
       remove_published
     end
-
   end
 
   # Called after destory or when letter might have been unpublished

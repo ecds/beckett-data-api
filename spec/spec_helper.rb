@@ -1,30 +1,5 @@
 # frozen_string_literal: true
 
-require 'coveralls'
-require 'simplecov'
-require 'simplecov-lcov'
-
-SimpleCov::Formatter::LcovFormatter.config.report_with_single_file = true
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new(
-  [
-    SimpleCov::Formatter::HTMLFormatter,
-    Coveralls::SimpleCov::Formatter,
-    SimpleCov::Formatter::LcovFormatter
-  ]
-)
-
-# SimpleCov.start 'rails'
-SimpleCov.start 'rails' do
-  add_filter [
-    '/app/channels/',
-    '/app/mailers/',
-    '/app/jobs/',
-    '/app/dashboards',
-    '/app/controllers/admin'
-  ]
-end
-
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest

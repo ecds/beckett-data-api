@@ -335,7 +335,7 @@ class LoadBigSamJob < ApplicationJob
       parts.insert(mac, "Mac#{last}")
     end
 
-    return parts.join(' ')
+    parts.join(' ')
   end
 end
 

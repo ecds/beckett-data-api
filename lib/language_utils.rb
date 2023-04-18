@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 module LanguageUtils
-  ARTICLES = %W[
+  ARTICLES = %w[
     en
     et
     de
@@ -24,14 +26,14 @@ module LanguageUtils
     einen
     le
     la
-    l'
+    l
     les
     de
-    d'
+    d
     du
     de la
     des
-    de l'
+    de l
     un
     une
     des
@@ -41,32 +43,32 @@ module LanguageUtils
     il
     lo
     la
-    l'
+    l
     i
     gli
     le
     del
     dello
     della
-    dell'
+    dell
     dei
     degli
-    degl'
+    degl
     delle
-    un'
+    un
     uno
     una
     un
     i
     gli
     le
-    un'
+    un
     uno
     una
     un
     el
     la
-    lo,
+    lo
     los
     las
     un
@@ -83,5 +85,5 @@ module LanguageUtils
     uma
     uns
     umas
-  ]
+  ].freeze
 end

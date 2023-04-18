@@ -15,30 +15,30 @@ class RepositoriesController < ApplicationController
     render json: @repository
   end
 
-  # POST /repositories
-  def create
-    @repository = Repository.new(repository_params)
+  # # POST /repositories
+  # def create
+  #   @repository = Repository.new(repository_params)
 
-    if @repository.save
-      render json: @repository, status: :created, location: @repository
-    else
-      render json: @repository.errors, status: :unprocessable_entity
-    end
-  end
+  #   if @repository.save
+  #     render json: @repository, status: :created, location: @repository
+  #   else
+  #     render json: @repository.errors, status: :unprocessable_entity
+  #   end
+  # end
 
-  # PATCH/PUT /repositories/1
-  def update
-    if @repository.update(repository_params)
-      render json: @repository
-    else
-      render json: @repository.errors, status: :unprocessable_entity
-    end
-  end
+  # # PATCH/PUT /repositories/1
+  # def update
+  #   if @repository.update(repository_params)
+  #     render json: @repository
+  #   else
+  #     render json: @repository.errors, status: :unprocessable_entity
+  #   end
+  # end
 
-  # DELETE /repositories/1
-  def destroy
-    @repository.destroy
-  end
+  # # DELETE /repositories/1
+  # def destroy
+  #   @repository.destroy
+  # end
 
   private
 

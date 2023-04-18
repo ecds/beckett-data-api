@@ -44,6 +44,7 @@ end
 Dir[Rails.root.join('spec/support/**/*.rb')].each {|f| require f }
 
 ENV['RAILS_HOST'] = 'example.com'
+ActiveStorage::Current.url_options = { host: ENV.fetch('RAILS_HOST', 'localhost:3000') }
 
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures

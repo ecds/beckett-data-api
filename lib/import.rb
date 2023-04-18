@@ -23,11 +23,15 @@ entities = HTTParty.get('https://ot-api.ecdsdev.org/list-entities', timeout: 100
 ids = Entity.all.map(&:id)
 entities.each do |e|
   next if ids.include? e['id']
+
   entity = Entity.create(id: e['id'], e_type: e['e_type'])
   e['label'] = '-' if e['label'].nil? || e['label'] == ' '
   if e['e_type'] == 'person'
     names = Namae.parse e['label']
-    entity.update(first_name: names[0].given, last_name: names[0].family, legacy_pk: e['legacy_pk']) unless names[0].nil?
+    unless names[0].nil?
+      entity.update(first_name: names[0].given, last_name: names[0].family,
+                    legacy_pk: e['legacy_pk'])
+    end
   else
     entity.update(label: e['label'], legacy_pk: e['legacy_pk'])
   end
@@ -101,9 +105,10 @@ mentions = HTTParty.get('https://ot-api.ecdsdev.org/list-senders', timeout: 1000
 mentions.each do |m|
   begin
     next if m['letter'].nil? || m['entity'].nil?
+
     letter = Letter.find(m['letter'])
     entity = Entity.find(m['entity'])
-  rescue
+  rescue StandardError
     next
   end
   mention = Mention.create(

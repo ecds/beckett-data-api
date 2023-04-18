@@ -12,6 +12,10 @@ module Admin
 
     before_action :authenticate_admin
 
+    before_action do
+      ActiveStorage::Current.url_options = { protocol: request.protocol, host: request.host, port: request.port }
+    end
+
     http_basic_authenticate_with(
       name: ENV['RAILS_ENV'] == 'test' ? 'test' : Rails.application.credentials.dig(:basic_auth, :name),
       password: ENV['RAILS_ENV'] == 'test' ? 'test' : Rails.application.credentials.dig(:basic_auth, :pass)
