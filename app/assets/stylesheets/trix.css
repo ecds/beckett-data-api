@@ -485,9 +485,9 @@ trix-editor .attachment__metadata .attachment__size {
   text-transform: uppercase;
 }
 
-.trix-button-group--block-tools,
+.entity-form .trix-button-group--block-tools,
 .trix-button--icon-strike,
-.trix-button--icon-link { display: none !important; }
+.entity-form .trix-button--icon-link { display: none !important; }
 
 trix-toolbar {
   white-space: nowrap;
