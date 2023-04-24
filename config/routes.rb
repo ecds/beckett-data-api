@@ -3,6 +3,7 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
+  resources :about_pages
   resources :faqs
   namespace :admin do
     resources :entities, only: %i[index show new create edit update destroy]
@@ -10,6 +11,7 @@ Rails.application.routes.draw do
     resources :big_sams, only: %i[index show new create edit update destroy]
     resources :media, only: %i[index show new create edit update destroy]
     resources :faqs, only: %i[index show new create edit update destroy]
+    resources :about_pages, only: %i[index show new create edit update destroy]
     # resources :letter_destinations
     # resources :letter_origins
     # resources :letter_recipients
@@ -27,6 +29,7 @@ Rails.application.routes.draw do
   get '/entities/list', to: 'entities#list', defaults: { format: :json }
   get '/entities/:id/letters', to: 'entities#letters', defaults: { format: :json }
   resources :entities, defaults: { format: :json }
+  resources :about_pages, defaults: { format: :json }
   resources :repositories
   resources :letters, defaults: { format: :json }
 

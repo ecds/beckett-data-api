@@ -7,6 +7,7 @@ require 'action_view'
 
 RSpec.describe Entity, type: :model do
   include ActionView::Helpers::SanitizeHelper
+  include ActiveSupport::Inflector
 
   it 'creates a hash of pubically avaliable letters where entity is mentioned' do
     entity = create(:place_entity)
@@ -1053,9 +1054,9 @@ RSpec.describe Entity, type: :model do
 
   context 'when messy label gets cleaned' do
     it 'removes html tags' do
-      place = Faker::Movies::HitchhikersGuideToTheGalaxy.location
+      place = Faker::Address.city
       entity = create(:place_entity, label: "<i>#{place}</i>")
-      expect(entity.clean_label).to eq(place)
+      expect(entity.clean_label).to eq(transliterate(place))
     end
 
     it 'removes non-alphanumeric characters' do

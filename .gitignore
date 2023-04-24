@@ -31,7 +31,8 @@
 # Ignore coverage reports
 /coverage
 
-entities.json
-letters.json
-content.json
+*.json
 BigSam*
+*.xlsx
+*.csv
+*.zip

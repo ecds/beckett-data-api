@@ -87,7 +87,7 @@ FactoryBot.define do
 
     factory :place_entity do
       e_type { 4 }
-      label { Faker::Movies::HitchhikersGuideToTheGalaxy.location }
+      label { Faker::Address.city }
       alternate_spellings { [Faker::TvShows::RuPaul.queen] }
       links { [Faker::Internet.url] }
     end

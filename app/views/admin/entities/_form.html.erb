@@ -32,35 +32,33 @@ and renders all form fields for a resource's editable attributes.
     </div>
   <% end %>
 
-  <div class="field-unit field-unit--string field-unit--optional">
-    <div class="field-unit__label">
-      <label>Type</label>
+  <div class="entity-form">
+    <div class="field-unit field-unit--string field-unit--optional">
+      <div class="field-unit__label">
+        <label>Type</label>
+      </div>
+      <div class="field-unit__field">
+        <%= page.resource.e_type.titleize %>
+      </div>
     </div>
-    <div class="field-unit__field">
-      <%= page.resource.e_type.titleize %>
+    <div class="field-unit field-unit--string field-unit--optional">
+      <div class="field-unit__label">
+        <label>Legacy ID</label>
+      </div>
+      <div class="field-unit__field">
+        <%= page.resource.legacy_pk %>
+      </div>
     </div>
-  </div>
-
-  <div class="field-unit field-unit--string field-unit--optional">
-    <div class="field-unit__label">
-      <label>Legacy ID</label>
+    <% page.attributes(controller.action_name).each do |attribute| -%>
+      <% next unless page.resource.allowed_attributes.include? attribute.name.to_sym %>
+      <% next if attribute.name == 'e_type' %>
+      <div class="field-unit field-unit--<%= attribute.html_class %> field-unit--<%= requireness(attribute) %>">
+        <%= render_field attribute, f: f %>
+      </div>
+    <% end -%>
+    <input type="hidden" name="entity[e_type]" value=<%= page.resource.e_type %>  autocomplete="off">
+    <div class="form-actions">
+      <%= f.submit %>
     </div>
-    <div class="field-unit__field">
-      <%= page.resource.legacy_pk %>
-    </div>
-  </div>
-
-  <% page.attributes(controller.action_name).each do |attribute| -%>
-    <% next unless page.resource.allowed_attributes.include? attribute.name.to_sym %>
-    <% next if attribute.name == 'e_type' %>
-    <div class="field-unit field-unit--<%= attribute.html_class %> field-unit--<%= requireness(attribute) %>">
-      <%= render_field attribute, f: f %>
-    </div>
-  <% end -%>
-
-  <input type="hidden" name="entity[e_type]" value=<%= page.resource.e_type %>  autocomplete="off">
-
-  <div class="form-actions">
-    <%= f.submit %>
   </div>
 <% end %>
