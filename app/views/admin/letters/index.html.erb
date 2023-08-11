@@ -83,8 +83,8 @@ It renders the `_table` partial to display details about the resources.
   const initDateFilter = () => {
     const minField = jQuery('#start_date');
     const maxField = jQuery('#end_date');
-    console.log('<%= start_date %>', Date.parse('<%= start_date %>'))
-    console.log(moment('<%= start_date %>').format('YYYY-MM-DD'))
+    console.log('<%= start_date %>', Date.parse('<%= start_date %>'.replaceAll('-', '/')))
+    console.log(moment('<%= start_date %>'.replaceAll('-', '/')).format('YYYY-MM-DD'))
     try {
       minField.data().DateTimePicker.minDate('<%= min_date %>');
       minField.data().DateTimePicker.maxDate('<%= max_date %>');
@@ -114,8 +114,8 @@ It renders the `_table` partial to display details about the resources.
   defer(() => {
     initDateFilter();
     const urlParams = new URLSearchParams(window.location.search);
-    urlParams.set('start_date', moment('<%= start_date %>').format('YYYY-MM-DD'));
-    urlParams.set('end_date', moment('<%= end_date %>').format('YYYY-MM-DD'));
+    urlParams.set('start_date', moment('<%= start_date %>'.replaceAll('-', '/')).format('YYYY-MM-DD'));
+    urlParams.set('end_date', moment('<%= end_date %>'.replaceAll('-', '/')).format('YYYY-MM-DD'));
     urlParams.set('search', '<%= search_term %>');
     history.replaceState({}, null, `/admin/letters?${urlParams.toString()}`);
   })

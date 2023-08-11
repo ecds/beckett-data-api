@@ -19,7 +19,7 @@ FactoryBot.define do
     envelope { 'E' }
     notes { Faker::Lorem.paragraph }
     content { Faker::Lorem.paragraph(sentence_count: rand(12..15)) }
-    language { %w[english french german italian].sample }
+    languages { create_list(:language, 1) }
     recipients { create_list(:person_entity, 1) }
     destinations { create_list(:place_entity, 1) }
     origins { create_list(:place_entity, 1) }

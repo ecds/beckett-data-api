@@ -27,6 +27,9 @@ class PublishedLetter < ApplicationRecord
   has_many :letter_collections, foreign_key: 'letter_id', inverse_of: :letter, dependent: :destroy
   has_many :collections, -> { distinct }, through: :letter_collections
 
+  has_many :letter_languages, foreign_key: 'letter_id', inverse_of: :letter, dependent: :destroy
+  has_many :languages, -> { distinct }, through: :letter_languages
+
   belongs_to :letter_file, foreign_key: 'letter_id', inverse_of: :letter, optional: true
   belongs_to :file_folder, foreign_key: 'letter_id', inverse_of: :letter, optional: true
   belongs_to :letter_owner, foreign_key: 'letter_id', inverse_of: :letter, optional: true
@@ -41,14 +44,14 @@ class PublishedLetter < ApplicationRecord
       id_path: url_path,
       date:,
       label:,
-      recipients: recipients.map(&:clean_label),
+      recipients: recipient_list,
       mentions: mentions_hash,
       origins: origins.map(&:label),
       origins_clean: origins.map(&:clean_label),
       destinations: destinations.map(&:label),
       destinations_clean: destinations.map(&:clean_label),
       repositories: repositories.published.map(&:label),
-      language:,
+      languages: languages.map(&:label),
       published:,
       volume: volume.to_s
     }

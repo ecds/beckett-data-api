@@ -29,6 +29,9 @@ class Letter < ApplicationRecord
   has_many :letter_collections, dependent: :destroy
   has_many :collections, -> { distinct }, through: :letter_collections
 
+  has_many :letter_languages, dependent: :destroy
+  has_many :languages, -> { distinct }, through: :letter_languages
+
   belongs_to :letter_file, optional: true
   belongs_to :file_folder, optional: true
   belongs_to :letter_owner, optional: true
@@ -46,7 +49,7 @@ class Letter < ApplicationRecord
       destinations: destinations.map(&:label),
       destinations_clean: destinations.map(&:clean_label),
       repositories: repositories.map(&:label),
-      language:,
+      languages: languages.map(&:label),
       published:,
       volume: volume.to_s
     }

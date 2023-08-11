@@ -2,5 +2,6 @@
 
 FactoryBot.define do
   factory :language do
+    label { Faker::Nation.language }
   end
 end

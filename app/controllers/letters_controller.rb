@@ -42,7 +42,7 @@ class LettersController < ApplicationController
         id: "#{request.protocol}#{request.host_with_port}#{letter.id_path}",
         date: letter.date,
         label: letter.label,
-        language: letter.language,
+        languages: letter.languages,
         volume: letter.volume,
         recipients: letter.recipients,
         destinations: letter.destinations,
@@ -71,7 +71,7 @@ class LettersController < ApplicationController
           interval: :year
         }
       },
-      language: {},
+      languages: {},
       repositories: {},
       volume: {}
     }
@@ -116,7 +116,7 @@ class LettersController < ApplicationController
 
     @where[:repositories] = { in: params[:repositories].split(',').map(&:strip) } if params[:repositories].present?
 
-    @where[:language] = { in: params[:languages].downcase.split(',').map(&:strip) } if params[:languages].present?
+    @where[:languages] = { in: params[:languages].downcase.split(',').map(&:strip) } if params[:languages].present?
 
     @where[:volume] = { in: params[:volumes].split(',').map(&:to_i) } if params[:volumes].present?
   end

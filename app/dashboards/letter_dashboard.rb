@@ -28,9 +28,7 @@ class LetterDashboard < Administrate::BaseDashboard
     date: Field::Date.with_options(format: '%d %B %Y'),
     addressed_to: Field::String,
     addressed_from: Field::String,
-    language: Field::Select.with_options(searchable: false, collection: lambda {|field|
-                                                                          field.resource.class.send(field.attribute.to_s.pluralize).keys
-                                                                        }),
+    languages: HasManyThroughField,
     physical_desc: Field::String,
     physical_detail: Field::String,
     physical_notes: Field::Text,
@@ -75,7 +73,7 @@ class LetterDashboard < Administrate::BaseDashboard
     date
     addressed_to
     addressed_from
-    language
+    languages
     physical_desc
     physical_detail
     physical_notes

@@ -53,7 +53,7 @@ class AboutPageDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how about pages are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(about_page)
-  #   "AboutPage ##{about_page.id}"
-  # end
+  def display_resource(about_page)
+    "AboutPage ##{about_page.title}"
+  end
 end

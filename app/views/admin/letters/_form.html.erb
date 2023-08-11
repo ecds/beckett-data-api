@@ -102,7 +102,7 @@ and renders all form fields for a resource's editable attributes.
       <label>Date</label>
     </div>
     <div class="field-unit__field">
-      <%= page.resource.date.strftime('%d %B %Y') %>
+      <%= page.resource.date&.strftime('%d %B %Y') %>
     </div>
   </div>
 

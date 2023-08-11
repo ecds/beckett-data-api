@@ -23,7 +23,7 @@ module Admin
       resources = Administrate::Search.new(scoped_resource,
                                            dashboard,
                                            search_term).run
-      resources = resources.between(start_date, end_date)
+      resources = resources.between(start_date, end_date).or(Letter.where(date: nil))
       resources = apply_collection_includes(resources)
       resources = order.apply(resources)
       resources = resources.page(params[:_page]).per(records_per_page)
@@ -141,3 +141,4 @@ module Admin
     # for more information
   end
 end
+

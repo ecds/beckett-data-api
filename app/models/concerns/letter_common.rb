@@ -9,9 +9,9 @@ module LetterCommon
   included do
     attr_accessor :tags
 
-    attr_readonly :content
+    #attr_readonly :content
 
-    enum :language, { english: 0, french: 1, german: 2, italian: 3 }
+    enum :language, { english: 0, french: 1, german: 2, italian: 3, french: 4 }
 
     # scope :published, lambda {
     #   includes(:repositories)

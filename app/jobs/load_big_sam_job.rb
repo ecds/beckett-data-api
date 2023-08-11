@@ -60,6 +60,7 @@ class LoadBigSamJob < ApplicationJob
       letter.repositories.clear
       letter.senders.clear
       letter.collections.clear
+      letter.languages.clear
 
       begin
         row = fix_date(row)
@@ -250,7 +251,13 @@ class LoadBigSamJob < ApplicationJob
              Elasticsearch::Transport::Transport::Errors::NotFound
       end
 
-      letter.language = row[:primarylang].downcase.strip if row[:primarylang]
+      row[:primarylang]&.split(';')&.each do |language|
+        lang = Language.find_or_create_by(label: language.downcase)
+        letter.languages << lang unless letter.languages.include?(lang)
+      rescue ActiveRecord::RecordInvalid,
+        Elasticsearch::Transport::Transport::Errors::BadRequest,
+        Elasticsearch::Transport::Transport::Errors::NotFound
+      end
 
       letter.typed = row[:autograph_or_typed] == 'T'
 
