@@ -111,8 +111,8 @@ class LoadBigSamJob < ApplicationJob
       row[:reg_recipient]&.split(';')&.each do |recipient|
         recipient = recipient.strip.titleize
         entity = Entity.find_by(label: recipient)
-        entity = get_entity(label: recipient, type: 'person', return_nil: true) if entity.nil?
         entity = get_entity(label: recipient, type: 'organization', return_nil: true) if entity.nil?
+        entity = get_person(recipient) if entity.nil?
         entity = Entity.create(label: recipient) if entity.nil?
         LetterRecipient.find_or_create_by(letter:, entity:)
 
@@ -122,9 +122,9 @@ class LoadBigSamJob < ApplicationJob
         # It happens
       end
 
-      if row[:reg_placesent_sent]
+      if row[:reg_place_sent]
         begin
-          destination = get_entity(label: row[:reg_placesent_sent], type: 'place')
+          destination = get_entity(label: row[:reg_sent_sent], type: 'place')
           letter.destinations << destination
         rescue ActiveRecord::RecordInvalid, Elasticsearch::Transport::Transport::Errors::BadRequest,
                Elasticsearch::Transport::Transport::Errors::NotFound
@@ -244,7 +244,7 @@ class LoadBigSamJob < ApplicationJob
       letter.letter_publisher = LetterPublisher.find_or_create_by(label: row[:placeprevpubl]) if row[:placeprevpubl]
 
       row[:sender]&.split(';')&.each do |sender|
-        entity = get_entity(label: sender, type: 'person')
+        entity = get_person(sender)
         letter.senders << entity unless letter.senders.include?(entity)
       rescue ActiveRecord::RecordInvalid,
              Elasticsearch::Transport::Transport::Errors::BadRequest,
@@ -289,39 +289,41 @@ class LoadBigSamJob < ApplicationJob
     label = label.strip.gsub(/[\[!@%&?"\]]/, '').titleize
     label = mac?(label)
     entity = Entity.public_send(type)
-                   .where(label:)
+                   .where('label ILIKE:prefix', prefix: "%#{label}%")
                    .or(
                      Entity.public_send(type)
                            .where('? = ANY (alternate_spellings)', label)
                    ).first
 
-    if type == 'person' && entity.nil?
-      names = Namae.parse label
-      if names&.first&.given && names&.first&.family
-        names.first.family = "van #{names.first.family}" if names.first.particle == 'van'
-        entity = Entity.find_by(first_name: names.first.given, last_name: names.first.family)
-      end
-    end
-
     return nil if entity.nil? && return_nil
 
     entity = Entity.find_or_create_by(label:, e_type: type) if entity.nil?
-
-    logger.debug { entity.label }
     entity
   end
 
-  def fix_date(row)
-    row[:day] = '1' if row[:day] == '0'
-    row[:month] = '1' if row[:month] == '0'
-    row[:year] = '99' if row[:year] == '0'
-    row[:day] = row[:day].gsub(/[\[!@%&?"\]]/, '').to_i if row[:day].is_a?(String)
-    row[:month] = row[:month].gsub(/[\[!@%&?"\]]/, '').to_i if row[:month].is_a?(String)
-    row[:year] = "19#{row[:year]}".gsub(/[\[!@%&?"\]]/, '').to_i if row[:year].is_a?(String)
-    row[:year] = row[:year] + 1900 if row[:year].to_s.size == 2
+  def get_person(name)
+    names = Namae.parse(name).first
+    if names&.given && names&.family
+      names.family = "van #{names.family}" if names.particle&.downcase == 'van'
+      names = o?(names)
+      entity = Entity.find_by(first_name: names.given, last_name: names.family)
+    end
 
-    row
+    entity = Entity.find_or_create_by(name:, e_type: type) if entity.nil?
+    entity
   end
+
+def fix_date(row)
+  row[:day] = '1' if row[:day] == '0'
+  row[:month] = '1' if row[:month] == '0'
+  row[:year] = '99' if row[:year] == '0'
+  row[:day] = row[:day].gsub(/[\[!@%&?"\]]/, '').to_i if row[:day].is_a?(String)
+  row[:month] = row[:month].gsub(/[\[!@%&?"\]]/, '').to_i if row[:month].is_a?(String)
+  row[:year] = "19#{row[:year]}".gsub(/[\[!@%&?"\]]/, '').to_i if row[:year].is_a?(String)
+  row[:year] = row[:year] + 1900 if row[:year].to_s.size == 2
+
+  row
+end
 
   def mac?(label)
     parts = label.split
@@ -343,6 +345,13 @@ class LoadBigSamJob < ApplicationJob
     end
 
     parts.join(' ')
+  end
+
+  def o?(names)
+    return names unless names.family.starts_with?("O'")
+
+    names.family = names.family.split("'").map(&:titleize).join("'")
+    names
   end
 end
 

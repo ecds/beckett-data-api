@@ -19,6 +19,7 @@ Rails.application.routes.draw do
     # resources :letter_senders
     resources :mentions, only: %i[index show new create edit update destroy]
     resources :repositories, only: %i[index show new create edit update destroy]
+    resources :languages, only: %i[show]
     # get 'entities_by_type/:type', to: 'entity_types#index'
     put 'letters/mentions/:id', to: 'letters#update_mentions'
 
