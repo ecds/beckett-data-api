@@ -153,7 +153,7 @@ class LoadBigSamJob < ApplicationJob
         repository = Repository.find_or_create_by(label: row[:first_repository])
         repository.format = row[:first_format]
         repository.american = row[:euro_or_am].downcase == 'american' if row[:euro_or_am]
-        repository.published = row[:first_public].downcase == 'public' if row[:first_public]
+        # repository.published = row[:first_public].downcase == 'public' if row[:first_public]
         collection = nil
         begin
           if row[:first_collection]
@@ -182,7 +182,7 @@ class LoadBigSamJob < ApplicationJob
       if row[:second_repository]
         repository = Repository.find_or_create_by(label: row[:second_repository])
         repository.format = row[:second_format]
-        repository.published = row[:second_public].downcase == 'public' if row[:second_public]
+        # repository.published = row[:second_public].downcase == 'public' if row[:second_public]
         collection = nil
         begin
           if row[:second_collection]
@@ -208,7 +208,7 @@ class LoadBigSamJob < ApplicationJob
       if row[:third_repository]
         repository = Repository.find_or_create_by(label: row[:third_repository])
         repository.format = row[:third_format]
-        repository.published = row[:third_public].downcase == 'public' if row[:third_public]
+        # repository.published = row[:third_public].downcase == 'public' if row[:third_public]
         collection = nil
         begin
           if row[:second_collection]

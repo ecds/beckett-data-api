@@ -3,6 +3,8 @@
 class Repository < ApplicationRecord
   include Searchable
 
+  after_save :reindex_published
+
   has_many :collections, dependent: :destroy
 
   has_many :letter_repositories, dependent: :destroy
@@ -11,4 +13,13 @@ class Repository < ApplicationRecord
   scope :published, lambda {
     where(published: true)
   }
+
+  private
+
+  def reindex_published
+    letters.each do |letter|
+      letter.update(published:)
+      letter.all_entities.map(&:save)
+    end
+  end
 end

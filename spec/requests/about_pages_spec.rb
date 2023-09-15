@@ -22,7 +22,6 @@ RSpec.describe '/about_pages', type: :request do
       about = create(:about_page)
       get about_page_url(about), as: :json
       expect(response).to be_successful
-      puts json
       expect(json[:title]).to eq(about.title)
       expect(json[:body]).to eq(about.body)
     end

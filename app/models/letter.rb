@@ -55,6 +55,10 @@ class Letter < ApplicationRecord
     }
   end
 
+  def all_entities
+    recipients + entities + destinations + senders + origins
+  end
+
   private
 
   def check_published
