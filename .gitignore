@@ -36,3 +36,5 @@ BigSam*
 *.xlsx
 *.csv
 *.zip
+
+token.yaml
