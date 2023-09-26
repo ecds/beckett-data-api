@@ -11,7 +11,10 @@ class MentionDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     entity: Field::BelongsTo,
-    letter: Field::BelongsTo,
+    letter: Field::BelongsTo.with_options(
+      searchable: true,
+      searchable_fields: ['legacy_pk']
+    ),
     id: Field::Number,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
