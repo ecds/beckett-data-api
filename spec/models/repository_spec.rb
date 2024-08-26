@@ -13,6 +13,7 @@ RSpec.describe Repository, type: :model do
     end
 
     repo.update(published: true)
+    repo.save
 
     expect(repo.letters.map(&:published)).to all(be true)
     repo.letters.each do |letter|

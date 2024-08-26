@@ -38,3 +38,4 @@ BigSam*
 *.zip
 
 token.yaml
+lib/snippets.rb

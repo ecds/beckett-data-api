@@ -65,7 +65,7 @@ json.repositories do
     second_repo = [
       letter.second_repository.repository.label,
       letter.second_repository.format,
-      letter.second_repository.collection.label
+      letter.second_repository.collection&.label
     ]
     json.set! 'second_repository', second_repo.compact.join(', ')
   end

@@ -35,6 +35,7 @@ Metrics/BlockLength:
   Exclude:
     - spec/**/*
     - db/**/*
+    - lib/snippets.rb
 
 Layout/SpaceAroundEqualsInParameterDefault:
   EnforcedStyle: space

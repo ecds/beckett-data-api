@@ -17,6 +17,8 @@ class Repository < ApplicationRecord
   private
 
   def reindex_published
+    return unless saved_change_to_attribute?(:published)
+
     letters.each do |letter|
       letter.update(published:)
       letter.all_entities.map(&:save)

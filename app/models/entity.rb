@@ -7,7 +7,7 @@ class Entity < ApplicationRecord
   include EntityCommon
 
   before_save :check_published, :remove_blank_values, :add_full_stops, :remove_div, :concat_label, :to_plain_text
-  after_destroy :remove_published
+  before_destroy :remove_published
   after_commit :reindex_published
 
   has_many :mentions, dependent: :destroy
@@ -116,6 +116,7 @@ class Entity < ApplicationRecord
       self.life_dates = nil if life_dates == 'nd'
       self.life_dates = life_dates.gsub(/[()]/, '') if life_dates
     end
+    # self.label = 'ZZZ' if self.label.nil?
   end
 
   # rubocop:enable Metrics/PerceivedComplexity, Metrics/CyclomaticComplexity
@@ -194,8 +195,8 @@ class Entity < ApplicationRecord
   end
 
   def reindex_published
-    if published
-      published_entity = PublishedEntity.find(id)
+    published_entity = PublishedEntity.find_by(id:)
+    if published && published_entity
       published_entity&.reindex
       PublishedEntity.reindex if ENV['RAILS_ENV'] == 'test'
     else

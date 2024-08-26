@@ -111,8 +111,8 @@ class LoadBigSamJob < ApplicationJob
       row[:reg_recipient]&.split(';')&.each do |recipient|
         recipient = recipient.strip.titleize
         entity = Entity.find_by(label: recipient)
-        entity = get_entity(label: recipient, type: 'organization', return_nil: true) if entity.nil?
         entity = get_person(recipient) if entity.nil?
+        entity = get_entity(label: recipient, type: 'organization', return_nil: true) if entity.nil?
         entity = Entity.create(label: recipient) if entity.nil?
         LetterRecipient.find_or_create_by(letter:, entity:)
 
@@ -124,7 +124,7 @@ class LoadBigSamJob < ApplicationJob
 
       if row[:reg_place_sent]
         begin
-          destination = get_entity(label: row[:reg_sent_sent], type: 'place')
+          destination = get_entity(label: row[:reg_place_sent], type: 'place')
           letter.destinations << destination
         rescue ActiveRecord::RecordInvalid, Elasticsearch::Transport::Transport::Errors::BadRequest,
                Elasticsearch::Transport::Transport::Errors::NotFound
@@ -151,6 +151,7 @@ class LoadBigSamJob < ApplicationJob
 
       if row[:first_repository]
         repository = Repository.find_or_create_by(label: row[:first_repository])
+        logger.error("Firts Repository #{repository.label}")
         repository.format = row[:first_format]
         repository.american = row[:euro_or_am].downcase == 'american' if row[:euro_or_am]
         # repository.published = row[:first_public].downcase == 'public' if row[:first_public]
@@ -255,8 +256,8 @@ class LoadBigSamJob < ApplicationJob
         lang = Language.find_or_create_by(label: language.downcase)
         letter.languages << lang unless letter.languages.include?(lang)
       rescue ActiveRecord::RecordInvalid,
-        Elasticsearch::Transport::Transport::Errors::BadRequest,
-        Elasticsearch::Transport::Transport::Errors::NotFound
+             Elasticsearch::Transport::Transport::Errors::BadRequest,
+             Elasticsearch::Transport::Transport::Errors::NotFound
       end
 
       letter.typed = row[:autograph_or_typed] == 'T'
@@ -286,6 +287,7 @@ class LoadBigSamJob < ApplicationJob
   end
 
   def get_entity(label: nil, type: nil, return_nil: false)
+    logger.error("Get Entity with label: #{label} or type #{type}")
     label = label.strip.gsub(/[\[!@%&?"\]]/, '').titleize
     label = mac?(label)
     entity = Entity.public_send(type)
@@ -298,32 +300,39 @@ class LoadBigSamJob < ApplicationJob
     return nil if entity.nil? && return_nil
 
     entity = Entity.find_or_create_by(label:, e_type: type) if entity.nil?
+    logger.error("Found or created entity #{entity.label}")
     entity
   end
 
   def get_person(name)
+    entity = nil
     names = Namae.parse(name).first
     if names&.given && names&.family
       names.family = "van #{names.family}" if names.particle&.downcase == 'van'
       names = o?(names)
+      names = o?(names)
       entity = Entity.find_by(first_name: names.given, last_name: names.family)
     end
 
-    entity = Entity.find_or_create_by(name:, e_type: type) if entity.nil?
+    if entity.nil? && entity.nil?
+      entity = Entity.find_or_create_by(first_name: names.given, last_name: names.family,
+                                        e_type: 'person')
+    end
+    logger.debug "Found person #{entity.label} from #{name}"
     entity
   end
 
-def fix_date(row)
-  row[:day] = '1' if row[:day] == '0'
-  row[:month] = '1' if row[:month] == '0'
-  row[:year] = '99' if row[:year] == '0'
-  row[:day] = row[:day].gsub(/[\[!@%&?"\]]/, '').to_i if row[:day].is_a?(String)
-  row[:month] = row[:month].gsub(/[\[!@%&?"\]]/, '').to_i if row[:month].is_a?(String)
-  row[:year] = "19#{row[:year]}".gsub(/[\[!@%&?"\]]/, '').to_i if row[:year].is_a?(String)
-  row[:year] = row[:year] + 1900 if row[:year].to_s.size == 2
+  def fix_date(row)
+    row[:day] = '1' if row[:day] == '0'
+    row[:month] = '1' if row[:month] == '0'
+    row[:year] = '99' if row[:year] == '0'
+    row[:day] = row[:day].gsub(/[\[!@%&?"\]]/, '').to_i if row[:day].is_a?(String)
+    row[:month] = row[:month].gsub(/[\[!@%&?"\]]/, '').to_i if row[:month].is_a?(String)
+    row[:year] = "19#{row[:year]}".gsub(/[\[!@%&?"\]]/, '').to_i if row[:year].is_a?(String)
+    row[:year] = row[:year] + 1900 if row[:year].to_s.size == 2
 
-  row
-end
+    row
+  end
 
   def mac?(label)
     parts = label.split
@@ -345,6 +354,13 @@ end
     end
 
     parts.join(' ')
+  end
+
+  def mac_name?(names)
+    if names.family.starts_with?('Mac ') || names.family.starts_with?('Mc ')
+      names.family = names.family.split.map(&:titleize).join
+    end
+    names
   end
 
   def o?(names)
