@@ -93,7 +93,10 @@ RSpec.describe '/entities' do
       entity = create(:entity)
       expect(entity.published).to be(false)
       get entity_url(entity)
-      expect(response).to eq have_http_status :not_found
+      # The recomendation causes the test to fail.
+      # rubocop:disable RSpecRails/HaveHttpStatus
+      expect(response.status).to eq 404
+      # rubocop:enable RSpecRails/HaveHttpStatus
     end
   end
 
