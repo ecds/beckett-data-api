@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe Medium, type: :model do
+RSpec.describe Medium do
   it 'has file attacthed' do
     ActiveStorage::Current.url_options = { host: ENV.fetch('RAILS_HOST', 'localhost:3000') }
     medium = build(:medium)

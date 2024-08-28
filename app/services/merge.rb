@@ -102,6 +102,8 @@ class Merge
   end
 
   def uuid?(value)
+    return false if value.is_a?(Integer)
+
     value =~ /\A[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\z/
   end
 end

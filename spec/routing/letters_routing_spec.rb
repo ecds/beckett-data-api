@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe LettersController, type: :routing do
+RSpec.describe LettersController do
   describe 'routing' do
     it 'routes to #index' do
       expect(get: '/letters').to route_to('letters#index', format: :json)

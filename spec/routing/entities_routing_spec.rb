@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe EntitiesController, type: :routing do
+RSpec.describe EntitiesController do
   describe 'routing' do
     it 'routes to #index' do
       expect(get: '/entities').to route_to('entities#index', format: :json)

@@ -33,6 +33,7 @@ class ApplicationController < ActionController::API
 
   private
 
+  # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
   def include_pagination(scope)
     request_params = request.query_parameters
     url_without_params = unless request_params.empty?
@@ -60,11 +61,12 @@ class ApplicationController < ActionController::API
       new_request_hash = request_params.merge({ page: v })
       page_url = "#{url_without_params}?#{new_request_hash.to_param}"
       pagination_links[k] = page_url
-      pagination_header_links << "<#{page_url}>; rel=\'#{k}\'"
+      pagination_header_links << "<#{page_url}>; rel='#{k}'"
     end
     headers['Link'] = pagination_header_links.join(', ')
     headers['X-Total-Count'] = scope.total_count
 
     @pagination_meta[:links] = pagination_links
   end
+  # rubocop:enable Metrics/AbcSize, Metrics/MethodLength
 end

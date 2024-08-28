@@ -25,16 +25,16 @@ module LetterCommon
     scope :published, -> { where(published: true) }
 
     scope :between, lambda {|start_date, _end_date|
-      where('date >= ? AND date <= ?', start_date, end_date)
+      where(date: start_date..end_date)
     }
 
     scope :between, lambda {|min, max|
-      where('letters.date >= ? AND letters.date <= ?', min, max)
+      where(letters: { date: min..max })
     }
 
     # TODO: What to do about bad dates?
     def should_index?
-      return if date.nil?
+      return false if date.nil?
 
       published
       # date.between? DateTime.new(1957), DateTime.new(1965, 12).at_end_of_month and repositories.any?(&:published)
@@ -96,7 +96,7 @@ module LetterCommon
               when 4
                 '1966-1989'
               end
-      return "The Letters of Samuel Beckett, #{years}" if years
+      "The Letters of Samuel Beckett, #{years}" if years
     end
   end
 end

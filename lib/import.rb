@@ -17,7 +17,7 @@ entities.each do |e|
   end
   entity = Entity.update(e)
   Rails.logger.debug entity.label
-end; nil
+end
 
 entities = HTTParty.get('https://ot-api.ecdsdev.org/list-entities', timeout: 1000)
 ids = Entity.all.map(&:id)
@@ -36,9 +36,7 @@ entities.each do |e|
     entity.update(label: e['label'], legacy_pk: e['legacy_pk'])
   end
   Rails.logger.debug entity.label
-end; nil
 
-entities.each do |p|
   next unless p['e_type'] == 'person'
 
   Entity.find(p['id']).update(legacy_pk: p['legacy_pk'])
@@ -46,8 +44,8 @@ end
 
 letters = HTTParty.get('https://ot-api.ecdsdev.org/list-letters', timeout: 1000)
 letters.each do |letter|
-  l = Letter.find_or_create_by(id: letter['id'], legacy_pk: letter['legacy_pk'], date: letter['date'])
-end; nil
+  Letter.find_or_create_by(id: letter['id'], legacy_pk: letter['legacy_pk'], date: letter['date'])
+end
 
 recipients = HTTParty.get('https://ot-api.ecdsdev.org/list-recipients', timeout: 1000)
 recipients.each do |r|
@@ -59,7 +57,7 @@ recipients.each do |r|
   next if letter.recipients.include? entity
 
   letter.recipients << entity
-end; nil
+end
 
 destinations = HTTParty.get('https://ot-api.ecdsdev.org/list-destinations', timeout: 1000)
 destinations.each do |r|
@@ -69,7 +67,7 @@ destinations.each do |r|
   next if letter.destinations.include? entity
 
   letter.destinations << entity
-end; nil
+end
 
 origins = HTTParty.get('https://ot-api.ecdsdev.org/list-origins', timeout: 1000)
 origins.each do |r|
@@ -82,7 +80,7 @@ origins.each do |r|
   next if letter.origins.include? entity
 
   letter.origins << entity
-end; nil
+end
 
 senders = HTTParty.get('https://ot-api.ecdsdev.org/list-senders', timeout: 1000)
 senders.each do |r|
@@ -99,7 +97,7 @@ senders.each do |r|
   rescue ActiveRecord::RecordNotFound
     Rails.logger.debug 'poop'
   end
-end; nil
+end
 
 mentions = HTTParty.get('https://ot-api.ecdsdev.org/list-senders', timeout: 1000)
 mentions.each do |m|
@@ -117,12 +115,11 @@ mentions.each do |m|
   )
   m['tags'].each {|tag| mention.tag_list.add(tag) }
   mention.save
-end; nil
+end
 
 def poo
   opts = { sheet_id: '1HeTeJqueJR4TWqgSCMJOgOglLLyYGfKux8YL57OYfg8', range: 'A2:G', entity_type: 'publication' }
   i = GoogleImport.new(opts)
-  nil
   i.import
   nil
 end

@@ -6,7 +6,7 @@ class LetterRepository < ApplicationRecord
 
   belongs_to :collection, optional: true
 
-  enum placement: {
+  enum :placement, {
     premiere: 1,
     deuxieme: 2,
     troisieme: 3

@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe Repository, type: :model do
+RSpec.describe Repository do
   it 'updates entity and letter published status' do
     repo = create(:repository, published: false)
     create_list(:letter, 3, repositories: [repo])

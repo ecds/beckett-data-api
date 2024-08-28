@@ -39,7 +39,7 @@ resource 'Entities' do
       get "#{type} Entity" do
         let(:id) {
           create(
-            "#{type}_entity".to_sym,
+            :"#{type}_entity",
             :published,
             letters_received: create_list(:published_letter, 1),
             letters_sent_to: create_list(:published_letter, 1),
@@ -91,7 +91,9 @@ resource 'Entities' do
               "Limit responses by single type. Options are #{Entity.e_types.keys.join(', ')}.",
               { default: 'null' }
 
+    # rubocop:disable FactoryBot/ExcessiveCreateList
     before { create_list(:person_entity, 50, :published) }
+    # rubocop:enable FactoryBot/ExcessiveCreateList
 
     get 'GET /entities/autocomplete' do
       let(:search) { Entity.all.sample.clean_label[0..1].downcase }
@@ -112,7 +114,7 @@ resource 'Entities' do
         let(:relation) { relation }
         let(:id) {
           create(
-            "#{Entity.e_types.keys[0..11].sample}_entity".to_sym,
+            :"#{Entity.e_types.keys[0..11].sample}_entity",
             :published,
             letters: create_list(:published_letter, rand(1..4)),
             letters_received: create_list(:published_letter, rand(1..4)),
@@ -152,14 +154,13 @@ resource 'Entities' do
     end
   end
 
-  route 'entities/:id/letters', 'GET /entities/:id/letters?relation=mention&start_date=1963-01-01&end_date=1965-12-30' do
-    # rubocop:disable RSpec/FactoryBot/CreateList
+  route 'entities/:id/letters',
+        'GET /entities/:id/letters?relation=mention&start_date=1963-01-01&end_date=1965-12-30' do
     # Each letter needs to have a random year. Using `create_list` will result is all letters having
     # the same random year.
     before {
       10.times { create(:published_letter, date: Faker::Date.in_date_period(year: rand(1962..1965))) }
     }
-    # rubocop:enable RSpec/FactoryBot/CreateList
 
     parameter :relation, 'relation'
     parameter :page, 'Page of results.'

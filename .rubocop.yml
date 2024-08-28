@@ -1,12 +1,16 @@
 require:
   - rubocop-rspec
+  - rubocop-rspec_rails
   - rubocop-rails
+  - rubocop-factory_bot
 
 AllCops:
   NewCops: enable
 
   Exclude:
     - db/**/*
+    - bin/**/*
+    - app/services/google_import.rb
 
 # Commonly used screens these days easily fit more than 80 characters.
 Layout/LineLength:

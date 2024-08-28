@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe '/entities', type: :request do
+RSpec.describe '/entities' do
   let(:valid_attributes) { {} }
 
   let(:invalid_attributes) { {} }
@@ -19,7 +19,7 @@ RSpec.describe '/entities', type: :request do
     it 'returns entities by type' do
       types = Entity.e_types.keys[0..11].sample(4)
       types.each do |type|
-        create_list("#{type}_entity".to_sym, rand(3..6), :published)
+        create_list(:"#{type}_entity", rand(3..6), :published)
         get entities_url, params: { type: }
         expect(json[:entities].pluck(:type)).to all eq(type)
         expect(json[:meta][:total_count]).to be < Entity.count
@@ -93,13 +93,12 @@ RSpec.describe '/entities', type: :request do
       entity = create(:entity)
       expect(entity.published).to be(false)
       get entity_url(entity)
-      expect(response.status).to eq 404
+      expect(response).to eq have_http_status :not_found
     end
   end
 
   describe 'GET /entities/:id/letters' do
     it 'returns letters for an entity with start_date param' do
-      # rubocop:disable RSpec/FactoryBot/CreateList
       # Each letter needs to have a random year. Using `create_list` will result is all letters having
       # the same random year.
       10.times { create(:published_letter, date: Faker::Date.in_date_period(year: rand(1962..1965))) }
@@ -136,7 +135,6 @@ RSpec.describe '/entities', type: :request do
       expect(json[:letters].map {|letter| Date.parse(letter[:date]) }.min).to be <= DateTime.new(1974, 6, 1)
       expect(json[:letters].count).to be < entity.letters_sent.count
     end
-    # rubocop:enable RSpec/FactoryBot/CreateList
 
     it 'returns paginated letters for an entity' do
       create_list(:published_letter, 10)

@@ -3,10 +3,12 @@
 source 'https://rubygems.org'
 git_source(:github) {|_repo| "https://github.com/#{repo}.git" }
 
-ruby '3.1.2'
+ruby '3.3.4'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
-gem 'rails', '~> 7.0.2', '>= 7.0.2.3'
+gem 'rails', '~> 7.2.1'
+
+gem 'csv'
 
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'
@@ -53,16 +55,11 @@ group :development, :test do
   gem 'faker'
   gem 'rspec-rails'
   gem 'rubocop'
+  gem 'rubocop-factory_bot', require: false
   gem 'rubocop-rails', require: false
   gem 'rubocop-rspec', require: false
+  gem 'rubocop-rspec_rails', require: false
   gem 'shoulda-matchers'
-end
-
-group :development do
-  gem 'capistrano', '~> 3.10', require: false
-  gem 'capistrano-passenger', '~> 0.2.1', require: false
-  gem 'capistrano-rails', '~> 1.6', require: false
-  gem 'capistrano-rbenv', '~> 2.2', require: false
 end
 
 gem 'pundit', '~> 2.2'
@@ -73,9 +70,9 @@ gem 'jbuilder', '~> 2.11'
 
 gem 'rspec_api_documentation', '~> 6.1'
 
-gem 'acts-as-taggable-on', '~> 9.0'
+gem 'acts-as-taggable-on', '~> 11.0.0'
 
-gem 'administrate-field-acts_as_taggable', '~> 0.0.4'
+gem 'administrate-field-acts_as_taggable'
 
 gem 'administrate-field-list', '~> 0.0.6'
 

@@ -116,7 +116,6 @@ class Entity < ApplicationRecord
       self.life_dates = nil if life_dates == 'nd'
       self.life_dates = life_dates.gsub(/[()]/, '') if life_dates
     end
-    # self.label = 'ZZZ' if self.label.nil?
   end
 
   # rubocop:enable Metrics/PerceivedComplexity, Metrics/CyclomaticComplexity

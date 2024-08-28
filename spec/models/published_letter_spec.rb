@@ -3,7 +3,7 @@
 require 'rails_helper'
 require 'action_view'
 
-RSpec.describe PublishedLetter, type: :model do
+RSpec.describe PublishedLetter do
   it 'only returns published entities' do
     create_list(:published_letter, 5)
     create_list(:letter, 3, published: false)

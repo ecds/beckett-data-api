@@ -36,6 +36,7 @@ class LettersController < ApplicationController
     @letter = Letter.find(params[:id])
   end
 
+  # rubocop:disable Metrics/MethodLength
   def letters_from_results(results)
     letters = results.map do |letter|
       {
@@ -62,6 +63,7 @@ class LettersController < ApplicationController
 
     letters
   end
+  # rubocop:enable Metrics/MethodLength
 
   def facets
     {
@@ -77,6 +79,7 @@ class LettersController < ApplicationController
     }
   end
 
+  # rubocop:disable Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/MethodLength, Metrics/PerceivedComplexity
   def set_filters
     @where = { published: true, _and: [] }
 
@@ -120,6 +123,7 @@ class LettersController < ApplicationController
 
     @where[:volume] = { in: params[:volumes].split(',').map(&:to_i) } if params[:volumes].present?
   end
+  # rubocop:enable Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/MethodLength, Metrics/PerceivedComplexity
 
   def reindex
     Letter.reindex if ENV['RAILS_ENV'] == 'test'

@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe Faq, type: :model do
+RSpec.describe Faq do
   it 'creates faqs in order' do
     create_list(:faq, 10)
     expect(described_class.all.map(&:position)).to eq((1..10).to_a)

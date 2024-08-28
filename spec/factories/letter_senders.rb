@@ -2,7 +2,7 @@
 
 FactoryBot.define do
   factory :letter_sender do
-    association :letter, factory: :letter
-    association :entity, factory: :person_entity
+    letter
+    entity factory: %i[entity person_entity]
   end
 end

@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe '/letters', type: :request do
+RSpec.describe '/letters' do
   let(:valid_attributes) { {} }
 
   let(:invalid_attributes) { {} }
@@ -41,26 +41,26 @@ RSpec.describe '/letters', type: :request do
     end
 
     it 'includes pagination information in the headers' do
-      create_list(:published_letter, 20)
-      get "#{letters_url}.json?page=3&per_page=5"
+      create_list(:published_letter, 9)
+      get "#{letters_url}.json?page=3&per_page=2"
       links = response.headers['Link'].split(',')
       expect(links.count).to eq(5)
       expect(links[0]).to include('self')
-      expect(links[0]).to include('letters.json?page=3&per_page=5')
+      expect(links[0]).to include('letters.json?page=3&per_page=2')
 
       expect(links[1]).to include('first')
-      expect(links[1]).to include('letters.json?page=1&per_page=5')
+      expect(links[1]).to include('letters.json?page=1&per_page=2')
 
       expect(links[2]).to include('last')
-      expect(links[2]).to include('letters.json?page=4&per_page=5')
+      expect(links[2]).to include('letters.json?page=5&per_page=2')
 
       expect(links[3]).to include('next')
-      expect(links[3]).to include('letters.json?page=4&per_page=5')
+      expect(links[3]).to include('letters.json?page=4&per_page=2')
 
       expect(links[4]).to include('prev')
-      expect(links[4]).to include('letters.json?page=2&per_page=5')
+      expect(links[4]).to include('letters.json?page=2&per_page=2')
 
-      expect(response.headers['X-Total-Count']).to eq(20)
+      expect(response.headers['X-Total-Count']).to eq(9)
     end
 
     it 'renders letters from specific recipients' do

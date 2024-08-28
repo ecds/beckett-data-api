@@ -120,7 +120,6 @@ namespace :big_sam do
         entity = Entity.organization.find_by(label: recipient.strip.titleize)
         entity = get_entity(recipient, 'person') if entity.nil?
         LetterRecipient.find_or_create_by(letter:, entity:)
-
       rescue ActiveRecord::RecordInvalid,
              Elasticsearch::Transport::Transport::Errors::BadRequest,
              Elasticsearch::Transport::Transport::Errors::NotFound

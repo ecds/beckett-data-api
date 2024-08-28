@@ -2,6 +2,6 @@
 
 require 'rails_helper'
 
-RSpec.describe LetterRecipient, type: :model do
+RSpec.describe LetterRecipient do
   pending "add some examples to (or delete) #{__FILE__}"
 end

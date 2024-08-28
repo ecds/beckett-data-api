@@ -5,7 +5,7 @@
 require 'rails_helper'
 require 'action_view'
 
-RSpec.describe Entity, type: :model do
+RSpec.describe Entity do
   include ActionView::Helpers::SanitizeHelper
   include ActiveSupport::Inflector
 
@@ -152,7 +152,7 @@ RSpec.describe Entity, type: :model do
     # short descriptions
     it 'has short display' do
       described_class.e_types.keys[0..11].each do |type|
-        create("#{type}_entity".to_sym)
+        create(:"#{type}_entity")
         expect(described_class.public_send(type).first.short_display).not_to be_nil
       end
     end
@@ -160,7 +160,7 @@ RSpec.describe Entity, type: :model do
     # long descriptions
     it 'has full display' do
       described_class.e_types.keys[0..11].each do |type|
-        create("#{type}_entity".to_sym)
+        create(:"#{type}_entity")
         expect(described_class.public_send(type).first.full_display).not_to be_nil
       end
     end

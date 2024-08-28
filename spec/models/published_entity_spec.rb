@@ -3,7 +3,7 @@
 require 'rails_helper'
 require 'action_view'
 
-RSpec.describe PublishedEntity, type: :model do
+RSpec.describe PublishedEntity do
   it 'only returns published entities' do
     create_list(:entity, 5, :published)
     create_list(:entity, 3, :unpublished)

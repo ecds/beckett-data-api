@@ -11,7 +11,7 @@ module EntityCommon
   include ActiveSupport::Inflector
 
   included do
-    enum e_type: {
+    enum :e_type, {
       attendance: 0,
       music: 1,
       organization: 2,
@@ -27,7 +27,7 @@ module EntityCommon
       generic: 12
     }
 
-    enum event_type: {
+    enum :event_type, {
       theatre: 0,
       _reading: 1,
       rehearsal: 2,
@@ -65,7 +65,7 @@ module EntityCommon
       cricket_match: 34
     }
 
-    enum translated_into: {
+    enum :translated_into, {
       arabic: 0,
       braille: 1,
       danish: 2,

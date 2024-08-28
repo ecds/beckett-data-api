@@ -82,13 +82,13 @@ class GoogleImport
     @orgs_profiles = '1jwgrdOzDVU36pmwNAdhJ2MGR8-IGQa4BZthwDiniy6c'
     @people_sheet = '1lrbBrMM3cV9d_foQfi5VyJO4gwtl4UkL4N3JWa-fjeo'
 
-    if options[:type]
-      @options[:entity_type] = options[:type]
-      sheet_meta = @sheets.select {|sheet| sheet[:type] == options[:type] }.first
-      response = @service.get_spreadsheet(sheet_meta[:sheet_id], ranges: sheet_meta[:range], include_grid_data: true)
-      @sheet = response.sheets[0]
-      Rails.logger.debug @sheet.data[0].row_data[0].values
-    end
+    return unless options[:type]
+
+    @options[:entity_type] = options[:type]
+    sheet_meta = @sheets.select {|sheet| sheet[:type] == options[:type] }.first
+    response = @service.get_spreadsheet(sheet_meta[:sheet_id], ranges: sheet_meta[:range], include_grid_data: true)
+    @sheet = response.sheets[0]
+    Rails.logger.debug @sheet.data[0].row_data[0].values
   end
 
   def bulk_import
@@ -124,8 +124,8 @@ class GoogleImport
 
         # p "#{column.text_format_runs} : #{column.formatted_value}"
         value = column.text_format_runs ? format_column(column) : column.formatted_value
-        value = value.instance_of?(String) ? value.strip : value
-        value = column.effective_format.text_format.italic ? "<i>#{value}</i>" : value
+        value = value.strip if value.instance_of?(String)
+        value = "<i>#{value}</i>" if column.effective_format.text_format.italic
         row_values = {
           entity:,
           index:,

@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe Letter, type: :model do
+RSpec.describe Letter do
   it 'scopes publicly avaliable letters' do
     create_list(
       :letter,

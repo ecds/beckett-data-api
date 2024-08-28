@@ -24,14 +24,14 @@ FactoryBot.define do
     destinations { create_list(:place_entity, 1) }
     origins { create_list(:place_entity, 1) }
     # letter_file { create(:letter_file) }
-    letter_owner { create(:letter_owner) }
-    letter_publisher { create(:letter_publisher) }
+    letter_owner
+    letter_publisher
     volume { rand(1..4) }
     volume_pages { nil }
 
     after :create do |letter|
       Entity.e_types.keys[0..11].sample(4).each {|type|
-        letter.entities << create_list("#{type}_entity".to_sym, rand(1..3))
+        letter.entities << create_list(:"#{type}_entity", rand(1..3))
       }
     end
 

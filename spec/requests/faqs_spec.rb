@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe '/faqs', type: :request do
+RSpec.describe '/faqs' do
   let(:valid_attributes) { {} }
 
   let(:invalid_attributes) { {} }
@@ -11,11 +11,11 @@ RSpec.describe '/faqs', type: :request do
 
   describe 'GET /index' do
     it 'renders a successful response' do
-      create_list(:faq, 20)
+      create_list(:faq, 9)
       get faqs_url, headers: valid_headers, as: :json
       expect(response).to be_successful
-      expect(json.count).to eq(20)
-      expect(json.pluck(:position)).to eq((1..20).to_a)
+      expect(json.count).to eq(9)
+      expect(json.pluck(:position)).to eq((1..9).to_a)
     end
   end
 

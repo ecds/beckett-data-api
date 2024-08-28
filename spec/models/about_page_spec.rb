@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe AboutPage, type: :model do
+RSpec.describe AboutPage do
   it 'has a title and body' do
     about = create(:about_page)
     expect(about.title).not_to be_nil

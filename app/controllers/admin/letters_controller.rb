@@ -141,4 +141,3 @@ module Admin
     # for more information
   end
 end
-

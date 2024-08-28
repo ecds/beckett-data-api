@@ -2,9 +2,8 @@
 
 FactoryBot.define do
   factory :letter_repository do
-    association :letter, factory: :letter
-    association :repository, factory: :published_repository
-    # association :collection, factory: :collection
+    letter
+    repository factory: %i[repository published_repository]
     format { Faker::Hipster.word }
     placement { 'premiere' }
 

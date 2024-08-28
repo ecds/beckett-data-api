@@ -2,7 +2,7 @@
 
 FactoryBot.define do
   factory :mention do
-    association :entity, factory: :entity
-    association :letter, factory: :letter
+    entity
+    letter
   end
 end

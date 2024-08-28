@@ -2,21 +2,21 @@
 
 namespace :update_records do
   task update_all: :environment do
-    Letter.all.each do |letter|
+    Letter.find_each do |letter|
       letter.save
     rescue StandardError
     end
 
-    Entity.all.each do |entity|
+    Entity.find_each do |entity|
       entity.save
     rescue StandardError
     end
 
-    Entity.where(published: false).each do |entity|
+    Entity.where(published: false).find_each do |entity|
       PublishedEntity.searchkick_index.remove(entity)
     end
 
-    Letter.where(published: false).each do |letter|
+    Letter.where(published: false).find_each do |letter|
       PublishedLetter.searchkick_index.remove(letter)
     end
   end

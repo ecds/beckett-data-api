@@ -13,10 +13,8 @@ class Faq < ApplicationRecord
                       Faq.count + 1
                     elsif position.zero?
                       1
-                    elsif position > Faq.count
-                      Faq.count
                     else
-                      position
+                      [position, Faq.count].min
                     end
     # updateif position > Faq.count
   end

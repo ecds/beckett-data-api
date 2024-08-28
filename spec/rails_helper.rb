@@ -41,14 +41,14 @@ Shoulda::Matchers.configure do |config|
   end
 end
 
-Dir[Rails.root.join('spec/support/**/*.rb')].each {|f| require f }
+Rails.root.glob('spec/support/**/*.rb').each {|f| require f }
 
 ENV['RAILS_HOST'] = 'example.com'
 ActiveStorage::Current.url_options = { host: ENV.fetch('RAILS_HOST', 'localhost:3000') }
 
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
-  config.fixture_path = "#{::Rails.root}/spec/fixtures"
+  config.fixture_paths = ["#{Rails.root}/spec/fixtures"]
 
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false
@@ -80,7 +80,7 @@ RSpec.configure do |config|
 
   config.include FactoryBot::Syntax::Methods
 
-  config.include RequestSpecHelper, type: :request
+  config.include RequestSpecHelper
 
   config.before(:suite) do
     Entity.reindex

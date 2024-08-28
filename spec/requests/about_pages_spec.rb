@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe '/about_pages', type: :request do
+RSpec.describe '/about_pages' do
   let(:valid_attributes) { {} }
 
   let(:invalid_attributes) { {} }

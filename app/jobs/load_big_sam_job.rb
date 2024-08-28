@@ -8,7 +8,7 @@ class LoadBigSamJob < ApplicationJob
   include ActionView::Helpers::SanitizeHelper
   queue_as :default
 
-  def perform(*_args)
+  def self.perform(*_args)
     FileUtils.touch('big_sam_loading')
     logger.debug 'statring big sam load'
 
@@ -26,7 +26,7 @@ class LoadBigSamJob < ApplicationJob
     load_letters(rows)
   end
 
-  def load_letters(rows)
+  def self.load_letters(rows)
     rows.each do |row|
       letter = get_letter(row)
 
@@ -115,7 +115,6 @@ class LoadBigSamJob < ApplicationJob
         entity = get_entity(label: recipient, type: 'organization', return_nil: true) if entity.nil?
         entity = Entity.create(label: recipient) if entity.nil?
         LetterRecipient.find_or_create_by(letter:, entity:)
-
       rescue ActiveRecord::RecordInvalid,
              Elasticsearch::Transport::Transport::Errors::BadRequest,
              Elasticsearch::Transport::Transport::Errors::NotFound
@@ -274,9 +273,7 @@ class LoadBigSamJob < ApplicationJob
     logger.info { "#{Time.zone.now} ALL DONE" }
   end
 
-  private
-
-  def get_letter(row)
+  def self.get_letter(row)
     if row[:exclude] == 'y'
       letter = Letter.find_by(legacy_pk: row[:id])
       letter&.destroy
@@ -286,10 +283,9 @@ class LoadBigSamJob < ApplicationJob
     Letter.find_or_create_by(legacy_pk: row[:id])
   end
 
-  def get_entity(label: nil, type: nil, return_nil: false)
+  def self.get_entity(label: nil, type: nil, return_nil: false)
     logger.error("Get Entity with label: #{label} or type #{type}")
     label = label.strip.gsub(/[\[!@%&?"\]]/, '').titleize
-    label = mac?(label)
     entity = Entity.public_send(type)
                    .where('label ILIKE:prefix', prefix: "%#{label}%")
                    .or(
@@ -304,17 +300,18 @@ class LoadBigSamJob < ApplicationJob
     entity
   end
 
-  def get_person(name)
+  def self.get_person(name)
     entity = nil
     names = Namae.parse(name).first
     if names&.given && names&.family
-      names.family = "van #{names.family}" if names.particle&.downcase == 'van'
-      names = o?(names)
+      names.family = "Van #{names.family}" if names.particle&.downcase == 'van'
+      names.family = "von #{names.family}" if names.particle&.downcase == 'von'
+      names = mac_name?(names)
       names = o?(names)
       entity = Entity.find_by(first_name: names.given, last_name: names.family)
     end
 
-    if entity.nil? && entity.nil?
+    if entity.nil?
       entity = Entity.find_or_create_by(first_name: names.given, last_name: names.family,
                                         e_type: 'person')
     end
@@ -322,7 +319,7 @@ class LoadBigSamJob < ApplicationJob
     entity
   end
 
-  def fix_date(row)
+  def self.fix_date(row)
     row[:day] = '1' if row[:day] == '0'
     row[:month] = '1' if row[:month] == '0'
     row[:year] = '99' if row[:year] == '0'
@@ -334,36 +331,20 @@ class LoadBigSamJob < ApplicationJob
     row
   end
 
-  def mac?(label)
-    parts = label.split
+  def self.mac_name?(names)
+    return names if names.family.starts_with?('Mc') || names.given.starts_with?('Mac')
 
-    return label if parts.count < 3
-
-    if parts.any? {|p| p == 'Mc' }
-      mc = parts.find_index('Mc')
-      last = parts.delete_at(mc + 1)
-      parts.delete_at(mc)
-      parts.insert(mc, "Mc#{last}")
-    end
-
-    if parts.any? {|p| p == 'Mac' }
-      mac = parts.find_index('Mac')
-      last = parts.delete_at(mac + 1)
-      parts.delete_at(mac)
-      parts.insert(mac, "Mac#{last}")
-    end
-
-    parts.join(' ')
-  end
-
-  def mac_name?(names)
     if names.family.starts_with?('Mac ') || names.family.starts_with?('Mc ')
       names.family = names.family.split.map(&:titleize).join
+    elsif names.given.split.last.starts_with?('Mc') || names.given.split.last.starts_with?('Mac')
+      parts = names.given.split
+      names.family = "#{parts.pop}#{names.family}"
+      names.given = parts.join(' ')
     end
     names
   end
 
-  def o?(names)
+  def self.o?(names)
     return names unless names.family.starts_with?("O'")
 
     names.family = names.family.split("'").map(&:titleize).join("'")
@@ -372,15 +353,3 @@ class LoadBigSamJob < ApplicationJob
 end
 
 # rubocop:enable Metrics/BlockLength, Metrics/PerceivedComplexity, Metrics/MethodLength, Metrics/AbcSize, Metrics/CyclomaticComplexity
-# to_merge = []
-# generics.each do |g|
-#   name = mac?(g.label).split
-#   e = Entity.find_by(first_name: name[0], last_name: name[1])
-#   next if e.nil?
-#   # to_merge.push({ keep: e.id, discard: g.id })
-#   puts e.id
-# end; nil
-
-# to_merge.each do |e|
-#   Entity.find(e[:keep]).all_letters.each {|l| l.save }
-# end

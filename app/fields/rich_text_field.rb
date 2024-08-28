@@ -9,7 +9,8 @@ class RichTextField < Administrate::Field::Base
     sanitize(
       data,
       tags: %w[svg div strong p h1 h2 br a ul li em path],
-      attributes: %w[href d fill viewbox role alt focusable stroke-width alt class aria-hidden height width xmlns stroke]
+      attributes: %w[href d fill viewbox role alt focusable stroke-width alt class aria-hidden height width xmlns
+                     stroke]
     )
   end
 end
