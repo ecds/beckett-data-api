@@ -6,7 +6,7 @@ FactoryBot.define do
     attribution { Faker::Movies::Lebowski.character }
     caption { Faker::Movies::Lebowski.quote }
     link { Faker::Internet.url }
-    entity factory: %i[entity person_entity]
+    entity factory: :person_entity
 
     after(:build) do |medium|
       medium.image.attach(

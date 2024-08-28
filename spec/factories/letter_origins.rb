@@ -3,6 +3,6 @@
 FactoryBot.define do
   factory :letter_origin do
     letter
-    entity factory: %i[entity place_entity]
+    entity factory: :place_entity
   end
 end

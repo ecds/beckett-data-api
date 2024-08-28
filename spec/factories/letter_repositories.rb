@@ -3,7 +3,7 @@
 FactoryBot.define do
   factory :letter_repository do
     letter
-    repository factory: %i[repository published_repository]
+    repository factory: :published_repository
     format { Faker::Hipster.word }
     placement { 'premiere' }
 
