@@ -1,0 +1,37 @@
+name: Deploy
+
+on:
+  workflow_run:
+    workflows: [Test]
+    types: [completed]
+
+permissions:
+  id-token: write # This is required for requesting the JWT
+  contents: read # This is required for actions/checkout
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Configure AWS credentials from AWS account
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE }}
+          aws-region: us-east-1
+          role-session-name: GitHub-OIDC-frontend
+
+      - name: Run Deploy
+        env:
+          AWS_ECR: ${{ secrets.AWS_ECR }}
+          AWS_ECS_CLUSTER: ${{ secrets.AWS_ECS_CLUSTER }}
+          AWS_ECS_SERVICE: ${{ secrets.AWS_ECS_SERVICE }}
+          AWS_REGION: ${{ secrets.AWS_REGION }}
+          RAIL_MASTER_KEY: ${{ secrets.RAIL_MASTER_KEY }}
+        run: |
+          chmod +x build.sh
+          ./build.sh
