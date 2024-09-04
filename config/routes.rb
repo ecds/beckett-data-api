@@ -3,6 +3,7 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
+  root 'landings#index'
   resources :about_pages
   resources :faqs
   namespace :admin do

@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+desc 'Update index'
+
 namespace :update_records do
   task update_all: :environment do
     Letter.find_each do |letter|

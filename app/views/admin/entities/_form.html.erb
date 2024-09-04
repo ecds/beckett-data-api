@@ -23,7 +23,6 @@ and renders all form fields for a resource's editable attributes.
           resource_name: display_resource_name(page.resource_name, singular: true)
         ) %>
       </h2>
-
       <ul>
         <% page.resource.errors.full_messages.each do |message| %>
           <li class="flash-error"><%= message %></li>
@@ -31,7 +30,6 @@ and renders all form fields for a resource's editable attributes.
       </ul>
     </div>
   <% end %>
-
   <div class="entity-form">
     <div class="field-unit field-unit--string field-unit--optional">
       <div class="field-unit__label">
@@ -49,12 +47,14 @@ and renders all form fields for a resource's editable attributes.
         <%= page.resource.legacy_pk %>
       </div>
     </div>
-    <% page.attributes(controller.action_name).each do |attribute| -%>
-      <% next unless page.resource.allowed_attributes.include? attribute.name.to_sym %>
-      <% next if attribute.name == 'e_type' %>
-      <div class="field-unit field-unit--<%= attribute.html_class %> field-unit--<%= requireness(attribute) %>">
-        <%= render_field attribute, f: f %>
-      </div>
+    <% page.attributes(controller.action_name).each do |title, attributes| -%>
+      <% attributes.each do |attribute| %>
+        <% next unless page.resource.allowed_attributes.include? attribute.name.to_sym %>
+        <% next if attribute.name == 'e_type' %>
+        <div class="field-unit field-unit--<%= attribute.html_class %> field-unit--<%= requireness(attribute) %>">
+          <%= render_field attribute, f: f %>
+        </div>
+      <% end -%>
     <% end -%>
     <input type="hidden" name="entity[e_type]" value=<%= page.resource.e_type %>  autocomplete="off">
     <div class="form-actions">

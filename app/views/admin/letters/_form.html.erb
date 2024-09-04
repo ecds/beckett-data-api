@@ -13,71 +13,69 @@ and renders all form fields for a resource's editable attributes.
 
 [1]: http://www.rubydoc.info/gems/administrate/Administrate/Page/Form
 %>
-
 <style>
- option {
-  text-transform: captalize;
- }
-
- pre {
-  white-space: pre-wrap;
- }
-
- .letter-content {
-  height: 500px;
-  line-spacing: 2rem;
-  overflow: scroll;
- }
-
- .option {
-  cursor: pointer !important;
- }
-
- *,
-::before,
-::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-.container {
-  padding: 50px 10vw 100px;
-  font-size: 40px;
-}
-
-.container h1 {
-  margin-bottom: 20px;
-}
-
-.tooltip-container {
-  min-width: 425px;
-  min-height: 200px;
-  height: auto;
-  padding: 15px;
-  background: white;
-  box-shadow: 0 30px 90px -20px rgba(0,0,0,0.3);
-  position: absolute;
-  z-index: 100;
-  display: none;
-  opacity: 0;
-}
-
-.fade-in {
-  display: block;
-  animation: fade 0.2s linear forwards;
-}
-
-@keyframes fade {
-  0% {
-    opacity: 0;
+  option {
+   text-transform: captalize;
   }
-  100% {
-    opacity: 1;
+
+  pre {
+   white-space: pre-wrap;
   }
-}
+
+  .letter-content {
+   height: 500px;
+   line-spacing: 2rem;
+   overflow: scroll;
+  }
+
+  .option {
+   cursor: pointer !important;
+  }
+
+  *,
+  ::before,
+  ::after {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+  }
+
+  .container {
+   padding: 50px 10vw 100px;
+   font-size: 40px;
+  }
+
+  .container h1 {
+   margin-bottom: 20px;
+  }
+
+  .tooltip-container {
+   min-width: 425px;
+   min-height: 200px;
+   height: auto;
+   padding: 15px;
+   background: white;
+   box-shadow: 0 30px 90px -20px rgba(0,0,0,0.3);
+   position: absolute;
+   z-index: 100;
+   display: none;
+   opacity: 0;
+  }
+
+  .fade-in {
+   display: block;
+   animation: fade 0.2s linear forwards;
+  }
+
+  @keyframes fade {
+   0% {
+     opacity: 0;
+   }
+   100% {
+     opacity: 1;
+   }
+  }
 </style>
-
 <%= form_for([namespace, page.resource], html: { class: "form" }) do |f| %>
   <% if page.resource.errors.any? %>
     <div id="error_explanation">
@@ -88,7 +86,6 @@ and renders all form fields for a resource's editable attributes.
           resource_name: display_resource_name(page.resource_name, singular: true)
         ) %>
       </h2>
-
       <ul>
         <% page.resource.errors.full_messages.each do |message| %>
           <li class="flash-error"><%= message %></li>
@@ -96,7 +93,6 @@ and renders all form fields for a resource's editable attributes.
       </ul>
     </div>
   <% end %>
-
   <div class="field-unit field-unit--string field-unit--optional">
     <div class="field-unit__label">
       <label>Date</label>
@@ -105,7 +101,6 @@ and renders all form fields for a resource's editable attributes.
       <%= page.resource.date&.strftime('%d %B %Y') %>
     </div>
   </div>
-
   <div class="field-unit field-unit--string field-unit--optional">
     <div class="field-unit__label">
       <label>Recipient(s)</label>
@@ -114,7 +109,6 @@ and renders all form fields for a resource's editable attributes.
       <%= page.resource.recipients.map(&:label).to_sentence %>
     </div>
   </div>
-
   <div class="field-unit field-unit--string field-unit--optional">
     <div class="field-unit__label">
       <label>Legacy ID</label>
@@ -123,17 +117,15 @@ and renders all form fields for a resource's editable attributes.
       <%= page.resource.legacy_pk %>
     </div>
   </div>
-
-  <% page.attributes(controller.action_name).each do |attribute| -%>
-    <div class="field-unit field-unit--<%= attribute.html_class %> field-unit--<%= requireness(attribute) %>">
-      <%= render_field attribute, f: f %>
-    </div>
+  <% page.attributes(controller.action_name).each do |title, attributes| -%>
+    <% attributes.each do |attribute| %>
+      <div class="field-unit field-unit--<%= attribute.html_class %> field-unit--<%= requireness(attribute) %>">
+        <%= render_field attribute, f: f %>
+      </div>
+    <% end -%>
   <% end -%>
-
 <% end %>
-
 <div class="tooltip-container">Loading...</div>
-
 <script type="text/javascript">
   const defer = (method) => {
     if (window.jQuery) {
