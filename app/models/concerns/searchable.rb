@@ -9,7 +9,9 @@ module Searchable
     searchkick deep_paging: true,
                callbacks: :async,
                word_start: [:clean_label],
-               suggest: [:label]
+               suggest: [:label],
+               index_prefix: 'beckett'
+
     # searchkick callbacks: false
   end
 end
