@@ -32,7 +32,7 @@ jobs:
           AWS_ECS_SERVICE: ${{ secrets.AWS_ECS_SERVICE }}
           AWS_REGION: ${{ secrets.AWS_REGION }}
           RAIL_MASTER_KEY: ${{ secrets.RAIL_MASTER_KEY }}
-          REDIS_PROVIDER: ${{ secrets.REDIS_PROVIDER }}
+          RREDIS_URL: ${{ secrets.RREDIS_URL }}
         run: |
           chmod +x build.sh
           ./build.sh

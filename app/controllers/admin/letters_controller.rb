@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'addressable/uri'
+
 module Admin
   class LettersController < Admin::ApplicationController
     before_action :original_params, only: %i[index]

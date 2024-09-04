@@ -78,18 +78,16 @@ gem 'administrate-field-list', '~> 0.0.6'
 
 gem 'httparty', '~> 0.20.0'
 
-gem 'google-api-client'
-
 gem 'roo', '~> 2.9'
 
 gem 'namae', '~> 1.1'
 
 gem 'administrate-field-active_storage', '~> 0.4.1'
 
-gem 'capistrano-bundler', '~> 2.1'
-
 gem 'active_record_doctor', '~> 1.10'
 
 gem 'sidekiq', '~> 6.5.8'
 
 gem 'uuid', '~> 2.3'
+
+gem 'addressable', '~> 2.8'
