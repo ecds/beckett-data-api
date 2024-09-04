@@ -22,5 +22,3 @@ docker push "${AWS_ECR}/beckett-data-api:latest"
 
 echo "Force update service"
 aws ecs update-service --cluster ${AWS_ECS_CLUSTER} --service ${AWS_ECS_SERVICE} --force-new-deployment --region ${AWS_REGION}
-
-aws ecs update-service --cluster BeckettData --service BeckettData --force-new-deployment --region us-east-1
