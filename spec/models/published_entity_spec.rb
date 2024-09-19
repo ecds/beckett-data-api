@@ -25,6 +25,7 @@ RSpec.describe PublishedEntity do
 
   it 'updates index when entity is unpublished' do
     entity = create(:entity, :published)
+    entity.save!
     expect(described_class.search('*', where: { label: entity.label }).first.id).to eq(entity.id)
     entity.letters.first.repositories.first.update(published: false)
     entity.letters.first.save
