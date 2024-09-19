@@ -22,7 +22,6 @@ It renders the `_table` partial to display details about the resources.
 
 [1]: http://www.rubydoc.info/gems/administrate/Administrate/Page/Collection
 %>
-
 <%=
   render("index_header",
     resources: resources,
@@ -33,20 +32,20 @@ It renders the `_table` partial to display details about the resources.
     max_date: max_date
   )
 %>
-
+<%= javascript_importmap_tags %>
 <form>
   <section style="position: relative; margin-top: 2rem;">
     <div class="field-unit">
       <div class="field-unit__label">
-        <label for="type_filter">Start Date</label>
+        <label for="start_date">Start Date</label>
       </div>
       <div class="field-unit__field">
-        <input data-type="date" type="text" id="start_date" value="<%= start_date %>" name="start_date">
+        <input data-type="date" type="text" id="start_date" name="start_date">
       </div>
     </div>
     <div class="field-unit">
       <div class="field-unit__label">
-        <label for="type_filter">End Date</label>
+        <label for="end_date">End Date</label>
       </div>
       <div class="field-unit__field">
         <input data-type="date" type="text" id="end_date" value="<%= end_date %>" name="end_date">
@@ -55,7 +54,6 @@ It renders the `_table` partial to display details about the resources.
     <input type="submit" style="display: none">
   </section>
 </form>
-
 <section class="main-content__body main-content__body--flush">
   <%= render(
     "collection",
@@ -65,11 +63,11 @@ It renders the `_table` partial to display details about the resources.
     resources: resources,
     table_title: "page-title"
   ) %>
-
   <%= paginate resources, param_name: '_page' %>
 </section>
-
-<script>
+<script type='module'>
+  import moment from 'moment'
+  import datepicker from 'js-datepicker'
   const defer = (method) => {
     if (window.jQuery) {
       method();
@@ -81,29 +79,43 @@ It renders the `_table` partial to display details about the resources.
   }
 
   const initDateFilter = () => {
-    const minField = jQuery('#start_date');
-    const maxField = jQuery('#end_date');
-    console.log('<%= start_date %>', Date.parse('<%= start_date %>'.replaceAll('-', '/')))
-    console.log(moment('<%= start_date %>'.replaceAll('-', '/')).format('YYYY-MM-DD'))
+    const minField = document.getElementById('start_date');
+    const maxField = document.getElementById('end_date');
     try {
-      minField.data().DateTimePicker.minDate('<%= min_date %>');
-      minField.data().DateTimePicker.maxDate('<%= max_date %>');
-      maxField.data().DateTimePicker.minDate('<%= min_date %>');
-      maxField.data().DateTimePicker.maxDate('<%= max_date %>');
-      minField.data().DateTimePicker.format('DD-MM-YYYY');
-      maxField.data().DateTimePicker.format('DD-MM-YYYY');
-      minField.on('dp.change', (event) => {
-        const newMin = event.date.format('DD-MM-YYYY');
-        const max = maxField.data().DateTimePicker.date().format('DD-MM-YYYY');
-        const newPath = `/admin/letters?start_date=${newMin}&end_date=${max}&search=<%= search_term %>`;
-        window.open(newPath, '_self');
+      minField.value = moment('<%= start_date %>'.replaceAll('-', '/')).format('DD-MM-YYYY');
+      maxField.value = moment('<%= end_date %>'.replaceAll('-', '/')).format('DD-MM-YYYY');
+      const startPicker = new datepicker("#start_date", {
+        formatter: (input, date, instance) => {
+          const value =  moment(date).format('DD-MM-YYYY');
+          input.value = value;
+        },
+        minDate: new Date('<%= min_date %>'),
+        maxDate: new Date('<%= max_date %>'),
+        onSelect: (instance) => {
+          const newMin = moment(instance.dateSelected).format('YYYY-MM-DD');
+          const newMax = moment('<%= end_date %>'.replaceAll('-', '/')).format('YYYY-MM-DD');
+          const newPath = `/admin/letters?start_date=${newMin}&end_date=${newMax}&search=<%= search_term %>`;
+          window.open(newPath, '_self');
+        }
       });
-      maxField.on('dp.change', (event) => {
-        const newMax = event.date.format('DD-MM-YYYY');
-        const min = minField.data().DateTimePicker.date().format('DD-MM-YYYY');
-        const newPath = `/admin/letters?start_date=${min}&end_date=${newMax}&search=<%= search_term %>`;
-        window.open(newPath, '_self');
+
+      const endPicker = new datepicker("#end_date", {
+        formatter: (input, date, instance) => {
+          const value =  moment(date).format('DD-MM-YYYY');
+          input.value = value;
+        },
+        minDate: new Date('<%= min_date %>'),
+        maxDate: new Date('<%= max_date %>'),
+        onSelect: (instance) => {
+          const newMin = moment('<%= start_date %>'.replaceAll('-', '/')).format('YYYY-MM-DD');
+          const newMax = moment(instance.dateSelected).format('YYYY-MM-DD');
+          const newPath = `/admin/letters?start_date=${newMin}&end_date=${newMax}&search=<%= search_term %>`;
+          window.open(newPath, '_self');
+        }
       });
+
+      startPicker.navigate('<%= start_date %>', true);
+      endPicker.navigate('<%= end_date %>', true);
     } catch (error) {
       setTimeout(() => {
         initDateFilter();
@@ -119,5 +131,4 @@ It renders the `_table` partial to display details about the resources.
     urlParams.set('search', '<%= search_term %>');
     history.replaceState({}, null, `/admin/letters?${urlParams.toString()}`);
   })
-
 </script>

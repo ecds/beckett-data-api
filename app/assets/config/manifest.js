@@ -11,3 +11,4 @@
 //= require trix
 // application.js
 // application.css
+//= link datepicker.css

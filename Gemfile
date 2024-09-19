@@ -91,3 +91,5 @@ gem 'sidekiq', '~> 6.5.8'
 gem 'uuid', '~> 2.3'
 
 gem 'addressable', '~> 2.8'
+
+gem 'importmap-rails', '~> 2.0'
