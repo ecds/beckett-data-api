@@ -31,7 +31,7 @@ jobs:
           AWS_ECS_CLUSTER: ${{ secrets.AWS_ECS_CLUSTER }}
           AWS_ECS_SERVICE: ${{ secrets.AWS_ECS_SERVICE }}
           AWS_REGION: ${{ secrets.AWS_REGION }}
-          RAIL_MASTER_KEY: ${{ secrets.RAIL_MASTER_KEY }}
+          RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
           RREDIS_URL: ${{ secrets.RREDIS_URL }}
         run: |
           chmod +x build.sh
