@@ -82,18 +82,18 @@ It renders the `_table` partial to display details about the resources.
     const minField = document.getElementById('start_date');
     const maxField = document.getElementById('end_date');
     try {
-      minField.value = moment('<%= start_date %>'.replaceAll('-', '/')).format('DD-MM-YYYY');
-      maxField.value = moment('<%= end_date %>'.replaceAll('-', '/')).format('DD-MM-YYYY');
+      minField.value = moment('<%= start_date %>'.replaceAll('-', '/').split(" ")[0], "YYYY/MMM/DD").format('DD-MM-YYYY');
+      maxField.value = moment('<%= end_date %>'.replaceAll('-', '/').split(" ")[0], "YYYY/MMM/DD").format('DD-MM-YYYY');
       const startPicker = new datepicker("#start_date", {
         formatter: (input, date, instance) => {
           const value =  moment(date).format('DD-MM-YYYY');
           input.value = value;
         },
-        minDate: new Date('<%= min_date %>'),
-        maxDate: new Date('<%= max_date %>'),
+        minDate: new Date('<%= min_date %>'.split(" ")[0]),
+        maxDate: new Date('<%= max_date %>'.split(" ")[0]),
         onSelect: (instance) => {
           const newMin = moment(instance.dateSelected).format('YYYY-MM-DD');
-          const newMax = moment('<%= end_date %>'.replaceAll('-', '/')).format('YYYY-MM-DD');
+          const newMax = moment('<%= end_date %>'.replaceAll('-', '/').split(" ")[0], "YYYY/MMM/DD").format('YYYY-MM-DD');
           const newPath = `/admin/letters?start_date=${newMin}&end_date=${newMax}&search=<%= search_term %>`;
           window.open(newPath, '_self');
         }
@@ -104,10 +104,10 @@ It renders the `_table` partial to display details about the resources.
           const value =  moment(date).format('DD-MM-YYYY');
           input.value = value;
         },
-        minDate: new Date('<%= min_date %>'),
-        maxDate: new Date('<%= max_date %>'),
+        minDate: new Date('<%= min_date %>'.split(" ")[0]),
+        maxDate: new Date('<%= max_date %>'.split(" ")[0]),
         onSelect: (instance) => {
-          const newMin = moment('<%= start_date %>'.replaceAll('-', '/')).format('YYYY-MM-DD');
+          const newMin = moment('<%= start_date %>'.replaceAll('-', '/').split(" ")[0], "YYYY/MMM/DD").format('YYYY-MM-DD');
           const newMax = moment(instance.dateSelected).format('YYYY-MM-DD');
           const newPath = `/admin/letters?start_date=${newMin}&end_date=${newMax}&search=<%= search_term %>`;
           window.open(newPath, '_self');
@@ -117,17 +117,18 @@ It renders the `_table` partial to display details about the resources.
       startPicker.navigate('<%= start_date %>', true);
       endPicker.navigate('<%= end_date %>', true);
     } catch (error) {
-      setTimeout(() => {
-        initDateFilter();
-      }, 300);
+      console.error(error)
+      // setTimeout(() => {
+      //   initDateFilter();
+      // }, 300);
     }
   }
 
   defer(() => {
     initDateFilter();
     const urlParams = new URLSearchParams(window.location.search);
-    urlParams.set('start_date', moment('<%= start_date %>'.replaceAll('-', '/')).format('YYYY-MM-DD'));
-    urlParams.set('end_date', moment('<%= end_date %>'.replaceAll('-', '/')).format('YYYY-MM-DD'));
+    urlParams.set('start_date', moment('<%= start_date %>'.replaceAll('-', '/').split(" ")[0], "YYYY/MMM/DD").format('YYYY-MM-DD'));
+    urlParams.set('end_date', moment('<%= end_date %>'.replaceAll('-', '/').split(" ")[0], "YYYY/MMM/DD").format('YYYY-MM-DD'));
     urlParams.set('search', '<%= search_term %>');
     history.replaceState({}, null, `/admin/letters?${urlParams.toString()}`);
   })
