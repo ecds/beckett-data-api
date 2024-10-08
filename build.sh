@@ -6,12 +6,13 @@ echo "Building image"
 docker build \
        --file Dockerfile \
        --build-arg RAILS_MASTER_KEY=$RAILS_MASTER_KEY \
+       --build-arg REDIS_URL=$REDIS_URL \
        -t beckett-data-api \
        .
 
 echo "Logging in to AWS"
-aws ecr get-login-password --region us-east-1 | \
-docker login --username AWS --password-stdin "${AWS_ECR}"
+aws ecr get-login-password --region us-east-1 |
+       docker login --username AWS --password-stdin "${AWS_ECR}"
 echo "Logged in successfully"
 
 echo "Tagging image with latest"
