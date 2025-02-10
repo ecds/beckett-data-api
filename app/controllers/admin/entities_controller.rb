@@ -95,7 +95,7 @@ module Admin
       params.require(:entity).permit(:description, :properties)
     end
 
-    def new_resource
+    def new_resource(params = {})
       return Entity.new(e_type: params[:type]) if params.include?(:type)
 
       super
