@@ -96,7 +96,8 @@ module Admin
     end
 
     def new_resource(params = {})
-      return Entity.new(e_type: params[:type]) if params.include?(:type)
+      logger.error self.params[:type]
+      return Entity.new(e_type: self.params[:type]) if self.params.include?(:type)
 
       super
     end
