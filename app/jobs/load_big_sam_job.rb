@@ -11,7 +11,7 @@ class LoadBigSamJob < ApplicationJob
 
   def self.perform(*_args)
     FileUtils.touch('big_sam_loading')
-    logger.debug 'statring big sam load'
+    logger.debug 'starting big sam load'
 
     big_sam = BigSam.last
     x = Roo::Spreadsheet.open(big_sam.local_path, extension: :xlsx)
@@ -239,7 +239,7 @@ class LoadBigSamJob < ApplicationJob
         letter.volume = 3 if row[:volumeinfo].include?('1957-1965')
         letter.volume = 4 if row[:volumeinfo].include?('1966-1989')
         parts = row[:volumeinfo].split(',')
-        letter.volume_pages = strip_tags(parts[2].strip) if parts.length == 3
+        letter.volume_pages = ActionController::Base.helpers.strip_tags(parts[2].strip) if parts.length == 3
       end
 
       letter.letter_publisher = LetterPublisher.find_or_create_by(label: row[:placeprevpubl]) if row[:placeprevpubl]
@@ -287,12 +287,7 @@ class LoadBigSamJob < ApplicationJob
   def self.get_entity(label: nil, type: nil, return_nil: false)
     logger.error("Get Entity with label: #{label} or type #{type}")
     label = label.strip.gsub(/[\[!@%&?"\]]/, '').titleize
-    entity = Entity.public_send(type)
-                   .where('label ILIKE ?', "%#{label}%")
-                   .or(
-                     Entity.public_send(type)
-                           .where('? = ANY (alternate_spellings)', label)
-                   ).first
+    entity = Entity.public_send(type).find_by('lower(label) = ?', label.downcase)
 
     return nil if entity.nil? && return_nil
 
