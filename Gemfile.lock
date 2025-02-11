@@ -371,11 +371,12 @@ GEM
     selectize-rails (0.12.6)
     shoulda-matchers (6.4.0)
       activesupport (>= 5.2.0)
-    sidekiq (7.0.9)
-      concurrent-ruby (< 2)
+    sidekiq (7.3.8)
+      base64
       connection_pool (>= 2.3.0)
+      logger
       rack (>= 2.2.4)
-      redis-client (>= 0.11.0)
+      redis-client (>= 0.22.2)
     sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -455,7 +456,7 @@ DEPENDENCIES
   rubocop-rspec_rails
   searchkick
   shoulda-matchers
-  sidekiq (< 8)
+  sidekiq (>= 7.2.2, < 8)
   trix-rails
   tzinfo-data
   uuid (~> 2.3)

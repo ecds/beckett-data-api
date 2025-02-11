@@ -3,7 +3,6 @@
 # rubocop:disable Metrics/BlockLength, Metrics/PerceivedComplexity, Metrics/MethodLength, Metrics/AbcSize, Metrics/CyclomaticComplexity
 
 require 'roo'
-require 'rails_helper'
 require 'action_view'
 
 class LoadBigSamJob < ApplicationJob
