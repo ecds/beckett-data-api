@@ -291,7 +291,8 @@ GEM
     rake (13.2.1)
     rdoc (6.7.0)
       psych (>= 4.0.0)
-    redis (4.8.1)
+    redis-client (0.23.2)
+      connection_pool
     regexp_parser (2.9.2)
     reline (0.5.9)
       io-console (~> 0.5)
@@ -370,10 +371,11 @@ GEM
     selectize-rails (0.12.6)
     shoulda-matchers (6.4.0)
       activesupport (>= 5.2.0)
-    sidekiq (6.5.12)
-      connection_pool (>= 2.2.5, < 3)
-      rack (~> 2.0)
-      redis (>= 4.5.0, < 5)
+    sidekiq (7.0.9)
+      concurrent-ruby (< 2)
+      connection_pool (>= 2.3.0)
+      rack (>= 2.2.4)
+      redis-client (>= 0.11.0)
     sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -453,7 +455,7 @@ DEPENDENCIES
   rubocop-rspec_rails
   searchkick
   shoulda-matchers
-  sidekiq (~> 6.5.8)
+  sidekiq (< 8)
   trix-rails
   tzinfo-data
   uuid (~> 2.3)

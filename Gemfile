@@ -86,7 +86,7 @@ gem 'administrate-field-active_storage', '~> 0.4.1'
 
 gem 'active_record_doctor', '~> 1.10'
 
-gem 'sidekiq', '~> 6.5.8'
+gem 'sidekiq', '< 8'
 
 gem 'uuid', '~> 2.3'
 
