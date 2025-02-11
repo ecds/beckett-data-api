@@ -3,7 +3,6 @@
 # rubocop:disable Metrics/BlockLength, Metrics/PerceivedComplexity, Metrics/MethodLength, Metrics/AbcSize, Metrics/CyclomaticComplexity
 
 require 'roo'
-require 'action_view'
 
 class LoadBigSamJob < ApplicationJob
   include ActionView::Helpers::SanitizeHelper
@@ -286,13 +285,9 @@ class LoadBigSamJob < ApplicationJob
 
   def self.get_entity(label: nil, type: nil, return_nil: false)
     logger.error("Get Entity with label: #{label} or type #{type}")
-    label = label.strip.gsub(/[\[!@%&?"\]]/, '').titleize
+    label = label.strip.gsub(/[\[!@%&?"\]]/, '').downcase
     entity = Entity.public_send(type)
-                   .where('label ILIKE ?', "%#{label}%")
-                   .or(
-                     Entity.public_send(type)
-                           .where('? = ANY (alternate_spellings)', label)
-                   ).first
+                   .find_by('lower(label) = ?', label)
 
     return nil if entity.nil? && return_nil
 
