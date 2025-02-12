@@ -9,6 +9,10 @@ class LoadBigSamJob < ApplicationJob
   include ActionView::Helpers::SanitizeHelper
   queue_as :default
 
+  def self.perform_later(*_args)
+    perform(*_args)
+  end
+
   def self.perform(*_args)
     FileUtils.touch('big_sam_loading')
     logger.debug 'starting big sam load'
@@ -25,6 +29,7 @@ class LoadBigSamJob < ApplicationJob
     end
 
     load_letters(rows)
+    Letter.find_each(&:save)
   end
 
   def self.load_letters(rows)
@@ -73,8 +78,11 @@ class LoadBigSamJob < ApplicationJob
 
       if row[:reg_place_written]
         begin
-          from = get_entity(label: row[:reg_place_written], type: 'place')
-          letter.origins << from
+          value = row[:reg_place_written]
+          unless value.strip.empty?
+            from = get_entity(label: value, type: 'place')
+            letter.origins << from
+          end
         rescue ActiveRecord::RecordInvalid,
                Elasticsearch::Transport::Transport::Errors::BadRequest,
                Elasticsearch::Transport::Transport::Errors::NotFound
@@ -83,8 +91,11 @@ class LoadBigSamJob < ApplicationJob
 
       if row[:reg_place_written_city]
         begin
-          place = get_entity(label: row[:reg_place_written_city], type: 'place')
-          letter.origins << place unless letter.origins.include?(place)
+          value = row[:reg_place_written_city]
+          unless value.strip.empty?
+            place = get_entity(label: value, type: 'place')
+            letter.origins << place unless letter.origins.include?(place)
+          end
         rescue ActiveRecord::RecordInvalid, Elasticsearch::Transport::Transport::Errors::BadRequest,
                Elasticsearch::Transport::Transport::Errors::NotFound
         end
@@ -92,8 +103,11 @@ class LoadBigSamJob < ApplicationJob
 
       if row[:reg_place_written_country]
         begin
-          place = get_entity(label: row[:reg_place_written_country], type: 'place')
-          letter.origins << place unless letter.origins.include?(place)
+          value = row[:reg_place_written_country]
+          unless value.strip.empty?
+            place = get_entity(label: value, type: 'place')
+            letter.origins << place unless letter.origins.include?(place)
+          end
         rescue ActiveRecord::RecordInvalid, Elasticsearch::Transport::Transport::Errors::BadRequest,
                Elasticsearch::Transport::Transport::Errors::NotFound
         end
@@ -101,8 +115,11 @@ class LoadBigSamJob < ApplicationJob
 
       if row[:reg_place_written_second_city]
         begin
-          place = get_entity(label: row[:reg_place_written_second_city], type: 'place')
-          letter.origins << place unless letter.origins.include?(place)
+          value = row[:reg_place_written_second_city]
+          unless value.strip.empty?
+            place = get_entity(label: value, type: 'place')
+            letter.origins << place unless letter.origins.include?(place)
+          end
         rescue ActiveRecord::RecordInvalid,
                Elasticsearch::Transport::Transport::Errors::BadRequest,
                Elasticsearch::Transport::Transport::Errors::NotFound
@@ -113,8 +130,10 @@ class LoadBigSamJob < ApplicationJob
         recipient = recipient.strip.titleize
         entity = Entity.find_by(label: recipient)
         entity = get_person(recipient) if entity.nil?
-        entity = get_entity(label: recipient, type: 'organization', return_nil: true) if entity.nil?
-        entity = Entity.create(label: recipient) if entity.nil?
+        if entity.nil? && !recipient.string.empty?
+          entity = get_entity(label: recipient, type: 'organization', return_nil: true)
+        end
+        entity = Entity.create(label: recipient) if entity.nil? && !recipient.strip.empty?
         LetterRecipient.find_or_create_by(letter:, entity:)
       rescue ActiveRecord::RecordInvalid,
              Elasticsearch::Transport::Transport::Errors::BadRequest,
@@ -124,8 +143,11 @@ class LoadBigSamJob < ApplicationJob
 
       if row[:reg_place_sent]
         begin
-          destination = get_entity(label: row[:reg_place_sent], type: 'place')
-          letter.destinations << destination
+          value = row[:reg_place_sent]
+          unless value.strip.empty?
+            destination = get_entity(label: value, type: 'place')
+            letter.destinations << destination
+          end
         rescue ActiveRecord::RecordInvalid, Elasticsearch::Transport::Transport::Errors::BadRequest,
                Elasticsearch::Transport::Transport::Errors::NotFound
         end
@@ -133,8 +155,11 @@ class LoadBigSamJob < ApplicationJob
 
       if row[:reg_placesent_city]
         begin
-          entity = get_entity(label: row[:reg_placesent_city], type: 'place')
-          letter.destinations << entity
+          value = row[:reg_placesent_city]
+          unless value.strip.empty?
+            entity = get_entity(label: value, type: 'place')
+            letter.destinations << entity
+          end
         rescue ActiveRecord::RecordInvalid, Elasticsearch::Transport::Transport::Errors::BadRequest,
                Elasticsearch::Transport::Transport::Errors::NotFound
         end
@@ -142,8 +167,11 @@ class LoadBigSamJob < ApplicationJob
 
       if row[:reg_placesent_country]
         begin
-          entity = get_entity(label: row[:reg_placesent_country], type: 'place')
-          letter.destinations << entity
+          value = row[:reg_placesent_country]
+          unless value.strip.empty?
+            entity = get_entity(label: value, type: 'place')
+            letter.destinations << entity
+          end
         rescue ActiveRecord::RecordInvalid, Elasticsearch::Transport::Transport::Errors::BadRequest,
                Elasticsearch::Transport::Transport::Errors::NotFound
         end
@@ -151,7 +179,7 @@ class LoadBigSamJob < ApplicationJob
 
       if row[:first_repository]
         repository = Repository.find_or_create_by(label: row[:first_repository])
-        logger.error("Firts Repository #{repository.label}")
+        logger.error("First Repository #{repository.label}")
         repository.format = row[:first_format]
         repository.american = row[:euro_or_am].downcase == 'american' if row[:euro_or_am]
         # repository.published = row[:first_public].downcase == 'public' if row[:first_public]
@@ -285,13 +313,18 @@ class LoadBigSamJob < ApplicationJob
   end
 
   def self.get_entity(label: nil, type: nil, return_nil: false)
-    logger.error("Get Entity with label: #{label} or type #{type}")
+    logger.error("Get Entity with label: #{label} of type #{type}")
     label = label.strip.gsub(/[\[!@%&?"\]]/, '').titleize
     entity = Entity.public_send(type).find_by('lower(label) = ?', label.downcase)
 
     return nil if entity.nil? && return_nil
 
-    entity = Entity.find_or_create_by(label:, e_type: type) if entity.nil?
+    if label.empty?
+      entity = Entity.find_or_create_by(label: 'unknown', e_type: 'generic')
+    elsif entity.nil?
+      entity = Entity.find_or_create_by(label:, e_type: type)
+    end
+
     logger.error("Found or created entity #{entity.label}")
     entity
   end
