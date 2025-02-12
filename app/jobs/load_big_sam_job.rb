@@ -9,10 +9,6 @@ class LoadBigSamJob < ApplicationJob
   include ActionView::Helpers::SanitizeHelper
   queue_as :default
 
-  def self.perform_later(*_args)
-    perform(*_args)
-  end
-
   def self.perform(*_args)
     FileUtils.touch('big_sam_loading')
     logger.debug 'starting big sam load'
@@ -325,7 +321,7 @@ class LoadBigSamJob < ApplicationJob
       entity = Entity.find_or_create_by(label:, e_type: type)
     end
 
-    logger.error("Found or created entity #{entity.label}")
+    logger.debug("Found or created entity #{entity.label}")
     entity
   end
 
