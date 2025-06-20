@@ -9,7 +9,7 @@ class LoadBigSamJob < ApplicationJob
   include ActionView::Helpers::SanitizeHelper
   queue_as :default
 
-  def self.perform(*_args)
+  def perform()
     FileUtils.touch('big_sam_loading')
     logger.debug 'starting big sam load'
 
