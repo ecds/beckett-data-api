@@ -298,7 +298,7 @@ class LoadBigSamJob < ApplicationJob
     logger.info { "#{Time.zone.now} ALL DONE" }
   end
 
-  def self.get_letter(row)
+  def get_letter(row)
     if row[:exclude] == 'y'
       letter = Letter.find_by(legacy_pk: row[:id])
       letter&.destroy
@@ -308,7 +308,7 @@ class LoadBigSamJob < ApplicationJob
     Letter.find_or_create_by(legacy_pk: row[:id])
   end
 
-  def self.get_entity(label: nil, type: nil, return_nil: false)
+  def get_entity(label: nil, type: nil, return_nil: false)
     logger.error("Get Entity with label: #{label} of type #{type}")
     label = label.strip.gsub(/[\[!@%&?"\]]/, '').titleize
     entity = Entity.public_send(type).find_by('lower(label) = ?', label.downcase)
@@ -325,7 +325,7 @@ class LoadBigSamJob < ApplicationJob
     entity
   end
 
-  def self.get_person(name)
+  def get_person(name)
     entity = nil
     names = Namae.parse(name).first
     if names&.given && names&.family
@@ -344,7 +344,7 @@ class LoadBigSamJob < ApplicationJob
     entity
   end
 
-  def self.fix_date(row)
+  def fix_date(row)
     row[:day] = '1' if row[:day] == '0'
     row[:month] = '1' if row[:month] == '0'
     row[:year] = '99' if row[:year] == '0'
@@ -356,7 +356,7 @@ class LoadBigSamJob < ApplicationJob
     row
   end
 
-  def self.mac_name?(names)
+  def mac_name?(names)
     return names if names.family.starts_with?('Mc') || names.given.starts_with?('Mac')
 
     if names.family.starts_with?('Mac ') || names.family.starts_with?('Mc ')
@@ -369,7 +369,7 @@ class LoadBigSamJob < ApplicationJob
     names
   end
 
-  def self.o?(names)
+  def o?(names)
     return names unless names.family.starts_with?("O'")
 
     names.family = names.family.split("'").map(&:titleize).join("'")
