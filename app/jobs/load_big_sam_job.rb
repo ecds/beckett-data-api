@@ -9,7 +9,7 @@ class LoadBigSamJob < ApplicationJob
   include ActionView::Helpers::SanitizeHelper
   queue_as :default
 
-  def perform()
+  def perform
     FileUtils.touch('big_sam_loading')
     logger.debug 'starting big sam load'
 
@@ -28,7 +28,7 @@ class LoadBigSamJob < ApplicationJob
     Letter.find_each(&:save)
   end
 
-  def self.load_letters(rows)
+  def load_letters(rows)
     rows.each do |row|
       letter = get_letter(row)
 
