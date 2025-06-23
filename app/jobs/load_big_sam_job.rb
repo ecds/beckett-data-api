@@ -332,7 +332,7 @@ class LoadBigSamJob < ApplicationJob
       names.family = "Van #{names.family}" if names.particle&.downcase == 'van'
       names.family = "von #{names.family}" if names.particle&.downcase == 'von'
       names = self.mac_name?(names)
-      names = o?(names)
+      names = self.o?(names)
       entity = Entity.find_by(first_name: names.given, last_name: names.family)
     end
 
@@ -369,7 +369,7 @@ class LoadBigSamJob < ApplicationJob
     names
   end
 
-  def o?(names)
+  def self.o?(names)
     return names unless names.family.starts_with?("O'")
 
     names.family = names.family.split("'").map(&:titleize).join("'")
