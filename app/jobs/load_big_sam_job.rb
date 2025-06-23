@@ -19,7 +19,7 @@ class LoadBigSamJob < ApplicationJob
     headers = sheet.row(1).map {|h| h.parameterize.underscore }
     rows = []
     sheet.each_with_index do |row, idx|
-      next if idx.zerself.o?
+      next if idx.zero?
 
       rows.push([headers, row].transpose.to_h.symbolize_keys)
     end
@@ -332,7 +332,7 @@ class LoadBigSamJob < ApplicationJob
       names.family = "Van #{names.family}" if names.particle&.downcase == 'van'
       names.family = "von #{names.family}" if names.particle&.downcase == 'von'
       names = self.mac_name?(names)
-      names = self.o?(names)
+      names = o?(names)
       entity = Entity.find_by(first_name: names.given, last_name: names.family)
     end
 
@@ -369,7 +369,7 @@ class LoadBigSamJob < ApplicationJob
     names
   end
 
-  def self.o?(names)
+  def o?(names)
     return names unless names.family.starts_with?("O'")
 
     names.family = names.family.split("'").map(&:titleize).join("'")
