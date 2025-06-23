@@ -19,18 +19,18 @@ class LoadBigSamJob < ApplicationJob
     headers = sheet.row(1).map {|h| h.parameterize.underscore }
     rows = []
     sheet.each_with_index do |row, idx|
-      next if idx.zero?
+      next if idx.zerself.o?
 
       rows.push([headers, row].transpose.to_h.symbolize_keys)
     end
 
-    load_letters(rows)
+    self.load_letters(rows)
     Letter.find_each(&:save)
   end
 
-  def load_letters(rows)
+  def self.load_letters(rows)
     rows.each do |row|
-      letter = get_letter(row)
+      letter = self.get_letter(row)
 
       next if letter.nil?
 
@@ -65,7 +65,7 @@ class LoadBigSamJob < ApplicationJob
       letter.languages.clear
 
       begin
-        row = fix_date(row)
+        row = self.fix_date(row)
         letter.date = (DateTime.new(row[:year], row[:month], row[:day]) if row[:year] != 0)
       rescue ArgumentError, NoMethodError
         # 'Bad date'
@@ -76,7 +76,7 @@ class LoadBigSamJob < ApplicationJob
         begin
           value = row[:reg_place_written]
           unless value.strip.empty?
-            from = get_entity(label: value, type: 'place')
+            from = self.get_entity(label: value, type: 'place')
             letter.origins << from
           end
         rescue ActiveRecord::RecordInvalid,
@@ -89,7 +89,7 @@ class LoadBigSamJob < ApplicationJob
         begin
           value = row[:reg_place_written_city]
           unless value.strip.empty?
-            place = get_entity(label: value, type: 'place')
+            place = self.get_entity(label: value, type: 'place')
             letter.origins << place unless letter.origins.include?(place)
           end
         rescue ActiveRecord::RecordInvalid, Elasticsearch::Transport::Transport::Errors::BadRequest,
@@ -101,7 +101,7 @@ class LoadBigSamJob < ApplicationJob
         begin
           value = row[:reg_place_written_country]
           unless value.strip.empty?
-            place = get_entity(label: value, type: 'place')
+            place = self.get_entity(label: value, type: 'place')
             letter.origins << place unless letter.origins.include?(place)
           end
         rescue ActiveRecord::RecordInvalid, Elasticsearch::Transport::Transport::Errors::BadRequest,
@@ -113,7 +113,7 @@ class LoadBigSamJob < ApplicationJob
         begin
           value = row[:reg_place_written_second_city]
           unless value.strip.empty?
-            place = get_entity(label: value, type: 'place')
+            place = self.get_entity(label: value, type: 'place')
             letter.origins << place unless letter.origins.include?(place)
           end
         rescue ActiveRecord::RecordInvalid,
@@ -125,9 +125,9 @@ class LoadBigSamJob < ApplicationJob
       row[:reg_recipient]&.split(';')&.each do |recipient|
         recipient = recipient.strip.titleize
         entity = Entity.find_by(label: recipient)
-        entity = get_person(recipient) if entity.nil?
+        entity = self.get_person(recipient) if entity.nil?
         if entity.nil? && !recipient.string.empty?
-          entity = get_entity(label: recipient, type: 'organization', return_nil: true)
+          entity = self.get_entity(label: recipient, type: 'organization', return_nil: true)
         end
         entity = Entity.create(label: recipient) if entity.nil? && !recipient.strip.empty?
         LetterRecipient.find_or_create_by(letter:, entity:)
@@ -141,7 +141,7 @@ class LoadBigSamJob < ApplicationJob
         begin
           value = row[:reg_place_sent]
           unless value.strip.empty?
-            destination = get_entity(label: value, type: 'place')
+            destination = self.get_entity(label: value, type: 'place')
             letter.destinations << destination
           end
         rescue ActiveRecord::RecordInvalid, Elasticsearch::Transport::Transport::Errors::BadRequest,
@@ -153,7 +153,7 @@ class LoadBigSamJob < ApplicationJob
         begin
           value = row[:reg_placesent_city]
           unless value.strip.empty?
-            entity = get_entity(label: value, type: 'place')
+            entity = self.get_entity(label: value, type: 'place')
             letter.destinations << entity
           end
         rescue ActiveRecord::RecordInvalid, Elasticsearch::Transport::Transport::Errors::BadRequest,
@@ -165,7 +165,7 @@ class LoadBigSamJob < ApplicationJob
         begin
           value = row[:reg_placesent_country]
           unless value.strip.empty?
-            entity = get_entity(label: value, type: 'place')
+            entity = self.get_entity(label: value, type: 'place')
             letter.destinations << entity
           end
         rescue ActiveRecord::RecordInvalid, Elasticsearch::Transport::Transport::Errors::BadRequest,
@@ -269,7 +269,7 @@ class LoadBigSamJob < ApplicationJob
       letter.letter_publisher = LetterPublisher.find_or_create_by(label: row[:placeprevpubl]) if row[:placeprevpubl]
 
       row[:sender]&.split(';')&.each do |sender|
-        entity = get_person(sender)
+        entity = self.get_person(sender)
         letter.senders << entity unless letter.senders.include?(entity)
       rescue ActiveRecord::RecordInvalid,
              Elasticsearch::Transport::Transport::Errors::BadRequest,
@@ -298,7 +298,7 @@ class LoadBigSamJob < ApplicationJob
     logger.info { "#{Time.zone.now} ALL DONE" }
   end
 
-  def get_letter(row)
+  def self.get_letter(row)
     if row[:exclude] == 'y'
       letter = Letter.find_by(legacy_pk: row[:id])
       letter&.destroy
@@ -308,7 +308,7 @@ class LoadBigSamJob < ApplicationJob
     Letter.find_or_create_by(legacy_pk: row[:id])
   end
 
-  def get_entity(label: nil, type: nil, return_nil: false)
+  def self.get_entity(label: nil, type: nil, return_nil: false)
     logger.error("Get Entity with label: #{label} of type #{type}")
     label = label.strip.gsub(/[\[!@%&?"\]]/, '').titleize
     entity = Entity.public_send(type).find_by('lower(label) = ?', label.downcase)
@@ -325,14 +325,14 @@ class LoadBigSamJob < ApplicationJob
     entity
   end
 
-  def get_person(name)
+  def self.get_person(name)
     entity = nil
     names = Namae.parse(name).first
     if names&.given && names&.family
       names.family = "Van #{names.family}" if names.particle&.downcase == 'van'
       names.family = "von #{names.family}" if names.particle&.downcase == 'von'
-      names = mac_name?(names)
-      names = o?(names)
+      names = self.mac_name?(names)
+      names = self.o?(names)
       entity = Entity.find_by(first_name: names.given, last_name: names.family)
     end
 
@@ -344,7 +344,7 @@ class LoadBigSamJob < ApplicationJob
     entity
   end
 
-  def fix_date(row)
+  def self.fix_date(row)
     row[:day] = '1' if row[:day] == '0'
     row[:month] = '1' if row[:month] == '0'
     row[:year] = '99' if row[:year] == '0'
@@ -356,7 +356,7 @@ class LoadBigSamJob < ApplicationJob
     row
   end
 
-  def mac_name?(names)
+  def self.mac_name?(names)
     return names if names.family.starts_with?('Mc') || names.given.starts_with?('Mac')
 
     if names.family.starts_with?('Mac ') || names.family.starts_with?('Mc ')
@@ -369,7 +369,7 @@ class LoadBigSamJob < ApplicationJob
     names
   end
 
-  def o?(names)
+  def self.o?(names)
     return names unless names.family.starts_with?("O'")
 
     names.family = names.family.split("'").map(&:titleize).join("'")
