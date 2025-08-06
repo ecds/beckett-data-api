@@ -5,7 +5,7 @@ default: &default
   username: <%= ENV['DB_USERNAME'] || 'user'%>
   host: <%= ENV['DB_HOSTNAME'] || 'localhost' %>
   schema_search_path: public
-  password: <%= ENV['DB_PASSWORD' || 'password'] %>
+  password: <%= ENV['DB_PASSWORD'] || 'password' %>
   database: <%= ENV['DB_NAME'] || 'beckett' %>
 
 test:

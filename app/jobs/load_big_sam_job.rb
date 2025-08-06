@@ -325,7 +325,7 @@ class LoadBigSamJob < ApplicationJob
     entity
   end
 
-  def get_person(name)
+  def self.get_person(name)
     entity = nil
     names = Namae.parse(name).first
     if names&.given && names&.family
@@ -356,7 +356,7 @@ class LoadBigSamJob < ApplicationJob
     row
   end
 
-  def mac_name?(names)
+  def self.mac_name?(names)
     return names if names.family.starts_with?('Mc') || names.given.starts_with?('Mac')
 
     if names.family.starts_with?('Mac ') || names.family.starts_with?('Mc ')
@@ -369,7 +369,7 @@ class LoadBigSamJob < ApplicationJob
     names
   end
 
-  def o?(names)
+  def self.o?(names)
     return names unless names.family.starts_with?("O'")
 
     names.family = names.family.split("'").map(&:titleize).join("'")
