@@ -1,10 +1,12 @@
 # frozen_string_literal: true
 
-class PublishedEntity < ApplicationRecord
+class PublishedEntity < Entity
   include EntityCommon
   include Searchable
 
   self.table_name = 'entities'
+
+  has_many :letters, -> { where(published: true).order('letters.date') }, through: :mentions, source: :letter
 
   def self.default_scope
     where(published: true)
