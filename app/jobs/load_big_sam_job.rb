@@ -1,18 +1,15 @@
-# frozen_string_literal: true
-
-# rubocop:disable Metrics/BlockLength, Metrics/PerceivedComplexity, Metrics/MethodLength, Metrics/AbcSize, Metrics/CyclomaticComplexity
-
 require 'roo'
+require 'action_view'
 
 class LoadBigSamJob < ApplicationJob
   include ActionView::Helpers::SanitizeHelper
   queue_as :default
 
-  def self.perform(*_args)
+  def perform(*args)
     FileUtils.touch('big_sam_loading')
-    logger.debug 'statring big sam load'
+    logger.debug 'starting big sam load'
 
-    big_sam = BigSam.last
+    big_sam = args.first
     x = Roo::Spreadsheet.open(big_sam.local_path, extension: :xlsx)
     sheet = x.sheet(0)
     headers = sheet.row(1).map {|h| h.parameterize.underscore }
@@ -24,9 +21,10 @@ class LoadBigSamJob < ApplicationJob
     end
 
     load_letters(rows)
+    Letter.find_each(&:save)
   end
 
-  def self.load_letters(rows)
+  def load_letters(rows)
     rows.each do |row|
       letter = get_letter(row)
 
@@ -72,8 +70,11 @@ class LoadBigSamJob < ApplicationJob
 
       if row[:reg_place_written]
         begin
-          from = get_entity(label: row[:reg_place_written], type: 'place')
-          letter.origins << from
+          value = row[:reg_place_written]
+          unless value.strip.empty?
+            from = get_entity(label: value, type: 'place')
+            letter.origins << from
+          end
         rescue ActiveRecord::RecordInvalid,
                Elasticsearch::Transport::Transport::Errors::BadRequest,
                Elasticsearch::Transport::Transport::Errors::NotFound
@@ -82,8 +83,11 @@ class LoadBigSamJob < ApplicationJob
 
       if row[:reg_place_written_city]
         begin
-          place = get_entity(label: row[:reg_place_written_city], type: 'place')
-          letter.origins << place unless letter.origins.include?(place)
+          value = row[:reg_place_written_city]
+          unless value.strip.empty?
+            place = get_entity(label: value, type: 'place')
+            letter.origins << place unless letter.origins.include?(place)
+          end
         rescue ActiveRecord::RecordInvalid, Elasticsearch::Transport::Transport::Errors::BadRequest,
                Elasticsearch::Transport::Transport::Errors::NotFound
         end
@@ -91,8 +95,11 @@ class LoadBigSamJob < ApplicationJob
 
       if row[:reg_place_written_country]
         begin
-          place = get_entity(label: row[:reg_place_written_country], type: 'place')
-          letter.origins << place unless letter.origins.include?(place)
+          value = row[:reg_place_written_country]
+          unless value.strip.empty?
+            place = get_entity(label: value, type: 'place')
+            letter.origins << place unless letter.origins.include?(place)
+          end
         rescue ActiveRecord::RecordInvalid, Elasticsearch::Transport::Transport::Errors::BadRequest,
                Elasticsearch::Transport::Transport::Errors::NotFound
         end
@@ -100,8 +107,11 @@ class LoadBigSamJob < ApplicationJob
 
       if row[:reg_place_written_second_city]
         begin
-          place = get_entity(label: row[:reg_place_written_second_city], type: 'place')
-          letter.origins << place unless letter.origins.include?(place)
+          value = row[:reg_place_written_second_city]
+          unless value.strip.empty?
+            place = get_entity(label: value, type: 'place')
+            letter.origins << place unless letter.origins.include?(place)
+          end
         rescue ActiveRecord::RecordInvalid,
                Elasticsearch::Transport::Transport::Errors::BadRequest,
                Elasticsearch::Transport::Transport::Errors::NotFound
@@ -112,8 +122,10 @@ class LoadBigSamJob < ApplicationJob
         recipient = recipient.strip.titleize
         entity = Entity.find_by(label: recipient)
         entity = get_person(recipient) if entity.nil?
-        entity = get_entity(label: recipient, type: 'organization', return_nil: true) if entity.nil?
-        entity = Entity.create(label: recipient) if entity.nil?
+        if entity.nil? && !recipient.string.empty?
+          entity = get_entity(label: recipient, type: 'organization', return_nil: true)
+        end
+        entity = Entity.create(label: recipient) if entity.nil? && !recipient.strip.empty?
         LetterRecipient.find_or_create_by(letter:, entity:)
       rescue ActiveRecord::RecordInvalid,
              Elasticsearch::Transport::Transport::Errors::BadRequest,
@@ -123,8 +135,11 @@ class LoadBigSamJob < ApplicationJob
 
       if row[:reg_place_sent]
         begin
-          destination = get_entity(label: row[:reg_place_sent], type: 'place')
-          letter.destinations << destination
+          value = row[:reg_place_sent]
+          unless value.strip.empty?
+            destination = get_entity(label: value, type: 'place')
+            letter.destinations << destination
+          end
         rescue ActiveRecord::RecordInvalid, Elasticsearch::Transport::Transport::Errors::BadRequest,
                Elasticsearch::Transport::Transport::Errors::NotFound
         end
@@ -132,8 +147,11 @@ class LoadBigSamJob < ApplicationJob
 
       if row[:reg_placesent_city]
         begin
-          entity = get_entity(label: row[:reg_placesent_city], type: 'place')
-          letter.destinations << entity
+          value = row[:reg_placesent_city]
+          unless value.strip.empty?
+            entity = get_entity(label: value, type: 'place')
+            letter.destinations << entity
+          end
         rescue ActiveRecord::RecordInvalid, Elasticsearch::Transport::Transport::Errors::BadRequest,
                Elasticsearch::Transport::Transport::Errors::NotFound
         end
@@ -141,25 +159,34 @@ class LoadBigSamJob < ApplicationJob
 
       if row[:reg_placesent_country]
         begin
-          entity = get_entity(label: row[:reg_placesent_country], type: 'place')
-          letter.destinations << entity
+          value = row[:reg_placesent_country]
+          unless value.strip.empty?
+            entity = get_entity(label: value, type: 'place')
+            letter.destinations << entity
+          end
         rescue ActiveRecord::RecordInvalid, Elasticsearch::Transport::Transport::Errors::BadRequest,
                Elasticsearch::Transport::Transport::Errors::NotFound
         end
       end
 
+      # rubocop:disable Style/SoleNestedConditional
       if row[:first_repository]
-        repository = Repository.find_or_create_by(label: row[:first_repository])
-        logger.error("Firts Repository #{repository.label}")
+        repository = Repository.find_or_initialize_by(label: row[:first_repository])
+
+        if repository.new_record?
+          repository.published = row[:first_public].downcase == 'public' if row[:first_public]
+        end
+
+        repository.save
+
         repository.format = row[:first_format]
         repository.american = row[:euro_or_am].downcase == 'american' if row[:euro_or_am]
-        # repository.published = row[:first_public].downcase == 'public' if row[:first_public]
         collection = nil
+
         begin
           if row[:first_collection]
             collection = Collection.find_or_create_by(label: row[:first_collection])
             collection.update(url: row[:collection_url])
-            # collection.save
 
             repository.collections << collection unless repository.collections.include?(collection)
 
@@ -168,7 +195,11 @@ class LoadBigSamJob < ApplicationJob
           end
           repository.save
 
-          letter_repository = LetterRepository.find_or_create_by(letter:, repository:)
+          letter_repository = LetterRepository.find_or_initialize_by(letter:, repository:)
+          if letter_repository.new_record?
+            # set pub/priv
+          end
+          letter_repository.save
           letter_repository.update(collection:, placement: 'premiere', format: row[:first_format])
 
           # letter.repositories << repo unless letter.repositories.include?(repo)
@@ -180,9 +211,15 @@ class LoadBigSamJob < ApplicationJob
       end
 
       if row[:second_repository]
-        repository = Repository.find_or_create_by(label: row[:second_repository])
+        repository = Repository.find_or_initialize_by(label: row[:second_repository])
+
+        if repository.new_record?
+          repository.published = row[:second_public].downcase == 'public' if row[:second_public]
+        end
+
         repository.format = row[:second_format]
-        # repository.published = row[:second_public].downcase == 'public' if row[:second_public]
+        repository.save
+
         collection = nil
         begin
           if row[:second_collection]
@@ -195,7 +232,11 @@ class LoadBigSamJob < ApplicationJob
 
           repository.save
 
-          letter_repository = LetterRepository.find_or_create_by(letter:, repository:)
+          letter_repository = LetterRepository.find_or_initialize_by(letter:, repository:)
+          if letter_repository.new_record?
+            # set pub/priv
+          end
+          letter_repository.save
           letter_repository.update(collection:, placement: 'deuxieme', format: row[:second_format])
           # letter.repositories << repo unless letter.repositories.include?(repo)
         rescue ActiveRecord::RecordInvalid,
@@ -206,9 +247,15 @@ class LoadBigSamJob < ApplicationJob
       end
 
       if row[:third_repository]
-        repository = Repository.find_or_create_by(label: row[:third_repository])
+        repository = Repository.find_or_initialize_by(label: row[:third_repository])
+
+        if repository.new_record?
+          repository.published = row[:third_public].downcase == 'public' if row[:third_public]
+        end
+
         repository.format = row[:third_format]
-        # repository.published = row[:third_public].downcase == 'public' if row[:third_public]
+        repository.save
+
         collection = nil
         begin
           if row[:second_collection]
@@ -221,7 +268,11 @@ class LoadBigSamJob < ApplicationJob
 
           repository.save
 
-          letter_repository = LetterRepository.find_or_create_by(letter:, repository:)
+          letter_repository = LetterRepository.find_or_initialize_by(letter:, repository:)
+          if letter_repository.new_record?
+            # set pub/priv
+          end
+          letter_repository.save
           letter_repository.update(collection:, placement: 'troisieme', format: row[:third_format])
           # letter.repositories << repo unless letter.repositories.include?(repo)
         rescue ActiveRecord::RecordInvalid,
@@ -230,6 +281,7 @@ class LoadBigSamJob < ApplicationJob
           # It happens
         end
       end
+      # rubocop:enable Style/SoleNestedConditional
 
       if row[:volumeinfo]
         letter.volume = 0
@@ -238,7 +290,7 @@ class LoadBigSamJob < ApplicationJob
         letter.volume = 3 if row[:volumeinfo].include?('1957-1965')
         letter.volume = 4 if row[:volumeinfo].include?('1966-1989')
         parts = row[:volumeinfo].split(',')
-        letter.volume_pages = strip_tags(parts[2].strip) if parts.length == 3
+        letter.volume_pages = ActionController::Base.helpers.strip_tags(parts[2].strip) if parts.length == 3
       end
 
       letter.letter_publisher = LetterPublisher.find_or_create_by(label: row[:placeprevpubl]) if row[:placeprevpubl]
@@ -273,7 +325,7 @@ class LoadBigSamJob < ApplicationJob
     logger.info { "#{Time.zone.now} ALL DONE" }
   end
 
-  def self.get_letter(row)
+  def get_letter(row)
     if row[:exclude] == 'y'
       letter = Letter.find_by(legacy_pk: row[:id])
       letter&.destroy
@@ -283,26 +335,30 @@ class LoadBigSamJob < ApplicationJob
     Letter.find_or_create_by(legacy_pk: row[:id])
   end
 
-  def self.get_entity(label: nil, type: nil, return_nil: false)
-    logger.error("Get Entity with label: #{label} or type #{type}")
-    label = label.strip.gsub(/[\[!@%&?"\]]/, '').downcase
-    entity = Entity.public_send(type)
-                   .find_by('lower(label) = ?', label)
+  def get_entity(label: nil, type: nil, return_nil: false)
+    logger.error("Get Entity with label: #{label} of type #{type}")
+    label = label.strip.gsub(/[\[!@%&?"\]]/, '').titleize
+    entity = Entity.public_send(type).find_by('lower(label) = ?', label.downcase)
 
     return nil if entity.nil? && return_nil
 
-    entity = Entity.find_or_create_by(label:, e_type: type) if entity.nil?
-    logger.error("Found or created entity #{entity.label}")
+    if label.empty?
+      entity = Entity.find_or_create_by(label: 'unknown', e_type: 'generic')
+    elsif entity.nil?
+      entity = Entity.find_or_create_by(label:, e_type: type)
+    end
+
+    logger.debug("Found or created entity #{entity.label}")
     entity
   end
 
-  def self.get_person(name)
+  def get_person(name)
     entity = nil
     names = Namae.parse(name).first
     if names&.given && names&.family
       names.family = "Van #{names.family}" if names.particle&.downcase == 'van'
       names.family = "von #{names.family}" if names.particle&.downcase == 'von'
-      names = mac_name?(names)
+      names = mc_or_mac?(names)
       names = o?(names)
       entity = Entity.find_by(first_name: names.given, last_name: names.family)
     end
@@ -315,7 +371,7 @@ class LoadBigSamJob < ApplicationJob
     entity
   end
 
-  def self.fix_date(row)
+  def fix_date(row)
     row[:day] = '1' if row[:day] == '0'
     row[:month] = '1' if row[:month] == '0'
     row[:year] = '99' if row[:year] == '0'
@@ -327,25 +383,36 @@ class LoadBigSamJob < ApplicationJob
     row
   end
 
-  def self.mac_name?(names)
-    return names if names.family.starts_with?('Mc') || names.given.starts_with?('Mac')
+  def mc_or_mac?(names)
+    return names if names.family.starts_with?(/Mc[A-Z]/) || names.family.starts_with?(/Mac[A-Z]/)
 
     if names.family.starts_with?('Mac ') || names.family.starts_with?('Mc ')
       names.family = names.family.split.map(&:titleize).join
-    elsif names.given.split.last.starts_with?('Mc') || names.given.split.last.starts_with?('Mac')
-      parts = names.given.split
-      names.family = "#{parts.pop}#{names.family}"
-      names.given = parts.join(' ')
+      return names
     end
+
+    if names.given.ends_with?(' Mac') || names.given.ends_with?(' Mc')
+      parts = names.given.split
+      names.family = "#{parts.last}#{names.family}"
+      names.given = parts.first
+      return names
+    end
+
+    names.family.gsub!(/M.*c\K.*/, &:titleize)
     names
   end
 
-  def self.o?(names)
-    return names unless names.family.starts_with?("O'")
+  def o?(names)
+    if names.family.starts_with?("O'")
+      names.family.gsub!(/'\K.*/, &:titleize)
+      return names
+    end
 
-    names.family = names.family.split("'").map(&:titleize).join("'")
+    if names.given.include?("O'")
+      names.given.gsub!(/'\K.*/, &:titleize)
+      return names
+    end
+
     names
   end
 end
-
-# rubocop:enable Metrics/BlockLength, Metrics/PerceivedComplexity, Metrics/MethodLength, Metrics/AbcSize, Metrics/CyclomaticComplexity
