@@ -118,7 +118,7 @@ class LetterDashboard < Administrate::BaseDashboard
     "Letter ##{letter.legacy_pk}"
   end
 
-  def permitted_attributes
+  def permitted_attributes(action = nil)
     super + [:start_date]
   end
 end
