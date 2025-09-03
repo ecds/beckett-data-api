@@ -1,7 +1,3 @@
-# frozen_string_literal: true
-
-# rubocop:disable Metrics/BlockLength, Metrics/PerceivedComplexity, Metrics/MethodLength, Metrics/AbcSize, Metrics/CyclomaticComplexity
-
 require 'roo'
 require 'action_view'
 
@@ -9,11 +5,11 @@ class LoadBigSamJob < ApplicationJob
   include ActionView::Helpers::SanitizeHelper
   queue_as :default
 
-  def perform
+  def perform(*args)
     FileUtils.touch('big_sam_loading')
     logger.debug 'starting big sam load'
 
-    big_sam = BigSam.last
+    big_sam = args.first
     x = Roo::Spreadsheet.open(big_sam.local_path, extension: :xlsx)
     sheet = x.sheet(0)
     headers = sheet.row(1).map {|h| h.parameterize.underscore }
@@ -173,18 +169,24 @@ class LoadBigSamJob < ApplicationJob
         end
       end
 
+      # rubocop:disable Style/SoleNestedConditional
       if row[:first_repository]
-        repository = Repository.find_or_create_by(label: row[:first_repository])
-        logger.error("First Repository #{repository.label}")
+        repository = Repository.find_or_initialize_by(label: row[:first_repository])
+
+        if repository.new_record?
+          repository.published = row[:first_public].downcase == 'public' if row[:first_public]
+        end
+
+        repository.save
+
         repository.format = row[:first_format]
         repository.american = row[:euro_or_am].downcase == 'american' if row[:euro_or_am]
-        # repository.published = row[:first_public].downcase == 'public' if row[:first_public]
         collection = nil
+
         begin
           if row[:first_collection]
             collection = Collection.find_or_create_by(label: row[:first_collection])
             collection.update(url: row[:collection_url])
-            # collection.save
 
             repository.collections << collection unless repository.collections.include?(collection)
 
@@ -193,7 +195,11 @@ class LoadBigSamJob < ApplicationJob
           end
           repository.save
 
-          letter_repository = LetterRepository.find_or_create_by(letter:, repository:)
+          letter_repository = LetterRepository.find_or_initialize_by(letter:, repository:)
+          if letter_repository.new_record?
+            # set pub/priv
+          end
+          letter_repository.save
           letter_repository.update(collection:, placement: 'premiere', format: row[:first_format])
 
           # letter.repositories << repo unless letter.repositories.include?(repo)
@@ -205,9 +211,15 @@ class LoadBigSamJob < ApplicationJob
       end
 
       if row[:second_repository]
-        repository = Repository.find_or_create_by(label: row[:second_repository])
+        repository = Repository.find_or_initialize_by(label: row[:second_repository])
+
+        if repository.new_record?
+          repository.published = row[:second_public].downcase == 'public' if row[:second_public]
+        end
+
         repository.format = row[:second_format]
-        # repository.published = row[:second_public].downcase == 'public' if row[:second_public]
+        repository.save
+
         collection = nil
         begin
           if row[:second_collection]
@@ -220,7 +232,11 @@ class LoadBigSamJob < ApplicationJob
 
           repository.save
 
-          letter_repository = LetterRepository.find_or_create_by(letter:, repository:)
+          letter_repository = LetterRepository.find_or_initialize_by(letter:, repository:)
+          if letter_repository.new_record?
+            # set pub/priv
+          end
+          letter_repository.save
           letter_repository.update(collection:, placement: 'deuxieme', format: row[:second_format])
           # letter.repositories << repo unless letter.repositories.include?(repo)
         rescue ActiveRecord::RecordInvalid,
@@ -231,9 +247,15 @@ class LoadBigSamJob < ApplicationJob
       end
 
       if row[:third_repository]
-        repository = Repository.find_or_create_by(label: row[:third_repository])
+        repository = Repository.find_or_initialize_by(label: row[:third_repository])
+
+        if repository.new_record?
+          repository.published = row[:third_public].downcase == 'public' if row[:third_public]
+        end
+
         repository.format = row[:third_format]
-        # repository.published = row[:third_public].downcase == 'public' if row[:third_public]
+        repository.save
+
         collection = nil
         begin
           if row[:second_collection]
@@ -246,7 +268,11 @@ class LoadBigSamJob < ApplicationJob
 
           repository.save
 
-          letter_repository = LetterRepository.find_or_create_by(letter:, repository:)
+          letter_repository = LetterRepository.find_or_initialize_by(letter:, repository:)
+          if letter_repository.new_record?
+            # set pub/priv
+          end
+          letter_repository.save
           letter_repository.update(collection:, placement: 'troisieme', format: row[:third_format])
           # letter.repositories << repo unless letter.repositories.include?(repo)
         rescue ActiveRecord::RecordInvalid,
@@ -255,6 +281,7 @@ class LoadBigSamJob < ApplicationJob
           # It happens
         end
       end
+      # rubocop:enable Style/SoleNestedConditional
 
       if row[:volumeinfo]
         letter.volume = 0
@@ -325,13 +352,13 @@ class LoadBigSamJob < ApplicationJob
     entity
   end
 
-  def self.get_person(name)
+  def get_person(name)
     entity = nil
     names = Namae.parse(name).first
     if names&.given && names&.family
       names.family = "Van #{names.family}" if names.particle&.downcase == 'van'
       names.family = "von #{names.family}" if names.particle&.downcase == 'von'
-      names = mac_name?(names)
+      names = mc_or_mac?(names)
       names = o?(names)
       entity = Entity.find_by(first_name: names.given, last_name: names.family)
     end
@@ -356,25 +383,36 @@ class LoadBigSamJob < ApplicationJob
     row
   end
 
-  def self.mac_name?(names)
-    return names if names.family.starts_with?('Mc') || names.given.starts_with?('Mac')
+  def mc_or_mac?(names)
+    return names if names.family.starts_with?(/Mc[A-Z]/) || names.family.starts_with?(/Mac[A-Z]/)
 
     if names.family.starts_with?('Mac ') || names.family.starts_with?('Mc ')
       names.family = names.family.split.map(&:titleize).join
-    elsif names.given.split.last.starts_with?('Mc') || names.given.split.last.starts_with?('Mac')
-      parts = names.given.split
-      names.family = "#{parts.pop}#{names.family}"
-      names.given = parts.join(' ')
+      return names
     end
+
+    if names.given.ends_with?(' Mac') || names.given.ends_with?(' Mc')
+      parts = names.given.split
+      names.family = "#{parts.last}#{names.family}"
+      names.given = parts.first
+      return names
+    end
+
+    names.family.gsub!(/M.*c\K.*/, &:titleize)
     names
   end
 
-  def self.o?(names)
-    return names unless names.family.starts_with?("O'")
+  def o?(names)
+    if names.family.starts_with?("O'")
+      names.family.gsub!(/'\K.*/, &:titleize)
+      return names
+    end
 
-    names.family = names.family.split("'").map(&:titleize).join("'")
+    if names.given.include?("O'")
+      names.given.gsub!(/'\K.*/, &:titleize)
+      return names
+    end
+
     names
   end
 end
-
-# rubocop:enable Metrics/BlockLength, Metrics/PerceivedComplexity, Metrics/MethodLength, Metrics/AbcSize, Metrics/CyclomaticComplexity

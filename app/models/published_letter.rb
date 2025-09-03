@@ -50,7 +50,7 @@ class PublishedLetter < ApplicationRecord
       origins_clean: origins.map(&:clean_label),
       destinations: destinations.map(&:label),
       destinations_clean: destinations.map(&:clean_label),
-      repositories: repositories.published.map(&:label),
+      repositories: repositories.select(&:published).map(&:label),
       languages: languages.map(&:label),
       published:,
       volume: volume.to_s
