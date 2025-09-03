@@ -31,4 +31,15 @@ RSpec.describe PublishedLetter do
     expect(letter.published).to be false
     expect(described_class.search('*', where: { label: letter.label })).to be_empty
   end
+
+  it 'prepares published letter for indexing' do
+    public_repo = create(:repository, published: true)
+    private_repo = create(:repository, published: false)
+    letter = create(:published_letter, repositories: [])
+    letter.repositories << [public_repo, private_repo]
+    letter.save
+    published_letter = described_class.find(letter.id)
+    expect(published_letter.repositories.count).to eq(2)
+    expect(published_letter.search_data[:repositories].count).to eq(1)
+  end
 end
