@@ -35,6 +35,7 @@
 BigSam*
 *.csv
 *.zip
+~*
 
 token.yaml
 lib/snippets.rb
