@@ -82,6 +82,8 @@ RSpec.configure do |config|
 
   config.include RequestSpecHelper
 
+  config.include ActionDispatch::TestProcess::FixtureFile
+
   config.before(:suite) do
     Entity.reindex
     Letter.reindex
