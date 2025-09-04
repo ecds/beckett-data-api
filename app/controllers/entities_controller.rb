@@ -43,7 +43,7 @@ class EntitiesController < ApplicationController
 
   # GET /entities/autocomplete?search=*
   def autocomplete
-    query = strip_tags params[:searcn]
+    query = strip_tags params[:search]
     render json: Entity.search(
       query,
       fields: [:clean_label],
