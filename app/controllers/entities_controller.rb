@@ -36,14 +36,14 @@ class EntitiesController < ApplicationController
     @entity = if request.host.include?('beckettapi')
                 Entity.find(params[:id])
               else
-                PublishedEntity.find(params[:id])
+                Entity.published.find(params[:id])
               end
     render
   end
 
   # GET /entities/autocomplete?search=*
   def autocomplete
-    query = strip_tags params[:searcn]
+    query = strip_tags params[:search]
     render json: Entity.search(
       query,
       fields: [:clean_label],

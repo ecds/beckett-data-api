@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class PublishedEntity < Entity
+class PublishedEntity < ApplicationRecord
   include EntityCommon
   include Searchable
 
