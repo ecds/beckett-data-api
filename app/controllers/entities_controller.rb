@@ -32,15 +32,6 @@ class EntitiesController < ApplicationController
     render
   end
 
-  def show
-    @entity = if request.host.include?('beckettapi')
-                Entity.find(params[:id])
-              else
-                Entity.published.find(params[:id])
-              end
-    render
-  end
-
   # GET /entities/autocomplete?search=*
   def autocomplete
     query = strip_tags params[:search]
@@ -84,9 +75,12 @@ class EntitiesController < ApplicationController
   end
 
   def set_entity
-    entity = Entity.find(params[:id])
-    entity.save if ENV['RAILS_ENV'] == 'test'
-    @entity = entity
+    @entity = if request.headers.key?('HTTP_REFERER') && request.headers['HTTP_REFERER'].include?('beckettapi')
+                Entity.find(params[:id])
+              else
+                Entity.published.find(params[:id])
+              end
+    @entity.save if ENV['RAILS_ENV'] == 'test'
   end
 
   def set_filters

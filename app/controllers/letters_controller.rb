@@ -30,6 +30,14 @@ class LettersController < ApplicationController
     render
   end
 
+  def show
+    @letter = if request.headers.key?('HTTP_REFERER') && request.headers['HTTP_REFERER'].include?('beckettapi')
+                Letter.find(params[:id])
+              else
+                Letter.published.find(params[:id])
+              end
+  end
+
   private
 
   def set_letter
