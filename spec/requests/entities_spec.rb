@@ -78,6 +78,7 @@ RSpec.describe '/entities' do
   describe 'GET /show' do
     it 'renders a successful response' do
       entity = create(:entity, :published)
+      entity.save
       get entity_url(entity), as: :json
       expect(response).to be_successful
     end
@@ -85,7 +86,7 @@ RSpec.describe '/entities' do
     it 'renders unpublished when requested from beckettapi' do
       entity = create(:entity)
       expect(entity.published).to be(false)
-      get '/entities', params: { id: entity.id }, headers: { HTTP_REFERER: 'beckettapi.ecdsdev.org' }
+      get(entity_url(entity), headers: { HTTP_REFERER: 'beckettapi.ecdsdev.org' })
       expect(response).to be_successful
     end
 
@@ -93,7 +94,7 @@ RSpec.describe '/entities' do
       entity = create(:entity)
       expect(entity.published).to be(false)
       get entity_url(entity)
-      # The recomendation causes the test to fail.
+      # The recommendation causes the test to fail.
       # rubocop:disable RSpecRails/HaveHttpStatus
       expect(response.status).to eq 404
       # rubocop:enable RSpecRails/HaveHttpStatus
@@ -111,6 +112,8 @@ RSpec.describe '/entities' do
         rand(0..3).times { mention.tag_list.add(Faker::Hipster.word) }
         mention.save
       end
+      Letter.find_each(&:save)
+      entity.save
       expect(entity.letters.count).to eq(11)
       get "/entities/#{entity.id}/letters?relation=mention&start_date=1963-01-01"
       expect(json[:letters].map {|letter| Date.parse(letter[:date]) }.min).to be >= DateTime.new(1963, 1, 1)
@@ -123,6 +126,8 @@ RSpec.describe '/entities' do
       10.times { create(:published_letter, date: Faker::Date.in_date_period(year: rand(1972..1975))) }
       entity = create(:place_entity, letters_sent_to: Letter.all)
       expect(entity.letters_sent_to.count).to eq(10)
+      entity.save
+      expect(entity.published).to be(true)
       get "/entities/#{entity.id}/letters?relation=destination&end_date=1974-06-01"
       expect(json[:letters].map {|letter| Date.parse(letter[:date]) }.min).to be >= DateTime.new(1972, 1, 1)
       expect(json[:letters].map {|letter| Date.parse(letter[:date]) }.min).to be <= DateTime.new(1974, 6, 1)
@@ -133,6 +138,8 @@ RSpec.describe '/entities' do
       10.times { create(:published_letter, date: Faker::Date.in_date_period(year: rand(1971..1975))) }
       entity = create(:person_entity, letters_sent: Letter.all)
       expect(entity.letters_sent.count).to eq(10)
+      Letter.find_each(&:save)
+      entity.save
       get "/entities/#{entity.id}/letters?relation=sent&start_date=1972-01-01&end_date=1974-06-01"
       expect(json[:letters].map {|letter| Date.parse(letter[:date]) }.min).to be >= DateTime.new(1972, 1, 1)
       expect(json[:letters].map {|letter| Date.parse(letter[:date]) }.min).to be <= DateTime.new(1974, 6, 1)
@@ -143,6 +150,8 @@ RSpec.describe '/entities' do
       create_list(:published_letter, 10)
       entity = create(:place_entity, letters_sent_from: Letter.all)
       expect(entity.letters_sent_from.count).to eq(10)
+      Letter.find_each(&:save)
+      entity.save
       get "/entities/#{entity.id}/letters?relation=origin&per_page=4&page=2"
       expect(json[:total_pages]).to eq(3)
       expect(json[:letters].count).to eq(4)

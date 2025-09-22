@@ -138,22 +138,46 @@ RSpec.describe '/letters' do
     it 'contains all three repositories' do
       premiere = create(:letter_repository)
       letter = premiere.letter
+      letter.repositories << premiere.repository
+      letter.save
       create(:letter_repository, letter:, repository: create(:published_repository), placement: 'deuxieme')
       create(:letter_repository, letter:, repository: create(:published_repository), placement: 'troisieme')
       get letter_url(letter), as: :json
-      expectd_keys = %w[repository format collection repository_information second_repository third_repository]
-      expect(json[:repositories].keys).to eq(expectd_keys)
+      expected_keys = %w[repository format collection repository_information second_repository third_repository]
+      expect(json[:repositories].keys).to eq(expected_keys)
       expect(response).to be_successful
     end
 
     it 'does not contain non-public repository' do
       premiere = create(:letter_repository)
+      expect(premiere.repository.published).to be(true)
       letter = premiere.letter
+      letter.repositories << premiere.repository
       create(:letter_repository, letter:, repository: create(:repository, published: false), placement: 'deuxieme')
+      letter.save
       get letter_url(letter), as: :json
-      expectd_keys = %w[repository format collection repository_information]
-      expect(json[:repositories].keys).to eq(expectd_keys)
+      expect(letter.published).to be(true)
+      expect(letter.repositories.count).to eq(2)
+      expected_keys = %w[repository format collection repository_information]
+      expect(json[:repositories].keys).to eq(expected_keys)
       expect(response).to be_successful
+    end
+
+    it 'renders unpublished when requested from beckettapi' do
+      letter = create(:letter)
+      expect(letter.published).to be(false)
+      get(letter_url(letter), headers: { HTTP_REFERER: 'beckettapi.ecdsdev.org' })
+      expect(response).to be_successful
+    end
+
+    it 'return 404 when unpublished and not requested from beckettapi' do
+      letter = create(:letter)
+      expect(letter.published).to be(false)
+      get letter_url(letter)
+      # The recommendation causes the test to fail.
+      # rubocop:disable RSpecRails/HaveHttpStatus
+      expect(response.status).to eq 404
+      # rubocop:enable RSpecRails/HaveHttpStatus
     end
   end
 
