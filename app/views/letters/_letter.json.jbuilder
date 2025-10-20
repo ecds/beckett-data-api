@@ -79,6 +79,8 @@ json.repositories do
   end
 end
 
+json.set! 'previously_published', letter.letter_publisher.label if letter.letter_publisher.present?
+
 json.set! 'publication_information', letter.publication_information if letter.publication_information.present?
 
 json.recipients do
