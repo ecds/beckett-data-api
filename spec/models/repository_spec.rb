@@ -5,7 +5,7 @@ require 'rails_helper'
 RSpec.describe Repository do
   it 'updates entity and letter published status' do
     repo = create(:repository, published: false)
-    create_list(:letter, 3, repositories: [repo])
+    create_list(:letter, 3, repositories: [repo], letter_publisher: nil)
     expect(repo.letters.count).to eq(3)
     expect(repo.letters.map(&:published)).to all(be false)
     repo.letters.each do |letter|

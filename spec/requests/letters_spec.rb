@@ -16,10 +16,10 @@ RSpec.describe '/letters' do
       expect(response).to be_successful
     end
 
-    it 'renders only plblically avaliable letters' do
+    it 'renders only publicly available letters' do
       create_list(:published_letter, 4)
-      create_list(:letter, 3, repositories: create_list(:repository, 1, published: false))
-      create_list(:new_letter, 5, repositories: create_list(:repository, 1, published: false))
+      create_list(:letter, 3, repositories: create_list(:repository, 1, published: false), letter_publisher: nil)
+      create_list(:new_letter, 5, repositories: create_list(:repository, 1, published: false), letter_publisher: nil)
       get "#{letters_url}.json", headers: valid_headers, as: :json
       expect(Letter.published.count).to eq(4)
       expect(json[:letters].count).to eq(4)
@@ -163,15 +163,22 @@ RSpec.describe '/letters' do
       expect(response).to be_successful
     end
 
+    it 'does not include private repositories when letter previously published' do
+      letter = create(:letter, repositories: [create(:repository, published: false)])
+      expect(letter.published).to be(true)
+      get letter_url(letter), as: :json
+      expect(json[:repositories]).to be_nil
+    end
+
     it 'renders unpublished when requested from beckettapi' do
-      letter = create(:letter)
+      letter = create(:letter, letter_publisher: nil)
       expect(letter.published).to be(false)
       get(letter_url(letter), headers: { HTTP_REFERER: 'beckettapi.ecdsdev.org' })
       expect(response).to be_successful
     end
 
     it 'return 404 when unpublished and not requested from beckettapi' do
-      letter = create(:letter)
+      letter = create(:letter, letter_publisher: nil)
       expect(letter.published).to be(false)
       get letter_url(letter)
       # The recommendation causes the test to fail.

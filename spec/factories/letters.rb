@@ -46,6 +46,7 @@ FactoryBot.define do
 
     factory :unpublished_letter do
       repositories { create_list(:repository, 1, published: false) }
+      letter_publisher { nil }
     end
 
     factory :new_letter do

@@ -9,7 +9,7 @@ RSpec.describe Entity do
   include ActionView::Helpers::SanitizeHelper
   include ActiveSupport::Inflector
 
-  it 'creates a hash of pubically avaliable letters where entity is mentioned' do
+  it 'creates a hash of publicly avaliable letters where entity is mentioned' do
     entity = create(:place_entity)
 
     create_list(:letter, 5)
@@ -19,7 +19,8 @@ RSpec.describe Entity do
       4,
       date: Faker::Date.between(from: '1900-1-1', to: '1930-1-1'),
       repositories: create_list(:repository, 1, published: true),
-      entities: [entity]
+      entities: [entity],
+      letter_publisher: nil
     )
 
     create_list(
@@ -28,7 +29,8 @@ RSpec.describe Entity do
       date: Faker::Date.between(from: '1957-1-1', to: '1965-12-31'),
       repositories: create_list(:repository, 1, published: true),
       destinations: [entity],
-      recipients: create_list(:person_entity, 2)
+      recipients: create_list(:person_entity, 2),
+      letter_publisher: nil
     )
 
     create_list(
@@ -37,7 +39,8 @@ RSpec.describe Entity do
       date: Faker::Date.between(from: '1957-1-1', to: '1965-12-31'),
       repositories: create_list(:repository, 1, published: true),
       origins: [entity],
-      recipients: create_list(:person_entity, 2)
+      recipients: create_list(:person_entity, 2),
+      letter_publisher: nil
     )
 
     create_list(
@@ -46,7 +49,8 @@ RSpec.describe Entity do
       date: Faker::Date.between(from: '1957-1-1', to: '1965-12-31'),
       repositories: create_list(:repository, 1, published: true),
       entities: [entity],
-      recipients: create_list(:person_entity, 2)
+      recipients: create_list(:person_entity, 2),
+      letter_publisher: nil
     )
 
     create_list(
@@ -54,7 +58,8 @@ RSpec.describe Entity do
       2,
       date: Faker::Date.between(from: '1957-1-1', to: '1965-12-31'),
       repositories: create_list(:repository, 1, published: false),
-      entities: [entity]
+      entities: [entity],
+      letter_publisher: nil
     )
 
     create_list(
@@ -63,7 +68,8 @@ RSpec.describe Entity do
       date: Faker::Date.between(from: '1966-1-1', to: '2000-12-31'),
       repositories: create_list(:repository, 1, published: false),
       destinations: [entity],
-      recipients: create_list(:person_entity, 2)
+      recipients: create_list(:person_entity, 2),
+      letter_publisher: nil
     )
 
     expect(entity.all_letters.count).to be < Letter.count

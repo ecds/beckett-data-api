@@ -28,6 +28,7 @@ RSpec.describe PublishedEntity do
     entity.save!
     expect(described_class.search('*', where: { label: entity.label }).first.id).to eq(entity.id)
     entity.letters.first.repositories.first.update(published: false)
+    entity.letters.first.update(letter_publisher: nil)
     entity.letters.first.save
     entity.save!
     entity.reload

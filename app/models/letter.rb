@@ -62,7 +62,7 @@ class Letter < ApplicationRecord
   private
 
   def check_published
-    self.published = repositories.any?(&:published)
+    self.published = repositories.any?(&:published) || letter_publisher.present?
   end
 
   def reindex_published
