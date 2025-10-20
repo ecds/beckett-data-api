@@ -37,7 +37,7 @@ RSpec.describe LoadBigSamJob do
     big_sam_file = fixture_file_upload('big_sam.xlsx')
     create(:big_sam, big_sam: big_sam_file)
     Letter.find_each(&:save)
-    expect(Letter.published.count).to eq(18)
+    expect(Letter.published.count).to eq(19)
     expect(Repository.count).to eq(7)
     expect(Repository.published.count).to eq(4)
   end

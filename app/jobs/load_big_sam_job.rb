@@ -6,7 +6,7 @@ class LoadBigSamJob < ApplicationJob
   queue_as :default
 
   def perform(*args)
-    FileUtils.touch('big_sam_loading')
+    FileUtils.touch('big_sam_loading') unless ENV['RAILS_ENV'] == 'test'
     logger.debug 'starting big sam load'
 
     big_sam = args.first

@@ -6,7 +6,7 @@ require 'action_view'
 RSpec.describe PublishedLetter do
   it 'only returns published entities' do
     create_list(:published_letter, 5)
-    create_list(:letter, 3, published: false)
+    create_list(:letter, 3, published: false, letter_publisher: nil)
 
     expect(described_class.all.map(&:published)).to all(be true)
     expect(described_class.count).to be < Letter.count
@@ -23,7 +23,7 @@ RSpec.describe PublishedLetter do
   end
 
   it 'updates index when letter is unpublished' do
-    letter = create(:published_letter)
+    letter = create(:published_letter, letter_publisher: nil)
     expect(described_class.search('*', where: { label: letter.label }).first.id).to eq(letter.id)
     letter.repositories.first.update(published: false)
     letter.save!

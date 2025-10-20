@@ -8,14 +8,32 @@ RSpec.describe Letter do
       :letter,
       4,
       date: Faker::Date.between(from: '1900-1-1', to: '1930-1-1'),
-      repositories: create_list(:repository, 1, published: true)
+      repositories: create_list(:repository, 1, published: true),
+      letter_publisher: nil
     )
 
     create_list(
       :letter,
       6,
       date: Faker::Date.between(from: '1957-1-1', to: '1965-12-31'),
-      repositories: create_list(:repository, 1, published: true)
+      repositories: create_list(:repository, 1, published: true),
+      letter_publisher: nil
+    )
+
+    create_list(
+      :letter,
+      2,
+      date: Faker::Date.between(from: '1957-1-1', to: '1965-12-31'),
+      repositories: create_list(:repository, 1, published: false),
+      letter_publisher: nil
+    )
+
+    create_list(
+      :letter,
+      3,
+      date: Faker::Date.between(from: '1966-1-1', to: '2000-12-31'),
+      repositories: create_list(:repository, 1, published: false),
+      letter_publisher: nil
     )
 
     create_list(
@@ -25,15 +43,8 @@ RSpec.describe Letter do
       repositories: create_list(:repository, 1, published: false)
     )
 
-    create_list(
-      :letter,
-      3,
-      date: Faker::Date.between(from: '1966-1-1', to: '2000-12-31'),
-      repositories: create_list(:repository, 1, published: false)
-    )
-
-    expect(described_class.count).to eq(15)
-    expect(described_class.published.count).to eq(10)
+    expect(described_class.count).to eq(17)
+    expect(described_class.published.count).to eq(12)
   end
 
   it 'has distinct mentions' do
