@@ -168,7 +168,7 @@ RSpec.describe '/letters' do
       expect(letter.published).to be(true)
       get letter_url(letter), as: :json
       expect(json[:repositories]).to be_nil
-      expect(json[:metadata][:previously_published]).to eq(letter.letter_publisher.label)
+      expect(json[:previously_published]).to eq(letter.letter_publisher.label)
     end
 
     it 'renders unpublished when requested from beckettapi' do

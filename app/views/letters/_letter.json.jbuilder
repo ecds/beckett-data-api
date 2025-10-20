@@ -52,7 +52,6 @@ json.metadata do
   json.set! 'postcard_image', letter.postcard_image
   json.set! 'leaves_and_sides', [letter.leaves, letter.sides].join(', ')
   json.set! 'recipient', letter.recipient_list
-  json.set! 'previously_published', letter.letter_publisher&.label
 end
 
 json.repositories do
@@ -79,6 +78,8 @@ json.repositories do
     json.set! 'third_repository', third_repo.compact.join(', ')
   end
 end
+
+json.set! 'previously_published', letter.letter_publisher.label if letter.letter_publisher.present?
 
 json.set! 'publication_information', letter.publication_information if letter.publication_information.present?
 
