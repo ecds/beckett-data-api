@@ -52,6 +52,7 @@ json.metadata do
   json.set! 'postcard_image', letter.postcard_image
   json.set! 'leaves_and_sides', [letter.leaves, letter.sides].join(', ')
   json.set! 'recipient', letter.recipient_list
+  json.set! 'previously_published', letter.letter_publisher&.label
 end
 
 json.repositories do
