@@ -384,9 +384,9 @@ class LoadBigSamJob < ApplicationJob
   end
 
   def mc_or_mac?(names)
-    return names if names.family.starts_with?(/Mc[A-Z]/) || names.family.starts_with?(/Mac[A-Z]/)
+    return names if names.family.start_with?(/Mc[A-Z]/) || names.family.start_with?(/Mac[A-Z]/)
 
-    if names.family.starts_with?('Mac ') || names.family.starts_with?('Mc ')
+    if names.family.start_with?('Mac ') || names.family.start_with?('Mc ')
       names.family = names.family.split.map(&:titleize).join
       return names
     end
@@ -397,6 +397,8 @@ class LoadBigSamJob < ApplicationJob
       names.given = parts.first
       return names
     end
+
+    return names unless names.family.downcase.start_with?('mac') || names.family.downcase.start_with?('mc')
 
     names.family.gsub!(/M.*c\K.*/, &:titleize)
     names

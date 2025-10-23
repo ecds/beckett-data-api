@@ -64,4 +64,11 @@ RSpec.describe LoadBigSamJob do
     names = bs.mc_or_mac?(macintosh)
     expect(names.family).to eq('MacIntosh')
   end
+
+  it 'handles M names that also include a c' do
+    bs = described_class.new
+    marcuse = Namae.parse('Herbert Marcuse').first
+    names = bs.mc_or_mac?(marcuse)
+    expect(names.family).to eq('Marcuse')
+  end
 end
