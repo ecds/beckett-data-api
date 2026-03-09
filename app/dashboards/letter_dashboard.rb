@@ -119,6 +119,6 @@ class LetterDashboard < Administrate::BaseDashboard
   end
 
   def permitted_attributes(action = nil)
-    super + [:start_date]
+    super + %i[start_date content]
   end
 end
