@@ -68,7 +68,7 @@ class Letter < ApplicationRecord
   def reindex_published
     if published
       published_letter = PublishedLetter.find(id)
-      published_letter&.reindex
+      Searchkick.callbacks(:inline) { published_letter&.reindex }
       PublishedLetter.reindex if ENV['RAILS_ENV'] == 'test'
     else
       remove_published
