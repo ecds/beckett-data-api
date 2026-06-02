@@ -93,3 +93,5 @@ gem 'uuid', '~> 2.3'
 gem 'addressable', '~> 2.8'
 
 gem 'importmap-rails', '~> 2.0'
+
+gem 'sidekiq-cron', '~>2.4.0'
