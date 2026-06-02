@@ -48,7 +48,7 @@ ActiveStorage::Current.url_options = { host: ENV.fetch('RAILS_HOST', 'localhost:
 
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
-  config.fixture_paths = ["#{Rails.root}/spec/fixtures"]
+  config.fixture_paths = [Rails.root.join('spec', 'fixtures'), Rails.root.join('spec', 'fixtures', 'files')]
 
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false
