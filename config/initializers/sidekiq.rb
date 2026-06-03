@@ -6,9 +6,9 @@ unless Rails.env.test?
     config.logger.level = Logger::ERROR
 
     Sidekiq::Cron::Job.load_from_hash(
-      'resave_all_widgets' => {
+      'resave_all_letters' => {
         'cron' => '0 2 * * *', # 2am UTC daily
-        'class' => 'ResaveAllWidgetsWorker',
+        'class' => 'ResaveAllLettersWorker',
         'timezone' => 'America/New_York'
       }
     )
