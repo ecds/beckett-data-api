@@ -89,6 +89,7 @@ class LetterDashboard < Administrate::BaseDashboard
     notes
     letter_owner
     letter_publisher
+    published
   ].freeze
 
   # FORM_ATTRIBUTES
