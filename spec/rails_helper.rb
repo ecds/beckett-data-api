@@ -44,9 +44,13 @@ end
 Rails.root.glob('spec/support/**/*.rb').each {|f| require f }
 
 ENV['RAILS_HOST'] = 'example.com'
-ActiveStorage::Current.url_options = { host: ENV.fetch('RAILS_HOST', 'localhost:3000') }
 
 RSpec.configure do |config|
+  # ActiveStorage::Current is a CurrentAttributes subclass — its values are
+  # reset by ActiveSupport::Executor after each inline job. Setting url_options
+  # in before(:each) ensures it's present whenever a spec calls .url.
+  config.before { ActiveStorage::Current.url_options = { host: ENV['RAILS_HOST'] } }
+
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_paths = [Rails.root.join('spec', 'fixtures'), Rails.root.join('spec', 'fixtures', 'files')]
 

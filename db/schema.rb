@@ -140,17 +140,6 @@ ActiveRecord::Schema[7.2].define(version: 2023_08_10_131744) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "images", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.text "alt_text"
-    t.text "caption"
-    t.text "attribution"
-    t.text "link"
-    t.uuid "entity_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["entity_id"], name: "index_images_on_entity_id"
-  end
-
   create_table "languages", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "label"
     t.string "code"

@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class Medium < ApplicationRecord
-  ActiveStorage::Current.url_options = { host: ENV.fetch('RAILS_HOST', 'localhost:3000') }
   before_save :populate_filename
 
   belongs_to :entity

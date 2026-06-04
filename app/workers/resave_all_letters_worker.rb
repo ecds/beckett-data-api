@@ -7,5 +7,15 @@ class ResaveAllLettersWorker
     rescue StandardError => e
       Rails.logger.error("Failed to resave Letter ##{record.id}: #{e.message}")
     end
+    PublishedLetter.find_each do |record|
+      record.reindex
+    rescue StandardError => e
+      Rails.logger.error("Failed to reindex Letter ##{record.id}: #{e.message}")
+    end
+    PublishedEntity.find_each do |record|
+      record.reindex
+    rescue StandardError => e
+      Rails.logger.error("Failed to reindex Entity ##{record.id}: #{e.message}")
+    end
   end
 end
