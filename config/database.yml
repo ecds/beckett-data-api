@@ -11,8 +11,8 @@ default: &default
 test:
   <<: *default
   database: <%= ENV['TEST_DB_NAME'] || 'beckett_test' %>
-  username: <%= Rails.application.credentials.dig(:test, :db_user) %>
-  password: <%= Rails.application.credentials.dig(:test, :db_pw) %>
+  username: <%= ENV['DB_NAME'] || Rails.application.credentials.dig(:test, :db_user) %>
+  password: <%= ENV['DB_PASSWORD'] || Rails.application.credentials.dig(:test, :db_pw) %>
 
 development:
   <<: *default
