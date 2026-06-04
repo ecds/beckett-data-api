@@ -14,7 +14,7 @@ gem 'csv'
 gem 'pg', '~> 1.1'
 
 # Elasticseach for search
-gem 'elasticsearch', '~> 7.17.1'
+gem 'elasticsearch', '~> 8'
 gem 'searchkick'
 
 # Use the Puma web server [https://github.com/puma/puma]

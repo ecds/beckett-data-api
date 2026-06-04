@@ -78,7 +78,7 @@ class LettersController < ApplicationController
       date: {
         date_histogram: {
           field: :date,
-          interval: :year
+          calendar_interval: :year
         }
       },
       languages: {},

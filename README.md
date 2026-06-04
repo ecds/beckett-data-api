@@ -10,43 +10,41 @@
 
 ## System dependencies
 
-* Elasticsearch
-* PostgreSQL
+- Elasticsearch
+- PostgreSQL
 
 ## Database creation
 
-~~~bash
+```bash
 rake db:create && rake db:migrate
-~~~
+```
 
 ## Update Elasticsearch Indices
 
-~~~bash
+```bash
 rake searchkick:reindex:all
-~~~
+```
 
 ## Run the test suite
 
-~~~bash
+```bash
 bundle exec rspec spec/
-~~~
+```
 
 ## Build Documentation
 
-~~~bash
+```bash
 rake docs:generate
-~~~
+```
 
 ## Background Jobs
 
 Restart Active Jobs for indexing and Big Sam update.
 
-~~~bash
+```bash
 sudo service sidekiq-1 restart && sudo service sidekiq-2 restart
-~~~
+```
 
 ## Deployment Instructions
 
-~~~bash
-bundle exec cap production deploy
-~~~
+Handled via GitHub Actions.

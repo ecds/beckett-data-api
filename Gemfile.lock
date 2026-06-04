@@ -117,14 +117,14 @@ GEM
       reline (>= 0.3.8)
     diff-lcs (1.5.1)
     drb (2.2.1)
-    elasticsearch (7.17.11)
-      elasticsearch-api (= 7.17.11)
-      elasticsearch-transport (= 7.17.11)
-    elasticsearch-api (7.17.11)
+    elastic-transport (8.5.2)
+      faraday (< 3)
       multi_json
-    elasticsearch-transport (7.17.11)
-      base64
-      faraday (>= 1, < 3)
+    elasticsearch (8.19.3)
+      elastic-transport (~> 8.3)
+      elasticsearch-api (= 8.19.3)
+      ostruct
+    elasticsearch-api (8.19.3)
       multi_json
     erubi (1.13.0)
     et-orbi (1.4.0)
@@ -136,11 +136,12 @@ GEM
       railties (>= 5.0.0)
     faker (3.4.2)
       i18n (>= 1.8.11, < 2)
-    faraday (2.11.0)
-      faraday-net_http (>= 2.0, < 3.4)
+    faraday (2.14.2)
+      faraday-net_http (>= 2.0, < 3.5)
+      json
       logger
-    faraday-net_http (3.3.0)
-      net-http
+    faraday-net_http (3.4.4)
+      net-http (~> 0.5)
     ffi (1.17.0-aarch64-linux-gnu)
     ffi (1.17.0-aarch64-linux-musl)
     ffi (1.17.0-arm-linux-gnu)
@@ -213,14 +214,14 @@ GEM
     mini_mime (1.1.5)
     minitest (5.25.1)
     msgpack (1.7.2)
-    multi_json (1.15.0)
+    multi_json (1.21.1)
     multi_xml (0.7.1)
       bigdecimal (~> 3.1)
     mustache (1.1.1)
     namae (1.2.0)
       racc (~> 1.7)
-    net-http (0.4.1)
-      uri
+    net-http (0.9.1)
+      uri (>= 0.11.1)
     net-imap (0.4.14)
       date
       net-protocol
@@ -243,6 +244,7 @@ GEM
       racc (~> 1.4)
     nokogiri (1.16.7-x86_64-linux)
       racc (~> 1.4)
+    ostruct (0.6.3)
     parallel (1.26.3)
     parser (3.3.4.2)
       ast (~> 2.4.1)
@@ -410,7 +412,7 @@ GEM
       concurrent-ruby (~> 1.0)
     unicode (0.4.4.5)
     unicode-display_width (2.5.0)
-    uri (0.13.0)
+    uri (1.1.1)
     useragent (0.16.10)
     uuid (2.3.9)
       macaddr (~> 1.0)
@@ -447,7 +449,7 @@ DEPENDENCIES
   bootsnap
   csv
   debug
-  elasticsearch (~> 7.17.1)
+  elasticsearch (~> 8)
   factory_bot_rails
   faker
   httparty (~> 0.20.0)
