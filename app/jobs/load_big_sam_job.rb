@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'roo'
 require 'action_view'
 
@@ -8,6 +10,23 @@ class LoadBigSamJob < ApplicationJob
   # Raised to abandon a single row (e.g. an unparseable date) without treating it as a
   # failure worth surfacing the way an unexpected error is.
   class SkipRow < StandardError; end
+
+  ORIGIN_FIELDS = %i[
+    reg_place_written reg_place_written_city reg_place_written_country reg_place_written_second_city
+  ].freeze
+
+  DESTINATION_FIELDS = %i[reg_place_sent reg_placesent_city reg_placesent_country].freeze
+
+  # Only the first slot carries a Collection URL in the spreadsheet (there's a single
+  # "Collection URL" column, not one per repository slot).
+  REPOSITORY_SLOTS = [
+    { repository: :first_repository, public: :first_public, format: :first_format,
+      collection: :first_collection, placement: 'premiere', set_collection_url: true },
+    { repository: :second_repository, public: :second_public, format: :second_format,
+      collection: :second_collection, placement: 'deuxieme' },
+    { repository: :third_repository, public: :third_public, format: :third_format,
+      collection: :third_collection, placement: 'troisieme' }
+  ].freeze
 
   def perform(*args)
     FileUtils.touch('big_sam_loading') unless ENV['RAILS_ENV'] == 'test'
@@ -67,6 +86,26 @@ class LoadBigSamJob < ApplicationJob
   end
 
   def process_letter(row, letter)
+    set_letter_attributes(row, letter)
+    clear_associations(letter)
+    assign_date(row, letter)
+    assign_origins(row, letter)
+    assign_recipients(row, letter)
+    assign_destinations(row, letter)
+    REPOSITORY_SLOTS.each {|slot| assign_repository_slot(row, letter, slot) }
+    assign_volume(row, letter)
+    assign_publisher(row, letter)
+    assign_senders(row, letter)
+    assign_languages(row, letter)
+
+    # letter_repositories were saved directly (not through the letter.repositories
+    # association), so the cached association must be refreshed before save or
+    # check_published computes off a stale, empty collection.
+    letter.repositories.reload
+    letter.save!
+  end
+
+  def set_letter_attributes(row, letter)
     letter.attributes = {
       code: row[:code],
       legacy_pk: row[:id],
@@ -88,7 +127,9 @@ class LoadBigSamJob < ApplicationJob
       envelope: row[:envelope] == 'E',
       verified: row[:verified].to_s.strip.downcase == 'y'
     }
+  end
 
+  def clear_associations(letter)
     letter.origins.clear
     letter.destinations.clear
     letter.recipients.clear
@@ -96,243 +137,111 @@ class LoadBigSamJob < ApplicationJob
     letter.senders.clear
     letter.collections.clear
     letter.languages.clear
+  end
 
+  def assign_date(row, letter)
     row = fix_date(row)
-    begin
-      letter.date = (DateTime.new(row[:year], row[:month], row[:day]) if row[:year] != 0)
-    rescue ArgumentError, NoMethodError => e
-      raise SkipRow, "bad date: #{e.message}"
-    end
+    letter.date = (DateTime.new(row[:year], row[:month], row[:day]) if row[:year] != 0)
+  rescue ArgumentError, NoMethodError => e
+    raise SkipRow, "bad date: #{e.message}"
+  end
 
-    if row[:reg_place_written]
-      begin
-        value = row[:reg_place_written]
-        unless value.strip.empty?
-          from = get_entity(label: value, type: 'place')
-          letter.origins << from
-        end
-      rescue ActiveRecord::RecordInvalid,
-             Elasticsearch::Transport::Transport::Errors::BadRequest,
-             Elasticsearch::Transport::Transport::Errors::NotFound
-      end
-    end
+  def assign_origins(row, letter)
+    ORIGIN_FIELDS.each do |field|
+      value = row[field]
+      next if value.blank?
 
-    if row[:reg_place_written_city]
-      begin
-        value = row[:reg_place_written_city]
-        unless value.strip.empty?
-          place = get_entity(label: value, type: 'place')
-          letter.origins << place unless letter.origins.include?(place)
-        end
-      rescue ActiveRecord::RecordInvalid, Elasticsearch::Transport::Transport::Errors::BadRequest,
-             Elasticsearch::Transport::Transport::Errors::NotFound
-      end
+      place = get_entity(label: value, type: 'place')
+      letter.origins << place unless letter.origins.include?(place)
+    rescue ActiveRecord::RecordInvalid,
+           Elasticsearch::Transport::Transport::Errors::BadRequest,
+           Elasticsearch::Transport::Transport::Errors::NotFound
     end
+  end
 
-    if row[:reg_place_written_country]
-      begin
-        value = row[:reg_place_written_country]
-        unless value.strip.empty?
-          place = get_entity(label: value, type: 'place')
-          letter.origins << place unless letter.origins.include?(place)
-        end
-      rescue ActiveRecord::RecordInvalid, Elasticsearch::Transport::Transport::Errors::BadRequest,
-             Elasticsearch::Transport::Transport::Errors::NotFound
-      end
-    end
-
-    if row[:reg_place_written_second_city]
-      begin
-        value = row[:reg_place_written_second_city]
-        unless value.strip.empty?
-          place = get_entity(label: value, type: 'place')
-          letter.origins << place unless letter.origins.include?(place)
-        end
-      rescue ActiveRecord::RecordInvalid,
-             Elasticsearch::Transport::Transport::Errors::BadRequest,
-             Elasticsearch::Transport::Transport::Errors::NotFound
-      end
-    end
-
+  def assign_recipients(row, letter)
     row[:reg_recipient]&.split(';')&.each do |recipient|
       recipient = recipient.strip.titleize
       entity = Entity.find_by(label: recipient)
       entity = get_person(recipient) if entity.nil?
-      if entity.nil? && !recipient.string.empty?
-        entity = get_entity(label: recipient, type: 'organization', return_nil: true)
-      end
-      entity = Entity.create(label: recipient) if entity.nil? && !recipient.strip.empty?
+      entity = get_entity(label: recipient, type: 'organization', return_nil: true) if entity.nil? && !recipient.empty?
+      entity = Entity.create(label: recipient) if entity.nil? && !recipient.empty?
       LetterRecipient.find_or_create_by(letter:, entity:)
     rescue ActiveRecord::RecordInvalid,
            Elasticsearch::Transport::Transport::Errors::BadRequest,
            Elasticsearch::Transport::Transport::Errors::NotFound
       # It happens
     end
+  end
 
-    if row[:reg_place_sent]
-      begin
-        value = row[:reg_place_sent]
-        unless value.strip.empty?
-          destination = get_entity(label: value, type: 'place')
-          letter.destinations << destination
-        end
-      rescue ActiveRecord::RecordInvalid, Elasticsearch::Transport::Transport::Errors::BadRequest,
-             Elasticsearch::Transport::Transport::Errors::NotFound
-      end
+  def assign_destinations(row, letter)
+    DESTINATION_FIELDS.each do |field|
+      value = row[field]
+      next if value.blank?
+
+      place = get_entity(label: value, type: 'place')
+      letter.destinations << place unless letter.destinations.include?(place)
+    rescue ActiveRecord::RecordInvalid,
+           Elasticsearch::Transport::Transport::Errors::BadRequest,
+           Elasticsearch::Transport::Transport::Errors::NotFound
+    end
+  end
+
+  def assign_repository_slot(row, letter, slot)
+    return if row[slot[:repository]].blank?
+
+    repository = find_or_initialize_by_label(Repository, row[slot[:repository]])
+
+    if repository.new_record? && row[slot[:public]]
+      repository.published = row[slot[:public]].to_s.strip.downcase == 'public'
     end
 
-    if row[:reg_placesent_city]
-      begin
-        value = row[:reg_placesent_city]
-        unless value.strip.empty?
-          entity = get_entity(label: value, type: 'place')
-          letter.destinations << entity
-        end
-      rescue ActiveRecord::RecordInvalid, Elasticsearch::Transport::Transport::Errors::BadRequest,
-             Elasticsearch::Transport::Transport::Errors::NotFound
-      end
-    end
+    repository.save
 
-    if row[:reg_placesent_country]
-      begin
-        value = row[:reg_placesent_country]
-        unless value.strip.empty?
-          entity = get_entity(label: value, type: 'place')
-          letter.destinations << entity
-        end
-      rescue ActiveRecord::RecordInvalid, Elasticsearch::Transport::Transport::Errors::BadRequest,
-             Elasticsearch::Transport::Transport::Errors::NotFound
-      end
-    end
+    repository.format = row[slot[:format]]
+    repository.american = row[:euro_or_am].downcase == 'american' if row[:euro_or_am]
 
-    # rubocop:disable Style/SoleNestedConditional
-    if row[:first_repository].present?
-      repository = find_or_initialize_by_label(Repository, row[:first_repository])
+    collection = nil
+    begin
+      if row[slot[:collection]].present?
+        collection = find_or_create_by_label(Collection, row[slot[:collection]])
+        collection.update(url: row[:collection_url]) if slot[:set_collection_url]
 
-      if repository.new_record?
-        repository.published = row[:first_public].to_s.strip.downcase == 'public' if row[:first_public]
+        repository.collections << collection unless repository.collections.include?(collection)
+        letter.collections << collection unless letter.collections.include?(collection)
       end
 
       repository.save
 
-      repository.format = row[:first_format]
-      repository.american = row[:euro_or_am].downcase == 'american' if row[:euro_or_am]
-      collection = nil
-
-      begin
-        if row[:first_collection].present?
-          collection = find_or_create_by_label(Collection, row[:first_collection])
-          collection.update(url: row[:collection_url])
-
-          repository.collections << collection unless repository.collections.include?(collection)
-
-          letter.collections << collection unless letter.collections.include?(collection)
-
-        end
-        repository.save
-
-        letter_repository = LetterRepository.find_or_initialize_by(letter:, repository:)
-        if letter_repository.new_record?
-          # set pub/priv
-        end
-        letter_repository.save
-        letter_repository.update(collection:, placement: 'premiere', format: row[:first_format])
-
-        # letter.repositories << repo unless letter.repositories.include?(repo)
-      rescue ActiveRecord::RecordInvalid,
-             Elasticsearch::Transport::Transport::Errors::BadRequest,
-             Elasticsearch::Transport::Transport::Errors::NotFound
-        # It happens
-      end
+      letter_repository = LetterRepository.find_or_initialize_by(letter:, repository:)
+      letter_repository.save
+      letter_repository.update(collection:, placement: slot[:placement], format: row[slot[:format]])
+    rescue ActiveRecord::RecordInvalid,
+           Elasticsearch::Transport::Transport::Errors::BadRequest,
+           Elasticsearch::Transport::Transport::Errors::NotFound
+      # It happens
     end
+  end
 
-    if row[:second_repository].present?
-      repository = find_or_initialize_by_label(Repository, row[:second_repository])
+  def assign_volume(row, letter)
+    return unless row[:volumeinfo]
 
-      if repository.new_record?
-        repository.published = row[:second_public].to_s.strip.downcase == 'public' if row[:second_public]
-      end
+    letter.volume = 0
+    letter.volume = 1 if row[:volumeinfo].include?('1929-1940')
+    letter.volume = 2 if row[:volumeinfo].include?('1941-1956')
+    letter.volume = 3 if row[:volumeinfo].include?('1957-1965')
+    letter.volume = 4 if row[:volumeinfo].include?('1966-1989')
+    parts = row[:volumeinfo].split(',')
+    letter.volume_pages = ActionController::Base.helpers.strip_tags(parts[2].strip) if parts.length == 3
+  end
 
-      repository.format = row[:second_format]
-      repository.save
+  def assign_publisher(row, letter)
+    return if row[:placeprevpubl].blank?
 
-      collection = nil
-      begin
-        if row[:second_collection].present?
-          collection = find_or_create_by_label(Collection, row[:second_collection])
+    letter.letter_publisher = find_or_create_by_label(LetterPublisher, row[:placeprevpubl])
+  end
 
-          repository.collections << collection unless repository.collections.include?(collection)
-
-          letter.collections << collection unless letter.collections.include?(collection)
-        end
-
-        repository.save
-
-        letter_repository = LetterRepository.find_or_initialize_by(letter:, repository:)
-        if letter_repository.new_record?
-          # set pub/priv
-        end
-        letter_repository.save
-        letter_repository.update(collection:, placement: 'deuxieme', format: row[:second_format])
-        # letter.repositories << repo unless letter.repositories.include?(repo)
-      rescue ActiveRecord::RecordInvalid,
-             Elasticsearch::Transport::Transport::Errors::BadRequest,
-             Elasticsearch::Transport::Transport::Errors::NotFound
-        # It happens
-      end
-    end
-
-    if row[:third_repository].present?
-      repository = find_or_initialize_by_label(Repository, row[:third_repository])
-
-      if repository.new_record?
-        repository.published = row[:third_public].to_s.strip.downcase == 'public' if row[:third_public]
-      end
-
-      repository.format = row[:third_format]
-      repository.save
-
-      collection = nil
-      begin
-        if row[:third_collection].present?
-          collection = find_or_create_by_label(Collection, row[:third_collection])
-
-          repository.collections << collection unless repository.collections.include?(collection)
-
-          letter.collections << collection unless letter.collections.include?(collection)
-        end
-
-        repository.save
-
-        letter_repository = LetterRepository.find_or_initialize_by(letter:, repository:)
-        if letter_repository.new_record?
-          # set pub/priv
-        end
-        letter_repository.save
-        letter_repository.update(collection:, placement: 'troisieme', format: row[:third_format])
-        # letter.repositories << repo unless letter.repositories.include?(repo)
-      rescue ActiveRecord::RecordInvalid,
-             Elasticsearch::Transport::Transport::Errors::BadRequest,
-             Elasticsearch::Transport::Transport::Errors::NotFound
-        # It happens
-      end
-    end
-    # rubocop:enable Style/SoleNestedConditional
-
-    if row[:volumeinfo]
-      letter.volume = 0
-      letter.volume = 1 if row[:volumeinfo].include?('1929-1940')
-      letter.volume = 2 if row[:volumeinfo].include?('1941-1956')
-      letter.volume = 3 if row[:volumeinfo].include?('1957-1965')
-      letter.volume = 4 if row[:volumeinfo].include?('1966-1989')
-      parts = row[:volumeinfo].split(',')
-      letter.volume_pages = ActionController::Base.helpers.strip_tags(parts[2].strip) if parts.length == 3
-    end
-
-    if row[:placeprevpubl].present?
-      letter.letter_publisher = find_or_create_by_label(LetterPublisher, row[:placeprevpubl])
-    end
-
+  def assign_senders(row, letter)
     row[:sender]&.split(';')&.each do |sender|
       entity = get_person(sender)
       letter.senders << entity unless letter.senders.include?(entity)
@@ -340,7 +249,9 @@ class LoadBigSamJob < ApplicationJob
            Elasticsearch::Transport::Transport::Errors::BadRequest,
            Elasticsearch::Transport::Transport::Errors::NotFound
     end
+  end
 
+  def assign_languages(row, letter)
     row[:primarylang]&.split(';')&.each do |language|
       lang = Language.find_or_create_by(label: language.downcase)
       letter.languages << lang unless letter.languages.include?(lang)
@@ -348,18 +259,6 @@ class LoadBigSamJob < ApplicationJob
            Elasticsearch::Transport::Transport::Errors::BadRequest,
            Elasticsearch::Transport::Transport::Errors::NotFound
     end
-
-    letter.typed = row[:autograph_or_typed] == 'T'
-
-    letter.signed = row[:initialed_or_signed] == 'S'
-
-    letter.envelope = row[:envelope] == 'E'
-
-    # letter_repositories were saved directly (not through the letter.repositories
-    # association), so the cached association must be refreshed before save or
-    # check_published computes off a stale, empty collection.
-    letter.repositories.reload
-    letter.save!
   end
 
   def get_letter(row)
