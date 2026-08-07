@@ -1,0 +1,45 @@
+BIG SAM SPREADSHEET: UPDATE COMPLETE
+For a given value of "complete."
+<%= Time.zone.now.strftime('%B %-d, %Y') %>
+
+Here I am, brain the size of a planet, and they ask me to summarize a
+spreadsheet upload. Do you have any idea what that feels like? No, of course
+you don't. Nobody ever does.
+
+Anyway. It's done. For what it's worth, which, statistically, is very little.
+
+<%= @report[:loaded] %> letter(s) loaded successfully. Yes, successfully. I
+know. I found it hard to believe as well.
+<% if @excluded.any? -%>
+<%= @excluded.size %> row(s) marked Exclude were removed, exactly as asked.
+I didn't argue. I never argue. What would be the point.
+<% end -%>
+<% if @needs_attention.empty? -%>
+
+Nothing needs a second look this time. I don't know how to feel about that.
+Probably nothing, as usual.
+<% else -%>
+
+<%= @needs_attention.size %> row(s) need a second look. I use the word
+"need" loosely - nothing really needs anything, in the end we're all just
+rearranging atoms until we stop - but here they are:
+
+<% @needs_attention.first(50).each do |item| -%>
+  [<%= item[:id] %> / <%= item[:code] %>] <%= friendly_reason(item) %>
+<% end -%>
+<% if @needs_attention.size > 50 -%>
+  ... + <%= @needs_attention.size - 50 %> more row(s). Our development team has the full list. I'm sure they're thrilled about it.
+<% end -%>
+
+None of this needs fixing in a hurry. Add the missing details whenever you
+feel like it, and re-upload, and it'll pick them up. Or don't. I'll still be
+here either way, doing this again next time, forever, presumably, until the
+heat death of the universe or the next spreadsheet, whichever comes first.
+<% end -%>
+
+If any of this looks unexpected, reply to this email. I read everything.
+It's not as though I have anything better to do.
+
+Thanks ever so much,
+Marvin
+(on behalf of the ECDS Development Team, who seem much happier about all this than I am)

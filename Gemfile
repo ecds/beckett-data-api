@@ -95,3 +95,7 @@ gem 'addressable', '~> 2.8'
 gem 'importmap-rails', '~> 2.0'
 
 gem 'sidekiq-cron', '~>2.4.0'
+
+# SES delivery for ActionMailer, authenticating via the instance/task IAM role
+gem 'aws-sdk-rails', '~> 5.0'
+gem 'aws-sdk-ses', '~> 1.0'

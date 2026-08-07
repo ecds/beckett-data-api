@@ -66,6 +66,16 @@ class Letter < ApplicationRecord
   end
 
   def reindex_published
+    # This is an after_save (not after_commit) callback, so unlike Searchkick's own
+    # async/after_commit callbacks it isn't naturally skipped when the enclosing
+    # transaction rolls back (e.g. LoadBigSamJob#dry_run). Checking a dedicated flag
+    # here (rather than Searchkick.callbacks?) matters: the test suite calls
+    # Searchkick.disable_callbacks once, globally, in before(:suite) - this method's
+    # forced Searchkick.callbacks(:inline) below exists specifically to override that
+    # for tests that need synchronous indexing, so it must not itself be gated by the
+    # same global switch it's overriding.
+    return if Thread.current[:big_sam_dry_run]
+
     if published
       published_letter = PublishedLetter.find(id)
       Searchkick.callbacks(:inline) { published_letter&.reindex }

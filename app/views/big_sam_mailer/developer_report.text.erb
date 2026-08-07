@@ -1,0 +1,35 @@
+BIG SAM LOAD REPORT
+<%= Time.zone.now.strftime('%B %-d, %Y at %-I:%M %p %Z') %>
+
+Total rows:  <%= @report[:total] %>
+Loaded:      <%= @report[:loaded] %>
+Skipped:     <%= @report[:skipped].size %>
+Failed:      <%= @report[:errors].size %>
+
+RECORDS CREATED THIS RUN
+<% @report[:created].each do |model, count| -%>
+  <%= model.to_s.tr('_', ' ').capitalize %>: <%= count %>
+<% end -%>
+<% if @errors.any? -%>
+
+FAILED ROWS (<%= @report[:errors].size %>)
+<% @errors.each do |e| -%>
+  [<%= e[:id] %> / <%= e[:code] %>] <%= e[:error] %>
+<% end -%>
+<% if @errors_truncated.positive? -%>
+  ... +<%= @errors_truncated %> more, see the full run log
+<% end -%>
+<% end -%>
+<% if @skipped.any? -%>
+
+SKIPPED ROWS (<%= @report[:skipped].size %>)
+<% @skipped.each do |s| -%>
+  [<%= s[:id] %> / <%= s[:code] %>] <%= s[:reason] %>
+<% end -%>
+<% if @skipped_truncated.positive? -%>
+  ... +<%= @skipped_truncated %> more, see the full run log
+<% end -%>
+<% end -%>
+
+--
+Automated report from LoadBigSamJob. Full details, including stack traces, are in the application log for this run.
