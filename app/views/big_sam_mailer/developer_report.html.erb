@@ -1,0 +1,77 @@
+<div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1c1b18; max-width: 640px; margin: 0 auto;">
+  <h1 style="font-size: 20px; margin: 0 0 4px; font-family: Georgia, 'Times New Roman', serif; font-weight: normal;">Big Sam load report</h1>
+  <p style="color: #6b6862; font-size: 13px; margin: 0 0 20px;"><%= Time.zone.now.strftime('%B %-d, %Y at %-I:%M %p %Z') %></p>
+
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-collapse: collapse; margin-bottom: 24px;">
+    <tr>
+      <td style="padding: 10px 16px; border: 1px solid #d8d5cc; background: #f1f0ec; font-size: 13px; color: #6b6862;">Total rows</td>
+      <td style="padding: 10px 16px; border: 1px solid #d8d5cc; font-size: 15px; font-weight: 600;"><%= @report[:total] %></td>
+      <td style="padding: 10px 16px; border: 1px solid #d8d5cc; font-size: 13px; color: #6b6862;">Loaded</td>
+      <td style="padding: 10px 16px; border: 1px solid #d8d5cc; font-size: 15px; font-weight: 600;"><%= @report[:loaded] %></td>
+    </tr>
+    <tr>
+      <td style="padding: 10px 16px; border: 1px solid #d8d5cc; font-size: 13px; color: #6b6862;">Skipped</td>
+      <td style="padding: 10px 16px; border: 1px solid #d8d5cc; font-size: 15px; font-weight: 600;"><%= @report[:skipped].size %></td>
+      <td style="padding: 10px 16px; border: 1px solid #d8d5cc; font-size: 13px; color: #6b6862;">Failed</td>
+      <td style="padding: 10px 16px; border: 1px solid #d8d5cc; font-size: 15px; font-weight: 600; color: <%= @report[:errors].any? ? '#b0402c' : '#1c1b18' %>;"><%= @report[:errors].size %></td>
+    </tr>
+  </table>
+
+  <h2 style="font-size: 15px; margin: 0 0 8px;">Records created this run</h2>
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-collapse: collapse; margin-bottom: 24px; font-size: 13.5px;">
+    <% @report[:created].each do |model, count| %>
+      <tr>
+        <td style="padding: 6px 16px 6px 0; border-bottom: 1px solid #e8e6df; color: #6b6862; text-transform: capitalize;"><%= model.to_s.tr('_', ' ') %></td>
+        <td style="padding: 6px 0; border-bottom: 1px solid #e8e6df; font-weight: 600;"><%= count %></td>
+      </tr>
+    <% end %>
+  </table>
+
+  <% if @errors.any? %>
+    <h2 style="font-size: 15px; margin: 0 0 8px; color: #b0402c;">Failed rows (<%= @report[:errors].size %>)</h2>
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-collapse: collapse; margin-bottom: 8px; font-size: 13px;">
+      <tr>
+        <th align="left" style="padding: 6px 10px 6px 0; border-bottom: 1px solid #d8d5cc; color: #6b6862;">ID</th>
+        <th align="left" style="padding: 6px 10px 6px 0; border-bottom: 1px solid #d8d5cc; color: #6b6862;">Code</th>
+        <th align="left" style="padding: 6px 0 6px 0; border-bottom: 1px solid #d8d5cc; color: #6b6862;">Error</th>
+      </tr>
+      <% @errors.each do |e| %>
+        <tr>
+          <td style="padding: 6px 10px 6px 0; border-bottom: 1px solid #e8e6df; font-family: ui-monospace, 'SF Mono', Menlo, monospace;"><%= e[:id] %></td>
+          <td style="padding: 6px 10px 6px 0; border-bottom: 1px solid #e8e6df; font-family: ui-monospace, 'SF Mono', Menlo, monospace;"><%= e[:code] %></td>
+          <td style="padding: 6px 0 6px 0; border-bottom: 1px solid #e8e6df;"><%= e[:error] %></td>
+        </tr>
+      <% end %>
+    </table>
+    <% if @errors_truncated.positive? %>
+      <p style="color: #6b6862; font-size: 12.5px; margin: 0 0 20px;">+<%= @errors_truncated %> more - see the full run log for the rest.</p>
+    <% else %>
+      <div style="margin-bottom: 20px;"></div>
+    <% end %>
+  <% end %>
+
+  <% if @skipped.any? %>
+    <h2 style="font-size: 15px; margin: 0 0 8px;">Skipped rows (<%= @report[:skipped].size %>)</h2>
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-collapse: collapse; margin-bottom: 8px; font-size: 13px;">
+      <tr>
+        <th align="left" style="padding: 6px 10px 6px 0; border-bottom: 1px solid #d8d5cc; color: #6b6862;">ID</th>
+        <th align="left" style="padding: 6px 10px 6px 0; border-bottom: 1px solid #d8d5cc; color: #6b6862;">Code</th>
+        <th align="left" style="padding: 6px 0 6px 0; border-bottom: 1px solid #d8d5cc; color: #6b6862;">Reason</th>
+      </tr>
+      <% @skipped.each do |s| %>
+        <tr>
+          <td style="padding: 6px 10px 6px 0; border-bottom: 1px solid #e8e6df; font-family: ui-monospace, 'SF Mono', Menlo, monospace;"><%= s[:id] %></td>
+          <td style="padding: 6px 10px 6px 0; border-bottom: 1px solid #e8e6df; font-family: ui-monospace, 'SF Mono', Menlo, monospace;"><%= s[:code] %></td>
+          <td style="padding: 6px 0 6px 0; border-bottom: 1px solid #e8e6df;"><%= s[:reason] %></td>
+        </tr>
+      <% end %>
+    </table>
+    <% if @skipped_truncated.positive? %>
+      <p style="color: #6b6862; font-size: 12.5px; margin: 0 0 20px;">+<%= @skipped_truncated %> more - see the full run log for the rest.</p>
+    <% end %>
+  <% end %>
+
+  <p style="color: #6b6862; font-size: 12px; margin-top: 28px; border-top: 1px solid #e8e6df; padding-top: 12px;">
+    Automated report from LoadBigSamJob. Full details, including stack traces, are in the application log for this run.
+  </p>
+</div>

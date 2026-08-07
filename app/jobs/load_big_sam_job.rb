@@ -38,8 +38,29 @@ class LoadBigSamJob < ApplicationJob
     FileUtils.touch('big_sam_loading') unless ENV['RAILS_ENV'] == 'test'
     logger.debug 'starting big sam load'
 
-    load_letters(rows_from(args.first))
+    before = record_counts
+    rows = rows_from(args.first)
+    load_letters(rows)
+    report = build_report(rows.size, before)
+
     BigSam.last.destroy
+
+    send_reports(report)
+  end
+
+  def build_report(total, before)
+    {
+      total:,
+      loaded: total - @row_skipped.size - @row_errors.size,
+      skipped: @row_skipped,
+      errors: @row_errors,
+      created: record_counts.to_h {|model, count| [model, count - before[model]] }
+    }
+  end
+
+  def send_reports(report)
+    BigSamMailer.developer_report(report).deliver_later
+    BigSamMailer.owner_report(report).deliver_later
   end
 
   # Runs the exact same row-by-row logic as perform, but rolls back every database
@@ -108,10 +129,6 @@ class LoadBigSamJob < ApplicationJob
 
   def process_row(row)
     letter = get_letter(row)
-    if letter.nil?
-      @row_skipped << { id: row[:id], code: row[:code], reason: 'excluded' }
-      return
-    end
 
     ActiveRecord::Base.transaction(requires_new: true) { process_letter(row, letter) }
   rescue SkipRow => e
@@ -304,8 +321,12 @@ class LoadBigSamJob < ApplicationJob
       # Elasticsearch delete isn't gated by the enclosing transaction like a normal
       # ActiveRecord write is, so it would delete a real search document.
       letter&.destroy unless @dry_run
-      return nil
+      raise SkipRow, 'excluded'
     end
+
+    # A blank ID isn't a distinct row - find_or_create_by(legacy_pk: nil) would match
+    # *every* other blank-ID row and silently overwrite whichever one loaded first.
+    raise SkipRow, 'missing id' if row[:id].blank?
 
     Letter.find_or_create_by(legacy_pk: row[:id])
   end

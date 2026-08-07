@@ -34,6 +34,37 @@ RSpec.describe LoadBigSamJob do
     expect(BigSam.find_by(id: bs.id)).to be_nil
   end
 
+  it 'emails a developer and an owner report after a real upload, when recipients are configured' do
+    original_dev = ENV.fetch('BIG_SAM_DEV_REPORT_EMAILS', nil)
+    original_owner = ENV.fetch('BIG_SAM_OWNER_REPORT_EMAILS', nil)
+    ENV['BIG_SAM_DEV_REPORT_EMAILS'] = 'dev@example.com'
+    ENV['BIG_SAM_OWNER_REPORT_EMAILS'] = 'owner@example.com'
+
+    big_sam_file = fixture_file_upload('big_sam.xlsx')
+    create(:big_sam, big_sam: big_sam_file)
+
+    to_addresses = ActionMailer::Base.deliveries.map(&:to)
+    expect(to_addresses).to include(['dev@example.com'], ['owner@example.com'])
+  ensure
+    ENV['BIG_SAM_DEV_REPORT_EMAILS'] = original_dev
+    ENV['BIG_SAM_OWNER_REPORT_EMAILS'] = original_owner
+  end
+
+  it 'does not attempt to send reports when no recipients are configured' do
+    original_dev = ENV.fetch('BIG_SAM_DEV_REPORT_EMAILS', nil)
+    original_owner = ENV.fetch('BIG_SAM_OWNER_REPORT_EMAILS', nil)
+    ENV.delete('BIG_SAM_DEV_REPORT_EMAILS')
+    ENV.delete('BIG_SAM_OWNER_REPORT_EMAILS')
+
+    big_sam_file = fixture_file_upload('big_sam.xlsx')
+
+    expect { create(:big_sam, big_sam: big_sam_file) }
+      .not_to change(ActionMailer::Base.deliveries, :count)
+  ensure
+    ENV['BIG_SAM_DEV_REPORT_EMAILS'] = original_dev
+    ENV['BIG_SAM_OWNER_REPORT_EMAILS'] = original_owner
+  end
+
   it 'uploads_parses_names' do
     big_sam_file = fixture_file_upload('big_sam.xlsx')
     create(:big_sam, big_sam: big_sam_file)
@@ -175,9 +206,8 @@ RSpec.describe LoadBigSamJob do
     it 'treats the exclude flag as case- and whitespace-insensitive and destroys the existing letter' do
       Letter.create!(legacy_pk: 42)
 
-      result = job.get_letter(valid_row(id: 42, exclude: ' y '))
-
-      expect(result).to be_nil
+      expect { job.get_letter(valid_row(id: 42, exclude: ' y ')) }
+        .to raise_error(LoadBigSamJob::SkipRow, 'excluded')
       expect(Letter.find_by(legacy_pk: 42)).to be_nil
     end
 
@@ -185,9 +215,8 @@ RSpec.describe LoadBigSamJob do
       Letter.create!(legacy_pk: 43)
       job.instance_variable_set(:@dry_run, true)
 
-      result = job.get_letter(valid_row(id: 43, exclude: 'Y'))
-
-      expect(result).to be_nil
+      expect { job.get_letter(valid_row(id: 43, exclude: 'Y')) }
+        .to raise_error(LoadBigSamJob::SkipRow, 'excluded')
       expect(Letter.find_by(legacy_pk: 43)).not_to be_nil
     end
 
@@ -196,6 +225,11 @@ RSpec.describe LoadBigSamJob do
 
       expect(result).to be_persisted
       expect(result.legacy_pk).to eq(44)
+    end
+
+    it 'skips a row with a blank ID instead of colliding it with another blank-ID row' do
+      expect { job.get_letter(valid_row(id: nil)) }
+        .to raise_error(LoadBigSamJob::SkipRow, 'missing id')
     end
   end
 
@@ -228,6 +262,19 @@ RSpec.describe LoadBigSamJob do
       expect(skipped.first[:code]).to eq('BAD')
       expect(skipped.first[:reason]).to match(/bad date/)
       expect(Letter.find_by(legacy_pk: 955).code).to eq('GOOD')
+    end
+
+    it 'skips every blank-ID row instead of collapsing them into one overwritten letter' do
+      job.load_letters([
+                         valid_row(id: nil, code: 'BLANK-1'),
+                         valid_row(id: nil, code: 'BLANK-2'),
+                         valid_row(id: nil, code: 'BLANK-3')
+                       ])
+
+      skipped = job.instance_variable_get(:@row_skipped)
+      expect(skipped.pluck(:code)).to eq(%w[BLANK-1 BLANK-2 BLANK-3])
+      expect(skipped).to all(include(reason: 'missing id'))
+      expect(Letter.where(legacy_pk: nil).count).to eq(0)
     end
 
     it 'isolates an unexpected error to a single row and keeps processing the rest' do
