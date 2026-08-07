@@ -73,6 +73,7 @@ class LoadBigSamJob < ApplicationJob
     @dry_run = true
     before = record_counts
 
+    Thread.current[:big_sam_dry_run] = true
     Searchkick.callbacks(false) do
       # requires_new: true forces a real savepoint/rollback here even if dry_run is
       # ever called from within another open transaction (e.g. under RSpec's
@@ -86,6 +87,8 @@ class LoadBigSamJob < ApplicationJob
     end
 
     { total: rows.size, errors: @row_errors, skipped: @row_skipped, would_create: @dry_run_creates }
+  ensure
+    Thread.current[:big_sam_dry_run] = nil
   end
 
   def rows_from(big_sam)
