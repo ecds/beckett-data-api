@@ -13,8 +13,7 @@ class BigSam < ApplicationRecord
   private
 
   def load_letters
-    LoadBigSamJob.perform_later self unless ENV['RAILS_ENV'] == 'test'
-    LoadBigSamJob.perform_now self
+    LoadBigSamJob.perform_later self
   end
 
   def delete_file

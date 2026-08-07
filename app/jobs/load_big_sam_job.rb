@@ -43,13 +43,13 @@ class LoadBigSamJob < ApplicationJob
         leaves: row[:leaves].to_i,
         sides: row[:sides],
         postmark: row[:postmark_actual],
-        notes: row[:dditional],
-        letter_owner: LetterOwner.find_or_create_by(label: row[:ownerrights]),
-        file_folder: FileFolder.find_or_create_by(label: row[:file]),
+        notes: row[:additional],
+        letter_owner: find_or_create_by_label(LetterOwner, row[:ownerrights]),
+        file_folder: find_or_create_by_label(FileFolder, row[:file]),
         typed: row[:autograph_or_typed] == 'T',
         signed: row[:initialed_or_signed] == 'S',
         envelope: row[:envelope] == 'E',
-        verified: row[:verified] == 'Y'
+        verified: row[:verified].to_s.strip.downcase == 'y'
       }
 
       letter.origins.clear
@@ -170,11 +170,11 @@ class LoadBigSamJob < ApplicationJob
       end
 
       # rubocop:disable Style/SoleNestedConditional
-      if row[:first_repository]
-        repository = Repository.find_or_initialize_by(label: row[:first_repository])
+      if row[:first_repository].present?
+        repository = find_or_initialize_by_label(Repository, row[:first_repository])
 
         if repository.new_record?
-          repository.published = row[:first_public].downcase == 'public' if row[:first_public]
+          repository.published = row[:first_public].to_s.strip.downcase == 'public' if row[:first_public]
         end
 
         repository.save
@@ -184,8 +184,8 @@ class LoadBigSamJob < ApplicationJob
         collection = nil
 
         begin
-          if row[:first_collection]
-            collection = Collection.find_or_create_by(label: row[:first_collection])
+          if row[:first_collection].present?
+            collection = find_or_create_by_label(Collection, row[:first_collection])
             collection.update(url: row[:collection_url])
 
             repository.collections << collection unless repository.collections.include?(collection)
@@ -210,11 +210,11 @@ class LoadBigSamJob < ApplicationJob
         end
       end
 
-      if row[:second_repository]
-        repository = Repository.find_or_initialize_by(label: row[:second_repository])
+      if row[:second_repository].present?
+        repository = find_or_initialize_by_label(Repository, row[:second_repository])
 
         if repository.new_record?
-          repository.published = row[:second_public].downcase == 'public' if row[:second_public]
+          repository.published = row[:second_public].to_s.strip.downcase == 'public' if row[:second_public]
         end
 
         repository.format = row[:second_format]
@@ -222,8 +222,8 @@ class LoadBigSamJob < ApplicationJob
 
         collection = nil
         begin
-          if row[:second_collection]
-            collection = Collection.find_or_create_by(label: row[:second_collection])
+          if row[:second_collection].present?
+            collection = find_or_create_by_label(Collection, row[:second_collection])
 
             repository.collections << collection unless repository.collections.include?(collection)
 
@@ -246,11 +246,11 @@ class LoadBigSamJob < ApplicationJob
         end
       end
 
-      if row[:third_repository]
-        repository = Repository.find_or_initialize_by(label: row[:third_repository])
+      if row[:third_repository].present?
+        repository = find_or_initialize_by_label(Repository, row[:third_repository])
 
         if repository.new_record?
-          repository.published = row[:third_public].downcase == 'public' if row[:third_public]
+          repository.published = row[:third_public].to_s.strip.downcase == 'public' if row[:third_public]
         end
 
         repository.format = row[:third_format]
@@ -258,8 +258,8 @@ class LoadBigSamJob < ApplicationJob
 
         collection = nil
         begin
-          if row[:second_collection]
-            collection = Collection.find_or_create_by(label: row[:second_collection])
+          if row[:third_collection].present?
+            collection = find_or_create_by_label(Collection, row[:third_collection])
 
             repository.collections << collection unless repository.collections.include?(collection)
 
@@ -293,7 +293,9 @@ class LoadBigSamJob < ApplicationJob
         letter.volume_pages = ActionController::Base.helpers.strip_tags(parts[2].strip) if parts.length == 3
       end
 
-      letter.letter_publisher = LetterPublisher.find_or_create_by(label: row[:placeprevpubl]) if row[:placeprevpubl]
+      if row[:placeprevpubl].present?
+        letter.letter_publisher = find_or_create_by_label(LetterPublisher, row[:placeprevpubl])
+      end
 
       row[:sender]&.split(';')&.each do |sender|
         entity = get_person(sender)
@@ -326,13 +328,31 @@ class LoadBigSamJob < ApplicationJob
   end
 
   def get_letter(row)
-    if row[:exclude] == 'y'
+    if row[:exclude].to_s.strip.downcase == 'y'
       letter = Letter.find_by(legacy_pk: row[:id])
       letter&.destroy
       return nil
     end
 
     Letter.find_or_create_by(legacy_pk: row[:id])
+  end
+
+  def normalize_label(value)
+    value.to_s.strip.squeeze(' ')
+  end
+
+  def find_or_create_by_label(klass, label)
+    clean = normalize_label(label)
+    return nil if clean.blank?
+
+    klass.find_by('lower(label) = ?', clean.downcase) || klass.create(label: clean)
+  end
+
+  def find_or_initialize_by_label(klass, label)
+    clean = normalize_label(label)
+    return nil if clean.blank?
+
+    klass.find_by('lower(label) = ?', clean.downcase) || klass.new(label: clean)
   end
 
   def get_entity(label: nil, type: nil, return_nil: false)
