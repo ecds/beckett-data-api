@@ -66,6 +66,12 @@ class Letter < ApplicationRecord
   end
 
   def reindex_published
+    # This is an after_save (not after_commit) callback, so unlike Searchkick's own
+    # async/after_commit callbacks it isn't naturally skipped when the enclosing
+    # transaction rolls back (e.g. LoadBigSamJob#dry_run). Respect an explicit
+    # Searchkick.disable_callbacks so callers can opt out of hitting Elasticsearch.
+    return unless Searchkick.callbacks?
+
     if published
       published_letter = PublishedLetter.find(id)
       Searchkick.callbacks(:inline) { published_letter&.reindex }

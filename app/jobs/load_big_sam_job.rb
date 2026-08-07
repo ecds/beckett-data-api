@@ -28,11 +28,46 @@ class LoadBigSamJob < ApplicationJob
       collection: :third_collection, placement: 'troisieme' }
   ].freeze
 
+  RECORD_COUNT_MODELS = {
+    letters: Letter, entities: Entity, repositories: Repository, collections: Collection,
+    letter_owners: LetterOwner, file_folders: FileFolder, letter_publishers: LetterPublisher,
+    languages: Language
+  }.freeze
+
   def perform(*args)
     FileUtils.touch('big_sam_loading') unless ENV['RAILS_ENV'] == 'test'
     logger.debug 'starting big sam load'
 
-    big_sam = args.first
+    load_letters(rows_from(args.first))
+    BigSam.last.destroy
+  end
+
+  # Runs the exact same row-by-row logic as perform, but rolls back every database
+  # write at the end and never touches Elasticsearch, so a spreadsheet can be sanity
+  # checked before anyone commits to a real upload. Does not touch the BigSam upload
+  # record/file. Safe to call directly (LoadBigSamJob.new.dry_run(big_sam)) - it
+  # doesn't go through ActiveJob's perform/enqueue path.
+  def dry_run(big_sam)
+    rows = rows_from(big_sam)
+    @dry_run = true
+    before = record_counts
+
+    Searchkick.callbacks(false) do
+      # requires_new: true forces a real savepoint/rollback here even if dry_run is
+      # ever called from within another open transaction (e.g. under RSpec's
+      # transactional fixtures), instead of silently deferring the rollback to
+      # whatever transaction happens to be outermost.
+      ActiveRecord::Base.transaction(requires_new: true) do
+        load_letters(rows)
+        @dry_run_creates = record_counts.to_h {|model, count| [model, count - before[model]] }
+        raise ActiveRecord::Rollback
+      end
+    end
+
+    { total: rows.size, errors: @row_errors, skipped: @row_skipped, would_create: @dry_run_creates }
+  end
+
+  def rows_from(big_sam)
     x = Roo::Spreadsheet.open(big_sam.local_path, extension: :xlsx)
     sheet = x.sheet(0)
     headers = sheet.row(1).map {|h| h.parameterize.underscore }
@@ -42,8 +77,11 @@ class LoadBigSamJob < ApplicationJob
 
       rows.push([headers, row].transpose.to_h.symbolize_keys)
     end
+    rows
+  end
 
-    load_letters(rows)
+  def record_counts
+    RECORD_COUNT_MODELS.transform_values(&:count)
   end
 
   def load_letters(rows)
@@ -51,8 +89,6 @@ class LoadBigSamJob < ApplicationJob
     @row_skipped = []
 
     rows.each {|row| process_row(row) }
-
-    BigSam.last.destroy
 
     report_results(rows.size)
   end
@@ -77,7 +113,7 @@ class LoadBigSamJob < ApplicationJob
       return
     end
 
-    ActiveRecord::Base.transaction { process_letter(row, letter) }
+    ActiveRecord::Base.transaction(requires_new: true) { process_letter(row, letter) }
   rescue SkipRow => e
     @row_skipped << { id: row[:id], code: row[:code], reason: e.message }
   rescue StandardError => e
@@ -264,7 +300,10 @@ class LoadBigSamJob < ApplicationJob
   def get_letter(row)
     if row[:exclude].to_s.strip.downcase == 'y'
       letter = Letter.find_by(legacy_pk: row[:id])
-      letter&.destroy
+      # In a dry run nothing should actually be destroyed - remove_published's
+      # Elasticsearch delete isn't gated by the enclosing transaction like a normal
+      # ActiveRecord write is, so it would delete a real search document.
+      letter&.destroy unless @dry_run
       return nil
     end
 
