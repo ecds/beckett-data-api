@@ -63,12 +63,12 @@ Rails.application.configure do
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
 
-  # Send mail through SES (see app/lib/ses_delivery_method.rb and
-  # config/initializers/action_mailer_ses.rb), authenticating via the instance/task's
-  # IAM role through the AWS SDK's standard credential chain - no explicit AWS
-  # credentials configured here.
+  # Send mail through SES. Registration (and the region setting) lives in
+  # config/initializers/action_mailer_ses.rb / app/lib/ses_delivery_method.rb, not
+  # here - see the comment there for why. Authenticates via the instance/task's IAM
+  # role through the AWS SDK's standard credential chain, no explicit AWS credentials
+  # configured here.
   config.action_mailer.delivery_method = :ses
-  config.action_mailer.ses_settings = { region: ENV.fetch('AWS_REGION', 'us-east-1') }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
