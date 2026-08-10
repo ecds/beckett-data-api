@@ -8,21 +8,19 @@ class HasManyThroughField < Administrate::Field::HasMany
   end
 
   def associated_resource_options
-    # is_entities = resource['_index']&.include?('entities')
-    # where = {}
-    # order = {}
-    # where[options[:type]] = options[:type] if options[:type]
-    # order[options[:order_by]] = :acs if options[:order_by]
-    # associated_class.search('*', load: false, order:, where:).map do |resource|
-    #   if options[:verbose_option] && is_entities
-    #     ["#{resource.e_type.titleize} #{resource.legacy_pk}: #{resource.clean_label}", resource.id]
-    #   else
-    #     [resource.clean_label, resource.id]
-    #   end
-    # end
     where = {}
     where[:e_type] = options[:type] if options[:type]
-    associated_class.search('*', load: false, order: { e_type: :asc }, where:).map do |resource|
+
+    # Sorting here in Ruby, rather than passing `order:` to .search, is deliberate:
+    # an ES-level sort requires the field to have a keyword/sortable mapping, which
+    # e_type doesn't (Searchable, app/models/concerns/searchable.rb, never declares
+    # one) - that was raising a Searchkick::InvalidQueryError for every letter's
+    # entity picker (order: { e_type: :asc } was hardcoded here regardless of the
+    # order_by option below actually being requested).
+    results = associated_class.search('*', load: false, where:)
+    results = results.sort_by {|resource| resource.public_send(options[:order_by]).to_s } if options[:order_by]
+
+    results.map do |resource|
       if options[:verbose_option] && resource['_index'].include?('entities')
         ["#{resource.e_type.titleize} #{resource.legacy_pk}: #{resource.clean_label}", resource.id]
       else

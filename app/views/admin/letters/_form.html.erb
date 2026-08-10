@@ -188,10 +188,6 @@ and renders all form fields for a resource's editable attributes.
   }
 
   defer(() => {
-    let authenticity_token = document.querySelector("[name='authenticity_token']").value;
-    let headers = {
-      "content-type": "application/x-www-form-urlencoded"
-    };
     // let letter = "<%= page.resource.id %>"
     const input = document.createElement("input");
     input.type = "hidden";

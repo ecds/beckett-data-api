@@ -62,6 +62,13 @@ group :development, :test do
   gem 'shoulda-matchers'
 end
 
+group :test do
+  # For system specs (spec/system). selenium-webdriver >= 4.6 manages the
+  # chromedriver binary itself (Selenium Manager) - no separate webdriver gem needed.
+  gem 'capybara'
+  gem 'selenium-webdriver'
+end
+
 gem 'pundit', '~> 2.2'
 
 gem 'kaminari', '~> 1.2'
