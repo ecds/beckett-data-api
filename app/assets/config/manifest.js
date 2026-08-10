@@ -6,7 +6,6 @@
 //= link administrate-field-jsonb/application.js
 //= link acts_as_taggable_field.js
 //= link administrate-field-active_storage/application.css
-//= require selectize
 //= require trix
 // application.js
 // application.css
