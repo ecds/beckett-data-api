@@ -9,11 +9,6 @@ require 'rails_helper'
 # break (jquery-ujs -> Turbo/Stimulus, changed asset bundling in 1.0) - and the only
 # way to actually verify it is a real browser, since no request spec executes JS.
 RSpec.describe 'Admin::Letters entity picker', :js do
-  def visit_with_basic_auth(path)
-    server = Capybara.current_session.server
-    visit "http://test:test@#{server.host}:#{server.port}#{path}"
-  end
-
   def selectize
     "jQuery('.field-unit--has-many-through-field select')[0].selectize"
   end
@@ -21,7 +16,7 @@ RSpec.describe 'Admin::Letters entity picker', :js do
   it 'initializes jQuery and the selectize widget on the entities field' do
     letter = create(:letter)
 
-    visit_with_basic_auth(edit_admin_letter_path(letter))
+    visit edit_admin_letter_path(letter)
 
     expect(page.execute_script('return window.jQuery !== undefined')).to be true
     expect(page).to have_css('.selectize-control')
@@ -33,7 +28,7 @@ RSpec.describe 'Admin::Letters entity picker', :js do
     entity = create(:person_entity, label: 'Zzz System Spec Findable Entity')
     Entity.reindex
 
-    visit_with_basic_auth(edit_admin_letter_path(letter))
+    visit edit_admin_letter_path(letter)
     expect(page).to have_css('.selectize-control')
 
     page.execute_script("#{selectize}.addItem('#{entity.id}')")
@@ -49,7 +44,7 @@ RSpec.describe 'Admin::Letters entity picker', :js do
     letter.save!
     Entity.reindex
 
-    visit_with_basic_auth(edit_admin_letter_path(letter))
+    visit edit_admin_letter_path(letter)
     expect(page).to have_css(".item[data-value='#{entity.id}']")
 
     find(".item[data-value='#{entity.id}']").click
@@ -68,7 +63,7 @@ RSpec.describe 'Admin::Letters entity picker', :js do
     letter.save!
     Entity.reindex
 
-    visit_with_basic_auth(edit_admin_letter_path(letter))
+    visit edit_admin_letter_path(letter)
     expect(page).to have_css(".item[data-value='#{entity.id}']")
 
     find(".item[data-value='#{entity.id}']").click

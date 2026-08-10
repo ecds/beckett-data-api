@@ -48,6 +48,12 @@ gem 'administrate'
 gem 'administrate-field-jsonb'
 gem 'trix-rails', require: 'trix'
 
+# administrate < 1.0 pulled these in transitively via sassc-rails; administrate 1.0
+# bundles its own assets and dropped that dependency, but the app's own asset
+# pipeline (app/assets/config/manifest.js) still relies on Sprockets/Sass directly.
+gem 'sprockets-rails'
+gem 'sassc-rails'
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri mingw x64_mingw]
@@ -67,6 +73,9 @@ group :test do
   # chromedriver binary itself (Selenium Manager) - no separate webdriver gem needed.
   gem 'capybara'
   gem 'selenium-webdriver'
+  # CDP support, needed for Selenium's driver.register(username:, password:) - used to
+  # authenticate admin system specs without embedding credentials in the visited URL.
+  gem 'selenium-devtools'
 end
 
 gem 'pundit', '~> 2.2'
@@ -78,8 +87,6 @@ gem 'jbuilder', '~> 2.11'
 gem 'rspec_api_documentation', '~> 6.1'
 
 gem 'acts-as-taggable-on', '~> 11.0.0'
-
-gem 'administrate-field-acts_as_taggable'
 
 gem 'administrate-field-list', '~> 0.0.6'
 

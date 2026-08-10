@@ -46,10 +46,10 @@ RSpec.describe 'Admin::AboutPages' do
       expect(response.body).to include(%(href="#{new_admin_about_page_path}"))
     end
 
-    it 'still renders the "destroy" link on the show page' do
+    it 'still renders the "destroy" button on the show page' do
       about_page = create(:about_page)
       get admin_about_page_path(about_page), headers: admin_auth_headers
-      expect(response.body).to include(%(href="#{admin_about_page_path(about_page)}"))
+      expect(response.body).to include(%(action="#{admin_about_page_path(about_page)}"))
         .and include('button--danger')
     end
   end

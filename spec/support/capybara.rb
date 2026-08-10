@@ -24,5 +24,16 @@ RSpec.configure do |config|
 
   config.before(:each, :js, type: :system) do
     driven_by Capybara.javascript_driver
+
+    # Admin::ApplicationController gates every admin route behind HTTP Basic Auth, and
+    # this app has no session-based login to drive instead. Visiting with credentials
+    # embedded in the URL (http://user:pass@host/path) used to work, but Administrate
+    # 1.0 bundles Turbo, which calls history.replaceState on every page load - Chrome
+    # rejects replaceState targets that carry userinfo, and since Administrate's JS is
+    # one bundled IIFE, that uncaught exception aborts everything after it, including
+    # selectize's own setup. Real admin users never hit this (their location.href never
+    # carries credentials - Chrome only uses them for the auth handshake). Registering
+    # credentials via CDP instead keeps the visited URL clean and sidesteps it entirely.
+    Capybara.current_session.driver.browser.register(username: 'test', password: 'test')
   end
 end
