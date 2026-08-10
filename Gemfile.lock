@@ -89,11 +89,8 @@ GEM
     administrate-field-active_storage (0.4.2)
       administrate (>= 0.2.2)
       rails (>= 7.0)
-    administrate-field-acts_as_taggable (0.0.4)
-      acts-as-taggable-on (>= 6.0)
-      administrate (< 1.0.0)
-    administrate-field-jsonb (0.4.6)
-      administrate (< 1.0.0)
+    administrate-field-jsonb (0.4.8)
+      administrate (< 2.0)
       rails (>= 4.2)
     administrate-field-list (0.0.6)
       administrate
@@ -481,7 +478,6 @@ DEPENDENCIES
   addressable (~> 2.8)
   administrate
   administrate-field-active_storage (~> 0.4.1)
-  administrate-field-acts_as_taggable
   administrate-field-jsonb
   administrate-field-list (~> 0.0.6)
   aws-sdk-rails (~> 5.0)

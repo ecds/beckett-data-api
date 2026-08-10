@@ -79,8 +79,6 @@ gem 'rspec_api_documentation', '~> 6.1'
 
 gem 'acts-as-taggable-on', '~> 11.0.0'
 
-gem 'administrate-field-acts_as_taggable'
-
 gem 'administrate-field-list', '~> 0.0.6'
 
 gem 'httparty', '~> 0.20.0'
