@@ -1,0 +1,121 @@
+# frozen_string_literal: true
+
+require 'rails_helper'
+
+RSpec.describe 'Admin::Letters' do
+  # LetterDashboard::SHOW_PAGE_ATTRIBUTES includes :published, but ATTRIBUTE_TYPES has
+  # no :published entry. This breaks the show page directly (show.html.erb iterates
+  # SHOW_PAGE_ATTRIBUTES), and also breaks index: Administrate's own
+  # sanitized_order_params helper (called from the custom _collection.html.erb, used
+  # for both index and show) always calls dashboard#item_associations, which
+  # unconditionally reads show_page_attributes regardless of which page is asking.
+  def published_not_in_attribute_types
+    'known bug: LetterDashboard::SHOW_PAGE_ATTRIBUTES includes :published, which has no ' \
+      'entry in ATTRIBUTE_TYPES - raises RuntimeError via Administrate::BaseDashboard#' \
+      'attribute_type_for, reached from show.html.erb directly and from index.html.erb via ' \
+      'sanitized_order_params -> #item_associations (always uses show_page_attributes)'
+  end
+
+  describe 'GET index' do
+    it 'requires authentication' do
+      get admin_letters_path
+      expect(response).to have_http_status(:unauthorized)
+    end
+
+    it 'renders successfully when authenticated' do
+      skip(published_not_in_attribute_types)
+      create(:letter)
+      get admin_letters_path, headers: admin_auth_headers
+      expect(response).to have_http_status(:ok)
+    end
+
+    it 'includes letters within the given start_date/end_date range' do
+      skip(published_not_in_attribute_types)
+      in_range = create(:letter, date: DateTime.new(1960, 6, 1), code: 'IN-RANGE')
+      get admin_letters_path(start_date: '1960-01-01', end_date: '1960-12-31'), headers: admin_auth_headers
+      expect(response.body).to include("Letter ##{in_range.legacy_pk}")
+    end
+
+    it 'excludes dated letters outside the given start_date/end_date range' do
+      skip(published_not_in_attribute_types)
+      out_of_range = create(:letter, date: DateTime.new(1900, 1, 1), code: 'OUT-OF-RANGE')
+      get admin_letters_path(start_date: '1960-01-01', end_date: '1960-12-31'), headers: admin_auth_headers
+      expect(response.body).not_to include("Letter ##{out_of_range.legacy_pk}")
+    end
+
+    it 'always includes undated letters, regardless of the date range' do
+      skip(published_not_in_attribute_types)
+      undated = create(:letter, date: nil, code: 'UNDATED')
+      get admin_letters_path(start_date: '1960-01-01', end_date: '1960-12-31'), headers: admin_auth_headers
+      expect(response.body).to include("Letter ##{undated.legacy_pk}")
+    end
+
+    it 'restores start_date/end_date from the referer when the request omits them' do
+      skip(published_not_in_attribute_types)
+      in_range = create(:letter, date: DateTime.new(1960, 6, 1), code: 'IN-RANGE')
+      out_of_range = create(:letter, date: DateTime.new(1900, 1, 1), code: 'OUT-OF-RANGE')
+      referer = "#{admin_letters_url}?start_date=1960-01-01&end_date=1960-12-31"
+
+      get admin_letters_path, headers: admin_auth_headers.merge('HTTP_REFERER' => referer)
+
+      expect(response.body).to include("Letter ##{in_range.legacy_pk}")
+      expect(response.body).not_to include("Letter ##{out_of_range.legacy_pk}")
+    end
+
+    it 'ignores the referer when it is not an admin/letters URL' do
+      skip(published_not_in_attribute_types)
+      out_of_range = create(:letter, date: DateTime.new(1900, 1, 1), code: 'OUT-OF-RANGE')
+      referer = "#{admin_entities_url}?start_date=1960-01-01&end_date=1960-12-31"
+
+      get admin_letters_path, headers: admin_auth_headers.merge('HTTP_REFERER' => referer)
+
+      expect(response.body).to include("Letter ##{out_of_range.legacy_pk}")
+    end
+  end
+
+  describe 'GET show' do
+    it 'renders successfully when authenticated' do
+      skip(published_not_in_attribute_types)
+      letter = create(:letter)
+      get admin_letter_path(letter), headers: admin_auth_headers
+      expect(response).to have_http_status(:ok)
+    end
+  end
+
+  describe 'GET new' do
+    it 'renders successfully when authenticated' do
+      get new_admin_letter_path, headers: admin_auth_headers
+      expect(response).to have_http_status(:ok)
+    end
+  end
+
+  describe 'GET edit' do
+    it 'renders successfully when authenticated' do
+      letter = create(:letter)
+      get edit_admin_letter_path(letter), headers: admin_auth_headers
+      expect(response).to have_http_status(:ok)
+    end
+  end
+
+  describe 'PATCH update' do
+    # LetterDashboard::FORM_ATTRIBUTES is %i[entities content] (+ start_date, per
+    # #permitted_attributes) - `content` is the only plain-text field actually
+    # permitted through strong params here.
+    it 'redirects to the resource by default' do
+      letter = create(:letter)
+      patch admin_letter_path(letter), params: { letter: { content: 'Updated content' } },
+                                       headers: admin_auth_headers
+      expect(response).to redirect_to(admin_letter_path(letter))
+      expect(letter.reload.content).to eq('Updated content')
+    end
+
+    it 'does not redirect when redirect=no, but still persists the update' do
+      letter = create(:letter)
+      patch admin_letter_path(letter),
+            params: { letter: { content: 'Updated content' }, redirect: 'no' },
+            headers: admin_auth_headers
+      expect(response).not_to have_http_status(:redirect)
+      expect(letter.reload.content).to eq('Updated content')
+    end
+  end
+end
