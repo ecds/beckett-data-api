@@ -46,7 +46,8 @@ class LetterDashboard < Administrate::BaseDashboard
     letter_owner: Field::BelongsTo,
     letter_publisher: Field::BelongsTo,
     created_at: Field::DateTime,
-    updated_at: Field::DateTime
+    updated_at: Field::DateTime,
+    published: Field::Boolean
   }.freeze
 
   # COLLECTION_ATTRIBUTES
