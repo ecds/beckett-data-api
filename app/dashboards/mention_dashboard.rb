@@ -18,7 +18,7 @@ class MentionDashboard < Administrate::BaseDashboard
     id: Field::Number,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
-    tags: Field::ActsAsTaggable
+    tags: ActsAsTaggableField
   }.freeze
 
   # COLLECTION_ATTRIBUTES

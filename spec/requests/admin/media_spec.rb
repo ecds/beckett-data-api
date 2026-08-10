@@ -18,13 +18,6 @@ RSpec.describe 'Admin::Media' do
 
   describe 'GET show' do
     it 'renders successfully when authenticated' do
-      pending(
-        'known bug: admin/media/show.html.erb:28 calls accessible_action?(:edit) with one ' \
-        'argument before the correct two-argument call - Administrate::ApplicationHelper#' \
-        'accessible_action? requires (target, action_name), so this raises ArgumentError ' \
-        "before the &&'d correct call, or page.resource.url (line 33, Medium has no #url " \
-        'method), is ever reached'
-      )
       medium = create(:medium)
       get admin_medium_path(medium), headers: admin_auth_headers
       expect(response).to have_http_status(:ok)
