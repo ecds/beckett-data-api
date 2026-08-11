@@ -84,9 +84,9 @@ gem 'acts-as-taggable-on', '~> 13.0'
 
 gem 'administrate-field-list', '~> 0.0.6'
 
-gem 'httparty', '~> 0.20.0'
+gem 'httparty', '~> 0.24.0'
 
-gem 'roo', '~> 2.9'
+gem 'roo', '~> 3.0'
 
 gem 'namae', '~> 1.1'
 
