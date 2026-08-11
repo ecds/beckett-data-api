@@ -54,7 +54,7 @@ class PublishedLetter < ApplicationRecord
       languages: languages.map(&:label),
       published:,
       volume: volume.to_s,
-      publisher: letter_publisher
+      publisher: letter_publisher.label
     }
   end
 
