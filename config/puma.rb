@@ -17,7 +17,10 @@ worker_timeout 3600 if ENV.fetch('RAILS_ENV', 'development') == 'development'
 
 # Specifies the `port` that Puma will listen on to receive requests; default is 3000.
 #
-port ENV.fetch('PORT', 3000)
+# Puma 8 defaults to binding IPv6 (::) instead of IPv4 (0.0.0.0) when a non-loopback
+# IPv6 interface is available. Pinning the host explicitly preserves this app's
+# existing IPv4 behavior regardless of Puma version or the host's network interfaces.
+port ENV.fetch('PORT', 3000), '0.0.0.0'
 
 # Specifies the `environment` that Puma will run in.
 #
