@@ -3,10 +3,14 @@
 source 'https://rubygems.org'
 git_source(:github) {|_repo| "https://github.com/#{repo}.git" }
 
-ruby '3.3.4'
+ruby '3.4.10'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 7.2.1'
+
+# csv stopped being a Ruby default gem in 3.4+; httparty requires it internally
+# without declaring it as a dependency, so it must be explicit here.
+gem 'csv'
 
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'
