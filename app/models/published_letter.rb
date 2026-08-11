@@ -30,10 +30,10 @@ class PublishedLetter < ApplicationRecord
   has_many :letter_languages, foreign_key: 'letter_id', inverse_of: :letter, dependent: :destroy
   has_many :languages, -> { distinct }, through: :letter_languages
 
-  belongs_to :letter_file, foreign_key: 'letter_id', inverse_of: :letter, optional: true
-  belongs_to :file_folder, foreign_key: 'letter_id', inverse_of: :letter, optional: true
-  belongs_to :letter_owner, foreign_key: 'letter_id', inverse_of: :letter, optional: true
-  belongs_to :letter_publisher, foreign_key: 'letter_id', inverse_of: :letter, optional: true
+  belongs_to :letter_file, foreign_key: 'letter_id', inverse_of: :letters, optional: true
+  belongs_to :file_folder, foreign_key: 'letter_id', inverse_of: :letters, optional: true
+  belongs_to :letter_owner, foreign_key: 'letter_id', inverse_of: :letters, optional: true
+  belongs_to :letter_publisher, foreign_key: 'letter_id', inverse_of: :letters, optional: true
 
   def self.default_scope
     where(published: true)
@@ -53,7 +53,8 @@ class PublishedLetter < ApplicationRecord
       repositories: repositories.select(&:published).map(&:label),
       languages: languages.map(&:label),
       published:,
-      volume: volume.to_s
+      volume: volume.to_s,
+      publisher: letter_publisher
     }
   end
 
