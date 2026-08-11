@@ -33,7 +33,13 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'bootsnap', require: false
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
-gem 'image_processing', '~> 1.2'
+gem 'image_processing', '~> 2.0'
+# mini_magick/ruby-vips became soft dependencies of image_processing in 2.0 and must be
+# added explicitly. This app's config.load_defaults 7.0 (config/application.rb) sets
+# config.active_storage.variant_processor = :vips - vips is the actually-active processor,
+# not mini_magick (previously present only as an unused transitive dependency of
+# image_processing 1.x's gemspec, which required both backends unconditionally).
+gem 'ruby-vips', '~> 2.0'
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem 'rack-cors'
