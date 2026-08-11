@@ -5,6 +5,7 @@ require 'action_view'
 
 class LoadBigSamJob < ApplicationJob
   include ActionView::Helpers::SanitizeHelper
+
   queue_as :default
 
   # Raised to abandon a single row (e.g. an unparseable date) without treating it as a
@@ -372,7 +373,7 @@ class LoadBigSamJob < ApplicationJob
   def get_person(name)
     entity = nil
     names = Namae.parse(name).first
-    if names&.given && names&.family
+    if names&.given && names.family
       names.family = "Van #{names.family}" if names.particle&.downcase == 'van'
       names.family = "von #{names.family}" if names.particle&.downcase == 'von'
       names = mc_or_mac?(names)
