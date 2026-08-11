@@ -6,11 +6,15 @@ git_source(:github) {|_repo| "https://github.com/#{repo}.git" }
 ruby '3.4.10'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
-gem 'rails', '~> 7.2.1'
+gem 'rails', '~> 8.1.3'
 
 # csv stopped being a Ruby default gem in 3.4+; httparty requires it internally
 # without declaring it as a dependency, so it must be explicit here.
 gem 'csv'
+
+# benchmark won't be a default gem starting in Ruby 4.0; mini_magick requires it
+# internally without declaring it as a dependency.
+gem 'benchmark'
 
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'
@@ -72,7 +76,11 @@ gem 'kaminari', '~> 1.2'
 
 gem 'jbuilder', '~> 2.11'
 
-gem 'acts-as-taggable-on', '~> 11.0.0'
+# 11.0.0 hard-pins activerecord < 8.0, which makes it impossible to install
+# alongside Rails 8 at all - not a discretionary bump, a forced one. 12->13 has
+# no breaking changes to the tag_list/for_context API ActsAsTaggableField uses
+# (see CHANGELOG.md), only dropped-Ruby-version and added-Rails-version support.
+gem 'acts-as-taggable-on', '~> 13.0'
 
 gem 'administrate-field-list', '~> 0.0.6'
 
