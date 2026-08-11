@@ -4,6 +4,7 @@ require 'administrate/base_dashboard'
 
 class EntityDashboard < Administrate::BaseDashboard
   include ActionView::Helpers::SanitizeHelper
+
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #

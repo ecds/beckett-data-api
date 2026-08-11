@@ -4,7 +4,7 @@ class Faq < ApplicationRecord
   before_save :initial_position
   after_save :update_position
 
-  default_scope { order('position') }
+  default_scope { order(:position) }
 
   private
 
