@@ -14,6 +14,16 @@ RSpec.describe 'Admin::Mentions' do
       get admin_mentions_path, headers: admin_auth_headers
       expect(response).to have_http_status(:ok)
     end
+
+    # Regression test: ActsAsTaggableField's #tags previously blew up on a real tagged
+    # mention outside of a bare smoke test, since the untagged factory default never
+    # exercised the field's actual data-fetching path (see acts_as_taggable_field_spec.rb).
+    it 'renders the tags of a tagged mention' do
+      create(:mention, tag_list: 'battle, correspondence')
+      get admin_mentions_path, headers: admin_auth_headers
+      expect(response).to have_http_status(:ok)
+      expect(response.body).to include('battle').and include('correspondence')
+    end
   end
 
   describe 'GET show' do
@@ -21,6 +31,13 @@ RSpec.describe 'Admin::Mentions' do
       mention = create(:mention)
       get admin_mention_path(mention), headers: admin_auth_headers
       expect(response).to have_http_status(:ok)
+    end
+
+    it 'renders the tags of a tagged mention' do
+      mention = create(:mention, tag_list: 'battle, correspondence')
+      get admin_mention_path(mention), headers: admin_auth_headers
+      expect(response).to have_http_status(:ok)
+      expect(response.body).to include('battle').and include('correspondence')
     end
   end
 
@@ -36,6 +53,13 @@ RSpec.describe 'Admin::Mentions' do
       mention = create(:mention)
       get edit_admin_mention_path(mention), headers: admin_auth_headers
       expect(response).to have_http_status(:ok)
+    end
+
+    it 'pre-populates the tag list input of a tagged mention' do
+      mention = create(:mention, tag_list: 'battle, correspondence')
+      get edit_admin_mention_path(mention), headers: admin_auth_headers
+      expect(response).to have_http_status(:ok)
+      expect(response.body).to include('value="battle, correspondence"')
     end
   end
 end

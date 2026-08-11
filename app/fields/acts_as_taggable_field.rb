@@ -18,6 +18,22 @@ class ActsAsTaggableField < Administrate::Field::Text
     options.fetch(:context, @attribute)
   end
 
+  # Administrate::Field::Base#read_value (called from #initialize, before
+  # #attribute is overridden below has a chance to matter) lazily fetches data via
+  # `resource.try(attribute)` - and that `attribute` call is polymorphic, so it hits
+  # our own override below instead of the raw `:tags` attribute key, fetching
+  # `resource.tag_list` (an array of tag-name strings) instead of `resource.tags`
+  # (real ActsAsTaggableOn::Tag records). #tags/#delimited/#truncate all expect the
+  # latter, so this re-derives the same logic using @attribute (the raw ivar) rather
+  # than the overridden #attribute method.
+  def read_value(data)
+    if options.key?(:getter)
+      return options[:getter].respond_to?(:call) ? options[:getter].call(self) : resource.try(options[:getter])
+    end
+
+    data.nil? ? resource.try(@attribute) : data
+  end
+
   # acts_as_taggable_on exposes a `<context.singularize>_list` virtual attribute
   # (e.g. `tag_list` for the `:tags` context) for reading/writing a comma-delimited
   # tag string - this field operates on that attribute rather than the raw `tags`
