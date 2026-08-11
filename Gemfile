@@ -84,7 +84,7 @@ gem 'active_record_doctor', '~> 1.10'
 
 gem 'sidekiq', '>=7.2.2', '<8'
 
-gem 'addressable', '~> 2.8'
+gem 'addressable', '~> 2.9'
 
 gem 'importmap-rails', '~> 2.0'
 
