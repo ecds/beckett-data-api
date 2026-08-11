@@ -55,7 +55,7 @@ class LettersController < ApplicationController
         volume: letter.volume,
         recipients: letter.recipients,
         destinations: letter.destinations,
-        origins: letter.orgins,
+        origins: letter.origins,
         mentions: letter.mentions
       }
     end
@@ -134,8 +134,12 @@ class LettersController < ApplicationController
   # rubocop:enable Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/MethodLength, Metrics/PerceivedComplexity
 
   def reindex
-    Letter.reindex if ENV['RAILS_ENV'] == 'test'
-    PublishedLetter.reindex if ENV['RAILS_ENV'] == 'test'
+    # mode: :inline forces a synchronous reindex regardless of Searchable's
+    # `callbacks: :async` option - searchkick's default mode resolution falls back to
+    # the model's callbacks option (see Searchkick::Index#reindex_records), so without
+    # this the search immediately below could run against a not-yet-indexed record.
+    Letter.reindex(mode: :inline) if ENV['RAILS_ENV'] == 'test'
+    PublishedLetter.reindex(mode: :inline) if ENV['RAILS_ENV'] == 'test'
   end
 
   # Only allow a list of trusted parameters through.

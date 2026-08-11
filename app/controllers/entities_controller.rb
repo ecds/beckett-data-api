@@ -69,8 +69,12 @@ class EntitiesController < ApplicationController
   private
 
   def reindex
-    Entity.reindex if ENV['RAILS_ENV'] == 'test'
-    PublishedEntity.reindex if ENV['RAILS_ENV'] == 'test'
+    # mode: :inline forces a synchronous reindex regardless of Searchable's
+    # `callbacks: :async` option - searchkick's default mode resolution falls back to
+    # the model's callbacks option (see Searchkick::Index#reindex_records), so without
+    # this the search immediately below could run against a not-yet-indexed record.
+    Entity.reindex(mode: :inline) if ENV['RAILS_ENV'] == 'test'
+    PublishedEntity.reindex(mode: :inline) if ENV['RAILS_ENV'] == 'test'
   rescue Searchkick::Error
   end
 
