@@ -483,6 +483,7 @@ DEPENDENCIES
   benchmark
   bootsnap
   capybara
+  csv
   debug
   elasticsearch (~> 8)
   factory_bot_rails

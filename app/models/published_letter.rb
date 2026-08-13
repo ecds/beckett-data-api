@@ -38,6 +38,6 @@ class PublishedLetter < ApplicationRecord
 
     doc = Nokogiri::HTML(letter_publisher.label)
     text = doc.css('i').map(&:text)
-    text ? text.map(&:strip) : [letter_publisher.label]
+    text ? text.map(&:strip).reject!(&:empty?) : [letter_publisher.label]
   end
 end
