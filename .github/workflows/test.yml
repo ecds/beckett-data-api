@@ -68,7 +68,7 @@ jobs:
       - name: Install system requirements
         run: |
           sudo apt update
-          sudo apt install -y postgresql-client
+          sudo apt install -y postgresql-client libvips42
 
       - name: Bundle Install
         run: |

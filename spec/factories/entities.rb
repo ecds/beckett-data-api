@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-# rubocop:disable Layout/LineLength
-
 FactoryBot.define do
   factory :entity do
     label { Faker::Movies::HitchhikersGuideToTheGalaxy.character }
@@ -170,4 +168,3 @@ FactoryBot.define do
     end
   end
 end
-# rubocop:enable Layout/LineLength

@@ -42,4 +42,15 @@ RSpec.describe PublishedLetter do
     expect(published_letter.repositories.count).to eq(2)
     expect(published_letter.search_data[:repositories].count).to eq(1)
   end
+
+  it 'represents previous publisher' do
+    publisher = create(:letter_publisher,
+                       label: '<html>Alan, "Letters" <i> Endgame </i>, <i>Voice</i> <i> </i> Ed. Maurice. (1998) 37.</html>')
+    letter = create(:published_letter, letter_publisher: publisher)
+    published_letter = described_class.find(letter.id)
+    expect(published_letter.search_data[:other_publishers].count).to(eq(2))
+    expect(published_letter.search_data[:other_publishers]).to(include('Endgame'))
+    expect(published_letter.search_data[:other_publishers]).to(include('Voice'))
+    expect(published_letter.search_data[:other_publishers]).not_to(include(' '))
+  end
 end

@@ -1,4 +1,4 @@
-FROM ruby:3.3.4
+FROM ruby:3.4.10
 
 ARG RAILS_MASTER_KEY
 ARG REDIS_URL
@@ -6,6 +6,7 @@ ARG REDIS_URL
 RUN apt-get update \
   && apt-get install -y --no-install-recommends \
   postgresql-client \
+  libvips42 \
   && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /usr/src/app

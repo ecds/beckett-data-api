@@ -22,6 +22,24 @@ RSpec.describe ActsAsTaggableField do
       field = described_class.new(:tags, %w[a b], nil)
       expect(field.tags).to eq(%w[a b])
     end
+
+    it 'fetches real Tag records from the resource when constructed the way Administrate ' \
+       'actually builds fields (data: nil, resource: given), not tag_list name strings' do
+      # Administrate::Field::Base#read_value calls `resource.try(attribute)` when data is
+      # nil - and that `attribute` call is polymorphic, landing on this class's own
+      # #attribute override (returns "tag_list") rather than the raw :tags attribute this
+      # field was constructed with. A prior version of #read_value used that overridden
+      # #attribute directly, so this fetched mention.tag_list (tag-name strings) instead of
+      # mention.tags (real Tag records), and _show.html.erb's `tag.name` raised
+      # NoMethodError on a String. Only reproducible by exercising the real construction
+      # path (data: nil) - constructing with data already populated skips read_value
+      # entirely, which is why this went undetected until manual browser verification.
+      mention = create(:mention, tag_list: 'battle, correspondence')
+      field = described_class.new(:tags, nil, nil, resource: mention)
+
+      expect(field.tags).to all(be_a(ActsAsTaggableOn::Tag))
+      expect(field.tags.map(&:name)).to contain_exactly('battle', 'correspondence')
+    end
   end
 
   describe '#delimited' do

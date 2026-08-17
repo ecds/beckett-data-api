@@ -3,10 +3,18 @@
 source 'https://rubygems.org'
 git_source(:github) {|_repo| "https://github.com/#{repo}.git" }
 
-ruby '3.3.4'
+ruby '3.4.10'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
-gem 'rails', '~> 7.2.1'
+gem 'rails', '~> 8.1.3'
+
+# csv stopped being a Ruby default gem in 3.4+; httparty requires it internally
+# without declaring it as a dependency, so it must be explicit here.
+gem 'csv'
+
+# benchmark won't be a default gem starting in Ruby 4.0; mini_magick requires it
+# internally without declaring it as a dependency.
+gem 'benchmark'
 
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'
@@ -16,7 +24,7 @@ gem 'elasticsearch', '~> 8'
 gem 'searchkick'
 
 # Use the Puma web server [https://github.com/puma/puma]
-gem 'puma', '~> 5.0'
+gem 'puma', '~> 8.0'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
@@ -25,7 +33,13 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'bootsnap', require: false
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
-gem 'image_processing', '~> 1.2'
+gem 'image_processing', '~> 2.0'
+# mini_magick/ruby-vips became soft dependencies of image_processing in 2.0 and must be
+# added explicitly. This app's config.load_defaults 7.0 (config/application.rb) sets
+# config.active_storage.variant_processor = :vips - vips is the actually-active processor,
+# not mini_magick (previously present only as an unused transitive dependency of
+# image_processing 1.x's gemspec, which required both backends unconditionally).
+gem 'ruby-vips', '~> 2.0'
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem 'rack-cors'
@@ -68,13 +82,17 @@ gem 'kaminari', '~> 1.2'
 
 gem 'jbuilder', '~> 2.11'
 
-gem 'acts-as-taggable-on', '~> 11.0.0'
+# 11.0.0 hard-pins activerecord < 8.0, which makes it impossible to install
+# alongside Rails 8 at all - not a discretionary bump, a forced one. 12->13 has
+# no breaking changes to the tag_list/for_context API ActsAsTaggableField uses
+# (see CHANGELOG.md), only dropped-Ruby-version and added-Rails-version support.
+gem 'acts-as-taggable-on', '~> 13.0'
 
 gem 'administrate-field-list', '~> 0.0.6'
 
-gem 'httparty', '~> 0.20.0'
+gem 'httparty', '~> 0.24.0'
 
-gem 'roo', '~> 2.9'
+gem 'roo', '~> 3.0'
 
 gem 'namae', '~> 1.1'
 
@@ -84,7 +102,7 @@ gem 'active_record_doctor', '~> 1.10'
 
 gem 'sidekiq', '>=7.2.2', '<8'
 
-gem 'addressable', '~> 2.8'
+gem 'addressable', '~> 2.9'
 
 gem 'importmap-rails', '~> 2.0'
 

@@ -104,9 +104,9 @@ class Entity < ApplicationRecord
                      "#{event_types&.map(&:titleize)&.join(',')} #{description}".strip
                    end
     when 'person'
-      if label && (last_name.nil? && first_name.nil?)
+      if label && last_name.nil? && first_name.nil?
         names = Namae.parse label
-        if names&.first&.given && names&.first&.family
+        if names&.first&.given && names&.first.family
           self.first_name = names.first.given
           self.last_name = names.first.family
         end

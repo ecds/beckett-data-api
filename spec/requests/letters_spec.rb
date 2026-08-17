@@ -102,6 +102,17 @@ RSpec.describe '/letters' do
       expect(json[:letters].count).to eq(9)
     end
 
+    # Regression test: LettersController#letters_from_results called `letter.orgins`
+    # (typo for `origins`) on a Searchkick::HashWrapper. Searchkick 5.x silently
+    # returned nil for the typo'd key; 6.x raises NoMethodError instead, surfacing a
+    # bug that was always there but never covered - nothing asserted on the `origins`
+    # key in a response before this.
+    it 'includes the origins of a letter' do
+      create(:published_letter, origins: create_list(:place_entity, 1, label: 'Reynoldstown'))
+      get "#{letters_url}.json"
+      expect(json[:letters].first[:origins]).to eq(['Reynoldstown'])
+    end
+
     it 'returns letters with start_date param' do
       create_list(:published_letter, 10)
       create(:published_letter, date: DateTime.new(1961, 2, 22))

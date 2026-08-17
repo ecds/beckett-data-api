@@ -198,7 +198,7 @@ module EntityCommon
         lines.push("<strong>Date</strong> #{date_str}") if date_str.present?
       end
 
-      paragraphs = lines.map {|line| "<p>#{line}</p>" }.flatten.join.strip
+      paragraphs = lines.map {|line| "<p>#{line}</p>" }.join.strip
       Loofah.fragment("<section>#{paragraphs}</section>").scrub!(:prune).to_html
     end
 
@@ -299,7 +299,7 @@ module EntityCommon
         rows.push("<th scope='row'>See Also</th><td colsapn=3>#{link_list}</td>") if links.present?
       end
 
-      table_rows = rows.map {|row| "<tr>#{row}</tr>" }.flatten.join.strip
+      table_rows = rows.map {|row| "<tr>#{row}</tr>" }.join.strip
       Loofah.fragment("<table>#{table_rows}</table>").scrub!(:prune).to_html
     end
 

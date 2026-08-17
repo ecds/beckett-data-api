@@ -49,7 +49,7 @@ RSpec.configure do |config|
   # ActiveStorage::Current is a CurrentAttributes subclass — its values are
   # reset by ActiveSupport::Executor after each inline job. Setting url_options
   # in before(:each) ensures it's present whenever a spec calls .url.
-  config.before { ActiveStorage::Current.url_options = { host: ENV['RAILS_HOST'] } }
+  config.before { ActiveStorage::Current.url_options = { host: ENV.fetch('RAILS_HOST', nil) } }
 
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_paths = [Rails.root.join('spec', 'fixtures'), Rails.root.join('spec', 'fixtures', 'files')]

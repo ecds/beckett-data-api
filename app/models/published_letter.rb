@@ -6,35 +6,6 @@ class PublishedLetter < ApplicationRecord
 
   self.table_name = 'letters'
 
-  has_many :mentions, foreign_key: 'letter_id', inverse_of: :letter, dependent: :destroy
-  has_many :entities, -> { distinct }, through: :mentions
-
-  has_many :letter_destinations, foreign_key: 'letter_id', inverse_of: :letter, dependent: :destroy
-  has_many :destinations, -> { distinct }, through: :letter_destinations, source: :entity
-
-  has_many :letter_senders, foreign_key: 'letter_id', inverse_of: :letter, dependent: :destroy
-  has_many :senders, -> { distinct }, through: :letter_senders, source: :entity
-
-  has_many :letter_origins, foreign_key: 'letter_id', inverse_of: :letter, dependent: :destroy
-  has_many :origins, -> { distinct }, through: :letter_origins, source: :entity
-
-  has_many :letter_recipients, foreign_key: 'letter_id', inverse_of: :letter, dependent: :destroy
-  has_many :recipients, -> { distinct }, through: :letter_recipients, source: :entity
-
-  has_many :letter_repositories, foreign_key: 'letter_id', inverse_of: :letter, dependent: :destroy
-  has_many :repositories, -> { distinct }, through: :letter_repositories
-
-  has_many :letter_collections, foreign_key: 'letter_id', inverse_of: :letter, dependent: :destroy
-  has_many :collections, -> { distinct }, through: :letter_collections
-
-  has_many :letter_languages, foreign_key: 'letter_id', inverse_of: :letter, dependent: :destroy
-  has_many :languages, -> { distinct }, through: :letter_languages
-
-  belongs_to :letter_file, foreign_key: 'letter_id', inverse_of: :letters, optional: true
-  belongs_to :file_folder, foreign_key: 'letter_id', inverse_of: :letters, optional: true
-  belongs_to :letter_owner, foreign_key: 'letter_id', inverse_of: :letters, optional: true
-  belongs_to :letter_publisher, foreign_key: 'letter_id', inverse_of: :letters, optional: true
-
   def self.default_scope
     where(published: true)
   end
@@ -54,11 +25,19 @@ class PublishedLetter < ApplicationRecord
       languages: languages.map(&:label),
       published:,
       volume: volume.to_s,
-      publisher: letter_publisher&.label
+      other_publishers:
     }
   end
 
   def should_index?
     published
+  end
+
+  def other_publishers
+    return if letter_publisher.nil?
+
+    doc = Nokogiri::HTML(letter_publisher.label)
+    text = doc.css('i').map(&:text)
+    text ? text.map(&:strip).reject!(&:empty?) : [letter_publisher.label]
   end
 end

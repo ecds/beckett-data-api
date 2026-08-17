@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-# rubocop:disable Metrics/BlockLength
-
 # Common stuff for indexing
 module LetterCommon
   extend ActiveSupport::Concern
@@ -9,18 +7,34 @@ module LetterCommon
   included do
     attr_accessor :tags
 
-    # attr_readonly :content
+    has_many :mentions, foreign_key: 'letter_id', inverse_of: :letter, dependent: :destroy
+    has_many :entities, -> { distinct }, through: :mentions
 
-    # scope :published, lambda {
-    #   includes(:repositories)
-    #     .references(:repositories)
-    #     .where(
-    #       repositories: {
-    #         published: true
-    #       }
-    #     )
-    #     # .where('letters.date BETWEEN ? AND ?', DateTime.new(1957), DateTime.new(1965, 12).at_end_of_month)
-    # }
+    has_many :letter_destinations, foreign_key: 'letter_id', inverse_of: :letter, dependent: :destroy
+    has_many :destinations, -> { distinct }, through: :letter_destinations, source: :entity
+
+    has_many :letter_senders, foreign_key: 'letter_id', inverse_of: :letter, dependent: :destroy
+    has_many :senders, -> { distinct }, through: :letter_senders, source: :entity
+
+    has_many :letter_origins, foreign_key: 'letter_id', inverse_of: :letter, dependent: :destroy
+    has_many :origins, -> { distinct }, through: :letter_origins, source: :entity
+
+    has_many :letter_recipients, foreign_key: 'letter_id', inverse_of: :letter, dependent: :destroy
+    has_many :recipients, -> { distinct }, through: :letter_recipients, source: :entity
+
+    has_many :letter_repositories, foreign_key: 'letter_id', inverse_of: :letter, dependent: :destroy
+    has_many :repositories, -> { distinct }, through: :letter_repositories
+
+    has_many :letter_collections, foreign_key: 'letter_id', inverse_of: :letter, dependent: :destroy
+    has_many :collections, -> { distinct }, through: :letter_collections
+
+    has_many :letter_languages, foreign_key: 'letter_id', inverse_of: :letter, dependent: :destroy
+    has_many :languages, -> { distinct }, through: :letter_languages
+
+    belongs_to :letter_file, inverse_of: :letters, optional: true
+    belongs_to :file_folder, inverse_of: :letters, optional: true
+    belongs_to :letter_owner, inverse_of: :letters, optional: true
+    belongs_to :letter_publisher, inverse_of: :letters, optional: true
 
     scope :published, -> { where(published: true) }
 
@@ -100,5 +114,3 @@ module LetterCommon
     end
   end
 end
-
-# rubocop:enable Metrics/BlockLength

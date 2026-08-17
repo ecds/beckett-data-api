@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 require 'fileutils'
 
@@ -260,7 +262,7 @@ RSpec.describe LoadBigSamJob do
       skipped = job.instance_variable_get(:@row_skipped)
       expect(skipped.size).to eq(1)
       expect(skipped.first[:code]).to eq('BAD')
-      expect(skipped.first[:reason]).to match(/bad date/)
+      expect(skipped.first[:reason]).to include('bad date')
       expect(Letter.find_by(legacy_pk: 955).code).to eq('GOOD')
     end
 
